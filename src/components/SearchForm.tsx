@@ -1,12 +1,35 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { GeocoderAutocomplete } from "@geoapify/geocoder-autocomplete";
 
 export default function SearchForm() {
 
   const [destination, setDestination] = useState("");
   const [itinerary, setItinerary] = useState<any>(null);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+
+    const autocomplete = new GeocoderAutocomplete(
+      document.getElementById("autocomplete") as HTMLElement,
+      process.env.NEXT_PUBLIC_GEOAPIFY_KEY as string,
+      {
+        type: "city"
+      }
+    );
+
+    autocomplete.on("select", (location: any) => {
+
+      const city = location.properties.city;
+      const country = location.properties.country;
+
+      setDestination(`${city}, ${country}`);
+
+    });
+
+  }, []);
 
   async function generateTrip() {
 
@@ -47,6 +70,7 @@ export default function SearchForm() {
     <div className="max-w-5xl mx-auto p-6">
 
       <div className="text-center mb-14">
+
         <h1 className="text-4xl font-bold text-black">
           Global Home Assist
         </h1>
@@ -54,16 +78,15 @@ export default function SearchForm() {
         <p className="text-gray-500 mt-2">
           AI Powered Travel Planner
         </p>
+
       </div>
 
       <div className="flex gap-3 mb-14">
 
-        <input
-          className="border p-3 rounded-lg w-full shadow-sm text-black"
-          placeholder="Where do you want to travel?"
-          value={destination}
-          onChange={(e) => setDestination(e.target.value)}
-        />
+        <div
+          id="autocomplete"
+          className="w-full"
+        ></div>
 
         <button
           onClick={generateTrip}

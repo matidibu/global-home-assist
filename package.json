@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@geoapify/geocoder-autocomplete": "^3.0.1",
     "leaflet": "^1.9.4",
     "next": "16.1.6",
     "openai": "^4.0.0",
