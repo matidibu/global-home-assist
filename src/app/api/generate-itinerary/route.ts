@@ -1,3 +1,4 @@
+console.log("KEY:", process.env.OPENAI_API_KEY)
 import { NextResponse } from "next/server"
 import OpenAI from "openai"
 import { buildPrompt } from "@/lib/travelBrainPrompt"
