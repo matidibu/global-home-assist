@@ -1,7 +1,5 @@
-console.log("KEY:", process.env.OPENAI_API_KEY)
 import { NextResponse } from "next/server"
 import OpenAI from "openai"
-import { buildPrompt } from "@/lib/travelBrainPrompt"
 import { searchImage } from "@/lib/imageSearch"
 
 const openai = new OpenAI({
@@ -12,9 +10,41 @@ export async function POST(req: Request) {
 
   try {
 
-    const { destination } = await req.json()
+    const { destination, interests } = await req.json()
 
-    const prompt = buildPrompt(destination)
+    const prompt = `
+Create a realistic 3 day travel itinerary for ${destination}.
+
+Traveler interests: ${interests?.join(", ") || "general tourism"}.
+
+IMPORTANT RULES:
+
+- Only include REAL and well known tourist places.
+- Do NOT invent places.
+- Use famous landmarks, museums, parks, historic sites or known restaurants.
+- Each place must exist in real life.
+
+Return ONLY valid JSON in this format:
+
+{
+  "days":[
+    {
+      "day":1,
+      "places":[
+        {
+          "name":"Place name",
+          "description":"short travel description",
+          "category":"landmark | museum | food | nature | culture",
+          "duration":"estimated visit duration",
+          "bestTime":"morning | afternoon | evening",
+          "price":"approximate ticket price or free",
+          "tip":"useful visitor tip"
+        }
+      ]
+    }
+  ]
+}
+`
 
     const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
@@ -23,29 +53,34 @@ export async function POST(req: Request) {
           role: "user",
           content: prompt
         }
-      ]
+      ],
+      temperature: 0.6
     })
 
     const text = completion.choices[0].message.content || ""
 
-    const itinerary = JSON.parse(text)
+    const cleaned = text
+      .replace(/```json/g, "")
+      .replace(/```/g, "")
+      .trim()
+
+    const itinerary = JSON.parse(cleaned)
 
     for (const day of itinerary.days) {
 
       for (const place of day.places) {
 
-        // IMAGE
-        const img = await searchImage(place.name + " " + destination)
-        place.image = img
+        try {
 
-        // DEFAULT VALUES (if AI didn't return them)
+          place.image = await searchImage(
+            `${place.name} ${destination} travel`
+          )
 
-        if (!place.price) place.price = "Check official site"
-        if (!place.rating) place.rating = "4.5"
-        if (!place.crowdLevel) place.crowdLevel = "Medium"
-        if (!place.tip) place.tip = "Try visiting early to avoid crowds"
-        if (!place.officialLink) place.officialLink = ""
-        if (!place.bookingLink) place.bookingLink = ""
+        } catch {
+
+          place.image = ""
+
+        }
 
       }
 
@@ -55,7 +90,7 @@ export async function POST(req: Request) {
 
   } catch (error) {
 
-    console.error("API ERROR:", error)
+    console.error(error)
 
     return NextResponse.json(
       { error: "Failed to generate itinerary" },
