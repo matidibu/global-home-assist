@@ -3,6 +3,7 @@ import OpenAI from "openai"
 import { searchImage } from "@/lib/imageSearch"
 import { getCoordinates } from "@/lib/geocode"
 import { optimizeRoute } from "@/lib/optimizeRoute"
+import { getTransportOptions } from "@/lib/transportOptions"
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
@@ -72,24 +73,45 @@ Rules:
 
     for (const day of itinerary.days) {
 
-      // Obtener imagenes y coordenadas
+      // IMAGENES Y COORDENADAS
       for (const place of day.places) {
 
         place.image = await searchImage(place.name)
 
-        const coords = await getCoordinates(place.name, destination)
+        const coords = await getCoordinates(
+          `${place.name} ${destination} tourist attraction`,
+          destination
+        )
 
         place.coords = coords
 
       }
 
-      // Optimizar ruta
+      // OPTIMIZAR ORDEN
       const optimized = optimizeRoute(day.places)
 
-      // IMPORTANTE: reasignar para conservar walkingMinutes
       day.places = optimized.map((p: any) => ({
         ...p
       }))
+
+      // TRANSPORT LAYER
+      for (let i = 1; i < day.places.length; i++) {
+
+        const prev = day.places[i - 1]
+        const current = day.places[i]
+
+        if (prev.coords && current.coords) {
+
+          const transport = await getTransportOptions(
+            prev.coords,
+            current.coords
+          )
+
+          current.transport = transport
+
+        }
+
+      }
 
     }
 
