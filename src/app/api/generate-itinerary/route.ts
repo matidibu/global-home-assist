@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { NextResponse } from "next/server"
 import OpenAI from "openai"
 import { searchImage } from "@/lib/imageSearch"
 import { getCoordinates } from "@/lib/geocode"
@@ -13,124 +12,94 @@ export async function POST(req: Request) {
 
   try {
 
-    const { destination, interests } = await req.json()
+    const body = await req.json()
+
+    const { destination, days, interests } = body
+
+    const interestsText = interests && interests.length
+      ? `Traveler interests: ${interests.join(", ")}`
+      : ""
 
     const prompt = `
-Create a realistic 3-day travel itinerary for ${destination}.
+Create a ${days}-day travel itinerary for ${destination}.
 
-Traveler interests: ${interests?.join(", ") || "general tourism"}.
-
-IMPORTANT RULES:
-
-1. Only include REAL well-known places.
-2. Do NOT invent places.
-3. Group places by nearby areas or neighborhoods.
-4. Each day should follow a logical flow: morning → afternoon → evening.
-5. Include landmarks, food, culture, and local experiences.
-6. Restaurants and food places must also be real.
+${interestsText}
 
 Return ONLY valid JSON.
 
-FORMAT:
+Structure:
 
 {
  "days":[
-   {
-     "day":1,
-     "area":"name of the neighborhood or area",
-     "places":[
-       {
-         "name":"place name",
-         "description":"short tourist description",
-         "category":"landmark | museum | food | nature | culture",
-         "duration":"estimated visit duration",
-         "bestTime":"morning | afternoon | evening",
-         "price":"approximate ticket price or free",
-         "tip":"useful visitor tip"
-       }
-     ]
-   }
+  {
+   "day":1,
+   "places":[
+    {
+     "name":"Place name",
+     "description":"Short description",
+     "price":"Approximate ticket price"
+    }
+   ]
+  }
  ]
 }
+
+Rules:
+- 3 places per day
+- real tourist attractions
+- varied experiences
+- concise descriptions
+- include ticket prices when relevant
 `
 
     const completion = await openai.chat.completions.create({
+
       model: "gpt-4o-mini",
-      temperature: 0.6,
+
       messages: [
-        {
-          role: "user",
-          content: prompt
-        }
-      ]
+        { role: "user", content: prompt }
+      ],
+
+      temperature: 0.7
+
     })
 
-    const text = completion.choices[0].message.content || ""
+    let text = completion.choices[0].message.content || ""
 
-    const cleaned = text
-      .replace(/```json/g, "")
-      .replace(/```/g, "")
-      .trim()
+    text = text.replace(/```json/g, "").replace(/```/g, "").trim()
 
-    const itinerary = JSON.parse(cleaned)
+    const itinerary = JSON.parse(text)
 
     for (const day of itinerary.days) {
 
+      // Obtener imagenes y coordenadas
       for (const place of day.places) {
 
-        try {
+        place.image = await searchImage(place.name)
 
-          place.image = await searchImage(
-            `${place.name} ${destination} travel`
-          )
+        const coords = await getCoordinates(place.name, destination)
 
-        } catch {
-
-          place.image = ""
-
-        }
-
-        try {
-
-          const coords = await getCoordinates(
-            place.name,
-            destination
-          )
-
-          place.coords = coords
-
-        } catch {
-
-          place.coords = null
-
-        }
+        place.coords = coords
 
       }
 
-      const validPlaces = day.places.filter(
-        (p: any) => p.coords !== null
-      )
+      // Optimizar ruta
+      const optimized = optimizeRoute(day.places)
 
-      const optimized = optimizeRoute(validPlaces)
-
-      const others = day.places.filter(
-        (p: any) => p.coords === null
-      )
-
-      day.places = [...optimized, ...others]
+      // IMPORTANTE: reasignar para conservar walkingMinutes
+      day.places = optimized.map((p: any) => ({
+        ...p
+      }))
 
     }
 
-    return NextResponse.json(itinerary)
+    return Response.json(itinerary)
 
   } catch (error) {
 
     console.error(error)
 
-    return NextResponse.json(
-      { error: "Failed to generate itinerary" },
-      { status: 500 }
-    )
+    return new Response("Error generating itinerary", { status: 500 })
 
   }
 

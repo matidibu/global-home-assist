@@ -1,74 +1,75 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export function optimizeRoute(places: any[]) {
+type Place = {
+  name: string
+  description: string
+  coords?: {
+    lat: number
+    lon: number
+  }
+  walkingDistanceKm?: number
+  walkingMinutes?: number
+}
 
-  if (places.length <= 2) return places
+function calculateDistance(a: Place, b: Place) {
 
-  const timeOrder: any = {
-    morning: 1,
-    afternoon: 2,
-    evening: 3
+  if (!a.coords || !b.coords) return 0
+
+  const R = 6371
+
+  const dLat = (b.coords.lat - a.coords.lat) * Math.PI / 180
+  const dLon = (b.coords.lon - a.coords.lon) * Math.PI / 180
+
+  const lat1 = a.coords.lat * Math.PI / 180
+  const lat2 = b.coords.lat * Math.PI / 180
+
+  const aVal =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.sin(dLon / 2) * Math.sin(dLon / 2) *
+    Math.cos(lat1) *
+    Math.cos(lat2)
+
+  const c = 2 * Math.atan2(Math.sqrt(aVal), Math.sqrt(1 - aVal))
+
+  return R * c
+}
+
+export function optimizeRoute(places: Place[]) {
+
+  if (places.length <= 1) return places
+
+  const optimized: Place[] = [places[0]]
+
+  const remaining = places.slice(1)
+
+  while (remaining.length > 0) {
+
+    const last = optimized[optimized.length - 1]
+
+    let closestIndex = 0
+    let closestDistance = Infinity
+
+    remaining.forEach((place, index) => {
+
+      const distance = calculateDistance(last, place)
+
+      if (distance < closestDistance) {
+        closestDistance = distance
+        closestIndex = index
+      }
+
+    })
+
+    const nextPlace = remaining.splice(closestIndex, 1)[0]
+
+    const walkingDistanceKm = closestDistance
+    const walkingMinutes = Math.round((walkingDistanceKm / 5) * 60)
+
+    nextPlace.walkingDistanceKm = walkingDistanceKm
+    nextPlace.walkingMinutes = walkingMinutes
+
+    optimized.push(nextPlace)
+
   }
 
-  const sortedByTime = [...places].sort((a, b) => {
-    const ta = timeOrder[a.bestTime] || 2
-    const tb = timeOrder[b.bestTime] || 2
-    return ta - tb
-  })
-
-  const groups: any = {
-    morning: [],
-    afternoon: [],
-    evening: []
-  }
-
-  sortedByTime.forEach((p) => {
-    const key = p.bestTime || "afternoon"
-    groups[key].push(p)
-  })
-
-  function optimizeDistance(arr: any[]) {
-
-    if (arr.length <= 2) return arr
-
-    const ordered = [arr[0]]
-    const remaining = arr.slice(1)
-
-    while (remaining.length > 0) {
-
-      const last = ordered[ordered.length - 1]
-
-      let closestIndex = 0
-      let closestDistance = Infinity
-
-      remaining.forEach((p, i) => {
-
-        if (!p.coords || !last.coords) return
-
-        const d = Math.sqrt(
-          Math.pow(last.coords.lat - p.coords.lat, 2) +
-          Math.pow(last.coords.lon - p.coords.lon, 2)
-        )
-
-        if (d < closestDistance) {
-          closestDistance = d
-          closestIndex = i
-        }
-
-      })
-
-      ordered.push(remaining[closestIndex])
-      remaining.splice(closestIndex, 1)
-
-    }
-
-    return ordered
-
-  }
-
-  return [
-    ...optimizeDistance(groups.morning),
-    ...optimizeDistance(groups.afternoon),
-    ...optimizeDistance(groups.evening)
-  ]
+  return optimized
 
 }
