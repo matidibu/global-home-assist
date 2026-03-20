@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@geoapify/geocoder-autocomplete": "^3.0.1",
+    "@react-leaflet/core": "^2.1.0",
     "leaflet": "^1.9.4",
     "next": "16.1.6",
     "openai": "^4.0.0",
