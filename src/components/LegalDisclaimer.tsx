@@ -1,0 +1,38 @@
+"use client";
+
+const T: Record<string, string> = {
+  es: "Global Home Assist es una plataforma de información y planificación de viajes. No somos agencia de viajes, no vendemos servicios turísticos ni actuamos como intermediarios contractuales. Toda reserva, contratación o pago se realiza directamente con el prestador del servicio. Global Home Assist no asume responsabilidad por el cumplimiento, calidad, disponibilidad o cancelación de ningún servicio ofrecido por terceros. Algunos enlaces de esta plataforma son enlaces de afiliado — podemos recibir una comisión por las compras realizadas a través de ellos, sin costo adicional para vos.",
+  en: "Global Home Assist is a travel information and planning platform. We are not a travel agency, we do not sell tourism services, nor do we act as contractual intermediaries. All bookings, contracts or payments are made directly with the service provider. Global Home Assist assumes no responsibility for the fulfillment, quality, availability or cancellation of any service offered by third parties. Some links on this platform are affiliate links — we may receive a commission for purchases made through them, at no additional cost to you.",
+  fr: "Global Home Assist est une plateforme d'information et de planification de voyages. Nous ne sommes pas une agence de voyages, nous ne vendons pas de services touristiques et n'agissons pas en tant qu'intermédiaires contractuels. Toute réservation, contrat ou paiement est effectué directement avec le prestataire de services. Global Home Assist n'assume aucune responsabilité quant à l'exécution, la qualité, la disponibilité ou l'annulation de tout service offert par des tiers. Certains liens de cette plateforme sont des liens d'affiliation — nous pouvons recevoir une commission pour les achats effectués via ces liens, sans frais supplémentaires pour vous.",
+  it: "Global Home Assist è una piattaforma di informazione e pianificazione dei viaggi. Non siamo un'agenzia di viaggi, non vendiamo servizi turistici né agiamo come intermediari contrattuali. Ogni prenotazione, contratto o pagamento viene effettuato direttamente con il fornitore del servizio. Global Home Assist non si assume alcuna responsabilità per l'adempimento, la qualità, la disponibilità o la cancellazione di qualsiasi servizio offerto da terzi. Alcuni link su questa piattaforma sono link di affiliazione — potremmo ricevere una commissione per gli acquisti effettuati tramite essi, senza costi aggiuntivi per te.",
+  de: "Global Home Assist ist eine Informations- und Reiseplanungsplattform. Wir sind kein Reisebüro, verkaufen keine Reisedienstleistungen und handeln nicht als Vertragsintermediäre. Alle Buchungen, Verträge oder Zahlungen erfolgen direkt mit dem Dienstleister. Global Home Assist übernimmt keine Verantwortung für die Erfüllung, Qualität, Verfügbarkeit oder Stornierung von Dienstleistungen Dritter. Einige Links auf dieser Plattform sind Affiliate-Links — wir erhalten möglicherweise eine Provision für Käufe über diese Links, ohne zusätzliche Kosten für Sie.",
+  pt: "Global Home Assist é uma plataforma de informação e planejamento de viagens. Não somos uma agência de viagens, não vendemos serviços turísticos nem atuamos como intermediários contratuais. Toda reserva, contrato ou pagamento é realizado diretamente com o prestador de serviço. Global Home Assist não assume responsabilidade pelo cumprimento, qualidade, disponibilidade ou cancelamento de qualquer serviço oferecido por terceiros. Alguns links nesta plataforma são links de afiliado — podemos receber uma comissão pelas compras realizadas por meio deles, sem custo adicional para você.",
+};
+
+interface Props {
+  language: string;
+}
+
+export default function LegalDisclaimer({ language }: Props) {
+  const text = T[language] || T.es;
+
+  return (
+    <div style={{
+      marginTop: "20px",
+      padding: "16px 20px",
+      background: "rgba(26,42,108,0.04)",
+      borderRadius: "12px",
+      border: "1px solid rgba(26,42,108,0.1)",
+    }}>
+      <p style={{
+        fontSize: "11px",
+        color: "#6b7280",
+        margin: 0,
+        lineHeight: 1.7,
+        fontFamily: "'Plus Jakarta Sans', sans-serif",
+      }}>
+        ⚖️ {text}
+      </p>
+    </div>
+  );
+}

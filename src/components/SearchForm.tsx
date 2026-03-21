@@ -9,21 +9,21 @@ import CountryBackground from "@/components/CountryBackground";
 import ServicesSection from "@/components/ServicesSection";
 import DestinationInfo from "@/components/DestinationInfo";
 import SOSButton from "@/components/SOSButton";
+import MedicalAssistance from "@/components/MedicalAssistance";
+import LegalDisclaimer from "@/components/LegalDisclaimer";
+import "@geoapify/geocoder-autocomplete/styles/minimal.css";
 
 const TravelMap = dynamic(() => import("@/components/TravelMap"), {
   ssr: false,
   loading: () => (
-    <div style={{ width: "100%", height: "500px", borderRadius: "20px", display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(255,255,255,0.5)", color: "#6b7280", fontSize: "14px" }}>
+    <div style={{ width: "100%", height: "500px", borderRadius: "20px", display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(255,255,255,0.6)", color: "#6b7280", fontSize: "14px" }}>
       Cargando mapa...
     </div>
   ),
 });
 
-// ============================================================
-// AFFILIATE IDs — reemplazá con tus IDs cuando los tengas
-// ============================================================
 const AFFILIATE = {
-  getyourguide: "TUAID",
+  getyourguide: "NGZASHD",
   viator: "TUAID",
   klook: "TUAID",
   tripadvisor: "TUAID",
@@ -32,7 +32,184 @@ const AFFILIATE = {
   rentalcars: "TUAID",
 };
 
-function buildAffiliateLinks(placeName: string, city: string, country: string) {
+const T: Record<string, Record<string, any>> = {
+  es: {
+    slogan: "Tu viaje, tu mundo... nuestra compañía.",
+    fromCountry: "¿De dónde sos?",
+    fromCountryPlaceholder: "Ej: Argentina",
+    language: "Idioma del itinerario",
+    tripType: "Tipo de viaje",
+    tripTypeSelect: "Seleccionar",
+    budget: "Presupuesto (USD)",
+    budgetPlaceholder: "Ej: 1500",
+    destination: "¿A dónde querés ir?",
+    interests: "Intereses",
+    duration: "Duración",
+    day: "día", days: "días",
+    accommodation: "Hospedaje",
+    accommodationOptional: "(opcional)",
+    accommodationSearch: "🔍 Hotel / Hostel",
+    accommodationAddress: "📍 Dirección / Airbnb",
+    accommodationHint: "Primero elegí la ciudad de destino",
+    accommodationAddressHint: 'Ej: "Calle Mayor 15, Madrid"',
+    generate: "✈️ Generar itinerario",
+    generating: "✈️ Generando itinerario...",
+    mapTitle: "🗺️ Mapa del viaje",
+    mustSee: "⭐ Imperdible",
+    bestTime: "Mejor horario",
+    official: "🌐 Sitio oficial",
+    tripTypes: { placer:"Placer", negocios:"Negocios", aventura:"Aventura", familiar:"Familiar", romántico:"Romántico", gastronómico:"Gastronómico", cultural:"Cultural" },
+    interestOptions: ["Cultura","Gastronomía","Aventura","Relax","Shopping","Naturaleza","Deportes","Historia","Arte","Vida nocturna"],
+    interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
+  },
+  en: {
+    slogan: "Your trip, your world... our company.",
+    fromCountry: "Where are you from?",
+    fromCountryPlaceholder: "E.g: United States",
+    language: "Itinerary language",
+    tripType: "Trip type",
+    tripTypeSelect: "Select",
+    budget: "Budget (USD)",
+    budgetPlaceholder: "E.g: 1500",
+    destination: "Where do you want to go?",
+    interests: "Interests",
+    duration: "Duration",
+    day: "day", days: "days",
+    accommodation: "Accommodation",
+    accommodationOptional: "(optional)",
+    accommodationSearch: "🔍 Hotel / Hostel",
+    accommodationAddress: "📍 Address / Airbnb",
+    accommodationHint: "First choose your destination city",
+    accommodationAddressHint: 'E.g: "15 Main Street, Paris"',
+    generate: "✈️ Generate itinerary",
+    generating: "✈️ Generating itinerary...",
+    mapTitle: "🗺️ Trip map",
+    mustSee: "⭐ Must-see",
+    bestTime: "Best time",
+    official: "🌐 Official site",
+    tripTypes: { placer:"Leisure", negocios:"Business", aventura:"Adventure", familiar:"Family", romántico:"Romantic", gastronómico:"Gastronomy", cultural:"Cultural" },
+    interestOptions: ["Culture","Gastronomy","Adventure","Relax","Shopping","Nature","Sports","History","Art","Nightlife"],
+    interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
+  },
+  fr: {
+    slogan: "Votre voyage, votre monde... notre compagnie.",
+    fromCountry: "D'où venez-vous ?",
+    fromCountryPlaceholder: "Ex: France",
+    language: "Langue de l'itinéraire",
+    tripType: "Type de voyage",
+    tripTypeSelect: "Sélectionner",
+    budget: "Budget (USD)",
+    budgetPlaceholder: "Ex: 1500",
+    destination: "Où voulez-vous aller ?",
+    interests: "Intérêts",
+    duration: "Durée",
+    day: "jour", days: "jours",
+    accommodation: "Hébergement",
+    accommodationOptional: "(optionnel)",
+    accommodationSearch: "🔍 Hôtel / Hostel",
+    accommodationAddress: "📍 Adresse / Airbnb",
+    accommodationHint: "Choisissez d'abord la ville",
+    accommodationAddressHint: 'Ex: "15 rue de Rivoli, Paris"',
+    generate: "✈️ Générer l'itinéraire",
+    generating: "✈️ Génération en cours...",
+    mapTitle: "🗺️ Carte du voyage",
+    mustSee: "⭐ Incontournable",
+    bestTime: "Meilleur moment",
+    official: "🌐 Site officiel",
+    tripTypes: { placer:"Loisirs", negocios:"Affaires", aventura:"Aventure", familiar:"Famille", romántico:"Romantique", gastronómico:"Gastronomie", cultural:"Culture" },
+    interestOptions: ["Culture","Gastronomie","Aventure","Détente","Shopping","Nature","Sport","Histoire","Art","Vie nocturne"],
+    interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
+  },
+  it: {
+    slogan: "Il tuo viaggio, il tuo mondo... la nostra compagnia.",
+    fromCountry: "Da dove vieni?",
+    fromCountryPlaceholder: "Es: Italia",
+    language: "Lingua dell'itinerario",
+    tripType: "Tipo di viaggio",
+    tripTypeSelect: "Seleziona",
+    budget: "Budget (USD)",
+    budgetPlaceholder: "Es: 1500",
+    destination: "Dove vuoi andare?",
+    interests: "Interessi",
+    duration: "Durata",
+    day: "giorno", days: "giorni",
+    accommodation: "Alloggio",
+    accommodationOptional: "(opzionale)",
+    accommodationSearch: "🔍 Hotel / Hostel",
+    accommodationAddress: "📍 Indirizzo / Airbnb",
+    accommodationHint: "Prima scegli la città",
+    accommodationAddressHint: 'Es: "Via Roma 15, Roma"',
+    generate: "✈️ Genera itinerario",
+    generating: "✈️ Generazione in corso...",
+    mapTitle: "🗺️ Mappa del viaggio",
+    mustSee: "⭐ Da non perdere",
+    bestTime: "Orario migliore",
+    official: "🌐 Sito ufficiale",
+    tripTypes: { placer:"Piacere", negocios:"Affari", aventura:"Avventura", familiar:"Famiglia", romántico:"Romantico", gastronómico:"Gastronomia", cultural:"Culturale" },
+    interestOptions: ["Cultura","Gastronomia","Avventura","Relax","Shopping","Natura","Sport","Storia","Arte","Vita notturna"],
+    interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
+  },
+  de: {
+    slogan: "Ihre Reise, Ihre Welt... unsere Begleitung.",
+    fromCountry: "Woher kommen Sie?",
+    fromCountryPlaceholder: "z.B: Deutschland",
+    language: "Sprache des Reiseplans",
+    tripType: "Reiseart",
+    tripTypeSelect: "Auswählen",
+    budget: "Budget (USD)",
+    budgetPlaceholder: "z.B: 1500",
+    destination: "Wohin möchten Sie reisen?",
+    interests: "Interessen",
+    duration: "Dauer",
+    day: "Tag", days: "Tage",
+    accommodation: "Unterkunft",
+    accommodationOptional: "(optional)",
+    accommodationSearch: "🔍 Hotel / Hostel",
+    accommodationAddress: "📍 Adresse / Airbnb",
+    accommodationHint: "Wählen Sie zuerst die Zielstadt",
+    accommodationAddressHint: 'z.B: "Hauptstraße 15, Berlin"',
+    generate: "✈️ Reiseplan erstellen",
+    generating: "✈️ Wird erstellt...",
+    mapTitle: "🗺️ Reisekarte",
+    mustSee: "⭐ Sehenswert",
+    bestTime: "Beste Zeit",
+    official: "🌐 Offizielle Website",
+    tripTypes: { placer:"Urlaub", negocios:"Geschäft", aventura:"Abenteuer", familiar:"Familie", romántico:"Romantisch", gastronómico:"Gastronomie", cultural:"Kultur" },
+    interestOptions: ["Kultur","Gastronomie","Abenteuer","Entspannung","Shopping","Natur","Sport","Geschichte","Kunst","Nachtleben"],
+    interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
+  },
+  pt: {
+    slogan: "Sua viagem, seu mundo... nossa companhia.",
+    fromCountry: "De onde você é?",
+    fromCountryPlaceholder: "Ex: Brasil",
+    language: "Idioma do itinerário",
+    tripType: "Tipo de viagem",
+    tripTypeSelect: "Selecionar",
+    budget: "Orçamento (USD)",
+    budgetPlaceholder: "Ex: 1500",
+    destination: "Para onde quer ir?",
+    interests: "Interesses",
+    duration: "Duração",
+    day: "dia", days: "dias",
+    accommodation: "Hospedagem",
+    accommodationOptional: "(opcional)",
+    accommodationSearch: "🔍 Hotel / Hostel",
+    accommodationAddress: "📍 Endereço / Airbnb",
+    accommodationHint: "Primeiro escolha a cidade",
+    accommodationAddressHint: 'Ex: "Rua Augusta 15, Lisboa"',
+    generate: "✈️ Gerar itinerário",
+    generating: "✈️ Gerando itinerário...",
+    mapTitle: "🗺️ Mapa da viagem",
+    mustSee: "⭐ Imperdível",
+    bestTime: "Melhor horário",
+    official: "🌐 Site oficial",
+    tripTypes: { placer:"Lazer", negocios:"Negócios", aventura:"Aventura", familiar:"Família", romántico:"Romântico", gastronómico:"Gastronômico", cultural:"Cultural" },
+    interestOptions: ["Cultura","Gastronomia","Aventura","Relax","Shopping","Natureza","Esportes","História","Arte","Vida noturna"],
+    interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
+  },
+};
+
+function buildAffiliateLinks(placeName: string, city: string) {
   const q = encodeURIComponent(`${placeName} ${city}`);
   return {
     getyourguide: `https://www.getyourguide.com/s/?q=${q}&partner_id=${AFFILIATE.getyourguide}`,
@@ -46,22 +223,12 @@ function TransportDivider({ transport, accessNote, fromAccommodation, accommodat
   transport: any; accessNote?: string; fromAccommodation?: boolean; accommodationName?: string;
 }) {
   if (!transport && !accessNote) return null;
-
   const allOptions = [
-    { key: "walk", icon: "🚶" },
-    { key: "bike", icon: "🚴" },
-    { key: "car", icon: "🚗" },
-    { key: "ferry", icon: "⛵" },
-    { key: "flight", icon: "✈️" },
+    { key: "walk", icon: "🚶" }, { key: "bike", icon: "🚴" }, { key: "car", icon: "🚗" },
+    { key: "ferry", icon: "⛵" }, { key: "flight", icon: "✈️" },
   ].filter(o => transport?.[o.key] != null && transport[o.key] > 0);
 
-  const formatTime = (minutes: number) => {
-    if (minutes < 60) return `${minutes} min`;
-    const h = Math.floor(minutes / 60);
-    const m = minutes % 60;
-    return m > 0 ? `${h}h ${m}min` : `${h}h`;
-  };
-
+  const formatTime = (m: number) => m < 60 ? `${m} min` : `${Math.floor(m/60)}h${m%60>0?` ${m%60}min`:""}`;
   const isWater = transport?.ferry != null || transport?.flight != null;
   const isFromHotel = fromAccommodation && accommodationName;
 
@@ -69,31 +236,23 @@ function TransportDivider({ transport, accessNote, fromAccommodation, accommodat
     <div style={{ display: "flex", alignItems: "center", gap: "12px", padding: "12px 8px" }}>
       <div style={{ flex: 1, height: "1px", background: "linear-gradient(to right, transparent, rgba(42,181,160,0.3))" }} />
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px", flexShrink: 0 }}>
-        {isFromHotel && (
-          <span style={{ fontSize: "11px", color: "#7c3aed", fontWeight: 600, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-            🏨 Desde {accommodationName}
-          </span>
-        )}
+        {isFromHotel && <span style={{ fontSize: "11px", color: "#7c3aed", fontWeight: 600 }}>🏨 {accommodationName}</span>}
         {allOptions.length > 0 && (
           <div className="transport-pill" style={{
-            background: isWater ? "rgba(219,234,254,0.9)" : isFromHotel ? "rgba(237,233,254,0.9)" : "rgba(255,255,255,0.85)",
-            border: `1.5px solid ${isWater ? "#93c5fd" : isFromHotel ? "#c4b5fd" : "rgba(42,181,160,0.3)"}`,
-            backdropFilter: "blur(8px)",
+            background: isWater ? "rgba(219,234,254,0.95)" : isFromHotel ? "rgba(237,233,254,0.95)" : "rgba(255,255,255,0.95)",
+            border: `1.5px solid ${isWater ? "#93c5fd" : isFromHotel ? "#c4b5fd" : "rgba(42,181,160,0.4)"}`,
+            boxShadow: "0 2px 8px rgba(26,42,108,0.1)",
           }}>
             {allOptions.map((o, idx) => (
               <span key={o.key} style={{ display: "flex", alignItems: "center", gap: "4px" }}>
                 {idx > 0 && <span style={{ color: "#d1d5db" }}>•</span>}
                 <span style={{ fontSize: "15px" }}>{o.icon}</span>
-                <span style={{ color: isWater ? "#1d4ed8" : isFromHotel ? "#6d28d9" : "#1a2a6c" }}>
-                  {formatTime(transport[o.key])}
-                </span>
+                <span style={{ color: isWater ? "#1d4ed8" : isFromHotel ? "#6d28d9" : "#1a2a6c" }}>{formatTime(transport[o.key])}</span>
               </span>
             ))}
           </div>
         )}
-        {accessNote && (
-          <span style={{ fontSize: "11px", color: "#6b7280", fontStyle: "italic" }}>🗺️ {accessNote}</span>
-        )}
+        {accessNote && <span style={{ fontSize: "11px", color: "#6b7280", fontStyle: "italic" }}>🗺️ {accessNote}</span>}
       </div>
       <div style={{ flex: 1, height: "1px", background: "linear-gradient(to left, transparent, rgba(42,181,160,0.3))" }} />
     </div>
@@ -133,6 +292,8 @@ export default function SearchForm() {
   const autocompleteRef = useRef<GeocoderAutocomplete | null>(null);
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
 
+  const t = T[language] || T.es;
+
   useEffect(() => {
     const container = document.getElementById("autocomplete");
     if (!container) return;
@@ -141,7 +302,6 @@ export default function SearchForm() {
     ac.on("select", (loc: any) => {
       setCity(loc.properties.city || loc.properties.name || "");
       setCountry(loc.properties.country || "");
-      // Capturar provincia/estado para evitar confusiones geográficas
       setProvince(loc.properties.state || loc.properties.county || loc.properties.region || "");
       setCityCoords({ lat: loc.properties.lat, lon: loc.properties.lon });
       setAccommodationName(""); setAccommodationCoords(null); setAccommodationTyped("");
@@ -156,22 +316,15 @@ export default function SearchForm() {
     if (!container) return;
     if (accommodationRef.current) { container.innerHTML = ""; accommodationRef.current = null; }
     if (!cityCoords) return;
-
     const ac = new GeocoderAutocomplete(container, process.env.NEXT_PUBLIC_GEOAPIFY_KEY as string, {
       bias: `proximity:${cityCoords.lon},${cityCoords.lat}`,
       filter: { circle: { lon: cityCoords.lon, lat: cityCoords.lat, radiusMeters: 30000 } },
     } as any);
-
-    ac.on("input", (value: string) => {
-      setAccommodationTyped(value);
-      if (!value) { setAccommodationName(""); setAccommodationCoords(null); }
-    });
+    ac.on("input", (value: string) => { setAccommodationTyped(value); if (!value) { setAccommodationName(""); setAccommodationCoords(null); } });
     ac.on("select", (loc: any) => {
       const name = loc.properties.name || loc.properties.formatted || loc.properties.address_line1 || "";
-      setAccommodationName(name); setAccommodationCoords({ lat: loc.properties.lat, lon: loc.properties.lon });
-      setAccommodationTyped(name);
+      setAccommodationName(name); setAccommodationCoords({ lat: loc.properties.lat, lon: loc.properties.lon }); setAccommodationTyped(name);
     });
-
     accommodationRef.current = ac;
     return () => { container.innerHTML = ""; accommodationRef.current = null; };
   }, [cityCoords, accommodationMode]);
@@ -183,41 +336,24 @@ export default function SearchForm() {
   async function generateTrip() {
     if (!city || !country) return;
     setLoading(true);
-
     let finalCoords = accommodationCoords;
     let finalName = accommodationName;
-
     if (accommodationTyped && !accommodationCoords && cityCoords) {
       const apiKey = process.env.NEXT_PUBLIC_GEOAPIFY_KEY;
       if (apiKey) {
         const result = await tryGeocode(accommodationTyped, cityCoords, apiKey);
-        if (result) {
-          finalCoords = { lat: result.lat, lon: result.lon };
-          finalName = result.name || accommodationTyped;
-          setAccommodationCoords(finalCoords); setAccommodationName(finalName);
-        }
+        if (result) { finalCoords = { lat: result.lat, lon: result.lon }; finalName = result.name || accommodationTyped; setAccommodationCoords(finalCoords); setAccommodationName(finalName); }
       }
     }
-
     try {
       const res = await fetch("/api/generate-itinerary", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          city, country, province, nationality, language,
-          tripType, interests, budget, days,
-          accommodationCoords: finalCoords,
-          accommodationName: finalName,
-          accommodationMode,
-        }),
+        body: JSON.stringify({ city, country, province, nationality, language, tripType, interests, budget, days, accommodationCoords: finalCoords, accommodationName: finalName, accommodationMode }),
       });
-      const data = await res.json();
-      setItinerary(data);
-    } catch (error) {
-      console.error("Error:", error);
-    } finally {
-      setLoading(false);
-    }
+      setItinerary(await res.json());
+    } catch (error) { console.error("Error:", error); }
+    finally { setLoading(false); }
   }
 
   const photoRotation = (i: number) => i % 2 === 0 ? "rotate(2deg)" : "rotate(-1.5deg)";
@@ -226,7 +362,7 @@ export default function SearchForm() {
   const itineraryAccommodationName = itineraryAccommodation?.name || accommodationName;
 
   const labelStyle: React.CSSProperties = {
-    display: "block", fontSize: "13px", fontWeight: 600,
+    display: "block", fontSize: "13px", fontWeight: 700,
     color: "#1a2a6c", marginBottom: "6px", letterSpacing: "0.02em",
     fontFamily: "'Plus Jakarta Sans', sans-serif",
   };
@@ -237,28 +373,122 @@ export default function SearchForm() {
 
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "24px 20px" }}>
 
-        {/* Header */}
-        <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "2.5rem" }}>
-          <Image src="/logo.png" alt="Global Home Assist" width={100} height={100} style={{ objectFit: "contain", flexShrink: 0, filter: "drop-shadow(0 4px 12px rgba(26,42,108,0.15))" }} />
-          <div>
-            <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "2.6rem", fontWeight: 700, color: "#1a2a6c", margin: 0, lineHeight: 1.1 }}>
-              Global Home Assist
-            </h1>
-            <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: "#2ab5a0", marginTop: "6px", fontSize: "0.9rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>
+        {/* ===== HEADER ===== */}
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "16px",
+          marginBottom: "2.5rem",
+          padding: "2.5rem 2rem",
+          background: "linear-gradient(135deg, rgba(26,42,108,0.82), rgba(26,42,108,0.65))",
+          backdropFilter: "blur(20px)",
+          borderRadius: "28px",
+          border: "1.5px solid rgba(255,255,255,0.2)",
+          boxShadow: "0 12px 48px rgba(26,42,108,0.35), inset 0 1px 0 rgba(255,255,255,0.15)",
+          textAlign: "center",
+        }}>
+
+          {/* Logo recortado en círculo — sin fondo blanco cuadrado */}
+          <div style={{
+            width: "140px",
+            height: "140px",
+            borderRadius: "50%",
+            overflow: "hidden",
+            boxShadow: "0 0 0 4px rgba(42,181,160,0.6), 0 0 0 9px rgba(42,181,160,0.2), 0 12px 40px rgba(0,0,0,0.3)",
+            flexShrink: 0,
+          }}>
+            <Image
+              src="/logo.png"
+              alt="Global Home Assist"
+              width={140}
+              height={140}
+              style={{ objectFit: "cover", width: "100%", height: "100%" }}
+            />
+          </div>
+
+          {/* Badge AI */}
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: "8px",
+            background: "rgba(42,181,160,0.2)",
+            border: "1.5px solid rgba(42,181,160,0.6)",
+            borderRadius: "999px",
+            padding: "5px 18px",
+          }}>
+            <div style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#2ab5a0" }} />
+            <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.95)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               AI Powered Travel Planner
-            </p>
+            </span>
+          </div>
+
+          {/* Título */}
+          <h1 style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: "clamp(2.2rem, 5vw, 3.2rem)",
+            fontWeight: 700,
+            color: "white",
+            margin: 0,
+            lineHeight: 1.05,
+            letterSpacing: "-0.02em",
+            textShadow: "0 2px 24px rgba(0,0,0,0.25)",
+          }}>
+            Global Home Assist
+          </h1>
+
+          {/* Línea decorativa + slogan */}
+          <div style={{ display: "flex", alignItems: "center", gap: "14px", justifyContent: "center" }}>
+            <div style={{ height: "2px", width: "50px", background: "linear-gradient(to right, transparent, #2ab5a0)" }} />
+            <span style={{
+              fontSize: "clamp(12px, 2vw, 15px)",
+              color: "rgba(255,255,255,0.82)",
+              fontStyle: "italic",
+              letterSpacing: "0.03em",
+              fontFamily: "'Playfair Display', serif",
+            }}>
+              {t.slogan}
+            </span>
+            <div style={{ height: "2px", width: "50px", background: "linear-gradient(to left, transparent, #2ab5a0)" }} />
           </div>
         </div>
 
-        {/* Form */}
-        <div style={{ background: "rgba(255,255,255,0.75)", backdropFilter: "blur(16px)", borderRadius: "24px", border: "1.5px solid rgba(255,255,255,0.6)", boxShadow: "0 8px 32px rgba(26,42,108,0.10)", padding: "28px", marginBottom: "2.5rem" }}>
+        {/* ===== FORMULARIO ===== */}
+        <div style={{
+          background: "rgba(255,255,255,0.93)",
+          backdropFilter: "blur(20px)",
+          borderRadius: "24px",
+          border: "1.5px solid rgba(26,42,108,0.12)",
+          boxShadow: "0 12px 40px rgba(26,42,108,0.16)",
+          padding: "28px",
+          marginBottom: "2.5rem",
+        }}>
+
+          {/* Ciudad destino destacada */}
+          <div style={{
+            background: "linear-gradient(135deg, rgba(26,42,108,0.06), rgba(42,181,160,0.08))",
+            border: "2px solid rgba(42,181,160,0.45)",
+            borderRadius: "18px",
+            padding: "20px",
+            marginBottom: "22px",
+            boxShadow: "0 4px 16px rgba(42,181,160,0.12)",
+          }}>
+            <label style={{ ...labelStyle, fontSize: "15px", color: "#2ab5a0" }}>
+              ✈️ {t.destination}
+            </label>
+            <div id="autocomplete" />
+            {city && (
+              <p style={{ fontSize: "12px", color: "#2ab5a0", fontWeight: 600, marginTop: "8px" }}>
+                📍 {city}{province ? `, ${province}` : ""}, {country}
+              </p>
+            )}
+          </div>
+
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
             <div>
-              <label style={labelStyle}>Nacionalidad</label>
-              <input type="text" value={nationality} onChange={e => setNationality(e.target.value)} className="form-input" placeholder="Ej: Argentina" />
+              <label style={labelStyle}>{t.fromCountry}</label>
+              <input type="text" value={nationality} onChange={e => setNationality(e.target.value)} className="form-input" placeholder={t.fromCountryPlaceholder} />
             </div>
             <div>
-              <label style={labelStyle}>Idioma</label>
+              <label style={labelStyle}>{t.language}</label>
               <select value={language} onChange={e => setLanguage(e.target.value)} className="form-input">
                 <option value="es">Español</option>
                 <option value="en">English</option>
@@ -269,44 +499,24 @@ export default function SearchForm() {
               </select>
             </div>
             <div>
-              <label style={labelStyle}>Tipo de viaje</label>
+              <label style={labelStyle}>{t.tripType}</label>
               <select value={tripType} onChange={e => setTripType(e.target.value)} className="form-input">
-                <option value="">Seleccionar</option>
-                <option value="placer">Placer</option>
-                <option value="negocios">Negocios</option>
-                <option value="aventura">Aventura</option>
-                <option value="familiar">Familiar</option>
-                <option value="romántico">Romántico</option>
-                <option value="gastronómico">Gastronómico</option>
-                <option value="cultural">Cultural</option>
+                <option value="">{t.tripTypeSelect}</option>
+                {Object.entries(t.tripTypes as Record<string,string>).map(([val, label]) => (
+                  <option key={val} value={val}>{label}</option>
+                ))}
               </select>
             </div>
             <div>
-              <label style={labelStyle}>Presupuesto (USD)</label>
-              <input type="number" value={budget} onChange={e => setBudget(e.target.value)} className="form-input" placeholder="Ej: 1500" min={0} />
+              <label style={labelStyle}>{t.budget}</label>
+              <input type="number" value={budget} onChange={e => setBudget(e.target.value)} className="form-input" placeholder={t.budgetPlaceholder} min={0} />
             </div>
             <div>
-              <label style={labelStyle}>Ciudad de destino</label>
-              <div id="autocomplete" />
-              {city && province && (
-                <p style={{ fontSize: "11px", color: "#2ab5a0", fontWeight: 600, marginTop: "4px" }}>
-                  📍 {city}, {province}, {country}
-                </p>
-              )}
-            </div>
-            <div>
-              <label style={labelStyle}>Intereses</label>
+              <label style={labelStyle}>{t.interests}</label>
               <select multiple value={interests} onChange={e => setInterests(Array.from(e.target.selectedOptions, o => o.value))} className="form-input" style={{ height: "110px" }}>
-                <option value="cultura">Cultura</option>
-                <option value="gastronomía">Gastronomía</option>
-                <option value="aventura">Aventura</option>
-                <option value="relax">Relax</option>
-                <option value="shopping">Shopping</option>
-                <option value="naturaleza">Naturaleza</option>
-                <option value="deportes">Deportes</option>
-                <option value="historia">Historia</option>
-                <option value="arte">Arte</option>
-                <option value="vida nocturna">Vida nocturna</option>
+                {(t.interestOptions as string[]).map((label: string, idx: number) => (
+                  <option key={idx} value={(t.interestValues as string[])[idx]}>{label}</option>
+                ))}
               </select>
             </div>
           </div>
@@ -314,18 +524,18 @@ export default function SearchForm() {
           {/* Días */}
           <div style={{ marginTop: "20px" }}>
             <label style={labelStyle}>
-              📅 Duración — <span style={{ color: "#2ab5a0" }}>{days} {days === 1 ? "día" : "días"}</span>
+              📅 {t.duration} — <span style={{ color: "#2ab5a0" }}>{days} {days === 1 ? t.day : t.days}</span>
             </label>
             <div style={{ display: "flex", gap: "8px" }}>
               {[1,2,3,4,5,6,7].map(d => (
                 <button key={d} type="button" onClick={() => setDays(d)} style={{
                   width: "42px", height: "42px", borderRadius: "10px", fontSize: "14px", fontWeight: 700,
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  background: days === d ? "linear-gradient(135deg, #1a2a6c, #2d3f8f)" : "rgba(255,255,255,0.8)",
+                  background: days === d ? "linear-gradient(135deg, #1a2a6c, #2d3f8f)" : "rgba(255,255,255,0.9)",
                   color: days === d ? "white" : "#1a2a6c",
-                  border: `1.5px solid ${days === d ? "#1a2a6c" : "#d1d5db"}`,
+                  border: `2px solid ${days === d ? "#1a2a6c" : "rgba(26,42,108,0.18)"}`,
                   cursor: "pointer", transition: "all 0.15s ease",
-                  boxShadow: days === d ? "0 4px 12px rgba(26,42,108,0.25)" : "none",
+                  boxShadow: days === d ? "0 4px 12px rgba(26,42,108,0.3)" : "0 2px 6px rgba(26,42,108,0.06)",
                 }}>
                   {d}
                 </button>
@@ -336,32 +546,32 @@ export default function SearchForm() {
           {/* Hospedaje */}
           <div style={{ marginTop: "20px" }}>
             <label style={labelStyle}>
-              🏨 Hospedaje <span style={{ fontWeight: 400, color: "#9ca3af", fontSize: "12px" }}>(opcional)</span>
+              🏨 {t.accommodation} <span style={{ fontWeight: 400, color: "#9ca3af", fontSize: "12px" }}>{t.accommodationOptional}</span>
             </label>
             <div style={{ display: "flex", gap: "8px", marginBottom: "10px" }}>
-              {[{ mode: "search" as const, label: "🔍 Hotel / Hostel" }, { mode: "address" as const, label: "📍 Dirección / Airbnb" }].map(({ mode, label }) => (
+              {([{ mode: "search" as const, label: t.accommodationSearch }, { mode: "address" as const, label: t.accommodationAddress }]).map(({ mode, label }) => (
                 <button key={mode} type="button" onClick={() => handleModeChange(mode)} style={{
                   padding: "6px 16px", borderRadius: "999px", fontSize: "12px", fontWeight: 600,
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  background: accommodationMode === mode ? "linear-gradient(135deg, #1a2a6c, #2d3f8f)" : "rgba(255,255,255,0.8)",
+                  background: accommodationMode === mode ? "linear-gradient(135deg, #1a2a6c, #2d3f8f)" : "rgba(255,255,255,0.9)",
                   color: accommodationMode === mode ? "white" : "#1a2a6c",
-                  border: `1.5px solid ${accommodationMode === mode ? "#1a2a6c" : "#d1d5db"}`,
-                  cursor: "pointer",
+                  border: `2px solid ${accommodationMode === mode ? "#1a2a6c" : "rgba(26,42,108,0.18)"}`,
+                  cursor: "pointer", boxShadow: "0 2px 6px rgba(26,42,108,0.08)",
                 }}>
                   {label}
                 </button>
               ))}
             </div>
-            {!cityCoords && <p style={{ fontSize: "12px", color: "#9ca3af", fontStyle: "italic" }}>Primero elegí la ciudad de destino</p>}
+            {!cityCoords && <p style={{ fontSize: "12px", color: "#9ca3af", fontStyle: "italic" }}>{t.accommodationHint}</p>}
             {cityCoords && (
               <>
                 <div id="accommodation-search" style={{ display: accommodationMode === "search" ? "block" : "none" }} />
                 <div id="accommodation-address" style={{ display: accommodationMode === "address" ? "block" : "none" }} />
-                {accommodationMode === "address" && <p style={{ fontSize: "11px", color: "#9ca3af", marginTop: "4px" }}>Ej: "Calle Mayor 15, Madrid"</p>}
+                {accommodationMode === "address" && <p style={{ fontSize: "11px", color: "#9ca3af", marginTop: "4px" }}>{t.accommodationAddressHint}</p>}
               </>
             )}
             {accommodationName && accommodationCoords && (
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "8px", padding: "8px 14px", background: "rgba(237,233,254,0.85)", borderRadius: "10px", border: "1.5px solid #c4b5fd" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "8px", padding: "8px 14px", background: "rgba(237,233,254,0.9)", borderRadius: "10px", border: "1.5px solid #c4b5fd", boxShadow: "0 2px 8px rgba(124,58,237,0.1)" }}>
                 <span>✅</span>
                 <span style={{ fontSize: "12px", color: "#5b21b6", fontWeight: 600 }}>{accommodationName}</span>
                 <button type="button" onClick={() => { setAccommodationName(""); setAccommodationCoords(null); setAccommodationTyped(""); }} style={{ marginLeft: "auto", color: "#9ca3af", background: "none", border: "none", cursor: "pointer", fontSize: "14px" }}>✕</button>
@@ -371,12 +581,14 @@ export default function SearchForm() {
 
           <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "24px" }}>
             <button onClick={generateTrip} disabled={loading} className="btn-generate">
-              {loading ? "✈️ Generando itinerario..." : "✈️ Generar itinerario"}
+              {loading ? t.generating : t.generate}
             </button>
           </div>
+
+          <LegalDisclaimer language={language} />
         </div>
 
-        {/* Itinerario */}
+        {/* ===== ITINERARIO ===== */}
         {itinerary && itinerary.days && (
           <div style={{ display: "flex", flexDirection: "column", gap: "48px" }}>
             {itinerary.days.map((day: any, dayIndex: number) => (
@@ -392,7 +604,7 @@ export default function SearchForm() {
 
                 <div>
                   {day.activities.map((activity: any, i: number) => {
-                    const links = buildAffiliateLinks(activity.place_name, itinerary.destination, itinerary.country);
+                    const links = buildAffiliateLinks(activity.place_name, itinerary.destination);
                     return (
                       <div key={i}>
                         {i === 0 && activity.transport && (
@@ -406,53 +618,37 @@ export default function SearchForm() {
                                 {activity.place_name}
                               </h3>
                               {activity.mustSee && (
-                                <span style={{ fontSize: "10px", background: "linear-gradient(135deg, #fef3c7, #fde68a)", color: "#92400e", padding: "3px 10px", borderRadius: "999px", fontWeight: 700, flexShrink: 0, border: "1px solid #fbbf24" }}>
-                                  ⭐ Imperdible
+                                <span style={{ fontSize: "10px", background: "linear-gradient(135deg, #fef3c7, #fde68a)", color: "#92400e", padding: "3px 10px", borderRadius: "999px", fontWeight: 700, flexShrink: 0, border: "1px solid #fbbf24", boxShadow: "0 2px 6px rgba(251,191,36,0.3)" }}>
+                                  {t.mustSee}
                                 </span>
                               )}
                             </div>
-
-                            <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: "#6b7280", fontSize: "13px", lineHeight: 1.6, marginBottom: "12px" }}>
+                            <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: "#4b5563", fontSize: "13px", lineHeight: 1.6, marginBottom: "12px" }}>
                               {activity.short_description}
                             </p>
-
                             {activity.visit?.best_time_to_visit && (
                               <p style={{ fontSize: "12px", color: "#2ab5a0", fontWeight: 600, marginBottom: "8px" }}>
-                                🕐 {activity.visit.best_time_to_visit} · {activity.visit.recommended_duration}
+                                🕐 {t.bestTime}: {activity.visit.best_time_to_visit} · {activity.visit.recommended_duration}
                               </p>
                             )}
-
                             {activity.tickets?.price_estimate && (
-                              <p style={{ fontSize: "13px", color: "#1a2a6c", fontWeight: 600, marginBottom: "12px" }}>
+                              <p style={{ fontSize: "13px", color: "#1a2a6c", fontWeight: 700, marginBottom: "12px" }}>
                                 💰 {activity.tickets.price_estimate}
                               </p>
                             )}
-
-                            {/* Links de afiliado */}
                             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "12px" }}>
                               {activity.tickets?.official_website && (
-                                <a href={activity.tickets.official_website} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#eef0f8", color: "#1a2a6c", fontWeight: 600, textDecoration: "none", border: "1px solid #c7cce8" }}>
-                                  🌐 Sitio oficial
-                                </a>
+                                <a href={activity.tickets.official_website} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#eef0f8", color: "#1a2a6c", fontWeight: 600, textDecoration: "none", border: "1px solid #c7cce8" }}>{t.official}</a>
                               )}
-                              <a href={links.getyourguide} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fff7ed", color: "#ea580c", fontWeight: 600, textDecoration: "none", border: "1px solid #fed7aa" }}>
-                                🎯 GetYourGuide
-                              </a>
-                              <a href={links.viator} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#f5f3ff", color: "#7c3aed", fontWeight: 600, textDecoration: "none", border: "1px solid #ddd6fe" }}>
-                                🧭 Viator
-                              </a>
-                              <a href={links.klook} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fef2f2", color: "#e63946", fontWeight: 600, textDecoration: "none", border: "1px solid #fecaca" }}>
-                                🎪 Klook
-                              </a>
-                              <a href={links.tripadvisor} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#f0fdf4", color: "#16a34a", fontWeight: 600, textDecoration: "none", border: "1px solid #bbf7d0" }}>
-                                🦉 TripAdvisor
-                              </a>
+                              <a href={links.getyourguide} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fff7ed", color: "#ea580c", fontWeight: 600, textDecoration: "none", border: "1px solid #fed7aa" }}>🎯 GetYourGuide</a>
+                              <a href={links.viator} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#f5f3ff", color: "#7c3aed", fontWeight: 600, textDecoration: "none", border: "1px solid #ddd6fe" }}>🧭 Viator</a>
+                              <a href={links.klook} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fef2f2", color: "#e63946", fontWeight: 600, textDecoration: "none", border: "1px solid #fecaca" }}>🎪 Klook</a>
+                              <a href={links.tripadvisor} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#f0fdf4", color: "#16a34a", fontWeight: 600, textDecoration: "none", border: "1px solid #bbf7d0" }}>🦉 TripAdvisor</a>
                             </div>
-
                             {activity.tips && activity.tips.length > 0 && (
                               <div style={{ background: "rgba(42,181,160,0.08)", borderLeft: "3px solid #2ab5a0", borderRadius: "0 8px 8px 0", padding: "8px 12px" }}>
                                 {activity.tips.map((tip: string, j: number) => (
-                                  <p key={j} style={{ fontSize: "12px", color: "#374151", margin: 0, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>💡 {tip}</p>
+                                  <p key={j} style={{ fontSize: "12px", color: "#374151", margin: 0 }}>💡 {tip}</p>
                                 ))}
                               </div>
                             )}
@@ -461,7 +657,7 @@ export default function SearchForm() {
                           {activity.media?.image_url && (
                             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 24px 20px 8px", flexShrink: 0 }}>
                               <div
-                                style={{ transform: photoRotation(i), transition: "transform 0.3s ease", backgroundColor: "#fff", padding: "8px 8px 28px 8px", boxShadow: "3px 4px 16px rgba(26,42,108,0.20)", borderRadius: "2px", width: "210px", cursor: "pointer" }}
+                                style={{ transform: photoRotation(i), transition: "transform 0.3s ease", backgroundColor: "#fff", padding: "8px 8px 28px 8px", boxShadow: "3px 4px 20px rgba(26,42,108,0.22)", borderRadius: "2px", width: "210px", cursor: "pointer" }}
                                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "rotate(0deg) scale(1.05)"; }}
                                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = photoRotation(i); }}
                               >
@@ -488,17 +684,19 @@ export default function SearchForm() {
 
             {allActivities.length > 0 && (
               <div>
-                <h2 className="section-title" style={{ fontSize: "1.5rem", marginBottom: "16px" }}>🗺️ Mapa del viaje</h2>
+                <h2 className="section-title" style={{ fontSize: "1.5rem", marginBottom: "16px" }}>{t.mapTitle}</h2>
                 <TravelMap activities={allActivities} language={language} accommodation={itineraryAccommodation} />
               </div>
             )}
 
             <ServicesSection city={city} country={country} />
+            <MedicalAssistance city={city} country={country} language={language} />
             <SOSButton city={city} country={country} emergencyNumbers={emergencyNumbers} />
 
             {cityCoords && (
               <DestinationInfo city={city} country={country} nationality={nationality || "Argentina"} language={language} latitude={cityCoords.lat} longitude={cityCoords.lon} onEmergencyNumbers={setEmergencyNumbers} />
             )}
+
           </div>
         )}
       </div>
