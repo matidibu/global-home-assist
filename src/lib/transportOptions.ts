@@ -13,6 +13,16 @@ function haversineKm(
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
+function estimateBike(distKm: number): number | null {
+  if (distKm < 0.3) return null;
+  return Math.round((distKm * 1.35 / 15) * 60);
+}
+
+function estimateCar(distKm: number): number | null {
+  if (distKm < 0.5) return null;
+  return Math.round((distKm * 1.35 / 30) * 60);
+}
+
 export async function getTransportOptions(
   from: { lat: number; lon: number },
   to: { lat: number; lon: number },
@@ -20,27 +30,20 @@ export async function getTransportOptions(
 ) {
   const distKm = haversineKm(from.lat, from.lon, to.lat, to.lon);
 
-  // Trayecto a pie dentro del mismo sitio — no llamar a Geoapify
+  if (distKm < 0.05) return null;
+
   if (transitType === "walk") {
     const walkMinutes = distKm < 0.1
       ? 10
-      : Math.round((distKm / 5) * 60);
+      : Math.round((distKm * 1.35 / 5) * 60);
     return { walk: walkMinutes, bike: null, car: null };
   }
 
-  // Trayecto aéreo
   if (transitType === "air") {
     const flightMinutes = Math.round((distKm / 700) * 60) + 60;
-    return {
-      walk: null,
-      bike: null,
-      car: null,
-      ferry: null,
-      flight: flightMinutes,
-    };
+    return { walk: null, bike: null, car: null, ferry: null, flight: flightMinutes };
   }
 
-  // Trayecto acuático — ferry y vuelo si es muy largo
   if (transitType === "water") {
     if (distKm < 0.5) return null;
     const ferryMinutes = Math.round((distKm / 40) * 60);
@@ -56,11 +59,14 @@ export async function getTransportOptions(
     };
   }
 
-  // Trayecto terrestre — llamar a Geoapify
   const apiKey = process.env.GEOAPIFY_KEY;
   if (!apiKey) {
-    console.error("Geoapify API key is missing");
-    return { walk: null, bike: null, car: null };
+    const walkMin = Math.round((distKm * 1.35 / 5) * 60);
+    return {
+      walk: walkMin,
+      bike: estimateBike(distKm),
+      car: estimateCar(distKm),
+    };
   }
 
   const baseUrl = "https://api.geoapify.com/v1/routing";
@@ -88,18 +94,15 @@ export async function getTransportOptions(
     getRoute("drive"),
   ]);
 
-  // Si todas las rutas terrestres fallan, intentar como agua
   if (walk === null && bike === null && car === null) {
     if (distKm < 0.5) return null;
     const ferryMinutes = Math.round((distKm / 40) * 60);
-    return {
-      walk: null,
-      bike: null,
-      car: null,
-      ferry: ferryMinutes > 0 ? ferryMinutes : null,
-      flight: null,
-    };
+    return { walk: null, bike: null, car: null, ferry: ferryMinutes > 0 ? ferryMinutes : null, flight: null };
   }
 
-  return { walk, bike, car };
+  return {
+    walk,
+    bike: bike ?? estimateBike(distKm),
+    car: car ?? estimateCar(distKm),
+  };
 }

@@ -15,7 +15,6 @@ function mapPlaceToActivity(place: Record<string, unknown>, city: string, countr
   const bestTime = typeof place.bestTime === 'string' ? place.bestTime : 'Anytime';
   const price = typeof place.price === 'string' ? place.price : '';
   const officialLink = typeof place.officialLink === 'string' ? place.officialLink : '';
-  const bookingLink = typeof place.bookingLink === 'string' ? place.bookingLink : '';
   const tip = typeof place.tip === 'string' ? place.tip : '';
 
   return {
@@ -37,20 +36,23 @@ function mapPlaceToActivity(place: Record<string, unknown>, city: string, countr
       price_estimate: price,
       official_website: officialLink,
     },
-    booking: {
-      getyourguide: bookingLink,
-      viator: '',
-    },
-    media: {
-      image_url: '',
-    },
+    booking: { getyourguide: '', viator: '' },
+    media: { image_url: '' },
     tips: tip ? [tip] : [],
   };
 }
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
+const tripTypeInstructions: Record<string, string> = {
+  placer: "Mix iconic landmarks with leisure activities, beaches, parks, and entertainment. Balance sightseeing with relaxation.",
+  negocios: "Focus on business-friendly areas, co-working spaces, business districts, top restaurants for meetings, and efficient transport hubs. Include some iconic spots for after-work.",
+  aventura: "Prioritize outdoor activities, extreme sports, hiking, climbing, water sports, and nature experiences. Include iconic landmarks only if they are adventurous or scenic.",
+  familiar: "Choose family-friendly attractions: theme parks, zoos, aquariums, interactive museums, parks, and child-safe activities. Include iconic landmarks that kids enjoy.",
+  romántico: "Select romantic settings: rooftop bars, scenic viewpoints at sunset, candlelit restaurants, gardens, boat rides, and art venues. Iconic spots should be visited at golden hour.",
+  gastronómico: "Prioritize food markets, Michelin-starred restaurants, local street food, wine and cheese tastings, cooking classes, and culinary neighborhoods. Include iconic spots near food hubs.",
+  cultural: "Focus on museums, art galleries, historical sites, theaters, local festivals, and cultural neighborhoods. Iconic landmarks are essential.",
+};
+
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 export async function POST(req: Request) {
   const missingKeys: string[] = [];
@@ -63,27 +65,59 @@ export async function POST(req: Request) {
 
   try {
     const body = await req.json();
-    const { city, country, days, language } = body;
+    const { city, country, province, days, language, tripType, interests, accommodationCoords, accommodationName, accommodationMode } = body;
 
     const languageLabel =
       language === 'es' ? 'Spanish' :
       language === 'fr' ? 'French' :
       language === 'it' ? 'Italian' :
       language === 'de' ? 'German' :
-      language === 'pt' ? 'Portuguese' :
-      'English';
+      language === 'pt' ? 'Portuguese' : 'English';
+
+    const tripInstruction = tripType && tripTypeInstructions[tripType]
+      ? tripTypeInstructions[tripType]
+      : "Create a balanced itinerary mixing iconic landmarks with local experiences.";
+
+    const interestsList = Array.isArray(interests) && interests.length > 0
+      ? `The traveler is especially interested in: ${interests.join(", ")}.`
+      : "";
+
+    // Construir el identificador completo de la ciudad
+    const fullCityName = province
+      ? `${city}, ${province}, ${country}`
+      : `${city}, ${country}`;
 
     const prompt = `
-You are a professional travel planner.
-Create a travel itinerary for ${city}, ${country} for ${days} days.
+You are an expert travel planner with deep knowledge of ${fullCityName}.
+Create a ${days}-day travel itinerary for ${fullCityName}.
 IMPORTANT: Write ALL text fields (description, tip, accessNote) in ${languageLabel}.
 Return ONLY valid JSON. No explanations, no markdown, no preamble.
+
+TRIP TYPE: ${tripType || "general"}
+TRIP TYPE INSTRUCTIONS: ${tripInstruction}
+${interestsList}
+
+=== CRITICAL GEOGRAPHIC CONSTRAINT ===
+ALL places MUST be physically located within the city limits of ${city}${province ? ` (${province})` : ""}, ${country}.
+This is NON-NEGOTIABLE. You MUST NOT include places from any other city, region, or province.
+${province ? `For example: if the city is ${city} in ${province}, do NOT suggest places from other provinces or cities, even if they are famous or nearby.` : ""}
+Before including any place, verify: "Is this place actually located in ${city}${province ? `, ${province}` : ""}?" If not, replace it with a place that IS in ${city}.
+If ${city} has fewer iconic landmarks than needed, use local parks, neighborhoods, restaurants, cultural centers, or other genuine local attractions — but they MUST be in ${city}.
+=== END GEOGRAPHIC CONSTRAINT ===
+
+CRITICAL RULES FOR PLACE SELECTION:
+1. ALWAYS include the most iconic landmarks actually located in ${city} (at least 1 per day).
+2. Remaining places must match the trip type and traveler interests.
+3. Do NOT repeat the same place across different days.
+4. Optimize the order of places each day to minimize travel time.
+5. Suggest the best time of day for each place.
 
 Structure:
 {
   "days": [
     {
       "day": 1,
+      "theme": "Short theme for this day in ${languageLabel}",
       "places": [
         {
           "name": "Place Name",
@@ -92,13 +126,13 @@ Structure:
           "duration": "1 hour",
           "bestTime": "Morning",
           "price": "€10",
-          "tip": "One useful tip.",
-          "coordinates": { "lat": 38.693, "lng": -9.213 },
+          "tip": "One useful insider tip.",
+          "coordinates": { "lat": -32.946, "lng": -60.639 },
           "officialLink": "https://example.com",
-          "bookingLink": "https://getyourguide.com/example",
           "transitType": "land",
-          "islandName": "main island name",
-          "accessNote": ""
+          "islandName": "${city}",
+          "accessNote": "",
+          "mustSee": true
         }
       ]
     }
@@ -107,20 +141,17 @@ Structure:
 
 Rules:
 - Exactly ${days} days, exactly 3 places per day.
+- mustSee: true for iconic landmarks of ${city}, false for others.
 - description: 1 sentence max.
-- tip: 1 sentence max.
-- coordinates: use exactly 3 decimal places (e.g. 38.693, not 38.69 or 38.6923).
+- tip: 1 sentence max, genuine insider tip about this specific place in ${city}.
+- coordinates: exactly 3 decimal places. Coordinates MUST match the actual location in ${city}.
 - price: include currency symbol or "Free".
-- islandName: MANDATORY. The name of the specific island or landmass where this place is located. For archipelagos, use the specific island name (e.g. "Koror", "Peleliu", "Babeldaob" for Palau). For mainland destinations use the city name.
-- transitType: MANDATORY. How to get FROM THE PREVIOUS PLACE to this one:
-  * "walk" — within the same site/complex reachable on foot
-  * "land" — same island, reachable by car/bike/foot
-  * "water" — requires ferry or boat crossing to a different island
-  * "air" — requires a flight
-  * First place of each day always uses "land".
-- accessNote: if transitType is "water" or "air", write a short note in ${languageLabel} explaining how to get there. Otherwise leave "".
-- Return ONLY the JSON object. Nothing else.
-`
+- officialLink: ONLY include if you are 100% certain the URL exists. Otherwise leave "".
+- islandName: "${city}" for all places (or specific island name for archipelagos).
+- transitType: "walk", "land", "water", or "air". First place of each day uses "land".
+- accessNote: only if transitType is "water" or "air". Otherwise "".
+- Return ONLY the JSON object.
+`;
 
     const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
@@ -132,19 +163,14 @@ Rules:
 
     const finishReason = completion.choices[0].finish_reason;
     if (finishReason === "length") {
-      return Response.json(
-        { error: "El itinerario fue cortado por límite de tokens. Intentá con menos días." },
-        { status: 500 }
-      );
+      return Response.json({ error: "El itinerario fue cortado. Intentá con menos días." }, { status: 500 });
     }
 
     let text = completion.choices[0].message.content || "";
     text = text.replace(/```json/g, "").replace(/```/g, "").trim();
     const jsonStart = text.indexOf('{');
     const jsonEnd = text.lastIndexOf('}');
-    if (jsonStart !== -1 && jsonEnd > jsonStart) {
-      text = text.substring(jsonStart, jsonEnd + 1);
-    }
+    if (jsonStart !== -1 && jsonEnd > jsonStart) text = text.substring(jsonStart, jsonEnd + 1);
 
     const aiData = JSON.parse(text);
 
@@ -152,9 +178,13 @@ Rules:
       destination: city,
       country,
       trip_duration_days: days,
-      summary: `${days} days in ${city}, ${country}`,
+      summary: `${days} days in ${fullCityName}`,
       days: []
     };
+
+    const hotelCoords: { lat: number; lon: number } | null = accommodationCoords
+      ? { lat: accommodationCoords.lat, lon: accommodationCoords.lon }
+      : null;
 
     for (const day of aiData.days) {
       const activities: Activity[] = [];
@@ -166,16 +196,10 @@ Rules:
         let image_url = "";
         if (process.env.PEXELS_API_KEY) {
           try {
-            let imgTry = await searchImage(p.name) || "";
-            if (imgTry && usedImages.has(imgTry)) {
-              imgTry = await searchImage(`${p.name} ${city}`) || "";
-            }
-            if (imgTry && usedImages.has(imgTry)) {
-              imgTry = await searchImage(`${p.category} ${city}`) || "";
-            }
-            if (imgTry && usedImages.has(imgTry)) {
-              imgTry = "";
-            }
+            let imgTry = await searchImage(`${p.name} ${city}`) || "";
+            if (!imgTry || usedImages.has(imgTry)) imgTry = await searchImage(`${p.name}`) || "";
+            if (!imgTry || usedImages.has(imgTry)) imgTry = await searchImage(`${p.category} ${city}`) || "";
+            if (!imgTry || usedImages.has(imgTry)) imgTry = "";
             image_url = imgTry;
             if (image_url) usedImages.add(image_url);
           } catch (err) {
@@ -183,39 +207,31 @@ Rules:
           }
         }
 
-        const activity: Activity & { transport?: unknown; accessNote?: string } = {
+        const activity: Activity & { transport?: unknown; accessNote?: string; fromAccommodation?: boolean; mustSee?: boolean } = {
           ...mapPlaceToActivity(p, city, country),
           media: { image_url },
           accessNote: typeof p.accessNote === 'string' ? p.accessNote : '',
+          mustSee: p.mustSee === true,
         };
 
+        let fromCoords: { lat: number; lon: number } | null = null;
+        if (i === 0) {
+          if (hotelCoords) { fromCoords = hotelCoords; activity.fromAccommodation = true; }
+        } else {
+          const prevPlace = day.places[i - 1];
+          if (prevPlace?.coordinates) fromCoords = { lat: prevPlace.coordinates.lat, lon: prevPlace.coordinates.lng };
+        }
+
         const prevPlace = i > 0 ? day.places[i - 1] : null;
-        const prevDayData = aiData.days[aiData.days.indexOf(day) - 1];
-        const prevDayLastPlace = prevDayData?.places?.[prevDayData.places.length - 1];
-
-        const fromCoords = prevPlace?.coordinates
-          ? { lat: prevPlace.coordinates.lat, lon: prevPlace.coordinates.lng }
-          : prevDayLastPlace?.coordinates
-            ? { lat: prevDayLastPlace.coordinates.lat, lon: prevDayLastPlace.coordinates.lng }
-            : null;
-
-        const prevIsland = prevPlace?.islandName || prevDayLastPlace?.islandName || null;
+        const prevIsland = prevPlace?.islandName || null;
         const currIsland = typeof p.islandName === 'string' ? p.islandName : null;
 
         let transitType: "walk" | "land" | "water" | "air" =
-          ["walk", "land", "water", "air"].includes(p.transitType)
-            ? p.transitType
-            : "land";
+          ["walk", "land", "water", "air"].includes(p.transitType) ? p.transitType : "land";
 
-        if (
-          prevIsland &&
-          currIsland &&
-          prevIsland.toLowerCase() !== currIsland.toLowerCase()
-        ) {
+        if (prevIsland && currIsland && prevIsland.toLowerCase() !== currIsland.toLowerCase()) {
           transitType = "water";
-          if (!activity.accessNote) {
-            activity.accessNote = `Ferry desde ${prevIsland} a ${currIsland}`;
-          }
+          if (!activity.accessNote) activity.accessNote = `Ferry desde ${prevIsland} a ${currIsland}`;
         }
 
         if (fromCoords && p.coordinates) {
@@ -232,22 +248,18 @@ Rules:
         activities.push(activity);
       }
 
-      const dayPlan: DayPlan = {
-        day: day.day,
-        theme: day.theme || "",
-        activities
-      };
-
+      const dayPlan: DayPlan = { day: day.day, theme: day.theme || "", activities };
       itinerary.days.push(dayPlan);
+    }
+
+    if (hotelCoords && accommodationName) {
+      (itinerary as any).accommodation = { name: accommodationName, coordinates: hotelCoords, mode: accommodationMode || "search" };
     }
 
     return Response.json(itinerary);
 
   } catch (error) {
     console.error(error);
-    return Response.json(
-      { error: "Error generating itinerary", details: (error as Error).message || error },
-      { status: 500 }
-    );
+    return Response.json({ error: "Error generating itinerary", details: (error as Error).message || error }, { status: 500 });
   }
 }

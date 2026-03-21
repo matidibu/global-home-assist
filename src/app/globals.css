@@ -1,5 +1,168 @@
-@import "@geoapify/geocoder-autocomplete/styles/minimal.css";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --brand-navy: #1a2a6c;
+  --brand-teal: #2ab5a0;
+  --brand-teal-light: #e6f7f5;
+  --brand-teal-mid: #b2e8e2;
+  --brand-navy-light: #eef0f8;
+  --card-bg: rgba(255, 255, 255, 0.82);
+  --card-border: rgba(255, 255, 255, 0.6);
+  --card-shadow: 0 8px 32px rgba(26, 42, 108, 0.10), 0 2px 8px rgba(26, 42, 108, 0.06);
+  --card-shadow-hover: 0 16px 48px rgba(26, 42, 108, 0.18), 0 4px 16px rgba(26, 42, 108, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Geoapify autocomplete styling */
+.geoapify-autocomplete-input {
+  width: 100% !important;
+  border: 1.5px solid #d1d5db !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+  color: #1a2a6c !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  outline: none !important;
+}
+
+.geoapify-autocomplete-input:focus {
+  border-color: #2ab5a0 !important;
+  box-shadow: 0 0 0 3px rgba(42, 181, 160, 0.15) !important;
+}
+
+.geoapify-autocomplete-items {
+  border-radius: 12px !important;
+  border: 1.5px solid #e5e7eb !important;
+  box-shadow: 0 8px 24px rgba(26, 42, 108, 0.12) !important;
+  overflow: hidden !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.geoapify-autocomplete-item:hover {
+  background: var(--brand-teal-light) !important;
+}
+
+/* Card hover animation */
+.activity-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid var(--card-border);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  overflow: visible;
+}
+
+.activity-card:hover {
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(42, 181, 160, 0.4);
+}
+
+/* Form inputs */
+.form-input {
+  width: 100%;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  color: #1a2a6c;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #2ab5a0;
+  box-shadow: 0 0 0 3px rgba(42, 181, 160, 0.15);
+}
+
+/* Section headers */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--brand-navy);
+}
+
+/* Day badge */
+.day-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--brand-navy), #2d3f8f);
+  color: white;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+/* Transport divider pill */
+.transport-pill {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Generate button */
+.btn-generate {
+  background: linear-gradient(135deg, var(--brand-navy), #2d3f8f);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 16px rgba(26, 42, 108, 0.3);
+  letter-spacing: 0.02em;
+}
+
+.btn-generate:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(26, 42, 108, 0.4);
+}
+
+.btn-generate:disabled {
+  background: #9ca3af;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(42, 181, 160, 0.4);
+  border-radius: 999px;
+}

@@ -57,9 +57,10 @@ interface Props {
   language: string;
   latitude: number;
   longitude: number;
+  onEmergencyNumbers?: (numbers: { general: string; police: string; ambulance: string; fire: string }) => void;
 }
 
-export default function DestinationInfo({ city, country, nationality, language, latitude, longitude }: Props) {
+export default function DestinationInfo({ city, country, nationality, language, latitude, longitude, onEmergencyNumbers }: Props) {
   const [data, setData] = useState<DestinationData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -76,9 +77,16 @@ export default function DestinationInfo({ city, country, nationality, language, 
       body: JSON.stringify({ city, country, nationality, language, latitude, longitude }),
     })
       .then(r => r.json())
-      .then(d => { setData(d); setLoading(false); })
+      .then(d => {
+        setData(d);
+        setLoading(false);
+        // Pasar números de emergencia al componente padre para el SOS
+        if (d.emergency_numbers && onEmergencyNumbers) {
+          onEmergencyNumbers(d.emergency_numbers);
+        }
+      })
       .catch(() => { setError(true); setLoading(false); });
-  }, [city, country, nationality, language, latitude, longitude]);
+  }, [city, country, nationality, language, latitude, longitude, onEmergencyNumbers]);
 
   const cardStyle: React.CSSProperties = {
     background: "rgba(255,255,255,0.92)",
@@ -122,7 +130,6 @@ export default function DestinationInfo({ city, country, nationality, language, 
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "16px" }}>
 
-        {/* Clima */}
         {data.weather && (
           <div style={cardStyle}>
             <div style={titleStyle}>🌤️ Clima actual</div>
@@ -141,7 +148,6 @@ export default function DestinationInfo({ city, country, nationality, language, 
               <span>💧 {data.weather.current.humidity}%</span>
               <span>💨 {data.weather.current.windspeed} km/h</span>
             </div>
-            {/* Pronóstico 3 días */}
             <div style={{ display: "flex", gap: "8px" }}>
               {data.weather.forecast.map((day, i) => (
                 <div key={i} style={{
@@ -163,7 +169,6 @@ export default function DestinationInfo({ city, country, nationality, language, 
           </div>
         )}
 
-        {/* Moneda y casas de cambio */}
         {data.currency && (
           <div style={cardStyle}>
             <div style={titleStyle}>💱 Moneda y cambio</div>
@@ -190,7 +195,6 @@ export default function DestinationInfo({ city, country, nationality, language, 
           </div>
         )}
 
-        {/* Consulado */}
         {data.consulate && (
           <div style={cardStyle}>
             <div style={titleStyle}>🏛️ Consulado / Embajada</div>
@@ -217,7 +221,6 @@ export default function DestinationInfo({ city, country, nationality, language, 
           </div>
         )}
 
-        {/* Hospitales */}
         {data.hospitals && data.hospitals.length > 0 && (
           <div style={cardStyle}>
             <div style={titleStyle}>🏥 Hospitales</div>
@@ -247,12 +250,9 @@ export default function DestinationInfo({ city, country, nationality, language, 
           </div>
         )}
 
-        {/* Policía y emergencias */}
         {(data.police || data.emergency_numbers) && (
           <div style={cardStyle}>
             <div style={titleStyle}>🚨 Emergencias</div>
-
-            {/* Números de emergencia */}
             {data.emergency_numbers && (
               <div style={{
                 display: "grid",
@@ -278,8 +278,6 @@ export default function DestinationInfo({ city, country, nationality, language, 
                 ))}
               </div>
             )}
-
-            {/* Comisaría */}
             {data.police?.map((p, i) => (
               <div key={i} style={{
                 background: "#f9fafb",
@@ -294,7 +292,6 @@ export default function DestinationInfo({ city, country, nationality, language, 
           </div>
         )}
 
-        {/* Tips útiles */}
         {data.useful_tips && data.useful_tips.length > 0 && (
           <div style={cardStyle}>
             <div style={titleStyle}>💡 Tips útiles</div>
