@@ -150,3 +150,23 @@ html, body {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(42,181,160,0.4); border-radius: 999px; }
+
+/* Loading screen animations */
+@keyframes loadingFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes loadingFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes loadingBar {
+  0% { width: 0%; }
+  40% { width: 55%; }
+  70% { width: 78%; }
+  90% { width: 90%; }
+  100% { width: 95%; }
+}
+.loading-float { animation: loadingFloat 2.4s ease-in-out infinite; }
+.loading-fadein { animation: loadingFadeIn 0.45s ease forwards; }
+.loading-bar { animation: loadingBar 28s ease-out forwards; }

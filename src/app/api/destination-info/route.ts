@@ -46,6 +46,12 @@ Write ALL text in ${languageLabel}.
 Return ONLY valid JSON. No explanations, no markdown.
 
 {
+  "travel_advisory": {
+    "level": "Normal",
+    "security_alerts": [],
+    "health_alerts": [],
+    "recommendation": "Brief overall recommendation for travelers"
+  },
   "currency": {
     "local_currency": "Euro",
     "symbol": "€",
@@ -82,6 +88,10 @@ Return ONLY valid JSON. No explanations, no markdown.
 }
 
 Rules:
+- travel_advisory.level: one of "Normal", "Precaución", "Alerta", "Crítico" based on actual current safety situation for ${country}/${city}. Use your knowledge of ongoing conflicts, civil unrest, terrorism risk, and crime levels.
+- travel_advisory.security_alerts: array of 0–3 concise alerts about active conflicts, terrorism, civil unrest, crime, or political instability relevant to ${city}, ${country}. Empty array if none. Be factual and specific (e.g. "Active armed conflict in border regions", "High petty crime in tourist areas").
+- travel_advisory.health_alerts: array of 0–2 concise alerts about active disease outbreaks, endemic health risks, or required vaccinations relevant to ${country}. Empty array if none. Be factual (e.g. "Malaria risk in rural areas — prophylaxis recommended", "Yellow fever vaccination required for entry").
+- travel_advisory.recommendation: 1–2 sentences summarizing the overall safety and health situation for a tourist.
 - exchange_offices: 2 entries max
 - hospitals: 2 entries max, real hospitals in ${city}
 - police: 1 entry
@@ -93,7 +103,7 @@ Rules:
       model: "gpt-4o-mini",
       messages: [{ role: "user", content: prompt }],
       temperature: 0.3,
-      max_tokens: 1000,
+      max_tokens: 1400,
       response_format: { type: "json_object" },
     });
 

@@ -9,7 +9,15 @@ interface WeatherDay {
   code: number;
 }
 
+interface TravelAdvisory {
+  level: "Normal" | "Precaución" | "Alerta" | "Crítico";
+  security_alerts: string[];
+  health_alerts: string[];
+  recommendation: string;
+}
+
 interface DestinationData {
+  travel_advisory?: TravelAdvisory;
   weather?: {
     current: { temp: number; humidity: number; windspeed: number; code: number };
     forecast: WeatherDay[];
@@ -127,6 +135,68 @@ export default function DestinationInfo({ city, country, nationality, language, 
       <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#111827", margin: "0 0 24px 0" }}>
         🌍 Información del destino — {city}
       </h2>
+
+      {data.travel_advisory && (() => {
+        const adv = data.travel_advisory!;
+        const levelConfig: Record<string, { bg: string; border: string; text: string; dot: string; icon: string }> = {
+          "Normal":    { bg: "#f0fdf4", border: "#bbf7d0", text: "#166534", dot: "#16a34a", icon: "✅" },
+          "Precaución":{ bg: "#fffbeb", border: "#fde68a", text: "#92400e", dot: "#d97706", icon: "⚠️" },
+          "Alerta":    { bg: "#fff7ed", border: "#fed7aa", text: "#9a3412", dot: "#ea580c", icon: "🔶" },
+          "Crítico":   { bg: "#fef2f2", border: "#fecaca", text: "#991b1b", dot: "#dc2626", icon: "🚨" },
+        };
+        const cfg = levelConfig[adv.level] ?? levelConfig["Normal"];
+        const hasAlerts = (adv.security_alerts?.length ?? 0) > 0 || (adv.health_alerts?.length ?? 0) > 0;
+        return (
+          <div style={{
+            background: cfg.bg,
+            border: `1.5px solid ${cfg.border}`,
+            borderRadius: "12px",
+            padding: "20px",
+            marginBottom: "20px",
+          }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: hasAlerts ? "14px" : "8px" }}>
+              <span style={{ fontSize: "20px" }}>{cfg.icon}</span>
+              <div>
+                <div style={{ fontSize: "15px", fontWeight: 700, color: cfg.text }}>
+                  Nivel de alerta: {adv.level}
+                </div>
+                <div style={{ fontSize: "13px", color: cfg.text, opacity: 0.85, marginTop: "2px" }}>
+                  {adv.recommendation}
+                </div>
+              </div>
+            </div>
+            {adv.security_alerts && adv.security_alerts.length > 0 && (
+              <div style={{ marginBottom: "10px" }}>
+                <div style={{ fontSize: "12px", fontWeight: 600, color: cfg.text, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                  Alertas de seguridad
+                </div>
+                {adv.security_alerts.map((alert, i) => (
+                  <div key={i} style={{ display: "flex", gap: "8px", alignItems: "flex-start", marginBottom: "5px" }}>
+                    <span style={{ color: cfg.dot, fontSize: "10px", marginTop: "4px", flexShrink: 0 }}>●</span>
+                    <span style={{ fontSize: "13px", color: cfg.text }}>{alert}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            {adv.health_alerts && adv.health_alerts.length > 0 && (
+              <div style={{ marginBottom: "6px" }}>
+                <div style={{ fontSize: "12px", fontWeight: 600, color: cfg.text, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                  Alertas de salud
+                </div>
+                {adv.health_alerts.map((alert, i) => (
+                  <div key={i} style={{ display: "flex", gap: "8px", alignItems: "flex-start", marginBottom: "5px" }}>
+                    <span style={{ fontSize: "13px", flexShrink: 0 }}>🦠</span>
+                    <span style={{ fontSize: "13px", color: cfg.text }}>{alert}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div style={{ fontSize: "11px", color: cfg.text, opacity: 0.6, marginTop: "10px", fontStyle: "italic" }}>
+              Información basada en datos disponibles. Verificá con fuentes oficiales antes de viajar.
+            </div>
+          </div>
+        );
+      })()}
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "16px" }}>
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import OpenAI from "openai"
 import type { Itinerary, DayPlan, Activity } from "@/types/itinerary"
-import { searchImage } from "@/lib/imageSearch"
+import { searchPlaceImage } from "@/lib/imageSearch"
 import { getTransportOptions } from "@/lib/transportOptions"
 
 function mapPlaceToActivity(place: Record<string, unknown>, city: string, country: string): Activity {
@@ -140,6 +140,7 @@ Structure:
 
 Rules:
 - Exactly ${days} days, exactly 3 places per day.
+- NEARBY PLACES: If two attractions are in the same complex or within ~200m of each other (e.g. Burj Khalifa + Dubai Mall, Louvre + Tuileries, Vatican Museums + St. Peter's Basilica), combine them into ONE activity. Use the most iconic as the main name and mention the adjacent attraction in the description or tip. Never list two places that share the same entrance or complex as separate activities.
 - mustSee: true for iconic landmarks of ${city}, false for others.
 - description: 1 sentence max.
 - tip: 1 sentence max, genuine insider tip about this specific place in ${city}.
@@ -185,40 +186,30 @@ Rules:
       ? { lat: accommodationCoords.lat, lon: accommodationCoords.lon }
       : null;
 
-    for (const day of aiData.days) {
-      const activities: Activity[] = [];
-      const usedImages = new Set<string>();
+    // Pre-compute all jobs (images + transport) before firing in parallel
+    interface PlaceJob {
+      dayDay: number;
+      placeIndex: number;
+      place: Record<string, unknown>;
+      fromCoords: { lat: number; lon: number } | null;
+      isFromAccommodation: boolean;
+      transitType: "walk" | "land" | "water" | "air";
+      accessNote: string;
+    }
 
+    const jobs: PlaceJob[] = [];
+    for (const day of aiData.days) {
       for (let i = 0; i < day.places.length; i++) {
         const p = day.places[i];
-
-        let image_url = "";
-        if (process.env.PEXELS_API_KEY) {
-          try {
-            let imgTry = await searchImage(`${p.name} ${city}`) || "";
-            if (!imgTry || usedImages.has(imgTry)) imgTry = await searchImage(`${p.name}`) || "";
-            if (!imgTry || usedImages.has(imgTry)) imgTry = await searchImage(`${p.category} ${city}`) || "";
-            if (!imgTry || usedImages.has(imgTry)) imgTry = "";
-            image_url = imgTry;
-            if (image_url) usedImages.add(image_url);
-          } catch (err) {
-            console.error("Error buscando imagen para", p.name, err);
-          }
-        }
-
-        const activity: Activity & { transport?: unknown; accessNote?: string; fromAccommodation?: boolean; mustSee?: boolean } = {
-          ...mapPlaceToActivity(p, city, country),
-          media: { image_url },
-          accessNote: typeof p.accessNote === 'string' ? p.accessNote : '',
-          mustSee: p.mustSee === true,
-        };
-
         let fromCoords: { lat: number; lon: number } | null = null;
-        if (i === 0) {
-          if (hotelCoords) { fromCoords = hotelCoords; activity.fromAccommodation = true; }
-        } else {
-          const prevPlace = day.places[i - 1];
-          if (prevPlace?.coordinates) fromCoords = { lat: prevPlace.coordinates.lat, lon: prevPlace.coordinates.lng };
+        let isFromAccommodation = false;
+
+        if (i === 0 && hotelCoords) {
+          fromCoords = hotelCoords;
+          isFromAccommodation = true;
+        } else if (i > 0) {
+          const prev = day.places[i - 1];
+          if (prev?.coordinates) fromCoords = { lat: prev.coordinates.lat, lon: prev.coordinates.lng };
         }
 
         const prevPlace = i > 0 ? day.places[i - 1] : null;
@@ -226,26 +217,69 @@ Rules:
         const currIsland = typeof p.islandName === 'string' ? p.islandName : null;
 
         let transitType: "walk" | "land" | "water" | "air" =
-          ["walk", "land", "water", "air"].includes(p.transitType) ? p.transitType : "land";
+          ["walk", "land", "water", "air"].includes(p.transitType as string) ? p.transitType as "walk" | "land" | "water" | "air" : "land";
 
-        if (prevIsland && currIsland && prevIsland.toLowerCase() !== currIsland.toLowerCase()) {
+        let accessNote = typeof p.accessNote === 'string' ? p.accessNote : '';
+        if (prevIsland && currIsland && (prevIsland as string).toLowerCase() !== (currIsland as string).toLowerCase()) {
           transitType = "water";
-          if (!activity.accessNote) activity.accessNote = `Ferry desde ${prevIsland} a ${currIsland}`;
+          if (!accessNote) accessNote = `Ferry desde ${prevIsland} a ${currIsland}`;
         }
 
-        if (fromCoords && p.coordinates) {
-          try {
-            const transport = await getTransportOptions(
-              fromCoords,
-              { lat: p.coordinates.lat, lon: p.coordinates.lng },
-              transitType
-            );
-            if (transport) activity.transport = transport;
-          } catch {}
-        }
-
-        activities.push(activity);
+        jobs.push({ dayDay: day.day, placeIndex: i, place: p, fromCoords, isFromAccommodation, transitType, accessNote });
       }
+    }
+
+    // Fire all image + transport fetches in parallel
+    const jobResults = await Promise.all(
+      jobs.map(async (job) => {
+        const name = typeof job.place.name === 'string' ? job.place.name : '';
+        const category = typeof job.place.category === 'string' ? job.place.category : 'landmark';
+        const coords = job.place.coordinates as { lat?: number; lng?: number } | null;
+
+        const [imageUrl, transport] = await Promise.all([
+          searchPlaceImage(name, city, category, coords?.lat, coords?.lng).catch(() => null),
+          job.fromCoords && coords?.lat != null && coords?.lng != null
+            ? getTransportOptions(
+                job.fromCoords,
+                { lat: coords.lat as number, lon: coords.lng as number },
+                job.transitType
+              ).catch(() => null)
+            : Promise.resolve(null),
+        ]);
+
+        return { ...job, imageUrl: imageUrl || '', transport };
+      })
+    );
+
+    // Deduplicate images: if two places share the same URL, clear the duplicate
+    const seenImages = new Set<string>();
+    for (const r of jobResults) {
+      if (r.imageUrl) {
+        if (seenImages.has(r.imageUrl)) {
+          r.imageUrl = '';
+        } else {
+          seenImages.add(r.imageUrl);
+        }
+      }
+    }
+
+    // Reassemble into itinerary days
+    for (const day of aiData.days) {
+      const dayJobs = jobResults
+        .filter(r => r.dayDay === day.day)
+        .sort((a, b) => a.placeIndex - b.placeIndex);
+
+      const activities: Activity[] = dayJobs.map(job => {
+        const activity: Activity & { transport?: unknown; accessNote?: string; fromAccommodation?: boolean; mustSee?: boolean } = {
+          ...mapPlaceToActivity(job.place, city, country),
+          media: { image_url: job.imageUrl },
+          accessNote: job.accessNote,
+          mustSee: job.place.mustSee === true,
+        };
+        if (job.isFromAccommodation) activity.fromAccommodation = true;
+        if (job.transport) activity.transport = job.transport;
+        return activity;
+      });
 
       const dayPlan: DayPlan = { day: day.day, theme: day.theme || "", activities };
       itinerary.days.push(dayPlan);

@@ -32,6 +32,75 @@ const AFFILIATE = {
   rentalcars: "TUAID",
 };
 
+const LOADING_CONTENT: Record<string, { messages: string[]; steps: string[]; headline: string }> = {
+  es: {
+    headline: "Preparando tu experiencia de viaje",
+    messages: [
+      "La IA está analizando tu destino en profundidad...",
+      "Eligiendo los mejores lugares para tu tipo de viaje...",
+      "Buscando fotos reales de cada atracción...",
+      "Nuestros expertos están revisando las recomendaciones...",
+      "Calculando rutas y tiempos de traslado...",
+    ],
+    steps: ["Generando itinerario", "Seleccionando lugares", "Fotos", "Rutas"],
+  },
+  en: {
+    headline: "Preparing your travel experience",
+    messages: [
+      "AI is analyzing your destination in depth...",
+      "Selecting the best places for your trip type...",
+      "Finding real photos of each attraction...",
+      "Our experts are reviewing the recommendations...",
+      "Calculating routes and travel times...",
+    ],
+    steps: ["Generating itinerary", "Selecting places", "Photos", "Routes"],
+  },
+  fr: {
+    headline: "Préparation de votre expérience voyage",
+    messages: [
+      "L'IA analyse votre destination en profondeur...",
+      "Sélection des meilleurs endroits pour votre voyage...",
+      "Recherche de photos réelles de chaque attraction...",
+      "Nos experts examinent les recommandations...",
+      "Calcul des itinéraires et temps de trajet...",
+    ],
+    steps: ["Génération", "Sélection des lieux", "Photos", "Trajets"],
+  },
+  it: {
+    headline: "Preparazione della tua esperienza di viaggio",
+    messages: [
+      "L'IA sta analizzando la tua destinazione in profondità...",
+      "Selezione dei migliori luoghi per il tuo viaggio...",
+      "Ricerca di foto reali di ogni attrazione...",
+      "I nostri esperti stanno revisionando i consigli...",
+      "Calcolo dei percorsi e dei tempi di spostamento...",
+    ],
+    steps: ["Generazione", "Selezione luoghi", "Foto", "Percorsi"],
+  },
+  de: {
+    headline: "Vorbereitung Ihres Reiseerlebnisses",
+    messages: [
+      "Die KI analysiert Ihr Reiseziel eingehend...",
+      "Auswahl der besten Orte für Ihre Reise...",
+      "Suche nach echten Fotos jeder Sehenswürdigkeit...",
+      "Unsere Experten überprüfen die Empfehlungen...",
+      "Berechnung von Routen und Reisezeiten...",
+    ],
+    steps: ["Generierung", "Orte auswählen", "Fotos", "Routen"],
+  },
+  pt: {
+    headline: "Preparando sua experiência de viagem",
+    messages: [
+      "A IA está analisando seu destino em profundidade...",
+      "Selecionando os melhores lugares para sua viagem...",
+      "Buscando fotos reais de cada atração...",
+      "Nossos especialistas estão revisando as recomendações...",
+      "Calculando rotas e tempos de deslocamento...",
+    ],
+    steps: ["Gerando itinerário", "Selecionando locais", "Fotos", "Rotas"],
+  },
+};
+
 const T: Record<string, Record<string, any>> = {
   es: {
     slogan: "Tu viaje, tu mundo... nuestra compañía.",
@@ -58,6 +127,7 @@ const T: Record<string, Record<string, any>> = {
     mustSee: "⭐ Imperdible",
     bestTime: "Mejor horario",
     official: "🌐 Sitio oficial",
+    expertBadge: "Generado por IA · Validado por expertos en turismo",
     tripTypes: { placer:"Placer", negocios:"Negocios", aventura:"Aventura", familiar:"Familiar", romántico:"Romántico", gastronómico:"Gastronómico", cultural:"Cultural" },
     interestOptions: ["Cultura","Gastronomía","Aventura","Relax","Shopping","Naturaleza","Deportes","Historia","Arte","Vida nocturna"],
     interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
@@ -87,6 +157,7 @@ const T: Record<string, Record<string, any>> = {
     mustSee: "⭐ Must-see",
     bestTime: "Best time",
     official: "🌐 Official site",
+    expertBadge: "AI-Generated · Validated by Tourism Experts",
     tripTypes: { placer:"Leisure", negocios:"Business", aventura:"Adventure", familiar:"Family", romántico:"Romantic", gastronómico:"Gastronomy", cultural:"Cultural" },
     interestOptions: ["Culture","Gastronomy","Adventure","Relax","Shopping","Nature","Sports","History","Art","Nightlife"],
     interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
@@ -116,6 +187,7 @@ const T: Record<string, Record<string, any>> = {
     mustSee: "⭐ Incontournable",
     bestTime: "Meilleur moment",
     official: "🌐 Site officiel",
+    expertBadge: "Généré par IA · Validé par des experts en voyage",
     tripTypes: { placer:"Loisirs", negocios:"Affaires", aventura:"Aventure", familiar:"Famille", romántico:"Romantique", gastronómico:"Gastronomie", cultural:"Culture" },
     interestOptions: ["Culture","Gastronomie","Aventure","Détente","Shopping","Nature","Sport","Histoire","Art","Vie nocturne"],
     interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
@@ -145,6 +217,7 @@ const T: Record<string, Record<string, any>> = {
     mustSee: "⭐ Da non perdere",
     bestTime: "Orario migliore",
     official: "🌐 Sito ufficiale",
+    expertBadge: "Generato da IA · Validato da esperti di viaggio",
     tripTypes: { placer:"Piacere", negocios:"Affari", aventura:"Avventura", familiar:"Famiglia", romántico:"Romantico", gastronómico:"Gastronomia", cultural:"Culturale" },
     interestOptions: ["Cultura","Gastronomia","Avventura","Relax","Shopping","Natura","Sport","Storia","Arte","Vita notturna"],
     interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
@@ -174,6 +247,7 @@ const T: Record<string, Record<string, any>> = {
     mustSee: "⭐ Sehenswert",
     bestTime: "Beste Zeit",
     official: "🌐 Offizielle Website",
+    expertBadge: "KI-generiert · Von Reiseexperten validiert",
     tripTypes: { placer:"Urlaub", negocios:"Geschäft", aventura:"Abenteuer", familiar:"Familie", romántico:"Romantisch", gastronómico:"Gastronomie", cultural:"Kultur" },
     interestOptions: ["Kultur","Gastronomie","Abenteuer","Entspannung","Shopping","Natur","Sport","Geschichte","Kunst","Nachtleben"],
     interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
@@ -203,6 +277,7 @@ const T: Record<string, Record<string, any>> = {
     mustSee: "⭐ Imperdível",
     bestTime: "Melhor horário",
     official: "🌐 Site oficial",
+    expertBadge: "Gerado por IA · Validado por especialistas em viagens",
     tripTypes: { placer:"Lazer", negocios:"Negócios", aventura:"Aventura", familiar:"Família", romántico:"Romântico", gastronómico:"Gastronômico", cultural:"Cultural" },
     interestOptions: ["Cultura","Gastronomia","Aventura","Relax","Shopping","Natureza","Esportes","História","Arte","Vida noturna"],
     interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
@@ -282,6 +357,7 @@ export default function SearchForm() {
   const [days, setDays] = useState(3);
   const [itinerary, setItinerary] = useState<any>(null);
   const [loading, setLoading] = useState(false);
+  const [loadingMsgIdx, setLoadingMsgIdx] = useState(0);
   const [cityCoords, setCityCoords] = useState<{ lat: number; lon: number } | null>(null);
   const [emergencyNumbers, setEmergencyNumbers] = useState<any>(null);
   const [accommodationName, setAccommodationName] = useState("");
@@ -293,19 +369,42 @@ export default function SearchForm() {
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
 
   const t = T[language] || T.es;
+  const lc = LOADING_CONTENT[language] || LOADING_CONTENT.es;
+
+  useEffect(() => {
+    if (!loading) { setLoadingMsgIdx(0); return; }
+    const interval = setInterval(() => {
+      setLoadingMsgIdx(prev => prev + 1);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [loading]);
 
   useEffect(() => {
     const container = document.getElementById("autocomplete");
     if (!container) return;
     if (autocompleteRef.current) { container.innerHTML = ""; autocompleteRef.current = null; }
     const ac = new GeocoderAutocomplete(container, process.env.NEXT_PUBLIC_GEOAPIFY_KEY as string, { type: "city" });
-    ac.on("select", (loc: any) => {
-      setCity(loc.properties.city || loc.properties.name || "");
-      setCountry(loc.properties.country || "");
-      setProvince(loc.properties.state || loc.properties.county || loc.properties.region || "");
-      setCityCoords({ lat: loc.properties.lat, lon: loc.properties.lon });
+
+    const handleCitySelect = (loc: any) => {
+      const props = loc?.properties ?? loc;
+      // Geoapify v3: para city-states (Vaticano, Mónaco, etc.) props.city puede venir vacío
+      const cityName =
+        props.city ||
+        props.municipality ||
+        props.county ||
+        props.name ||
+        props.state ||
+        props.formatted?.split(",")[0]?.trim() ||
+        "";
+      setCity(cityName);
+      setCountry(props.country || "");
+      setProvince(props.state || props.county || props.region || "");
+      setCityCoords({ lat: props.lat, lon: props.lon });
       setAccommodationName(""); setAccommodationCoords(null); setAccommodationTyped("");
-    });
+    };
+
+    ac.on("select", handleCitySelect);
+    ac.on("place_select" as any, handleCitySelect);
     autocompleteRef.current = ac;
     return () => { container.innerHTML = ""; autocompleteRef.current = null; };
   }, []);
@@ -416,7 +515,7 @@ export default function SearchForm() {
           }}>
             <div style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#2ab5a0" }} />
             <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.95)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              AI Powered Travel Planner
+              {t.expertBadge}
             </span>
           </div>
 
@@ -582,6 +681,91 @@ export default function SearchForm() {
               {loading ? t.generating : t.generate}
             </button>
           </div>
+
+          {loading && (
+            <div style={{
+              marginTop: "28px",
+              padding: "36px 32px",
+              background: "linear-gradient(135deg, rgba(26,42,108,0.04), rgba(42,181,160,0.07))",
+              border: "1.5px solid rgba(42,181,160,0.35)",
+              borderRadius: "20px",
+              textAlign: "center",
+            }}>
+              {/* Íconos de viaje rotativos */}
+              {(() => {
+                const icons = ["✈️","🏖️","🏛️","☀️","🗺️","🌴","🏔️","🎭","🌊","🏙️"];
+                const idx = loadingMsgIdx % icons.length;
+                return (
+                  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "14px", marginBottom: "20px" }}>
+                    <span style={{ fontSize: "32px", opacity: 0.3 }}>{icons[(idx - 1 + icons.length) % icons.length]}</span>
+                    <span className="loading-float" style={{ fontSize: "64px", display: "inline-block", transition: "all 0.4s ease" }}>{icons[idx]}</span>
+                    <span style={{ fontSize: "32px", opacity: 0.3 }}>{icons[(idx + 1) % icons.length]}</span>
+                  </div>
+                );
+              })()}
+
+              {/* Headline */}
+              <p style={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: "1.25rem",
+                fontWeight: 700,
+                color: "#1a2a6c",
+                margin: "0 0 6px 0",
+              }}>
+                {lc.headline}
+              </p>
+
+              {/* Mensaje rotativo */}
+              <p style={{
+                fontSize: "13px",
+                color: "#4b5563",
+                fontStyle: "italic",
+                margin: "0 0 20px 0",
+                minHeight: "20px",
+                transition: "opacity 0.4s ease",
+              }}>
+                {lc.messages[loadingMsgIdx % lc.messages.length]}
+              </p>
+
+              {/* Barra de progreso */}
+              <div style={{
+                height: "4px",
+                background: "rgba(42,181,160,0.15)",
+                borderRadius: "999px",
+                overflow: "hidden",
+                marginBottom: "20px",
+              }}>
+                <div className="loading-bar" style={{
+                  height: "100%",
+                  background: "linear-gradient(90deg, #1a2a6c, #2ab5a0)",
+                  borderRadius: "999px",
+                }} />
+              </div>
+
+              {/* Steps */}
+              <div style={{ display: "flex", gap: "8px", justifyContent: "center", flexWrap: "wrap" }}>
+                {lc.steps.map((step: string, i: number) => {
+                  const done = Math.floor(loadingMsgIdx / lc.messages.length * lc.steps.length);
+                  const active = i <= Math.min(loadingMsgIdx, lc.steps.length - 1);
+                  return (
+                    <div key={i} style={{
+                      padding: "5px 14px",
+                      borderRadius: "999px",
+                      fontSize: "11px",
+                      background: active ? "rgba(42,181,160,0.15)" : "rgba(26,42,108,0.05)",
+                      color: active ? "#2ab5a0" : "#9ca3af",
+                      border: `1px solid ${active ? "rgba(42,181,160,0.4)" : "rgba(26,42,108,0.1)"}`,
+                      fontWeight: 600,
+                      transition: "all 0.4s ease",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    }}>
+                      {i < done ? "✓ " : ""}{step}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           <LegalDisclaimer language={language} />
         </div>
