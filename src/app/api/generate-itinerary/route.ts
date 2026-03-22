@@ -82,13 +82,12 @@ export async function POST(req: Request) {
       ? `The traveler is especially interested in: ${interests.join(", ")}.`
       : "";
 
-    // Construir el identificador completo de la ciudad
     const fullCityName = province
       ? `${city}, ${province}, ${country}`
       : `${city}, ${country}`;
 
     const prompt = `
-You are an expert travel planner with deep knowledge of ${fullCityName}.
+You are an expert travel planner who knows ${fullCityName} deeply.
 Create a ${days}-day travel itinerary for ${fullCityName}.
 IMPORTANT: Write ALL text fields (description, tip, accessNote) in ${languageLabel}.
 Return ONLY valid JSON. No explanations, no markdown, no preamble.
@@ -125,7 +124,7 @@ Structure:
           "category": "Museum",
           "duration": "1 hour",
           "bestTime": "Morning",
-          "price": "€10",
+          "price": "$10",
           "tip": "One useful insider tip.",
           "coordinates": { "lat": -32.946, "lng": -60.639 },
           "officialLink": "https://example.com",
@@ -145,7 +144,7 @@ Rules:
 - description: 1 sentence max.
 - tip: 1 sentence max, genuine insider tip about this specific place in ${city}.
 - coordinates: exactly 3 decimal places. Coordinates MUST match the actual location in ${city}.
-- price: include currency symbol or "Free".
+- price: ALWAYS use USD ($) as currency. Convert approximate local prices to USD. Use "$10", "$25", "Free", etc. NEVER use €, £, ¥, ARS or any other currency symbol.
 - officialLink: ONLY include if you are 100% certain the URL exists. Otherwise leave "".
 - islandName: "${city}" for all places (or specific island name for archipelagos).
 - transitType: "walk", "land", "water", or "air". First place of each day uses "land".

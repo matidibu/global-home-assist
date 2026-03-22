@@ -388,8 +388,7 @@ export default function SearchForm() {
           boxShadow: "0 12px 48px rgba(26,42,108,0.35), inset 0 1px 0 rgba(255,255,255,0.15)",
           textAlign: "center",
         }}>
-
-          {/* Logo recortado en círculo — sin fondo blanco cuadrado */}
+          {/* Logo recortado en círculo */}
           <div style={{
             width: "140px",
             height: "140px",
@@ -435,7 +434,7 @@ export default function SearchForm() {
             Global Home Assist
           </h1>
 
-          {/* Línea decorativa + slogan */}
+          {/* Slogan */}
           <div style={{ display: "flex", alignItems: "center", gap: "14px", justifyContent: "center" }}>
             <div style={{ height: "2px", width: "50px", background: "linear-gradient(to right, transparent, #2ab5a0)" }} />
             <span style={{
@@ -461,7 +460,6 @@ export default function SearchForm() {
           padding: "28px",
           marginBottom: "2.5rem",
         }}>
-
           {/* Ciudad destino destacada */}
           <div style={{
             background: "linear-gradient(135deg, rgba(26,42,108,0.06), rgba(42,181,160,0.08))",
@@ -685,7 +683,8 @@ export default function SearchForm() {
             {allActivities.length > 0 && (
               <div>
                 <h2 className="section-title" style={{ fontSize: "1.5rem", marginBottom: "16px" }}>{t.mapTitle}</h2>
-                <TravelMap activities={allActivities} language={language} accommodation={itineraryAccommodation} />
+                {/* Mapa siempre en inglés */}
+                <TravelMap activities={allActivities} language="en" accommodation={itineraryAccommodation} />
               </div>
             )}
 
