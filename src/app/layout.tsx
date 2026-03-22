@@ -22,17 +22,10 @@ export default function RootLayout({
         />
         <link
           rel="stylesheet"
-          href="https://unpkg.com/@geoapify/geocoder-autocomplete@^2/styles/minimal.css"
+          href="https://unpkg.com/@geoapify/geocoder-autocomplete@2/styles/minimal.css"
         />
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
