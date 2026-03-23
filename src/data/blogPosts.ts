@@ -122,8 +122,8 @@ export const blogPosts: BlogPost[] = [
     publishDate: "2025-03-14",
     tags: ["viaje Europa barato", "presupuesto Europa", "ahorrar en viajes", "europa económico"],
     heroEmoji: "💶",
-    metaTitle: "Viajar Europa barato en 2025: presupuesto real sin mentiras",
-    metaDescription: "Cuánto cuesta realmente un viaje de 7 días en Europa en 2025. Breakdown honesto de vuelos, alojamiento, comida y transporte, con los mejores trucos para optimizar cada euro.",
+    metaTitle: "Viajar Europa barato en 2026: presupuesto real sin mentiras",
+    metaDescription: "Cuánto cuesta realmente un viaje de 7 días en Europa en 2026. Breakdown honesto de vuelos, alojamiento, comida y transporte, con los mejores trucos para optimizar cada euro.",
     sections: [
       {
         type: "intro",
@@ -131,11 +131,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "h2",
-        text: "El breakdown real de un viaje europeo de 7 días (2025)",
+        text: "El breakdown real de un viaje europeo de 7 días (2026)",
       },
       {
         type: "p",
-        text: "Usemos Madrid–Barcelona–Lisboa como ejemplo, uno de los circuitos más populares. Estos son los números reales para 2025, sin suavizarlos ni inflarlos:",
+        text: "Usemos Madrid–Barcelona–Lisboa como ejemplo, uno de los circuitos más populares. Estos son los números reales para 2026, sin suavizarlos ni inflarlos:",
       },
       {
         type: "list",
@@ -185,7 +185,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "h2",
-        text: "La ciudad europea que más te da por tu dinero en 2025",
+        text: "La ciudad europea que más te da por tu dinero en 2026",
       },
       {
         type: "p",
@@ -418,7 +418,7 @@ export const blogPosts: BlogPost[] = [
     publishDate: "2025-03-21",
     tags: ["Barcelona o Madrid", "Barcelona vs Madrid turismo", "qué ciudad visitar España", "viaje España"],
     heroEmoji: "🇪🇸",
-    metaTitle: "Barcelona vs Madrid: la comparativa honesta para viajeros en 2025",
+    metaTitle: "Barcelona vs Madrid: la comparativa honesta para viajeros en 2026",
     metaDescription: "¿Barcelona o Madrid para tu próximo viaje? La guía sin favoritismos que compara gastronomía, arquitectura, nightlife, presupuesto y experiencia total para ayudarte a elegir bien.",
     sections: [
       {
@@ -599,7 +599,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "En 2025, hay herramientas de IA que procesan toda esa información y te devuelven un itinerario personalizado en segundos. No se trata de que la IA piense por vos — se trata de tener un punto de partida inteligente que podés ajustar, en vez de construir todo desde cero con información fragmentada.",
+        text: "En 2026, hay herramientas de IA que procesan toda esa información y te devuelven un itinerario personalizado en segundos. No se trata de que la IA piense por vos — se trata de tener un punto de partida inteligente que podés ajustar, en vez de construir todo desde cero con información fragmentada.",
       },
       {
         type: "cta",
@@ -615,7 +615,7 @@ export const blogPosts: BlogPost[] = [
     category: "guias",
     categoryLabel: "Guías",
     readTime: 9,
-    publishDate: "2025-03-26",
+    publishDate: "2026-03-26",
     tags: ["qué ver en Tokio", "guía Tokyo primer viaje", "Japón viaje", "itinerario Tokio"],
     heroEmoji: "🗼",
     metaTitle: "Guía de Tokio para principiantes: todo lo que necesitás saber antes de ir",
@@ -709,17 +709,17 @@ export const blogPosts: BlogPost[] = [
   },
 
   {
-    slug: "bali-guia-honesta-2025",
-    title: "Bali en 2025: lo que los influencers no te muestran (y lo que sí vale la pena)",
+    slug: "bali-guia-honesta-2026",
+    title: "Bali en 2026: lo que los influencers no te muestran (y lo que sí vale la pena)",
     excerpt: "Bali tiene un problema de percepción: la mitad de las fotos que ves son reales pero requieren 2 horas de fila y edición pesada. La otra mitad de la isla, la que importa, casi nadie la fotografía.",
     category: "destinos",
     categoryLabel: "Destinos",
     readTime: 7,
-    publishDate: "2025-03-28",
-    tags: ["qué hacer en Bali", "guía Bali 2025", "Bali viaje", "Bali Instagram vs realidad"],
+    publishDate: "2026-03-28",
+    tags: ["qué hacer en Bali", "guía Bali 2026", "Bali viaje", "Bali Instagram vs realidad"],
     heroEmoji: "🌴",
-    metaTitle: "Bali 2025: guía honesta para viajeros — lo real vs Instagram",
-    metaDescription: "La guía de Bali sin filtros: cuáles atracciones valen la pena, cuáles son una trampa turística, dónde quedarse y cómo moverse. Con presupuesto real para 2025.",
+    metaTitle: "Bali 2026: guía honesta para viajeros — lo real vs Instagram",
+    metaDescription: "La guía de Bali sin filtros: cuáles atracciones valen la pena, cuáles son una trampa turística, dónde quedarse y cómo moverse. Con presupuesto real para 2026.",
     sections: [
       {
         type: "intro",
@@ -742,7 +742,7 @@ export const blogPosts: BlogPost[] = [
         items: [
           "Puertas del templo Lempuyang ('Gates of Heaven'): la foto es real, la fila es de 2–3 horas y hay un vidrio debajo que crea el reflejo. Decide vos si vale.",
           "Columpio de Ubud ('Bali Swing'): precio de $35–50 USD por 15 minutos. La foto es bonita. El valor, discutible.",
-          "Tegalalang Rice Terraces: bellísimas, pero en 2025 requieren entrada de IDR 50.000 y hay vendedores cada 5 metros. Igual vale — llegá a las 7am.",
+          "Tegalalang Rice Terraces: bellísimas, pero en 2026 requieren entrada de IDR 50.000 y hay vendedores cada 5 metros. Igual vale — llegá a las 7am.",
           "Monkey Forest de Ubud: los monos son agresivos con comida y mochilas. Cerrá todo y no llevés snacks.",
         ],
       },
@@ -778,11 +778,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "h2",
-        text: "Presupuesto real para 7 días en Bali (2025)",
+        text: "Presupuesto real para 7 días en Bali (2026)",
       },
       {
         type: "list",
-        heading: "Estimación por persona en temporada media",
+        heading: "Estimación por persona en temporada media (2026)",
         items: [
           "Vuelo desde Europa o LATAM: $400–700 (el mayor gasto del viaje)",
           "Alojamiento 7 noches (villa privada o guesthouse cómoda): $150–350",
@@ -807,10 +807,10 @@ export const blogPosts: BlogPost[] = [
     category: "destinos",
     categoryLabel: "Destinos",
     readTime: 7,
-    publishDate: "2025-03-30",
+    publishDate: "2026-03-30",
     tags: ["qué ver en Buenos Aires", "guía Buenos Aires", "visitar Argentina", "turismo Buenos Aires"],
     heroEmoji: "🥩",
-    metaTitle: "Buenos Aires: guía completa para viajeros extranjeros en 2025",
+    metaTitle: "Buenos Aires: guía completa para viajeros extranjeros en 2026",
     metaDescription: "La guía de Buenos Aires escrita desde adentro: qué barrios visitar, dónde comer asado de verdad, cómo moverse y las trampas turísticas que evitar.",
     sections: [
       {
@@ -849,7 +849,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "callout",
         emoji: "🥩",
-        text: "El precio de la carne en Argentina sigue siendo notablemente bajo para el estándar internacional. Un asado completo para dos personas en una parrilla local oscila entre $15–25 USD (2025). En Europa el mismo corte costaría el triple.",
+        text: "El precio de la carne en Argentina sigue siendo notablemente bajo para el estándar internacional. Un asado completo para dos personas en una parrilla local oscila entre $15–25 USD (2026). En Europa el mismo corte costaría el triple.",
       },
       {
         type: "h2",
@@ -865,7 +865,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "tip",
-        title: "Cambio de moneda en 2025",
+        title: "Cambio de moneda en 2026",
         text: "Argentina tiene una situación cambiaria específica. Investigá el tipo de cambio vigente antes de viajar y consultá opciones legales disponibles en el momento de tu visita — las condiciones pueden variar. Usá una tarjeta con conversión a tasa de mercado para maximizar cada transacción.",
       },
       {
@@ -891,10 +891,10 @@ export const blogPosts: BlogPost[] = [
     category: "presupuesto",
     categoryLabel: "Presupuesto",
     readTime: 8,
-    publishDate: "2025-04-01",
+    publishDate: "2026-04-01",
     tags: ["vuelo latinoamerica europa", "volar a europa barato", "precio vuelos transatlánticos", "aerolíneas LATAM Europa"],
     heroEmoji: "✈️",
-    metaTitle: "Vuelos desde Latinoamérica a Europa en 2025: cómo pagar menos",
+    metaTitle: "Vuelos desde Latinoamérica a Europa en 2026: cómo pagar menos",
     metaDescription: "Guía completa para conseguir el mejor precio en vuelos desde Argentina, México, Colombia y Chile hacia Europa. Qué aerolíneas usar, cuándo comprar y cómo usar escalas a tu favor.",
     sections: [
       {
@@ -903,7 +903,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "h2",
-        text: "Cuánto cuesta realmente un vuelo LATAM–Europa en 2025",
+        text: "Cuánto cuesta realmente un vuelo LATAM–Europa en 2026",
       },
       {
         type: "list",
