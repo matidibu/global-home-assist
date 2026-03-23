@@ -771,7 +771,7 @@ export default function SearchForm() {
             {itinerary.days.map((day: any, dayIndex: number) => (
               <div key={dayIndex}>
                 <div style={{ marginBottom: "20px" }}>
-                  <div className="day-badge">Día {day.day}</div>
+                  <div className="day-badge">{t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}</div>
                   {day.theme && (
                     <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", color: "#1a2a6c", margin: "8px 0 0 0", fontWeight: 600 }}>
                       {day.theme}
