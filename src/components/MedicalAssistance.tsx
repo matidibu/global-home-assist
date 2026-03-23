@@ -9,8 +9,6 @@ interface Props {
 const T: Record<string, Record<string, string>> = {
   es: {
     title: "🏥 Asistencia médica al viajero",
-    insuranceTitle: "Seguros de viaje recomendados",
-    insuranceNote: "Podemos recibir una comisión si contratás a través de estos links, sin costo adicional para vos.",
     guideTitle: "¿Qué hacer ante una emergencia médica?",
     steps: JSON.stringify([
       { n: "1", t: "Mantené la calma", d: "Evaluá la situación. Si hay riesgo de vida, llamá al número de emergencias local de inmediato." },
@@ -23,8 +21,6 @@ const T: Record<string, Record<string, string>> = {
   },
   en: {
     title: "🏥 Medical assistance for travelers",
-    insuranceTitle: "Recommended travel insurance",
-    insuranceNote: "We may earn a commission if you purchase through these links, at no extra cost to you.",
     guideTitle: "What to do in a medical emergency?",
     steps: JSON.stringify([
       { n: "1", t: "Stay calm", d: "Assess the situation. If there is a risk to life, call local emergency services immediately." },
@@ -37,8 +33,6 @@ const T: Record<string, Record<string, string>> = {
   },
   fr: {
     title: "🏥 Assistance médicale aux voyageurs",
-    insuranceTitle: "Assurances voyage recommandées",
-    insuranceNote: "Nous pouvons recevoir une commission si vous achetez via ces liens, sans frais supplémentaires pour vous.",
     guideTitle: "Que faire en cas d'urgence médicale ?",
     steps: JSON.stringify([
       { n: "1", t: "Restez calme", d: "Évaluez la situation. En cas de danger vital, appelez immédiatement les secours locaux." },
@@ -51,8 +45,6 @@ const T: Record<string, Record<string, string>> = {
   },
   it: {
     title: "🏥 Assistenza medica per viaggiatori",
-    insuranceTitle: "Assicurazioni viaggio consigliate",
-    insuranceNote: "Potremmo ricevere una commissione se acquisti tramite questi link, senza costi aggiuntivi per te.",
     guideTitle: "Cosa fare in caso di emergenza medica?",
     steps: JSON.stringify([
       { n: "1", t: "Mantieni la calma", d: "Valuta la situazione. Se c'è pericolo di vita, chiama subito i servizi di emergenza locali." },
@@ -65,8 +57,6 @@ const T: Record<string, Record<string, string>> = {
   },
   de: {
     title: "🏥 Medizinische Hilfe für Reisende",
-    insuranceTitle: "Empfohlene Reiseversicherungen",
-    insuranceNote: "Wir erhalten möglicherweise eine Provision, wenn Sie über diese Links kaufen, ohne zusätzliche Kosten für Sie.",
     guideTitle: "Was tun im medizinischen Notfall?",
     steps: JSON.stringify([
       { n: "1", t: "Ruhe bewahren", d: "Lage einschätzen. Bei Lebensgefahr sofort den lokalen Notruf anrufen." },
@@ -79,8 +69,6 @@ const T: Record<string, Record<string, string>> = {
   },
   pt: {
     title: "🏥 Assistência médica ao viajante",
-    insuranceTitle: "Seguros de viagem recomendados",
-    insuranceNote: "Podemos receber uma comissão se você contratar por estes links, sem custo adicional para você.",
     guideTitle: "O que fazer numa emergência médica?",
     steps: JSON.stringify([
       { n: "1", t: "Mantenha a calma", d: "Avalie a situação. Se houver risco de vida, ligue imediatamente para os serviços de emergência locais." },
@@ -93,35 +81,6 @@ const T: Record<string, Record<string, string>> = {
   },
 };
 
-const insurers = [
-  {
-    name: "World Nomads",
-    desc: { es: "Ideal para aventureros y viajeros frecuentes", en: "Ideal for adventurers and frequent travelers", fr: "Idéal pour les aventuriers", it: "Ideale per avventurieri", de: "Ideal für Abenteurer", pt: "Ideal para aventureiros" },
-    color: "#0a5c99",
-    bg: "#eff6ff",
-    border: "#bfdbfe",
-    icon: "🌍",
-    url: "https://www.worldnomads.com/?affiliate=TUAID",
-  },
-  {
-    name: "SafetyWing",
-    desc: { es: "Cobertura flexible para nómadas digitales", en: "Flexible coverage for digital nomads", fr: "Couverture flexible pour nomades", it: "Copertura flessibile per nomadi", de: "Flexible Abdeckung für Nomaden", pt: "Cobertura flexível para nômades" },
-    color: "#0f766e",
-    bg: "#f0fdfa",
-    border: "#99f6e4",
-    icon: "🛡️",
-    url: "https://safetywing.com/?referenceID=TUAID",
-  },
-  {
-    name: "Chapka",
-    desc: { es: "Seguros para viajeros hispanohablantes", en: "Insurance for Spanish-speaking travelers", fr: "Assurance pour voyageurs francophones", it: "Assicurazione per viaggiatori", de: "Versicherung für Reisende", pt: "Seguros para viajantes" },
-    color: "#7c3aed",
-    bg: "#f5f3ff",
-    border: "#ddd6fe",
-    icon: "✈️",
-    url: "https://www.chapkadirect.es/?affid=TUAID",
-  },
-];
 
 export default function MedicalAssistance({ city, country, language }: Props) {
   const t = T[language] || T.es;
@@ -140,51 +99,6 @@ export default function MedicalAssistance({ city, country, language }: Props) {
       <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "#1a2a6c", margin: "0 0 24px 0" }}>
         {t.title}
       </h2>
-
-      {/* Seguros de viaje */}
-      <div style={{ marginBottom: "28px" }}>
-        <h3 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: "14px", fontWeight: 700, color: "#1a2a6c", marginBottom: "8px" }}>
-          🛡️ {t.insuranceTitle}
-        </h3>
-        <p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "14px", fontStyle: "italic" }}>
-          {t.insuranceNote}
-        </p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
-          {insurers.map((ins) => (
-            <div
-              key={ins.name}
-              onClick={() => window.open(ins.url, "_blank", "noopener,noreferrer")}
-              style={{
-                background: ins.bg,
-                border: `1.5px solid ${ins.border}`,
-                borderRadius: "14px",
-                padding: "16px",
-                cursor: "pointer",
-                transition: "transform 0.2s ease, box-shadow 0.2s ease",
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLDivElement).style.transform = "translateY(-3px)";
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 24px rgba(26,42,108,0.15)";
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
-                <span style={{ fontSize: "22px" }}>{ins.icon}</span>
-                <span style={{ fontWeight: 700, fontSize: "15px", color: ins.color }}>{ins.name}</span>
-              </div>
-              <p style={{ fontSize: "12px", color: "#6b7280", margin: "0 0 10px 0" }}>
-                {(ins.desc as Record<string,string>)[language] || ins.desc.es}
-              </p>
-              <span style={{ fontSize: "12px", color: ins.color, fontWeight: 600 }}>
-                Ver planes →
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Guía de emergencia */}
       <div>

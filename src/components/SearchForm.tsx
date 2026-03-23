@@ -25,13 +25,8 @@ const TravelMap = dynamic(() => import("@/components/TravelMap"), {
 });
 
 const AFFILIATE = {
-  getyourguide: "NGZASHD",
-  viator: "TUAID",
-  klook: "TUAID",
-  tripadvisor: "TUAID",
-  booking: "TUAID",
-  skyscanner: "TUAID",
-  rentalcars: "TUAID",
+  getyourguide: "NGZASHD", // actualizar con ID de Travelpayouts cuando sea aprobado
+  viator: "TUAID",         // actualizar con ID de Travelpayouts cuando sea aprobado
 };
 
 const LOADING_CONTENT: Record<string, { messages: string[]; steps: string[]; headline: string }> = {
@@ -291,8 +286,6 @@ function buildAffiliateLinks(placeName: string, city: string) {
   return {
     getyourguide: `https://www.getyourguide.com/s/?q=${q}&partner_id=${AFFILIATE.getyourguide}`,
     viator: `https://www.viator.com/search/${encodeURIComponent(placeName)}?pid=${AFFILIATE.viator}&mcid=42383&medium=api`,
-    klook: `https://www.klook.com/en-US/search/?q=${q}&aid=${AFFILIATE.klook}`,
-    tripadvisor: `https://www.tripadvisor.com/Search?q=${q}`,
   };
 }
 
@@ -829,8 +822,6 @@ export default function SearchForm() {
                               )}
                               <a href={links.getyourguide} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fff7ed", color: "#ea580c", fontWeight: 600, textDecoration: "none", border: "1px solid #fed7aa" }}>🎯 GetYourGuide</a>
                               <a href={links.viator} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#f5f3ff", color: "#7c3aed", fontWeight: 600, textDecoration: "none", border: "1px solid #ddd6fe" }}>🧭 Viator</a>
-                              <a href={links.klook} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fef2f2", color: "#e63946", fontWeight: 600, textDecoration: "none", border: "1px solid #fecaca" }}>🎪 Klook</a>
-                              <a href={links.tripadvisor} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#f0fdf4", color: "#16a34a", fontWeight: 600, textDecoration: "none", border: "1px solid #bbf7d0" }}>🦉 TripAdvisor</a>
                             </div>
                             {activity.tips && activity.tips.length > 0 && (
                               <div style={{ background: "rgba(42,181,160,0.08)", borderLeft: "3px solid #2ab5a0", borderRadius: "0 8px 8px 0", padding: "8px 12px" }}>
