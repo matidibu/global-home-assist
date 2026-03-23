@@ -766,10 +766,20 @@ export default function SearchForm() {
 
         {/* ===== ITINERARIO ===== */}
         {itinerary && itinerary.days && (
-          <div style={{ display: "flex", flexDirection: "column", gap: "48px" }}>
+          <div className="print-area" style={{ display: "flex", flexDirection: "column", gap: "48px" }}>
+
+            {/* Cabecera solo visible al imprimir */}
+            <div className="print-header" style={{ display: "none" }}>
+              <span style={{ fontSize: "22px", fontWeight: 800, color: "#1a2a6c", fontFamily: "'Playfair Display', serif" }}>
+                Global Home Assist
+              </span>
+              <span style={{ fontSize: "13px", color: "#6b7280", marginLeft: "auto" }}>
+                global-home-assist.vercel.app
+              </span>
+            </div>
 
             {itinerary.days.map((day: any, dayIndex: number) => (
-              <div key={dayIndex}>
+              <div key={dayIndex} className="print-day">
                 <div style={{ marginBottom: "20px" }}>
                   <div className="day-badge">{t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}</div>
                   {day.theme && (
@@ -813,7 +823,7 @@ export default function SearchForm() {
                                 💰 {activity.tickets.price_estimate}
                               </p>
                             )}
-                            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "12px" }}>
+                            <div className="no-print" style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "12px" }}>
                               <a href={links.getyourguide} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fff7ed", color: "#ea580c", fontWeight: 600, textDecoration: "none", border: "1px solid #fed7aa" }}>🎯 GetYourGuide</a>
                             </div>
                             {activity.tips && activity.tips.length > 0 && (
@@ -853,27 +863,41 @@ export default function SearchForm() {
               </div>
             ))}
 
-            <ShareButton destination={itinerary.destination || city} language={language} />
+            <div className="no-print">
+              <ShareButton destination={itinerary.destination || city} language={language} />
+            </div>
 
             {allActivities.length > 0 && (
-              <div>
+              <div className="no-print">
                 <h2 className="section-title" style={{ fontSize: "1.5rem", marginBottom: "16px" }}>{t.mapTitle}</h2>
                 <TravelMap activities={allActivities} language="en" accommodation={itineraryAccommodation} />
               </div>
             )}
 
-            <FlightSearch destination={city} language={language} />
+            <div className="no-print">
+              <FlightSearch destination={city} language={language} />
+            </div>
 
-            <InsuranceBanner language={language} />
+            <div className="no-print">
+              <InsuranceBanner language={language} />
+            </div>
 
-            <ServicesSection city={city} country={country} />
+            <div className="no-print">
+              <ServicesSection city={city} country={country} />
+            </div>
 
             {cityCoords && (
-              <DestinationInfo city={city} country={country} nationality={nationality || "Argentina"} language={language} latitude={cityCoords.lat} longitude={cityCoords.lon} onEmergencyNumbers={setEmergencyNumbers} />
+              <div className="no-print">
+                <DestinationInfo city={city} country={country} nationality={nationality || "Argentina"} language={language} latitude={cityCoords.lat} longitude={cityCoords.lon} onEmergencyNumbers={setEmergencyNumbers} />
+              </div>
             )}
 
-            <MedicalAssistance city={city} country={country} language={language} />
-            <SOSButton city={city} country={country} emergencyNumbers={emergencyNumbers} />
+            <div className="no-print">
+              <MedicalAssistance city={city} country={country} language={language} />
+            </div>
+            <div className="no-print">
+              <SOSButton city={city} country={country} emergencyNumbers={emergencyNumbers} />
+            </div>
 
           </div>
         )}

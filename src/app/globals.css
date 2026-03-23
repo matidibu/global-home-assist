@@ -196,6 +196,68 @@ html, body {
   .main-container { padding: 16px 12px !important; }
 }
 
+/* ===== PRINT / PDF ===== */
+@media print {
+  /* Mostrar solo el área de impresión */
+  body * { visibility: hidden; }
+  .print-area, .print-area * { visibility: visible; }
+  .print-area {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    padding: 24px 32px;
+    background: white !important;
+  }
+
+  /* Ocultar elementos que no deben imprimirse */
+  .no-print { display: none !important; visibility: hidden !important; }
+
+  /* Preservar colores en impresión */
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* Cabecera de impresión */
+  .print-header {
+    display: flex !important;
+    visibility: visible !important;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #1a2a6c;
+  }
+
+  /* Tarjetas de actividad */
+  .activity-card {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 12px !important;
+    flex-direction: row !important;
+  }
+
+  /* Fotos en tamaño fijo */
+  .activity-card-photo-inner {
+    width: 140px !important;
+  }
+  .activity-card-photo-inner > div {
+    width: 124px !important;
+    height: 124px !important;
+  }
+
+  /* Días: salto de página antes de cada día (excepto el primero) */
+  .print-day + .print-day { page-break-before: always; }
+
+  /* Day badge */
+  .day-badge {
+    background: #1a2a6c !important;
+    color: white !important;
+  }
+
+  /* Ocultar scrollbar */
+  ::-webkit-scrollbar { display: none; }
+}
+
 /* Loading screen animations */
 @keyframes loadingFloat {
   0%, 100% { transform: translateY(0px); }

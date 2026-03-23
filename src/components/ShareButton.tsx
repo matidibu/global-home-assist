@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
 
-const labels: Record<string, { title: string; whatsapp: string; copy: string; copied: string; twitter: string }> = {
-  es: { title: "¿Te gustó el itinerario?", whatsapp: "Compartir por WhatsApp", copy: "Copiar enlace", copied: "¡Enlace copiado!", twitter: "Compartir en X" },
-  en: { title: "Loved your itinerary?", whatsapp: "Share on WhatsApp", copy: "Copy link", copied: "Link copied!", twitter: "Share on X" },
-  fr: { title: "Vous aimez l'itinéraire ?", whatsapp: "Partager sur WhatsApp", copy: "Copier le lien", copied: "Lien copié !", twitter: "Partager sur X" },
-  it: { title: "Ti è piaciuto l'itinerario?", whatsapp: "Condividi su WhatsApp", copy: "Copia il link", copied: "Link copiato!", twitter: "Condividi su X" },
-  de: { title: "Itinerary gefallen?", whatsapp: "Über WhatsApp teilen", copy: "Link kopieren", copied: "Link kopiert!", twitter: "Auf X teilen" },
-  pt: { title: "Gostou do itinerário?", whatsapp: "Compartilhar no WhatsApp", copy: "Copiar link", copied: "Link copiado!", twitter: "Compartilhar no X" },
+const labels: Record<string, { title: string; whatsapp: string; copy: string; copied: string; twitter: string; pdf: string }> = {
+  es: { title: "¿Te gustó el itinerario?", whatsapp: "Compartir por WhatsApp", copy: "Copiar enlace", copied: "¡Enlace copiado!", twitter: "Compartir en X", pdf: "Descargar PDF" },
+  en: { title: "Loved your itinerary?", whatsapp: "Share on WhatsApp", copy: "Copy link", copied: "Link copied!", twitter: "Share on X", pdf: "Download PDF" },
+  fr: { title: "Vous aimez l'itinéraire ?", whatsapp: "Partager sur WhatsApp", copy: "Copier le lien", copied: "Lien copié !", twitter: "Partager sur X", pdf: "Télécharger PDF" },
+  it: { title: "Ti è piaciuto l'itinerario?", whatsapp: "Condividi su WhatsApp", copy: "Copia il link", copied: "Link copiato!", twitter: "Condividi su X", pdf: "Scarica PDF" },
+  de: { title: "Itinerary gefallen?", whatsapp: "Über WhatsApp teilen", copy: "Link kopieren", copied: "Link kopiert!", twitter: "Auf X teilen", pdf: "PDF herunterladen" },
+  pt: { title: "Gostou do itinerário?", whatsapp: "Compartilhar no WhatsApp", copy: "Copiar link", copied: "Link copiado!", twitter: "Compartilhar no X", pdf: "Baixar PDF" },
 };
 
 const shareTexts: Record<string, string> = {
@@ -143,6 +143,28 @@ export default function ShareButton({ destination, language }: Props) {
           }}
         >
           {copied ? "✓" : "📋"} {copied ? lb.copied : lb.copy}
+        </button>
+
+        {/* PDF */}
+        <button
+          onClick={() => window.print()}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "7px",
+            background: "#1a2a6c",
+            color: "white",
+            border: "none",
+            padding: "10px 18px",
+            borderRadius: "10px",
+            fontSize: "13px",
+            fontWeight: 700,
+            cursor: "pointer",
+            whiteSpace: "nowrap",
+            boxShadow: "0 4px 12px rgba(26,42,108,0.3)",
+          }}
+        >
+          📄 {lb.pdf}
         </button>
       </div>
     </div>
