@@ -21,7 +21,7 @@ const transferServices: ServiceCard[] = [
 ];
 
 const carServices: ServiceCard[] = [
-  { name: "Rentalcars", description: "Comparador de autos en todo el mundo", icon: "🚗", color: "#0066cc", bgColor: "#eff6ff", borderColor: "#bfdbfe", url: "https://www.rentalcars.com" },
+  { name: "GetRentaCar", description: "Comparador de autos en todo el mundo", icon: "🚗", color: "#0066cc", bgColor: "#eff6ff", borderColor: "#bfdbfe", url: "https://getrentacar.tpk.lu/dwvZlHtW" },
   { name: "DiscoverCars", description: "Las mejores tarifas de alquiler", icon: "🔑", color: "#1a7a4a", bgColor: "#f0fdf4", borderColor: "#bbf7d0", url: "https://www.discovercars.com" },
 ];
 
