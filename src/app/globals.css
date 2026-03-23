@@ -277,3 +277,21 @@ html, body {
 .loading-float { animation: loadingFloat 2.4s ease-in-out infinite; }
 .loading-fadein { animation: loadingFadeIn 0.45s ease forwards; }
 .loading-bar { animation: loadingBar 28s ease-out forwards; }
+
+/* Stroke-draw animation for generate button plane icon */
+@keyframes drawStroke {
+  from { stroke-dashoffset: 200; opacity: 0.3; }
+  to   { stroke-dashoffset: 0;   opacity: 1; }
+}
+.plane-draw-icon {
+  display: inline-flex;
+  align-items: center;
+}
+.plane-draw-icon path,
+.plane-draw-icon line,
+.plane-draw-icon polyline,
+.plane-draw-icon circle {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawStroke 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

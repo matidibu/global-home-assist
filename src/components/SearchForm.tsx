@@ -15,6 +15,7 @@ import FlightSearch from "@/components/FlightSearch";
 import InsuranceBanner from "@/components/InsuranceBanner";
 import ShareButton from "@/components/ShareButton";
 import { HomeBlogTeaser } from "@/components/HomeBlogTeaser";
+import { Plane } from "lucide-react";
 import "@geoapify/geocoder-autocomplete/styles/minimal.css";
 
 const TravelMap = dynamic(() => import("@/components/TravelMap"), {
@@ -115,16 +116,16 @@ const T: Record<string, Record<string, any>> = {
     day: "día", days: "días",
     accommodation: "Hospedaje",
     accommodationOptional: "(opcional)",
-    accommodationSearch: "🔍 Hotel / Hostel",
-    accommodationAddress: "📍 Dirección / Airbnb",
+    accommodationSearch: "Hotel / Hostel",
+    accommodationAddress: "Dirección / Airbnb",
     accommodationHint: "Primero elegí la ciudad de destino",
     accommodationAddressHint: 'Ej: "Calle Mayor 15, Madrid"',
-    generate: "✈️ Generar itinerario",
-    generating: "✈️ Generando itinerario...",
-    mapTitle: "🗺️ Mapa del viaje",
-    mustSee: "⭐ Imperdible",
+    generate: "Generar itinerario",
+    generating: "Generando itinerario...",
+    mapTitle: "Mapa del viaje",
+    mustSee: "Imperdible",
     bestTime: "Mejor horario",
-    official: "🌐 Sitio oficial",
+    official: "Sitio oficial",
     expertBadge: "Generado por IA · Validado por expertos en turismo",
     tripTypes: { placer:"Placer", negocios:"Negocios", aventura:"Aventura", familiar:"Familiar", romántico:"Romántico", gastronómico:"Gastronómico", cultural:"Cultural" },
     interestOptions: ["Cultura","Gastronomía","Aventura","Relax","Shopping","Naturaleza","Deportes","Historia","Arte","Vida nocturna"],
@@ -145,16 +146,16 @@ const T: Record<string, Record<string, any>> = {
     day: "day", days: "days",
     accommodation: "Accommodation",
     accommodationOptional: "(optional)",
-    accommodationSearch: "🔍 Hotel / Hostel",
-    accommodationAddress: "📍 Address / Airbnb",
+    accommodationSearch: "Hotel / Hostel",
+    accommodationAddress: "Address / Airbnb",
     accommodationHint: "First choose your destination city",
     accommodationAddressHint: 'E.g: "15 Main Street, Paris"',
-    generate: "✈️ Generate itinerary",
-    generating: "✈️ Generating itinerary...",
+    generate: "Generate itinerary",
+    generating: "Generating itinerary...",
     mapTitle: "🗺️ Trip map",
     mustSee: "⭐ Must-see",
     bestTime: "Best time",
-    official: "🌐 Official site",
+    official: "Official site",
     expertBadge: "AI-Generated · Validated by Tourism Experts",
     tripTypes: { placer:"Leisure", negocios:"Business", aventura:"Adventure", familiar:"Family", romántico:"Romantic", gastronómico:"Gastronomy", cultural:"Cultural" },
     interestOptions: ["Culture","Gastronomy","Adventure","Relax","Shopping","Nature","Sports","History","Art","Nightlife"],
@@ -175,16 +176,16 @@ const T: Record<string, Record<string, any>> = {
     day: "jour", days: "jours",
     accommodation: "Hébergement",
     accommodationOptional: "(optionnel)",
-    accommodationSearch: "🔍 Hôtel / Hostel",
-    accommodationAddress: "📍 Adresse / Airbnb",
+    accommodationSearch: "Hôtel / Hostel",
+    accommodationAddress: "Adresse / Airbnb",
     accommodationHint: "Choisissez d'abord la ville",
     accommodationAddressHint: 'Ex: "15 rue de Rivoli, Paris"',
-    generate: "✈️ Générer l'itinéraire",
-    generating: "✈️ Génération en cours...",
+    generate: "Générer l'itinéraire",
+    generating: "Génération en cours...",
     mapTitle: "🗺️ Carte du voyage",
     mustSee: "⭐ Incontournable",
     bestTime: "Meilleur moment",
-    official: "🌐 Site officiel",
+    official: "Site officiel",
     expertBadge: "Généré par IA · Validé par des experts en voyage",
     tripTypes: { placer:"Loisirs", negocios:"Affaires", aventura:"Aventure", familiar:"Famille", romántico:"Romantique", gastronómico:"Gastronomie", cultural:"Culture" },
     interestOptions: ["Culture","Gastronomie","Aventure","Détente","Shopping","Nature","Sport","Histoire","Art","Vie nocturne"],
@@ -205,16 +206,16 @@ const T: Record<string, Record<string, any>> = {
     day: "giorno", days: "giorni",
     accommodation: "Alloggio",
     accommodationOptional: "(opzionale)",
-    accommodationSearch: "🔍 Hotel / Hostel",
-    accommodationAddress: "📍 Indirizzo / Airbnb",
+    accommodationSearch: "Hotel / Hostel",
+    accommodationAddress: "Indirizzo / Airbnb",
     accommodationHint: "Prima scegli la città",
     accommodationAddressHint: 'Es: "Via Roma 15, Roma"',
-    generate: "✈️ Genera itinerario",
-    generating: "✈️ Generazione in corso...",
+    generate: "Genera itinerario",
+    generating: "Generazione in corso...",
     mapTitle: "🗺️ Mappa del viaggio",
     mustSee: "⭐ Da non perdere",
     bestTime: "Orario migliore",
-    official: "🌐 Sito ufficiale",
+    official: "Sito ufficiale",
     expertBadge: "Generato da IA · Validato da esperti di viaggio",
     tripTypes: { placer:"Piacere", negocios:"Affari", aventura:"Avventura", familiar:"Famiglia", romántico:"Romantico", gastronómico:"Gastronomia", cultural:"Culturale" },
     interestOptions: ["Cultura","Gastronomia","Avventura","Relax","Shopping","Natura","Sport","Storia","Arte","Vita notturna"],
@@ -235,16 +236,16 @@ const T: Record<string, Record<string, any>> = {
     day: "Tag", days: "Tage",
     accommodation: "Unterkunft",
     accommodationOptional: "(optional)",
-    accommodationSearch: "🔍 Hotel / Hostel",
-    accommodationAddress: "📍 Adresse / Airbnb",
+    accommodationSearch: "Hotel / Hostel",
+    accommodationAddress: "Adresse / Airbnb",
     accommodationHint: "Wählen Sie zuerst die Zielstadt",
     accommodationAddressHint: 'z.B: "Hauptstraße 15, Berlin"',
-    generate: "✈️ Reiseplan erstellen",
-    generating: "✈️ Wird erstellt...",
+    generate: "Reiseplan erstellen",
+    generating: "Wird erstellt...",
     mapTitle: "🗺️ Reisekarte",
     mustSee: "⭐ Sehenswert",
     bestTime: "Beste Zeit",
-    official: "🌐 Offizielle Website",
+    official: "Offizielle Website",
     expertBadge: "KI-generiert · Von Reiseexperten validiert",
     tripTypes: { placer:"Urlaub", negocios:"Geschäft", aventura:"Abenteuer", familiar:"Familie", romántico:"Romantisch", gastronómico:"Gastronomie", cultural:"Kultur" },
     interestOptions: ["Kultur","Gastronomie","Abenteuer","Entspannung","Shopping","Natur","Sport","Geschichte","Kunst","Nachtleben"],
@@ -265,16 +266,16 @@ const T: Record<string, Record<string, any>> = {
     day: "dia", days: "dias",
     accommodation: "Hospedagem",
     accommodationOptional: "(opcional)",
-    accommodationSearch: "🔍 Hotel / Hostel",
-    accommodationAddress: "📍 Endereço / Airbnb",
+    accommodationSearch: "Hotel / Hostel",
+    accommodationAddress: "Endereço / Airbnb",
     accommodationHint: "Primeiro escolha a cidade",
     accommodationAddressHint: 'Ex: "Rua Augusta 15, Lisboa"',
-    generate: "✈️ Gerar itinerário",
-    generating: "✈️ Gerando itinerário...",
+    generate: "Gerar itinerário",
+    generating: "Gerando itinerário...",
     mapTitle: "🗺️ Mapa da viagem",
     mustSee: "⭐ Imperdível",
     bestTime: "Melhor horário",
-    official: "🌐 Site oficial",
+    official: "Site oficial",
     expertBadge: "Gerado por IA · Validado por especialistas em viagens",
     tripTypes: { placer:"Lazer", negocios:"Negócios", aventura:"Aventura", familiar:"Família", romántico:"Romântico", gastronómico:"Gastronômico", cultural:"Cultural" },
     interestOptions: ["Cultura","Gastronomia","Aventura","Relax","Shopping","Natureza","Esportes","História","Arte","Vida noturna"],
@@ -359,6 +360,7 @@ export default function SearchForm() {
   const [accommodationCoords, setAccommodationCoords] = useState<{ lat: number; lon: number } | null>(null);
   const [accommodationMode, setAccommodationMode] = useState<"search" | "address">("search");
   const [accommodationTyped, setAccommodationTyped] = useState("");
+  const [planeAnimKey, setPlaneAnimKey] = useState(0);
 
   const autocompleteRef = useRef<GeocoderAutocomplete | null>(null);
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
@@ -429,6 +431,7 @@ export default function SearchForm() {
 
   async function generateTrip() {
     if (!city || !country) return;
+    setPlaneAnimKey(k => k + 1);
     setLoading(true);
     let finalCoords = accommodationCoords;
     let finalName = accommodationName;
@@ -692,7 +695,10 @@ export default function SearchForm() {
           </div>
 
           <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "24px" }}>
-            <button onClick={generateTrip} disabled={loading} className="btn-generate">
+            <button onClick={generateTrip} disabled={loading} className="btn-generate" style={{ display: "inline-flex", alignItems: "center", gap: "10px" }}>
+              <span key={planeAnimKey} className="plane-draw-icon">
+                <Plane size={17} strokeWidth={2.2} />
+              </span>
               {loading ? t.generating : t.generate}
             </button>
           </div>
