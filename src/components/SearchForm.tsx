@@ -308,7 +308,16 @@ function TransportDivider({ transport, accessNote, fromAccommodation, accommodat
     <div style={{ display: "flex", alignItems: "center", gap: "12px", padding: "12px 8px" }}>
       <div style={{ flex: 1, height: "1px", background: "linear-gradient(to right, transparent, rgba(42,181,160,0.3))" }} />
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px", flexShrink: 0 }}>
-        {isFromHotel && <span style={{ fontSize: "11px", color: "#7c3aed", fontWeight: 600 }}>🏨 {accommodationName}</span>}
+        {isFromHotel && (
+          <span style={{
+            fontSize: "12px", color: "#6d28d9", fontWeight: 700,
+            background: "rgba(237,233,254,0.9)", border: "1px solid #c4b5fd",
+            borderRadius: "100px", padding: "3px 10px",
+            display: "flex", alignItems: "center", gap: "5px",
+          }}>
+            🏨 {accommodationName}
+          </span>
+        )}
         {allOptions.length > 0 && (
           <div className="transport-pill" style={{
             background: isWater ? "rgba(219,234,254,0.95)" : isFromHotel ? "rgba(237,233,254,0.95)" : "rgba(255,255,255,0.95)",
@@ -816,6 +825,40 @@ export default function SearchForm() {
                 global-home-assist.vercel.app
               </span>
             </div>
+
+            {/* Banner de hospedaje */}
+            {itineraryAccommodationName && (
+              <div style={{
+                display: "flex", alignItems: "center", gap: "14px",
+                background: "linear-gradient(135deg, rgba(237,233,254,0.95), rgba(221,214,254,0.8))",
+                border: "1.5px solid #c4b5fd",
+                borderRadius: "16px",
+                padding: "16px 20px",
+                boxShadow: "0 4px 16px rgba(124,58,237,0.12)",
+              }}>
+                <div style={{
+                  width: "42px", height: "42px", borderRadius: "12px",
+                  background: "linear-gradient(135deg, #7c3aed, #9d5df0)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: "20px", flexShrink: 0,
+                }}>
+                  🏨
+                </div>
+                <div>
+                  <p style={{ fontSize: "11px", fontWeight: 700, color: "#7c3aed", textTransform: "uppercase", letterSpacing: "0.08em", margin: "0 0 3px 0" }}>
+                    Tu hospedaje base
+                  </p>
+                  <p style={{ fontSize: "15px", fontWeight: 700, color: "#4c1d95", margin: 0 }}>
+                    {itineraryAccommodationName}
+                  </p>
+                </div>
+                <div style={{ marginLeft: "auto", fontSize: "11px", color: "#7c3aed", fontWeight: 600, textAlign: "right" }}>
+                  <span style={{ background: "rgba(124,58,237,0.12)", padding: "4px 10px", borderRadius: "100px", border: "1px solid rgba(124,58,237,0.25)" }}>
+                    Punto de partida de cada día
+                  </span>
+                </div>
+              </div>
+            )}
 
             {itinerary.days.map((day: any, dayIndex: number) => (
               <div key={dayIndex} className="print-day">
