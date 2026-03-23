@@ -13,6 +13,7 @@ import MedicalAssistance from "@/components/MedicalAssistance";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
 import FlightSearch from "@/components/FlightSearch";
 import InsuranceBanner from "@/components/InsuranceBanner";
+import ShareButton from "@/components/ShareButton";
 import "@geoapify/geocoder-autocomplete/styles/minimal.css";
 
 const TravelMap = dynamic(() => import("@/components/TravelMap"), {
@@ -862,6 +863,8 @@ export default function SearchForm() {
                 </div>
               </div>
             ))}
+
+            <ShareButton destination={itinerary.destination || city} language={language} />
 
             <InsuranceBanner language={language} />
 
