@@ -607,6 +607,375 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "tokio-guia-primer-viaje",
+    title: "Tokio para el viajero que nunca fue a Asia: la guía que ojalá hubieras tenido",
+    excerpt: "Japón es el destino que más intimida antes de ir y el que más enamora después. Tokio no es difícil — es diferente. Esta guía existe para que esa diferencia sea una ventaja, no un obstáculo.",
+    category: "guias",
+    categoryLabel: "Guías",
+    readTime: 9,
+    publishDate: "2025-03-26",
+    tags: ["qué ver en Tokio", "guía Tokyo primer viaje", "Japón viaje", "itinerario Tokio"],
+    heroEmoji: "🗼",
+    metaTitle: "Guía de Tokio para principiantes: todo lo que necesitás saber antes de ir",
+    metaDescription: "La guía completa de Tokio para tu primer viaje a Japón: cómo moverse, dónde comer, qué ver y los errores que todos cometen. Con itinerario real de 5 días.",
+    sections: [
+      {
+        type: "intro",
+        text: "Japón es el destino que más intimida antes de ir y el que más enamora después. No porque sea peligroso ni difícil — sino porque es radicalmente diferente a todo lo que conocés. Esta guía existe para que esa diferencia sea una ventaja, no un obstáculo.",
+      },
+      {
+        type: "h2",
+        text: "Lo que nadie te dice antes del primer viaje a Tokio",
+      },
+      {
+        type: "p",
+        text: "Tokio tiene 14 millones de personas y una tasa de criminalidad más baja que la mayoría de las ciudades europeas. Podés dejar el celular en la mesa de un café y volver a encontrarlo. Eso no es un mito — es la norma. El miedo previo al viaje suele ser inversamente proporcional a lo cómodo que te vas a sentir cuando llegues.",
+      },
+      {
+        type: "p",
+        text: "El verdadero desafío no es la seguridad: es el sistema de transporte. Tokio tiene la red de metro más compleja del mundo con 13 líneas y múltiples operadores. Pero también tiene la mejor app para navigarla (Google Maps funciona perfectamente) y los trenes son puntuales al minuto.",
+      },
+      {
+        type: "h2",
+        text: "Transporte: la Suica Card que lo cambia todo",
+      },
+      {
+        type: "p",
+        text: "Lo primero que hacés al salir del aeropuerto: comprá una Suica Card (tarjeta recargable del sistema de transporte) en cualquier máquina de la estación. Carga ¥2000 (~$13 USD) para empezar. Funciona en metro, JR trains, buses, y también en convenience stores como 7-Eleven y FamilyMart.",
+      },
+      {
+        type: "callout",
+        emoji: "🚇",
+        text: "Google Maps en Tokio es extraordinariamente preciso. Ingresá la dirección o el nombre del lugar en japonés (copiando desde una búsqueda) y te da la ruta exacta con transfers, andén, y tiempo de caminata. No necesitás entender el sistema — solo seguir las instrucciones.",
+      },
+      {
+        type: "h2",
+        text: "Los 5 barrios que definen Tokio",
+      },
+      {
+        type: "list",
+        items: [
+          "Shibuya — El cruce peatonal más famoso del mundo y la energía más intensa de la ciudad. Imperdible de noche.",
+          "Shinjuku — El hub central con el Golden Gai (callejones de bares minúsculos) y los rascacielos del Gobierno Metropolitano (vista gratis desde el piso 45).",
+          "Asakusa — La Tokio histórica. El templo Senso-ji, los rickshaws y la Nakamise-dori para souvenirs sin trampa.",
+          "Harajuku — La Takeshita Street con la moda más extrema del mundo. Adyacente al Meiji Shrine, el contraste absoluto.",
+          "Yanaka — El barrio que sobrevivió los bombardeos de la Segunda Guerra. Calles de 1950, cementerio histórico, gatos y ningún turista.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Comer en Tokio: el país con más estrellas Michelin del mundo",
+      },
+      {
+        type: "p",
+        text: "Tokio tiene más restaurantes con estrella Michelin que París, Lyon y Nueva York juntos. Pero el dato más relevante para la mayoría de los viajeros es otro: la comida barata en Japón es excepcional. Un ramen en un local sin nombre sale ¥800–1200 (~$5–8). Un sushi en Tsukiji Outer Market a las 7am es mejor que el 90% de los restaurantes de sushi del resto del mundo.",
+      },
+      {
+        type: "tip",
+        title: "Convenience store = gastronomía de verdad",
+        text: "Los 7-Eleven, Lawson y FamilyMart japoneses son otra categoría de convenience store. Los onigiri (triángulos de arroz rellenos), los sandwiches tamago y el matcha latte del Family Mart son genuinamente buenos. Desayunar ahí es una experiencia local, no una concesión.",
+      },
+      {
+        type: "h2",
+        text: "Qué ver en 5 días: el orden importa",
+      },
+      {
+        type: "list",
+        heading: "Itinerario recomendado",
+        items: [
+          "Día 1: Asakusa + Ueno (jet lag, caminata lenta, templo Senso-ji, mercado Ameyoko)",
+          "Día 2: Shibuya + Harajuku + Omotesando (el cruce de noche, Meiji Shrine temprano)",
+          "Día 3: Shinjuku + día completo (Tokyo Govt Building gratis a las 6pm, Golden Gai noche)",
+          "Día 4: Akihabara + Yanaka + Ueno (cultura pop, barrio histórico, museos)",
+          "Día 5: Fuji-Q Highland o Nikko day trip (si el clima acompaña)",
+        ],
+      },
+      {
+        type: "h2",
+        text: "El error más común: subestimar las distancias",
+      },
+      {
+        type: "p",
+        text: "Tokio es enorme. Ver Asakusa y Shibuya 'en el mismo día' suena lógico en el mapa, pero son 40 minutos de metro cada vez. Agregar Harajuku y Shinjuku al mismo día es viable. Agregar Akihabara ya es demasiado para disfrutar bien. Menos barrios por día, más profundidad en cada uno.",
+      },
+      {
+        type: "cta",
+        destination: "tokio",
+        text: "Generá tu itinerario personalizado para Tokio →",
+      },
+    ],
+  },
+
+  {
+    slug: "bali-guia-honesta-2025",
+    title: "Bali en 2025: lo que los influencers no te muestran (y lo que sí vale la pena)",
+    excerpt: "Bali tiene un problema de percepción: la mitad de las fotos que ves son reales pero requieren 2 horas de fila y edición pesada. La otra mitad de la isla, la que importa, casi nadie la fotografía.",
+    category: "destinos",
+    categoryLabel: "Destinos",
+    readTime: 7,
+    publishDate: "2025-03-28",
+    tags: ["qué hacer en Bali", "guía Bali 2025", "Bali viaje", "Bali Instagram vs realidad"],
+    heroEmoji: "🌴",
+    metaTitle: "Bali 2025: guía honesta para viajeros — lo real vs Instagram",
+    metaDescription: "La guía de Bali sin filtros: cuáles atracciones valen la pena, cuáles son una trampa turística, dónde quedarse y cómo moverse. Con presupuesto real para 2025.",
+    sections: [
+      {
+        type: "intro",
+        text: "Bali tiene un problema de percepción: la mitad de las fotos que ves en Instagram son reales, pero requieren 2 horas de fila, iluminación perfecta y edición pesada. La otra mitad de la isla — la que realmente importa — casi nadie la fotografía.",
+      },
+      {
+        type: "h2",
+        text: "La Bali que existe antes de Instagram",
+      },
+      {
+        type: "p",
+        text: "Bali tiene 4 millones de habitantes que siguen practicando una versión única del hinduismo balinés, con ceremonias diarias, ofrendas en cada esquina y templos que funcionan activamente. Esta Bali no necesita filtros y es accesible caminando desde cualquier hotel. Es la parte que la mayoría de los turistas pasan sin ver porque están en fila para la foto del columpio sobre el abismo.",
+      },
+      {
+        type: "h2",
+        text: "Las atracciones sobrevaloradas (con honestidad)",
+      },
+      {
+        type: "list",
+        items: [
+          "Puertas del templo Lempuyang ('Gates of Heaven'): la foto es real, la fila es de 2–3 horas y hay un vidrio debajo que crea el reflejo. Decide vos si vale.",
+          "Columpio de Ubud ('Bali Swing'): precio de $35–50 USD por 15 minutos. La foto es bonita. El valor, discutible.",
+          "Tegalalang Rice Terraces: bellísimas, pero en 2025 requieren entrada de IDR 50.000 y hay vendedores cada 5 metros. Igual vale — llegá a las 7am.",
+          "Monkey Forest de Ubud: los monos son agresivos con comida y mochilas. Cerrá todo y no llevés snacks.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Lo que realmente vale la pena (y casi nadie menciona)",
+      },
+      {
+        type: "p",
+        text: "El templo Tirta Empul en Tampaksiring: los devotos balineses vienen a purificarse en los baños sagrados. Podés participar (con sarong, que prestan en la entrada). Es una de las experiencias más auténticas de Bali y no está en la mayoría de los itinerarios turísticos.",
+      },
+      {
+        type: "p",
+        text: "Sidemen Valley: el valle menos visitado de Bali, con arrozales tan buenos como Tegalalang pero sin la infraestructura turística. Quedarse una noche en Sidemen es, para muchos, el mejor recuerdo del viaje.",
+      },
+      {
+        type: "callout",
+        emoji: "🛵",
+        text: "Alquilar una moto en Bali (~IDR 60.000/día = $4 USD) abre destinos imposibles en taxi. La única condición: que ya hayas manejado moto antes. Las carreteras de montaña no son el lugar para aprender.",
+      },
+      {
+        type: "h2",
+        text: "Dónde quedarse: la decisión más importante del viaje",
+      },
+      {
+        type: "p",
+        text: "Canggu es la base de los nómadas digitales y tiene la mejor escena de cafés y surf de la isla, pero perdió algo de autenticidad. Ubud es el centro cultural — rodeado de naturaleza, con clases de cocina y yoga. Seminyak es la opción más cómoda para familias. Nusa Penida (isla adyacente) es para los que buscan naturaleza pura y no les molesta la infraestructura limitada.",
+      },
+      {
+        type: "tip",
+        title: "Temporada en Bali",
+        text: "Mayo a septiembre: estación seca, ideal. Julio y agosto son pico de turismo (precios 30–50% más altos). Octubre a abril: estación de lluvias — las lluvias son fuertes pero cortas, generalmente de tarde. Sigue siendo visitable y los precios bajan considerablemente.",
+      },
+      {
+        type: "h2",
+        text: "Presupuesto real para 7 días en Bali (2025)",
+      },
+      {
+        type: "list",
+        heading: "Estimación por persona en temporada media",
+        items: [
+          "Vuelo desde Europa o LATAM: $400–700 (el mayor gasto del viaje)",
+          "Alojamiento 7 noches (villa privada o guesthouse cómoda): $150–350",
+          "Comida (warung local a restaurante turístico): $15–30/día",
+          "Transporte local (moto o taxi app Gojek): $5–10/día",
+          "Entradas y actividades: $80–150 total",
+          "TOTAL estimado: $900–1.500 por persona",
+        ],
+      },
+      {
+        type: "cta",
+        destination: "bali",
+        text: "Generá tu itinerario personalizado para Bali →",
+      },
+    ],
+  },
+
+  {
+    slug: "buenos-aires-guia-viajero-extranjero",
+    title: "Buenos Aires para el viajero del resto del mundo: la guía que escribiría un porteño",
+    excerpt: "Buenos Aires tiene barrios que compiten con los mejores de Europa, una gastronomía que mezcla influencia italiana, española y judía, y una cultura nocturna que empieza cuando otras ciudades ya duermen. Pero también tiene trampas que solo los locales conocen.",
+    category: "destinos",
+    categoryLabel: "Destinos",
+    readTime: 7,
+    publishDate: "2025-03-30",
+    tags: ["qué ver en Buenos Aires", "guía Buenos Aires", "visitar Argentina", "turismo Buenos Aires"],
+    heroEmoji: "🥩",
+    metaTitle: "Buenos Aires: guía completa para viajeros extranjeros en 2025",
+    metaDescription: "La guía de Buenos Aires escrita desde adentro: qué barrios visitar, dónde comer asado de verdad, cómo moverse y las trampas turísticas que evitar.",
+    sections: [
+      {
+        type: "intro",
+        text: "Buenos Aires tiene barrios que compiten con los mejores de Europa, una gastronomía que mezcla influencia italiana, española y judía con producto local excepcional, y una cultura nocturna que empieza cuando otras ciudades ya duermen. Pero también tiene trampas que solo los locales conocen.",
+      },
+      {
+        type: "h2",
+        text: "Los barrios que definen Buenos Aires (y los que podés saltear)",
+      },
+      {
+        type: "p",
+        text: "Palermo es el barrio más grande y diverso: Palermo Soho tiene las mejores tiendas de diseño independiente y restaurantes creativos. Palermo Hollywood tiene la mayor concentración de productoras y una movida nocturna de bares. Las Cañitas es para una cena tranquila. Si tenés tiempo para un solo barrio, es Palermo.",
+      },
+      {
+        type: "p",
+        text: "San Telmo es el barrio histórico con la feria del domingo (Feria de San Telmo) que es genuinamente buena, no una trampa turística. El mercado cubierto tiene puestos de anticuarios, comida y tango en vivo. Llegá antes de las 11am para evitar la peor aglomeración.",
+      },
+      {
+        type: "list",
+        items: [
+          "Recoleta — El barrio más europeo de la ciudad. El cementerio de la Recoleta (donde está Eva Perón) es arquitectónicamente impresionante y gratis.",
+          "La Boca — Solo la Caminita y sus alrededores son seguros para turistas. No te alejes del perímetro turístico.",
+          "Puerto Madero — Bonito para caminar, restaurantes caros. No es donde está la verdadera Buenos Aires.",
+          "Belgrano — Barrio residencial con un Chinatown pequeño pero auténtico y el Mercado de Belgrano.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "El asado: cómo comerlo bien (sin pagar como turista)",
+      },
+      {
+        type: "p",
+        text: "Buenos Aires tiene dos tipos de parrillas: las que cobran precio turístico en La Boca o Puerto Madero, y las que comen los porteños. La diferencia es notable. Para el segundo tipo: buscá parrillas en Palermo, Villa Crespo o Caballito. Pedí el asado completo para la mesa, no cortes individuales. El chimichurri va aparte.",
+      },
+      {
+        type: "callout",
+        emoji: "🥩",
+        text: "El precio de la carne en Argentina sigue siendo notablemente bajo para el estándar internacional. Un asado completo para dos personas en una parrilla local oscila entre $15–25 USD (2025). En Europa el mismo corte costaría el triple.",
+      },
+      {
+        type: "h2",
+        text: "Moverse en Buenos Aires: la verdad sobre el transporte",
+      },
+      {
+        type: "p",
+        text: "La red de subte (metro) es antigua pero funcional — cubre el centro y los barrios más turísticos. La tarjeta SUBE es el equivalente a la Oyster Card londinense: recargable, funciona en subte, colectivos y trenes. Vale conseguirla el primer día en cualquier kiosco.",
+      },
+      {
+        type: "p",
+        text: "Los colectivos (buses) cubren absolutamente toda la ciudad pero requieren conocer el número de línea. Google Maps funciona bien para esto. Los taxis tienen una tarifa regulada — es seguro tomarlo en la calle, pero preferí siempre los oficiales amarillos y negros o apps como Cabify.",
+      },
+      {
+        type: "tip",
+        title: "Cambio de moneda en 2025",
+        text: "Argentina tiene una situación cambiaria específica. Investigá el tipo de cambio vigente antes de viajar y consultá opciones legales disponibles en el momento de tu visita — las condiciones pueden variar. Usá una tarjeta con conversión a tasa de mercado para maximizar cada transacción.",
+      },
+      {
+        type: "h2",
+        text: "Buenos Aires de noche: el horario real",
+      },
+      {
+        type: "p",
+        text: "Los porteños cenan entre las 21 y las 23hs. Los restaurantes antes de las 20:30 están semivacíos (son los turistas). Las milongas (bailes de tango) empiezan a las 23hs y duran hasta las 4am. Los boliches (discotecas) no se llenan antes de la 1:30am. Si llegás a un bar a las 22hs, estás llegando temprano.",
+      },
+      {
+        type: "cta",
+        destination: "buenos-aires",
+        text: "Generá tu itinerario personalizado para Buenos Aires →",
+      },
+    ],
+  },
+
+  {
+    slug: "vuelos-latinoamerica-europa-guia",
+    title: "Vuelos desde Latinoamérica a Europa: la guía definitiva para pagar menos",
+    excerpt: "El vuelo transatlántico es el gasto más grande de cualquier viaje europeo desde LATAM. También es el más optimizable. Esta guía tiene todo lo que necesitás saber para no sobrepagas.",
+    category: "presupuesto",
+    categoryLabel: "Presupuesto",
+    readTime: 8,
+    publishDate: "2025-04-01",
+    tags: ["vuelo latinoamerica europa", "volar a europa barato", "precio vuelos transatlánticos", "aerolíneas LATAM Europa"],
+    heroEmoji: "✈️",
+    metaTitle: "Vuelos desde Latinoamérica a Europa en 2025: cómo pagar menos",
+    metaDescription: "Guía completa para conseguir el mejor precio en vuelos desde Argentina, México, Colombia y Chile hacia Europa. Qué aerolíneas usar, cuándo comprar y cómo usar escalas a tu favor.",
+    sections: [
+      {
+        type: "intro",
+        text: "El vuelo transatlántico es el gasto más grande de cualquier viaje europeo desde Latinoamérica. También es el más optimizable si sabés cómo funciona la industria. Esta guía tiene todo lo que necesitás para no sobrepagar.",
+      },
+      {
+        type: "h2",
+        text: "Cuánto cuesta realmente un vuelo LATAM–Europa en 2025",
+      },
+      {
+        type: "list",
+        heading: "Rangos de precio por origen (ida y vuelta, clase económica, temporada media)",
+        items: [
+          "Buenos Aires (EZE) → Europa: $550–900 USD en temporada baja, $800–1.400 en julio-agosto",
+          "Ciudad de México (MEX) → Europa: $500–850 USD temporada baja, $750–1.300 en pico",
+          "Bogotá (BOG) → Europa: $480–800 USD temporada baja, $700–1.200 en pico",
+          "Lima (LIM) → Europa: $520–850 USD temporada baja, $750–1.250 en pico",
+          "Santiago (SCL) → Europa: $580–920 USD temporada baja, $850–1.450 en pico",
+        ],
+      },
+      {
+        type: "p",
+        text: "Estos rangos asumen destinos principales europeos (Madrid, Lisboa, Amsterdam, París). Los precios caen significativamente si tenés flexibilidad de destino — el aeropuerto más barato de entrada no siempre es el más obvio.",
+      },
+      {
+        type: "h2",
+        text: "Las aerolíneas que ofrecen los mejores precios transatlánticos",
+      },
+      {
+        type: "p",
+        text: "Iberia y Air Europa tienen los mejores precios históricos desde Argentina y Colombia hacia España. Air France-KLM suele ser competitivo desde México. TAP Air Portugal tiene tarifas muy agresivas desde toda Latinoamérica con escala en Lisboa — y Lisboa es un excelente destino en sí mismo.",
+      },
+      {
+        type: "p",
+        text: "LATAM Airlines opera rutas directas desde varios países latinoamericanos a Europa y suele tener precios competitivos en promociones. Aerolíneas Argentinas tiene la única ruta directa Buenos Aires–Roma y ocasionalmente Buenos Aires–Madrid a precios que compiten con las europeas.",
+      },
+      {
+        type: "callout",
+        emoji: "🔎",
+        text: "Google Flights es la herramienta más poderosa para buscar vuelos transatlánticos. Usá la vista de calendario para ver precios por fecha y la función 'Explorar destinos' para encontrar el destino más barato en una ventana de fechas. Skyscanner complementa bien para ver aerolíneas que Google no siempre muestra.",
+      },
+      {
+        type: "h2",
+        text: "El secreto de las escalas: cómo convertir una molestia en un ahorro",
+      },
+      {
+        type: "p",
+        text: "Un vuelo directo Buenos Aires–Madrid cuesta en promedio 15–25% más que el mismo vuelo con escala en São Paulo, Lima o Miami. Si la escala es de menos de 4 horas, el ahorro rara vez justifica el riesgo de perder conexión. Si es de 8+ horas, podés convertirla en una mini-visita a la ciudad de escala.",
+      },
+      {
+        type: "tip",
+        title: "El vuelo open-jaw: el hack más subestimado",
+        text: "Un vuelo 'open-jaw' entra por una ciudad europea y sale por otra diferente. Ejemplo: entrás por Lisboa, salís por Amsterdam. El precio suele ser similar al ida y vuelta a un solo destino, pero cubrís dos países sin volver sobre tus pasos. Buscalo explícitamente en Google Flights seleccionando aeropuertos distintos de salida y regreso.",
+      },
+      {
+        type: "h2",
+        text: "Cuándo comprar: la ventana óptima",
+      },
+      {
+        type: "p",
+        text: "Para vuelos transatlánticos desde Latinoamérica, la ventana óptima de compra es 3–5 meses antes para temporada alta (julio-agosto) y 6–10 semanas antes para temporada baja. Comprar con más de 6 meses de anticipación para temporada alta raramente da el mejor precio — las aerolíneas suelen liberar más asientos baratos cuando se acerca la fecha.",
+      },
+      {
+        type: "p",
+        text: "Las alertas de precios en Google Flights son la herramienta más práctica: configurás la ruta que querés y Google te avisa cuando el precio baja. Sin costo, sin complicación.",
+      },
+      {
+        type: "h2",
+        text: "Equipaje: el costo oculto que más sorprende",
+      },
+      {
+        type: "p",
+        text: "Las aerolíneas europeas como Vueling e Iberia Express tienen precios de base muy bajos pero cobran el equipaje por separado. Un vuelo de €180 puede convertirse en €280 al agregar una valija. Siempre calculá el precio total con el equipaje que necesitás antes de comparar.",
+      },
+      {
+        type: "cta",
+        text: "Planificá tu itinerario europeo completo con IA →",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

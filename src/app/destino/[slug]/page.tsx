@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { destinations, getDestination } from "@/data/destinations";
+import { ArrowLeft, Calendar, Coins, Globe, Backpack, Plane, Sparkles, ChevronRight } from "lucide-react";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -57,9 +58,9 @@ export default async function DestinoPage({ params }: Props) {
           fontSize: "16px",
           display: "flex",
           alignItems: "center",
-          gap: "8px",
+          gap: "6px",
         }}>
-          ← Global Home Assist
+          <ArrowLeft size={16} strokeWidth={2.5} /> Global Home Assist
         </Link>
         <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)" }}>
           {dest.continent} · {dest.country}
@@ -110,8 +111,8 @@ export default async function DestinoPage({ params }: Props) {
           marginBottom: "48px",
           boxShadow: "0 12px 40px rgba(42,181,160,0.35)",
         }}>
-          <p style={{ color: "white", fontSize: "14px", margin: "0 0 8px 0", opacity: 0.85 }}>
-            ✨ Planificador de viajes con inteligencia artificial
+          <p style={{ color: "white", fontSize: "14px", margin: "0 0 8px 0", opacity: 0.85, display: "flex", alignItems: "center", justifyContent: "center", gap: "6px" }}>
+            <Sparkles size={14} /> Planificador de viajes con inteligencia artificial
           </p>
           <h2 style={{
             fontFamily: "'Playfair Display', serif",
@@ -123,7 +124,9 @@ export default async function DestinoPage({ params }: Props) {
             Generá tu itinerario personalizado para {dest.name}
           </h2>
           <Link href="/" style={{
-            display: "inline-block",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
             background: "white",
             color: "#1a2a6c",
             padding: "14px 40px",
@@ -134,7 +137,7 @@ export default async function DestinoPage({ params }: Props) {
             boxShadow: "0 6px 20px rgba(0,0,0,0.2)",
             letterSpacing: "0.01em",
           }}>
-            ✈️ Planificar mi viaje gratis →
+            <Plane size={16} strokeWidth={2.5} /> Planificar mi viaje gratis <ChevronRight size={16} strokeWidth={2.5} />
           </Link>
           <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "12px", margin: "12px 0 0 0" }}>
             Gratis · Sin registro · Listo en 30 segundos
@@ -196,13 +199,13 @@ export default async function DestinoPage({ params }: Props) {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
             {[
-              { icon: "📅", label: "Mejor época", value: dest.bestSeason },
-              { icon: "💰", label: "Moneda", value: dest.currency },
-              { icon: "💬", label: "Idioma", value: dest.language },
-              { icon: "🎒", label: "Presupuesto estimado", value: dest.avgBudget },
+              { icon: <Calendar size={18} strokeWidth={1.8} />, label: "Mejor época", value: dest.bestSeason },
+              { icon: <Coins size={18} strokeWidth={1.8} />, label: "Moneda", value: dest.currency },
+              { icon: <Globe size={18} strokeWidth={1.8} />, label: "Idioma", value: dest.language },
+              { icon: <Backpack size={18} strokeWidth={1.8} />, label: "Presupuesto estimado", value: dest.avgBudget },
             ].map((item, i) => (
               <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                <span style={{ fontSize: "20px", flexShrink: 0, marginTop: "2px" }}>{item.icon}</span>
+                <span style={{ color: "#2ab5a0", flexShrink: 0, marginTop: "2px" }}>{item.icon}</span>
                 <div>
                   <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.5)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "3px" }}>
                     {item.label}
@@ -222,7 +225,9 @@ export default async function DestinoPage({ params }: Props) {
             ¿Listo para vivir {dest.name}?
           </p>
           <Link href="/" style={{
-            display: "inline-block",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
             background: "linear-gradient(135deg, #1a2a6c, #2d3f8f)",
             color: "white",
             padding: "14px 40px",
@@ -232,7 +237,7 @@ export default async function DestinoPage({ params }: Props) {
             textDecoration: "none",
             boxShadow: "0 6px 20px rgba(26,42,108,0.5)",
           }}>
-            ✈️ Crear mi itinerario para {dest.name}
+            <Plane size={16} strokeWidth={2.5} /> Crear mi itinerario para {dest.name}
           </Link>
         </div>
 

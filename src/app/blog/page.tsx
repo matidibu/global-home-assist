@@ -1,7 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { blogPosts } from "@/data/blogPosts";
 import { FeaturedPostCard, PostCard } from "@/components/BlogCards";
+import { BlogCategoryFilter } from "@/components/BlogCategoryFilter";
+import { ArrowLeft, Plane } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog de Viajes | Global Home Assist",
@@ -16,18 +19,20 @@ export const metadata: Metadata = {
   },
 };
 
-const categories = [
-  { key: "todos", label: "Todos" },
-  { key: "destinos", label: "Destinos" },
-  { key: "guias", label: "Guías" },
-  { key: "presupuesto", label: "Presupuesto" },
-  { key: "consejos", label: "Consejos" },
-  { key: "tecnologia", label: "Tecnología" },
-];
+interface Props {
+  searchParams: Promise<{ categoria?: string }>;
+}
 
-export default function BlogPage() {
-  const featured = blogPosts[0];
-  const rest = blogPosts.slice(1);
+export default async function BlogPage({ searchParams }: Props) {
+  const { categoria } = await searchParams;
+  const activeCategory = categoria || "todos";
+
+  const filtered = activeCategory === "todos"
+    ? blogPosts
+    : blogPosts.filter((p) => p.category === activeCategory);
+
+  const featured = filtered[0];
+  const rest = filtered.slice(1);
 
   return (
     <main style={{
@@ -49,12 +54,12 @@ export default function BlogPage() {
           color: "white",
           textDecoration: "none",
           fontWeight: 700,
-          fontSize: "16px",
+          fontSize: "15px",
           display: "flex",
           alignItems: "center",
-          gap: "8px",
+          gap: "6px",
         }}>
-          ← Global Home Assist
+          <ArrowLeft size={16} strokeWidth={2.5} /> Global Home Assist
         </Link>
         <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em" }}>
           Blog de Viajes
@@ -64,7 +69,7 @@ export default function BlogPage() {
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 24px 100px" }}>
 
         {/* Header */}
-        <div style={{ marginBottom: "48px" }}>
+        <div style={{ marginBottom: "40px" }}>
           <div style={{
             display: "inline-block",
             background: "rgba(42,181,160,0.15)",
@@ -102,36 +107,34 @@ export default function BlogPage() {
           </p>
         </div>
 
-        {/* Category pills */}
-        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "40px" }}>
-          {categories.map((cat) => (
-            <span key={cat.key} style={{
-              padding: "6px 16px",
-              borderRadius: "100px",
-              fontSize: "13px",
-              fontWeight: 600,
-              background: cat.key === "todos" ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.07)",
-              border: `1px solid ${cat.key === "todos" ? "rgba(255,255,255,0.3)" : "rgba(255,255,255,0.12)"}`,
-              color: cat.key === "todos" ? "white" : "rgba(255,255,255,0.65)",
-            }}>
-              {cat.label}
-            </span>
-          ))}
-        </div>
+        {/* Category filter — client component */}
+        <Suspense fallback={null}>
+          <BlogCategoryFilter active={activeCategory} />
+        </Suspense>
 
-        {/* Featured post */}
-        <FeaturedPostCard post={featured} />
+        {filtered.length === 0 ? (
+          <div style={{ textAlign: "center", padding: "60px 0", color: "rgba(255,255,255,0.4)", fontSize: "15px" }}>
+            No hay artículos en esta categoría todavía.
+          </div>
+        ) : (
+          <>
+            {/* Featured post */}
+            {featured && <FeaturedPostCard post={featured} />}
 
-        {/* Grid of articles */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-          gap: "20px",
-        }}>
-          {rest.map((post) => (
-            <PostCard key={post.slug} post={post} />
-          ))}
-        </div>
+            {/* Grid */}
+            {rest.length > 0 && (
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+                gap: "20px",
+              }}>
+                {rest.map((post) => (
+                  <PostCard key={post.slug} post={post} />
+                ))}
+              </div>
+            )}
+          </>
+        )}
 
         {/* Bottom CTA */}
         <div style={{
@@ -158,7 +161,9 @@ export default function BlogPage() {
             Usá la IA de Global Home Assist para convertir cualquier destino en un itinerario personalizado con mapas, fotos y rutas optimizadas.
           </p>
           <Link href="/" style={{
-            display: "inline-block",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
             background: "linear-gradient(135deg, #2ab5a0, #1a9e8c)",
             color: "white",
             padding: "14px 40px",
@@ -168,7 +173,7 @@ export default function BlogPage() {
             textDecoration: "none",
             boxShadow: "0 8px 24px rgba(42,181,160,0.35)",
           }}>
-            ✈️ Planificar mi viaje gratis →
+            <Plane size={16} strokeWidth={2.5} /> Planificar mi viaje gratis
           </Link>
         </div>
 

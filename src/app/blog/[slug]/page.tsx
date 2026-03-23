@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getBlogPost, categoryColors, ContentSection } from "@/data/blogPosts";
 import { RelatedPostCard } from "@/components/BlogCards";
+import { ArrowLeft, Lightbulb, Plane, ChevronRight, Sparkles } from "lucide-react";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -163,8 +164,11 @@ function renderSection(section: ContentSection, index: number) {
             textTransform: "uppercase",
             letterSpacing: "0.1em",
             margin: "0 0 8px 0",
+            display: "flex",
+            alignItems: "center",
+            gap: "6px",
           }}>
-            💡 {section.title}
+            <Lightbulb size={13} strokeWidth={2.2} /> {section.title}
           </p>
           <p style={{
             fontSize: "14px",
@@ -187,13 +191,15 @@ function renderSection(section: ContentSection, index: number) {
           margin: "40px 0",
           boxShadow: "0 12px 40px rgba(42,181,160,0.3)",
         }}>
-          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "14px", margin: "0 0 16px 0" }}>
-            ✨ Planificador de viajes con inteligencia artificial
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "14px", margin: "0 0 16px 0", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px" }}>
+            <Sparkles size={14} /> Planificador de viajes con inteligencia artificial
           </p>
           <Link
             href={section.destination ? `/?destino=${section.destination}` : "/"}
             style={{
-              display: "inline-block",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
               background: "white",
               color: "#1a2a6c",
               padding: "14px 40px",
@@ -204,7 +210,7 @@ function renderSection(section: ContentSection, index: number) {
               boxShadow: "0 6px 20px rgba(0,0,0,0.2)",
             }}
           >
-            ✈️ {section.text}
+            <Plane size={15} strokeWidth={2.5} /> {section.text} <ChevronRight size={15} strokeWidth={2.5} />
           </Link>
           <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "12px", margin: "12px 0 0 0" }}>
             Gratis · Sin registro · Listo en 30 segundos
@@ -266,9 +272,9 @@ export default async function BlogPostPage({ params }: Props) {
           fontSize: "15px",
           display: "flex",
           alignItems: "center",
-          gap: "8px",
+          gap: "6px",
         }}>
-          ← Blog
+          <ArrowLeft size={16} strokeWidth={2.5} /> Blog
         </Link>
         <Link href="/" style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", textDecoration: "none", fontWeight: 600 }}>
           Global Home Assist
