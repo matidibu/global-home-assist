@@ -3,10 +3,26 @@ const PEXELS_KEY = process.env.PEXELS_API_KEY
 
 const HEADERS = { "User-Agent": "GlobalHomeAssist/1.0 (travel planner)" };
 
+/**
+ * Pattern to detect person-portrait filenames in Wikipedia image URLs.
+ * Matches "FirstName_LastName.jpg", "Portrait_of_X.jpg", etc.
+ */
+const PORTRAIT_FILENAME_PATTERN = /\b(portrait|headshot|perfil|ritratto|retrato|foto_oficial|official_photo|profile_pic|bio_photo)\b/i;
+
+/**
+ * Pattern to reject Pexels photo alt text that suggests a close-up portrait
+ * or a small group (2–4 people) as the main subject.
+ * Crowds (multitudes at landmarks) are explicitly allowed.
+ */
+const PERSON_ALT_PATTERN = /\b(portrait|headshot|selfie|close.?up of (a |the )?(man|woman|person|girl|boy|people)|smiling (man|woman|person|couple)|posing (man|woman|couple)|a (man|woman) (standing|sitting|holding|wearing|looking)|couple (standing|sitting|posing)|two people|three people|four people)\b/i;
+
 function isValidImageUrl(url: string | null | undefined): url is string {
   if (!url) return false;
   if (/\.(svg|gif)(\?|$)/i.test(url)) return false;
   if (/(coat_of_arms|flag|logo|map|icon|emblem|seal)/i.test(url)) return false;
+  // Reject obvious portrait filenames
+  const filename = decodeURIComponent(url.split('/').pop()?.split('?')[0] ?? '');
+  if (PORTRAIT_FILENAME_PATTERN.test(filename)) return false;
   return true;
 }
 
@@ -60,20 +76,26 @@ async function fetchWikipediaImageByCoords(
     );
     const best = byNameMatch ?? results[0]; // fallback: closest article
 
-    // Skip if the title looks like a person name (2 capitalized words, no place indicators)
+    // Skip if the title looks like a person name (≤4 capitalized words, no place indicators)
     const placeWords = /museum|park|tower|palace|temple|mosque|church|cathedral|square|market|garden|beach|desert|reserve|district|quarter|fort|castle|bridge|mall|center|centre|station|airport|port|harbor|island|bay|lake|mountain|hill|valley|forest|zoo|gallery|theatre|theater|opera|stadium|arena|university|library|monument|memorial|landmark/i;
-    const titleWords = best.title.trim().split(/\s+/);
-    const looksLikePerson = titleWords.length <= 3 &&
-      titleWords.every(w => /^[A-Z]/.test(w)) &&
-      !placeWords.test(best.title);
-    if (looksLikePerson) {
-      // Try second best
-      const fallback = results.find(r => r !== best);
-      if (!fallback) return null;
-      return await fetchImageForTitle(fallback.title);
+
+    function looksLikePerson(title: string): boolean {
+      const words = title.trim().split(/\s+/);
+      return words.length <= 4 &&
+        words.every(w => /^[A-Z\u00C0-\u024F]/.test(w)) &&
+        !placeWords.test(title);
     }
 
-    return await fetchImageForTitle(best.title);
+    // Build ordered candidate list: try best first, then remaining non-person results
+    const candidates = looksLikePerson(best.title)
+      ? results.filter(r => !looksLikePerson(r.title))
+      : [best, ...results.filter(r => r !== best && !looksLikePerson(r.title))];
+
+    for (const candidate of candidates) {
+      const img = await fetchImageForTitle(candidate.title);
+      if (img) return img;
+    }
+    return null;
   } catch {
     return null;
   }
@@ -103,14 +125,15 @@ async function fetchWikipediaImageByQuery(
 
     const placeWords = /museum|park|tower|palace|temple|mosque|church|cathedral|square|market|garden|beach|desert|reserve|district|quarter|fort|castle|bridge|mall|center|centre|station|airport|port|harbor|island|bay|lake|mountain|hill|valley|forest|zoo|gallery|theatre|theater|opera|stadium|arena|university|library|monument|memorial|landmark/i;
 
+    function looksLikePerson(title: string): boolean {
+      const words = title.trim().split(/\s+/);
+      return words.length <= 4 &&
+        words.every(w => /^[A-Z\u00C0-\u024F]/.test(w)) &&
+        !placeWords.test(title);
+    }
+
     // Filter out articles that look like person names
-    const filtered = results.filter(r => {
-      const words = r.title.trim().split(/\s+/);
-      const looksLikePerson = words.length <= 3 &&
-        words.every(w => /^[A-Z]/.test(w)) &&
-        !placeWords.test(r.title);
-      return !looksLikePerson;
-    });
+    const filtered = results.filter(r => !looksLikePerson(r.title));
     const candidates = filtered.length > 0 ? filtered : results;
 
     // Pick the most relevant result:
@@ -153,14 +176,19 @@ export async function searchImage(query: string): Promise<string | null> {
   try {
     if (!PEXELS_KEY) return null;
     const res = await fetch(
-      `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=1`,
+      `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=8`,
       { headers: { Authorization: PEXELS_KEY } }
     );
     const data = await res.json();
-    if (data.photos && data.photos.length > 0) {
-      return data.photos[0].src.medium;
-    }
-    return null;
+    if (!data.photos || data.photos.length === 0) return null;
+
+    // Prefer photos whose alt text does NOT describe a portrait or small group of people
+    const safePhoto = data.photos.find(
+      (p: { alt?: string; src: { medium: string } }) =>
+        !PERSON_ALT_PATTERN.test(p.alt ?? "")
+    ) ?? data.photos[0];
+
+    return safePhoto.src.medium;
   } catch (error) {
     console.error("PEXELS ERROR:", error);
     return null;
@@ -185,8 +213,10 @@ export async function searchPlaceImage(
   if (wikiImg) return wikiImg;
 
   if (!PEXELS_KEY) return null;
+  // Bias queries towards architecture/landscape to avoid portrait results
   return (
+    (await searchImage(`${name} ${city} landmark`)) ??
     (await searchImage(`${name} ${city}`)) ??
-    (await searchImage(`${category} ${city}`))
+    (await searchImage(`${category} ${city} architecture`))
   );
 }

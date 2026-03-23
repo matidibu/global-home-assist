@@ -541,6 +541,25 @@ export default function SearchForm() {
             </span>
             <div style={{ height: "2px", width: "50px", background: "linear-gradient(to left, transparent, #2ab5a0)" }} />
           </div>
+
+          {/* Blog link */}
+          <a href="/blog" style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "6px",
+            background: "rgba(42,181,160,0.12)",
+            border: "1px solid rgba(42,181,160,0.3)",
+            borderRadius: "100px",
+            padding: "5px 16px",
+            fontSize: "12px",
+            fontWeight: 700,
+            color: "#2ab5a0",
+            textDecoration: "none",
+            letterSpacing: "0.04em",
+            marginTop: "4px",
+          }}>
+            ✍️ Blog de viajes →
+          </a>
         </div>
 
         {/* ===== FORMULARIO ===== */}

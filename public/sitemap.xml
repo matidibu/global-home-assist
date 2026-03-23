@@ -6,6 +6,47 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://global-home-assist.vercel.app/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://global-home-assist.vercel.app/blog/planificar-viaje-con-ia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2025-03-10</lastmod>
+  </url>
+  <url>
+    <loc>https://global-home-assist.vercel.app/blog/viaje-europa-presupuesto-real</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2025-03-14</lastmod>
+  </url>
+  <url>
+    <loc>https://global-home-assist.vercel.app/blog/dubai-guia-honesta-viajero</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://global-home-assist.vercel.app/blog/roma-48-horas-itinerario</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2025-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://global-home-assist.vercel.app/blog/barcelona-vs-madrid-cual-elegir</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2025-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://global-home-assist.vercel.app/blog/errores-comunes-al-viajar</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2025-03-23</lastmod>
+  </url>
+  <url>
     <loc>https://global-home-assist.vercel.app/destino/dubai</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
