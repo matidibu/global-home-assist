@@ -433,7 +433,6 @@ export default function SearchForm() {
 
   async function generateTrip() {
     if (!city || !country) return;
-    if (days > 2) { setShowPremium(true); return; }
     setPlaneAnimKey(k => k + 1);
     setLoading(true);
     let finalCoords = accommodationCoords;
@@ -651,36 +650,21 @@ export default function SearchForm() {
             <label style={labelStyle}>
               📅 {t.duration} — <span style={{ color: "#2ab5a0" }}>{days} {days === 1 ? t.day : t.days}</span>
             </label>
-            <div className="days-selector" style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-              {[1,2,3,4,5,6,7].map(d => {
-                const isPremium = d > 2;
-                const isSelected = days === d;
-                return (
-                  <button key={d} type="button" onClick={() => setDays(d)} className="day-btn" style={{
-                    width: "42px", height: "42px", borderRadius: "10px", fontSize: "13px", fontWeight: 700,
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    background: isSelected
-                      ? isPremium ? "linear-gradient(135deg, #7c3aed, #9d5df0)" : "linear-gradient(135deg, #1a2a6c, #2d3f8f)"
-                      : "rgba(255,255,255,0.9)",
-                    color: isSelected ? "white" : isPremium ? "#7c3aed" : "#1a2a6c",
-                    border: `2px solid ${isSelected ? (isPremium ? "#7c3aed" : "#1a2a6c") : isPremium ? "rgba(124,58,237,0.25)" : "rgba(26,42,108,0.18)"}`,
-                    cursor: "pointer", transition: "all 0.15s ease",
-                    boxShadow: isSelected ? "0 4px 12px rgba(124,58,237,0.35)" : "0 2px 6px rgba(26,42,108,0.06)",
-                    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-                    gap: "1px", lineHeight: 1,
-                    position: "relative",
-                  }}>
-                    <span>{d}</span>
-                    {isPremium && <span style={{ fontSize: "8px", opacity: 0.7 }}>🔒</span>}
-                  </button>
-                );
-              })}
+            <div className="days-selector" style={{ display: "flex", gap: "8px" }}>
+              {[1,2,3,4,5,6,7].map(d => (
+                <button key={d} type="button" onClick={() => setDays(d)} className="day-btn" style={{
+                  width: "42px", height: "42px", borderRadius: "10px", fontSize: "14px", fontWeight: 700,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  background: days === d ? "linear-gradient(135deg, #1a2a6c, #2d3f8f)" : "rgba(255,255,255,0.9)",
+                  color: days === d ? "white" : "#1a2a6c",
+                  border: `2px solid ${days === d ? "#1a2a6c" : "rgba(26,42,108,0.18)"}`,
+                  cursor: "pointer", transition: "all 0.15s ease",
+                  boxShadow: days === d ? "0 4px 12px rgba(26,42,108,0.3)" : "0 2px 6px rgba(26,42,108,0.06)",
+                }}>
+                  {d}
+                </button>
+              ))}
             </div>
-            {days > 2 && (
-              <p style={{ fontSize: "11px", color: "#7c3aed", fontWeight: 600, margin: "8px 0 0 0", display: "flex", alignItems: "center", gap: "4px" }}>
-                ✨ Funcionalidad Premium · Próximamente disponible
-              </p>
-            )}
           </div>
 
           {/* Hospedaje */}
