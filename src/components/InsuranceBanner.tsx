@@ -24,6 +24,7 @@ export default function InsuranceBanner({ language }: Props) {
       tabIndex={0}
       onClick={() => window.open(INSURANCE_URL, "_blank", "noopener,noreferrer")}
       onKeyDown={e => e.key === "Enter" && window.open(INSURANCE_URL, "_blank", "noopener,noreferrer")}
+      className="insurance-inner"
       style={{
         background: "linear-gradient(135deg, #fffbeb, #fef3c7)",
         border: "1.5px solid #fbbf24",
@@ -59,7 +60,7 @@ export default function InsuranceBanner({ language }: Props) {
           </div>
         </div>
       </div>
-      <div style={{
+      <div className="insurance-cta" style={{
         background: "linear-gradient(135deg, #f59e0b, #d97706)",
         color: "white",
         padding: "12px 22px",

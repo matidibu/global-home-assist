@@ -469,7 +469,7 @@ export default function SearchForm() {
     <>
       <CountryBackground country={country} active={!!country} />
 
-      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "24px 20px" }}>
+      <div className="main-container" style={{ maxWidth: "900px", margin: "0 auto", padding: "24px 20px" }}>
 
         {/* ===== HEADER ===== */}
         <div style={{
@@ -505,7 +505,7 @@ export default function SearchForm() {
           </div>
 
           {/* Badge AI */}
-          <div style={{
+          <div className="expert-badge" style={{
             display: "inline-flex", alignItems: "center", gap: "8px",
             background: "rgba(42,181,160,0.2)",
             border: "1.5px solid rgba(42,181,160,0.6)",
@@ -622,9 +622,9 @@ export default function SearchForm() {
             <label style={labelStyle}>
               📅 {t.duration} — <span style={{ color: "#2ab5a0" }}>{days} {days === 1 ? t.day : t.days}</span>
             </label>
-            <div style={{ display: "flex", gap: "8px" }}>
+            <div className="days-selector" style={{ display: "flex", gap: "8px" }}>
               {[1,2,3,4,5,6,7].map(d => (
-                <button key={d} type="button" onClick={() => setDays(d)} style={{
+                <button key={d} type="button" onClick={() => setDays(d)} className="day-btn" style={{
                   width: "42px", height: "42px", borderRadius: "10px", fontSize: "14px", fontWeight: 700,
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                   background: days === d ? "linear-gradient(135deg, #1a2a6c, #2d3f8f)" : "rgba(255,255,255,0.9)",
@@ -836,8 +836,8 @@ export default function SearchForm() {
                           </div>
 
                           {activity.media?.image_url && (
-                            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 24px 20px 8px", flexShrink: 0 }}>
-                              <div
+                            <div className="activity-card-photo" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 24px 20px 8px", flexShrink: 0 }}>
+                              <div className="activity-card-photo-inner"
                                 style={{ transform: photoRotation(i), transition: "transform 0.3s ease", backgroundColor: "#fff", padding: "8px 8px 28px 8px", boxShadow: "3px 4px 20px rgba(26,42,108,0.22)", borderRadius: "2px", width: "210px", cursor: "pointer" }}
                                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "rotate(0deg) scale(1.05)"; }}
                                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = photoRotation(i); }}

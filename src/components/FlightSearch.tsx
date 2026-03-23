@@ -70,7 +70,7 @@ export default function FlightSearch({ destination, language }: Props) {
         <p style={{ fontSize: "12px", opacity: 0.65, margin: 0 }}>{lb.subtitle}</p>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "12px" }}>
+      <div className="flight-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "12px" }}>
         <div>
           <label style={labelStyle}>{lb.from}</label>
           <input
@@ -92,7 +92,7 @@ export default function FlightSearch({ destination, language }: Props) {
         </div>
       </div>
 
-      <div style={{
+      <div className="flight-grid-dates" style={{
         display: "grid",
         gridTemplateColumns: oneWay ? "1fr auto" : "1fr 1fr auto",
         gap: "12px",
@@ -119,7 +119,7 @@ export default function FlightSearch({ destination, language }: Props) {
         </div>
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div className="flight-actions" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <label style={{ display: "flex", alignItems: "center", gap: "7px", fontSize: "12px", opacity: 0.8, cursor: "pointer" }}>
           <input type="checkbox" checked={oneWay} onChange={e => setOneWay(e.target.checked)} style={{ cursor: "pointer", accentColor: "#2ab5a0" }} />
           {lb.oneWay}

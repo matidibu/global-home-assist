@@ -151,6 +151,51 @@ html, body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(42,181,160,0.4); border-radius: 999px; }
 
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 640px) {
+  /* Activity card: stack vertically */
+  .activity-card {
+    flex-direction: column !important;
+  }
+  .activity-card-photo {
+    justify-content: center !important;
+    padding: 0 20px 20px 20px !important;
+  }
+  .activity-card-photo-inner {
+    width: 100% !important;
+    max-width: 260px !important;
+    margin: 0 auto !important;
+  }
+  .activity-card-photo-inner > div {
+    width: 100% !important;
+    height: 200px !important;
+  }
+
+  /* Flight search: single column */
+  .flight-grid-2 { grid-template-columns: 1fr !important; }
+  .flight-grid-dates { grid-template-columns: 1fr 1fr !important; }
+  .flight-actions { flex-direction: column !important; gap: 12px !important; align-items: stretch !important; }
+  .flight-actions button { width: 100% !important; }
+
+  /* Insurance banner: stack vertically */
+  .insurance-inner {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .insurance-cta { width: 100% !important; text-align: center !important; }
+
+  /* Days selector: smaller buttons */
+  .days-selector { gap: 5px !important; flex-wrap: wrap !important; }
+  .day-btn { width: 38px !important; height: 38px !important; font-size: 13px !important; }
+
+  /* Expert badge: allow wrap */
+  .expert-badge { font-size: 10px !important; text-align: center !important; padding: 5px 12px !important; }
+
+  /* Form padding */
+  .main-container { padding: 16px 12px !important; }
+}
+
 /* Loading screen animations */
 @keyframes loadingFloat {
   0%, 100% { transform: translateY(0px); }
