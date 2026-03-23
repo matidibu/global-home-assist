@@ -1200,6 +1200,248 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "viajar-con-hijos-chicos",
+    title: "Viajar con hijos chicos (0–6 años): lo que funciona y lo que no",
+    excerpt: "Sí se puede viajar con bebés y niños pequeños. La clave no es heroísmo — es elegir bien el destino, el ritmo y las expectativas.",
+    category: "consejos",
+    categoryLabel: "Consejos",
+    readTime: 4,
+    publishDate: "2026-04-07",
+    tags: ["viajar con bebés", "viaje con niños pequeños", "turismo familiar", "viaje familia"],
+    heroEmoji: "👶",
+    metaTitle: "Viajar con hijos chicos (0 a 6 años): guía práctica 2026",
+    metaDescription: "Consejos reales para viajar con bebés y niños pequeños: qué destinos elegir, cómo organizarse en el avión, qué llevar y qué expectativas tener.",
+    sections: [
+      { type: "intro", text: "Viajar con un hijo de 2 años no es un viaje de placer adulto con un pasajero extra. Es otro tipo de viaje — con su propio ritmo, sus propias recompensas y sus propios límites. Conocerlos de antemano lo cambia todo." },
+      { type: "h2", text: "Qué funciona" },
+      {
+        type: "list", items: [
+          "Destinos con playa o naturaleza — los niños chicos no necesitan museos, necesitan espacio para moverse",
+          "Vuelos en horario de siesta o nocturno — mayor probabilidad de que duerman",
+          "Alojamiento con cocina — poder calentar comida y lavar mamaderas es oro puro",
+          "Ciudades compactas y caminables — menos traslados = menos crisis",
+          "Cancún, Punta Cana, Bali, Lisboa — destinos con mucha infraestructura familiar",
+        ],
+      },
+      { type: "h2", text: "Qué no funciona" },
+      {
+        type: "list", items: [
+          "Itinerarios de 4 ciudades en 7 días — el cambio constante desregula a los niños pequeños",
+          "Vuelos con escala larga — cada escala es una oportunidad para crisis",
+          "Restaurantes de autor o experiencias gastronómicas largas — no es el momento",
+          "Horarios rígidos — siempre va a pasar algo que los tire",
+        ],
+      },
+      {
+        type: "callout", emoji: "✈️",
+        text: "Antes de embarcar: cambiá el pañal, dale de comer y esperá que esté relajado. Los primeros 10 minutos del vuelo marcan el tono de todo el resto.",
+      },
+      { type: "h2", text: "Qué llevar (lo que no es obvio)" },
+      {
+        type: "list", items: [
+          "Snacks favoritos del niño — los del aeropuerto o avión raramente funcionan",
+          "Auriculares propios para niños — los del avión no entran en oídos chicos",
+          "Una muda extra en el bolso de mano — siempre, sin excepción",
+          "Tablet con contenido descargado offline",
+          "Coche de paseo liviano — aunque ya camine, lo vas a agradecer",
+        ],
+      },
+      {
+        type: "tip", title: "La expectativa correcta",
+        text: "Un viaje con hijos chicos es exitoso si los adultos volvieron sin querer matar a nadie y los niños tuvieron momentos felices. No tiene que ser épico — tiene que funcionar.",
+      },
+      { type: "cta", text: "Generá un itinerario familiar adaptado a tu destino →" },
+    ],
+  },
+
+  {
+    slug: "viajar-con-adolescentes",
+    title: "Viajar con adolescentes: cómo hacer un viaje que quieran recordar (no odiar)",
+    excerpt: "Los adolescentes tienen opiniones fuertes, necesitan autonomía y se aburren rápido con lo que le gusta a sus padres. La solución no es ceder en todo — es negociar bien.",
+    category: "consejos",
+    categoryLabel: "Consejos",
+    readTime: 4,
+    publishDate: "2026-04-09",
+    tags: ["viajar con adolescentes", "viaje familia adolescentes", "turismo joven", "viaje familiar"],
+    heroEmoji: "🎧",
+    metaTitle: "Viajar con adolescentes: guía para que el viaje no sea una batalla",
+    metaDescription: "Estrategias reales para viajar con hijos de 12 a 18 años: cómo incluirlos en la planificación, destinos que funcionan y cómo gestionar el equilibrio entre autonomía y control.",
+    sections: [
+      { type: "intro", text: "Un adolescente en un viaje familiar puede ser el mejor compañero de aventura o la fuente de fricción permanente. La diferencia está casi siempre en cómo se planificó — y cuánto participaron ellos en ese proceso." },
+      { type: "h2", text: "La regla de oro: incluirlos en la planificación" },
+      { type: "p", text: "Un adolescente que eligió algo del itinerario tiene una actitud completamente diferente. No tiene que ser todo — pero sí algo relevante para él/ella. Que elijan un restaurante, una actividad, un día libre para explorar solos (con límites acordados). La autonomía parcial reduce el conflicto a la mitad." },
+      { type: "h2", text: "Destinos que funcionan bien" },
+      {
+        type: "list", items: [
+          "Tokio — cultura pop, tecnología, gastronomía diversa. Rara vez hay un adolescente al que no le encante",
+          "Nueva York — energía, diversidad, libertad de movimiento en Manhattan",
+          "Lisboa y Oporto — ciudad manejable, surf accesible, escena joven",
+          "Bangkok — caos controlado, street food, mercados nocturnos",
+          "Cualquier destino con playa + actividades acuáticas — snorkel, surf, paddleboard",
+        ],
+      },
+      { type: "h2", text: "Lo que funciona en el día a día" },
+      {
+        type: "list", items: [
+          "Acordar horarios de 'tiempo propio' — 2 horas donde pueden hacer lo suyo (con teléfono y ubicación compartida)",
+          "No planificar más de 2 actividades 'obligatorias' por día",
+          "Incluir al menos una experiencia de adrenalina o novedad por viaje (tirolesa, kayak, clase de surf)",
+          "Permitir que documenten el viaje a su manera — fotos, reels, lo que sea",
+        ],
+      },
+      {
+        type: "callout", emoji: "📱",
+        text: "El adolescente que documenta el viaje en redes está, paradójicamente, más presente en él. No pelees con el teléfono — usalo a tu favor.",
+      },
+      { type: "cta", text: "Planificá el viaje ideal para toda la familia →" },
+    ],
+  },
+
+  {
+    slug: "viaje-para-parejas-mayores-50",
+    title: "Viajes para parejas 50+: cómo viajar bien cuando ya saben lo que quieren",
+    excerpt: "A los 50, 60 o 70 años se viaja diferente — y casi siempre mejor. Más presupuesto, más criterio, menos tolerancia al caos innecesario. Esta guía es para los que saben lo que quieren.",
+    category: "consejos",
+    categoryLabel: "Consejos",
+    readTime: 4,
+    publishDate: "2026-04-11",
+    tags: ["viaje pareja mayores 50", "turismo senior", "viaje romántico madurez", "vacaciones pareja adulta"],
+    heroEmoji: "❤️",
+    metaTitle: "Viajes para parejas 50+: destinos, ritmo y cómo aprovechar la experiencia acumulada",
+    metaDescription: "Guía de viaje para parejas mayores de 50 años: destinos que vale la pena, ritmo ideal, qué priorizar y cómo viajar con comodidad sin perder la aventura.",
+    sections: [
+      { type: "intro", text: "Viajar en pareja después de los 50 tiene ventajas enormes: más presupuesto disponible, más criterio para elegir, y la libertad de no tener que adaptar el viaje a horarios de colegio ni caprichos de niños. El único desafío es actualizar las expectativas propias." },
+      { type: "h2", text: "Lo que cambia (para bien)" },
+      {
+        type: "list", items: [
+          "Pueden viajar en temporada media — evitan el caos de julio/agosto y pagan menos",
+          "Más presupuesto para alojamiento de calidad — la diferencia entre dormir bien y no dormir bien ya importa más",
+          "Menos urgencia por 'verlo todo' — más disfrute por lugar visitado",
+          "Más experiencia para detectar trampas turísticas y tomar mejores decisiones",
+        ],
+      },
+      { type: "h2", text: "Destinos ideales para parejas maduras" },
+      {
+        type: "list", items: [
+          "Toscana, Italia — vino, gastronomía, paisaje, ritmo lento. El destino romántico por excelencia para esta etapa",
+          "Japón — seguridad, orden, cultura profunda. El país más gratificante para viajeros experimentados",
+          "Portugal — relación calidad-precio, hospitalidad, variedad en poco espacio",
+          "Patagonia Argentina/Chile — naturaleza imponente, infraestructura turística sólida, pocos turistas masivos",
+          "Grecia — más allá de Santorini: Peloponeso, Creta, Rodas — autenticidad y belleza sin multitudes",
+        ],
+      },
+      { type: "h2", text: "Qué priorizar" },
+      {
+        type: "list", items: [
+          "Alojamiento bien ubicado y cómodo — no ahorres aquí",
+          "Ritmo de 1–2 actividades por día, con siesta real si hace falta",
+          "Gastronomía local de calidad — una cena memorable vale más que tres mediocres",
+          "Seguro médico con cobertura amplia — imprescindible a partir de los 60",
+        ],
+      },
+      {
+        type: "tip", title: "Los cruceros fluviales",
+        text: "El Rin, el Danubio, el Sena o el Duero en crucero fluvial es una de las experiencias más valoradas por parejas 50+: equipaje se mueve solo, ciudades nuevas cada día, comodidad garantizada. Consideralo si nunca lo hiciste.",
+      },
+      { type: "cta", text: "Generá el itinerario perfecto para tu próximo viaje en pareja →" },
+    ],
+  },
+
+  {
+    slug: "viaje-solo-tercera-edad",
+    title: "Viajar solo después de los 65: más posible de lo que te dijeron (y más liberador)",
+    excerpt: "Cada vez más personas mayores de 65 viajan solas — por elección, por viudez o simplemente porque nadie en su entorno tiene las mismas ganas de ver mundo. No es imprudencia: es valentía con criterio.",
+    category: "consejos",
+    categoryLabel: "Consejos",
+    readTime: 5,
+    publishDate: "2026-04-13",
+    tags: ["viajar solo tercera edad", "turismo senior solo", "viaje mayores 65", "adulto mayor viajero"],
+    heroEmoji: "🧳",
+    metaTitle: "Viajar solo después de los 65: guía completa para el viajero senior independiente",
+    metaDescription: "Guía práctica para adultos mayores que quieren viajar solos: destinos seguros, seguro médico, herramientas de planificación y cómo mantener la independencia con tranquilidad.",
+    sections: [
+      { type: "intro", text: "Viajar solo después de los 65 no es una rareza — es una tendencia en crecimiento. Cada vez más personas en esta etapa eligen explorar el mundo por su cuenta, con el criterio que da la experiencia y la libertad que da no tener que negociar cada decisión con nadie." },
+      { type: "h2", text: "Las ventajas reales del viaje solo senior" },
+      {
+        type: "list", items: [
+          "Horarios completamente propios — siesta cuando querés, cena cuando querés",
+          "Presupuesto controlado sin negociación",
+          "Mayor apertura a conocer gente local y otros viajeros",
+          "Viajes más lentos y más profundos — sin la presión del grupo",
+        ],
+      },
+      { type: "h2", text: "Destinos con mejor infraestructura para viajeros senior solos" },
+      {
+        type: "list", items: [
+          "Portugal — seguro, accesible, hospitalario, barato. El favorito consistente de viajeros senior",
+          "Japón — la seguridad es casi absoluta, el transporte es sencillo con Google Maps, el respeto por los mayores es cultural",
+          "España (fuera de pico turístico) — ciudades manejables, excelente sistema de salud, idioma compartido para latinoamericanos",
+          "Cruceros — todo incluido, sin logística diaria, fácil socialización",
+          "Costa Rica — naturaleza accesible, infraestructura turística sólida, seguro",
+        ],
+      },
+      {
+        type: "callout", emoji: "🏥",
+        text: "El seguro médico internacional es innegociable para viajeros mayores de 65. Contratá uno con cobertura mínima de $100.000 USD para gastos médicos y evacuación. El costo promedio es $50–120 USD por semana — el gasto más inteligente del viaje.",
+      },
+      { type: "h2", text: "Herramientas que facilitan el viaje independiente" },
+      {
+        type: "list", items: [
+          "Google Maps offline — descargá el mapa de la ciudad antes de salir del hotel",
+          "Google Translate con cámara — apuntá al menú y te traduce en tiempo real",
+          "WhatsApp — mantené un grupo familiar actualizado con tu ubicación diaria",
+          "Airbnb con superhosts — generalmente más atentos y con mejor comunicación que algunos hoteles",
+        ],
+      },
+      { type: "h2", text: "Una cosa para recordar" },
+      { type: "p", text: "La edad no define los límites del viaje — los define la salud, el presupuesto y las ganas. Hay personas de 80 años que hacen trekking en los Andes y personas de 50 que necesitan comodidad máxima. Conocete, elegí bien, y no dejes que nadie te diga que 'ya es tarde para viajar'." },
+      { type: "cta", text: "Planificá tu próximo viaje con un itinerario a tu medida →" },
+    ],
+  },
+  {
+    slug: "viajar-con-hijos-adultos",
+    title: "Viajar con hijos adultos: cómo disfrutarlo sin que nadie quede resentido",
+    excerpt: "El viaje en familia con hijos adultos puede ser el mejor viaje de tu vida — o una fuente de tensiones. La diferencia está en cómo se planifica y qué expectativas se manejan antes de salir.",
+    category: "consejos",
+    categoryLabel: "Consejos",
+    readTime: 4,
+    publishDate: "2026-04-16",
+    tags: ["viajar con hijos adultos", "viaje familia adultos", "vacaciones familia mayores", "turismo familiar"],
+    heroEmoji: "👨‍👩‍👧‍👦",
+    metaTitle: "Viajar con hijos adultos: guía para un viaje en familia sin conflictos",
+    metaDescription: "Consejos prácticos para viajar con hijos adultos: cómo repartir gastos, combinar gustos diferentes y crear recuerdos que refuercen el vínculo familiar.",
+    sections: [
+      { type: "intro", text: "Los hijos crecieron, tienen opiniones propias, distintos ritmos y a veces distintos presupuestos. Viajar con ellos ya no es como cuando eran chicos y seguían el plan sin chistar. Ahora es una negociación — y eso, bien manejado, produce los mejores viajes de la vida." },
+      { type: "h2", text: "El mayor error: asumir que todos quieren lo mismo" },
+      { type: "p", text: "Un hijo de 25 quiere salir de noche. Otro de 30 con hijos propios quiere museos y almorzar temprano. Los padres quieren caminar sin apuro. El truco no es eliminar las diferencias — es aceptarlas y diseñar el viaje alrededor de ellas." },
+      {
+        type: "list", items: [
+          "Dividí el itinerario en bloques 'juntos' y bloques 'libres'",
+          "Las comidas en familia son el pegamento del viaje — preservalas",
+          "Aceptá que no todos van a estar en todas las actividades",
+          "Un desayuno compartido todos los días vale más que un tour obligatorio",
+        ],
+      },
+      { type: "h2", text: "La conversación de dinero que nadie quiere tener" },
+      {
+        type: "callout", emoji: "💬",
+        text: "Antes de reservar, acordá: ¿dividimos todo en partes iguales? ¿Los padres cubren el alojamiento y cada uno su comida? ¿Hay un fondo común para actividades grupales? Tenerlo claro evita el 80% de las tensiones del viaje.",
+      },
+      { type: "h2", text: "Destinos que funcionan para generaciones mezcladas" },
+      {
+        type: "list", items: [
+          "Portugal — ritmo lento, gastronomía excelente, noches activas en Lisboa para los jóvenes, playas tranquilas para los mayores",
+          "Italia (Roma + Costa Amalfitana) — combina cultura para todos con opciones de playa y vida nocturna",
+          "Japón — la diversidad de experiencias es tan grande que cada uno encuentra lo suyo",
+          "Colombia (Cartagena + Medellín) — ciudad histórica + ciudad moderna, buena gastronomía, costos razonables",
+        ],
+      },
+      { type: "tip", title: "El secreto de las familias que vuelven a viajar juntas", text: "Dejá al menos una tarde completamente libre. Sin plan, sin reunión, sin actividad coordinada. Quien quiera juntarse, que se junte. Esa libertad relaja a todos — y a menudo es cuando pasan los momentos más espontáneos y memorables." },
+      { type: "cta", text: "Creá el itinerario perfecto para tu familia →" },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

@@ -14,6 +14,7 @@ import LegalDisclaimer from "@/components/LegalDisclaimer";
 import FlightSearch from "@/components/FlightSearch";
 import InsuranceBanner from "@/components/InsuranceBanner";
 import ShareButton from "@/components/ShareButton";
+import { HomeBlogTeaser } from "@/components/HomeBlogTeaser";
 import "@geoapify/geocoder-autocomplete/styles/minimal.css";
 
 const TravelMap = dynamic(() => import("@/components/TravelMap"), {
@@ -780,6 +781,9 @@ export default function SearchForm() {
               </div>
             </div>
           )}
+
+          {/* Blog teaser — solo visible cuando no hay itinerario generado */}
+          {!itinerary && <HomeBlogTeaser />}
 
           <LegalDisclaimer language={language} />
         </div>
