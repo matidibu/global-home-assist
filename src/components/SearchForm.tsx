@@ -546,19 +546,20 @@ export default function SearchForm() {
           <a href="/blog" style={{
             display: "inline-flex",
             alignItems: "center",
-            gap: "6px",
-            background: "rgba(42,181,160,0.12)",
-            border: "1px solid rgba(42,181,160,0.3)",
+            gap: "8px",
+            background: "white",
+            border: "none",
             borderRadius: "100px",
-            padding: "5px 16px",
-            fontSize: "12px",
-            fontWeight: 700,
-            color: "#2ab5a0",
+            padding: "10px 24px",
+            fontSize: "13px",
+            fontWeight: 800,
+            color: "#1a2a6c",
             textDecoration: "none",
-            letterSpacing: "0.04em",
-            marginTop: "4px",
+            letterSpacing: "0.02em",
+            boxShadow: "0 4px 16px rgba(0,0,0,0.25)",
+            marginTop: "8px",
           }}>
-            ✍️ Blog de viajes →
+            ✍️ Revista de viajes &nbsp;<span style={{ color: "#2ab5a0" }}>→</span>
           </a>
         </div>
 

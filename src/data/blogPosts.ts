@@ -976,6 +976,230 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "viajar-con-mascotas-guia-completa",
+    title: "Viajar con mascotas: la guía completa para no improvisar (y no sufrir en el intento)",
+    excerpt: "Viajar con tu perro o gato es perfectamente posible. También puede ser un caos total si no lo planificás bien. La diferencia entre los dos escenarios es información — y esta guía tiene todo lo que necesitás.",
+    category: "consejos",
+    categoryLabel: "Consejos",
+    readTime: 8,
+    publishDate: "2026-04-03",
+    tags: ["viajar con mascotas", "viajar con perro", "viajar con gato", "requisitos viaje mascotas"],
+    heroEmoji: "🐾",
+    metaTitle: "Viajar con mascotas en 2026: guía completa de requisitos, vuelos y destinos",
+    metaDescription: "Todo lo que necesitás saber para viajar con tu perro o gato: documentación, requisitos por país, aerolíneas pet-friendly, destinos recomendados y errores que evitar.",
+    sections: [
+      {
+        type: "intro",
+        text: "Viajar con tu perro o gato es perfectamente posible — y cada vez más común. También puede convertirse en un caos total si no lo planificás con tiempo. La diferencia entre los dos escenarios no es suerte: es información. Esta guía tiene todo lo que necesitás.",
+      },
+      {
+        type: "h2",
+        text: "Lo primero: la documentación que no puede faltar",
+      },
+      {
+        type: "p",
+        text: "Independientemente del destino, toda mascota que viaja internacionalmente necesita tres cosas base: microchip ISO 11784/11785, vacuna antirrábica vigente (con al menos 21 días de anticipación a la fecha del viaje), y certificado veterinario oficial emitido por un veterinario habilitado dentro de los 10 días previos al viaje.",
+      },
+      {
+        type: "list",
+        heading: "Documentación esencial para viajes internacionales con mascotas",
+        items: [
+          "Microchip ISO 11784/11785 — implantado antes de la vacuna antirrábica para que sea válida",
+          "Certificado de vacuna antirrábica vigente — la mayoría de los países exigen que no sea anterior a 1 año",
+          "Certificado veterinario oficial — emitido dentro de los 10 días previos al viaje, en el idioma del país destino o en inglés",
+          "Pasaporte de mascotas europeo — obligatorio para entrar a países de la Unión Europea",
+          "Test de título de anticuerpos antirrábicos (FAVN test) — requerido por algunos países como Reino Unido, Japón, Australia y Nueva Zelanda con 3–6 meses de anticipación",
+        ],
+      },
+      {
+        type: "callout",
+        emoji: "⚠️",
+        text: "Países como Australia, Nueva Zelanda, Japón y Reino Unido tienen las regulaciones más estrictas del mundo para importación de mascotas — incluyendo cuarentenas de hasta 180 días. Investigá los requisitos específicos del destino con al menos 6 meses de anticipación.",
+      },
+      {
+        type: "h2",
+        text: "Aerolíneas: cuáles aceptan mascotas (y en qué condiciones)",
+      },
+      {
+        type: "p",
+        text: "No todas las aerolíneas aceptan mascotas, y las que sí lo hacen tienen reglas muy distintas. En cabina (solo para mascotas pequeñas, generalmente hasta 8kg con bolso transportador) o en bodega (mascotas más grandes en jaula homologada). Algunas aerolíneas prohíben ciertas razas braquicéfalas como bulldogs y pugs en bodega por riesgo respiratorio.",
+      },
+      {
+        type: "list",
+        heading: "Aerolíneas con buenas políticas pet-friendly (verificar condiciones actuales)",
+        items: [
+          "Iberia — acepta mascotas en cabina hasta 8kg total (mascota + transportador) en vuelos europeos",
+          "Lufthansa — acepta en cabina hasta 8kg y en bodega para razas más grandes",
+          "Air France — acepta en cabina hasta 8kg; política clara y bien documentada",
+          "LATAM Airlines — acepta en cabina en rutas domésticas; consultar para internacionales",
+          "Ryanair y Wizz Air — NO aceptan mascotas salvo perros guía",
+        ],
+      },
+      {
+        type: "tip",
+        title: "Reservá el espacio para tu mascota con la aerolínea directamente",
+        text: "El cupo de mascotas en cabina es limitado (generalmente 2–3 por vuelo). No basta con comprar el ticket — hay que llamar o contactar a la aerolínea y confirmar el espacio explícitamente. Sin esa confirmación, pueden negarte el embarque.",
+      },
+      {
+        type: "h2",
+        text: "Los destinos más pet-friendly de Europa",
+      },
+      {
+        type: "p",
+        text: "Alemania y los Países Bajos son consistentemente los países más pet-friendly de Europa: las mascotas entran a restaurantes, tiendas y transporte público sin restricción. Francia es sorprendentemente abierta — muchos bistros de París tienen cuencos de agua en la puerta y aceptan perros sin problemas.",
+      },
+      {
+        type: "p",
+        text: "Portugal y España también son muy acogedores, especialmente en zonas no turísticas. Italia varía mucho por región y establecimiento. Reino Unido, desde el Brexit, requiere el proceso completo de certificación antirrábica y puede ser complejo.",
+      },
+      {
+        type: "h2",
+        text: "Alojamiento: cómo encontrar opciones pet-friendly sin sorpresas",
+      },
+      {
+        type: "p",
+        text: "Booking.com y Airbnb tienen filtros específicos de 'se admiten mascotas'. Siempre confirmá directamente con el alojamiento antes de reservar — la política puede tener restricciones de tamaño, raza o cantidad. Algunos cobran un suplemento por limpieza (€15–50 por estadía), otros no.",
+      },
+      {
+        type: "callout",
+        emoji: "🏨",
+        text: "La cadena hotelera Kimpton es internacionalmente conocida por su política pet-friendly sin restricciones de tamaño ni raza, sin cargo adicional. Para viajes donde el alojamiento es una prioridad, es una referencia confiable.",
+      },
+      {
+        type: "h2",
+        text: "El bienestar de tu mascota durante el viaje",
+      },
+      {
+        type: "p",
+        text: "Un vuelo largo es estresante para cualquier animal. Algunas recomendaciones prácticas: no alimentes a tu mascota 4–6 horas antes del vuelo para evitar mareos; acostumbrá el transportador semanas antes del viaje para que no sea un espacio extraño; llevá ropa con tu olor dentro del bolso para darle confort.",
+      },
+      {
+        type: "p",
+        text: "Nunca sedules a tu mascota sin consultar a un veterinario — los sedantes pueden afectar la regulación de temperatura y la presión en el avión de forma impredecible. Existen suplementos naturales de relajación (feromonas, suplementos de L-teanina) que son más seguros para el viaje aéreo.",
+      },
+      {
+        type: "cta",
+        text: "Planificá tu próximo viaje — con o sin compañía perruna →",
+      },
+    ],
+  },
+
+  {
+    slug: "viajar-en-tiempos-de-conflicto-belico",
+    title: "Viajar cuando el mundo no está en paz: cómo planificar con información y sin paranoia",
+    excerpt: "En 2026 hay conflictos activos en varias regiones del mundo. Eso no significa que el mundo entero sea peligroso — significa que hay que planificar con más información de la que dan los medios de comunicación masiva.",
+    category: "consejos",
+    categoryLabel: "Consejos",
+    readTime: 7,
+    publishDate: "2026-04-05",
+    tags: ["viajar zona conflicto", "seguridad viajero", "zonas peligrosas para turistas", "viaje seguro 2026"],
+    heroEmoji: "🌐",
+    metaTitle: "Viajar en tiempos de conflicto bélico: guía de seguridad para viajeros 2026",
+    metaDescription: "Cómo evaluar el riesgo real antes de viajar a zonas con tensión geopolítica. Fuentes confiables, seguros especializados, planes de contingencia y destinos alternativos.",
+    sections: [
+      {
+        type: "intro",
+        text: "En 2026 hay conflictos activos en varias regiones del mundo. Eso no significa que el mundo entero sea peligroso — significa que hay que planificar con más información de la que generalmente ofrecen los medios masivos. Este artículo no intenta alarmarte: intenta darte herramientas para decidir con criterio.",
+      },
+      {
+        type: "h2",
+        text: "La diferencia entre riesgo real y percepción mediática",
+      },
+      {
+        type: "p",
+        text: "Los medios de comunicación tienen un sesgo hacia lo dramático — es estructural, no malicioso. Una bomba en una ciudad de 5 millones de personas es noticia; que 4.999.990 personas vivieron ese día con normalidad, no lo es. El resultado para el viajero es una percepción de riesgo sistemáticamente más alta que la realidad en la mayoría de los destinos.",
+      },
+      {
+        type: "p",
+        text: "Esto no significa ignorar los conflictos. Significa calibrar la información: ¿el conflicto está en la misma ciudad que querés visitar, o a 800km? ¿Afecta zonas turísticas o regiones remotas? ¿Cuándo fue el último incidente documentado?",
+      },
+      {
+        type: "h2",
+        text: "Las fuentes que sí son confiables",
+      },
+      {
+        type: "list",
+        items: [
+          "Cancillería o Ministerio de Relaciones Exteriores de tu país — emiten alertas de viaje oficiales por región y nivel de riesgo",
+          "FCDO (Reino Unido) y US State Department — las más detalladas y actualizadas del mundo, útiles para cualquier viajero independientemente de su nacionalidad",
+          "ISOS (International SOS) — servicio profesional de inteligencia de riesgo, gratis para empleados de empresas afiliadas",
+          "Comunidades de viajeros locales en Reddit (r/travel, r/solotravel) — experiencias recientes de personas que estuvieron ahí en las últimas semanas",
+        ],
+      },
+      {
+        type: "callout",
+        emoji: "📋",
+        text: "Registrá tu viaje en el sistema de tu cancillería antes de salir. Muchos países (Argentina, España, México) tienen portales gratuitos donde podés registrar tu itinerario y datos de contacto. En caso de emergencia, facilita enormemente la asistencia consular.",
+      },
+      {
+        type: "h2",
+        text: "Los niveles de alerta y qué significan realmente",
+      },
+      {
+        type: "p",
+        text: "La mayoría de los sistemas de alerta de viaje usan niveles del 1 al 4. Nivel 1 (precaución normal) y nivel 2 (mayor precaución) no implican cancelar el viaje — implican informarse. Nivel 3 (reconsiderar el viaje) merece análisis serio de la zona específica. Nivel 4 (no viajar) es la única categoría donde la recomendación es categórica.",
+      },
+      {
+        type: "p",
+        text: "Importante: los niveles de alerta cubren países enteros, pero los conflictos suelen estar concentrados en regiones específicas. Turquía puede tener alerta elevada por tensiones en la frontera con Siria mientras que Estambul y la costa egea funcionan con total normalidad turística.",
+      },
+      {
+        type: "h2",
+        text: "El seguro de viaje en zonas de tensión: qué cubrís y qué no",
+      },
+      {
+        type: "p",
+        text: "La mayoría de los seguros de viaje estándar excluyen explícitamente los eventos relacionados con guerra, conflicto armado o terrorismo. Si viajás a una zona con tensión geopolítica, necesitás un seguro con cobertura específica de evacuación médica de emergencia y repatriación, que es diferente al seguro médico convencional.",
+      },
+      {
+        type: "list",
+        heading: "Qué buscar en un seguro para zonas con riesgo elevado",
+        items: [
+          "Cobertura de evacuación médica de emergencia — mínimo $250.000 USD",
+          "Repatriación por conflicto — algunos seguros especializados incluyen esto",
+          "Cancelación por alerta de viaje — si el nivel sube después de tu compra",
+          "Asistencia 24hs con línea directa — no chatbot, persona real",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Destinos con tensión pero perfectamente visitables (con información)",
+      },
+      {
+        type: "p",
+        text: "Hay una diferencia enorme entre un país en conflicto y un país con conflicto en una región específica. Georgia, por ejemplo, mantiene Tiflis y las regiones turísticas del sur completamente funcionales a pesar de la tensión histórica en las regiones de Osetia del Sur y Abjasia. Marruecos tiene millones de turistas anuales siendo geográficamente adyacente al Sáhara Occidental.",
+      },
+      {
+        type: "p",
+        text: "El principio es siempre el mismo: investigá la región específica que vas a visitar, no el país en abstracto. Y hacelo con fuentes que actualizan por zona, no por titular.",
+      },
+      {
+        type: "h2",
+        text: "El plan de contingencia que todo viajero debería tener",
+      },
+      {
+        type: "list",
+        items: [
+          "Guardá los datos de la embajada o consulado de tu país en el destino en tu celular antes de salir",
+          "Compartí tu itinerario completo con alguien de confianza en tu país",
+          "Tenés acceso a fondos de emergencia separados del dinero del viaje (tarjeta de crédito bloqueada, reserva digital)",
+          "Identificá el aeropuerto más cercano y rutas alternativas de salida del país",
+          "Instalá la app de tu cancillería si existe — muchas envían alertas push ante cambios de situación",
+        ],
+      },
+      {
+        type: "tip",
+        title: "La regla del periodista",
+        text: "Antes de cancelar un viaje por lo que viste en las noticias, buscá corresponsales o freelancers que estén cubriendo esa zona en ese momento. Su evaluación del día a día suele ser mucho más matizada que el titular. Twitter/X y Substack tienen una comunidad activa de periodistas de campo que postean condiciones locales en tiempo real.",
+      },
+      {
+        type: "cta",
+        text: "Planificá tu próximo viaje con información completa y rutas optimizadas →",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
