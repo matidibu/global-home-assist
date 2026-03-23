@@ -9,8 +9,7 @@ const labels: Record<string, { title: string; subtitle: string; cta: string; not
   pt: { title: "Você tem seguro viagem?", subtitle: "Proteja seu investimento contra cancelamentos, emergências médicas e bagagem perdida.", cta: "Cotar seguro →", note: "A partir de $20 · Cobertura mundial" },
 };
 
-// Actualizar con el program ID de Ekta una vez aprobado en Travelpayouts
-const INSURANCE_URL = "https://tp.media/r?marker=712478&trs=510649&p=570&u=https%3A%2F%2Fwww.ektatravel.com%2F";
+const INSURANCE_URL = "https://ektatraveling.tpk.lu/DSlm1Pue";
 
 interface Props {
   language: string;
