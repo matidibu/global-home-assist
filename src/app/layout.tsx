@@ -121,6 +121,9 @@ export default function RootLayout({
         />
         {/* Travelpayouts site verification */}
         <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false" dangerouslySetInnerHTML={{ __html: `(function(){var script=document.createElement("script");script.async=1;script.src='https://emrld.ltd/NTEwNjM3.js?t=510637';document.head.appendChild(script);})();` }} />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEN7PWJEWK" />
+        <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WEN7PWJEWK');` }} />
         {/* Structured data */}
         <script
           type="application/ld+json"
