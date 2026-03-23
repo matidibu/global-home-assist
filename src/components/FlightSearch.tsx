@@ -13,7 +13,7 @@ const labels: Record<string, {
   pt: { title: "Busque voos para a sua viagem", subtitle: "Compare preços em milhares de companhias aéreas", from: "De", to: "Para", depart: "Ida", returnLabel: "Volta", pax: "Passageiros", search: "🔍 Buscar voos", oneWay: "Só ida" },
 };
 
-const MARKER = "712478";
+const AVIASALES_URL = "https://aviasales.tpk.lu/746eClvU";
 
 interface Props {
   destination: string;
@@ -31,13 +31,7 @@ export default function FlightSearch({ destination, language }: Props) {
   const [pax, setPax] = useState(1);
 
   const handleSearch = () => {
-    const params = new URLSearchParams({ marker: MARKER });
-    if (origin) params.set("origin", origin);
-    if (destination) params.set("destination", destination);
-    if (depart) params.set("depart_date", depart);
-    if (!oneWay && returnDate) params.set("return_date", returnDate);
-    params.set("adults", String(pax));
-    window.open(`https://www.aviasales.com/?${params.toString()}`, "_blank", "noopener,noreferrer");
+    window.open(AVIASALES_URL, "_blank", "noopener,noreferrer");
   };
 
   const inputStyle: React.CSSProperties = {

@@ -821,9 +821,6 @@ export default function SearchForm() {
                               </p>
                             )}
                             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "12px" }}>
-                              {activity.tickets?.official_website && (
-                                <a href={activity.tickets.official_website} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#eef0f8", color: "#1a2a6c", fontWeight: 600, textDecoration: "none", border: "1px solid #c7cce8" }}>{t.official}</a>
-                              )}
                               <a href={links.getyourguide} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fff7ed", color: "#ea580c", fontWeight: 600, textDecoration: "none", border: "1px solid #fed7aa" }}>🎯 GetYourGuide</a>
                               <a href={links.klook} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fef2f2", color: "#e63946", fontWeight: 600, textDecoration: "none", border: "1px solid #fecaca" }}>🎪 Klook</a>
                               <a href={links.tiqets} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#f0fdf4", color: "#16a34a", fontWeight: 600, textDecoration: "none", border: "1px solid #bbf7d0" }}>🎟️ Tiqets</a>
