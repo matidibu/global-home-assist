@@ -1,9 +1,98 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const BASE_URL = "https://global-home-assist.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Global Home Assist",
-  description: "AI Powered Travel Planner",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "Global Home Assist | Planificador de Viajes con IA",
+    template: "%s | Global Home Assist",
+  },
+  description:
+    "Creá tu itinerario de viaje personalizado con inteligencia artificial en segundos. Incluye fotos reales, mapas interactivos, rutas optimizadas, alertas de seguridad y servicios de viaje. Gratis.",
+  keywords: [
+    "planificador de viaje",
+    "itinerario de viaje",
+    "viaje con inteligencia artificial",
+    "travel planner AI",
+    "itinerario personalizado",
+    "planear viaje gratis",
+    "organizador de viajes",
+    "mapa de viaje",
+    "guía de viaje",
+    "trip planner",
+    "AI travel planner",
+    "itinerary generator",
+  ],
+  authors: [{ name: "Global Home Assist", url: BASE_URL }],
+  creator: "Global Home Assist",
+  publisher: "Global Home Assist",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    alternateLocale: ["en_US", "fr_FR", "it_IT", "de_DE", "pt_BR"],
+    url: BASE_URL,
+    siteName: "Global Home Assist",
+    title: "Global Home Assist | Planificador de Viajes con IA",
+    description:
+      "Creá tu itinerario de viaje personalizado con IA en segundos. Fotos reales, mapas interactivos, alertas de seguridad y todo lo que necesitás para tu próximo viaje.",
+    images: [
+      {
+        url: "/sky.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Global Home Assist — Planificador de Viajes con IA",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Global Home Assist | Planificador de Viajes con IA",
+    description:
+      "Creá tu itinerario de viaje personalizado con IA en segundos. Gratis.",
+    images: ["/sky.jpg"],
+  },
+  alternates: {
+    canonical: BASE_URL,
+  },
+  category: "travel",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Global Home Assist",
+  url: BASE_URL,
+  description:
+    "Planificador de viajes con inteligencia artificial. Genera itinerarios personalizados con fotos reales, mapas, rutas y alertas de seguridad.",
+  applicationCategory: "TravelApplication",
+  operatingSystem: "Web",
+  inLanguage: ["es", "en", "fr", "it", "de", "pt"],
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  featureList: [
+    "Itinerarios generados con IA",
+    "Fotos reales de cada atracción",
+    "Mapas interactivos con rutas",
+    "Alertas de seguridad y salud",
+    "Información de emergencias locales",
+    "Búsqueda de vuelos y hoteles",
+    "Seguros de viaje",
+  ],
 };
 
 export default function RootLayout({
@@ -12,7 +101,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <link
           rel="stylesheet"
@@ -32,6 +121,11 @@ export default function RootLayout({
         />
         {/* Travelpayouts site verification */}
         <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false" dangerouslySetInnerHTML={{ __html: `(function(){var script=document.createElement("script");script.async=1;script.src='https://emrld.ltd/NTEwNjM3.js?t=510637';document.head.appendChild(script);})();` }} />
+        {/* Structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body>
         {children}
