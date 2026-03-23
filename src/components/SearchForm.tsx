@@ -11,6 +11,8 @@ import DestinationInfo from "@/components/DestinationInfo";
 import SOSButton from "@/components/SOSButton";
 import MedicalAssistance from "@/components/MedicalAssistance";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
+import FlightSearch from "@/components/FlightSearch";
+import InsuranceBanner from "@/components/InsuranceBanner";
 import "@geoapify/geocoder-autocomplete/styles/minimal.css";
 
 const TravelMap = dynamic(() => import("@/components/TravelMap"), {
@@ -773,6 +775,9 @@ export default function SearchForm() {
         {/* ===== ITINERARIO ===== */}
         {itinerary && itinerary.days && (
           <div style={{ display: "flex", flexDirection: "column", gap: "48px" }}>
+
+            <FlightSearch destination={city} language={language} />
+
             {itinerary.days.map((day: any, dayIndex: number) => (
               <div key={dayIndex}>
                 <div style={{ marginBottom: "20px" }}>
@@ -863,6 +868,8 @@ export default function SearchForm() {
                 </div>
               </div>
             ))}
+
+            <InsuranceBanner language={language} />
 
             {allActivities.length > 0 && (
               <div>
