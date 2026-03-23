@@ -70,14 +70,10 @@ async function fetchWikipediaImageByCoords(
     const nameLower = name.toLowerCase();
     const nameParts = nameLower.split(/\s+/).filter(w => w.length > 2);
 
-    // Prefer articles whose title shares keywords with the place name
-    const byNameMatch = results.find(r =>
-      nameParts.some(p => r.title.toLowerCase().includes(p))
-    );
-    const best = byNameMatch ?? results[0]; // fallback: closest article
-
-    // Skip if the title looks like a person name (≤4 capitalized words, no place indicators)
     const placeWords = /museum|park|tower|palace|temple|mosque|church|cathedral|square|market|garden|beach|desert|reserve|district|quarter|fort|castle|bridge|mall|center|centre|station|airport|port|harbor|island|bay|lake|mountain|hill|valley|forest|zoo|gallery|theatre|theater|opera|stadium|arena|university|library|monument|memorial|landmark/i;
+
+    // Transit/infrastructure articles to deprioritize when place name doesn't mention them
+    const transitWords = /underground|subway|subte|metro|línea|linea|railway|rail|tram|bus route|bus line|tube line/i;
 
     function looksLikePerson(title: string): boolean {
       const words = title.trim().split(/\s+/);
@@ -86,10 +82,23 @@ async function fetchWikipediaImageByCoords(
         !placeWords.test(title);
     }
 
-    // Build ordered candidate list: try best first, then remaining non-person results
-    const candidates = looksLikePerson(best.title)
-      ? results.filter(r => !looksLikePerson(r.title))
-      : [best, ...results.filter(r => r !== best && !looksLikePerson(r.title))];
+    function isTransitArticle(title: string): boolean {
+      return transitWords.test(title) && !transitWords.test(nameLower);
+    }
+
+    // Score each result: more keyword matches = higher score; transit articles penalized
+    function scoreResult(r: { title: string }): number {
+      const t = r.title.toLowerCase();
+      const matchCount = nameParts.filter(p => t.includes(p)).length;
+      const transitPenalty = isTransitArticle(r.title) ? -10 : 0;
+      return matchCount + transitPenalty;
+    }
+
+    const ranked = [...results]
+      .filter(r => !looksLikePerson(r.title))
+      .sort((a, b) => scoreResult(b) - scoreResult(a));
+
+    const candidates = ranked.length > 0 ? ranked : results.filter(r => !looksLikePerson(r.title));
 
     for (const candidate of candidates) {
       const img = await fetchImageForTitle(candidate.title);
@@ -124,6 +133,7 @@ async function fetchWikipediaImageByQuery(
     const nameParts = nameLower.split(/\s+/).filter(w => w.length > 3);
 
     const placeWords = /museum|park|tower|palace|temple|mosque|church|cathedral|square|market|garden|beach|desert|reserve|district|quarter|fort|castle|bridge|mall|center|centre|station|airport|port|harbor|island|bay|lake|mountain|hill|valley|forest|zoo|gallery|theatre|theater|opera|stadium|arena|university|library|monument|memorial|landmark/i;
+    const transitWords = /underground|subway|subte|metro|línea|linea|railway|rail|tram|bus route|bus line|tube line/i;
 
     function looksLikePerson(title: string): boolean {
       const words = title.trim().split(/\s+/);
@@ -132,22 +142,19 @@ async function fetchWikipediaImageByQuery(
         !placeWords.test(title);
     }
 
-    // Filter out articles that look like person names
+    function scoreResult(r: { title: string }): number {
+      const t = r.title.toLowerCase();
+      const matchCount = nameParts.filter(p => t.includes(p)).length;
+      const cityBonus = t.includes(cityLower) ? 1 : 0;
+      const transitPenalty = (transitWords.test(r.title) && !transitWords.test(nameLower)) ? -10 : 0;
+      return matchCount + cityBonus + transitPenalty;
+    }
+
     const filtered = results.filter(r => !looksLikePerson(r.title));
     const candidates = filtered.length > 0 ? filtered : results;
+    const ranked = [...candidates].sort((a, b) => scoreResult(b) - scoreResult(a));
 
-    // Pick the most relevant result:
-    // 1. Title matches place name keywords (most specific)
-    // 2. Title matches both city and any name part
-    // 3. Wikipedia's own ranking (candidates[0])
-    const byNameMatch = candidates.find(r => nameParts.some(p => r.title.toLowerCase().includes(p)));
-    const byCityAndName = candidates.find(r => {
-      const t = r.title.toLowerCase();
-      return t.includes(cityLower) && nameParts.some(p => t.includes(p));
-    });
-    const best = byNameMatch ?? byCityAndName ?? candidates[0];
-
-    return await fetchImageForTitle(best.title);
+    return await fetchImageForTitle(ranked[0].title);
   } catch {
     return null;
   }
