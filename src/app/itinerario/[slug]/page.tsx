@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { Sparkles, Clock, ArrowLeft, Coins, Lightbulb } from "lucide-react";
 import FlightSearch from "@/components/FlightSearch";
 import InsuranceBanner from "@/components/InsuranceBanner";
+import FloatingCTA from "@/components/FloatingCTA";
+import CollapsibleDays from "@/components/CollapsibleDays";
 import { getDestinationPage, getAllDestinationSlugs, type DestActivity } from "@/data/destinationPages";
 
 const BASE_URL = "https://global-home-assist.vercel.app";
@@ -13,12 +15,12 @@ function gygLink(query: string) {
   return `https://www.getyourguide.com/s/?q=${encodeURIComponent(query)}&partner_id=${AFFILIATE_GYG}`;
 }
 
-// ─── Static params ────────────────────────────────────────────────────────────
+// ─── Static params ─────────────────────────────────────────────────────────────
 export async function generateStaticParams() {
   return getAllDestinationSlugs().map((slug) => ({ slug }));
 }
 
-// ─── Metadata ─────────────────────────────────────────────────────────────────
+// ─── Metadata ──────────────────────────────────────────────────────────────────
 export async function generateMetadata({
   params,
 }: {
@@ -43,7 +45,7 @@ export async function generateMetadata({
   };
 }
 
-// ─── Category styles ──────────────────────────────────────────────────────────
+// ─── Category styles ───────────────────────────────────────────────────────────
 const CATEGORY_STYLE: Record<string, { bg: string; color: string; label: string }> = {
   cultura:     { bg: "rgba(42,181,160,0.12)",  color: "#2ab5a0", label: "Cultura" },
   gastronomía: { bg: "rgba(251,191,36,0.15)",  color: "#d97706", label: "Gastronomía" },
@@ -55,7 +57,7 @@ const CATEGORY_STYLE: Record<string, { bg: string; color: string; label: string 
   relax:       { bg: "rgba(99,102,241,0.12)",  color: "#6366f1", label: "Relax" },
 };
 
-// ─── Activity card ────────────────────────────────────────────────────────────
+// ─── Activity card (server, used for days 1-2) ────────────────────────────────
 function ActivityCard({ activity, index }: { activity: DestActivity; index: number }) {
   const cat = CATEGORY_STYLE[activity.category] ?? CATEGORY_STYLE.cultura;
   return (
@@ -66,9 +68,7 @@ function ActivityCard({ activity, index }: { activity: DestActivity; index: numb
       padding: "20px 22px",
       boxShadow: "0 4px 16px rgba(26,42,108,0.08)",
     }}>
-      {/* Header row */}
       <div style={{ display: "flex", alignItems: "flex-start", gap: "14px", marginBottom: "10px" }}>
-        {/* Number */}
         <div style={{
           width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0,
           background: "linear-gradient(135deg, #1a2a6c, #2d3f8f)",
@@ -82,10 +82,7 @@ function ActivityCard({ activity, index }: { activity: DestActivity; index: numb
             <h3 style={{ margin: 0, fontSize: "16px", fontWeight: 800, color: "#1a2a6c", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               {activity.name}
             </h3>
-            <span style={{
-              fontSize: "11px", fontWeight: 700, padding: "2px 10px", borderRadius: "999px",
-              background: cat.bg, color: cat.color,
-            }}>
+            <span style={{ fontSize: "11px", fontWeight: 700, padding: "2px 10px", borderRadius: "999px", background: cat.bg, color: cat.color }}>
               {cat.label}
             </span>
           </div>
@@ -101,20 +98,14 @@ function ActivityCard({ activity, index }: { activity: DestActivity; index: numb
           </div>
         </div>
       </div>
-
-      {/* Description */}
       <p style={{ margin: "0 0 10px 46px", fontSize: "14px", color: "#374151", lineHeight: 1.6, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
         {activity.description}
       </p>
-
-      {/* Tip */}
       {activity.tip && (
         <div style={{
           marginLeft: "46px",
-          background: "rgba(42,181,160,0.08)",
-          border: "1px solid rgba(42,181,160,0.25)",
-          borderRadius: "10px",
-          padding: "10px 14px",
+          background: "rgba(42,181,160,0.08)", border: "1px solid rgba(42,181,160,0.25)",
+          borderRadius: "10px", padding: "10px 14px",
           display: "flex", alignItems: "flex-start", gap: "8px",
         }}>
           <Lightbulb size={14} style={{ color: "#2ab5a0", flexShrink: 0, marginTop: "2px" }} />
@@ -123,22 +114,15 @@ function ActivityCard({ activity, index }: { activity: DestActivity; index: numb
           </span>
         </div>
       )}
-
-      {/* GYG link */}
       {activity.gyg && (
         <div style={{ marginLeft: "46px", marginTop: "10px" }}>
-          <a
-            href={gygLink(activity.gyg)}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            style={{
-              display: "inline-flex", alignItems: "center", gap: "6px",
-              background: "#ff6600", color: "white",
-              padding: "6px 14px", borderRadius: "8px",
-              fontSize: "12px", fontWeight: 700, textDecoration: "none",
-              boxShadow: "0 2px 8px rgba(255,102,0,0.3)",
-            }}
-          >
+          <a href={gygLink(activity.gyg)} target="_blank" rel="noopener noreferrer sponsored" style={{
+            display: "inline-flex", alignItems: "center", gap: "6px",
+            background: "#ff6600", color: "white",
+            padding: "6px 14px", borderRadius: "8px",
+            fontSize: "12px", fontWeight: 700, textDecoration: "none",
+            boxShadow: "0 2px 8px rgba(255,102,0,0.3)",
+          }}>
             🎯 Tours y entradas — GetYourGuide
           </a>
         </div>
@@ -147,7 +131,69 @@ function ActivityCard({ activity, index }: { activity: DestActivity; index: numb
   );
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
+// ─── Expanded day section (server, days 1-2) ──────────────────────────────────
+function ExpandedDay({ day }: { day: { day: number; theme: string; activities: DestActivity[] } }) {
+  return (
+    <div>
+      <div style={{ marginBottom: "20px" }}>
+        <span style={{
+          display: "inline-flex", alignItems: "center",
+          background: "linear-gradient(135deg, #1a2a6c, #2d3f8f)",
+          color: "white", padding: "6px 20px", borderRadius: "999px",
+          fontSize: "12px", fontWeight: 800, letterSpacing: "0.06em", textTransform: "uppercase",
+          boxShadow: "0 4px 12px rgba(26,42,108,0.3)", marginBottom: "8px",
+        }}>
+          Día {day.day}
+        </span>
+        <h2 style={{
+          fontFamily: "'Playfair Display', serif",
+          fontSize: "1.35rem", color: "#1a2a6c", margin: "8px 0 0", fontWeight: 700,
+        }}>
+          {day.theme}
+        </h2>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+        {day.activities.map((activity, i) => (
+          <ActivityCard key={i} activity={activity} index={i} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── Inline CTA between days ──────────────────────────────────────────────────
+function InlineCTA({ generatorUrl, city }: { generatorUrl: string; city: string }) {
+  return (
+    <div style={{
+      background: "linear-gradient(135deg, rgba(42,181,160,0.12), rgba(26,42,108,0.08))",
+      border: "1.5px solid rgba(42,181,160,0.3)",
+      borderRadius: "16px",
+      padding: "20px 24px",
+      display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", flexWrap: "wrap",
+    }}>
+      <div>
+        <p style={{ margin: "0 0 2px", fontSize: "14px", fontWeight: 800, color: "#1a2a6c", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+          ¿Ya te imaginás ahí?
+        </p>
+        <p style={{ margin: 0, fontSize: "12px", color: "#4b5563", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+          Generá tu versión personalizada con tus días, gustos y presupuesto.
+        </p>
+      </div>
+      <Link href={generatorUrl} style={{
+        display: "inline-flex", alignItems: "center", gap: "7px",
+        background: "linear-gradient(135deg, #2ab5a0, #1a9985)",
+        color: "white", padding: "11px 22px", borderRadius: "12px",
+        fontSize: "13px", fontWeight: 700, textDecoration: "none",
+        boxShadow: "0 4px 16px rgba(42,181,160,0.35)", whiteSpace: "nowrap",
+        fontFamily: "'Plus Jakarta Sans', sans-serif",
+      }}>
+        <Sparkles size={14} /> Generá para {city} →
+      </Link>
+    </div>
+  );
+}
+
+// ─── Page ──────────────────────────────────────────────────────────────────────
 export default async function DestinationItineraryPage({
   params,
 }: {
@@ -159,23 +205,26 @@ export default async function DestinationItineraryPage({
 
   const generatorUrl = `/?city=${encodeURIComponent(dest.city)}&country=${encodeURIComponent(dest.countryCode)}`;
 
+  // Split: days 1-2 expanded, days 3+ collapsible
+  const expandedDays = dest.days.slice(0, 2);
+  const collapsibleDays = dest.days.slice(2);
+
   return (
     <div style={{
       minHeight: "100vh",
       background: "linear-gradient(135deg, #f0f4ff 0%, #e8f7f5 100%)",
       fontFamily: "'Plus Jakarta Sans', sans-serif",
     }}>
+      {/* Floating CTA — appears after scrolling */}
+      <FloatingCTA generatorUrl={generatorUrl} city={dest.city} />
+
       {/* ── Navbar ── */}
       <nav style={{
         background: "rgba(8,16,54,0.92)",
         backdropFilter: "blur(20px)",
         padding: "14px 24px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        position: "sticky",
-        top: 0,
-        zIndex: 50,
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        position: "sticky", top: 0, zIndex: 50,
         borderBottom: "1px solid rgba(255,255,255,0.08)",
       }}>
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
@@ -198,8 +247,7 @@ export default async function DestinationItineraryPage({
         {/* ── Back ── */}
         <Link href="/blog" style={{
           display: "inline-flex", alignItems: "center", gap: "6px",
-          color: "#6b7280", fontSize: "13px", textDecoration: "none",
-          marginBottom: "28px",
+          color: "#6b7280", fontSize: "13px", textDecoration: "none", marginBottom: "28px",
         }}>
           <ArrowLeft size={14} /> Volver al blog de viajes
         </Link>
@@ -207,10 +255,7 @@ export default async function DestinationItineraryPage({
         {/* ── Hero ── */}
         <div style={{
           background: "linear-gradient(135deg, rgba(26,42,108,0.9), rgba(45,63,143,0.85))",
-          borderRadius: "24px",
-          padding: "40px 36px",
-          marginBottom: "40px",
-          color: "white",
+          borderRadius: "24px", padding: "40px 36px", marginBottom: "40px", color: "white",
           boxShadow: "0 12px 40px rgba(26,42,108,0.3)",
         }}>
           <div style={{ fontSize: "56px", marginBottom: "16px", lineHeight: 1 }}>{dest.emoji}</div>
@@ -221,25 +266,33 @@ export default async function DestinationItineraryPage({
           }}>
             {dest.heroTitle}
           </h1>
-          <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.78)", margin: "0 0 28px", lineHeight: 1.6 }}>
+          <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.78)", margin: "0 0 24px", lineHeight: 1.6 }}>
             {dest.heroSubtitle}
           </p>
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "28px" }}>
-            {[
-              `📅 ${dest.totalDays} días`,
-              `💰 ${dest.budget}`,
-              `☀️ Mejor época: ${dest.bestMonths}`,
-            ].map(tag => (
+
+          {/* Quick-scan summary of all days */}
+          <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "28px" }}>
+            {dest.days.map(d => (
+              <span key={d.day} style={{
+                background: "rgba(255,255,255,0.1)",
+                border: "1px solid rgba(255,255,255,0.18)",
+                borderRadius: "999px", padding: "5px 14px",
+                fontSize: "12px", fontWeight: 600,
+              }}>
+                Día {d.day} — {d.theme.split(":")[0].split("—")[0].trim()}
+              </span>
+            ))}
+          </div>
+
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "28px" }}>
+            {[`📅 ${dest.totalDays} días`, `💰 ${dest.budget}`, `☀️ ${dest.bestMonths}`].map(tag => (
               <span key={tag} style={{
-                background: "rgba(255,255,255,0.12)",
-                border: "1px solid rgba(255,255,255,0.2)",
-                borderRadius: "999px",
-                padding: "5px 14px",
-                fontSize: "12px",
-                fontWeight: 600,
+                background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)",
+                borderRadius: "999px", padding: "5px 14px", fontSize: "12px", fontWeight: 600,
               }}>{tag}</span>
             ))}
           </div>
+
           <Link href={generatorUrl} style={{
             display: "inline-flex", alignItems: "center", gap: "8px",
             background: "linear-gradient(135deg, #2ab5a0, #1a9985)",
@@ -252,49 +305,43 @@ export default async function DestinationItineraryPage({
           </Link>
         </div>
 
-        {/* ── Itinerary days ── */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
-          {dest.days.map((day) => (
-            <div key={day.day}>
-              {/* Day header */}
-              <div style={{ marginBottom: "20px" }}>
-                <span style={{
-                  display: "inline-flex", alignItems: "center", gap: "8px",
-                  background: "linear-gradient(135deg, #1a2a6c, #2d3f8f)",
-                  color: "white", padding: "6px 20px", borderRadius: "999px",
-                  fontSize: "12px", fontWeight: 800, letterSpacing: "0.06em",
-                  textTransform: "uppercase", boxShadow: "0 4px 12px rgba(26,42,108,0.3)",
-                  marginBottom: "8px",
-                }}>
-                  Día {day.day}
-                </span>
-                <h2 style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: "1.35rem", color: "#1a2a6c",
-                  margin: "8px 0 0", fontWeight: 700,
-                }}>
-                  {day.theme}
-                </h2>
-              </div>
-
-              {/* Activities */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-                {day.activities.map((activity, i) => (
-                  <ActivityCard key={i} activity={activity} index={i} />
-                ))}
-              </div>
-            </div>
+        {/* ── Days 1-2: expanded ── */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "40px", marginBottom: "32px" }}>
+          {expandedDays.map((day) => (
+            <ExpandedDay key={day.day} day={day} />
           ))}
         </div>
 
+        {/* ── Inline CTA after day 2 ── */}
+        <div style={{ marginBottom: "32px" }}>
+          <InlineCTA generatorUrl={generatorUrl} city={dest.city} />
+        </div>
+
+        {/* ── Flight search — users are in "I want to go" mode here ── */}
+        <div style={{ marginBottom: "32px" }}>
+          <FlightSearch destination={dest.city} language="es" />
+        </div>
+
+        {/* ── Days 3+: collapsible ── */}
+        {collapsibleDays.length > 0 && (
+          <div style={{ marginBottom: "40px" }}>
+            <p style={{
+              fontSize: "13px", color: "#6b7280", fontWeight: 600,
+              marginBottom: "14px", fontFamily: "'Plus Jakarta Sans', sans-serif",
+            }}>
+              📋 {collapsibleDays.length} días más — expandí para ver el detalle
+            </p>
+            <CollapsibleDays days={collapsibleDays} generatorUrl={generatorUrl} city={dest.city} />
+          </div>
+        )}
+
         {/* ── Travel tips ── */}
         <div style={{
-          marginTop: "48px",
           background: "rgba(255,255,255,0.92)",
           border: "1.5px solid rgba(26,42,108,0.1)",
-          borderRadius: "20px",
-          padding: "28px 32px",
+          borderRadius: "20px", padding: "28px 32px",
           boxShadow: "0 4px 20px rgba(26,42,108,0.08)",
+          marginBottom: "32px",
         }}>
           <h2 style={{
             fontFamily: "'Playfair Display', serif",
@@ -313,54 +360,43 @@ export default async function DestinationItineraryPage({
 
         {/* ── GYG banner ── */}
         <div style={{
-          marginTop: "40px",
           background: "linear-gradient(135deg, rgba(255,102,0,0.08), rgba(255,140,0,0.06))",
           border: "1.5px solid rgba(255,102,0,0.25)",
-          borderRadius: "20px",
-          padding: "28px 32px",
+          borderRadius: "20px", padding: "28px 32px",
           display: "flex", alignItems: "center", justifyContent: "space-between", gap: "20px", flexWrap: "wrap",
+          marginBottom: "32px",
         }}>
           <div>
             <p style={{ margin: "0 0 4px", fontSize: "16px", fontWeight: 800, color: "#ea580c" }}>
               🎯 Tours y experiencias en {dest.city}
             </p>
             <p style={{ margin: 0, fontSize: "13px", color: "#6b7280" }}>
-              Entradas sin fila, tours guiados y experiencias únicas — reservá con anticipación.
+              Entradas sin fila, tours guiados y experiencias únicas.
             </p>
           </div>
           <a
             href={gygLink(dest.gygCity)}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
+            target="_blank" rel="noopener noreferrer sponsored"
             style={{
               background: "#ff6600", color: "white",
               padding: "12px 24px", borderRadius: "12px",
               fontSize: "14px", fontWeight: 700, textDecoration: "none",
-              boxShadow: "0 4px 16px rgba(255,102,0,0.35)",
-              whiteSpace: "nowrap",
+              boxShadow: "0 4px 16px rgba(255,102,0,0.35)", whiteSpace: "nowrap",
             }}
           >
             Ver tours disponibles →
           </a>
         </div>
 
-        {/* ── Flight search ── */}
-        <div style={{ marginTop: "40px" }}>
-          <FlightSearch destination={dest.city} language="es" />
-        </div>
-
         {/* ── Insurance ── */}
-        <div style={{ marginTop: "32px" }}>
+        <div style={{ marginBottom: "48px" }}>
           <InsuranceBanner language="es" />
         </div>
 
         {/* ── Bottom CTA ── */}
         <div style={{
-          marginTop: "48px",
           background: "linear-gradient(135deg, #1a2a6c, #2d3f8f)",
-          borderRadius: "24px",
-          padding: "40px 36px",
-          textAlign: "center",
+          borderRadius: "24px", padding: "40px 36px", textAlign: "center",
           boxShadow: "0 12px 40px rgba(26,42,108,0.3)",
         }}>
           <p style={{ fontSize: "28px", margin: "0 0 12px" }}>✈️</p>
@@ -371,8 +407,7 @@ export default async function DestinationItineraryPage({
             ¿Querés un itinerario a tu medida?
           </h2>
           <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "14px", margin: "0 0 24px", lineHeight: 1.6 }}>
-            Este itinerario es una muestra. Con nuestra IA podés personalizar destino, días, tipo de viaje,
-            presupuesto e intereses — y tener fotos reales, mapa interactivo y vuelos en segundos.
+            Personalizá destino, días, tipo de viaje, presupuesto e intereses — con fotos reales, mapa interactivo y búsqueda de vuelos.
           </p>
           <Link href={generatorUrl} style={{
             display: "inline-flex", alignItems: "center", gap: "8px",
@@ -385,6 +420,7 @@ export default async function DestinationItineraryPage({
             Generá tu itinerario para {dest.city}
           </Link>
         </div>
+
       </div>
     </div>
   );
