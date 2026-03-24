@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CookieBanner } from "@/components/CookieBanner";
 import "./globals.css";
 
 const BASE_URL = "https://global-home-assist.vercel.app";
@@ -132,6 +133,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { destinations, getDestination } from "@/data/destinations";
-import { ArrowLeft, Calendar, Coins, Globe, Backpack, Plane, Sparkles, ChevronRight } from "lucide-react";
+import { blogPosts } from "@/data/blogPosts";
+import { ArrowLeft, Calendar, Coins, Globe, Backpack, Plane, Sparkles, ChevronRight, BookOpen } from "lucide-react";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -34,6 +35,14 @@ export default async function DestinoPage({ params }: Props) {
   const { slug } = await params;
   const dest = getDestination(slug);
   if (!dest) notFound();
+
+  const relatedPosts = blogPosts
+    .filter(p =>
+      p.slug.includes(slug) ||
+      p.title.toLowerCase().includes(dest.name.toLowerCase()) ||
+      p.excerpt.toLowerCase().includes(dest.name.toLowerCase())
+    )
+    .slice(0, 3);
 
   return (
     <main style={{
@@ -218,6 +227,70 @@ export default async function DestinoPage({ params }: Props) {
             ))}
           </div>
         </div>
+
+        {/* Artículos relacionados del blog */}
+        {relatedPosts.length > 0 && (
+          <div style={{ marginBottom: "48px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "20px" }}>
+              <BookOpen size={18} color="#2ab5a0" strokeWidth={2} />
+              <h2 style={{
+                fontFamily: "'Playfair Display', serif",
+                color: "white", fontSize: "1.4rem",
+                fontWeight: 700, margin: 0,
+              }}>
+                Artículos sobre {dest.name}
+              </h2>
+            </div>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              gap: "14px",
+            }}>
+              {relatedPosts.map(post => (
+                <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
+                  <div style={{
+                    background: "rgba(255,255,255,0.07)",
+                    border: "1px solid rgba(255,255,255,0.12)",
+                    borderRadius: "14px",
+                    padding: "18px",
+                    transition: "border-color 0.15s, background 0.15s",
+                  }}
+                    onMouseEnter={(e) => {
+                      const el = e.currentTarget as HTMLElement;
+                      el.style.borderColor = "rgba(42,181,160,0.4)";
+                      el.style.background = "rgba(255,255,255,0.1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      const el = e.currentTarget as HTMLElement;
+                      el.style.borderColor = "rgba(255,255,255,0.12)";
+                      el.style.background = "rgba(255,255,255,0.07)";
+                    }}
+                  >
+                    <div style={{ fontSize: "28px", marginBottom: "10px" }}>{post.heroEmoji}</div>
+                    <h3 style={{
+                      fontFamily: "'Playfair Display', serif",
+                      fontSize: "0.95rem", fontWeight: 700,
+                      color: "white", margin: "0 0 8px 0", lineHeight: 1.3,
+                    }}>
+                      {post.title}
+                    </h3>
+                    <p style={{
+                      fontSize: "12px", color: "rgba(255,255,255,0.6)",
+                      margin: "0 0 12px 0", lineHeight: 1.5,
+                      display: "-webkit-box", WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical", overflow: "hidden",
+                    } as React.CSSProperties}>
+                      {post.excerpt}
+                    </p>
+                    <span style={{ color: "#2ab5a0", fontSize: "12px", fontWeight: 700 }}>
+                      Leer artículo →
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* CTA final */}
         <div style={{ textAlign: "center" }}>
