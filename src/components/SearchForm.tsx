@@ -302,11 +302,10 @@ const T: Record<string, Record<string, any>> = {
 };
 
 function buildAffiliateLinks(city: string) {
-  // Use city slug URL instead of search — avoids GYG misrouting "Monaco" to Munich
-  // getyourguide.com/{slug}/ behaves the same as typing the city in their search box
-  const slug = city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+  // Plain city name search — same as typing the city in GYG's search box
+  const q = encodeURIComponent(city);
   return {
-    getyourguide: `https://www.getyourguide.com/${slug}/?partner_id=${AFFILIATE.getyourguide}`,
+    getyourguide: `https://www.getyourguide.com/s/?q=${q}&partner_id=${AFFILIATE.getyourguide}`,
   };
 }
 
@@ -964,30 +963,45 @@ export default function SearchForm() {
               </div>
             )}
 
-            {/* ===== PRINT-ONLY: texto puro, sin imágenes ni flex ===== */}
+            {/* ===== PRINT-ONLY: itinerario texto puro ===== */}
             <div className="print-only-itinerary">
-              <div style={{ fontFamily: "Georgia, serif" }}>
+              <div style={{ fontFamily: "'Plus Jakarta Sans', Arial, sans-serif", color: "#111" }}>
                 {itinerary.days.map((day: any, dayIndex: number) => (
-                  <div key={dayIndex} style={{ marginBottom: "24px", pageBreakInside: "avoid" }}>
-                    <div style={{ background: "#1a2a6c", color: "white", padding: "6px 14px", borderRadius: "6px", display: "inline-block", fontWeight: 700, fontSize: "13px", marginBottom: "10px", fontFamily: "sans-serif" }}>
-                      {t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}{day.theme ? ` — ${day.theme}` : ""}
+                  <div key={dayIndex} style={{ marginBottom: "28px" }}>
+                    {/* Encabezado del día */}
+                    <div style={{ borderBottom: "2px solid #1a2a6c", paddingBottom: "6px", marginBottom: "14px" }}>
+                      <span style={{ background: "#1a2a6c", color: "white", padding: "4px 14px", borderRadius: "4px", fontWeight: 800, fontSize: "12px", letterSpacing: "0.05em", textTransform: "uppercase" }}>
+                        {t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}
+                      </span>
+                      {day.theme && (
+                        <span style={{ marginLeft: "12px", fontSize: "15px", fontWeight: 700, color: "#1a2a6c", fontFamily: "'Playfair Display', Georgia, serif" }}>
+                          {day.theme}
+                        </span>
+                      )}
                     </div>
+                    {/* Actividades */}
                     {day.activities.map((activity: any, i: number) => (
-                      <div key={i} style={{ borderBottom: "1px solid #e5e7eb", padding: "10px 0 10px 14px", marginBottom: "4px" }}>
-                        <div style={{ fontWeight: 700, fontSize: "14px", color: "#1a2a6c", fontFamily: "sans-serif", marginBottom: "4px" }}>
-                          {i + 1}. {activity.place_name}{activity.mustSee ? " ★" : ""}
+                      <div key={i} style={{ display: "flex", gap: "14px", padding: "10px 0", borderBottom: "1px solid #f0f0f0" }}>
+                        <div style={{ minWidth: "22px", height: "22px", borderRadius: "50%", background: "#1a2a6c", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "11px", fontWeight: 800, flexShrink: 0, marginTop: "1px" }}>
+                          {i + 1}
                         </div>
-                        {activity.short_description && (
-                          <div style={{ fontSize: "12px", color: "#374151", marginBottom: "3px" }}>{activity.short_description}</div>
-                        )}
-                        <div style={{ fontSize: "11px", color: "#6b7280", fontFamily: "sans-serif" }}>
-                          {activity.visit?.recommended_duration && <span>⏱ {activity.visit.recommended_duration}</span>}
-                          {activity.visit?.best_time_to_visit && <span style={{ marginLeft: "12px" }}>🕐 {activity.visit.best_time_to_visit}</span>}
-                          {activity.tickets?.price_estimate && <span style={{ marginLeft: "12px" }}>💰 {activity.tickets.price_estimate}</span>}
+                        <div style={{ flex: 1 }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "3px" }}>
+                            <span style={{ fontWeight: 800, fontSize: "13px", color: "#1a2a6c" }}>{activity.place_name}</span>
+                            {activity.mustSee && <span style={{ fontSize: "9px", background: "#fef3c7", color: "#92400e", padding: "1px 6px", borderRadius: "999px", fontWeight: 700, border: "1px solid #fbbf24" }}>MUST SEE</span>}
+                          </div>
+                          {activity.short_description && (
+                            <div style={{ fontSize: "11px", color: "#4b5563", lineHeight: 1.5, marginBottom: "4px" }}>{activity.short_description}</div>
+                          )}
+                          <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", fontSize: "10px", color: "#6b7280" }}>
+                            {activity.visit?.recommended_duration && <span>⏱ {activity.visit.recommended_duration}</span>}
+                            {activity.visit?.best_time_to_visit && <span>🕐 {activity.visit.best_time_to_visit}</span>}
+                            {activity.tickets?.price_estimate && <span style={{ color: "#1a2a6c", fontWeight: 700 }}>💰 {activity.tickets.price_estimate}</span>}
+                          </div>
+                          {activity.tips?.length > 0 && (
+                            <div style={{ fontSize: "10px", color: "#2ab5a0", marginTop: "4px", fontStyle: "italic" }}>💡 {activity.tips[0]}</div>
+                          )}
                         </div>
-                        {activity.tips?.length > 0 && (
-                          <div style={{ fontSize: "11px", color: "#2ab5a0", marginTop: "4px", fontStyle: "italic" }}>💡 {activity.tips[0]}</div>
-                        )}
                       </div>
                     ))}
                   </div>
