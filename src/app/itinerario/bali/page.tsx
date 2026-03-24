@@ -3,6 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Plane, Sparkles, Clock, Coins, ArrowLeft, ChevronRight, Star } from "lucide-react";
 import { searchPlaceImage } from "@/lib/imageSearch";
+import FlightSearch from "@/components/FlightSearch";
+import InsuranceBanner from "@/components/InsuranceBanner";
+import ServicesSection from "@/components/ServicesSection";
+import DestinationInfo from "@/components/DestinationInfo";
+import MedicalAssistance from "@/components/MedicalAssistance";
+import SOSButton from "@/components/SOSButton";
+import BaliMap from "./BaliMap";
 
 export const revalidate = 86400; // revalidar imágenes 1 vez por día
 
@@ -326,6 +333,16 @@ export default async function BaliItineraryPage() {
     if (imageUrls[i]) imageMap[a.name] = imageUrls[i] as string;
   });
 
+  // Actividades en formato Activity para TravelMap
+  const mapActivities = allActivities.map((a) => ({
+    place_name: a.name,
+    short_description: a.description,
+    location: { latitude: a.lat, longitude: a.lng },
+    visit: { recommended_duration: a.duration },
+    tickets: { price_estimate: a.price },
+    media: { image_url: imageMap[a.name] || "" },
+  }));
+
   const photoRotation = (i: number) => i % 2 === 0 ? "rotate(2deg)" : "rotate(-1.5deg)";
 
   return (
@@ -624,6 +641,39 @@ export default async function BaliItineraryPage() {
             </div>
           ))}
         </div>
+
+        {/* ─── MAPA ─── */}
+        <div>
+          <h2 className="section-title" style={{ fontSize: "1.5rem", marginBottom: "16px" }}>
+            🗺️ Mapa del viaje
+          </h2>
+          <BaliMap activities={mapActivities} />
+        </div>
+
+        {/* ─── VUELOS ─── */}
+        <FlightSearch destination="Bali" language="es" />
+
+        {/* ─── SEGURO ─── */}
+        <InsuranceBanner language="es" />
+
+        {/* ─── SERVICIOS ─── */}
+        <ServicesSection city="Bali" country="Indonesia" />
+
+        {/* ─── INFO DEL DESTINO ─── */}
+        <DestinationInfo
+          city="Bali"
+          country="Indonesia"
+          nationality="Argentina"
+          language="es"
+          latitude={-8.4095}
+          longitude={115.1889}
+        />
+
+        {/* ─── ASISTENCIA MÉDICA ─── */}
+        <MedicalAssistance city="Bali" country="Indonesia" language="es" />
+
+        {/* ─── SOS ─── */}
+        <SOSButton city="Bali" country="Indonesia" />
 
         {/* ─── CTA FINAL ─── */}
         <div style={{
