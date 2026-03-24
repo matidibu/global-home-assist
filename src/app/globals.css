@@ -196,6 +196,12 @@ html, body {
   .main-container { padding: 16px 12px !important; }
 }
 
+/* Print-only block: hidden on screen */
+.print-only-itinerary { display: none; }
+
+/* Screen-only days: hidden when printing */
+/* (handled by @media print below) */
+
 /* ===== PRINT / PDF ===== */
 @media print {
   /* Mostrar solo el área de impresión */
@@ -210,7 +216,7 @@ html, body {
   }
 
   /* Ocultar elementos que no deben imprimirse */
-  .no-print { display: none !important; visibility: hidden !important; }
+  .no-print { display: none !important; }
 
   /* Preservar colores en impresión */
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -222,39 +228,16 @@ html, body {
     align-items: center;
     gap: 12px;
     padding-bottom: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     border-bottom: 2px solid #1a2a6c;
   }
 
-  /* Ocultar fotos completamente — sin dejar espacio */
-  .activity-card-photo,
-  .activity-card-photo * { display: none !important; width: 0 !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
+  /* Mostrar la versión texto-puro, ocultar los cards visuales */
+  .print-only-itinerary { display: block !important; }
+  .screen-only-day { display: none !important; }
 
-  /* Tarjetas: colapsar al contenido de texto únicamente */
-  .activity-card {
-    box-shadow: none !important;
-    border: none !important;
-    border-bottom: 1px solid #e5e7eb !important;
-    border-radius: 0 !important;
-    break-inside: avoid;
-    page-break-inside: avoid;
-    min-height: 0 !important;
-    height: auto !important;
-    margin-bottom: 0 !important;
-    padding: 10px 0 !important;
-    display: block !important;
-    background: white !important;
-  }
-
-  /* Días: salto de página antes de cada día (excepto el primero) */
-  .print-day + .print-day { page-break-before: always; }
-
-  /* Day badge */
-  .day-badge {
-    background: #1a2a6c !important;
-    color: white !important;
-    margin-bottom: 8px !important;
-  }
+  /* Salto de página entre días en versión print */
+  .print-only-itinerary > div > div + div { page-break-before: always; }
 
   /* Ocultar scrollbar */
   ::-webkit-scrollbar { display: none; }

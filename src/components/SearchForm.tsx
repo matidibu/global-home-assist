@@ -302,10 +302,11 @@ const T: Record<string, Record<string, any>> = {
 };
 
 function buildAffiliateLinks(city: string) {
-  const q = encodeURIComponent(`${city} tours`);
-  // locale_code=en-US prevents GYG from misrouting city names via user's locale
+  // Use city slug URL instead of search — avoids GYG misrouting "Monaco" to Munich
+  // getyourguide.com/{slug}/ behaves the same as typing the city in their search box
+  const slug = city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
   return {
-    getyourguide: `https://www.getyourguide.com/s/?q=${q}&partner_id=${AFFILIATE.getyourguide}&locale_code=en-US`,
+    getyourguide: `https://www.getyourguide.com/${slug}/?partner_id=${AFFILIATE.getyourguide}`,
   };
 }
 
@@ -963,8 +964,40 @@ export default function SearchForm() {
               </div>
             )}
 
+            {/* ===== PRINT-ONLY: texto puro, sin imágenes ni flex ===== */}
+            <div className="print-only-itinerary">
+              <div style={{ fontFamily: "Georgia, serif" }}>
+                {itinerary.days.map((day: any, dayIndex: number) => (
+                  <div key={dayIndex} style={{ marginBottom: "24px", pageBreakInside: "avoid" }}>
+                    <div style={{ background: "#1a2a6c", color: "white", padding: "6px 14px", borderRadius: "6px", display: "inline-block", fontWeight: 700, fontSize: "13px", marginBottom: "10px", fontFamily: "sans-serif" }}>
+                      {t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}{day.theme ? ` — ${day.theme}` : ""}
+                    </div>
+                    {day.activities.map((activity: any, i: number) => (
+                      <div key={i} style={{ borderBottom: "1px solid #e5e7eb", padding: "10px 0 10px 14px", marginBottom: "4px" }}>
+                        <div style={{ fontWeight: 700, fontSize: "14px", color: "#1a2a6c", fontFamily: "sans-serif", marginBottom: "4px" }}>
+                          {i + 1}. {activity.place_name}{activity.mustSee ? " ★" : ""}
+                        </div>
+                        {activity.short_description && (
+                          <div style={{ fontSize: "12px", color: "#374151", marginBottom: "3px" }}>{activity.short_description}</div>
+                        )}
+                        <div style={{ fontSize: "11px", color: "#6b7280", fontFamily: "sans-serif" }}>
+                          {activity.visit?.recommended_duration && <span>⏱ {activity.visit.recommended_duration}</span>}
+                          {activity.visit?.best_time_to_visit && <span style={{ marginLeft: "12px" }}>🕐 {activity.visit.best_time_to_visit}</span>}
+                          {activity.tickets?.price_estimate && <span style={{ marginLeft: "12px" }}>💰 {activity.tickets.price_estimate}</span>}
+                        </div>
+                        {activity.tips?.length > 0 && (
+                          <div style={{ fontSize: "11px", color: "#2ab5a0", marginTop: "4px", fontStyle: "italic" }}>💡 {activity.tips[0]}</div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* ===== FIN PRINT-ONLY ===== */}
+
             {itinerary.days.map((day: any, dayIndex: number) => (
-              <div key={dayIndex} className="print-day">
+              <div key={dayIndex} className="print-day screen-only-day">
                 <div style={{ marginBottom: "20px" }}>
                   <div className="day-badge">{t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}</div>
                   {day.theme && (
