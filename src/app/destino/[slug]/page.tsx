@@ -248,24 +248,13 @@ export default async function DestinoPage({ params }: Props) {
             }}>
               {relatedPosts.map(post => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
-                  <div style={{
+                  <div className="destino-blog-card" style={{
                     background: "rgba(255,255,255,0.07)",
                     border: "1px solid rgba(255,255,255,0.12)",
                     borderRadius: "14px",
                     padding: "18px",
                     transition: "border-color 0.15s, background 0.15s",
-                  }}
-                    onMouseEnter={(e) => {
-                      const el = e.currentTarget as HTMLElement;
-                      el.style.borderColor = "rgba(42,181,160,0.4)";
-                      el.style.background = "rgba(255,255,255,0.1)";
-                    }}
-                    onMouseLeave={(e) => {
-                      const el = e.currentTarget as HTMLElement;
-                      el.style.borderColor = "rgba(255,255,255,0.12)";
-                      el.style.background = "rgba(255,255,255,0.07)";
-                    }}
-                  >
+                  }}>
                     <div style={{ fontSize: "28px", marginBottom: "10px" }}>{post.heroEmoji}</div>
                     <h3 style={{
                       fontFamily: "'Playfair Display', serif",

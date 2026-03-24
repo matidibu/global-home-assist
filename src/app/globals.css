@@ -295,3 +295,8 @@ html, body {
   stroke-dashoffset: 200;
   animation: drawStroke 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
+
+.destino-blog-card:hover {
+  border-color: rgba(42,181,160,0.4) !important;
+  background: rgba(255,255,255,0.1) !important;
+}
