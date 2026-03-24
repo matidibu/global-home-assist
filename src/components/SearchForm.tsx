@@ -1000,7 +1000,7 @@ export default function SearchForm() {
                                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = photoRotation(i); }}
                               >
                                 <div style={{ position: "relative", width: "194px", height: "194px", overflow: "hidden", backgroundColor: "#f0f0f0" }}>
-                                  <Image src={activity.media.image_url} alt={activity.place_name} fill style={{ objectFit: "cover" }} unoptimized />
+                                  <Image src={activity.media.image_url} alt={activity.place_name} fill style={{ objectFit: "cover" }} unoptimized loading="eager" />
                                 </div>
                                 <p style={{ textAlign: "center", fontSize: "10px", color: "#888", marginTop: "6px", fontFamily: "Georgia, serif", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                                   {activity.place_name}
