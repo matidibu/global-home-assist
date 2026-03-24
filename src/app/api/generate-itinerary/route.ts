@@ -159,6 +159,16 @@ ${city} may not have famous landmarks. That is fine. Use only what genuinely exi
 ✗ NEVER: waterfalls, mountains, beaches, or natural parks unless you are 100% certain they are within the city limits
 ✗ NEVER: attractions from other cities, even if 10 km away
 
+DESTINATION PROFILE — LUXURY CALIBRATION:
+Assess whether ${city} is a world-class luxury destination (e.g. Monaco, Maldives, Dubai, St. Barts, Mykonos, Portofino, Capri, Santorini, Courchevel, Verbier, Cannes, Saint-Tropez, Bora Bora, Maldives, Positano, Amalfi, Ibiza, Forte dei Marmi, Palm Beach, Beverly Hills, Aspen, etc.).
+
+IF ${city} IS a luxury/upscale destination:
+✓ PRIORITIZE: yacht charters, private boat tours, helicopter experiences, Michelin-star or celebrity-chef restaurants, exclusive beach clubs, high-end spa treatments, private art collections, casino experiences, luxury shopping streets, rooftop bars with prestige views, VIP sunset cruises
+✗ MINIMIZE: free public parks, generic plazas, ordinary markets, budget street food
+→ Every suggested place should reflect the premium character of the destination. A visitor to Monaco expects Casino de Monte-Carlo and a sunset yacht aperitivo, not a city park.
+
+IF ${city} is NOT a luxury destination: apply normal criteria as described above.
+
 TRIP TYPE: ${tripType || "general"}
 TRIP TYPE INSTRUCTIONS: ${tripInstruction}
 ${interestsList}
