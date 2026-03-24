@@ -301,10 +301,10 @@ const T: Record<string, Record<string, any>> = {
   },
 };
 
-function buildAffiliateLinks(placeName: string, city: string, country: string) {
-  // Include country to avoid GYG disambiguating city names incorrectly
-  // e.g. "Monaco" → Munich without country context
-  const q = encodeURIComponent(`${placeName} ${city} ${country}`);
+function buildAffiliateLinks(city: string) {
+  // Search by city only — avoids GYG misrouting ambiguous city names
+  // (e.g. "Monaco" + activity name was routing to Munich)
+  const q = encodeURIComponent(`${city} tours`);
   return {
     getyourguide: `https://www.getyourguide.com/s/?q=${q}&partner_id=${AFFILIATE.getyourguide}`,
   };
@@ -949,7 +949,7 @@ export default function SearchForm() {
 
                 <div>
                   {day.activities.map((activity: any, i: number) => {
-                    const links = buildAffiliateLinks(activity.place_name, itinerary.destination, itinerary.country || country);
+                    const links = buildAffiliateLinks(itinerary.destination);
                     return (
                       <div key={i}>
                         {i === 0 && activity.transport && (
@@ -981,9 +981,11 @@ export default function SearchForm() {
                                 💰 {activity.tickets.price_estimate}
                               </p>
                             )}
+                            {activity.tickets?.price_estimate && activity.tickets.price_estimate !== 'Free' && activity.tickets.price_estimate !== 'Gratis' && activity.tickets.price_estimate !== '' && (
                             <div className="no-print" style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "12px" }}>
                               <a href={links.getyourguide} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fff7ed", color: "#ea580c", fontWeight: 600, textDecoration: "none", border: "1px solid #fed7aa" }}>🎯 GetYourGuide</a>
                             </div>
+                            )}
                             {activity.tips && activity.tips.length > 0 && (
                               <div style={{ background: "rgba(42,181,160,0.08)", borderLeft: "3px solid #2ab5a0", borderRadius: "0 8px 8px 0", padding: "8px 12px" }}>
                                 {activity.tips.map((tip: string, j: number) => (

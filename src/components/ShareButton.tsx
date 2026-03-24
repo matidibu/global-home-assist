@@ -45,7 +45,26 @@ export default function ShareButton({ destination, language }: Props) {
     }
   };
 
-  const handlePrint = () => window.print();
+  const handlePrint = () => {
+    // Directly hide photo elements via JS — bypasses CSS specificity issues
+    // with inline styles that @media print can't reliably override
+    const photos = document.querySelectorAll<HTMLElement>('.activity-card-photo');
+    const cards = document.querySelectorAll<HTMLElement>('.activity-card');
+    photos.forEach(el => { el.style.setProperty('display', 'none', 'important'); });
+    cards.forEach(el => {
+      el.style.setProperty('min-height', '0', 'important');
+      el.style.setProperty('display', 'block', 'important');
+    });
+    window.print();
+    // Restore after print dialog closes
+    setTimeout(() => {
+      photos.forEach(el => { el.style.removeProperty('display'); });
+      cards.forEach(el => {
+        el.style.removeProperty('min-height');
+        el.style.removeProperty('display');
+      });
+    }, 1500);
+  };
 
   return (
     <div style={{
