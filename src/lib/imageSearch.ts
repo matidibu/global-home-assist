@@ -99,7 +99,10 @@ async function fetchWikipediaImageByCoords(
       .filter(r => !looksLikePerson(r.title))
       .sort((a, b) => scoreResult(b) - scoreResult(a));
 
+    // Geo results must have ≥1 keyword match — avoids using images of unrelated
+    // nearby articles (TC2000 races, tunnels, car dealerships near the place)
     for (const candidate of ranked.slice(0, 5)) {
+      if (scoreResult(candidate) < 1) break; // sorted descending — no point continuing
       const img = await fetchImageForTitle(candidate.title, lang);
       if (img) return img;
     }

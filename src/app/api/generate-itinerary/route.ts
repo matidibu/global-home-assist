@@ -3,6 +3,7 @@ import OpenAI from "openai"
 import type { Itinerary, DayPlan, Activity } from "@/types/itinerary"
 import { searchPlaceImage } from "@/lib/imageSearch"
 import { getTransportOptions } from "@/lib/transportOptions"
+import { geocodeAllPlaces } from "@/lib/geocodePlaces"
 
 function mapPlaceToActivity(place: Record<string, unknown>, city: string, country: string): Activity {
   const name = typeof place.name === 'string' ? place.name : '';
@@ -228,6 +229,9 @@ OUTPUT RULES:
     if (jsonStart !== -1 && jsonEnd > jsonStart) text = text.substring(jsonStart, jsonEnd + 1);
 
     const aiData = JSON.parse(text);
+
+    // === GEOCODE: replace AI-estimated coordinates with Geoapify real coordinates ===
+    await geocodeAllPlaces(aiData.days, city, country);
 
     // === COORDINATE VALIDATION: remove places outside city bbox ===
     if (cityBbox) {
