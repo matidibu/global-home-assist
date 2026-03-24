@@ -54,6 +54,34 @@ const tripTypeInstructions: Record<string, string> = {
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
+// Fetch the geographic bounding box for a city from Geoapify
+async function getCityBbox(city: string, country: string): Promise<[number, number, number, number] | null> {
+  const apiKey = process.env.GEOAPIFY_KEY || process.env.NEXT_PUBLIC_GEOAPIFY_KEY;
+  if (!apiKey) return null;
+  try {
+    const q = encodeURIComponent(`${city}, ${country}`);
+    const url = `https://api.geoapify.com/v1/geocode/search?text=${q}&type=city&limit=1&apiKey=${apiKey}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const feature = data.features?.[0];
+    if (feature?.bbox) return feature.bbox as [number, number, number, number]; // [lon_min, lat_min, lon_max, lat_max]
+    // Fallback: build bbox from point with ~20km radius
+    if (feature?.geometry?.coordinates) {
+      const [lng, lat] = feature.geometry.coordinates;
+      const d = 0.18; // ~20km in degrees
+      return [lng - d, lat - d, lng + d, lat + d];
+    }
+  } catch { /* ignore */ }
+  return null;
+}
+
+// Check if a coordinate is within a bbox, with a generous 15km buffer for city edges
+function isWithinBbox(lat: number, lng: number, bbox: [number, number, number, number]): boolean {
+  const buf = 0.14; // ~15km buffer
+  return lat >= bbox[1] - buf && lat <= bbox[3] + buf &&
+         lng >= bbox[0] - buf && lng <= bbox[2] + buf;
+}
+
 export async function POST(req: Request) {
   const missingKeys: string[] = [];
   if (!process.env.OPENAI_API_KEY) missingKeys.push('OPENAI_API_KEY');
@@ -86,59 +114,75 @@ export async function POST(req: Request) {
       ? `${city}, ${province}, ${country}`
       : `${city}, ${country}`;
 
+    // Fetch city bbox in parallel with AI call (used later for validation)
+    const bboxPromise = getCityBbox(city, country);
+
     const prompt = `
-You are a travel data expert. Your absolute priority is FACTUAL ACCURACY and GEOGRAPHIC PRECISION.
+You are a travel data expert. Your ONLY job is FACTUAL ACCURACY and GEOGRAPHIC PRECISION.
 Write ALL text fields in ${languageLabel}. Return ONLY valid JSON. No markdown, no preamble.
 
-TARGET CITY: ${city}${province ? `, ${province}` : ""}, ${country}
-DISAMBIGUATION: This is ${city} in ${country}. Do NOT confuse with any other city, state, or country that shares a similar name.
+════════════════════════════════════════
+TARGET: ${city}${province ? `, ${province}` : ""}, ${country}
+════════════════════════════════════════
 
-=== NON-NEGOTIABLE GEOGRAPHIC RULES ===
-Every place in this itinerary must pass ALL three checks:
-  1. EXISTENCE: This place genuinely exists. It is not invented or hallucinated.
-  2. LOCATION: It is physically located in ${city}${province ? `, ${province}` : ""}, ${country} — NOT in a nearby city, region, or province.
-  3. CERTAINTY: You are 100% certain of both existence and location.
+CRITICAL — READ THIS FIRST:
+"${city}" refers to THE CITY OF ${city.toUpperCase()} ITSELF — not its province, department, state, or metropolitan area.
+${province ? `"${province}" is the PROVINCE/STATE. "${city}" is one city within it. They are NOT the same.` : ''}
 
-If any check fails → DO NOT include that place. Replace it with something you ARE certain about.
+FORBIDDEN CONFUSION EXAMPLES (never do this):
+- If the target is "Santa Fe" (city in Argentina) → do NOT suggest Rosario, Paraná, or anything outside the city of Santa Fe itself. The Monumento a la Bandera is in ROSARIO, not Santa Fe city.
+- If the target is a city, do NOT include attractions from other cities in the same province/state, even if they are famous.
+- Do NOT include attractions from the capital of the province unless the TARGET CITY IS the capital.
 
-CRITICAL FOR SMALLER OR LESS-TOURISTIC CITIES:
-- If ${city} is not a major international tourist destination, it likely does NOT have: famous waterfalls, mountain treks, world-class museums, or beaches — unless you are absolutely certain they are there.
-- For these cities, the following are always valid options IF they genuinely exist in ${city}: main plaza or square, historic downtown area, regional or provincial museum, local food market, riverside or lakeside promenade, traditional restaurants serving local cuisine, cultural or civic center, neighborhood parks, local craft or artisan shops.
-- A real local café that exists is infinitely better than a fabricated iconic landmark.
-- NEVER suggest an attraction from another province or city, even if it is nearby or famous.
+════════════════════════════════════════
+NON-NEGOTIABLE RULES — every place must pass ALL THREE:
+  1. EXISTENCE: This exact place genuinely exists and is open to visitors.
+  2. LOCATION: It is physically inside the urban area of ${city}, ${country}. Not in a nearby city. Not in the province. Not in the region. IN THE CITY.
+  3. CERTAINTY: You are 100% certain. If there is any doubt → do NOT include it.
 
-COORDINATE ACCURACY:
-- Coordinates must reflect the ACTUAL location of the place within ${city}.
-- Cross-check: if the coordinates would place the pin outside ${city}, they are wrong — fix them or omit the place.
-=== END GEOGRAPHIC RULES ===
+If a place fails any rule → REMOVE IT. Do not replace it with something equally uncertain.
+It is better to have 2 real places than 3 where one is wrong.
+════════════════════════════════════════
+
+FOR SMALLER / LESS-TOURISTIC CITIES:
+${city} may not have famous landmarks. That is fine. Use only what genuinely exists there:
+✓ Main city plaza or square (plaza central, plaza mayor)
+✓ City's own cathedral or main church (if it exists IN the city)
+✓ Local municipal market or food market
+✓ Riverside, lakeside, or coastal promenade IF the city actually has one
+✓ Local/regional museum IF one exists in the city
+✓ Recognized neighborhood for gastronomy or nightlife
+✓ City park or urban green space
+✓ Historic downtown (casco histórico) of that specific city
+✗ NEVER: waterfalls, mountains, beaches, or natural parks unless you are 100% certain they are within the city limits
+✗ NEVER: attractions from other cities, even if 10 km away
 
 TRIP TYPE: ${tripType || "general"}
 TRIP TYPE INSTRUCTIONS: ${tripInstruction}
 ${interestsList}
 
 PLACE SELECTION RULES:
-1. Start with places you are most certain about — well-known local landmarks first.
-2. Do NOT repeat the same place across different days.
-3. Optimize daily order to minimize travel time between places.
-4. Suggest best time of day for each place based on crowds, light, or opening hours.
-5. NEARBY PLACES: If two attractions share the same complex or are within ~200m (e.g. Burj Khalifa + Dubai Mall), combine into ONE activity. Never list two places that share the same entrance as separate activities.
+1. Start with what you are MOST certain about. Certainty > prestige.
+2. No repeated places across days.
+3. Optimize daily order to minimize travel time.
+4. NEARBY PLACES: If two attractions are within ~200m or share an entrance, combine into ONE.
 
 JSON STRUCTURE:
 {
   "days": [
     {
       "day": 1,
-      "theme": "Short evocative theme for this day in ${languageLabel}",
+      "theme": "Short evocative theme in ${languageLabel}",
       "places": [
         {
-          "name": "Place Name",
-          "description": "One sentence describing this specific place.",
+          "name": "Exact official name of the place",
+          "description": "One sentence about this specific place in ${city}.",
           "category": "Museum",
           "duration": "1.5 hours",
           "bestTime": "Morning",
-          "price": "$10",
-          "tip": "One genuine, specific insider tip about this place.",
-          "coordinates": { "lat": -31.633, "lng": -60.699 },
+          "price": "Free",
+          "tip": "One specific, practical tip for this place in ${city}.",
+          "coordinates": { "lat": 0.000, "lng": 0.000 },
           "officialLink": "",
           "transitType": "land",
           "islandName": "${city}",
@@ -152,25 +196,25 @@ JSON STRUCTURE:
 
 OUTPUT RULES:
 - Exactly ${days} days, exactly 3 places per day.
-- mustSee: true only for genuinely iconic local landmarks; false for everything else.
-- description: 1 sentence max, specific to this place.
-- tip: 1 sentence, practical and specific to this place in ${city}. Not generic advice.
-- coordinates: 3 decimal places, actual location within ${city}.
-- price: USD only. Use "$10", "Free", "$5–15", etc. Never use local currency symbols.
-- officialLink: only if you are 100% certain the URL is correct and active. Otherwise use "".
-- islandName: "${city}" for all places, or specific island name only for genuine archipelago destinations.
-- transitType: "walk", "land", "water", or "air". First place of each day: "land".
-- accessNote: only for "water" or "air" transit. Otherwise "".
+- coordinates: must be the actual GPS location of that place inside ${city}. Wrong coordinates = wrong place.
+- mustSee: true only for places iconic to ${city} specifically.
+- price: USD. "Free", "$5", "$10–20". Never local currency.
+- officialLink: only if 100% certain the URL is live. Otherwise "".
+- transitType: "walk", "land", "water", "air". First place of each day: "land".
+- accessNote: only for water/air transit. Otherwise "".
 - Return ONLY the JSON object. Nothing else.
 `;
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [{ role: "user", content: prompt }],
-      temperature: 0.3,
-      max_tokens: 4000,
-      response_format: { type: "json_object" },
-    });
+    const [completion, cityBbox] = await Promise.all([
+      openai.chat.completions.create({
+        model: "gpt-4o",
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.2,
+        max_tokens: 4000,
+        response_format: { type: "json_object" },
+      }),
+      bboxPromise,
+    ]);
 
     const finishReason = completion.choices[0].finish_reason;
     if (finishReason === "length") {
@@ -185,6 +229,22 @@ OUTPUT RULES:
 
     const aiData = JSON.parse(text);
 
+    // === COORDINATE VALIDATION: remove places outside city bbox ===
+    if (cityBbox) {
+      for (const day of aiData.days) {
+        day.places = day.places.filter((p: any) => {
+          const lat = p.coordinates?.lat;
+          const lng = p.coordinates?.lng;
+          if (typeof lat !== 'number' || typeof lng !== 'number') return false;
+          const valid = isWithinBbox(lat, lng, cityBbox);
+          if (!valid) {
+            console.warn(`[geo-filter] Removed "${p.name}" — coords (${lat}, ${lng}) outside ${city} bbox`);
+          }
+          return valid;
+        });
+      }
+    }
+
     const itinerary: Itinerary = {
       destination: city,
       country,
@@ -197,7 +257,6 @@ OUTPUT RULES:
       ? { lat: accommodationCoords.lat, lon: accommodationCoords.lon }
       : null;
 
-    // Pre-compute all jobs (images + transport) before firing in parallel
     interface PlaceJob {
       dayDay: number;
       placeIndex: number;
@@ -240,7 +299,6 @@ OUTPUT RULES:
       }
     }
 
-    // Fire all image + transport fetches in parallel
     const jobResults = await Promise.all(
       jobs.map(async (job) => {
         const name = typeof job.place.name === 'string' ? job.place.name : '';
@@ -262,7 +320,7 @@ OUTPUT RULES:
       })
     );
 
-    // Deduplicate images: if two places share the same URL, clear the duplicate
+    // Deduplicate images
     const seenImages = new Set<string>();
     for (const r of jobResults) {
       if (r.imageUrl) {
@@ -274,7 +332,6 @@ OUTPUT RULES:
       }
     }
 
-    // Reassemble into itinerary days
     for (const day of aiData.days) {
       const dayJobs = jobResults
         .filter(r => r.dayDay === day.day)
