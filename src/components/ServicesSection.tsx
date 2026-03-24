@@ -26,7 +26,7 @@ const carServices: ServiceCard[] = [
 ];
 
 const activityServices: ServiceCard[] = [
-  { name: "GetYourGuide", description: "Tours, actividades y experiencias", icon: "🎯", color: "#FF5500", bgColor: "#fff7ed", borderColor: "#fed7aa", url: "https://getyourguide.tpk.lu/lHlxvWOc" },
+  { name: "GetYourGuide", description: "Tours, actividades y experiencias", icon: "🎯", color: "#FF5500", bgColor: "#fff7ed", borderColor: "#fed7aa", url: "https://www.getyourguide.com/s/?partner_id=NGZASHD" },
   { name: "Klook", description: "Actividades y atracciones en Asia", icon: "🎪", color: "#e63946", bgColor: "#fff1f2", borderColor: "#fecdd3", url: "https://klook.tpk.lu/AVr0usKH" },
   { name: "WeGoTrip", description: "Audioguías para recorrer atracciones", icon: "🎧", color: "#2563eb", bgColor: "#eff6ff", borderColor: "#bfdbfe", url: "https://wegotrip.tpk.lu/6sPuEQdr" },
   { name: "Tiqets", description: "Entradas sin fila para museos y atracciones", icon: "🎟️", color: "#16a34a", bgColor: "#f0fdf4", borderColor: "#bbf7d0", url: "https://tiqets.tpk.lu/iKrDo8Up" },
