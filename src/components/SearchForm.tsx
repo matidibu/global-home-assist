@@ -302,11 +302,10 @@ const T: Record<string, Record<string, any>> = {
 };
 
 function buildAffiliateLinks(city: string) {
-  // Search by city only — avoids GYG misrouting ambiguous city names
-  // (e.g. "Monaco" + activity name was routing to Munich)
   const q = encodeURIComponent(`${city} tours`);
+  // locale_code=en-US prevents GYG from misrouting city names via user's locale
   return {
-    getyourguide: `https://www.getyourguide.com/s/?q=${q}&partner_id=${AFFILIATE.getyourguide}`,
+    getyourguide: `https://www.getyourguide.com/s/?q=${q}&partner_id=${AFFILIATE.getyourguide}&locale_code=en-US`,
   };
 }
 
@@ -406,6 +405,34 @@ export default function SearchForm() {
     }, 4500);
     return () => clearInterval(interval);
   }, [loading]);
+
+  // beforeprint/afterprint: hide photo containers before browser renders print preview
+  useEffect(() => {
+    const beforePrint = () => {
+      document.querySelectorAll<HTMLElement>('.activity-card-photo').forEach(el => {
+        el.style.display = 'none';
+      });
+      document.querySelectorAll<HTMLElement>('.activity-card').forEach(el => {
+        el.style.minHeight = '0';
+        el.style.display = 'block';
+      });
+    };
+    const afterPrint = () => {
+      document.querySelectorAll<HTMLElement>('.activity-card-photo').forEach(el => {
+        el.style.display = '';
+      });
+      document.querySelectorAll<HTMLElement>('.activity-card').forEach(el => {
+        el.style.minHeight = '';
+        el.style.display = '';
+      });
+    };
+    window.addEventListener('beforeprint', beforePrint);
+    window.addEventListener('afterprint', afterPrint);
+    return () => {
+      window.removeEventListener('beforeprint', beforePrint);
+      window.removeEventListener('afterprint', afterPrint);
+    };
+  }, []);
 
   useEffect(() => {
     const container = document.getElementById("autocomplete");
