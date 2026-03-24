@@ -301,8 +301,10 @@ const T: Record<string, Record<string, any>> = {
   },
 };
 
-function buildAffiliateLinks(placeName: string, city: string) {
-  const q = encodeURIComponent(`${placeName} ${city}`);
+function buildAffiliateLinks(placeName: string, city: string, country: string) {
+  // Include country to avoid GYG disambiguating city names incorrectly
+  // e.g. "Monaco" → Munich without country context
+  const q = encodeURIComponent(`${placeName} ${city} ${country}`);
   return {
     getyourguide: `https://www.getyourguide.com/s/?q=${q}&partner_id=${AFFILIATE.getyourguide}`,
   };
@@ -947,7 +949,7 @@ export default function SearchForm() {
 
                 <div>
                   {day.activities.map((activity: any, i: number) => {
-                    const links = buildAffiliateLinks(activity.place_name, itinerary.destination);
+                    const links = buildAffiliateLinks(activity.place_name, itinerary.destination, itinerary.country || country);
                     return (
                       <div key={i}>
                         {i === 0 && activity.transport && (
