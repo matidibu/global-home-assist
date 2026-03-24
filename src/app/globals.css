@@ -226,10 +226,11 @@ html, body {
     border-bottom: 2px solid #1a2a6c;
   }
 
-  /* Ocultar fotos completamente en impresión */
-  .activity-card-photo { display: none !important; }
+  /* Ocultar fotos completamente — sin dejar espacio */
+  .activity-card-photo,
+  .activity-card-photo * { display: none !important; width: 0 !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
 
-  /* Tarjetas: layout lista limpia */
+  /* Tarjetas: colapsar al contenido de texto únicamente */
   .activity-card {
     box-shadow: none !important;
     border: none !important;
@@ -237,9 +238,11 @@ html, body {
     border-radius: 0 !important;
     break-inside: avoid;
     page-break-inside: avoid;
+    min-height: 0 !important;
+    height: auto !important;
     margin-bottom: 0 !important;
     padding: 10px 0 !important;
-    flex-direction: column !important;
+    display: block !important;
     background: white !important;
   }
 
