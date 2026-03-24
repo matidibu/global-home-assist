@@ -4,6 +4,7 @@ import type { Itinerary, DayPlan, Activity } from "@/types/itinerary"
 import { searchPlaceImage } from "@/lib/imageSearch"
 import { getTransportOptions } from "@/lib/transportOptions"
 import { geocodeAllPlaces } from "@/lib/geocodePlaces"
+import { batchGetPlaceData } from "@/lib/googlePlaces"
 
 function mapPlaceToActivity(place: Record<string, unknown>, city: string, country: string): Activity {
   const name = typeof place.name === 'string' ? place.name : '';
@@ -230,8 +231,35 @@ OUTPUT RULES:
 
     const aiData = JSON.parse(text);
 
-    // === GEOCODE: replace AI-estimated coordinates with Geoapify real coordinates ===
-    await geocodeAllPlaces(aiData.days, city, country);
+    // === GOOGLE PLACES: fetch real coords + photos for all places in parallel ===
+    // Collect all place names across all days
+    const allPlaceNames: Array<{ name: string }> = [];
+    for (const day of aiData.days) {
+      for (const p of day.places) {
+        if (typeof p.name === 'string' && p.name) allPlaceNames.push({ name: p.name });
+      }
+    }
+    const googleData = await batchGetPlaceData(allPlaceNames, city, country);
+
+    // Apply Google Places data (coords + photo) to each place
+    for (const day of aiData.days) {
+      for (const p of day.places) {
+        const gp = typeof p.name === 'string' ? googleData.get(p.name) : null;
+        if (gp) {
+          p.coordinates = { lat: gp.lat, lng: gp.lng };
+          p._googlePhotoUrl = gp.photoUrl; // stash for job assembly below
+        }
+      }
+    }
+
+    // Fallback geocoding via Geoapify for places Google Places didn't find
+    const missingCoords = allPlaceNames.filter(({ name }) => !googleData.has(name));
+    if (missingCoords.length > 0) {
+      const cityCenter = cityBbox
+        ? { lat: (cityBbox[1] + cityBbox[3]) / 2, lng: (cityBbox[0] + cityBbox[2]) / 2 }
+        : null;
+      await geocodeAllPlaces(aiData.days, city, country, cityCenter);
+    }
 
     // === COORDINATE VALIDATION: remove places outside city bbox ===
     if (cityBbox) {
@@ -308,9 +336,13 @@ OUTPUT RULES:
         const name = typeof job.place.name === 'string' ? job.place.name : '';
         const category = typeof job.place.category === 'string' ? job.place.category : 'landmark';
         const coords = job.place.coordinates as { lat?: number; lng?: number } | null;
+        const googlePhotoUrl = typeof job.place._googlePhotoUrl === 'string' ? job.place._googlePhotoUrl : null;
 
         const [imageUrl, transport] = await Promise.all([
-          searchPlaceImage(name, city, category, coords?.lat, coords?.lng, language || 'es').catch(() => null),
+          // Use Google photo directly if available; otherwise fall back to Wikipedia/Pexels
+          googlePhotoUrl
+            ? Promise.resolve(googlePhotoUrl)
+            : searchPlaceImage(name, city, category, coords?.lat, coords?.lng, language || 'es').catch(() => null),
           job.fromCoords && coords?.lat != null && coords?.lng != null
             ? getTransportOptions(
                 job.fromCoords,
