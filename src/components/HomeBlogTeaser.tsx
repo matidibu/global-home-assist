@@ -21,11 +21,12 @@ export function HomeBlogTeaser() {
   return (
     <div style={{
       marginTop: "40px",
-      background: "linear-gradient(135deg, rgba(26,42,108,0.6), rgba(26,42,108,0.4))",
-      border: "1.5px solid rgba(255,255,255,0.12)",
+      background: "rgba(8,16,54,0.87)",
+      border: "1px solid rgba(255,255,255,0.13)",
       borderRadius: "28px",
       padding: "36px 32px",
-      backdropFilter: "blur(10px)",
+      backdropFilter: "blur(20px)",
+      boxShadow: "0 8px 40px rgba(0,0,0,0.28)",
     }}>
       {/* Header */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px", flexWrap: "wrap", gap: "12px" }}>
@@ -52,7 +53,7 @@ export function HomeBlogTeaser() {
           }}>
             Guías para viajeros inteligentes
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "13px", margin: "6px 0 0 0" }}>
+          <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "13px", margin: "6px 0 0 0" }}>
             {totalArticles} artículos originales · Actualizados en 2026
           </p>
         </div>
@@ -97,7 +98,7 @@ export function HomeBlogTeaser() {
             fontWeight: 600,
             background: "rgba(255,255,255,0.07)",
             border: "1px solid rgba(255,255,255,0.1)",
-            color: "rgba(255,255,255,0.7)",
+            color: "rgba(255,255,255,0.85)",
             textDecoration: "none",
           }}>
             <span style={{ color: "#2ab5a0", fontWeight: 800 }}>{cat.count}</span>
@@ -162,7 +163,7 @@ export function HomeBlogTeaser() {
                   {post.title}
                 </h3>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.4)" }}>
+                  <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.62)" }}>
                     {post.readTime} min
                   </span>
                   <span style={{ color: "#2ab5a0", fontSize: "12px", fontWeight: 700 }}>Leer →</span>
@@ -183,14 +184,14 @@ export function HomeBlogTeaser() {
         gap: "8px",
       }}>
         <TrendingUp size={14} color="#2ab5a0" strokeWidth={2} />
-        <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", margin: 0 }}>
-          También: <Link href="/blog/viajar-con-mascotas-guia-completa" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none", fontWeight: 600 }}>viajar con mascotas</Link>
+        <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.68)", margin: 0 }}>
+          También: <Link href="/blog/viajar-con-mascotas-guia-completa" style={{ color: "rgba(255,255,255,0.88)", textDecoration: "none", fontWeight: 600 }}>viajar con mascotas</Link>
           {" · "}
-          <Link href="/blog/viajar-en-tiempos-de-conflicto-belico" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none", fontWeight: 600 }}>zonas de conflicto</Link>
+          <Link href="/blog/viajar-en-tiempos-de-conflicto-belico" style={{ color: "rgba(255,255,255,0.88)", textDecoration: "none", fontWeight: 600 }}>zonas de conflicto</Link>
           {" · "}
-          <Link href="/blog/bali-guia-honesta-2026" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none", fontWeight: 600 }}>Bali 2026</Link>
+          <Link href="/blog/bali-guia-honesta-2026" style={{ color: "rgba(255,255,255,0.88)", textDecoration: "none", fontWeight: 600 }}>Bali 2026</Link>
           {" · "}
-          <Link href="/blog?categoria=presupuesto" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none", fontWeight: 600 }}>presupuesto</Link>
+          <Link href="/blog?categoria=presupuesto" style={{ color: "rgba(255,255,255,0.88)", textDecoration: "none", fontWeight: 600 }}>presupuesto</Link>
         </p>
       </div>
     </div>
