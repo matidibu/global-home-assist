@@ -305,9 +305,14 @@ function buildAffiliateLinks(city: string, country: string) {
   // When city = country (Monaco, Singapore, Vatican…) add "principality" / "city-state"
   // to disambiguate from homonyms (Monaco = Munich in Italian)
   // For all other cities, append country for geographic precision
-  const isCityState = city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") ===
-                      country.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  const qualifier = isCityState ? `${city} principality` : `${city} ${country}`;
+  const cityNorm = city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const countryNorm = country.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const isCityState = cityNorm === countryNorm;
+  // Special cases where the plain name is ambiguous in GYG's search
+  const GYG_OVERRIDES: Record<string, string> = {
+    monaco: "Mónaco principality",
+  };
+  const qualifier = GYG_OVERRIDES[cityNorm] ?? (isCityState ? `${city} principality` : `${city} ${country}`);
   const q = encodeURIComponent(qualifier);
   return {
     getyourguide: `https://www.getyourguide.com/s/?q=${q}&partner_id=${AFFILIATE.getyourguide}`,
