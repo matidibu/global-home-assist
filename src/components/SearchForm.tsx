@@ -1067,7 +1067,7 @@ export default function SearchForm() {
                             )}
                             {activity.tickets?.price_estimate && activity.tickets.price_estimate !== 'Free' && activity.tickets.price_estimate !== 'Gratis' && activity.tickets.price_estimate !== '' && (
                             <div className="no-print" style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "12px" }}>
-                              <a href={links.getyourguide} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fff7ed", color: "#ea580c", fontWeight: 600, textDecoration: "none", border: "1px solid #fed7aa" }}>🎯 GetYourGuide</a>
+                              <a href={links.getyourguide} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fff7ed", color: "#ea580c", fontWeight: 600, textDecoration: "none", border: "1px solid #fed7aa" }}>🎯 Tours en {itinerary.destination}</a>
                             </div>
                             )}
                             {activity.tips && activity.tips.length > 0 && (
