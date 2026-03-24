@@ -301,9 +301,14 @@ const T: Record<string, Record<string, any>> = {
   },
 };
 
-function buildAffiliateLinks(city: string) {
-  // Plain city name search — same as typing the city in GYG's search box
-  const q = encodeURIComponent(city);
+function buildAffiliateLinks(city: string, country: string) {
+  // When city = country (Monaco, Singapore, Vatican…) add "principality" / "city-state"
+  // to disambiguate from homonyms (Monaco = Munich in Italian)
+  // For all other cities, append country for geographic precision
+  const isCityState = city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") ===
+                      country.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const qualifier = isCityState ? `${city} principality` : `${city} ${country}`;
+  const q = encodeURIComponent(qualifier);
   return {
     getyourguide: `https://www.getyourguide.com/s/?q=${q}&partner_id=${AFFILIATE.getyourguide}`,
   };
@@ -1023,7 +1028,7 @@ export default function SearchForm() {
 
                 <div>
                   {day.activities.map((activity: any, i: number) => {
-                    const links = buildAffiliateLinks(itinerary.destination);
+                    const links = buildAffiliateLinks(itinerary.destination, itinerary.country || country);
                     return (
                       <div key={i}>
                         {i === 0 && activity.transport && (
