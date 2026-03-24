@@ -29,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/itinerario/bali`,
+      lastModified: new Date("2026-03-23"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     ...blogEntries,
     ...destinationEntries,
   ];
