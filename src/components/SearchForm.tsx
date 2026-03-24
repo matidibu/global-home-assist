@@ -450,6 +450,15 @@ export default function SearchForm() {
     return () => clearInterval(interval);
   }, [loading]);
 
+  // ===== PRE-FILL: destination from ?city= ?country= URL params (blog CTAs) =====
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const preCity = params.get('city');
+    const preCountry = params.get('country');
+    if (preCity) setCity(preCity);
+    if (preCountry) setCountry(preCountry);
+  }, []);
+
   // ===== DECODE: restore itinerary from ?s= query param on mount =====
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);

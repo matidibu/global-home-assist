@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/data/blogPosts";
 import { destinations } from "@/data/destinations";
+import { DESTINATIONS } from "@/data/destinationPages";
 
 const BASE_URL = "https://global-home-assist.vercel.app";
 
@@ -42,5 +43,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...blogEntries,
     ...destinationEntries,
+    ...DESTINATIONS.map((dest) => ({
+      url: `${BASE_URL}/itinerario/${dest.slug}`,
+      lastModified: new Date(dest.publishDate),
+      changeFrequency: "monthly" as const,
+      priority: 0.92,
+    })),
   ];
 }

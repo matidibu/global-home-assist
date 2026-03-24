@@ -6,7 +6,7 @@ export type ContentSection =
   | { type: "list"; heading?: string; items: string[] }
   | { type: "callout"; emoji: string; text: string }
   | { type: "tip"; title: string; text: string }
-  | { type: "cta"; destination?: string; text: string };
+  | { type: "cta"; destination?: string; city?: string; country?: string; text: string };
 
 export interface BlogPost {
   slug: string;
@@ -1498,7 +1498,7 @@ export const blogPosts: BlogPost[] = [
           "Cimetière du Père-Lachaise: paseo histórico donde descansan Chopin, Proust y Jim Morrison",
         ],
       },
-      { type: "cta", text: "Generá tu itinerario personalizado para París →" },
+      { type: "cta", city: "París", country: "France", text: "Generá tu itinerario personalizado para París →" },
     ],
   },
   {
@@ -1556,7 +1556,7 @@ export const blogPosts: BlogPost[] = [
       { type: "tip", title: "NYC Pass: ¿conviene?", text: "El New York Pass o CityPASS convierten si visitás 4+ atracciones pagadas en pocos días. El CityPASS ($142 adulto) incluye Empire State + Top of the Rock + Met + American Museum of Natural History + más. Hacé los cálculos según tu itinerario antes de comprarlo." },
       { type: "h2", text: "Cuántos días necesitás" },
       { type: "p", text: "5 días es el mínimo para ver Manhattan + un día en Brooklyn sin correr. Con 7 días podés agregar el Bronx (Yankee Stadium, jardín botánico), Queens o una excursión a los Hamptons. 10 días o más es para quienes quieren perderse y descubrir la ciudad real más allá del circuito turístico." },
-      { type: "cta", text: "Planificá tu viaje a Nueva York con IA →" },
+      { type: "cta", city: "Nueva York", country: "United States", text: "Planificá tu viaje a Nueva York con IA →" },
     ],
   },
   {
@@ -1604,7 +1604,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       { type: "tip", title: "La época ideal para ir", text: "Diciembre a abril es la temporada seca con menos humedad y sin huracanes. Mayo-octubre es temporada de lluvias (aguaceros intensos pero cortos) y también de sargazo (algas en algunas playas). Julio y agosto tienen el Caribe más tranquilo pero el calor más intenso." },
-      { type: "cta", text: "Generá tu itinerario para Cancún y la Riviera Maya →" },
+      { type: "cta", city: "Cancún", country: "Mexico", text: "Generá tu itinerario para Cancún y la Riviera Maya →" },
     ],
   },
   {
@@ -1653,7 +1653,7 @@ export const blogPosts: BlogPost[] = [
       { type: "tip", title: "El mejor momento del día para estar en Machu Picchu", text: "El turno de mañana (6-12h) tiene la mejor luz para fotos y menos calor. Llegá lo antes posible al abrir: los primeros 30 minutos, antes de que lleguen los tours organizados, son los más mágicos. La niebla matinal que envuelve la ciudadela es parte del espectáculo." },
       { type: "h2", text: "Cuántos días dedicarle" },
       { type: "p", text: "Mínimo 5 días para hacer justicia al destino: 2 en Cusco (aclimatación + ciudad), 1 en Valle Sagrado, 1 en Machu Picchu y 1 de buffer. Con 7-8 días podés agregar el Lago Titicaca desde Puno, una de las experiencias más únicas del continente." },
-      { type: "cta", text: "Creá tu itinerario personalizado para Cusco y Machu Picchu →" },
+      { type: "cta", city: "Cusco", country: "Peru", text: "Creá tu itinerario personalizado para Cusco y Machu Picchu →" },
     ],
   },
   {
@@ -1700,7 +1700,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "Cuánto cuesta Lisboa en 2026" },
       { type: "p", text: "Lisboa subió de precio en los últimos 5 años pero sigue siendo más barata que otras capitales europeas. Un café expreso en barra cuesta €0.80-1. Una cerveza en bar €1.50-2. Menú del almuerzo en tasca €10-13 (incluye plato, bebida y postre). Hostel €20-35/noche, Airbnb céntrico €70-110, hotel 3 estrellas €100-160." },
       { type: "tip", title: "El tranvía 28: ¿trampa turística o experiencia real?", text: "El tranvía 28 es auténtico — lleva a los lisboetas por las colinas desde 1930. Pero la ruta turística lo hace estar siempre lleno y con filas largas. Si querés la experiencia sin aglomeración, tomalo en la dirección opuesta a los tours (hacia Martim Moniz o Campo Ourique) y evitá el mediodía." },
-      { type: "cta", text: "Generá tu itinerario personalizado para Lisboa →" },
+      { type: "cta", city: "Lisboa", country: "Portugal", text: "Generá tu itinerario personalizado para Lisboa →" },
     ],
   },
   {
@@ -1756,7 +1756,7 @@ export const blogPosts: BlogPost[] = [
           "Orlando (3.5h): Disney y Universal si viajás con niños o simplemente querés el parque temático",
         ],
       },
-      { type: "cta", text: "Generá tu itinerario personalizado para Miami →" },
+      { type: "cta", city: "Miami", country: "United States", text: "Generá tu itinerario personalizado para Miami →" },
     ],
   },
   {

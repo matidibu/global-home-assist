@@ -195,7 +195,7 @@ function renderSection(section: ContentSection, index: number) {
             <Sparkles size={14} /> Planificador de viajes con inteligencia artificial
           </p>
           <Link
-            href={section.destination ? `/?destino=${section.destination}` : "/"}
+            href={section.city ? `/?city=${encodeURIComponent(section.city)}&country=${encodeURIComponent(section.country ?? '')}` : section.destination ? `/?destino=${section.destination}` : "/"}
             style={{
               display: "inline-flex",
               alignItems: "center",
