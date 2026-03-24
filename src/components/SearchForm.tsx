@@ -104,6 +104,9 @@ const LOADING_CONTENT: Record<string, { messages: string[]; steps: string[]; hea
 const T: Record<string, Record<string, any>> = {
   es: {
     slogan: "Tu viaje, tu mundo... nuestra compañía.",
+    termsAccept: "He leído y acepto los",
+    termsLink: "Términos y Condiciones",
+    termsAccept2: "Entiendo que el contenido es generado por inteligencia artificial, revisado por expertos, y puede contener información desactualizada o errónea.",
     fromCountry: "¿De dónde sos?",
     fromCountryPlaceholder: "Ej: Argentina",
     language: "Idioma del itinerario",
@@ -134,6 +137,9 @@ const T: Record<string, Record<string, any>> = {
   },
   en: {
     slogan: "Your trip, your world... our company.",
+    termsAccept: "I have read and accept the",
+    termsLink: "Terms and Conditions",
+    termsAccept2: "I understand that content is AI-generated, reviewed by experts, and may contain outdated or inaccurate information.",
     fromCountry: "Where are you from?",
     fromCountryPlaceholder: "E.g: United States",
     language: "Itinerary language",
@@ -164,6 +170,9 @@ const T: Record<string, Record<string, any>> = {
   },
   fr: {
     slogan: "Votre voyage, votre monde... notre compagnie.",
+    termsAccept: "J'ai lu et j'accepte les",
+    termsLink: "Conditions Générales",
+    termsAccept2: "Je comprends que le contenu est généré par IA, revu par des experts, et peut contenir des informations inexactes ou obsolètes.",
     fromCountry: "D'où venez-vous ?",
     fromCountryPlaceholder: "Ex: France",
     language: "Langue de l'itinéraire",
@@ -194,6 +203,9 @@ const T: Record<string, Record<string, any>> = {
   },
   it: {
     slogan: "Il tuo viaggio, il tuo mondo... la nostra compagnia.",
+    termsAccept: "Ho letto e accetto i",
+    termsLink: "Termini e Condizioni",
+    termsAccept2: "Comprendo che il contenuto è generato dall'IA, revisionato da esperti, e può contenere informazioni imprecise o non aggiornate.",
     fromCountry: "Da dove vieni?",
     fromCountryPlaceholder: "Es: Italia",
     language: "Lingua dell'itinerario",
@@ -224,6 +236,9 @@ const T: Record<string, Record<string, any>> = {
   },
   de: {
     slogan: "Ihre Reise, Ihre Welt... unsere Begleitung.",
+    termsAccept: "Ich habe die",
+    termsLink: "Allgemeinen Geschäftsbedingungen",
+    termsAccept2: "gelesen und akzeptiere sie. Mir ist bewusst, dass der Inhalt KI-generiert, von Experten geprüft und möglicherweise ungenau ist.",
     fromCountry: "Woher kommen Sie?",
     fromCountryPlaceholder: "z.B: Deutschland",
     language: "Sprache des Reiseplans",
@@ -254,6 +269,9 @@ const T: Record<string, Record<string, any>> = {
   },
   pt: {
     slogan: "Sua viagem, seu mundo... nossa companhia.",
+    termsAccept: "Li e aceito os",
+    termsLink: "Termos e Condições",
+    termsAccept2: "Entendo que o conteúdo é gerado por IA, revisado por especialistas, e pode conter informações desatualizadas ou imprecisas.",
     fromCountry: "De onde você é?",
     fromCountryPlaceholder: "Ex: Brasil",
     language: "Idioma do itinerário",
@@ -363,6 +381,7 @@ export default function SearchForm() {
   const [days, setDays] = useState(3);
   const [itinerary, setItinerary] = useState<any>(null);
   const [loading, setLoading] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const [loadingMsgIdx, setLoadingMsgIdx] = useState(0);
   const [cityCoords, setCityCoords] = useState<{ lat: number; lon: number } | null>(null);
   const [emergencyNumbers, setEmergencyNumbers] = useState<any>(null);
@@ -491,98 +510,115 @@ export default function SearchForm() {
         {/* ===== HEADER ===== */}
         <div style={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
+          flexWrap: "wrap",
           alignItems: "center",
-          gap: "16px",
+          gap: "28px",
           marginBottom: "2.5rem",
-          padding: "2.5rem 2rem",
-          background: "linear-gradient(135deg, rgba(26,42,108,0.82), rgba(26,42,108,0.65))",
+          padding: "1.8rem 2.2rem",
+          background: "rgba(8,16,54,0.82)",
           backdropFilter: "blur(20px)",
-          borderRadius: "28px",
-          border: "1.5px solid rgba(255,255,255,0.2)",
-          boxShadow: "0 12px 48px rgba(26,42,108,0.35), inset 0 1px 0 rgba(255,255,255,0.15)",
-          textAlign: "center",
+          borderRadius: "24px",
+          border: "1px solid rgba(255,255,255,0.13)",
+          boxShadow: "0 8px 40px rgba(0,0,0,0.3)",
         }}>
-          {/* Logo recortado en círculo */}
+
+          {/* Logo — izquierda, prominente */}
+          <img
+            src="/logo.svg"
+            alt="Global Home Assist"
+            style={{
+              width: "clamp(180px, 22vw, 240px)",
+              height: "auto",
+              flexShrink: 0,
+              filter: "drop-shadow(0 4px 18px rgba(42,181,160,0.32))",
+            }}
+          />
+
+          {/* Divisor vertical */}
           <div style={{
-            width: "140px",
-            height: "140px",
-            borderRadius: "50%",
-            overflow: "hidden",
-            boxShadow: "0 0 0 4px rgba(42,181,160,0.6), 0 0 0 9px rgba(42,181,160,0.2), 0 12px 40px rgba(0,0,0,0.3)",
+            width: "1px",
+            height: "110px",
+            background: "rgba(255,255,255,0.14)",
             flexShrink: 0,
-          }}>
-            <Image
-              src="/logo.png"
-              alt="Global Home Assist"
-              width={140}
-              height={140}
-              style={{ objectFit: "cover", width: "100%", height: "100%" }}
-            />
-          </div>
+            alignSelf: "center",
+          }}/>
 
-          {/* Badge AI */}
-          <div className="expert-badge" style={{
-            display: "inline-flex", alignItems: "center", gap: "8px",
-            background: "rgba(42,181,160,0.2)",
-            border: "1.5px solid rgba(42,181,160,0.6)",
-            borderRadius: "999px",
-            padding: "5px 18px",
-          }}>
-            <div style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#2ab5a0" }} />
-            <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.95)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              {t.expertBadge}
-            </span>
-          </div>
+          {/* Contenido — derecha */}
+          <div style={{ flex: 1, minWidth: "260px", display: "flex", flexDirection: "column", gap: "12px" }}>
 
-          {/* Título */}
-          <h1 style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(2.2rem, 5vw, 3.2rem)",
-            fontWeight: 700,
-            color: "white",
-            margin: 0,
-            lineHeight: 1.05,
-            letterSpacing: "-0.02em",
-            textShadow: "0 2px 24px rgba(0,0,0,0.25)",
-          }}>
-            Global Home Assist
-          </h1>
-
-          {/* Slogan */}
-          <div style={{ display: "flex", alignItems: "center", gap: "14px", justifyContent: "center" }}>
-            <div style={{ height: "2px", width: "50px", background: "linear-gradient(to right, transparent, #2ab5a0)" }} />
-            <span style={{
-              fontSize: "clamp(12px, 2vw, 15px)",
-              color: "rgba(255,255,255,0.82)",
-              fontStyle: "italic",
-              letterSpacing: "0.03em",
-              fontFamily: "'Playfair Display', serif",
+            <h1 style={{
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontSize: "clamp(1.5rem, 3.5vw, 2.3rem)",
+              fontWeight: 700,
+              color: "white",
+              margin: 0,
+              lineHeight: 1.2,
+              letterSpacing: "-0.01em",
+              textShadow: "0 2px 16px rgba(0,0,0,0.4)",
             }}>
-              {t.slogan}
-            </span>
-            <div style={{ height: "2px", width: "50px", background: "linear-gradient(to left, transparent, #2ab5a0)" }} />
-          </div>
+              Planificá tu viaje.{" "}
+              <span style={{ color: "#2ab5a0" }}>Nosotros pensamos en todo.</span>
+            </h1>
 
-          {/* Blog link */}
-          <a href="/blog" style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "8px",
-            background: "white",
-            border: "none",
-            borderRadius: "100px",
-            padding: "10px 24px",
-            fontSize: "13px",
-            fontWeight: 800,
-            color: "#1a2a6c",
-            textDecoration: "none",
-            letterSpacing: "0.02em",
-            boxShadow: "0 4px 16px rgba(0,0,0,0.25)",
-            marginTop: "8px",
-          }}>
-            ✍️ Revista de viajes &nbsp;<span style={{ color: "#2ab5a0" }}>→</span>
-          </a>
+            <p style={{
+              fontSize: "clamp(12px, 1.6vw, 14px)",
+              color: "rgba(255,255,255,0.62)",
+              margin: 0,
+              lineHeight: 1.6,
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: 400,
+            }}>
+              Itinerario, vuelos, hoteles, actividades, seguros y más — con IA y expertos en turismo.
+            </p>
+
+            {/* Sello diferenciador — argumento clave contra el "lo hago con ChatGPT" */}
+            <div style={{
+              display: "inline-flex",
+              alignItems: "flex-start",
+              gap: "10px",
+              background: "rgba(42,181,160,0.10)",
+              border: "1px solid rgba(42,181,160,0.35)",
+              borderLeft: "3px solid #2ab5a0",
+              borderRadius: "10px",
+              padding: "9px 14px",
+            }}>
+              <span style={{ color: "#2ab5a0", fontSize: "15px", flexShrink: 0, lineHeight: 1.4 }}>✦</span>
+              <div>
+                <p style={{ margin: 0, fontSize: "13px", fontWeight: 700, color: "white", lineHeight: 1.4 }}>
+                  Cada recomendación, respaldada por quien ya estuvo ahí
+                </p>
+                <p style={{ margin: 0, fontSize: "11px", color: "rgba(255,255,255,0.58)", lineHeight: 1.4, marginTop: "2px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  Inteligencia artificial con criterio de experto en turismo
+                </p>
+              </div>
+            </div>
+
+            {/* Badges secundarios + links */}
+            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
+              {["✓ Gratis", "✓ Sin registro", "✓ En tu idioma"].map(label => (
+                <span key={label} style={{
+                  fontSize: "11px", fontWeight: 700,
+                  color: "rgba(255,255,255,0.75)",
+                  background: "rgba(255,255,255,0.07)",
+                  border: "1px solid rgba(255,255,255,0.15)",
+                  borderRadius: "999px",
+                  padding: "3px 11px",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  letterSpacing: "0.04em",
+                }}>{label}</span>
+              ))}
+              <a href="/blog" style={{
+                display: "inline-flex", alignItems: "center", gap: "6px",
+                background: "white", borderRadius: "100px",
+                padding: "5px 16px", fontSize: "12px", fontWeight: 800,
+                color: "#1a2a6c", textDecoration: "none",
+                boxShadow: "0 2px 12px rgba(0,0,0,0.2)",
+              }}>
+                ✍️ Revista <span style={{ color: "#2ab5a0" }}>→</span>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* ===== FORMULARIO ===== */}
@@ -712,8 +748,47 @@ export default function SearchForm() {
             )}
           </div>
 
-          <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "24px" }}>
-            <button onClick={generateTrip} disabled={loading} className="btn-generate" style={{ display: "inline-flex", alignItems: "center", gap: "10px" }}>
+          {/* Checkbox de aceptación de términos */}
+          <div style={{
+            marginTop: "20px",
+            padding: "14px 16px",
+            background: "rgba(26,42,108,0.03)",
+            border: "1px solid rgba(26,42,108,0.1)",
+            borderRadius: "12px",
+          }}>
+            <label style={{
+              display: "flex", alignItems: "flex-start", gap: "10px",
+              cursor: "pointer", fontSize: "13px", color: "#374151",
+              fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.5,
+            }}>
+              <input
+                type="checkbox"
+                checked={termsAccepted}
+                onChange={e => setTermsAccepted(e.target.checked)}
+                style={{ marginTop: "2px", accentColor: "#1a2a6c", flexShrink: 0, width: "15px", height: "15px", cursor: "pointer" }}
+              />
+              <span>
+                {t.termsAccept}{" "}
+                <a href="/terminos" target="_blank" rel="noopener noreferrer" style={{ color: "#1a2a6c", fontWeight: 700, textDecoration: "underline" }}>
+                  {t.termsLink}
+                </a>
+                {". "}
+                {t.termsAccept2}
+              </span>
+            </label>
+          </div>
+
+          <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "16px" }}>
+            <button
+              onClick={generateTrip}
+              disabled={loading || !termsAccepted}
+              className="btn-generate"
+              style={{
+                display: "inline-flex", alignItems: "center", gap: "10px",
+                opacity: !termsAccepted ? 0.45 : 1,
+                cursor: !termsAccepted ? "not-allowed" : "pointer",
+              }}
+            >
               <span key={planeAnimKey} className="plane-draw-icon">
                 <Plane size={17} strokeWidth={2.2} />
               </span>
