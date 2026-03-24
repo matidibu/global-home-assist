@@ -119,6 +119,8 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
         />
+        {/* GetYourGuide Analytics */}
+        <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="NGZASHD" />
         {/* Travelpayouts site verification */}
         <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false" dangerouslySetInnerHTML={{ __html: `(function(){var script=document.createElement("script");script.async=1;script.src='https://emrld.ltd/NTEwNjM3.js?t=510637';document.head.appendChild(script);})();` }} />
         {/* Google Analytics */}
