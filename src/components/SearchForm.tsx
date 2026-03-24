@@ -301,6 +301,39 @@ const T: Record<string, Record<string, any>> = {
   },
 };
 
+// ===== URL SHARING HELPERS =====
+// Uses URL-safe base64 (no +, /, = chars that break WhatsApp links)
+function encodeShareData(data: object): string {
+  const json = JSON.stringify(data);
+  const bytes = new TextEncoder().encode(json);
+  let binStr = '';
+  bytes.forEach(b => (binStr += String.fromCharCode(b)));
+  return btoa(binStr).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+}
+
+function decodeShareData(encoded: string): Record<string, any> | null {
+  try {
+    const base64 = encoded.replace(/-/g, '+').replace(/_/g, '/');
+    const padded = base64 + '=='.slice(0, (4 - base64.length % 4) % 4);
+    const binStr = atob(padded);
+    const bytes = new Uint8Array(binStr.length);
+    for (let i = 0; i < binStr.length; i++) bytes[i] = binStr.charCodeAt(i);
+    return JSON.parse(new TextDecoder().decode(bytes));
+  } catch { return null; }
+}
+
+function stripMediaFromItinerary(itinerary: any): any {
+  if (!itinerary?.days) return itinerary;
+  return {
+    ...itinerary,
+    days: itinerary.days.map((day: any) => ({
+      ...day,
+      activities: day.activities.map(({ media: _media, ...rest }: any) => rest),
+    })),
+  };
+}
+// ===== END SHARING HELPERS =====
+
 function buildAffiliateLinks(city: string, country: string) {
   // When city = country (Monaco, Singapore, Vatican…) add "principality" / "city-state"
   // to disambiguate from homonyms (Monaco = Munich in Italian)
@@ -401,6 +434,7 @@ export default function SearchForm() {
   const [accommodationTyped, setAccommodationTyped] = useState("");
   const [planeAnimKey, setPlaneAnimKey] = useState(0);
   const [showPremium, setShowPremium] = useState(false);
+  const [shareUrl, setShareUrl] = useState('');
 
   const autocompleteRef = useRef<GeocoderAutocomplete | null>(null);
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
@@ -415,6 +449,38 @@ export default function SearchForm() {
     }, 4500);
     return () => clearInterval(interval);
   }, [loading]);
+
+  // ===== DECODE: restore itinerary from ?s= query param on mount =====
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const encoded = params.get('s');
+    if (!encoded) return;
+    const data = decodeShareData(encoded);
+    if (!data?.itinerary?.days) return;
+    setCity(data.city || '');
+    setCountry(data.country || '');
+    setLanguage(data.language || 'es');
+    setItinerary(data.itinerary);
+    // Derive cityCoords from activity coordinates
+    const acts = data.itinerary.days
+      .flatMap((d: any) => d.activities)
+      .filter((a: any) => a.lat && a.lng);
+    if (acts.length > 0) {
+      const avgLat = acts.reduce((s: number, a: any) => s + a.lat, 0) / acts.length;
+      const avgLon = acts.reduce((s: number, a: any) => s + a.lng, 0) / acts.length;
+      setCityCoords({ lat: avgLat, lon: avgLon });
+    }
+  }, []);
+
+  // ===== ENCODE: write itinerary to ?s= query param when generated =====
+  useEffect(() => {
+    if (!itinerary?.days) return;
+    const shareData = { city, country, language, itinerary: stripMediaFromItinerary(itinerary) };
+    const encoded = encodeShareData(shareData);
+    const url = `${window.location.origin}${window.location.pathname}?s=${encoded}`;
+    window.history.replaceState(null, '', url);
+    setShareUrl(url);
+  }, [itinerary, city, country, language]);
 
   // beforeprint/afterprint: hide photo containers before browser renders print preview
   useEffect(() => {
@@ -1114,7 +1180,7 @@ export default function SearchForm() {
             ))}
 
             <div className="no-print">
-              <ShareButton destination={itinerary.destination || city} language={language} />
+              <ShareButton destination={itinerary.destination || city} language={language} shareUrl={shareUrl} />
             </div>
 
             {allActivities.length > 0 && (

@@ -24,20 +24,22 @@ const APP_URL = "https://global-home-assist.vercel.app";
 interface Props {
   destination: string;
   language: string;
+  shareUrl?: string;
 }
 
-export default function ShareButton({ destination, language }: Props) {
+export default function ShareButton({ destination, language, shareUrl }: Props) {
   const lb = labels[language] || labels.es;
   const baseText = shareTexts[language] || shareTexts.es;
   const [copied, setCopied] = useState(false);
 
-  const shareText = `${baseText}\n${destination} → ${APP_URL}`;
+  const url = shareUrl || APP_URL;
+  const shareText = `${baseText}\n${destination} → ${url}`;
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(`${baseText}\n${destination} → ${APP_URL}`);
+      await navigator.clipboard.writeText(`${baseText}\n${destination} → ${url}`);
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } catch {
