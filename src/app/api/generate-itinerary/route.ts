@@ -87,47 +87,59 @@ export async function POST(req: Request) {
       : `${city}, ${country}`;
 
     const prompt = `
-You are an expert travel planner who knows ${fullCityName} deeply.
-Create a ${days}-day travel itinerary for ${fullCityName}.
-IMPORTANT: Write ALL text fields (description, tip, accessNote) in ${languageLabel}.
-Return ONLY valid JSON. No explanations, no markdown, no preamble.
+You are a travel data expert. Your absolute priority is FACTUAL ACCURACY and GEOGRAPHIC PRECISION.
+Write ALL text fields in ${languageLabel}. Return ONLY valid JSON. No markdown, no preamble.
+
+TARGET CITY: ${city}${province ? `, ${province}` : ""}, ${country}
+DISAMBIGUATION: This is ${city} in ${country}. Do NOT confuse with any other city, state, or country that shares a similar name.
+
+=== NON-NEGOTIABLE GEOGRAPHIC RULES ===
+Every place in this itinerary must pass ALL three checks:
+  1. EXISTENCE: This place genuinely exists. It is not invented or hallucinated.
+  2. LOCATION: It is physically located in ${city}${province ? `, ${province}` : ""}, ${country} — NOT in a nearby city, region, or province.
+  3. CERTAINTY: You are 100% certain of both existence and location.
+
+If any check fails → DO NOT include that place. Replace it with something you ARE certain about.
+
+CRITICAL FOR SMALLER OR LESS-TOURISTIC CITIES:
+- If ${city} is not a major international tourist destination, it likely does NOT have: famous waterfalls, mountain treks, world-class museums, or beaches — unless you are absolutely certain they are there.
+- For these cities, the following are always valid options IF they genuinely exist in ${city}: main plaza or square, historic downtown area, regional or provincial museum, local food market, riverside or lakeside promenade, traditional restaurants serving local cuisine, cultural or civic center, neighborhood parks, local craft or artisan shops.
+- A real local café that exists is infinitely better than a fabricated iconic landmark.
+- NEVER suggest an attraction from another province or city, even if it is nearby or famous.
+
+COORDINATE ACCURACY:
+- Coordinates must reflect the ACTUAL location of the place within ${city}.
+- Cross-check: if the coordinates would place the pin outside ${city}, they are wrong — fix them or omit the place.
+=== END GEOGRAPHIC RULES ===
 
 TRIP TYPE: ${tripType || "general"}
 TRIP TYPE INSTRUCTIONS: ${tripInstruction}
 ${interestsList}
 
-=== CRITICAL GEOGRAPHIC CONSTRAINT ===
-ALL places MUST be physically located within the city limits of ${city}${province ? ` (${province})` : ""}, ${country}.
-This is NON-NEGOTIABLE. You MUST NOT include places from any other city, region, or province.
-${province ? `For example: if the city is ${city} in ${province}, do NOT suggest places from other provinces or cities, even if they are famous or nearby.` : ""}
-Before including any place, verify: "Is this place actually located in ${city}${province ? `, ${province}` : ""}?" If not, replace it with a place that IS in ${city}.
-If ${city} has fewer iconic landmarks than needed, use local parks, neighborhoods, restaurants, cultural centers, or other genuine local attractions — but they MUST be in ${city}.
-=== END GEOGRAPHIC CONSTRAINT ===
+PLACE SELECTION RULES:
+1. Start with places you are most certain about — well-known local landmarks first.
+2. Do NOT repeat the same place across different days.
+3. Optimize daily order to minimize travel time between places.
+4. Suggest best time of day for each place based on crowds, light, or opening hours.
+5. NEARBY PLACES: If two attractions share the same complex or are within ~200m (e.g. Burj Khalifa + Dubai Mall), combine into ONE activity. Never list two places that share the same entrance as separate activities.
 
-CRITICAL RULES FOR PLACE SELECTION:
-1. ALWAYS include the most iconic landmarks actually located in ${city} (at least 1 per day).
-2. Remaining places must match the trip type and traveler interests.
-3. Do NOT repeat the same place across different days.
-4. Optimize the order of places each day to minimize travel time.
-5. Suggest the best time of day for each place.
-
-Structure:
+JSON STRUCTURE:
 {
   "days": [
     {
       "day": 1,
-      "theme": "Short theme for this day in ${languageLabel}",
+      "theme": "Short evocative theme for this day in ${languageLabel}",
       "places": [
         {
           "name": "Place Name",
-          "description": "One short sentence.",
+          "description": "One sentence describing this specific place.",
           "category": "Museum",
-          "duration": "1 hour",
+          "duration": "1.5 hours",
           "bestTime": "Morning",
           "price": "$10",
-          "tip": "One useful insider tip.",
-          "coordinates": { "lat": -32.946, "lng": -60.639 },
-          "officialLink": "https://example.com",
+          "tip": "One genuine, specific insider tip about this place.",
+          "coordinates": { "lat": -31.633, "lng": -60.699 },
+          "officialLink": "",
           "transitType": "land",
           "islandName": "${city}",
           "accessNote": "",
@@ -138,25 +150,24 @@ Structure:
   ]
 }
 
-Rules:
+OUTPUT RULES:
 - Exactly ${days} days, exactly 3 places per day.
-- NEARBY PLACES: If two attractions are in the same complex or within ~200m of each other (e.g. Burj Khalifa + Dubai Mall, Louvre + Tuileries, Vatican Museums + St. Peter's Basilica), combine them into ONE activity. Use the most iconic as the main name and mention the adjacent attraction in the description or tip. Never list two places that share the same entrance or complex as separate activities.
-- mustSee: true for iconic landmarks of ${city}, false for others.
-- description: 1 sentence max.
-- tip: 1 sentence max, genuine insider tip about this specific place in ${city}.
-- coordinates: exactly 3 decimal places. Coordinates MUST match the actual location in ${city}.
-- price: ALWAYS use USD ($) as currency. Convert approximate local prices to USD. Use "$10", "$25", "Free", etc. NEVER use €, £, ¥, ARS or any other currency symbol.
-- officialLink: ONLY include if you are 100% certain the URL exists. Otherwise leave "".
-- islandName: "${city}" for all places (or specific island name for archipelagos).
-- transitType: "walk", "land", "water", or "air". First place of each day uses "land".
-- accessNote: only if transitType is "water" or "air". Otherwise "".
-- Return ONLY the JSON object.
+- mustSee: true only for genuinely iconic local landmarks; false for everything else.
+- description: 1 sentence max, specific to this place.
+- tip: 1 sentence, practical and specific to this place in ${city}. Not generic advice.
+- coordinates: 3 decimal places, actual location within ${city}.
+- price: USD only. Use "$10", "Free", "$5–15", etc. Never use local currency symbols.
+- officialLink: only if you are 100% certain the URL is correct and active. Otherwise use "".
+- islandName: "${city}" for all places, or specific island name only for genuine archipelago destinations.
+- transitType: "walk", "land", "water", or "air". First place of each day: "land".
+- accessNote: only for "water" or "air" transit. Otherwise "".
+- Return ONLY the JSON object. Nothing else.
 `;
 
     const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [{ role: "user", content: prompt }],
-      temperature: 0.7,
+      temperature: 0.3,
       max_tokens: 4000,
       response_format: { type: "json_object" },
     });
