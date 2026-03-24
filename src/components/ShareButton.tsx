@@ -45,23 +45,7 @@ export default function ShareButton({ destination, language }: Props) {
     }
   };
 
-  const handlePrint = async () => {
-    // Wait for all images inside the print area to fully load before printing
-    const images = Array.from(
-      document.querySelectorAll<HTMLImageElement>('.print-area img')
-    );
-    await Promise.all(
-      images.map(img =>
-        img.complete
-          ? Promise.resolve()
-          : new Promise<void>(resolve => {
-              img.addEventListener('load', () => resolve(), { once: true });
-              img.addEventListener('error', () => resolve(), { once: true });
-            })
-      )
-    );
-    window.print();
-  };
+  const handlePrint = () => window.print();
 
   return (
     <div style={{

@@ -226,23 +226,21 @@ html, body {
     border-bottom: 2px solid #1a2a6c;
   }
 
-  /* Tarjetas de actividad */
+  /* Ocultar fotos completamente en impresión */
+  .activity-card-photo { display: none !important; }
+
+  /* Tarjetas: layout lista limpia */
   .activity-card {
     box-shadow: none !important;
-    border: 1px solid #e5e7eb !important;
+    border: none !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    border-radius: 0 !important;
     break-inside: avoid;
     page-break-inside: avoid;
-    margin-bottom: 12px !important;
-    flex-direction: row !important;
-  }
-
-  /* Fotos en tamaño fijo */
-  .activity-card-photo-inner {
-    width: 140px !important;
-  }
-  .activity-card-photo-inner > div {
-    width: 124px !important;
-    height: 124px !important;
+    margin-bottom: 0 !important;
+    padding: 10px 0 !important;
+    flex-direction: column !important;
+    background: white !important;
   }
 
   /* Días: salto de página antes de cada día (excepto el primero) */
@@ -252,6 +250,7 @@ html, body {
   .day-badge {
     background: #1a2a6c !important;
     color: white !important;
+    margin-bottom: 8px !important;
   }
 
   /* Ocultar scrollbar */
