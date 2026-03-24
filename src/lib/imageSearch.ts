@@ -4,32 +4,38 @@ const PEXELS_KEY = process.env.PEXELS_API_KEY
 const HEADERS = { "User-Agent": "GlobalHomeAssist/1.0 (travel planner)" };
 
 /**
- * Pattern to detect person-portrait filenames in Wikipedia image URLs.
- * Matches "FirstName_LastName.jpg", "Portrait_of_X.jpg", etc.
+ * Reject URLs that are clearly not a photo of the place itself.
  */
-const PORTRAIT_FILENAME_PATTERN = /\b(portrait|headshot|perfil|ritratto|retrato|foto_oficial|official_photo|profile_pic|bio_photo)\b/i;
-
-/**
- * Pattern to reject Pexels photo alt text that suggests a close-up portrait
- * or a small group (2–4 people) as the main subject.
- * Crowds (multitudes at landmarks) are explicitly allowed.
- */
-const PERSON_ALT_PATTERN = /\b(portrait|headshot|selfie|close.?up of (a |the )?(man|woman|person|girl|boy|people)|smiling (man|woman|person|couple)|posing (man|woman|couple)|a (man|woman) (standing|sitting|holding|wearing|looking)|couple (standing|sitting|posing)|two people|three people|four people)\b/i;
-
 function isValidImageUrl(url: string | null | undefined): url is string {
   if (!url) return false;
   if (/\.(svg|gif)(\?|$)/i.test(url)) return false;
-  if (/(coat_of_arms|flag|logo|map|icon|emblem|seal)/i.test(url)) return false;
-  // Reject obvious portrait filenames
+  // Reject flags, logos, coats of arms, maps, diagrams, seals
+  if (/(coat_of_arms|flag_of|logo|icon|emblem|seal|mapa_|map_|_map\b|plano_|escudo|bandera|\.diagram)/i.test(url)) return false;
+  // Reject portrait-style filenames
   const filename = decodeURIComponent(url.split('/').pop()?.split('?')[0] ?? '');
-  if (PORTRAIT_FILENAME_PATTERN.test(filename)) return false;
+  if (/\b(portrait|headshot|perfil|ritratto|retrato|foto_oficial|official_photo|profile_pic|bio_photo)\b/i.test(filename)) return false;
   return true;
 }
 
-async function fetchImageForTitle(pageTitle: string): Promise<string | null> {
+/**
+ * After getting the image, do a secondary check on the filename/path
+ * to reject maps, departmental divisions, provincial charts, etc.
+ */
+function isLikelyPlacePhoto(url: string): boolean {
+  // Reject Wikipedia images that look like maps or administrative diagrams
+  if (/(departamento|provincia|region|distrito|municipio|division|localizacion|location_map|relief_map|satelite|satellite|administrative|politico|division)/i.test(url)) return false;
+  return true;
+}
+
+/**
+ * Alt text patterns for Pexels that suggest a portrait or small group.
+ */
+const PERSON_ALT_PATTERN = /\b(portrait|headshot|selfie|close.?up of (a |the )?(man|woman|person|girl|boy|people)|smiling (man|woman|person|couple)|posing (man|woman|couple)|a (man|woman) (standing|sitting|holding|wearing|looking)|couple (standing|sitting|posing)|two people|three people|four people)\b/i;
+
+async function fetchImageForTitle(pageTitle: string, lang = 'en'): Promise<string | null> {
   try {
     const res = await fetch(
-      `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(pageTitle)}&prop=pageimages&piprop=thumbnail|original&pithumbsize=900&format=json`,
+      `https://${lang}.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(pageTitle)}&prop=pageimages&piprop=thumbnail|original&pithumbsize=900&format=json`,
       { headers: HEADERS }
     );
     if (!res.ok) return null;
@@ -41,25 +47,27 @@ async function fetchImageForTitle(pageTitle: string): Promise<string | null> {
       original?: { source: string };
     };
     const url = page?.thumbnail?.source ?? page?.original?.source ?? null;
-    return isValidImageUrl(url) ? url : null;
+    if (!isValidImageUrl(url)) return null;
+    if (!isLikelyPlacePhoto(url)) return null;
+    return url;
   } catch {
     return null;
   }
 }
 
 /**
- * Geo search: finds Wikipedia articles near given coordinates and picks
- * the one whose title best matches the place name.
- * Much more accurate than text search for specific locations.
+ * Geo search on a Wikipedia language edition near given coordinates.
+ * Returns the best matching image.
  */
 async function fetchWikipediaImageByCoords(
   lat: number,
   lng: number,
-  name: string
+  name: string,
+  lang = 'en'
 ): Promise<string | null> {
   try {
     const res = await fetch(
-      `https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord=${lat}|${lng}&gsradius=500&gslimit=10&format=json`,
+      `https://${lang}.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord=${lat}|${lng}&gsradius=1000&gslimit=15&format=json`,
       { headers: HEADERS }
     );
     if (!res.ok) return null;
@@ -70,10 +78,8 @@ async function fetchWikipediaImageByCoords(
     const nameLower = name.toLowerCase();
     const nameParts = nameLower.split(/\s+/).filter(w => w.length > 2);
 
-    const placeWords = /museum|park|tower|palace|temple|mosque|church|cathedral|square|market|garden|beach|desert|reserve|district|quarter|fort|castle|bridge|mall|center|centre|station|airport|port|harbor|island|bay|lake|mountain|hill|valley|forest|zoo|gallery|theatre|theater|opera|stadium|arena|university|library|monument|memorial|landmark/i;
-
-    // Transit/infrastructure articles to deprioritize when place name doesn't mention them
-    const transitWords = /underground|subway|subte|metro|línea|linea|railway|rail|tram|bus route|bus line|tube line/i;
+    const placeWords = /museum|park|tower|palace|temple|mosque|church|cathedral|square|market|garden|beach|reserve|fort|castle|bridge|mall|station|island|bay|lake|mountain|zoo|gallery|theatre|theater|opera|stadium|arena|university|library|monument|memorial|teatro|catedral|museo|plaza|mercado|parque|costanera|iglesia|basílica|basilica|puente|paseo/i;
+    const badWords = /underground|subway|metro|línea|linea|railway|tram|bus route|departamento|provincia|municipio|distrito|map|mapa/i;
 
     function looksLikePerson(title: string): boolean {
       const words = title.trim().split(/\s+/);
@@ -82,26 +88,19 @@ async function fetchWikipediaImageByCoords(
         !placeWords.test(title);
     }
 
-    function isTransitArticle(title: string): boolean {
-      return transitWords.test(title) && !transitWords.test(nameLower);
-    }
-
-    // Score each result: more keyword matches = higher score; transit articles penalized
     function scoreResult(r: { title: string }): number {
       const t = r.title.toLowerCase();
       const matchCount = nameParts.filter(p => t.includes(p)).length;
-      const transitPenalty = isTransitArticle(r.title) ? -10 : 0;
-      return matchCount + transitPenalty;
+      const badPenalty = badWords.test(r.title) ? -10 : 0;
+      return matchCount + badPenalty;
     }
 
-    const ranked = [...results]
+    const ranked = results
       .filter(r => !looksLikePerson(r.title))
       .sort((a, b) => scoreResult(b) - scoreResult(a));
 
-    const candidates = ranked.length > 0 ? ranked : results.filter(r => !looksLikePerson(r.title));
-
-    for (const candidate of candidates) {
-      const img = await fetchImageForTitle(candidate.title);
+    for (const candidate of ranked.slice(0, 5)) {
+      const img = await fetchImageForTitle(candidate.title, lang);
       if (img) return img;
     }
     return null;
@@ -111,16 +110,18 @@ async function fetchWikipediaImageByCoords(
 }
 
 /**
- * Text search fallback: query Wikipedia by name+city, then name only.
+ * Text search on a Wikipedia language edition.
+ * Requires a minimum score match to avoid unrelated articles.
  */
 async function fetchWikipediaImageByQuery(
   query: string,
   city: string,
-  name: string
+  name: string,
+  lang = 'en'
 ): Promise<string | null> {
   try {
     const searchRes = await fetch(
-      `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&srlimit=5`,
+      `https://${lang}.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&srlimit=8`,
       { headers: HEADERS }
     );
     if (!searchRes.ok) return null;
@@ -132,8 +133,8 @@ async function fetchWikipediaImageByQuery(
     const nameLower = name.toLowerCase();
     const nameParts = nameLower.split(/\s+/).filter(w => w.length > 3);
 
-    const placeWords = /museum|park|tower|palace|temple|mosque|church|cathedral|square|market|garden|beach|desert|reserve|district|quarter|fort|castle|bridge|mall|center|centre|station|airport|port|harbor|island|bay|lake|mountain|hill|valley|forest|zoo|gallery|theatre|theater|opera|stadium|arena|university|library|monument|memorial|landmark/i;
-    const transitWords = /underground|subway|subte|metro|línea|linea|railway|rail|tram|bus route|bus line|tube line/i;
+    const placeWords = /museum|park|tower|palace|temple|mosque|church|cathedral|square|market|garden|beach|fort|castle|bridge|mall|station|island|zoo|gallery|theatre|theater|opera|stadium|arena|university|library|monument|memorial|teatro|catedral|museo|plaza|mercado|parque|costanera|iglesia|basílica|basilica|puente|paseo/i;
+    const badWords = /underground|subway|metro|línea|railway|tram|bus route|departamento|provincia|municipio|map|mapa/i;
 
     function looksLikePerson(title: string): boolean {
       const words = title.trim().split(/\s+/);
@@ -145,85 +146,105 @@ async function fetchWikipediaImageByQuery(
     function scoreResult(r: { title: string }): number {
       const t = r.title.toLowerCase();
       const matchCount = nameParts.filter(p => t.includes(p)).length;
-      const cityBonus = t.includes(cityLower) ? 1 : 0;
-      const transitPenalty = (transitWords.test(r.title) && !transitWords.test(nameLower)) ? -10 : 0;
-      return matchCount + cityBonus + transitPenalty;
+      const cityBonus = t.includes(cityLower) ? 2 : 0;
+      const badPenalty = badWords.test(r.title) ? -10 : 0;
+      return matchCount + cityBonus + badPenalty;
     }
 
     const filtered = results.filter(r => !looksLikePerson(r.title));
-    const candidates = filtered.length > 0 ? filtered : results;
-    const ranked = [...candidates].sort((a, b) => scoreResult(b) - scoreResult(a));
+    const ranked = (filtered.length > 0 ? filtered : results)
+      .sort((a, b) => scoreResult(b) - scoreResult(a));
 
-    return await fetchImageForTitle(ranked[0].title);
+    // Only use result if it has a meaningful score — avoids totally unrelated articles
+    const best = ranked[0];
+    if (!best || scoreResult(best) < 1) return null;
+
+    return await fetchImageForTitle(best.title, lang);
   } catch {
     return null;
   }
 }
 
+/**
+ * Try Wikipedia in the given language first, then English as fallback.
+ */
 async function searchWikipediaImage(
   name: string,
   city: string,
+  lang: string,
   lat?: number,
   lng?: number
 ): Promise<string | null> {
-  // Geo search is most accurate when we have coordinates
-  if (lat != null && lng != null) {
-    const geoImg = await fetchWikipediaImageByCoords(lat, lng, name);
-    if (geoImg) return geoImg;
+  const langs = lang !== 'en' ? [lang, 'en'] : ['en'];
+
+  for (const l of langs) {
+    // 1. Geo search (most accurate — finds real articles near the coordinates)
+    if (lat != null && lng != null) {
+      const geoImg = await fetchWikipediaImageByCoords(lat, lng, name, l);
+      if (geoImg) return geoImg;
+    }
+
+    // 2. Text search: city + name
+    const withCity = await fetchWikipediaImageByQuery(`${name} ${city}`, city, name, l);
+    if (withCity) return withCity;
   }
 
-  // Text search fallback: city first, then name only
-  const withCity = await fetchWikipediaImageByQuery(`${city} ${name}`, city, name);
-  if (withCity) return withCity;
-
-  return await fetchWikipediaImageByQuery(name, city, name);
+  return null;
 }
 
-export async function searchImage(query: string): Promise<string | null> {
+async function searchPexels(query: string): Promise<string | null> {
   try {
     if (!PEXELS_KEY) return null;
     const res = await fetch(
-      `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=8`,
+      `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=10&orientation=landscape`,
       { headers: { Authorization: PEXELS_KEY } }
     );
     const data = await res.json();
     if (!data.photos || data.photos.length === 0) return null;
 
-    // Prefer photos whose alt text does NOT describe a portrait or small group of people
+    // Prefer photos whose alt text does NOT suggest a portrait or people
     const safePhoto = data.photos.find(
       (p: { alt?: string; src: { medium: string } }) =>
         !PERSON_ALT_PATTERN.test(p.alt ?? "")
     ) ?? data.photos[0];
 
     return safePhoto.src.medium;
-  } catch (error) {
-    console.error("PEXELS ERROR:", error);
+  } catch {
     return null;
   }
 }
 
 /**
  * Image strategy:
- * 1. Wikipedia geo search near place coordinates (most accurate)
- * 2. Wikipedia text search with city+name
- * 3. Wikipedia text search with name only
- * 4. Pexels as last resort
+ * 1. Wikipedia in destination language + coordinates (most accurate)
+ * 2. Wikipedia in English + coordinates
+ * 3. Wikipedia text search
+ * 4. Pexels: category + country (generic but safe — avoids cross-city confusion)
  */
 export async function searchPlaceImage(
   name: string,
   city: string,
   category: string,
   lat?: number,
-  lng?: number
+  lng?: number,
+  lang = 'es'
 ): Promise<string | null> {
-  const wikiImg = await searchWikipediaImage(name, city, lat, lng);
+  const wikiImg = await searchWikipediaImage(name, city, lang, lat, lng);
   if (wikiImg) return wikiImg;
 
   if (!PEXELS_KEY) return null;
-  // Bias queries towards architecture/landscape to avoid portrait results
+
+  // Pexels fallback: use category + country-level term, NOT the specific place name
+  // This avoids "Plaza 25 de Mayo" → Buenos Aires results
+  const countryTerm = city; // city is usually known; avoids cross-country confusion
   return (
-    (await searchImage(`${name} ${city} landmark`)) ??
-    (await searchImage(`${name} ${city}`)) ??
-    (await searchImage(`${category} ${city} architecture`))
+    (await searchPexels(`${category} ${countryTerm} architecture exterior`)) ??
+    (await searchPexels(`${category} argentina architecture`)) ??
+    (await searchPexels(`${category} travel landmark`))
   );
+}
+
+// Legacy export kept for any direct callers
+export async function searchImage(query: string): Promise<string | null> {
+  return searchPexels(query);
 }

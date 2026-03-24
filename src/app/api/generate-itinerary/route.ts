@@ -306,7 +306,7 @@ OUTPUT RULES:
         const coords = job.place.coordinates as { lat?: number; lng?: number } | null;
 
         const [imageUrl, transport] = await Promise.all([
-          searchPlaceImage(name, city, category, coords?.lat, coords?.lng).catch(() => null),
+          searchPlaceImage(name, city, category, coords?.lat, coords?.lng, language || 'es').catch(() => null),
           job.fromCoords && coords?.lat != null && coords?.lng != null
             ? getTransportOptions(
                 job.fromCoords,
