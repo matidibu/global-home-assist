@@ -436,6 +436,7 @@ export default function SearchForm() {
   const [showPremium, setShowPremium] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
   const [expandedDays, setExpandedDays] = useState<Set<number>>(new Set());
+  const [showFloating, setShowFloating] = useState(false);
 
   const autocompleteRef = useRef<GeocoderAutocomplete | null>(null);
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
@@ -569,6 +570,12 @@ export default function SearchForm() {
     accommodationRef.current = ac;
     return () => { container.innerHTML = ""; accommodationRef.current = null; };
   }, [cityCoords, accommodationMode]);
+
+  useEffect(() => {
+    const onScroll = () => setShowFloating(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleModeChange = (mode: "search" | "address") => {
     setAccommodationMode(mode); setAccommodationName(""); setAccommodationCoords(null); setAccommodationTyped("");
@@ -1003,6 +1010,31 @@ export default function SearchForm() {
           <LegalDisclaimer language={language} />
         </div>
 
+        {/* ===== FLOATING CTA ===== */}
+        {itinerary && itinerary.days && (
+          <div style={{
+            position: "fixed", bottom: "24px", right: "20px", zIndex: 999,
+            transition: "opacity 0.3s ease, transform 0.3s ease",
+            opacity: showFloating ? 1 : 0,
+            transform: showFloating ? "translateY(0)" : "translateY(16px)",
+            pointerEvents: showFloating ? "auto" : "none",
+          }} className="no-print">
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              style={{
+                display: "flex", alignItems: "center", gap: "8px",
+                background: "linear-gradient(135deg, #1a2a6c, #2d3f8f)",
+                color: "white", padding: "13px 20px", borderRadius: "999px",
+                fontSize: "14px", fontWeight: 700, border: "none", cursor: "pointer",
+                boxShadow: "0 8px 28px rgba(26,42,108,0.45)", whiteSpace: "nowrap",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+              }}
+            >
+              <Sparkles size={15} /> Generá otro itinerario
+            </button>
+          </div>
+        )}
+
         {/* ===== ITINERARIO ===== */}
         {itinerary && itinerary.days && (
           <div className="print-area" style={{ display: "flex", flexDirection: "column", gap: "48px" }}>
@@ -1050,6 +1082,21 @@ export default function SearchForm() {
                 </div>
               </div>
             )}
+
+            {/* Day pills — resumen visual de todos los días */}
+            <div className="no-print" style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+              {itinerary.days.map((day: any, i: number) => (
+                <span key={i} style={{
+                  background: i < 2 ? "rgba(26,42,108,0.1)" : "rgba(26,42,108,0.05)",
+                  border: `1px solid ${i < 2 ? "rgba(26,42,108,0.25)" : "rgba(26,42,108,0.12)"}`,
+                  borderRadius: "999px", padding: "5px 14px",
+                  fontSize: "12px", fontWeight: 600, color: "#1a2a6c",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                }}>
+                  Día {day.day}{day.theme ? ` — ${day.theme.split(":")[0].split("—")[0].trim()}` : ""}
+                </span>
+              ))}
+            </div>
 
             {/* ===== PRINT-ONLY: itinerario texto puro ===== */}
             <div className="print-only-itinerary">
@@ -1233,30 +1280,64 @@ export default function SearchForm() {
                     </div>
                   )}
 
-                  {/* Inline CTA after day 2 */}
+                  {/* Inline CTA + FlightSearch after day 2 */}
                   {dayIndex === 1 && itinerary.days.length > 2 && (
-                    <div className="no-print" style={{
-                      background: "linear-gradient(135deg, rgba(42,181,160,0.1), rgba(26,42,108,0.06))",
-                      border: "1.5px solid rgba(42,181,160,0.25)",
-                      borderRadius: "14px", padding: "18px 22px", margin: "24px 0",
-                      display: "flex", alignItems: "center", justifyContent: "space-between", gap: "14px", flexWrap: "wrap",
-                    }}>
-                      <div>
-                        <p style={{ margin: "0 0 2px", fontSize: "14px", fontWeight: 700, color: "#1a2a6c", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                          ¿Te gustó lo que ves? Compartilo
-                        </p>
-                        <p style={{ margin: 0, fontSize: "12px", color: "#4b5563", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                          {itinerary.days.length - 2} día{itinerary.days.length - 2 > 1 ? 's' : ''} más esperan abajo — expandilos cuando quieras.
-                        </p>
+                    <div className="no-print" style={{ margin: "24px 0", display: "flex", flexDirection: "column", gap: "16px" }}>
+                      <div style={{
+                        background: "linear-gradient(135deg, rgba(42,181,160,0.1), rgba(26,42,108,0.06))",
+                        border: "1.5px solid rgba(42,181,160,0.25)",
+                        borderRadius: "14px", padding: "18px 22px",
+                        display: "flex", alignItems: "center", justifyContent: "space-between", gap: "14px", flexWrap: "wrap",
+                      }}>
+                        <div>
+                          <p style={{ margin: "0 0 2px", fontSize: "14px", fontWeight: 700, color: "#1a2a6c", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                            ¿Ya te imaginás ahí?
+                          </p>
+                          <p style={{ margin: 0, fontSize: "12px", color: "#4b5563", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                            {itinerary.days.length - 2} día{itinerary.days.length - 2 > 1 ? 's' : ''} más esperan abajo — expandilos cuando quieras.
+                          </p>
+                        </div>
+                        <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", color: "#2ab5a0", fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                          <Sparkles size={14} /> {itinerary.days.length} días · {itinerary.destination}
+                        </div>
                       </div>
-                      <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", color: "#2ab5a0", fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                        <Sparkles size={14} /> {itinerary.days.length} días · {itinerary.destination}
-                      </div>
+                      <FlightSearch destination={city} language={language} />
                     </div>
                   )}
                 </div>
               );
             })}
+
+            {/* Bottom CTA */}
+            <div className="no-print" style={{
+              background: "linear-gradient(135deg, #1a2a6c, #2d3f8f)",
+              borderRadius: "20px", padding: "36px 32px", textAlign: "center",
+              boxShadow: "0 12px 40px rgba(26,42,108,0.3)",
+            }}>
+              <p style={{ fontSize: "28px", margin: "0 0 10px" }}>✈️</p>
+              <h2 style={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: "1.5rem", color: "white", margin: "0 0 10px", fontWeight: 700,
+              }}>
+                ¿Querés explorar otro destino?
+              </h2>
+              <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "13px", margin: "0 0 20px", lineHeight: 1.6 }}>
+                Generá un nuevo itinerario personalizado — gratis, en segundos.
+              </p>
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: "8px",
+                  background: "linear-gradient(135deg, #2ab5a0, #1a9985)",
+                  color: "white", padding: "13px 28px", borderRadius: "12px",
+                  fontSize: "15px", fontWeight: 700, border: "none", cursor: "pointer",
+                  boxShadow: "0 6px 20px rgba(42,181,160,0.5)",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                }}
+              >
+                <Sparkles size={16} /> Generá otro itinerario
+              </button>
+            </div>
 
             <div className="no-print">
               <ShareButton destination={itinerary.destination || city} language={language} shareUrl={shareUrl} />
@@ -1268,10 +1349,6 @@ export default function SearchForm() {
                 <TravelMap activities={allActivities} language="en" accommodation={itineraryAccommodation} />
               </div>
             )}
-
-            <div className="no-print">
-              <FlightSearch destination={city} language={language} />
-            </div>
 
             <div className="no-print">
               <InsuranceBanner language={language} />
