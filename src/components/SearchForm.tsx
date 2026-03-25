@@ -15,7 +15,7 @@ import InsuranceBanner from "@/components/InsuranceBanner";
 import ShareButton from "@/components/ShareButton";
 import { HomeBlogTeaser } from "@/components/HomeBlogTeaser";
 import { PremiumModal } from "@/components/PremiumModal";
-import { Plane } from "lucide-react";
+import { Plane, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
 import "@geoapify/geocoder-autocomplete/styles/minimal.css";
 
 const TravelMap = dynamic(() => import("@/components/TravelMap"), {
@@ -435,6 +435,7 @@ export default function SearchForm() {
   const [planeAnimKey, setPlaneAnimKey] = useState(0);
   const [showPremium, setShowPremium] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
+  const [expandedDays, setExpandedDays] = useState<Set<number>>(new Set());
 
   const autocompleteRef = useRef<GeocoderAutocomplete | null>(null);
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
@@ -470,6 +471,7 @@ export default function SearchForm() {
     setCountry(data.country || '');
     setLanguage(data.language || 'es');
     setItinerary(data.itinerary);
+    setExpandedDays(new Set());
     // Derive cityCoords from activity coordinates
     const acts = data.itinerary.days
       .flatMap((d: any) => d.activities)
@@ -592,6 +594,7 @@ export default function SearchForm() {
         body: JSON.stringify({ city, country, province, nationality, language, tripType, interests, budget, days, accommodationCoords: finalCoords, accommodationName: finalName, accommodationMode }),
       });
       setItinerary(await res.json());
+      setExpandedDays(new Set());
     } catch (error) { console.error("Error:", error); }
     finally { setLoading(false); }
   }
@@ -1095,98 +1098,165 @@ export default function SearchForm() {
             </div>
             {/* ===== FIN PRINT-ONLY ===== */}
 
-            {itinerary.days.map((day: any, dayIndex: number) => (
-              <div key={dayIndex} className="print-day screen-only-day">
-                <div style={{ marginBottom: "20px" }}>
-                  <div className="day-badge">{t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}</div>
-                  {day.theme && (
-                    <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", color: "#1a2a6c", margin: "8px 0 0 0", fontWeight: 600 }}>
-                      {day.theme}
-                    </p>
-                  )}
-                </div>
+            {itinerary.days.map((day: any, dayIndex: number) => {
+              const isExpanded = dayIndex < 2 || expandedDays.has(dayIndex);
+              const isCollapsible = dayIndex >= 2;
+              const links = buildAffiliateLinks(itinerary.destination, itinerary.country || country);
 
-                <div>
-                  {day.activities.map((activity: any, i: number) => {
-                    const links = buildAffiliateLinks(itinerary.destination, itinerary.country || country);
-                    return (
-                      <div key={i}>
-                        {i === 0 && activity.transport && (
-                          <TransportDivider transport={activity.transport} accessNote={activity.accessNote} fromAccommodation={activity.fromAccommodation} accommodationName={itineraryAccommodationName} />
+              return (
+                <div key={dayIndex} className="print-day screen-only-day">
+                  {/* Day header — collapsible for days 3+ */}
+                  {isCollapsible ? (
+                    <button
+                      onClick={() => setExpandedDays(prev => {
+                        const next = new Set(prev);
+                        next.has(dayIndex) ? next.delete(dayIndex) : next.add(dayIndex);
+                        return next;
+                      })}
+                      className="no-print"
+                      style={{
+                        width: "100%", textAlign: "left", cursor: "pointer", border: "none",
+                        background: isExpanded ? "rgba(26,42,108,0.06)" : "rgba(26,42,108,0.04)",
+                        borderRadius: "14px", padding: "16px 20px",
+                        display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px",
+                        marginBottom: isExpanded ? "16px" : "0",
+                        boxShadow: "0 2px 8px rgba(26,42,108,0.06)",
+                        transition: "all 0.2s ease",
+                      }}
+                    >
+                      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                        <div className="day-badge" style={{ margin: 0 }}>{t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}</div>
+                        {day.theme && (
+                          <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.05rem", color: "#1a2a6c", fontWeight: 600 }}>
+                            {day.theme}
+                          </span>
                         )}
+                      </div>
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 }}>
+                        {!isExpanded && (
+                          <span style={{ fontSize: "12px", color: "#6b7280" }}>{day.activities.length} actividades</span>
+                        )}
+                        {isExpanded
+                          ? <ChevronUp size={18} style={{ color: "#2ab5a0" }} />
+                          : <ChevronDown size={18} style={{ color: "#6b7280" }} />
+                        }
+                      </div>
+                    </button>
+                  ) : (
+                    <div style={{ marginBottom: "20px" }}>
+                      <div className="day-badge">{t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}</div>
+                      {day.theme && (
+                        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", color: "#1a2a6c", margin: "8px 0 0 0", fontWeight: 600 }}>
+                          {day.theme}
+                        </p>
+                      )}
+                    </div>
+                  )}
 
-                        <div className="activity-card" style={{ display: "flex", minHeight: "200px" }}>
-                          <div style={{ flex: 1, padding: "24px" }}>
-                            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-                              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.2rem", fontWeight: 700, color: "#1a2a6c", margin: 0 }}>
-                                {activity.place_name}
-                              </h3>
-                              {activity.mustSee && (
-                                <span style={{ fontSize: "10px", background: "linear-gradient(135deg, #fef3c7, #fde68a)", color: "#92400e", padding: "3px 10px", borderRadius: "999px", fontWeight: 700, flexShrink: 0, border: "1px solid #fbbf24", boxShadow: "0 2px 6px rgba(251,191,36,0.3)" }}>
-                                  {t.mustSee}
-                                </span>
+                  {/* Activities — hidden when collapsed */}
+                  {isExpanded && (
+                    <div>
+                      {day.activities.map((activity: any, i: number) => (
+                        <div key={i}>
+                          {i === 0 && activity.transport && (
+                            <TransportDivider transport={activity.transport} accessNote={activity.accessNote} fromAccommodation={activity.fromAccommodation} accommodationName={itineraryAccommodationName} />
+                          )}
+
+                          <div className="activity-card" style={{ display: "flex", minHeight: "200px" }}>
+                            <div style={{ flex: 1, padding: "24px" }}>
+                              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
+                                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.2rem", fontWeight: 700, color: "#1a2a6c", margin: 0 }}>
+                                  {activity.place_name}
+                                </h3>
+                                {activity.mustSee && (
+                                  <span style={{ fontSize: "10px", background: "linear-gradient(135deg, #fef3c7, #fde68a)", color: "#92400e", padding: "3px 10px", borderRadius: "999px", fontWeight: 700, flexShrink: 0, border: "1px solid #fbbf24", boxShadow: "0 2px 6px rgba(251,191,36,0.3)" }}>
+                                    {t.mustSee}
+                                  </span>
+                                )}
+                              </div>
+                              <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: "#4b5563", fontSize: "13px", lineHeight: 1.6, marginBottom: "12px" }}>
+                                {activity.short_description}
+                              </p>
+                              {activity.visit?.best_time_to_visit && (
+                                <p style={{ fontSize: "12px", color: "#2ab5a0", fontWeight: 600, marginBottom: "8px" }}>
+                                  🕐 {t.bestTime}: {activity.visit.best_time_to_visit} · {activity.visit.recommended_duration}
+                                </p>
+                              )}
+                              {activity.tickets?.price_estimate && (
+                                <p style={{ fontSize: "13px", color: "#1a2a6c", fontWeight: 700, marginBottom: "12px" }}>
+                                  💰 {activity.tickets.price_estimate}
+                                </p>
+                              )}
+                              {activity.tickets?.price_estimate && activity.tickets.price_estimate !== 'Free' && activity.tickets.price_estimate !== 'Gratis' && activity.tickets.price_estimate !== '' && (
+                                <div className="no-print" style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "12px" }}>
+                                  <a href={links.getyourguide} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fff7ed", color: "#ea580c", fontWeight: 600, textDecoration: "none", border: "1px solid #fed7aa" }}>🎯 Tours en {itinerary.destination}</a>
+                                </div>
+                              )}
+                              {activity.tips && activity.tips.length > 0 && (
+                                <div style={{ background: "rgba(42,181,160,0.08)", borderLeft: "3px solid #2ab5a0", borderRadius: "0 8px 8px 0", padding: "8px 12px" }}>
+                                  {activity.tips.map((tip: string, j: number) => (
+                                    <p key={j} style={{ fontSize: "12px", color: "#374151", margin: 0 }}>💡 {tip}</p>
+                                  ))}
+                                </div>
                               )}
                             </div>
-                            <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: "#4b5563", fontSize: "13px", lineHeight: 1.6, marginBottom: "12px" }}>
-                              {activity.short_description}
-                            </p>
-                            {activity.visit?.best_time_to_visit && (
-                              <p style={{ fontSize: "12px", color: "#2ab5a0", fontWeight: 600, marginBottom: "8px" }}>
-                                🕐 {t.bestTime}: {activity.visit.best_time_to_visit} · {activity.visit.recommended_duration}
-                              </p>
-                            )}
-                            {activity.tickets?.price_estimate && (
-                              <p style={{ fontSize: "13px", color: "#1a2a6c", fontWeight: 700, marginBottom: "12px" }}>
-                                💰 {activity.tickets.price_estimate}
-                              </p>
-                            )}
-                            {activity.tickets?.price_estimate && activity.tickets.price_estimate !== 'Free' && activity.tickets.price_estimate !== 'Gratis' && activity.tickets.price_estimate !== '' && (
-                            <div className="no-print" style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "12px" }}>
-                              <a href={links.getyourguide} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fff7ed", color: "#ea580c", fontWeight: 600, textDecoration: "none", border: "1px solid #fed7aa" }}>🎯 Tours en {itinerary.destination}</a>
-                            </div>
-                            )}
-                            {activity.tips && activity.tips.length > 0 && (
-                              <div style={{ background: "rgba(42,181,160,0.08)", borderLeft: "3px solid #2ab5a0", borderRadius: "0 8px 8px 0", padding: "8px 12px" }}>
-                                {activity.tips.map((tip: string, j: number) => (
-                                  <p key={j} style={{ fontSize: "12px", color: "#374151", margin: 0 }}>💡 {tip}</p>
-                                ))}
+
+                            {activity.media?.image_url && (
+                              <div className="activity-card-photo" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 24px 20px 8px", flexShrink: 0 }}>
+                                <div className="activity-card-photo-inner"
+                                  style={{ transform: photoRotation(i), transition: "transform 0.3s ease", backgroundColor: "#fff", padding: "8px 8px 28px 8px", boxShadow: "3px 4px 20px rgba(26,42,108,0.22)", borderRadius: "2px", width: "210px", cursor: "pointer" }}
+                                  onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "rotate(0deg) scale(1.05)"; }}
+                                  onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = photoRotation(i); }}
+                                >
+                                  <div style={{ width: "194px", height: "194px", overflow: "hidden", backgroundColor: "#f0f0f0" }}>
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                      src={`/api/image-proxy?url=${encodeURIComponent(activity.media.image_url)}`}
+                                      alt={activity.place_name}
+                                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                                      loading="eager"
+                                    />
+                                  </div>
+                                  <p style={{ textAlign: "center", fontSize: "10px", color: "#888", marginTop: "6px", fontFamily: "Georgia, serif", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                                    {activity.place_name}
+                                  </p>
+                                </div>
                               </div>
                             )}
                           </div>
 
-                          {activity.media?.image_url && (
-                            <div className="activity-card-photo" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 24px 20px 8px", flexShrink: 0 }}>
-                              <div className="activity-card-photo-inner"
-                                style={{ transform: photoRotation(i), transition: "transform 0.3s ease", backgroundColor: "#fff", padding: "8px 8px 28px 8px", boxShadow: "3px 4px 20px rgba(26,42,108,0.22)", borderRadius: "2px", width: "210px", cursor: "pointer" }}
-                                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "rotate(0deg) scale(1.05)"; }}
-                                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = photoRotation(i); }}
-                              >
-                                <div style={{ width: "194px", height: "194px", overflow: "hidden", backgroundColor: "#f0f0f0" }}>
-                                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                                  <img
-                                    src={`/api/image-proxy?url=${encodeURIComponent(activity.media.image_url)}`}
-                                    alt={activity.place_name}
-                                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                                    loading="eager"
-                                  />
-                                </div>
-                                <p style={{ textAlign: "center", fontSize: "10px", color: "#888", marginTop: "6px", fontFamily: "Georgia, serif", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                                  {activity.place_name}
-                                </p>
-                              </div>
-                            </div>
+                          {i < day.activities.length - 1 && (
+                            <TransportDivider transport={day.activities[i + 1].transport} accessNote={day.activities[i + 1].accessNote} />
                           )}
                         </div>
+                      ))}
+                    </div>
+                  )}
 
-                        {i < day.activities.length - 1 && (
-                          <TransportDivider transport={day.activities[i + 1].transport} accessNote={day.activities[i + 1].accessNote} />
-                        )}
+                  {/* Inline CTA after day 2 */}
+                  {dayIndex === 1 && itinerary.days.length > 2 && (
+                    <div className="no-print" style={{
+                      background: "linear-gradient(135deg, rgba(42,181,160,0.1), rgba(26,42,108,0.06))",
+                      border: "1.5px solid rgba(42,181,160,0.25)",
+                      borderRadius: "14px", padding: "18px 22px", margin: "24px 0",
+                      display: "flex", alignItems: "center", justifyContent: "space-between", gap: "14px", flexWrap: "wrap",
+                    }}>
+                      <div>
+                        <p style={{ margin: "0 0 2px", fontSize: "14px", fontWeight: 700, color: "#1a2a6c", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                          ¿Te gustó lo que ves? Compartilo
+                        </p>
+                        <p style={{ margin: 0, fontSize: "12px", color: "#4b5563", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                          {itinerary.days.length - 2} día{itinerary.days.length - 2 > 1 ? 's' : ''} más esperan abajo — expandilos cuando quieras.
+                        </p>
                       </div>
-                    );
-                  })}
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", color: "#2ab5a0", fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                        <Sparkles size={14} /> {itinerary.days.length} días · {itinerary.destination}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
 
             <div className="no-print">
               <ShareButton destination={itinerary.destination || city} language={language} shareUrl={shareUrl} />
