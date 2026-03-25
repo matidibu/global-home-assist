@@ -11,26 +11,43 @@ interface Coords {
 }
 
 /**
- * Geocodes a single place within a city context.
- * Returns accurate coordinates or null if not found.
+ * Geocodes a single place biased towards the city center.
+ * Uses city center coordinates as a proximity bias to avoid
+ * returning results from other cities or wrong streets.
+ * Only accepts results with confidence >= 0.4.
  */
 async function geocodePlace(
   name: string,
   city: string,
-  country: string
+  country: string,
+  cityCenter: { lat: number; lng: number } | null
 ): Promise<Coords | null> {
   if (!GEOAPIFY_KEY) return null;
   try {
-    // Try specific: "Place Name, City, Country"
     const query = encodeURIComponent(`${name}, ${city}, ${country}`);
-    const url = `https://api.geoapify.com/v1/geocode/search?text=${query}&limit=1&lang=es&apiKey=${GEOAPIFY_KEY}`;
+    // bias=proximity biases results towards the city center coordinates
+    const bias = cityCenter
+      ? `&bias=proximity:${cityCenter.lng},${cityCenter.lat}`
+      : '';
+    const url = `https://api.geoapify.com/v1/geocode/search?text=${query}&limit=3&lang=es${bias}&apiKey=${GEOAPIFY_KEY}`;
     const res = await fetch(url);
     if (!res.ok) return null;
     const data = await res.json();
-    const feature = data.features?.[0];
-    if (!feature) return null;
-    const [lng, lat] = feature.geometry.coordinates;
-    return { lat, lng };
+    const features = data.features;
+    if (!features?.length) return null;
+
+    // Pick the most confident result that isn't just the city itself
+    for (const feature of features) {
+      const confidence: number = feature.properties?.rank?.confidence ?? 0;
+      const resultType: string = feature.properties?.result_type ?? '';
+      // Skip pure city/country matches — we need a specific place
+      if (resultType === 'city' || resultType === 'country' || resultType === 'state') continue;
+      // Require moderate confidence
+      if (confidence < 0.4) continue;
+      const [lng, lat] = feature.geometry.coordinates;
+      return { lat, lng };
+    }
+    return null;
   } catch {
     return null;
   }
@@ -39,12 +56,13 @@ async function geocodePlace(
 /**
  * Geocodes all places in the AI-generated days array in parallel.
  * Updates coordinates in-place for each place that is successfully geocoded.
- * Falls back to AI coordinates if geocoding fails.
+ * Falls back to original AI coordinates if geocoding fails or confidence is low.
  */
 export async function geocodeAllPlaces(
   days: Array<{ places: Array<Record<string, unknown>> }>,
   city: string,
-  country: string
+  country: string,
+  cityCenter: { lat: number; lng: number } | null = null
 ): Promise<void> {
   const tasks: Array<{ place: Record<string, unknown>; promise: Promise<Coords | null> }> = [];
 
@@ -52,7 +70,7 @@ export async function geocodeAllPlaces(
     for (const place of day.places) {
       const name = typeof place.name === 'string' ? place.name : '';
       if (!name) continue;
-      tasks.push({ place, promise: geocodePlace(name, city, country) });
+      tasks.push({ place, promise: geocodePlace(name, city, country, cityCenter) });
     }
   }
 
@@ -63,5 +81,6 @@ export async function geocodeAllPlaces(
     if (coords) {
       tasks[i].place.coordinates = { lat: coords.lat, lng: coords.lng };
     }
+    // If geocoding fails, keep original AI coordinates (already set on the place object)
   }
 }
