@@ -14,7 +14,7 @@ import InsuranceBanner from "@/components/InsuranceBanner";
 import ShareButton from "@/components/ShareButton";
 import { HomeBlogTeaser } from "@/components/HomeBlogTeaser";
 import { PremiumModal } from "@/components/PremiumModal";
-import { Plane, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
+import { Plane, Sparkles } from "lucide-react";
 import "@geoapify/geocoder-autocomplete/styles/minimal.css";
 
 const TravelMap = dynamic(() => import("@/components/TravelMap"), {
@@ -132,6 +132,10 @@ const T: Record<string, Record<string, any>> = {
     tripTypes: { placer:"Placer", negocios:"Negocios", aventura:"Aventura", familiar:"Familiar", romántico:"Romántico", gastronómico:"Gastronómico", cultural:"Cultural" },
     interestOptions: ["Cultura e Historia","Gastronomía","Aventura y Deportes","Naturaleza y Relax","Shopping","Vida nocturna"],
     interestValues: ["cultura, historia y arte","gastronomía","aventura y deportes","naturaleza y relax","shopping","vida nocturna"],
+    flightFirstTip: "Buscá el vuelo antes de confirmar el hotel — es la estrategia que usan los mejores viajeros.",
+    travelHacksTitle: "Travel Hacks para tu viaje",
+    milesLabel: "Millas y puntos",
+    proToolsTitle: "Herramientas de viajeros expertos",
   },
   en: {
     slogan: "Your trip, your world... our company.",
@@ -165,6 +169,10 @@ const T: Record<string, Record<string, any>> = {
     tripTypes: { placer:"Leisure", negocios:"Business", aventura:"Adventure", familiar:"Family", romántico:"Romantic", gastronómico:"Gastronomy", cultural:"Cultural" },
     interestOptions: ["Culture & History","Gastronomy","Adventure & Sports","Nature & Relax","Shopping","Nightlife"],
     interestValues: ["culture, history and art","gastronomy","adventure and sports","nature and relax","shopping","nightlife"],
+    flightFirstTip: "Search for flights before booking your hotel — it's the strategy the smartest travelers use.",
+    travelHacksTitle: "Travel Hacks for your trip",
+    milesLabel: "Miles & points",
+    proToolsTitle: "Expert traveler tools",
   },
   fr: {
     slogan: "Votre voyage, votre monde... notre compagnie.",
@@ -198,6 +206,10 @@ const T: Record<string, Record<string, any>> = {
     tripTypes: { placer:"Loisirs", negocios:"Affaires", aventura:"Aventure", familiar:"Famille", romántico:"Romantique", gastronómico:"Gastronomie", cultural:"Culture" },
     interestOptions: ["Culture & Histoire","Gastronomie","Aventure & Sports","Nature & Détente","Shopping","Vie nocturne"],
     interestValues: ["culture, histoire et art","gastronomie","aventure et sports","nature et détente","shopping","vie nocturne"],
+    flightFirstTip: "Recherchez les vols avant de confirmer l'hôtel — c'est la stratégie des meilleurs voyageurs.",
+    travelHacksTitle: "Travel Hacks pour votre voyage",
+    milesLabel: "Miles et points",
+    proToolsTitle: "Outils des voyageurs experts",
   },
   it: {
     slogan: "Il tuo viaggio, il tuo mondo... la nostra compagnia.",
@@ -231,6 +243,10 @@ const T: Record<string, Record<string, any>> = {
     tripTypes: { placer:"Piacere", negocios:"Affari", aventura:"Avventura", familiar:"Famiglia", romántico:"Romantico", gastronómico:"Gastronomia", cultural:"Culturale" },
     interestOptions: ["Cultura e Storia","Gastronomia","Avventura e Sport","Natura e Relax","Shopping","Vita notturna"],
     interestValues: ["cultura, storia e arte","gastronomia","avventura e sport","natura e relax","shopping","vita notturna"],
+    flightFirstTip: "Cerca i voli prima di confermare l'hotel — è la strategia dei viaggiatori più intelligenti.",
+    travelHacksTitle: "Travel Hacks per il tuo viaggio",
+    milesLabel: "Miglia e punti",
+    proToolsTitle: "Strumenti dei viaggiatori esperti",
   },
   de: {
     slogan: "Ihre Reise, Ihre Welt... unsere Begleitung.",
@@ -264,6 +280,10 @@ const T: Record<string, Record<string, any>> = {
     tripTypes: { placer:"Urlaub", negocios:"Geschäft", aventura:"Abenteuer", familiar:"Familie", romántico:"Romantisch", gastronómico:"Gastronomie", cultural:"Kultur" },
     interestOptions: ["Kultur & Geschichte","Gastronomie","Abenteuer & Sport","Natur & Entspannung","Shopping","Nachtleben"],
     interestValues: ["kultur, geschichte und kunst","gastronomie","abenteuer und sport","natur und entspannung","shopping","nachtleben"],
+    flightFirstTip: "Suchen Sie zuerst nach Flügen, bevor Sie das Hotel buchen — die Strategie der klügsten Reisenden.",
+    travelHacksTitle: "Travel Hacks für Ihre Reise",
+    milesLabel: "Meilen & Punkte",
+    proToolsTitle: "Tools für erfahrene Reisende",
   },
   pt: {
     slogan: "Sua viagem, seu mundo... nossa companhia.",
@@ -297,6 +317,10 @@ const T: Record<string, Record<string, any>> = {
     tripTypes: { placer:"Lazer", negocios:"Negócios", aventura:"Aventura", familiar:"Família", romántico:"Romântico", gastronómico:"Gastronômico", cultural:"Cultural" },
     interestOptions: ["Cultura e História","Gastronomia","Aventura e Esportes","Natureza e Relax","Shopping","Vida noturna"],
     interestValues: ["cultura, história e arte","gastronomia","aventura e esportes","natureza e relax","shopping","vida noturna"],
+    flightFirstTip: "Busque o voo antes de confirmar o hotel — é a estratégia dos viajantes mais inteligentes.",
+    travelHacksTitle: "Travel Hacks para sua viagem",
+    milesLabel: "Milhas e pontos",
+    proToolsTitle: "Ferramentas de viajantes experientes",
   },
 };
 
@@ -432,7 +456,6 @@ export default function SearchForm() {
   const [planeAnimKey, setPlaneAnimKey] = useState(0);
   const [showPremium, setShowPremium] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
-  const [expandedDays, setExpandedDays] = useState<Set<number>>(new Set());
 
   const autocompleteRef = useRef<GeocoderAutocomplete | null>(null);
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
@@ -468,7 +491,6 @@ export default function SearchForm() {
     setCountry(data.country || '');
     setLanguage(data.language || 'es');
     setItinerary(data.itinerary);
-    setExpandedDays(new Set());
     // Derive cityCoords from activity coordinates
     const acts = data.itinerary.days
       .flatMap((d: any) => d.activities)
@@ -595,7 +617,6 @@ export default function SearchForm() {
       const data = await res.json();
       if (!data?.days) { console.error("Invalid itinerary response:", data); return; }
       setItinerary(data);
-      setExpandedDays(new Set());
     } catch (error) { console.error("Error:", error); }
     finally { setLoading(false); }
   }
@@ -762,9 +783,16 @@ export default function SearchForm() {
               </label>
               <div id="autocomplete" />
               {city && (
-                <p style={{ fontSize: "12px", color: "#2ab5a0", fontWeight: 600, marginTop: "8px" }}>
-                  📍 {city}{province ? `, ${province}` : ""}, {country}
-                </p>
+                <>
+                  <p style={{ fontSize: "12px", color: "#2ab5a0", fontWeight: 600, marginTop: "8px" }}>
+                    📍 {city}{province ? `, ${province}` : ""}, {country}
+                  </p>
+                  <div style={{ marginTop: "10px", padding: "9px 13px", background: "rgba(42,181,160,0.07)", borderRadius: "10px", borderLeft: "3px solid #2ab5a0" }}>
+                    <p style={{ margin: 0, fontSize: "12px", color: "#374151", lineHeight: 1.5 }}>
+                      <strong style={{ color: "#1a9985" }}>✈️ Pro tip:</strong> {t.flightFirstTip}
+                    </p>
+                  </div>
+                </>
               )}
             </div>
 
@@ -1008,7 +1036,7 @@ export default function SearchForm() {
 
         {/* ===== ITINERARIO ===== */}
         {itinerary && itinerary.days && (
-          <div className="print-area" style={{ display: "flex", flexDirection: "column", gap: "48px" }}>
+          <div className="print-area" style={{ display: "flex", flexDirection: "column", gap: "0" }}>
 
             {/* Cabecera solo visible al imprimir */}
             <div className="print-header" style={{ display: "none" }}>
@@ -1020,61 +1048,11 @@ export default function SearchForm() {
               </span>
             </div>
 
-            {/* Banner de hospedaje */}
-            {itineraryAccommodationName && (
-              <div style={{
-                display: "flex", alignItems: "center", gap: "14px",
-                background: "linear-gradient(135deg, rgba(237,233,254,0.95), rgba(221,214,254,0.8))",
-                border: "1.5px solid #c4b5fd",
-                borderRadius: "16px",
-                padding: "16px 20px",
-                boxShadow: "0 4px 16px rgba(124,58,237,0.12)",
-              }}>
-                <div style={{
-                  width: "42px", height: "42px", borderRadius: "12px",
-                  background: "linear-gradient(135deg, #7c3aed, #9d5df0)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: "20px", flexShrink: 0,
-                }}>
-                  🏨
-                </div>
-                <div>
-                  <p style={{ fontSize: "11px", fontWeight: 700, color: "#7c3aed", textTransform: "uppercase", letterSpacing: "0.08em", margin: "0 0 3px 0" }}>
-                    Tu hospedaje base
-                  </p>
-                  <p style={{ fontSize: "15px", fontWeight: 700, color: "#4c1d95", margin: 0 }}>
-                    {itineraryAccommodationName}
-                  </p>
-                </div>
-                <div style={{ marginLeft: "auto", fontSize: "11px", color: "#7c3aed", fontWeight: 600, textAlign: "right" }}>
-                  <span style={{ background: "rgba(124,58,237,0.12)", padding: "4px 10px", borderRadius: "100px", border: "1px solid rgba(124,58,237,0.25)" }}>
-                    Punto de partida de cada día
-                  </span>
-                </div>
-              </div>
-            )}
-
-            {/* Day pills — resumen visual de todos los días */}
-            <div className="no-print" style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-              {itinerary.days.map((day: any, i: number) => (
-                <span key={i} style={{
-                  background: i < 2 ? "rgba(26,42,108,0.1)" : "rgba(26,42,108,0.05)",
-                  border: `1px solid ${i < 2 ? "rgba(26,42,108,0.25)" : "rgba(26,42,108,0.12)"}`,
-                  borderRadius: "999px", padding: "5px 14px",
-                  fontSize: "12px", fontWeight: 600, color: "#1a2a6c",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                }}>
-                  Día {day.day}{day.theme ? ` — ${day.theme.split(":")[0].split("—")[0].trim()}` : ""}
-                </span>
-              ))}
-            </div>
-
             {/* ===== PRINT-ONLY: itinerario texto puro ===== */}
             <div className="print-only-itinerary">
               <div style={{ fontFamily: "'Plus Jakarta Sans', Arial, sans-serif", color: "#111" }}>
                 {itinerary.days.map((day: any, dayIndex: number) => (
                   <div key={dayIndex} style={{ marginBottom: "28px" }}>
-                    {/* Encabezado del día */}
                     <div style={{ borderBottom: "2px solid #1a2a6c", paddingBottom: "6px", marginBottom: "14px" }}>
                       <span style={{ background: "#1a2a6c", color: "white", padding: "4px 14px", borderRadius: "4px", fontWeight: 800, fontSize: "12px", letterSpacing: "0.05em", textTransform: "uppercase" }}>
                         {t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}
@@ -1085,7 +1063,6 @@ export default function SearchForm() {
                         </span>
                       )}
                     </div>
-                    {/* Actividades */}
                     {day.activities.map((activity: any, i: number) => (
                       <div key={i} style={{ display: "flex", gap: "14px", padding: "10px 0", borderBottom: "1px solid #f0f0f0" }}>
                         <div style={{ minWidth: "22px", height: "22px", borderRadius: "50%", background: "#1a2a6c", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "11px", fontWeight: 800, flexShrink: 0, marginTop: "1px" }}>
@@ -1116,179 +1093,336 @@ export default function SearchForm() {
             </div>
             {/* ===== FIN PRINT-ONLY ===== */}
 
-            {itinerary.days.map((day: any, dayIndex: number) => {
-              const isExpanded = dayIndex < 2 || expandedDays.has(dayIndex);
-              const isCollapsible = dayIndex >= 2;
-              const links = buildAffiliateLinks(itinerary.destination || city || "", itinerary.country || country || "");
+            {/* ══════════════════════════════════════════════════════ */}
+            {/* SECCIÓN 1 — ITINERARIO                                */}
+            {/* ══════════════════════════════════════════════════════ */}
+            <section id="sec-itinerario" className="no-print" style={{ scrollMarginTop: "16px", marginBottom: "40px" }}>
 
-              return (
-                <div key={dayIndex} className="print-day screen-only-day">
-                  {/* Day header — collapsible for days 3+ */}
-                  {isCollapsible ? (
-                    <button
-                      onClick={() => setExpandedDays(prev => {
-                        const next = new Set(prev);
-                        next.has(dayIndex) ? next.delete(dayIndex) : next.add(dayIndex);
-                        return next;
-                      })}
-                      className="no-print"
+              {/* Sticky section nav */}
+              <div style={{
+                position: "sticky", top: 0, zIndex: 50,
+                background: "rgba(8,16,54,0.97)",
+                backdropFilter: "blur(16px)",
+                borderRadius: "14px",
+                padding: "10px 14px",
+                display: "flex", gap: "6px", flexWrap: "wrap",
+                boxShadow: "0 6px 24px rgba(0,0,0,0.3)",
+                border: "1px solid rgba(255,255,255,0.1)",
+                marginBottom: "28px",
+              }}>
+                {[
+                  { icon: "📅", label: "Itinerario", id: "sec-itinerario" },
+                  ...(Array.isArray(itinerary.travelHacks) && itinerary.travelHacks.length > 0 ? [{ icon: "🧠", label: "Travel Hacks", id: "sec-hacks" }] : []),
+                  { icon: "🔧", label: "Herramientas", id: "sec-tools" },
+                  ...(allActivities.length > 0 ? [{ icon: "🗺️", label: "Mapa", id: "sec-mapa" }] : []),
+                  { icon: "🏥", label: "Destino", id: "sec-destino" },
+                ].map(({ icon, label, id }) => (
+                  <button key={id} onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" })} style={{
+                    background: "rgba(255,255,255,0.09)", border: "1px solid rgba(255,255,255,0.18)",
+                    borderRadius: "8px", padding: "6px 14px", color: "white",
+                    fontSize: "12px", fontWeight: 600, cursor: "pointer",
+                    display: "flex", alignItems: "center", gap: "5px",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    transition: "background 0.15s ease",
+                  }}>
+                    {icon} {label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Section header */}
+              <div style={{
+                display: "flex", alignItems: "center", gap: "14px",
+                marginBottom: "20px",
+                padding: "20px 24px",
+                background: "rgba(255,255,255,0.96)",
+                borderRadius: "18px",
+                border: "1.5px solid rgba(26,42,108,0.1)",
+                boxShadow: "0 2px 12px rgba(26,42,108,0.07)",
+              }}>
+                <div style={{
+                  width: "48px", height: "48px", borderRadius: "14px",
+                  background: "linear-gradient(135deg, #1a2a6c, #2563eb)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: "22px", flexShrink: 0,
+                }}>📅</div>
+                <div style={{ flex: 1 }}>
+                  <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.3rem", color: "#1a2a6c", margin: 0, fontWeight: 700 }}>
+                    Tu Itinerario
+                  </h2>
+                  <p style={{ margin: "2px 0 0", fontSize: "12px", color: "#6b7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    {itinerary.trip_duration_days} {itinerary.trip_duration_days === 1 ? t.day : t.days} en {itinerary.destination}{itinerary.country ? `, ${itinerary.country}` : ""}
+                  </p>
+                </div>
+                {/* Quick day nav */}
+                <div style={{ display: "flex", gap: "5px", flexWrap: "wrap", justifyContent: "flex-end", maxWidth: "340px" }}>
+                  {itinerary.days.map((day: any) => (
+                    <button key={day.day} onClick={() => document.getElementById(`dia-${day.day}`)?.scrollIntoView({ behavior: "smooth", block: "start" })} style={{
+                      background: "rgba(26,42,108,0.07)", border: "1px solid rgba(26,42,108,0.15)",
+                      borderRadius: "999px", padding: "4px 12px",
+                      fontSize: "11px", fontWeight: 700, color: "#1a2a6c", cursor: "pointer",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    }}>
+                      {t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Accommodation banner */}
+              {itineraryAccommodationName && (
+                <div style={{
+                  display: "flex", alignItems: "center", gap: "14px",
+                  background: "linear-gradient(135deg, rgba(237,233,254,0.95), rgba(221,214,254,0.8))",
+                  border: "1.5px solid #c4b5fd",
+                  borderRadius: "16px",
+                  padding: "16px 20px",
+                  boxShadow: "0 4px 16px rgba(124,58,237,0.12)",
+                  marginBottom: "20px",
+                }}>
+                  <div style={{
+                    width: "42px", height: "42px", borderRadius: "12px",
+                    background: "linear-gradient(135deg, #7c3aed, #9d5df0)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontSize: "20px", flexShrink: 0,
+                  }}>🏨</div>
+                  <div>
+                    <p style={{ fontSize: "11px", fontWeight: 700, color: "#7c3aed", textTransform: "uppercase", letterSpacing: "0.08em", margin: "0 0 3px 0" }}>Tu hospedaje base</p>
+                    <p style={{ fontSize: "15px", fontWeight: 700, color: "#4c1d95", margin: 0 }}>{itineraryAccommodationName}</p>
+                  </div>
+                  <div style={{ marginLeft: "auto" }}>
+                    <span style={{ fontSize: "11px", background: "rgba(124,58,237,0.12)", padding: "4px 10px", borderRadius: "100px", border: "1px solid rgba(124,58,237,0.25)", color: "#7c3aed", fontWeight: 600 }}>
+                      Punto de partida de cada día
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {/* Days */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+                {itinerary.days.map((day: any, dayIndex: number) => {
+                  const links = buildAffiliateLinks(itinerary.destination || city || "", itinerary.country || country || "");
+                  return (
+                    <div
+                      key={dayIndex}
+                      id={`dia-${day.day}`}
+                      className="print-day screen-only-day"
                       style={{
-                        width: "100%", textAlign: "left", cursor: "pointer", border: "none",
-                        background: isExpanded ? "rgba(26,42,108,0.06)" : "rgba(26,42,108,0.04)",
-                        borderRadius: "14px", padding: "16px 20px",
-                        display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px",
-                        marginBottom: isExpanded ? "16px" : "0",
-                        boxShadow: "0 2px 8px rgba(26,42,108,0.06)",
-                        transition: "all 0.2s ease",
+                        background: "white",
+                        borderRadius: "20px",
+                        overflow: "hidden",
+                        boxShadow: "0 4px 24px rgba(26,42,108,0.1)",
+                        border: "1.5px solid rgba(26,42,108,0.08)",
+                        scrollMarginTop: "70px",
                       }}
                     >
-                      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                        <div className="day-badge" style={{ margin: 0 }}>{t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}</div>
-                        {day.theme && (
-                          <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.05rem", color: "#1a2a6c", fontWeight: 600 }}>
-                            {day.theme}
+                      {/* Day header — prominent dark bar */}
+                      <div style={{
+                        background: "linear-gradient(135deg, #1a2a6c 0%, #2563eb 100%)",
+                        padding: "18px 24px",
+                        display: "flex", alignItems: "center", gap: "18px",
+                      }}>
+                        <div style={{
+                          background: "rgba(255,255,255,0.15)",
+                          border: "2px solid rgba(255,255,255,0.3)",
+                          borderRadius: "12px", padding: "8px 16px",
+                          display: "flex", flexDirection: "column", alignItems: "center",
+                          minWidth: "52px", flexShrink: 0,
+                        }}>
+                          <span style={{ fontSize: "9px", color: "rgba(255,255,255,0.75)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.12em", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                            {t.day}
                           </span>
-                        )}
-                      </div>
-                      <div style={{ display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 }}>
-                        {!isExpanded && (
-                          <span style={{ fontSize: "12px", color: "#6b7280" }}>{day.activities.length} actividades</span>
-                        )}
-                        {isExpanded
-                          ? <ChevronUp size={18} style={{ color: "#2ab5a0" }} />
-                          : <ChevronDown size={18} style={{ color: "#6b7280" }} />
-                        }
-                      </div>
-                    </button>
-                  ) : (
-                    <div style={{ marginBottom: "20px" }}>
-                      <div className="day-badge">{t.day.charAt(0).toUpperCase() + t.day.slice(1)} {day.day}</div>
-                      {day.theme && (
-                        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", color: "#1a2a6c", margin: "8px 0 0 0", fontWeight: 600 }}>
-                          {day.theme}
-                        </p>
-                      )}
-                    </div>
-                  )}
-
-                  {/* Activities — hidden when collapsed */}
-                  {isExpanded && (
-                    <div>
-                      {day.activities.map((activity: any, i: number) => (
-                        <div key={i}>
-                          {i === 0 && activity.transport && (
-                            <TransportDivider transport={activity.transport} accessNote={activity.accessNote} fromAccommodation={activity.fromAccommodation} accommodationName={itineraryAccommodationName} />
+                          <span style={{ fontSize: "28px", color: "white", fontWeight: 900, lineHeight: 1, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                            {day.day}
+                          </span>
+                        </div>
+                        <div style={{ flex: 1 }}>
+                          {day.theme && (
+                            <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.1rem", color: "white", margin: "0 0 4px", fontWeight: 700, lineHeight: 1.3 }}>
+                              {day.theme}
+                            </p>
                           )}
+                          <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.6)", margin: 0, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                            {day.activities.length} actividades
+                          </p>
+                        </div>
+                      </div>
 
-                          <div className="activity-card" style={{ display: "flex", minHeight: "200px" }}>
-                            <div style={{ flex: 1, padding: "24px" }}>
-                              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-                                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.2rem", fontWeight: 700, color: "#1a2a6c", margin: 0 }}>
-                                  {activity.place_name}
-                                </h3>
-                                {activity.mustSee && (
-                                  <span style={{ fontSize: "10px", background: "linear-gradient(135deg, #fef3c7, #fde68a)", color: "#92400e", padding: "3px 10px", borderRadius: "999px", fontWeight: 700, flexShrink: 0, border: "1px solid #fbbf24", boxShadow: "0 2px 6px rgba(251,191,36,0.3)" }}>
-                                    {t.mustSee}
-                                  </span>
+                      {/* Activities */}
+                      <div style={{ padding: "8px 16px 16px" }}>
+                        {day.activities.map((activity: any, i: number) => (
+                          <div key={i}>
+                            {i === 0 && activity.transport && (
+                              <TransportDivider transport={activity.transport} accessNote={activity.accessNote} fromAccommodation={activity.fromAccommodation} accommodationName={itineraryAccommodationName} />
+                            )}
+                            <div className="activity-card" style={{ display: "flex", minHeight: "200px" }}>
+                              <div style={{ flex: 1, padding: "24px" }}>
+                                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
+                                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.2rem", fontWeight: 700, color: "#1a2a6c", margin: 0 }}>
+                                    {activity.place_name}
+                                  </h3>
+                                  {activity.mustSee && (
+                                    <span style={{ fontSize: "10px", background: "linear-gradient(135deg, #fef3c7, #fde68a)", color: "#92400e", padding: "3px 10px", borderRadius: "999px", fontWeight: 700, flexShrink: 0, border: "1px solid #fbbf24", boxShadow: "0 2px 6px rgba(251,191,36,0.3)" }}>
+                                      {t.mustSee}
+                                    </span>
+                                  )}
+                                </div>
+                                <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: "#4b5563", fontSize: "13px", lineHeight: 1.6, marginBottom: "12px" }}>
+                                  {activity.short_description}
+                                </p>
+                                {activity.visit?.best_time_to_visit && (
+                                  <p style={{ fontSize: "12px", color: "#2ab5a0", fontWeight: 600, marginBottom: "8px" }}>
+                                    🕐 {t.bestTime}: {activity.visit.best_time_to_visit} · {activity.visit.recommended_duration}
+                                  </p>
+                                )}
+                                {activity.tickets?.price_estimate && (
+                                  <p style={{ fontSize: "13px", color: "#1a2a6c", fontWeight: 700, marginBottom: "12px" }}>
+                                    💰 {activity.tickets.price_estimate}
+                                  </p>
+                                )}
+                                {activity.tickets?.price_estimate && activity.tickets.price_estimate !== 'Free' && activity.tickets.price_estimate !== 'Gratis' && activity.tickets.price_estimate !== '' && (
+                                  <div className="no-print" style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "12px" }}>
+                                    <a href={links.getyourguide} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fff7ed", color: "#ea580c", fontWeight: 600, textDecoration: "none", border: "1px solid #fed7aa" }}>🎯 Tours en {itinerary.destination}</a>
+                                  </div>
+                                )}
+                                {activity.tips && activity.tips.length > 0 && (
+                                  <div style={{ background: "rgba(42,181,160,0.08)", borderLeft: "3px solid #2ab5a0", borderRadius: "0 8px 8px 0", padding: "8px 12px" }}>
+                                    {activity.tips.map((tip: string, j: number) => (
+                                      <p key={j} style={{ fontSize: "12px", color: "#374151", margin: 0 }}>💡 {tip}</p>
+                                    ))}
+                                  </div>
                                 )}
                               </div>
-                              <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: "#4b5563", fontSize: "13px", lineHeight: 1.6, marginBottom: "12px" }}>
-                                {activity.short_description}
-                              </p>
-                              {activity.visit?.best_time_to_visit && (
-                                <p style={{ fontSize: "12px", color: "#2ab5a0", fontWeight: 600, marginBottom: "8px" }}>
-                                  🕐 {t.bestTime}: {activity.visit.best_time_to_visit} · {activity.visit.recommended_duration}
-                                </p>
-                              )}
-                              {activity.tickets?.price_estimate && (
-                                <p style={{ fontSize: "13px", color: "#1a2a6c", fontWeight: 700, marginBottom: "12px" }}>
-                                  💰 {activity.tickets.price_estimate}
-                                </p>
-                              )}
-                              {activity.tickets?.price_estimate && activity.tickets.price_estimate !== 'Free' && activity.tickets.price_estimate !== 'Gratis' && activity.tickets.price_estimate !== '' && (
-                                <div className="no-print" style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "12px" }}>
-                                  <a href={links.getyourguide} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "6px", background: "#fff7ed", color: "#ea580c", fontWeight: 600, textDecoration: "none", border: "1px solid #fed7aa" }}>🎯 Tours en {itinerary.destination}</a>
-                                </div>
-                              )}
-                              {activity.tips && activity.tips.length > 0 && (
-                                <div style={{ background: "rgba(42,181,160,0.08)", borderLeft: "3px solid #2ab5a0", borderRadius: "0 8px 8px 0", padding: "8px 12px" }}>
-                                  {activity.tips.map((tip: string, j: number) => (
-                                    <p key={j} style={{ fontSize: "12px", color: "#374151", margin: 0 }}>💡 {tip}</p>
-                                  ))}
+                              {activity.media?.image_url && (
+                                <div className="activity-card-photo" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 24px 20px 8px", flexShrink: 0 }}>
+                                  <div className="activity-card-photo-inner"
+                                    style={{ transform: photoRotation(i), transition: "transform 0.3s ease", backgroundColor: "#fff", padding: "8px 8px 28px 8px", boxShadow: "3px 4px 20px rgba(26,42,108,0.22)", borderRadius: "2px", width: "210px", cursor: "pointer" }}
+                                    onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "rotate(0deg) scale(1.05)"; }}
+                                    onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = photoRotation(i); }}
+                                  >
+                                    <div style={{ width: "194px", height: "194px", overflow: "hidden", backgroundColor: "#f0f0f0" }}>
+                                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                                      <img
+                                        src={`/api/image-proxy?url=${encodeURIComponent(activity.media.image_url)}`}
+                                        alt={activity.place_name}
+                                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                                        loading="eager"
+                                      />
+                                    </div>
+                                    <p style={{ textAlign: "center", fontSize: "10px", color: "#888", marginTop: "6px", fontFamily: "Georgia, serif", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                                      {activity.place_name}
+                                    </p>
+                                  </div>
                                 </div>
                               )}
                             </div>
-
-                            {activity.media?.image_url && (
-                              <div className="activity-card-photo" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 24px 20px 8px", flexShrink: 0 }}>
-                                <div className="activity-card-photo-inner"
-                                  style={{ transform: photoRotation(i), transition: "transform 0.3s ease", backgroundColor: "#fff", padding: "8px 8px 28px 8px", boxShadow: "3px 4px 20px rgba(26,42,108,0.22)", borderRadius: "2px", width: "210px", cursor: "pointer" }}
-                                  onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "rotate(0deg) scale(1.05)"; }}
-                                  onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = photoRotation(i); }}
-                                >
-                                  <div style={{ width: "194px", height: "194px", overflow: "hidden", backgroundColor: "#f0f0f0" }}>
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                      src={`/api/image-proxy?url=${encodeURIComponent(activity.media.image_url)}`}
-                                      alt={activity.place_name}
-                                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                                      loading="eager"
-                                    />
-                                  </div>
-                                  <p style={{ textAlign: "center", fontSize: "10px", color: "#888", marginTop: "6px", fontFamily: "Georgia, serif", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                                    {activity.place_name}
-                                  </p>
-                                </div>
-                              </div>
+                            {i < day.activities.length - 1 && (
+                              <TransportDivider transport={day.activities[i + 1].transport} accessNote={day.activities[i + 1].accessNote} />
                             )}
                           </div>
-
-                          {i < day.activities.length - 1 && (
-                            <TransportDivider transport={day.activities[i + 1].transport} accessNote={day.activities[i + 1].accessNote} />
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Inline CTA after day 2 */}
-                  {dayIndex === 1 && itinerary.days.length > 2 && (
-                    <div className="no-print" style={{ margin: "24px 0" }}>
-                      <div style={{
-                        background: "linear-gradient(135deg, rgba(42,181,160,0.1), rgba(26,42,108,0.06))",
-                        border: "1.5px solid rgba(42,181,160,0.25)",
-                        borderRadius: "14px", padding: "18px 22px",
-                        display: "flex", alignItems: "center", justifyContent: "space-between", gap: "14px", flexWrap: "wrap",
-                      }}>
-                        <div>
-                          <p style={{ margin: "0 0 2px", fontSize: "14px", fontWeight: 700, color: "#1a2a6c", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                            ¿Ya te imaginás ahí?
-                          </p>
-                          <p style={{ margin: 0, fontSize: "12px", color: "#4b5563", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                            {itinerary.days.length - 2} día{itinerary.days.length - 2 > 1 ? 's' : ''} más esperan abajo — expandilos cuando quieras.
-                          </p>
-                        </div>
-                        <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", color: "#2ab5a0", fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                          <Sparkles size={14} /> {itinerary.days.length} días · {itinerary.destination}
-                        </div>
+                        ))}
                       </div>
                     </div>
-                  )}
+                  );
+                })}
+              </div>
+            </section>
+
+            {/* ══════════════════════════════════════════════════════ */}
+            {/* SECCIÓN 2 — TRAVEL HACKS                              */}
+            {/* ══════════════════════════════════════════════════════ */}
+            {Array.isArray(itinerary.travelHacks) && itinerary.travelHacks.length > 0 && (
+              <section id="sec-hacks" className="no-print" style={{ scrollMarginTop: "16px", marginBottom: "40px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "20px", padding: "20px 24px", background: "rgba(255,255,255,0.96)", borderRadius: "18px", border: "1.5px solid rgba(13,148,136,0.15)", boxShadow: "0 2px 12px rgba(13,148,136,0.08)" }}>
+                  <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "linear-gradient(135deg, #0d9488, #14b8a6)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", flexShrink: 0 }}>🧠</div>
+                  <div>
+                    <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.3rem", color: "#0d9488", margin: 0, fontWeight: 700 }}>{t.travelHacksTitle}</h2>
+                    <p style={{ margin: "2px 0 0", fontSize: "12px", color: "#6b7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                      Estrategias para reducir costos en este viaje específico
+                    </p>
+                  </div>
                 </div>
-              );
-            })}
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "14px" }}>
+                  {itinerary.travelHacks.map((hack: any, i: number) => (
+                    <div key={i} style={{ background: "white", borderRadius: "16px", padding: "20px", border: "1.5px solid rgba(13,148,136,0.15)", boxShadow: "0 2px 12px rgba(13,148,136,0.07)" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "10px" }}>
+                        <span style={{ fontSize: "24px" }}>{hack.icon}</span>
+                        <span style={{ fontSize: "10px", fontWeight: 800, color: "#0d9488", textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{hack.category}</span>
+                      </div>
+                      <p style={{ fontSize: "13px", color: "#374151", lineHeight: 1.65, margin: "0 0 14px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{hack.tip}</p>
+                      {hack.saving && (
+                        <span style={{ fontSize: "11px", fontWeight: 700, color: "#0d9488", background: "rgba(13,148,136,0.08)", padding: "4px 12px", borderRadius: "999px", border: "1px solid rgba(13,148,136,0.2)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                          {hack.saving}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                {itinerary.milesOpportunity && (
+                  <div style={{ marginTop: "14px", padding: "16px 18px", background: "rgba(124,58,237,0.05)", borderRadius: "14px", border: "1.5px solid rgba(124,58,237,0.18)", display: "flex", alignItems: "flex-start", gap: "12px" }}>
+                    <span style={{ fontSize: "20px", flexShrink: 0 }}>🎫</span>
+                    <p style={{ margin: 0, fontSize: "13px", color: "#4c1d95", lineHeight: 1.6, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                      <strong>{t.milesLabel}:</strong> {itinerary.milesOpportunity}
+                    </p>
+                  </div>
+                )}
+              </section>
+            )}
+
+            {/* ══════════════════════════════════════════════════════ */}
+            {/* SECCIÓN 3 — HERRAMIENTAS PRO                          */}
+            {/* ══════════════════════════════════════════════════════ */}
+            <section id="sec-tools" className="no-print" style={{ scrollMarginTop: "16px", marginBottom: "40px" }}>
+              <div style={{
+                background: "rgba(255,255,255,0.96)",
+                borderRadius: "18px",
+                border: "1.5px solid rgba(26,42,108,0.1)",
+                boxShadow: "0 2px 12px rgba(26,42,108,0.06)",
+                overflow: "hidden",
+              }}>
+                {/* Label integrado en el área */}
+                <div style={{ padding: "16px 20px 12px", borderBottom: "1px solid rgba(26,42,108,0.07)", display: "flex", alignItems: "center", gap: "10px" }}>
+                  <span style={{ fontSize: "16px" }}>🔧</span>
+                  <span style={{ fontSize: "11px", fontWeight: 800, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    {t.proToolsTitle}
+                  </span>
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "0", padding: "0" }}>
+                  {[
+                    { name: "Google Flights", icon: "✈️", url: "https://www.google.com/flights", desc: "Alertas de precio" },
+                    { name: "Skyscanner", icon: "🔍", url: "https://www.skyscanner.com", desc: "Comparar aerolíneas" },
+                    { name: "Kiwi.com", icon: "🥝", url: "https://www.kiwi.com", desc: "Vuelos combinados" },
+                    { name: "TrustedHousesitters", icon: "🏠", url: "https://www.trustedhousesitters.com", desc: "Alojamiento gratis" },
+                  ].map((tool, idx, arr) => (
+                    <a key={tool.name} href={tool.url} target="_blank" rel="noopener noreferrer" style={{
+                      display: "flex", alignItems: "center", gap: "10px",
+                      padding: "16px 18px",
+                      background: "white",
+                      borderRight: (idx + 1) % 2 === 1 ? "1px solid rgba(26,42,108,0.07)" : "none",
+                      borderBottom: idx < arr.length - 2 ? "1px solid rgba(26,42,108,0.07)" : "none",
+                      textDecoration: "none",
+                      transition: "background 0.15s ease",
+                    }}>
+                      <span style={{ fontSize: "22px", flexShrink: 0 }}>{tool.icon}</span>
+                      <div>
+                        <p style={{ margin: 0, fontSize: "12px", fontWeight: 700, color: "#1a2a6c", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{tool.name}</p>
+                        <p style={{ margin: 0, fontSize: "11px", color: "#9ca3af", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{tool.desc}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </section>
 
             {/* Bottom CTA */}
             <div className="no-print" style={{
               background: "linear-gradient(135deg, #1a2a6c, #2d3f8f)",
               borderRadius: "20px", padding: "36px 32px", textAlign: "center",
               boxShadow: "0 12px 40px rgba(26,42,108,0.3)",
+              marginBottom: "40px",
             }}>
               <p style={{ fontSize: "28px", margin: "0 0 10px" }}>✈️</p>
-              <h2 style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "1.5rem", color: "white", margin: "0 0 10px", fontWeight: 700,
-              }}>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", color: "white", margin: "0 0 10px", fontWeight: 700 }}>
                 ¿Querés explorar otro destino?
               </h2>
               <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "13px", margin: "0 0 20px", lineHeight: 1.6 }}>
@@ -1309,37 +1443,63 @@ export default function SearchForm() {
               </button>
             </div>
 
-            <div className="no-print">
+            <div className="no-print" style={{ marginBottom: "40px" }}>
               <ShareButton destination={itinerary.destination || city} language={language} shareUrl={shareUrl} />
             </div>
 
+            {/* ══════════════════════════════════════════════════════ */}
+            {/* SECCIÓN 4 — MAPA                                       */}
+            {/* ══════════════════════════════════════════════════════ */}
             {allActivities.length > 0 && (
-              <div className="no-print">
-                <h2 className="section-title" style={{ fontSize: "1.5rem", marginBottom: "16px" }}>{t.mapTitle}</h2>
+              <section id="sec-mapa" className="no-print" style={{ scrollMarginTop: "16px", marginBottom: "40px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "20px", padding: "20px 24px", background: "rgba(255,255,255,0.96)", borderRadius: "18px", border: "1.5px solid rgba(37,99,235,0.15)", boxShadow: "0 2px 12px rgba(37,99,235,0.07)" }}>
+                  <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "linear-gradient(135deg, #2563eb, #3b82f6)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", flexShrink: 0 }}>🗺️</div>
+                  <div>
+                    <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.3rem", color: "#1a2a6c", margin: 0, fontWeight: 700 }}>{t.mapTitle}</h2>
+                    <p style={{ margin: "2px 0 0", fontSize: "12px", color: "#6b7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                      Todas las actividades georeferenciadas en {itinerary.destination}
+                    </p>
+                  </div>
+                </div>
                 <TravelMap activities={allActivities} language="en" accommodation={itineraryAccommodation} />
-              </div>
+              </section>
             )}
 
-            <div className="no-print">
+            <div className="no-print" style={{ marginBottom: "40px" }}>
               <InsuranceBanner language={language} />
             </div>
 
-            <div className="no-print">
+            <div className="no-print" style={{ marginBottom: "40px" }}>
               <ServicesSection city={city} country={country} />
             </div>
 
+            {/* ══════════════════════════════════════════════════════ */}
+            {/* SECCIÓN 5 — INFO DEL DESTINO                          */}
+            {/* ══════════════════════════════════════════════════════ */}
             {cityCoords && (
-              <div className="no-print">
-                <DestinationInfo city={city} country={country} nationality={nationality || "Argentina"} language={language} latitude={cityCoords.lat} longitude={cityCoords.lon} onEmergencyNumbers={setEmergencyNumbers} />
+              <section id="sec-destino" className="no-print" style={{ scrollMarginTop: "16px", marginBottom: "40px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "20px", padding: "20px 24px", background: "rgba(255,255,255,0.96)", borderRadius: "18px", border: "1.5px solid rgba(220,38,38,0.15)", boxShadow: "0 2px 12px rgba(220,38,38,0.06)" }}>
+                  <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "linear-gradient(135deg, #dc2626, #ef4444)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", flexShrink: 0 }}>🏥</div>
+                  <div>
+                    <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.3rem", color: "#1a2a6c", margin: 0, fontWeight: 700 }}>Información del destino</h2>
+                    <p style={{ margin: "2px 0 0", fontSize: "12px", color: "#6b7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                      Emergencias, salud, asistencia legal y consejos de seguridad
+                    </p>
+                  </div>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                  <DestinationInfo city={city} country={country} nationality={nationality || "Argentina"} language={language} latitude={cityCoords.lat} longitude={cityCoords.lon} onEmergencyNumbers={setEmergencyNumbers} />
+                  <MedicalAssistance city={city} country={country} language={language} />
+                  <SOSButton city={city} country={country} emergencyNumbers={emergencyNumbers} />
+                </div>
+              </section>
+            )}
+            {!cityCoords && (
+              <div className="no-print" style={{ marginBottom: "40px" }}>
+                <MedicalAssistance city={city} country={country} language={language} />
+                <SOSButton city={city} country={country} emergencyNumbers={emergencyNumbers} />
               </div>
             )}
-
-            <div className="no-print">
-              <MedicalAssistance city={city} country={country} language={language} />
-            </div>
-            <div className="no-print">
-              <SOSButton city={city} country={country} emergencyNumbers={emergencyNumbers} />
-            </div>
 
           </div>
         )}

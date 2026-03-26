@@ -119,6 +119,37 @@ export async function POST(req: Request) {
     // Fetch city bbox in parallel with AI call (used later for validation)
     const bboxPromise = getCityBbox(city, country);
 
+    // Lightweight travel hacks call (gpt-4o-mini, runs in parallel)
+    const { nationality, budget } = body;
+    const hacksPromise = openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [{
+        role: "user",
+        content: `You are a travel savings expert. Provide practical money-saving travel hacks for a trip to ${city}, ${country}${nationality ? ` from ${nationality}` : ""} in ${languageLabel}.
+
+Context: ${days} days, trip type: ${tripType || "general"}${budget ? `, budget: $${budget} USD` : ""}${Array.isArray(interests) && interests.length ? `, interests: ${interests.join(", ")}` : ""}
+
+Return ONLY valid JSON:
+{
+  "travelHacks": [
+    { "icon": "✈️", "category": "Vuelos", "tip": "Specific actionable tip with real data", "saving": "Estimated saving" }
+  ],
+  "milesOpportunity": "One sentence about frequent flyer programs for this route, or empty string."
+}
+
+Rules:
+- Exactly 4 hacks covering: (1) flights/booking timing for this specific route, (2) accommodation alternatives like house sitting or apartment rentals, (3) local transport tips, (4) food/activities savings
+- Be specific to ${city}, ${country}
+- Write ALL text in ${languageLabel}
+- saving: short phrase like "up to 30%" or "Hasta $200 USD"
+- milesOpportunity: if relevant, mention specific programs (e.g. American AAdvantage, Aerolíneas SUMA, etc.)
+- Return ONLY the JSON object. No markdown.`
+      }],
+      temperature: 0.4,
+      max_tokens: 900,
+      response_format: { type: "json_object" },
+    });
+
     const prompt = `
 You are a travel data expert. Your ONLY job is FACTUAL ACCURACY and GEOGRAPHIC PRECISION.
 Write ALL text fields in ${languageLabel}. Return ONLY valid JSON. No markdown, no preamble.
@@ -217,7 +248,7 @@ OUTPUT RULES:
 - Return ONLY the JSON object. Nothing else.
 `;
 
-    const [completion, cityBbox] = await Promise.all([
+    const [completion, cityBbox, hacksCompletion] = await Promise.all([
       openai.chat.completions.create({
         model: "gpt-4o",
         messages: [{ role: "user", content: prompt }],
@@ -226,6 +257,7 @@ OUTPUT RULES:
         response_format: { type: "json_object" },
       }),
       bboxPromise,
+      hacksPromise,
     ]);
 
     const finishReason = completion.choices[0].finish_reason;
@@ -403,7 +435,18 @@ OUTPUT RULES:
       (itinerary as any).accommodation = { name: accommodationName, coordinates: hotelCoords, mode: accommodationMode || "search" };
     }
 
-    return Response.json(itinerary);
+    // Parse travel hacks (non-blocking — errors here don't fail the itinerary)
+    let travelHacks: unknown[] = [];
+    let milesOpportunity = "";
+    try {
+      let hacksText = hacksCompletion.choices[0].message.content || "";
+      hacksText = hacksText.replace(/```json/g, "").replace(/```/g, "").trim();
+      const hacksData = JSON.parse(hacksText);
+      travelHacks = Array.isArray(hacksData.travelHacks) ? hacksData.travelHacks : [];
+      milesOpportunity = typeof hacksData.milesOpportunity === "string" ? hacksData.milesOpportunity : "";
+    } catch { /* ignore hacks errors */ }
+
+    return Response.json({ ...itinerary, travelHacks, milesOpportunity });
 
   } catch (error) {
     console.error(error);

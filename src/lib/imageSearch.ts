@@ -237,12 +237,11 @@ export async function searchPlaceImage(
 
   if (!PEXELS_KEY) return null;
 
-  // Pexels fallback: use category + country-level term, NOT the specific place name
-  // This avoids "Plaza 25 de Mayo" → Buenos Aires results
-  const countryTerm = city; // city is usually known; avoids cross-country confusion
+  // Pexels fallback chain: try specific place name first, then generic category
   return (
-    (await searchPexels(`${category} ${countryTerm} architecture exterior`)) ??
-    (await searchPexels(`${category} argentina architecture`)) ??
+    (await searchPexels(`${name}`)) ??
+    (await searchPexels(`${category} ${city}`)) ??
+    (await searchPexels(`${category} architecture exterior`)) ??
     (await searchPexels(`${category} travel landmark`))
   );
 }

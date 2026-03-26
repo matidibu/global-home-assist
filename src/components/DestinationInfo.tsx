@@ -132,9 +132,6 @@ export default function DestinationInfo({ city, country, nationality, language, 
       padding: "28px",
       marginTop: "2rem",
     }}>
-      <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#111827", margin: "0 0 24px 0" }}>
-        🌍 Información del destino — {city}
-      </h2>
 
       {data.travel_advisory && (() => {
         const adv = data.travel_advisory!;
