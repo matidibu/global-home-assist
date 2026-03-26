@@ -617,6 +617,9 @@ export default function SearchForm() {
       const data = await res.json();
       if (!data?.days) { console.error("Invalid itinerary response:", data); return; }
       setItinerary(data);
+      if (typeof window !== "undefined" && (window as any).fbq) {
+        (window as any).fbq("track", "Lead");
+      }
     } catch (error) { console.error("Error:", error); }
     finally { setLoading(false); }
   }
