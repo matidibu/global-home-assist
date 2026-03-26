@@ -10,7 +10,6 @@ import DestinationInfo from "@/components/DestinationInfo";
 import SOSButton from "@/components/SOSButton";
 import MedicalAssistance from "@/components/MedicalAssistance";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
-import FlightSearch from "@/components/FlightSearch";
 import InsuranceBanner from "@/components/InsuranceBanner";
 import ShareButton from "@/components/ShareButton";
 import { HomeBlogTeaser } from "@/components/HomeBlogTeaser";
@@ -131,8 +130,8 @@ const T: Record<string, Record<string, any>> = {
     official: "Sitio oficial",
     expertBadge: "Generado por IA · Validado por expertos en turismo",
     tripTypes: { placer:"Placer", negocios:"Negocios", aventura:"Aventura", familiar:"Familiar", romántico:"Romántico", gastronómico:"Gastronómico", cultural:"Cultural" },
-    interestOptions: ["Cultura","Gastronomía","Aventura","Relax","Shopping","Naturaleza","Deportes","Historia","Arte","Vida nocturna"],
-    interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
+    interestOptions: ["Cultura e Historia","Gastronomía","Aventura y Deportes","Naturaleza y Relax","Shopping","Vida nocturna"],
+    interestValues: ["cultura, historia y arte","gastronomía","aventura y deportes","naturaleza y relax","shopping","vida nocturna"],
   },
   en: {
     slogan: "Your trip, your world... our company.",
@@ -164,8 +163,8 @@ const T: Record<string, Record<string, any>> = {
     official: "Official site",
     expertBadge: "AI-Generated · Validated by Tourism Experts",
     tripTypes: { placer:"Leisure", negocios:"Business", aventura:"Adventure", familiar:"Family", romántico:"Romantic", gastronómico:"Gastronomy", cultural:"Cultural" },
-    interestOptions: ["Culture","Gastronomy","Adventure","Relax","Shopping","Nature","Sports","History","Art","Nightlife"],
-    interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
+    interestOptions: ["Culture & History","Gastronomy","Adventure & Sports","Nature & Relax","Shopping","Nightlife"],
+    interestValues: ["culture, history and art","gastronomy","adventure and sports","nature and relax","shopping","nightlife"],
   },
   fr: {
     slogan: "Votre voyage, votre monde... notre compagnie.",
@@ -197,8 +196,8 @@ const T: Record<string, Record<string, any>> = {
     official: "Site officiel",
     expertBadge: "Généré par IA · Validé par des experts en voyage",
     tripTypes: { placer:"Loisirs", negocios:"Affaires", aventura:"Aventure", familiar:"Famille", romántico:"Romantique", gastronómico:"Gastronomie", cultural:"Culture" },
-    interestOptions: ["Culture","Gastronomie","Aventure","Détente","Shopping","Nature","Sport","Histoire","Art","Vie nocturne"],
-    interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
+    interestOptions: ["Culture & Histoire","Gastronomie","Aventure & Sports","Nature & Détente","Shopping","Vie nocturne"],
+    interestValues: ["culture, histoire et art","gastronomie","aventure et sports","nature et détente","shopping","vie nocturne"],
   },
   it: {
     slogan: "Il tuo viaggio, il tuo mondo... la nostra compagnia.",
@@ -230,8 +229,8 @@ const T: Record<string, Record<string, any>> = {
     official: "Sito ufficiale",
     expertBadge: "Generato da IA · Validato da esperti di viaggio",
     tripTypes: { placer:"Piacere", negocios:"Affari", aventura:"Avventura", familiar:"Famiglia", romántico:"Romantico", gastronómico:"Gastronomia", cultural:"Culturale" },
-    interestOptions: ["Cultura","Gastronomia","Avventura","Relax","Shopping","Natura","Sport","Storia","Arte","Vita notturna"],
-    interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
+    interestOptions: ["Cultura e Storia","Gastronomia","Avventura e Sport","Natura e Relax","Shopping","Vita notturna"],
+    interestValues: ["cultura, storia e arte","gastronomia","avventura e sport","natura e relax","shopping","vita notturna"],
   },
   de: {
     slogan: "Ihre Reise, Ihre Welt... unsere Begleitung.",
@@ -263,8 +262,8 @@ const T: Record<string, Record<string, any>> = {
     official: "Offizielle Website",
     expertBadge: "KI-generiert · Von Reiseexperten validiert",
     tripTypes: { placer:"Urlaub", negocios:"Geschäft", aventura:"Abenteuer", familiar:"Familie", romántico:"Romantisch", gastronómico:"Gastronomie", cultural:"Kultur" },
-    interestOptions: ["Kultur","Gastronomie","Abenteuer","Entspannung","Shopping","Natur","Sport","Geschichte","Kunst","Nachtleben"],
-    interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
+    interestOptions: ["Kultur & Geschichte","Gastronomie","Abenteuer & Sport","Natur & Entspannung","Shopping","Nachtleben"],
+    interestValues: ["kultur, geschichte und kunst","gastronomie","abenteuer und sport","natur und entspannung","shopping","nachtleben"],
   },
   pt: {
     slogan: "Sua viagem, seu mundo... nossa companhia.",
@@ -296,8 +295,8 @@ const T: Record<string, Record<string, any>> = {
     official: "Site oficial",
     expertBadge: "Gerado por IA · Validado por especialistas em viagens",
     tripTypes: { placer:"Lazer", negocios:"Negócios", aventura:"Aventura", familiar:"Família", romántico:"Romântico", gastronómico:"Gastronômico", cultural:"Cultural" },
-    interestOptions: ["Cultura","Gastronomia","Aventura","Relax","Shopping","Natureza","Esportes","História","Arte","Vida noturna"],
-    interestValues: ["cultura","gastronomía","aventura","relax","shopping","naturaleza","deportes","historia","arte","vida nocturna"],
+    interestOptions: ["Cultura e História","Gastronomia","Aventura e Esportes","Natureza e Relax","Shopping","Vida noturna"],
+    interestValues: ["cultura, história e arte","gastronomia","aventura e esportes","natureza e relax","shopping","vida noturna"],
   },
 };
 
@@ -335,11 +334,9 @@ function stripMediaFromItinerary(itinerary: any): any {
 // ===== END SHARING HELPERS =====
 
 function buildAffiliateLinks(city: string, country: string) {
-  // When city = country (Monaco, Singapore, Vatican…) add "principality" / "city-state"
-  // to disambiguate from homonyms (Monaco = Munich in Italian)
-  // For all other cities, append country for geographic precision
+  if (!city) return { getyourguide: "#" };
   const cityNorm = city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  const countryNorm = country.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const countryNorm = (country || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const isCityState = cityNorm === countryNorm;
   // Special cases where the plain name is ambiguous in GYG's search
   const GYG_OVERRIDES: Record<string, string> = {
@@ -436,7 +433,6 @@ export default function SearchForm() {
   const [showPremium, setShowPremium] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
   const [expandedDays, setExpandedDays] = useState<Set<number>>(new Set());
-  const [showFloating, setShowFloating] = useState(false);
 
   const autocompleteRef = useRef<GeocoderAutocomplete | null>(null);
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
@@ -571,11 +567,6 @@ export default function SearchForm() {
     return () => { container.innerHTML = ""; accommodationRef.current = null; };
   }, [cityCoords, accommodationMode]);
 
-  useEffect(() => {
-    const onScroll = () => setShowFloating(window.scrollY > 400);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const handleModeChange = (mode: "search" | "address") => {
     setAccommodationMode(mode); setAccommodationName(""); setAccommodationCoords(null); setAccommodationTyped("");
@@ -600,7 +591,10 @@ export default function SearchForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ city, country, province, nationality, language, tripType, interests, budget, days, accommodationCoords: finalCoords, accommodationName: finalName, accommodationMode }),
       });
-      setItinerary(await res.json());
+      if (!res.ok) { console.error("API error:", res.status); return; }
+      const data = await res.json();
+      if (!data?.days) { console.error("Invalid itinerary response:", data); return; }
+      setItinerary(data);
       setExpandedDays(new Set());
     } catch (error) { console.error("Error:", error); }
     finally { setLoading(false); }
@@ -754,25 +748,25 @@ export default function SearchForm() {
           padding: "28px",
           marginBottom: "2.5rem",
         }}>
-          {/* Ciudad destino destacada */}
+          {/* Ciudad destino */}
           <div style={{
-            background: "linear-gradient(135deg, rgba(26,42,108,0.06), rgba(42,181,160,0.08))",
-            border: "2px solid rgba(42,181,160,0.45)",
-            borderRadius: "18px",
-            padding: "20px",
-            marginBottom: "22px",
-            boxShadow: "0 4px 16px rgba(42,181,160,0.12)",
-          }}>
-            <label style={{ ...labelStyle, fontSize: "15px", color: "#2ab5a0" }}>
-              ✈️ {t.destination}
-            </label>
-            <div id="autocomplete" />
-            {city && (
-              <p style={{ fontSize: "12px", color: "#2ab5a0", fontWeight: 600, marginTop: "8px" }}>
-                📍 {city}{province ? `, ${province}` : ""}, {country}
-              </p>
-            )}
-          </div>
+              background: "linear-gradient(135deg, rgba(26,42,108,0.06), rgba(42,181,160,0.08))",
+              border: "2px solid rgba(42,181,160,0.45)",
+              borderRadius: "18px",
+              padding: "20px",
+              marginBottom: "22px",
+              boxShadow: "0 4px 16px rgba(42,181,160,0.12)",
+            }}>
+              <label style={{ ...labelStyle, fontSize: "15px", color: "#2ab5a0" }}>
+                ✈️ {t.destination}
+              </label>
+              <div id="autocomplete" />
+              {city && (
+                <p style={{ fontSize: "12px", color: "#2ab5a0", fontWeight: 600, marginTop: "8px" }}>
+                  📍 {city}{province ? `, ${province}` : ""}, {country}
+                </p>
+              )}
+            </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
             <div>
@@ -800,9 +794,9 @@ export default function SearchForm() {
               </select>
             </div>
             <div>
-              <label style={labelStyle}>{t.budget}</label>
-              <input type="number" value={budget} onChange={e => setBudget(e.target.value)} className="form-input" placeholder={t.budgetPlaceholder} min={0} />
-            </div>
+                <label style={labelStyle}>{t.budget}</label>
+                <input type="number" value={budget} onChange={e => setBudget(e.target.value)} className="form-input" placeholder={t.budgetPlaceholder} min={0} />
+              </div>
             <div>
               <label style={labelStyle}>{t.interests}</label>
               <select multiple value={interests} onChange={e => setInterests(Array.from(e.target.selectedOptions, o => o.value))} className="form-input" style={{ height: "110px" }}>
@@ -1004,36 +998,13 @@ export default function SearchForm() {
             </div>
           )}
 
+
           {/* Blog teaser — solo visible cuando no hay itinerario generado */}
           {!itinerary && <HomeBlogTeaser />}
 
           <LegalDisclaimer language={language} />
         </div>
 
-        {/* ===== FLOATING CTA ===== */}
-        {itinerary && itinerary.days && (
-          <div style={{
-            position: "fixed", bottom: "24px", right: "20px", zIndex: 999,
-            transition: "opacity 0.3s ease, transform 0.3s ease",
-            opacity: showFloating ? 1 : 0,
-            transform: showFloating ? "translateY(0)" : "translateY(16px)",
-            pointerEvents: showFloating ? "auto" : "none",
-          }} className="no-print">
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              style={{
-                display: "flex", alignItems: "center", gap: "8px",
-                background: "linear-gradient(135deg, #1a2a6c, #2d3f8f)",
-                color: "white", padding: "13px 20px", borderRadius: "999px",
-                fontSize: "14px", fontWeight: 700, border: "none", cursor: "pointer",
-                boxShadow: "0 8px 28px rgba(26,42,108,0.45)", whiteSpace: "nowrap",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}
-            >
-              <Sparkles size={15} /> Generá otro itinerario
-            </button>
-          </div>
-        )}
 
         {/* ===== ITINERARIO ===== */}
         {itinerary && itinerary.days && (
@@ -1148,7 +1119,7 @@ export default function SearchForm() {
             {itinerary.days.map((day: any, dayIndex: number) => {
               const isExpanded = dayIndex < 2 || expandedDays.has(dayIndex);
               const isCollapsible = dayIndex >= 2;
-              const links = buildAffiliateLinks(itinerary.destination, itinerary.country || country);
+              const links = buildAffiliateLinks(itinerary.destination || city || "", itinerary.country || country || "");
 
               return (
                 <div key={dayIndex} className="print-day screen-only-day">
@@ -1280,9 +1251,9 @@ export default function SearchForm() {
                     </div>
                   )}
 
-                  {/* Inline CTA + FlightSearch after day 2 */}
+                  {/* Inline CTA after day 2 */}
                   {dayIndex === 1 && itinerary.days.length > 2 && (
-                    <div className="no-print" style={{ margin: "24px 0", display: "flex", flexDirection: "column", gap: "16px" }}>
+                    <div className="no-print" style={{ margin: "24px 0" }}>
                       <div style={{
                         background: "linear-gradient(135deg, rgba(42,181,160,0.1), rgba(26,42,108,0.06))",
                         border: "1.5px solid rgba(42,181,160,0.25)",
@@ -1301,7 +1272,6 @@ export default function SearchForm() {
                           <Sparkles size={14} /> {itinerary.days.length} días · {itinerary.destination}
                         </div>
                       </div>
-                      <FlightSearch destination={city} language={language} />
                     </div>
                   )}
                 </div>
