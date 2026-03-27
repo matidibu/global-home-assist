@@ -13,6 +13,7 @@ import LegalDisclaimer from "@/components/LegalDisclaimer";
 import InsuranceBanner from "@/components/InsuranceBanner";
 import ShareButton from "@/components/ShareButton";
 import { HomeBlogTeaser } from "@/components/HomeBlogTeaser";
+import { QualityIndex } from "@/components/QualityIndex";
 import { PremiumModal } from "@/components/PremiumModal";
 import { Plane, Sparkles } from "lucide-react";
 import "@geoapify/geocoder-autocomplete/styles/minimal.css";
@@ -624,6 +625,11 @@ export default function SearchForm() {
     finally { setLoading(false); }
   }
 
+  function resetSearch() {
+    setItinerary(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   const photoRotation = (i: number) => i % 2 === 0 ? "rotate(2deg)" : "rotate(-1.5deg)";
   const allActivities = itinerary?.days?.flatMap((day: any) => day.activities) ?? [];
   const itineraryAccommodation = itinerary?.accommodation;
@@ -649,121 +655,151 @@ export default function SearchForm() {
       <div className="main-container" style={{ maxWidth: "900px", margin: "0 auto", padding: "24px 20px" }}>
 
         {/* ===== HEADER ===== */}
-        <div style={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          alignItems: "center",
-          gap: "28px",
-          marginBottom: "2.5rem",
-          padding: "1.8rem 2.2rem",
-          background: "rgba(8,16,54,0.82)",
-          backdropFilter: "blur(20px)",
-          borderRadius: "24px",
-          border: "1px solid rgba(255,255,255,0.13)",
-          boxShadow: "0 8px 40px rgba(0,0,0,0.3)",
-        }}>
-
-          {/* Logo — izquierda, prominente */}
-          <img
-            src="/logo.svg"
-            alt="Global Home Assist"
-            style={{
-              width: "clamp(180px, 22vw, 240px)",
-              height: "auto",
-              flexShrink: 0,
-              filter: "drop-shadow(0 4px 18px rgba(42,181,160,0.32))",
-            }}
-          />
-
-          {/* Divisor vertical */}
+        {(loading || itinerary) ? (
+          /* Mini-header: se muestra cuando hay itinerario en generación */
           <div style={{
-            width: "1px",
-            height: "110px",
-            background: "rgba(255,255,255,0.14)",
-            flexShrink: 0,
-            alignSelf: "center",
-          }}/>
-
-          {/* Contenido — derecha */}
-          <div style={{ flex: 1, minWidth: "260px", display: "flex", flexDirection: "column", gap: "12px" }}>
-
-            <h1 style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.5rem, 3.5vw, 2.3rem)",
-              fontWeight: 700,
-              color: "white",
-              margin: 0,
-              lineHeight: 1.2,
-              letterSpacing: "-0.01em",
-              textShadow: "0 2px 16px rgba(0,0,0,0.4)",
-            }}>
-              Planificá tu viaje.{" "}
-              <span style={{ color: "#2ab5a0" }}>Nosotros pensamos en todo.</span>
-            </h1>
-
-            <p style={{
-              fontSize: "clamp(12px, 1.6vw, 14px)",
-              color: "rgba(255,255,255,0.62)",
-              margin: 0,
-              lineHeight: 1.6,
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 400,
-            }}>
-              Itinerario, vuelos, hoteles, actividades, seguros y más — con IA y expertos en turismo.
-            </p>
-
-            {/* Sello diferenciador — argumento clave contra el "lo hago con ChatGPT" */}
+            display: "flex",
+            alignItems: "center",
+            gap: "14px",
+            marginBottom: "1.2rem",
+            padding: "10px 18px",
+            background: "rgba(8,16,54,0.88)",
+            backdropFilter: "blur(20px)",
+            borderRadius: "16px",
+            border: "1px solid rgba(255,255,255,0.11)",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+          }}>
+            <img
+              src="/logo.svg"
+              alt="Global Home Assist"
+              style={{ height: "28px", width: "auto", flexShrink: 0, filter: "drop-shadow(0 2px 8px rgba(42,181,160,0.3))" }}
+            />
+            {city && (
+              <>
+                <div style={{ width: "1px", height: "20px", background: "rgba(255,255,255,0.15)", flexShrink: 0 }} />
+                <span style={{
+                  fontSize: "13px", fontWeight: 600, color: "rgba(255,255,255,0.85)",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                }}>
+                  {city}{country ? `, ${country}` : ""}
+                </span>
+              </>
+            )}
+            <button
+              onClick={resetSearch}
+              style={{
+                marginLeft: "auto",
+                display: "inline-flex", alignItems: "center", gap: "6px",
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                borderRadius: "999px",
+                padding: "5px 14px",
+                fontSize: "12px", fontWeight: 600,
+                color: "rgba(255,255,255,0.75)",
+                cursor: "pointer",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                transition: "background 0.15s ease",
+              }}
+              onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.14)"}
+              onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.08)"}
+            >
+              ← Nueva búsqueda
+            </button>
+          </div>
+        ) : (
+          /* Header completo: solo visible antes de generar */
+          <div style={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            alignItems: "center",
+            gap: "28px",
+            marginBottom: "2.5rem",
+            padding: "1.8rem 2.2rem",
+            background: "rgba(8,16,54,0.82)",
+            backdropFilter: "blur(20px)",
+            borderRadius: "24px",
+            border: "1px solid rgba(255,255,255,0.13)",
+            boxShadow: "0 8px 40px rgba(0,0,0,0.3)",
+          }}>
+            <img
+              src="/logo.svg"
+              alt="Global Home Assist"
+              style={{
+                width: "clamp(180px, 22vw, 240px)",
+                height: "auto",
+                flexShrink: 0,
+                filter: "drop-shadow(0 4px 18px rgba(42,181,160,0.32))",
+              }}
+            />
             <div style={{
-              display: "inline-flex",
-              alignItems: "flex-start",
-              gap: "10px",
-              background: "rgba(42,181,160,0.10)",
-              border: "1px solid rgba(42,181,160,0.35)",
-              borderLeft: "3px solid #2ab5a0",
-              borderRadius: "10px",
-              padding: "9px 14px",
-            }}>
-              <span style={{ color: "#2ab5a0", fontSize: "15px", flexShrink: 0, lineHeight: 1.4 }}>✦</span>
-              <div>
-                <p style={{ margin: 0, fontSize: "13px", fontWeight: 700, color: "white", lineHeight: 1.4 }}>
-                  Cada recomendación, respaldada por quien ya estuvo ahí
-                </p>
-                <p style={{ margin: 0, fontSize: "11px", color: "rgba(255,255,255,0.58)", lineHeight: 1.4, marginTop: "2px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                  Inteligencia artificial con criterio de experto en turismo
-                </p>
+              width: "1px", height: "110px",
+              background: "rgba(255,255,255,0.14)",
+              flexShrink: 0, alignSelf: "center",
+            }}/>
+            <div style={{ flex: 1, minWidth: "260px", display: "flex", flexDirection: "column", gap: "12px" }}>
+              <h1 style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontSize: "clamp(1.5rem, 3.5vw, 2.3rem)",
+                fontWeight: 700, color: "white", margin: 0,
+                lineHeight: 1.2, letterSpacing: "-0.01em",
+                textShadow: "0 2px 16px rgba(0,0,0,0.4)",
+              }}>
+                Planificá tu viaje.{" "}
+                <span style={{ color: "#2ab5a0" }}>Nosotros pensamos en todo.</span>
+              </h1>
+              <p style={{
+                fontSize: "clamp(12px, 1.6vw, 14px)",
+                color: "rgba(255,255,255,0.62)", margin: 0, lineHeight: 1.6,
+                fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 400,
+              }}>
+                Itinerario, vuelos, hoteles, actividades, seguros y más — con IA y expertos en turismo.
+              </p>
+              <div style={{
+                display: "inline-flex", alignItems: "flex-start", gap: "10px",
+                background: "rgba(42,181,160,0.10)",
+                border: "1px solid rgba(42,181,160,0.35)",
+                borderLeft: "3px solid #2ab5a0",
+                borderRadius: "10px", padding: "9px 14px",
+              }}>
+                <span style={{ color: "#2ab5a0", fontSize: "15px", flexShrink: 0, lineHeight: 1.4 }}>✦</span>
+                <div>
+                  <p style={{ margin: 0, fontSize: "13px", fontWeight: 700, color: "white", lineHeight: 1.4 }}>
+                    Cada recomendación, respaldada por quien ya estuvo ahí
+                  </p>
+                  <p style={{ margin: 0, fontSize: "11px", color: "rgba(255,255,255,0.58)", lineHeight: 1.4, marginTop: "2px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    Inteligencia artificial con criterio de experto en turismo
+                  </p>
+                </div>
+              </div>
+              <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
+                {["✓ Gratis", "✓ Sin registro", "✓ En tu idioma"].map(label => (
+                  <span key={label} style={{
+                    fontSize: "11px", fontWeight: 700,
+                    color: "rgba(255,255,255,0.75)",
+                    background: "rgba(255,255,255,0.07)",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    borderRadius: "999px", padding: "3px 11px",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    letterSpacing: "0.04em",
+                  }}>{label}</span>
+                ))}
+                <a href="/blog" style={{
+                  display: "inline-flex", alignItems: "center", gap: "6px",
+                  background: "white", borderRadius: "100px",
+                  padding: "5px 16px", fontSize: "12px", fontWeight: 800,
+                  color: "#1a2a6c", textDecoration: "none",
+                  boxShadow: "0 2px 12px rgba(0,0,0,0.2)",
+                }}>
+                  ✍️ Revista <span style={{ color: "#2ab5a0" }}>→</span>
+                </a>
               </div>
             </div>
-
-            {/* Badges secundarios + links */}
-            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
-              {["✓ Gratis", "✓ Sin registro", "✓ En tu idioma"].map(label => (
-                <span key={label} style={{
-                  fontSize: "11px", fontWeight: 700,
-                  color: "rgba(255,255,255,0.75)",
-                  background: "rgba(255,255,255,0.07)",
-                  border: "1px solid rgba(255,255,255,0.15)",
-                  borderRadius: "999px",
-                  padding: "3px 11px",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  letterSpacing: "0.04em",
-                }}>{label}</span>
-              ))}
-              <a href="/blog" style={{
-                display: "inline-flex", alignItems: "center", gap: "6px",
-                background: "white", borderRadius: "100px",
-                padding: "5px 16px", fontSize: "12px", fontWeight: 800,
-                color: "#1a2a6c", textDecoration: "none",
-                boxShadow: "0 2px 12px rgba(0,0,0,0.2)",
-              }}>
-                ✍️ Revista <span style={{ color: "#2ab5a0" }}>→</span>
-              </a>
-            </div>
           </div>
-        </div>
+        )}
 
         {/* ===== FORMULARIO ===== */}
-        <div style={{
+        {(loading || !itinerary) && <div style={{
           background: "rgba(255,255,255,0.93)",
           backdropFilter: "blur(20px)",
           borderRadius: "24px",
@@ -772,6 +808,7 @@ export default function SearchForm() {
           padding: "28px",
           marginBottom: "2.5rem",
         }}>
+          {!loading && !itinerary && (<>
           {/* Ciudad destino */}
           <div style={{
               background: "linear-gradient(135deg, rgba(26,42,108,0.06), rgba(42,181,160,0.08))",
@@ -944,6 +981,8 @@ export default function SearchForm() {
             </button>
           </div>
 
+          </>)}
+
           {loading && (
             <div style={{
               marginTop: "28px",
@@ -1030,11 +1069,13 @@ export default function SearchForm() {
           )}
 
 
+          {/* Índice de calidad — solo visible cuando no hay itinerario generado */}
+          {!itinerary && <QualityIndex />}
+
           {/* Blog teaser — solo visible cuando no hay itinerario generado */}
           {!itinerary && <HomeBlogTeaser />}
 
-          <LegalDisclaimer language={language} />
-        </div>
+        </div>}
 
 
         {/* ===== ITINERARIO ===== */}
@@ -1506,6 +1547,8 @@ export default function SearchForm() {
 
           </div>
         )}
+
+        <LegalDisclaimer language={language} />
       </div>
     </>
   );

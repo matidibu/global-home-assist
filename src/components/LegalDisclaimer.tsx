@@ -20,13 +20,14 @@ export default function LegalDisclaimer({ language }: Props) {
     <div style={{
       marginTop: "20px",
       padding: "16px 20px",
-      background: "rgba(26,42,108,0.04)",
+      background: "rgba(8,16,54,0.82)",
+      backdropFilter: "blur(12px)",
       borderRadius: "12px",
-      border: "1px solid rgba(26,42,108,0.1)",
+      border: "1px solid rgba(255,255,255,0.1)",
     }}>
       <p style={{
         fontSize: "11px",
-        color: "#6b7280",
+        color: "rgba(255,255,255,0.55)",
         margin: 0,
         lineHeight: 1.7,
         fontFamily: "'Plus Jakarta Sans', sans-serif",
