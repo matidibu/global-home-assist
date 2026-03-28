@@ -1,10 +1,32 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
+const BASE_URL = "https://global-home-assist.vercel.app";
+
 export const metadata: Metadata = {
   title: "Términos y Condiciones | Global Home Assist",
   description: "Términos y Condiciones de uso, Política de Privacidad y declaración de uso de Inteligencia Artificial de Global Home Assist.",
-  alternates: { canonical: "https://global-home-assist.vercel.app/terminos" },
+  openGraph: {
+    type: "website",
+    title: "Términos y Condiciones — Global Home Assist",
+    description: "Términos y Condiciones de uso, Política de Privacidad y declaración de uso de Inteligencia Artificial de Global Home Assist.",
+    url: `${BASE_URL}/terminos`,
+    images: [
+      {
+        url: `${BASE_URL}/logo.svg`,
+        width: 512,
+        height: 512,
+        alt: "Global Home Assist",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Términos y Condiciones — Global Home Assist",
+    description: "Términos y Condiciones de uso, Política de Privacidad y declaración de uso de IA.",
+    images: [`${BASE_URL}/logo.svg`],
+  },
+  alternates: { canonical: `${BASE_URL}/terminos` },
 };
 
 const sections = [

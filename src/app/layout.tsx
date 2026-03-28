@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { CookieBanner } from "@/components/CookieBanner";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
@@ -6,6 +6,12 @@ import "./globals.css";
 const META_PIXEL_ID = "939419192381738";
 
 const BASE_URL = "https://global-home-assist.vercel.app";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#1a2a6c",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -53,7 +59,7 @@ export const metadata: Metadata = {
       "Creá tu itinerario de viaje personalizado con IA en segundos. Fotos reales, mapas interactivos, alertas de seguridad y todo lo que necesitás para tu próximo viaje.",
     images: [
       {
-        url: "/sky.jpg",
+        url: `${BASE_URL}/sky.jpg`,
         width: 1200,
         height: 630,
         alt: "Global Home Assist — Planificador de Viajes con IA",
@@ -65,7 +71,7 @@ export const metadata: Metadata = {
     title: "Global Home Assist | Planificador de Viajes con IA",
     description:
       "Creá tu itinerario de viaje personalizado con IA en segundos. Gratis.",
-    images: ["/sky.jpg"],
+    images: [`${BASE_URL}/sky.jpg`],
   },
   alternates: {
     canonical: BASE_URL,

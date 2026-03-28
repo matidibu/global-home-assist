@@ -13,6 +13,8 @@ export async function generateStaticParams() {
   return destinations.map(d => ({ slug: d.slug }));
 }
 
+const BASE_URL = "https://global-home-assist.vercel.app";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const dest = getDestination(slug);
@@ -21,12 +23,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Itinerario de viaje a ${dest.name} | Global Home Assist`,
     description: `Planificá tu viaje a ${dest.name}, ${dest.country} con inteligencia artificial. ${dest.description.slice(0, 120)}...`,
     openGraph: {
-      title: `${dest.emoji} Viaje a ${dest.name} — Itinerario personalizado con IA`,
+      type: "website",
+      title: `Viaje a ${dest.name} — Itinerario personalizado con IA`,
       description: dest.description,
-      url: `https://global-home-assist.vercel.app/destino/${dest.slug}`,
+      url: `${BASE_URL}/destino/${dest.slug}`,
+      images: [
+        {
+          url: `${BASE_URL}/sky.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `Viaje a ${dest.name} — Global Home Assist`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Viaje a ${dest.name} — Itinerario personalizado con IA`,
+      description: `Planificá tu viaje a ${dest.name}, ${dest.country} con inteligencia artificial.`,
+      images: [`${BASE_URL}/sky.jpg`],
     },
     alternates: {
-      canonical: `https://global-home-assist.vercel.app/destino/${dest.slug}`,
+      canonical: `${BASE_URL}/destino/${dest.slug}`,
     },
   };
 }

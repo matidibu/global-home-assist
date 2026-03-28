@@ -13,6 +13,8 @@ export async function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
 }
 
+const BASE_URL = "https://global-home-assist.vercel.app";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPost(slug);
@@ -23,13 +25,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: post.metaTitle,
       description: post.metaDescription,
-      url: `https://global-home-assist.vercel.app/blog/${post.slug}`,
+      url: `${BASE_URL}/blog/${post.slug}`,
       type: "article",
       publishedTime: post.publishDate,
       tags: post.tags,
+      images: [
+        {
+          url: `${BASE_URL}/sky.jpg`,
+          width: 1200,
+          height: 630,
+          alt: post.metaTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.metaTitle,
+      description: post.metaDescription,
+      images: [`${BASE_URL}/sky.jpg`],
     },
     alternates: {
-      canonical: `https://global-home-assist.vercel.app/blog/${post.slug}`,
+      canonical: `${BASE_URL}/blog/${post.slug}`,
     },
   };
 }

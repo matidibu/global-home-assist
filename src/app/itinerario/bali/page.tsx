@@ -13,6 +13,8 @@ import BaliMap from "./BaliMap";
 
 export const revalidate = 86400; // revalidar imágenes 1 vez por día
 
+const BASE_URL = "https://global-home-assist.vercel.app";
+
 export const metadata: Metadata = {
   title: "Itinerario de 5 días en Bali, Indonesia",
   description:
@@ -30,13 +32,29 @@ export const metadata: Metadata = {
     "ubud bali",
   ],
   openGraph: {
-    title: "🌺 Itinerario de 5 días en Bali, Indonesia — Generado con IA",
+    type: "article",
+    title: "Itinerario de 5 días en Bali, Indonesia — Generado con IA",
     description:
       "Terrazas de arroz, templos hindúes, playas de surf y volcanes. El itinerario perfecto para descubrir Bali en 5 días.",
-    url: "https://global-home-assist.vercel.app/itinerario/bali",
+    url: `${BASE_URL}/itinerario/bali`,
+    images: [
+      {
+        url: `${BASE_URL}/sky.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Itinerario de 5 días en Bali, Indonesia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Itinerario de 5 días en Bali, Indonesia — Generado con IA",
+    description:
+      "Terrazas de arroz, templos hindúes, playas de surf y volcanes. El itinerario perfecto para descubrir Bali en 5 días.",
+    images: [`${BASE_URL}/sky.jpg`],
   },
   alternates: {
-    canonical: "https://global-home-assist.vercel.app/itinerario/bali",
+    canonical: `${BASE_URL}/itinerario/bali`,
   },
 };
 

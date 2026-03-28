@@ -6,16 +6,33 @@ import { FeaturedPostCard, PostCard } from "@/components/BlogCards";
 import { BlogCategoryFilter } from "@/components/BlogCategoryFilter";
 import { ArrowLeft, Plane } from "lucide-react";
 
+const BASE_URL = "https://global-home-assist.vercel.app";
+
 export const metadata: Metadata = {
   title: "Blog de Viajes | Global Home Assist",
   description: "Guías de viaje honestas, itinerarios reales y consejos que ninguna agencia te da. Contenido original para viajeros que quieren más que una lista de atracciones.",
   openGraph: {
+    type: "website",
     title: "Blog de Viajes — Global Home Assist",
     description: "Guías honestas, itinerarios reales y los errores que nadie menciona. Para viajeros que piensan antes de reservar.",
-    url: "https://global-home-assist.vercel.app/blog",
+    url: `${BASE_URL}/blog`,
+    images: [
+      {
+        url: `${BASE_URL}/sky.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Blog de Viajes — Global Home Assist",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog de Viajes — Global Home Assist",
+    description: "Guías honestas, itinerarios reales y los errores que nadie menciona.",
+    images: [`${BASE_URL}/sky.jpg`],
   },
   alternates: {
-    canonical: "https://global-home-assist.vercel.app/blog",
+    canonical: `${BASE_URL}/blog`,
   },
 };
 
