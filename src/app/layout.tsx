@@ -15,6 +15,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
+  verification: {
+    google: "1_SkdVqmc1FEl4VCd45_gz4KI3eNTi1kUkUixBGjGfI",
+  },
   title: {
     default: "Global Home Assist | Planificador de Viajes con IA",
     template: "%s | Global Home Assist",
