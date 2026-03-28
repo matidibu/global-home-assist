@@ -61,7 +61,7 @@ export function Footer() {
 
           {/* Brand */}
           <div style={{ flex: 1, minWidth: "240px" }}>
-            <img src="/logo.svg" alt="Global Home Assist" style={{ width: "160px", height: "auto", marginBottom: "12px", filter: "brightness(0) invert(1) opacity(0.9)" }} />
+            <img src="/logo.svg" alt="Global Home Assist" style={{ width: "160px", height: "auto", marginBottom: "12px", filter: "drop-shadow(0 2px 10px rgba(42,181,160,0.25))" }} />
             <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.55)", lineHeight: 1.65, maxWidth: "320px", margin: 0 }}>
               Planificador de viajes con inteligencia artificial. Itinerarios personalizados, fotos reales y todo lo que necesitás para viajar mejor.
             </p>
