@@ -457,6 +457,7 @@ export default function SearchForm() {
   const [planeAnimKey, setPlaneAnimKey] = useState(0);
   const [showPremium, setShowPremium] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
+  const [formKey, setFormKey] = useState(0);
 
   const autocompleteRef = useRef<GeocoderAutocomplete | null>(null);
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
@@ -569,8 +570,7 @@ export default function SearchForm() {
     ac.on("place_select" as any, handleCitySelect);
     autocompleteRef.current = ac;
     return () => { container.innerHTML = ""; autocompleteRef.current = null; };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [itinerary]);
+  }, []);
 
   useEffect(() => {
     const containerId = accommodationMode === "search" ? "accommodation-search" : "accommodation-address";
@@ -632,6 +632,7 @@ export default function SearchForm() {
     setCountry("");
     setProvince("");
     setCityCoords(null);
+    setFormKey(k => k + 1);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -804,7 +805,7 @@ export default function SearchForm() {
         )}
 
         {/* ===== FORMULARIO ===== */}
-        {(loading || !itinerary) && <div style={{
+        {(loading || !itinerary) && <div key={formKey} style={{
           background: "rgba(255,255,255,0.93)",
           backdropFilter: "blur(20px)",
           borderRadius: "24px",
