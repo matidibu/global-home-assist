@@ -569,7 +569,8 @@ export default function SearchForm() {
     ac.on("place_select" as any, handleCitySelect);
     autocompleteRef.current = ac;
     return () => { container.innerHTML = ""; autocompleteRef.current = null; };
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [itinerary]);
 
   useEffect(() => {
     const containerId = accommodationMode === "search" ? "accommodation-search" : "accommodation-address";
@@ -627,6 +628,10 @@ export default function SearchForm() {
 
   function resetSearch() {
     setItinerary(null);
+    setCity("");
+    setCountry("");
+    setProvince("");
+    setCityCoords(null);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
