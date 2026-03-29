@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 380">
+  <defs>
+    <clipPath id="gc-a">
+      <circle cx="200" cy="150" r="105"/>
+    </clipPath>
+    <radialGradient id="globe-grad" cx="38%" cy="32%" r="68%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#2e4199"/>
+      <stop offset="100%" stop-color="#152060"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="380" fill="#0f172a"/>
+
+  <!-- Orbit ring — back half -->
+  <ellipse cx="200" cy="150" rx="140" ry="32"
+           transform="rotate(-18 200 150)"
+           fill="none" stroke="#2ab5a0" stroke-width="9" stroke-opacity="0.45"
+           stroke-linecap="round"/>
+
+  <!-- Globe fill -->
+  <circle cx="200" cy="150" r="105" fill="url(#globe-grad)" stroke="rgba(255,255,255,0.28)" stroke-width="2"/>
+
+  <!-- Grid lines -->
+  <g clip-path="url(#gc-a)" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.5">
+    <ellipse cx="200" cy="150" rx="105" ry="25"/>
+    <ellipse cx="200" cy="111" rx="92"  ry="22"/>
+    <ellipse cx="200" cy="189" rx="92"  ry="22"/>
+    <ellipse cx="200" cy="82"  rx="69"  ry="16"/>
+    <ellipse cx="200" cy="218" rx="69"  ry="16"/>
+    <line x1="200" y1="45" x2="200" y2="255"/>
+    <path d="M200,45 C155,90 155,210 200,255"/>
+    <path d="M200,45 C110,90 110,210 200,255"/>
+    <path d="M200,45 C245,90 245,210 200,255"/>
+    <path d="M200,45 C290,90 290,210 200,255"/>
+  </g>
+
+  <!-- House -->
+  <g clip-path="url(#gc-a)">
+    <polygon points="200,86 151,126 249,126" fill="white"/>
+    <rect x="161" y="126" width="78" height="62" fill="white"/>
+    <rect x="186" y="151" width="28" height="37" fill="#1a2a6c" rx="2"/>
+    <rect x="168" y="136" width="20" height="17" fill="#1a2a6c" rx="1"/>
+    <line x1="178"   y1="136" x2="178"   y2="153" stroke="white" stroke-width="1.5"/>
+    <line x1="168"   y1="144.5" x2="188" y2="144.5" stroke="white" stroke-width="1.5"/>
+    <rect x="212" y="136" width="20" height="17" fill="#1a2a6c" rx="1"/>
+    <line x1="222"   y1="136" x2="222"   y2="153" stroke="white" stroke-width="1.5"/>
+    <line x1="212"   y1="144.5" x2="232" y2="144.5" stroke="white" stroke-width="1.5"/>
+  </g>
+
+  <!-- Orbit ring — front swoosh -->
+  <path d="M 304 139 A 140 32 -18 0 1 109 202"
+        fill="none" stroke="#2ab5a0" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Wordmark -->
+  <text x="200" y="298"
+        text-anchor="middle"
+        font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+        font-size="34" font-weight="700"
+        fill="white" letter-spacing="3">GLOBAL HOME</text>
+
+  <!-- ASSIST with flanking rules -->
+  <line x1="67"  y1="318" x2="138" y2="318" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+  <text x="200" y="325"
+        text-anchor="middle"
+        font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+        font-size="21" font-weight="700"
+        fill="#2ab5a0" letter-spacing="7">ASSIST</text>
+  <line x1="262" y1="318" x2="333" y2="318" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+</svg>
