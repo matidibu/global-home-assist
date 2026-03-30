@@ -199,20 +199,16 @@ html, body {
   .pre-gen-header { padding: 1rem 1.2rem !important; gap: 16px !important; }
   .header-separator { display: none !important; }
 
-  /* QualityIndex: reducir padding en mobile */
+  /* QualityIndex: reducir padding en mobile y ocultar mockups */
   .quality-feature-row { padding: 28px 18px !important; }
   .quality-bottom-row { padding: 24px 18px !important; }
+  .quality-mockup-side { display: none !important; }
 }
 
-/* Sidebar nav izquierdo: solo desktop */
+/* Sidebar nav izquierdo: visible en todos los tamaños */
 .itinerary-sidebar { display: flex; }
-@media (max-width: 768px) {
-  .itinerary-sidebar { display: none !important; }
-  .sticky-top-nav { display: flex !important; }
-}
-@media (min-width: 769px) {
-  .sticky-top-nav { display: none !important; }
-}
+/* Ocultar sticky top nav en todos los tamaños (reemplazado por sidebar) */
+.sticky-top-nav { display: none !important; }
 
 /* Print-only block: hidden on screen */
 .print-only-itinerary { display: none; }

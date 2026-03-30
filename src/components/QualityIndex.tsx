@@ -251,8 +251,8 @@ export function QualityIndex() {
                 </div>
               </div>
 
-              {/* Mockup side */}
-              <div style={{
+              {/* Mockup side — oculto en mobile, visible en desktop */}
+              <div className="quality-mockup-side" style={{
                 flex: "1 1 280px",
                 display: "flex",
                 justifyContent: "center",
