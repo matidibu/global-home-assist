@@ -41,7 +41,7 @@ const SOCIAL = [
   },
 ];
 
-const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hola@globalhomeassist.com";
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "globalhomeassist.app@gmail.com";
 
 export function Footer() {
   const activeSocials = SOCIAL.filter(s => s.url);
