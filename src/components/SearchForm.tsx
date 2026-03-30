@@ -504,13 +504,13 @@ export default function SearchForm() {
     }
   }, []);
 
-  // ===== ENCODE: write itinerary to ?s= query param when generated =====
+  // ===== ENCODE: calcular share URL sin modificar la URL del browser =====
+  // No usamos replaceState para que F5 siempre vuelva a la página limpia
   useEffect(() => {
     if (!itinerary?.days) return;
     const shareData = { city, country, language, itinerary: stripMediaFromItinerary(itinerary) };
     const encoded = encodeShareData(shareData);
     const url = `${window.location.origin}${window.location.pathname}?s=${encoded}`;
-    window.history.replaceState(null, '', url);
     setShareUrl(url);
   }, [itinerary, city, country, language]);
 
@@ -633,6 +633,8 @@ export default function SearchForm() {
     setProvince("");
     setCityCoords(null);
     setFormKey(k => k + 1);
+    // Limpiar cualquier ?s= que pueda quedar en la URL
+    window.history.replaceState(null, '', window.location.pathname);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
