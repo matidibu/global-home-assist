@@ -678,7 +678,9 @@ export default function SearchForm() {
             <img
               src="/logo.svg"
               alt="Global Home Assist"
-              style={{ height: "28px", width: "auto", flexShrink: 0, filter: "drop-shadow(0 2px 8px rgba(42,181,160,0.3))" }}
+              onClick={resetSearch}
+              title="Nueva búsqueda"
+              style={{ height: "28px", width: "auto", flexShrink: 0, filter: "drop-shadow(0 2px 8px rgba(42,181,160,0.3))", cursor: "pointer" }}
             />
             {city && (
               <>
