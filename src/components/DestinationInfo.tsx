@@ -315,6 +315,9 @@ export default function DestinationInfo({ city, country, province, nationality, 
                 <div style={{ fontSize: "12px", color: "#6b7280" }}>📞 {h.phone}</div>
               </div>
             ))}
+            <div style={{ fontSize: "11px", color: "#9ca3af", fontStyle: "italic", marginTop: "4px" }}>
+              ⚠️ Verificar dirección antes de concurrir — datos orientativos generados por IA.
+            </div>
           </div>
         )}
 
@@ -357,6 +360,11 @@ export default function DestinationInfo({ city, country, province, nationality, 
                 <div style={{ fontSize: "12px", color: "#6b7280" }}>📞 {p.phone}</div>
               </div>
             ))}
+            {data.police && data.police.length > 0 && (
+              <div style={{ fontSize: "11px", color: "#9ca3af", fontStyle: "italic", marginTop: "8px" }}>
+                ⚠️ Verificar dirección antes de concurrir — datos orientativos generados por IA.
+              </div>
+            )}
           </div>
         )}
 

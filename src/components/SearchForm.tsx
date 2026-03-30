@@ -570,7 +570,7 @@ export default function SearchForm() {
     ac.on("place_select" as any, handleCitySelect);
     autocompleteRef.current = ac;
     return () => { container.innerHTML = ""; autocompleteRef.current = null; };
-  }, []);
+  }, [formKey]); // re-inicializar cuando el form se re-monta tras resetSearch
 
   useEffect(() => {
     const containerId = accommodationMode === "search" ? "accommodation-search" : "accommodation-address";
@@ -733,11 +733,14 @@ export default function SearchForm() {
             <img
               src="/logo.svg"
               alt="Global Home Assist"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              title="Ir al inicio"
               style={{
                 width: "clamp(180px, 22vw, 240px)",
                 height: "auto",
                 flexShrink: 0,
                 filter: "drop-shadow(0 4px 18px rgba(42,181,160,0.32))",
+                cursor: "pointer",
               }}
             />
             <div className="header-separator" style={{

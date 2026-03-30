@@ -105,7 +105,7 @@ Return ONLY valid JSON. No explanations, no markdown.
 
 Rules:
 - CRITICAL LOCATION ACCURACY: All data (hospitals, police stations, exchange_offices) MUST be physically located in the urban area of ${city}, ${country}, near GPS coordinates ${latitude},${longitude}. The GPS coordinates are the definitive reference — any place that is not within the city at those coordinates is WRONG. Do NOT use data from nearby cities or other cities in the same province/region.
-- If you are not certain a specific hospital or institution is in the city of ${city} (not just anywhere in the province), describe it generically rather than inventing a wrong address.
+- ADDRESS ACCURACY: For hospitals and police stations, only include a specific street address if you are highly confident it is correct for ${city}. If uncertain about the exact address, write the name of the institution and a general zone (e.g. "area central") instead of guessing a specific street. A missing or vague address is far better than a wrong one.
 - emergency_numbers: Use the REAL official emergency numbers for ${country}. Argentina → 911 (general), 101 (police), 107 (ambulance), 100 (fire). Chile → 133 (police), 131 (ambulance), 132 (fire). Brazil → 190 (police), 192 (ambulance), 193 (fire). EU countries → 112. USA/Canada → 911. Never default to 112 for non-EU countries.
 - travel_advisory.level: one of "Normal", "Precaución", "Alerta", "Crítico".
 - travel_advisory.security_alerts: 0–3 factual alerts specific to ${city}, ${country}. Empty array if none.
