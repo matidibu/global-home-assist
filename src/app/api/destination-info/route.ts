@@ -4,7 +4,7 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 export async function POST(req: Request) {
   try {
-    const { city, country, nationality, language, latitude, longitude } = await req.json();
+    const { city, country, province, nationality, language, latitude, longitude } = await req.json();
 
     const languageLabel =
       language === "es" ? "Spanish" :
@@ -39,9 +39,11 @@ export async function POST(req: Request) {
       console.error("Weather error:", e);
     }
 
+    const cityFull = `${city}${province ? `, ${province}` : ""}`;
+
     // Info estática via OpenAI
     const prompt = `
-You are a travel assistant. Provide practical destination info for a ${nationality} traveler visiting ${city}, ${country}.
+You are a travel assistant. Provide practical destination info for a ${nationality} traveler visiting ${cityFull}, ${country}.
 Write ALL text in ${languageLabel}.
 Return ONLY valid JSON. No explanations, no markdown.
 
@@ -53,8 +55,8 @@ Return ONLY valid JSON. No explanations, no markdown.
     "recommendation": "Brief overall recommendation for travelers"
   },
   "currency": {
-    "local_currency": "Euro",
-    "symbol": "€",
+    "local_currency": "Currency name",
+    "symbol": "$",
     "exchange_tip": "Short tip about exchanging money"
   },
   "exchange_offices": [
@@ -75,7 +77,7 @@ Return ONLY valid JSON. No explanations, no markdown.
     { "name": "Police station name", "address": "Address", "phone": "+XX XXX XXX XXX" }
   ],
   "emergency_numbers": {
-    "general": "112",
+    "general": "XXX",
     "police": "XXX",
     "ambulance": "XXX",
     "fire": "XXX"
@@ -88,13 +90,15 @@ Return ONLY valid JSON. No explanations, no markdown.
 }
 
 Rules:
+- CRITICAL LOCATION ACCURACY: All data (hospitals, police stations, exchange_offices) MUST be physically located within ${cityFull}, ${country}. Do NOT use data from nearby cities, the provincial/regional capital, or other cities in ${country}. If you are not certain a specific hospital or police station is in ${cityFull}, use a generic but accurate description (e.g. "Central police station of ${city}") rather than inventing addresses from another city.
+- emergency_numbers: Use the REAL official emergency numbers for ${country}. Examples: Argentina → general 911, police 101, ambulance 107, fire 100. Chile → general 133/131, police 133, ambulance 131, fire 132. Brazil → general 190/192, police 190, ambulance 192, fire 193. EU countries → general 112. USA/Canada → general 911. Always use the country-specific numbers, never default to 112 for non-EU countries.
 - travel_advisory.level: one of "Normal", "Precaución", "Alerta", "Crítico" based on actual current safety situation for ${country}/${city}. Use your knowledge of ongoing conflicts, civil unrest, terrorism risk, and crime levels.
-- travel_advisory.security_alerts: array of 0–3 concise alerts about active conflicts, terrorism, civil unrest, crime, or political instability relevant to ${city}, ${country}. Empty array if none. Be factual and specific (e.g. "Active armed conflict in border regions", "High petty crime in tourist areas").
+- travel_advisory.security_alerts: array of 0–3 concise alerts about active conflicts, terrorism, civil unrest, crime, or political instability relevant to ${cityFull}, ${country}. Empty array if none. Be factual and specific (e.g. "Active armed conflict in border regions", "High petty crime in tourist areas").
 - travel_advisory.health_alerts: array of 0–2 concise alerts about active disease outbreaks, endemic health risks, or required vaccinations relevant to ${country}. Empty array if none. Be factual (e.g. "Malaria risk in rural areas — prophylaxis recommended", "Yellow fever vaccination required for entry").
 - travel_advisory.recommendation: 1–2 sentences summarizing the overall safety and health situation for a tourist.
-- exchange_offices: 2 entries max
-- hospitals: 2 entries max, real hospitals in ${city}
-- police: 1 entry
+- exchange_offices: 2 entries max, located in ${cityFull}
+- hospitals: 2 entries max, real hospitals in ${cityFull}
+- police: 1 entry, located in ${cityFull}
 - useful_tips: 3 tips about safety, health, local customs
 - Return ONLY the JSON object
 `;

@@ -61,6 +61,7 @@ function formatDate(dateStr: string): string {
 interface Props {
   city: string;
   country: string;
+  province?: string;
   nationality: string;
   language: string;
   latitude: number;
@@ -68,7 +69,7 @@ interface Props {
   onEmergencyNumbers?: (numbers: { general: string; police: string; ambulance: string; fire: string }) => void;
 }
 
-export default function DestinationInfo({ city, country, nationality, language, latitude, longitude, onEmergencyNumbers }: Props) {
+export default function DestinationInfo({ city, country, province, nationality, language, latitude, longitude, onEmergencyNumbers }: Props) {
   const [data, setData] = useState<DestinationData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -82,7 +83,7 @@ export default function DestinationInfo({ city, country, nationality, language, 
     fetch("/api/destination-info", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ city, country, nationality, language, latitude, longitude }),
+      body: JSON.stringify({ city, country, province, nationality, language, latitude, longitude }),
     })
       .then(r => r.json())
       .then(d => {
@@ -94,7 +95,7 @@ export default function DestinationInfo({ city, country, nationality, language, 
         }
       })
       .catch(() => { setError(true); setLoading(false); });
-  }, [city, country, nationality, language, latitude, longitude, onEmergencyNumbers]);
+  }, [city, country, province, nationality, language, latitude, longitude, onEmergencyNumbers]);
 
   const cardStyle: React.CSSProperties = {
     background: "rgba(255,255,255,0.92)",

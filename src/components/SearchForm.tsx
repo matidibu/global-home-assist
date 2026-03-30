@@ -458,6 +458,7 @@ export default function SearchForm() {
   const [showPremium, setShowPremium] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
   const [formKey, setFormKey] = useState(0);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const autocompleteRef = useRef<GeocoderAutocomplete | null>(null);
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
@@ -658,6 +659,93 @@ export default function SearchForm() {
       )}
       <CountryBackground country={country} active={!!country} />
 
+      {/* ===== SIDEBAR NAV IZQUIERDO (solo desktop) ===== */}
+      {itinerary && (
+        <div className="itinerary-sidebar" style={{
+          position: "fixed",
+          left: 0,
+          top: "50%",
+          transform: "translateY(-50%)",
+          zIndex: 100,
+          display: "flex",
+          alignItems: "center",
+        }}>
+          {/* Panel desplegable */}
+          <div style={{
+            background: "rgba(8,16,54,0.97)",
+            backdropFilter: "blur(16px)",
+            borderRadius: "0 14px 14px 0",
+            padding: "14px 10px",
+            width: sidebarOpen ? "158px" : "0px",
+            overflow: "hidden",
+            transition: "width 0.25s ease",
+            display: "flex",
+            flexDirection: "column",
+            gap: "6px",
+            boxShadow: sidebarOpen ? "4px 0 24px rgba(0,0,0,0.25)" : "none",
+            border: sidebarOpen ? "1px solid rgba(255,255,255,0.1)" : "none",
+            borderRight: "none",
+          }}>
+            {[
+              { icon: "📅", label: "Itinerario", id: "sec-itinerario" },
+              ...(Array.isArray(itinerary.travelHacks) && itinerary.travelHacks.length > 0
+                ? [{ icon: "🧠", label: "Travel Hacks", id: "sec-hacks" }]
+                : []),
+              { icon: "🔧", label: "Herramientas", id: "sec-tools" },
+              ...(allActivities.length > 0 ? [{ icon: "🗺️", label: "Mapa", id: "sec-mapa" }] : []),
+              { icon: "🏥", label: "Destino", id: "sec-destino" },
+            ].map(({ icon, label, id }) => (
+              <button
+                key={id}
+                onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" })}
+                style={{
+                  background: "rgba(255,255,255,0.09)",
+                  border: "1px solid rgba(255,255,255,0.18)",
+                  borderRadius: "8px",
+                  padding: "8px 10px",
+                  color: "white",
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  whiteSpace: "nowrap",
+                  width: "100%",
+                  textAlign: "left",
+                  transition: "background 0.15s ease",
+                }}
+                onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.16)"}
+                onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.09)"}
+              >
+                {icon} {label}
+              </button>
+            ))}
+          </div>
+          {/* Botón toggle */}
+          <button
+            onClick={() => setSidebarOpen(p => !p)}
+            style={{
+              background: "rgba(8,16,54,0.97)",
+              border: "1px solid rgba(255,255,255,0.15)",
+              borderLeft: "none",
+              borderRadius: "0 8px 8px 0",
+              padding: "10px 6px",
+              color: "rgba(255,255,255,0.8)",
+              cursor: "pointer",
+              fontSize: "10px",
+              fontWeight: 700,
+              boxShadow: "3px 0 10px rgba(0,0,0,0.2)",
+              lineHeight: 1,
+            }}
+            title={sidebarOpen ? "Cerrar menú" : "Abrir menú de navegación"}
+          >
+            {sidebarOpen ? "◀" : "▶"}
+          </button>
+        </div>
+      )}
+
       <div className="main-container" style={{ maxWidth: "900px", margin: "0 auto", padding: "24px 20px" }}>
 
         {/* ===== HEADER ===== */}
@@ -714,7 +802,7 @@ export default function SearchForm() {
           </div>
         ) : (
           /* Header completo: solo visible antes de generar */
-          <div style={{
+          <div className="pre-gen-header" style={{
             display: "flex",
             flexDirection: "row",
             flexWrap: "wrap",
@@ -738,7 +826,7 @@ export default function SearchForm() {
                 filter: "drop-shadow(0 4px 18px rgba(42,181,160,0.32))",
               }}
             />
-            <div style={{
+            <div className="header-separator" style={{
               width: "1px", height: "110px",
               background: "rgba(255,255,255,0.14)",
               flexShrink: 0, alignSelf: "center",
@@ -1148,8 +1236,8 @@ export default function SearchForm() {
             {/* ══════════════════════════════════════════════════════ */}
             <section id="sec-itinerario" className="no-print" style={{ scrollMarginTop: "16px", marginBottom: "40px" }}>
 
-              {/* Sticky section nav */}
-              <div style={{
+              {/* Sticky section nav — solo visible en mobile */}
+              <div className="sticky-top-nav" style={{
                 position: "sticky", top: 0, zIndex: 50,
                 background: "rgba(8,16,54,0.97)",
                 backdropFilter: "blur(16px)",
@@ -1538,7 +1626,7 @@ export default function SearchForm() {
                   </div>
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                  <DestinationInfo city={city} country={country} nationality={nationality || "Argentina"} language={language} latitude={cityCoords.lat} longitude={cityCoords.lon} onEmergencyNumbers={setEmergencyNumbers} />
+                  <DestinationInfo city={city} country={country} province={province} nationality={nationality || "Argentina"} language={language} latitude={cityCoords.lat} longitude={cityCoords.lon} onEmergencyNumbers={setEmergencyNumbers} />
                   <MedicalAssistance city={city} country={country} language={language} />
                   <SOSButton city={city} country={country} emergencyNumbers={emergencyNumbers} />
                 </div>

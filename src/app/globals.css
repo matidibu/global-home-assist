@@ -194,6 +194,20 @@ html, body {
 
   /* Form padding */
   .main-container { padding: 16px 12px !important; }
+
+  /* Header pre-formulario: reducir padding y ocultar separador vertical */
+  .pre-gen-header { padding: 1rem 1.2rem !important; gap: 16px !important; }
+  .header-separator { display: none !important; }
+}
+
+/* Sidebar nav izquierdo: solo desktop */
+.itinerary-sidebar { display: flex; }
+@media (max-width: 768px) {
+  .itinerary-sidebar { display: none !important; }
+  .sticky-top-nav { display: flex !important; }
+}
+@media (min-width: 769px) {
+  .sticky-top-nav { display: none !important; }
 }
 
 /* Print-only block: hidden on screen */
