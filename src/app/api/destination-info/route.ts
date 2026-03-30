@@ -39,11 +39,25 @@ export async function POST(req: Request) {
       console.error("Weather error:", e);
     }
 
-    const cityFull = `${city}${province ? `, ${province}` : ""}`;
+    // Cuando ciudad y provincia tienen el mismo nombre (ej: "Santa Fe", "Santa Fe")
+    // el modelo puede confundirlos. Siempre usamos las coordenadas como ancla de verdad.
+    const cityIsProvince = province && city.trim().toLowerCase() === province.trim().toLowerCase();
+    const cityFull = `${city}${province && !cityIsProvince ? `, ${province}` : ""}`;
 
     // Info estática via OpenAI
     const prompt = `
-You are a travel assistant. Provide practical destination info for a ${nationality} traveler visiting ${cityFull}, ${country}.
+You are a travel assistant. Provide practical destination info for a ${nationality} traveler.
+
+TARGET CITY (selected via GPS autocomplete — treat this as ground truth):
+  City: ${city}
+  ${province ? `Province/State: ${province}` : ""}
+  Country: ${country}
+  GPS coordinates: ${latitude}, ${longitude}
+${cityIsProvince ? `
+IMPORTANT DISAMBIGUATION: The city name "${city}" is the same as the province name "${province}".
+You must provide information ONLY for the CITY of ${city} (the urban municipality at coordinates ${latitude},${longitude}), NOT for the province of ${province} as a whole.
+The city of ${city} and the province of ${province} are DIFFERENT things — the city is a single municipality within the province.
+` : ""}
 Write ALL text in ${languageLabel}.
 Return ONLY valid JSON. No explanations, no markdown.
 
@@ -90,15 +104,16 @@ Return ONLY valid JSON. No explanations, no markdown.
 }
 
 Rules:
-- CRITICAL LOCATION ACCURACY: All data (hospitals, police stations, exchange_offices) MUST be physically located within ${cityFull}, ${country}. Do NOT use data from nearby cities, the provincial/regional capital, or other cities in ${country}. If you are not certain a specific hospital or police station is in ${cityFull}, use a generic but accurate description (e.g. "Central police station of ${city}") rather than inventing addresses from another city.
-- emergency_numbers: Use the REAL official emergency numbers for ${country}. Examples: Argentina → general 911, police 101, ambulance 107, fire 100. Chile → general 133/131, police 133, ambulance 131, fire 132. Brazil → general 190/192, police 190, ambulance 192, fire 193. EU countries → general 112. USA/Canada → general 911. Always use the country-specific numbers, never default to 112 for non-EU countries.
-- travel_advisory.level: one of "Normal", "Precaución", "Alerta", "Crítico" based on actual current safety situation for ${country}/${city}. Use your knowledge of ongoing conflicts, civil unrest, terrorism risk, and crime levels.
-- travel_advisory.security_alerts: array of 0–3 concise alerts about active conflicts, terrorism, civil unrest, crime, or political instability relevant to ${cityFull}, ${country}. Empty array if none. Be factual and specific (e.g. "Active armed conflict in border regions", "High petty crime in tourist areas").
-- travel_advisory.health_alerts: array of 0–2 concise alerts about active disease outbreaks, endemic health risks, or required vaccinations relevant to ${country}. Empty array if none. Be factual (e.g. "Malaria risk in rural areas — prophylaxis recommended", "Yellow fever vaccination required for entry").
-- travel_advisory.recommendation: 1–2 sentences summarizing the overall safety and health situation for a tourist.
-- exchange_offices: 2 entries max, located in ${cityFull}
-- hospitals: 2 entries max, real hospitals in ${cityFull}
-- police: 1 entry, located in ${cityFull}
+- CRITICAL LOCATION ACCURACY: All data (hospitals, police stations, exchange_offices) MUST be physically located in the urban area of ${city}, ${country}, near GPS coordinates ${latitude},${longitude}. The GPS coordinates are the definitive reference — any place that is not within the city at those coordinates is WRONG. Do NOT use data from nearby cities or other cities in the same province/region.
+- If you are not certain a specific hospital or institution is in the city of ${city} (not just anywhere in the province), describe it generically rather than inventing a wrong address.
+- emergency_numbers: Use the REAL official emergency numbers for ${country}. Argentina → 911 (general), 101 (police), 107 (ambulance), 100 (fire). Chile → 133 (police), 131 (ambulance), 132 (fire). Brazil → 190 (police), 192 (ambulance), 193 (fire). EU countries → 112. USA/Canada → 911. Never default to 112 for non-EU countries.
+- travel_advisory.level: one of "Normal", "Precaución", "Alerta", "Crítico".
+- travel_advisory.security_alerts: 0–3 factual alerts specific to ${city}, ${country}. Empty array if none.
+- travel_advisory.health_alerts: 0–2 factual alerts. Empty array if none.
+- travel_advisory.recommendation: 1–2 sentences for a tourist.
+- exchange_offices: 2 entries max, in the city of ${city}
+- hospitals: 2 entries max, in the city of ${city}
+- police: 1 entry, in the city of ${city}
 - useful_tips: 3 tips about safety, health, local customs
 - Return ONLY the JSON object
 `;

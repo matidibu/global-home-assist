@@ -203,12 +203,11 @@ html, body {
   .quality-feature-row { padding: 28px 18px !important; }
   .quality-bottom-row { padding: 24px 18px !important; }
   .quality-mockup-side { display: none !important; }
-}
 
-/* Sidebar nav izquierdo: visible en todos los tamaños */
-.itinerary-sidebar { display: flex; }
-/* Ocultar sticky top nav en todos los tamaños (reemplazado por sidebar) */
-.sticky-top-nav { display: none !important; }
+  /* Stats bar: reducir padding y permitir wrap de texto */
+  .quality-stat-item { padding: 12px 6px !important; }
+  .quality-stat-label { font-size: 9px !important; word-break: break-word !important; line-height: 1.3 !important; }
+}
 
 /* Print-only block: hidden on screen */
 .print-only-itinerary { display: none; }

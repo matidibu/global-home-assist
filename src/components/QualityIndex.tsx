@@ -184,17 +184,17 @@ export function QualityIndex() {
           { stat: "100%", label: "Gratis", sub: "Sin tarjeta ni registro" },
           { stat: "30s", label: "Para generarlo", sub: "vs. 8 hs investigando solo" },
           { stat: "6", label: "Idiomas", sub: "Tu itinerario en el tuyo" },
-          { stat: "IA +", label: "Expertos en turismo", sub: "No es ChatGPT" },
+          { stat: "IA +", label: "Expertos", sub: "No es ChatGPT" },
         ].map((item, i, arr) => (
-          <div key={item.stat} style={{
+          <div key={item.stat} className="quality-stat-item" style={{
             flex: 1, padding: "18px 16px", textAlign: "center",
             borderRight: i < arr.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none",
           }}>
             <div style={{ fontSize: "clamp(18px, 2.5vw, 26px)", fontWeight: 900, color: "#2ab5a0", lineHeight: 1, marginBottom: "3px" }}>
               {item.stat}
             </div>
-            <div style={{ fontSize: "11px", fontWeight: 700, color: "white", marginBottom: "2px" }}>{item.label}</div>
-            <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.38)", display: "none" /* se muestra en desktop */ }}>{item.sub}</div>
+            <div className="quality-stat-label" style={{ fontSize: "11px", fontWeight: 700, color: "white", marginBottom: "2px" }}>{item.label}</div>
+            <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.38)", display: "none" }}>{item.sub}</div>
           </div>
         ))}
       </div>
