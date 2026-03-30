@@ -198,6 +198,10 @@ html, body {
   /* Header pre-formulario: reducir padding y ocultar separador vertical */
   .pre-gen-header { padding: 1rem 1.2rem !important; gap: 16px !important; }
   .header-separator { display: none !important; }
+
+  /* QualityIndex: reducir padding en mobile */
+  .quality-feature-row { padding: 28px 18px !important; }
+  .quality-bottom-row { padding: 24px 18px !important; }
 }
 
 /* Sidebar nav izquierdo: solo desktop */

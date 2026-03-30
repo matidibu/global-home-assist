@@ -132,7 +132,7 @@ Context: ${days} days, trip type: ${tripType || "general"}${budget ? `, budget: 
 Return ONLY valid JSON:
 {
   "travelHacks": [
-    { "icon": "✈️", "category": "Vuelos", "tip": "Specific actionable tip with real data", "saving": "Estimated saving" }
+    { "icon": "✈️", "category": "Vuelos", "tip": "Actionable tip", "saving": "Brief saving description" }
   ],
   "milesOpportunity": "One sentence about frequent flyer programs for this route, or empty string."
 }
@@ -141,7 +141,8 @@ Rules:
 - Exactly 4 hacks covering: (1) flights/booking timing for this specific route, (2) accommodation alternatives like house sitting or apartment rentals, (3) local transport tips, (4) food/activities savings
 - Be specific to ${city}, ${country}
 - Write ALL text in ${languageLabel}
-- saving: short phrase like "up to 30%" or "Hasta $200 USD"
+- CRITICAL — local prices change constantly due to inflation: NEVER quote specific prices in local currency for buses, taxis, meals, or daily expenses. Instead describe WHY it is economical (e.g. "El colectivo urbano es la opción más económica y conveniente para moverse por la ciudad" — no amounts). For international flights or hotels you may use approximate USD ranges.
+- saving: use qualitative terms only — "Muy económico", "Hasta 30% más barato", "Mejor relación precio-calidad", "Ahorrás en traslados". NEVER local currency amounts for domestic services.
 - milesOpportunity: if relevant, mention specific programs (e.g. American AAdvantage, Aerolíneas SUMA, etc.)
 - Return ONLY the JSON object. No markdown.`
       }],

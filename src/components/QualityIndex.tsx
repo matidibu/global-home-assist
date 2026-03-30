@@ -209,7 +209,7 @@ export function QualityIndex() {
       }}>
         {FEATURES.map((feat, i) => (
           <div key={feat.eyebrow}>
-            <div style={{
+            <div className="quality-feature-row" style={{
               display: "flex",
               flexDirection: feat.reverse ? "row-reverse" : "row",
               flexWrap: "wrap",
@@ -271,7 +271,7 @@ export function QualityIndex() {
 
         {/* ── Bottom: herramientas + CTA ── */}
         <div style={{ height: "1px", background: "rgba(255,255,255,0.06)" }} />
-        <div style={{ padding: "40px 40px 40px", display: "flex", flexWrap: "wrap", gap: "32px", alignItems: "center" }}>
+        <div className="quality-bottom-row" style={{ padding: "40px 40px 40px", display: "flex", flexWrap: "wrap", gap: "32px", alignItems: "center" }}>
           {/* Tools grid */}
           <div style={{ flex: "1 1 300px" }}>
             <p style={{ fontSize: "10px", fontWeight: 800, color: "#2ab5a0", textTransform: "uppercase", letterSpacing: "0.16em", margin: "0 0 16px 0" }}>
