@@ -439,7 +439,12 @@ export default function SearchForm() {
   const [country, setCountry] = useState("");
   const [province, setProvince] = useState("");
   const [nationality, setNationality] = useState("");
-  const [language, setLanguage] = useState("es");
+  const [language, setLanguage] = useState(() => {
+    if (typeof window === "undefined") return "es";
+    const browserLang = navigator.language?.slice(0, 2).toLowerCase();
+    const supported = ["es", "en", "fr", "it", "de", "pt"];
+    return supported.includes(browserLang) ? browserLang : "es";
+  });
   const [tripType, setTripType] = useState("");
   const [interests, setInterests] = useState<string[]>([]);
   const [budget, setBudget] = useState("");
