@@ -15,6 +15,7 @@ import ShareButton from "@/components/ShareButton";
 import { HomeBlogTeaser } from "@/components/HomeBlogTeaser";
 import { QualityIndex } from "@/components/QualityIndex";
 import { PremiumModal } from "@/components/PremiumModal";
+import { AdModal } from "@/components/AdModal";
 import { Plane, Sparkles } from "lucide-react";
 import "@geoapify/geocoder-autocomplete/styles/minimal.css";
 
@@ -463,6 +464,8 @@ export default function SearchForm() {
   const [showPremium, setShowPremium] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
   const [formKey, setFormKey] = useState(0);
+  const [showAd, setShowAd] = useState(false);
+  const [pendingItinerary, setPendingItinerary] = useState<any>(null);
 
   const autocompleteRef = useRef<GeocoderAutocomplete | null>(null);
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
@@ -623,9 +626,16 @@ export default function SearchForm() {
       if (!res.ok) { console.error("API error:", res.status); return; }
       const data = await res.json();
       if (!data?.days) { console.error("Invalid itinerary response:", data); return; }
-      setItinerary(data);
       if (typeof window !== "undefined" && (window as any).fbq) {
         (window as any).fbq("track", "Lead");
+      }
+      const count = parseInt(localStorage.getItem("gha_itinerary_count") || "0", 10);
+      localStorage.setItem("gha_itinerary_count", String(count + 1));
+      if (count >= 1) {
+        setPendingItinerary(data);
+        setShowAd(true);
+      } else {
+        setItinerary(data);
       }
     } catch (error) { console.error("Error:", error); }
     finally { setLoading(false); }
@@ -661,6 +671,12 @@ export default function SearchForm() {
           days={days}
           destination={city ? `${city}${country ? `, ${country}` : ""}` : ""}
           onClose={() => { setShowPremium(false); setDays(2); }}
+        />
+      )}
+      {showAd && pendingItinerary && (
+        <AdModal
+          language={language}
+          onContinue={() => { setItinerary(pendingItinerary); setPendingItinerary(null); setShowAd(false); }}
         />
       )}
       <CountryBackground country={country} active={!!country} />
