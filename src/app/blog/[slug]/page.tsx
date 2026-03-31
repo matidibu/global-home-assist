@@ -367,9 +367,72 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* Article body */}
-      <article style={{ maxWidth: "820px", margin: "0 auto", padding: "40px 24px 80px" }}>
+      <article style={{ maxWidth: "820px", margin: "0 auto", padding: "40px 24px 0" }}>
         {post.sections.map((section, i) => renderSection(section, i))}
       </article>
+
+      {/* Affiliate banners */}
+      <div style={{ maxWidth: "820px", margin: "0 auto", padding: "32px 24px 48px", display: "flex", flexDirection: "column", gap: "14px" }}>
+        <a
+          href="https://search.hotellook.com/?shmarker=712478&currency=USD"
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          style={{
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            gap: "16px", flexWrap: "wrap",
+            background: "rgba(255,255,255,0.06)",
+            border: "1.5px solid rgba(255,255,255,0.12)",
+            borderRadius: "16px", padding: "20px 24px", textDecoration: "none",
+          }}
+        >
+          <div>
+            <p style={{ margin: "0 0 3px", fontSize: "15px", fontWeight: 700, color: "white", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              🏨 ¿Ya reservaste tu hotel?
+            </p>
+            <p style={{ margin: 0, fontSize: "13px", color: "rgba(255,255,255,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              Compará precios en miles de hoteles y encontrá la mejor oferta.
+            </p>
+          </div>
+          <span style={{
+            background: "#003580", color: "white",
+            padding: "10px 20px", borderRadius: "10px",
+            fontSize: "13px", fontWeight: 700, whiteSpace: "nowrap",
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+          }}>
+            Buscar hoteles →
+          </span>
+        </a>
+
+        <a
+          href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(post.tags[0] ?? "travel")}&partner_id=NGZASHD`}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          style={{
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            gap: "16px", flexWrap: "wrap",
+            background: "rgba(255,102,0,0.07)",
+            border: "1.5px solid rgba(255,102,0,0.2)",
+            borderRadius: "16px", padding: "20px 24px", textDecoration: "none",
+          }}
+        >
+          <div>
+            <p style={{ margin: "0 0 3px", fontSize: "15px", fontWeight: 700, color: "#ff6600", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              🎯 Tours y experiencias
+            </p>
+            <p style={{ margin: 0, fontSize: "13px", color: "rgba(255,255,255,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              Entradas sin fila, tours guiados y experiencias únicas en tu destino.
+            </p>
+          </div>
+          <span style={{
+            background: "#ff6600", color: "white",
+            padding: "10px 20px", borderRadius: "10px",
+            fontSize: "13px", fontWeight: 700, whiteSpace: "nowrap",
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+          }}>
+            Ver tours →
+          </span>
+        </a>
+      </div>
 
       {/* Related posts */}
       {relatedPosts.length > 0 && (

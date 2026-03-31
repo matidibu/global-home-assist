@@ -11,6 +11,7 @@ import SOSButton from "@/components/SOSButton";
 import MedicalAssistance from "@/components/MedicalAssistance";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
 import InsuranceBanner from "@/components/InsuranceBanner";
+import FlightSearch from "@/components/FlightSearch";
 import ShareButton from "@/components/ShareButton";
 import { HomeBlogTeaser } from "@/components/HomeBlogTeaser";
 import { QualityIndex } from "@/components/QualityIndex";
@@ -30,6 +31,15 @@ const TravelMap = dynamic(() => import("@/components/TravelMap"), {
 
 const AFFILIATE = {
   getyourguide: "NGZASHD",
+};
+
+const HOTEL_LABELS: Record<string, { title: string; sub: string; cta: string }> = {
+  es: { title: "¿Ya reservaste tu hotel?", sub: "Compará precios en miles de hoteles y encontrá la mejor oferta para tu viaje.", cta: "Buscar hoteles →" },
+  en: { title: "Have you booked your hotel?", sub: "Compare prices across thousands of hotels and find the best deal for your trip.", cta: "Find hotels →" },
+  fr: { title: "Avez-vous réservé votre hôtel ?", sub: "Comparez des milliers d'hôtels et trouvez la meilleure offre.", cta: "Trouver des hôtels →" },
+  it: { title: "Hai già prenotato il tuo hotel?", sub: "Confronta migliaia di hotel e trova l'offerta migliore per il tuo viaggio.", cta: "Trova hotel →" },
+  de: { title: "Hast du dein Hotel gebucht?", sub: "Vergleiche tausende Hotels und finde das beste Angebot für deine Reise.", cta: "Hotels finden →" },
+  pt: { title: "Você já reservou seu hotel?", sub: "Compare preços em milhares de hotéis e encontre a melhor oferta para a sua viagem.", cta: "Buscar hotéis →" },
 };
 
 const LOADING_CONTENT: Record<string, { messages: string[]; steps: string[]; headline: string }> = {
@@ -1545,6 +1555,51 @@ export default function SearchForm() {
 
             <div className="no-print" style={{ marginBottom: "40px" }}>
               <InsuranceBanner language={language} />
+            </div>
+
+            <div className="no-print" style={{ marginBottom: "40px" }}>
+              <FlightSearch destination={city} language={language} />
+            </div>
+
+            <div className="no-print" style={{ marginBottom: "40px" }}>
+              <a
+                href="https://search.hotellook.com/?shmarker=712478&currency=USD"
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: "16px",
+                  flexWrap: "wrap",
+                  background: "linear-gradient(135deg, rgba(0,53,128,0.07), rgba(0,53,128,0.03))",
+                  border: "1.5px solid rgba(0,53,128,0.18)",
+                  borderRadius: "20px",
+                  padding: "24px 28px",
+                  textDecoration: "none",
+                }}
+              >
+                <div>
+                  <p style={{ margin: "0 0 4px", fontSize: "16px", fontWeight: 800, color: "#003580", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    🏨 {(HOTEL_LABELS[language] ?? HOTEL_LABELS.es).title}
+                  </p>
+                  <p style={{ margin: 0, fontSize: "13px", color: "#6b7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    {(HOTEL_LABELS[language] ?? HOTEL_LABELS.es).sub}
+                  </p>
+                </div>
+                <span style={{
+                  background: "#003580",
+                  color: "white",
+                  padding: "12px 24px",
+                  borderRadius: "12px",
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  whiteSpace: "nowrap",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                }}>
+                  {(HOTEL_LABELS[language] ?? HOTEL_LABELS.es).cta}
+                </span>
+              </a>
             </div>
 
             <div className="no-print" style={{ marginBottom: "40px" }}>
