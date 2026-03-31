@@ -440,10 +440,10 @@ export default function SearchForm() {
   const [province, setProvince] = useState("");
   const [nationality, setNationality] = useState("");
   const [language, setLanguage] = useState(() => {
-    if (typeof window === "undefined") return "es";
+    if (typeof window === "undefined") return "en";
     const browserLang = navigator.language?.slice(0, 2).toLowerCase();
     const supported = ["es", "en", "fr", "it", "de", "pt"];
-    return supported.includes(browserLang) ? browserLang : "es";
+    return supported.includes(browserLang) ? browserLang : "en";
   });
   const [tripType, setTripType] = useState("");
   const [interests, setInterests] = useState<string[]>([]);
