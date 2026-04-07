@@ -126,6 +126,7 @@ export default function FlightSearch({ destination, language }: Props) {
         </label>
         <button
           onClick={handleSearch}
+          className="flight-search-btn"
           style={{
             background: "white",
             color: "#1a2a6c",
@@ -135,16 +136,7 @@ export default function FlightSearch({ destination, language }: Props) {
             fontSize: "14px",
             fontWeight: 700,
             cursor: "pointer",
-            transition: "transform 0.2s ease, box-shadow 0.2s ease",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
-          }}
-          onMouseEnter={e => {
-            (e.currentTarget as HTMLButtonElement).style.transform = "scale(1.03)";
-            (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 6px 20px rgba(0,0,0,0.2)";
-          }}
-          onMouseLeave={e => {
-            (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)";
-            (e.currentTarget as HTMLButtonElement).style.boxShadow = "none";
           }}
         >
           {lb.search}

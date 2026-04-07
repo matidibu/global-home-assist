@@ -8,23 +8,13 @@ export function FeaturedPostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} style={{ textDecoration: "none", display: "block", marginBottom: "40px" }}>
       <article
+        className="blog-featured-card"
         style={{
           background: "rgba(255,255,255,0.06)",
           border: "1.5px solid rgba(255,255,255,0.12)",
           borderRadius: "24px",
           padding: "40px",
           cursor: "pointer",
-          transition: "border-color 0.2s, background 0.2s",
-        }}
-        onMouseEnter={(e) => {
-          const el = e.currentTarget as HTMLElement;
-          el.style.borderColor = "rgba(42,181,160,0.4)";
-          el.style.background = "rgba(255,255,255,0.09)";
-        }}
-        onMouseLeave={(e) => {
-          const el = e.currentTarget as HTMLElement;
-          el.style.borderColor = "rgba(255,255,255,0.12)";
-          el.style.background = "rgba(255,255,255,0.06)";
         }}
       >
         <div style={{ display: "flex", alignItems: "flex-start", gap: "32px", flexWrap: "wrap" }}>
@@ -38,7 +28,7 @@ export function FeaturedPostCard({ post }: { post: BlogPost }) {
             minWidth: "120px",
             textAlign: "center",
           }}>
-            {post.heroEmoji}
+            <span aria-hidden="true">{post.heroEmoji}</span>
           </div>
           <div style={{ flex: 1, minWidth: "260px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px", flexWrap: "wrap" }}>
@@ -92,6 +82,7 @@ export function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
       <article
+        className="blog-post-card"
         style={{
           background: "rgba(255,255,255,0.06)",
           border: "1.5px solid rgba(255,255,255,0.1)",
@@ -102,22 +93,9 @@ export function PostCard({ post }: { post: BlogPost }) {
           display: "flex",
           flexDirection: "column" as const,
           cursor: "pointer",
-          transition: "border-color 0.2s, background 0.2s, transform 0.2s",
-        }}
-        onMouseEnter={(e) => {
-          const el = e.currentTarget as HTMLElement;
-          el.style.borderColor = "rgba(42,181,160,0.35)";
-          el.style.background = "rgba(255,255,255,0.09)";
-          el.style.transform = "translateY(-2px)";
-        }}
-        onMouseLeave={(e) => {
-          const el = e.currentTarget as HTMLElement;
-          el.style.borderColor = "rgba(255,255,255,0.1)";
-          el.style.background = "rgba(255,255,255,0.06)";
-          el.style.transform = "translateY(0)";
         }}
       >
-        <div style={{ fontSize: "40px", marginBottom: "16px" }}>{post.heroEmoji}</div>
+        <div style={{ fontSize: "40px", marginBottom: "16px" }} aria-hidden="true">{post.heroEmoji}</div>
         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px", flexWrap: "wrap" }}>
           <span style={{
             padding: "2px 10px",
@@ -172,18 +150,16 @@ export function RelatedPostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
       <div
+        className="blog-related-card"
         style={{
           background: "rgba(255,255,255,0.05)",
           border: "1.5px solid rgba(255,255,255,0.1)",
           borderRadius: "16px",
           padding: "20px",
           cursor: "pointer",
-          transition: "border-color 0.2s",
         }}
-        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(42,181,160,0.35)"; }}
-        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.1)"; }}
       >
-        <div style={{ fontSize: "28px", marginBottom: "10px" }}>{post.heroEmoji}</div>
+        <div style={{ fontSize: "28px", marginBottom: "10px" }} aria-hidden="true">{post.heroEmoji}</div>
         <span style={{
           padding: "2px 8px",
           borderRadius: "100px",

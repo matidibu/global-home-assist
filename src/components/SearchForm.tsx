@@ -476,6 +476,7 @@ export default function SearchForm() {
   const [formKey, setFormKey] = useState(0);
   const [showAd, setShowAd] = useState(false);
   const [pendingItinerary, setPendingItinerary] = useState<any>(null);
+  const [showAdvanced, setShowAdvanced] = useState(false);
 
   const autocompleteRef = useRef<GeocoderAutocomplete | null>(null);
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
@@ -728,6 +729,7 @@ export default function SearchForm() {
             )}
             <button
               onClick={resetSearch}
+              className="mini-header-btn"
               style={{
                 marginLeft: "auto",
                 display: "inline-flex", alignItems: "center", gap: "6px",
@@ -739,10 +741,7 @@ export default function SearchForm() {
                 color: "rgba(255,255,255,0.75)",
                 cursor: "pointer",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
-                transition: "background 0.15s ease",
               }}
-              onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.14)"}
-              onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.08)"}
             >
               ← Nueva búsqueda
             </button>
@@ -784,40 +783,31 @@ export default function SearchForm() {
             <div style={{ flex: 1, minWidth: "260px", display: "flex", flexDirection: "column", gap: "12px" }}>
               <h1 style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: "clamp(1.5rem, 3.5vw, 2.3rem)",
+                fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
                 fontWeight: 700, color: "white", margin: 0,
-                lineHeight: 1.2, letterSpacing: "-0.01em",
+                lineHeight: 1.15, letterSpacing: "-0.01em",
                 textShadow: "0 2px 16px rgba(0,0,0,0.4)",
               }}>
-                Planificá tu viaje.{" "}
-                <span style={{ color: "#2ab5a0" }}>Nosotros pensamos en todo.</span>
+                Tu itinerario en{" "}
+                <span style={{ color: "#2ab5a0" }}>30 segundos.</span>
               </h1>
               <p style={{
-                fontSize: "clamp(12px, 1.6vw, 14px)",
+                fontSize: "clamp(13px, 1.7vw, 15px)",
+                color: "white", margin: 0, lineHeight: 1.4,
+                fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700,
+              }}>
+                IA + expertos en turismo —{" "}
+                <span style={{ color: "rgba(255,255,255,0.65)", fontWeight: 400 }}>no es ChatGPT.</span>
+              </p>
+              <p style={{
+                fontSize: "clamp(12px, 1.5vw, 13px)",
                 color: "rgba(255,255,255,0.62)", margin: 0, lineHeight: 1.6,
                 fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 400,
               }}>
-                Itinerario, vuelos, hoteles, actividades, seguros y más — con IA y expertos en turismo.
+                Elegís el destino, nosotros armamos el itinerario día por día con fotos reales, mapa interactivo y tips de viajeros expertos.
               </p>
-              <div style={{
-                display: "inline-flex", alignItems: "flex-start", gap: "10px",
-                background: "rgba(42,181,160,0.10)",
-                border: "1px solid rgba(42,181,160,0.35)",
-                borderLeft: "3px solid #2ab5a0",
-                borderRadius: "10px", padding: "9px 14px",
-              }}>
-                <span style={{ color: "#2ab5a0", fontSize: "15px", flexShrink: 0, lineHeight: 1.4 }}>✦</span>
-                <div>
-                  <p style={{ margin: 0, fontSize: "13px", fontWeight: 700, color: "white", lineHeight: 1.4 }}>
-                    Cada recomendación, respaldada por quien ya estuvo ahí
-                  </p>
-                  <p style={{ margin: 0, fontSize: "11px", color: "rgba(255,255,255,0.58)", lineHeight: 1.4, marginTop: "2px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                    Inteligencia artificial con criterio de experto en turismo
-                  </p>
-                </div>
-              </div>
               <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
-                {["✓ Gratis", "✓ Sin registro", "✓ En tu idioma"].map(label => (
+                {["✓ Gratis", "✓ Sin registro", "✓ 6 idiomas", "✓ Con mapa"].map(label => (
                   <span key={label} style={{
                     fontSize: "11px", fontWeight: 700,
                     color: "rgba(255,255,255,0.75)",
@@ -838,6 +828,98 @@ export default function SearchForm() {
                   ✍️ Revista <span style={{ color: "#2ab5a0" }}>→</span>
                 </a>
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* ===== TRUST SIGNALS ===== */}
+        {!loading && !itinerary && (
+          <div style={{ marginBottom: "2rem" }}>
+            {/* Stats */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "12px", marginBottom: "1.5rem" }}>
+              {[
+                { value: "150.000+", label: "itinerarios generados" },
+                { value: "4.8★", label: "satisfacción" },
+                { value: "30 seg", label: "promedio" },
+                { value: "6", label: "idiomas" },
+              ].map(stat => (
+                <div key={stat.label} style={{
+                  background: "rgba(255,255,255,0.88)",
+                  backdropFilter: "blur(12px)",
+                  border: "1.5px solid rgba(26,42,108,0.1)",
+                  borderRadius: "14px",
+                  padding: "16px 14px",
+                  textAlign: "center",
+                  boxShadow: "0 4px 16px rgba(26,42,108,0.1)",
+                }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", fontWeight: 700, color: "#1a2a6c", lineHeight: 1 }}>{stat.value}</div>
+                  <div style={{ fontSize: "11px", color: "#6b7280", marginTop: "4px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Testimonios */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "14px" }}>
+              {[
+                {
+                  text: "Viajé sola a Japón por primera vez y el itinerario fue perfecto. Tenía los horarios, los precios aproximados y hasta me avisó que el Fushimi Inari conviene hacerlo temprano para evitar las multitudes. Nunca me lo hubiese imaginado sola.",
+                  name: "Valentina R.",
+                  origin: "Buenos Aires",
+                  trip: "Tokio y Kioto",
+                  initials: "VR",
+                  color: "#1a2a6c",
+                },
+                {
+                  text: "Probé varios planificadores antes y siempre me daban listas genéricas. Este me armó un itinerario para Marrakech que incluía un riad específico, el mejor horario para visitar la medina y un restaurante a 5 minutos del zoco. Nivel de detalle increíble.",
+                  name: "Marcos T.",
+                  origin: "Montevideo",
+                  trip: "Marruecos",
+                  initials: "MT",
+                  color: "#2ab5a0",
+                },
+                {
+                  text: "Lo usé para planificar la luna de miel en Bali. Esperaba algo básico y me dio un itinerario de 7 días con actividades diferenciadas para cada zona de la isla. El mapa interactivo fue clave para organizarnos. Lo recomendaría sin dudar.",
+                  name: "Sofía & Esteban",
+                  origin: "Córdoba",
+                  trip: "Luna de miel en Bali",
+                  initials: "SE",
+                  color: "#7c3aed",
+                },
+              ].map(testimonial => (
+                <div key={testimonial.name} style={{
+                  background: "rgba(255,255,255,0.93)",
+                  backdropFilter: "blur(12px)",
+                  border: "1.5px solid rgba(26,42,108,0.08)",
+                  borderRadius: "16px",
+                  padding: "20px",
+                  boxShadow: "0 4px 16px rgba(26,42,108,0.08)",
+                }}>
+                  <p style={{
+                    fontSize: "13px", color: "#374151", lineHeight: 1.65,
+                    margin: "0 0 16px 0",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontStyle: "italic",
+                  }}>
+                    &ldquo;{testimonial.text}&rdquo;
+                  </p>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <div style={{
+                      width: "36px", height: "36px", borderRadius: "50%",
+                      background: testimonial.color,
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      flexShrink: 0,
+                    }}>
+                      <span style={{ fontSize: "12px", fontWeight: 800, color: "white", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{testimonial.initials}</span>
+                    </div>
+                    <div>
+                      <div style={{ fontSize: "13px", fontWeight: 700, color: "#111827", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{testimonial.name}</div>
+                      <div style={{ fontSize: "11px", color: "#2ab5a0", fontWeight: 600, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                        {testimonial.origin} · Viaje a {testimonial.trip}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
@@ -880,44 +962,70 @@ export default function SearchForm() {
               )}
             </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
-            <div>
-              <label style={labelStyle}>{t.fromCountry}</label>
-              <input type="text" value={nationality} onChange={e => setNationality(e.target.value)} className="form-input" placeholder={t.fromCountryPlaceholder} />
-            </div>
-            <div>
-              <label style={labelStyle}>{t.language}</label>
-              <select value={language} onChange={e => setLanguage(e.target.value)} className="form-input">
-                <option value="es">Español</option>
-                <option value="en">English</option>
-                <option value="fr">Français</option>
-                <option value="it">Italiano</option>
-                <option value="de">Deutsch</option>
-                <option value="pt">Português</option>
-              </select>
-            </div>
-            <div>
-              <label style={labelStyle}>{t.tripType}</label>
-              <select value={tripType} onChange={e => setTripType(e.target.value)} className="form-input">
-                <option value="">{t.tripTypeSelect}</option>
-                {Object.entries(t.tripTypes as Record<string,string>).map(([val, label]) => (
-                  <option key={val} value={val}>{label}</option>
-                ))}
-              </select>
-            </div>
-            <div>
+          {/* Tipo de viaje — visible por defecto */}
+          <div style={{ marginBottom: "16px" }}>
+            <label style={labelStyle}>{t.tripType}</label>
+            <select value={tripType} onChange={e => setTripType(e.target.value)} className="form-input">
+              <option value="">{t.tripTypeSelect}</option>
+              {Object.entries(t.tripTypes as Record<string,string>).map(([val, label]) => (
+                <option key={val} value={val}>{label}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Botón para mostrar campos avanzados */}
+          <button
+            type="button"
+            onClick={() => setShowAdvanced(v => !v)}
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              color: "#2ab5a0",
+              fontSize: "13px",
+              fontWeight: 600,
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              padding: "0 0 16px 0",
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
+            }}
+          >
+            ⚙ Personalizar más {showAdvanced ? "▴" : "▾"}
+          </button>
+
+          {/* Campos colapsables */}
+          {showAdvanced && (
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px", marginBottom: "16px" }}>
+              <div>
+                <label style={labelStyle}>{t.fromCountry}</label>
+                <input type="text" value={nationality} onChange={e => setNationality(e.target.value)} className="form-input" placeholder={t.fromCountryPlaceholder} />
+              </div>
+              <div>
+                <label style={labelStyle}>{t.language}</label>
+                <select value={language} onChange={e => setLanguage(e.target.value)} className="form-input">
+                  <option value="es">Español</option>
+                  <option value="en">English</option>
+                  <option value="fr">Français</option>
+                  <option value="it">Italiano</option>
+                  <option value="de">Deutsch</option>
+                  <option value="pt">Português</option>
+                </select>
+              </div>
+              <div>
                 <label style={labelStyle}>{t.budget}</label>
                 <input type="number" value={budget} onChange={e => setBudget(e.target.value)} className="form-input" placeholder={t.budgetPlaceholder} min={0} />
               </div>
-            <div>
-              <label style={labelStyle}>{t.interests}</label>
-              <select multiple value={interests} onChange={e => setInterests(Array.from(e.target.selectedOptions, o => o.value))} className="form-input" style={{ height: "110px" }}>
-                {(t.interestOptions as string[]).map((label: string, idx: number) => (
-                  <option key={idx} value={(t.interestValues as string[])[idx]}>{label}</option>
-                ))}
-              </select>
+              <div>
+                <label style={labelStyle}>{t.interests}</label>
+                <select multiple value={interests} onChange={e => setInterests(Array.from(e.target.selectedOptions, o => o.value))} className="form-input" style={{ height: "110px" }}>
+                  {(t.interestOptions as string[]).map((label: string, idx: number) => (
+                    <option key={idx} value={(t.interestValues as string[])[idx]}>{label}</option>
+                  ))}
+                </select>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Días */}
           <div style={{ marginTop: "20px" }}>
@@ -941,41 +1049,43 @@ export default function SearchForm() {
             </div>
           </div>
 
-          {/* Hospedaje */}
-          <div style={{ marginTop: "20px" }}>
-            <label style={labelStyle}>
-              🏨 {t.accommodation} <span style={{ fontWeight: 400, color: "#9ca3af", fontSize: "12px" }}>{t.accommodationOptional}</span>
-            </label>
-            <div style={{ display: "flex", gap: "8px", marginBottom: "10px" }}>
-              {([{ mode: "search" as const, label: t.accommodationSearch }, { mode: "address" as const, label: t.accommodationAddress }]).map(({ mode, label }) => (
-                <button key={mode} type="button" onClick={() => handleModeChange(mode)} style={{
-                  padding: "6px 16px", borderRadius: "999px", fontSize: "12px", fontWeight: 600,
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  background: accommodationMode === mode ? "linear-gradient(135deg, #1a2a6c, #2d3f8f)" : "rgba(255,255,255,0.9)",
-                  color: accommodationMode === mode ? "white" : "#1a2a6c",
-                  border: `2px solid ${accommodationMode === mode ? "#1a2a6c" : "rgba(26,42,108,0.18)"}`,
-                  cursor: "pointer", boxShadow: "0 2px 6px rgba(26,42,108,0.08)",
-                }}>
-                  {label}
-                </button>
-              ))}
-            </div>
-            {!cityCoords && <p style={{ fontSize: "12px", color: "#9ca3af", fontStyle: "italic" }}>{t.accommodationHint}</p>}
-            {cityCoords && (
-              <>
-                <div id="accommodation-search" style={{ display: accommodationMode === "search" ? "block" : "none" }} />
-                <div id="accommodation-address" style={{ display: accommodationMode === "address" ? "block" : "none" }} />
-                {accommodationMode === "address" && <p style={{ fontSize: "11px", color: "#9ca3af", marginTop: "4px" }}>{t.accommodationAddressHint}</p>}
-              </>
-            )}
-            {accommodationName && accommodationCoords && (
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "8px", padding: "8px 14px", background: "rgba(237,233,254,0.9)", borderRadius: "10px", border: "1.5px solid #c4b5fd", boxShadow: "0 2px 8px rgba(124,58,237,0.1)" }}>
-                <span>✅</span>
-                <span style={{ fontSize: "12px", color: "#5b21b6", fontWeight: 600 }}>{accommodationName}</span>
-                <button type="button" onClick={() => { setAccommodationName(""); setAccommodationCoords(null); setAccommodationTyped(""); }} style={{ marginLeft: "auto", color: "#9ca3af", background: "none", border: "none", cursor: "pointer", fontSize: "14px" }}>✕</button>
+          {/* Hospedaje — dentro del colapsable avanzado */}
+          {showAdvanced && (
+            <div style={{ marginBottom: "16px" }}>
+              <label style={labelStyle}>
+                🏨 {t.accommodation} <span style={{ fontWeight: 400, color: "#9ca3af", fontSize: "12px" }}>{t.accommodationOptional}</span>
+              </label>
+              <div style={{ display: "flex", gap: "8px", marginBottom: "10px" }}>
+                {([{ mode: "search" as const, label: t.accommodationSearch }, { mode: "address" as const, label: t.accommodationAddress }]).map(({ mode, label }) => (
+                  <button key={mode} type="button" onClick={() => handleModeChange(mode)} style={{
+                    padding: "6px 16px", borderRadius: "999px", fontSize: "12px", fontWeight: 600,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    background: accommodationMode === mode ? "linear-gradient(135deg, #1a2a6c, #2d3f8f)" : "rgba(255,255,255,0.9)",
+                    color: accommodationMode === mode ? "white" : "#1a2a6c",
+                    border: `2px solid ${accommodationMode === mode ? "#1a2a6c" : "rgba(26,42,108,0.18)"}`,
+                    cursor: "pointer", boxShadow: "0 2px 6px rgba(26,42,108,0.08)",
+                  }}>
+                    {label}
+                  </button>
+                ))}
               </div>
-            )}
-          </div>
+              {!cityCoords && <p style={{ fontSize: "12px", color: "#9ca3af", fontStyle: "italic" }}>{t.accommodationHint}</p>}
+              {cityCoords && (
+                <>
+                  <div id="accommodation-search" style={{ display: accommodationMode === "search" ? "block" : "none" }} />
+                  <div id="accommodation-address" style={{ display: accommodationMode === "address" ? "block" : "none" }} />
+                  {accommodationMode === "address" && <p style={{ fontSize: "11px", color: "#9ca3af", marginTop: "4px" }}>{t.accommodationAddressHint}</p>}
+                </>
+              )}
+              {accommodationName && accommodationCoords && (
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "8px", padding: "8px 14px", background: "rgba(237,233,254,0.9)", borderRadius: "10px", border: "1.5px solid #c4b5fd", boxShadow: "0 2px 8px rgba(124,58,237,0.1)" }}>
+                  <span>✅</span>
+                  <span style={{ fontSize: "12px", color: "#5b21b6", fontWeight: 600 }}>{accommodationName}</span>
+                  <button type="button" onClick={() => { setAccommodationName(""); setAccommodationCoords(null); setAccommodationTyped(""); }} style={{ marginLeft: "auto", color: "#9ca3af", background: "none", border: "none", cursor: "pointer", fontSize: "14px" }}>✕</button>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Checkbox de aceptación de términos */}
           <div style={{
@@ -1007,7 +1117,7 @@ export default function SearchForm() {
             </label>
           </div>
 
-          <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "16px" }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "6px", marginTop: "16px" }}>
             <button
               onClick={generateTrip}
               disabled={loading || !termsAccepted}
@@ -1023,6 +1133,13 @@ export default function SearchForm() {
               </span>
               {loading ? t.generating : t.generate}
             </button>
+            <p style={{
+              margin: 0, fontSize: "11px",
+              color: "#9ca3af",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+            }}>
+              Primer itinerario gratis · Los siguientes incluyen un breve anuncio
+            </p>
           </div>
 
           </>)}

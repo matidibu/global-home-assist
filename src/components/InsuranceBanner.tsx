@@ -24,7 +24,7 @@ export default function InsuranceBanner({ language }: Props) {
       tabIndex={0}
       onClick={() => window.open(INSURANCE_URL, "_blank", "noopener,noreferrer")}
       onKeyDown={e => e.key === "Enter" && window.open(INSURANCE_URL, "_blank", "noopener,noreferrer")}
-      className="insurance-inner"
+      className="insurance-inner insurance-banner"
       style={{
         background: "linear-gradient(135deg, #fffbeb, #fef3c7)",
         border: "1.5px solid #fbbf24",
@@ -35,19 +35,10 @@ export default function InsuranceBanner({ language }: Props) {
         justifyContent: "space-between",
         gap: "20px",
         cursor: "pointer",
-        transition: "transform 0.2s ease, box-shadow 0.2s ease",
-      }}
-      onMouseEnter={e => {
-        (e.currentTarget as HTMLDivElement).style.transform = "translateY(-2px)";
-        (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 24px rgba(251,191,36,0.25)";
-      }}
-      onMouseLeave={e => {
-        (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
-        (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
-        <span style={{ fontSize: "44px", flexShrink: 0 }}>🛡️</span>
+        <span role="img" aria-label="Escudo de seguro de viaje" style={{ fontSize: "44px", flexShrink: 0 }}>🛡️</span>
         <div>
           <div style={{ fontSize: "15px", fontWeight: 700, color: "#92400e", marginBottom: "5px" }}>
             {lb.title}

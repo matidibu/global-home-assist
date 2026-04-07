@@ -13,6 +13,32 @@
   --card-border: rgba(26, 42, 108, 0.12);
   --card-shadow: 0 8px 32px rgba(26, 42, 108, 0.14), 0 2px 8px rgba(26, 42, 108, 0.08);
   --card-shadow-hover: 0 16px 48px rgba(26, 42, 108, 0.22), 0 4px 16px rgba(26, 42, 108, 0.12);
+
+  /* Design tokens */
+  --color-navy: #1a2a6c;
+  --color-navy-dark: #0f1a4a;
+  --color-teal: #2ab5a0;
+  --color-teal-dark: #1a9e8c;
+  --color-teal-light: #e6f7f5;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  --shadow-card: 0 8px 32px rgba(26,42,108,0.14), 0 2px 8px rgba(26,42,108,0.08);
+  --shadow-card-hover: 0 20px 56px rgba(26,42,108,0.22), 0 4px 16px rgba(26,42,108,0.12);
 }
 
 * { box-sizing: border-box; }
@@ -49,6 +75,108 @@ html, body {
 }
 .geoapify-autocomplete-item:hover {
   background: #e6f7f5 !important;
+}
+
+/* Base card utility */
+.card-base {
+  background: rgba(255,255,255,0.95);
+  border: 1.5px solid rgba(26,42,108,0.1);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+/* Service card hover (replaces JS onMouseEnter/Leave) */
+.service-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Insurance banner hover (replaces JS onMouseEnter/Leave) */
+.insurance-banner {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.insurance-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(251,191,36,0.25);
+}
+
+/* SOS button hover (replaces JS onMouseEnter/Leave) */
+.sos-button {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.sos-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 28px rgba(220,38,38,0.55) !important;
+}
+
+/* AdModal ad-card hover (replaces JS onMouseEnter/Leave) */
+.ad-card-link {
+  transition: border-color 0.2s, background 0.2s;
+}
+.ad-card-link:hover {
+  border-color: #2ab5a0 !important;
+  background: #f0fdf9 !important;
+}
+
+/* Blog card hovers (replaces JS onMouseEnter/Leave) */
+.blog-featured-card {
+  transition: border-color 0.2s, background 0.2s;
+}
+.blog-featured-card:hover {
+  border-color: rgba(42,181,160,0.4) !important;
+  background: rgba(255,255,255,0.09) !important;
+}
+.blog-post-card {
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.blog-post-card:hover {
+  border-color: rgba(42,181,160,0.35) !important;
+  background: rgba(255,255,255,0.09) !important;
+  transform: translateY(-2px);
+}
+.blog-related-card {
+  transition: border-color 0.2s;
+}
+.blog-related-card:hover {
+  border-color: rgba(42,181,160,0.35) !important;
+}
+
+/* HomeBlogTeaser card hover */
+.blog-teaser-card {
+  transition: border-color 0.15s, background 0.15s;
+}
+.blog-teaser-card:hover {
+  border-color: rgba(42,181,160,0.4) !important;
+  background: rgba(255,255,255,0.11) !important;
+}
+
+/* FlightSearch button hover */
+.flight-search-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.flight-search-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* QualityIndex CTA button hover */
+.quality-cta-btn {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.quality-cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(42,181,160,0.5) !important;
+}
+
+/* Mini-header new-search button hover */
+.mini-header-btn {
+  transition: background 0.15s ease;
+}
+.mini-header-btn:hover {
+  background: rgba(255,255,255,0.14) !important;
 }
 
 /* Cards de actividad */

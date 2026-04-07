@@ -301,6 +301,7 @@ export function QualityIndex() {
             </p>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="quality-cta-btn"
               style={{
                 display: "inline-flex", alignItems: "center", gap: "8px",
                 background: "linear-gradient(135deg, #2ab5a0, #1a9985)",
@@ -308,15 +309,6 @@ export function QualityIndex() {
                 padding: "12px 24px", fontSize: "13px", fontWeight: 700,
                 cursor: "pointer",
                 boxShadow: "0 4px 20px rgba(42,181,160,0.35)",
-                transition: "transform 0.15s ease, box-shadow 0.15s ease",
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-1px)";
-                (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 6px 24px rgba(42,181,160,0.5)";
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)";
-                (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 4px 20px rgba(42,181,160,0.35)";
               }}
             >
               ✈️ Generá tu itinerario

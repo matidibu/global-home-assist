@@ -136,6 +136,7 @@ export function AdModal({ onContinue, language = "es" }: AdModalProps) {
           href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
+          className="ad-card-link"
           style={{
             display: "block",
             background: "#f8fafc",
@@ -144,16 +145,7 @@ export function AdModal({ onContinue, language = "es" }: AdModalProps) {
             padding: "20px 22px",
             marginBottom: "24px",
             textDecoration: "none",
-            transition: "border-color 0.2s, background 0.2s",
             cursor: "pointer",
-          }}
-          onMouseEnter={e => {
-            (e.currentTarget as HTMLAnchorElement).style.borderColor = "#2ab5a0";
-            (e.currentTarget as HTMLAnchorElement).style.background = "#f0fdf9";
-          }}
-          onMouseLeave={e => {
-            (e.currentTarget as HTMLAnchorElement).style.borderColor = "#e2e8f0";
-            (e.currentTarget as HTMLAnchorElement).style.background = "#f8fafc";
           }}
         >
           {/* Booking.com logo row */}

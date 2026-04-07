@@ -44,7 +44,11 @@ const eventServices: ServiceCard[] = [
 function Card({ card }: { card: ServiceCard }) {
   return (
     <div
+      role="button"
+      tabIndex={0}
       onClick={() => window.open(card.url, "_blank", "noopener,noreferrer")}
+      onKeyDown={e => e.key === "Enter" && window.open(card.url, "_blank", "noopener,noreferrer")}
+      className="service-card"
       style={{
         display: "flex",
         flexDirection: "column",
@@ -54,15 +58,6 @@ function Card({ card }: { card: ServiceCard }) {
         border: `1px solid ${card.borderColor}`,
         borderRadius: "12px",
         cursor: "pointer",
-        transition: "transform 0.2s ease, box-shadow 0.2s ease",
-      }}
-      onMouseEnter={e => {
-        (e.currentTarget as HTMLDivElement).style.transform = "translateY(-2px)";
-        (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
-      }}
-      onMouseLeave={e => {
-        (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
-        (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>

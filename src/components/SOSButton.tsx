@@ -70,7 +70,11 @@ export default function SOSButton({ city, country, emergencyNumbers }: Props) {
   return (
     <>
       <div
+        role="button"
+        tabIndex={0}
         onClick={() => { setOpen(true); setMessageSent(false); }}
+        onKeyDown={e => e.key === "Enter" && (setOpen(true), setMessageSent(false))}
+        className="sos-button"
         style={{
           display: "flex",
           alignItems: "center",
@@ -82,16 +86,7 @@ export default function SOSButton({ city, country, emergencyNumbers }: Props) {
           padding: "18px 32px",
           cursor: "pointer",
           boxShadow: "0 4px 20px rgba(220,38,38,0.4)",
-          transition: "transform 0.15s ease, box-shadow 0.15s ease",
           userSelect: "none",
-        }}
-        onMouseEnter={e => {
-          (e.currentTarget as HTMLDivElement).style.transform = "scale(1.02)";
-          (e.currentTarget as HTMLDivElement).style.boxShadow = "0 6px 28px rgba(220,38,38,0.55)";
-        }}
-        onMouseLeave={e => {
-          (e.currentTarget as HTMLDivElement).style.transform = "scale(1)";
-          (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 20px rgba(220,38,38,0.4)";
         }}
       >
         <span style={{ fontSize: "28px" }}>🆘</span>

@@ -62,7 +62,7 @@ export default function ShareButton({ destination, language, shareUrl }: Props) 
       flexWrap: "wrap",
     }}>
       <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-        <span style={{ fontSize: "38px", flexShrink: 0 }}>🔗</span>
+        <span role="img" aria-label="Compartir enlace" style={{ fontSize: "38px", flexShrink: 0 }}>🔗</span>
         <div>
           <div style={{ fontSize: "15px", fontWeight: 700, color: "#166534", marginBottom: "3px" }}>
             {lb.title}
