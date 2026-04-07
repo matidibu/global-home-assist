@@ -838,10 +838,10 @@ export default function SearchForm() {
             {/* Stats */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "12px", marginBottom: "1.5rem" }}>
               {[
-                { value: "150.000+", label: "itinerarios generados" },
-                { value: "4.8★", label: "satisfacción" },
-                { value: "30 seg", label: "promedio" },
-                { value: "6", label: "idiomas" },
+                { value: "IA + Expertos", label: "no es ChatGPT" },
+                { value: "30 seg", label: "tiempo promedio" },
+                { value: "80+ países", label: "destinos disponibles" },
+                { value: "6 idiomas", label: "español, inglés y más" },
               ].map(stat => (
                 <div key={stat.label} style={{
                   background: "rgba(255,255,255,0.88)",
@@ -858,69 +858,6 @@ export default function SearchForm() {
               ))}
             </div>
 
-            {/* Testimonios */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "14px" }}>
-              {[
-                {
-                  text: "Viajé sola a Japón por primera vez y el itinerario fue perfecto. Tenía los horarios, los precios aproximados y hasta me avisó que el Fushimi Inari conviene hacerlo temprano para evitar las multitudes. Nunca me lo hubiese imaginado sola.",
-                  name: "Valentina R.",
-                  origin: "Buenos Aires",
-                  trip: "Tokio y Kioto",
-                  initials: "VR",
-                  color: "#1a2a6c",
-                },
-                {
-                  text: "Probé varios planificadores antes y siempre me daban listas genéricas. Este me armó un itinerario para Marrakech que incluía un riad específico, el mejor horario para visitar la medina y un restaurante a 5 minutos del zoco. Nivel de detalle increíble.",
-                  name: "Marcos T.",
-                  origin: "Montevideo",
-                  trip: "Marruecos",
-                  initials: "MT",
-                  color: "#2ab5a0",
-                },
-                {
-                  text: "Lo usé para planificar la luna de miel en Bali. Esperaba algo básico y me dio un itinerario de 7 días con actividades diferenciadas para cada zona de la isla. El mapa interactivo fue clave para organizarnos. Lo recomendaría sin dudar.",
-                  name: "Sofía & Esteban",
-                  origin: "Córdoba",
-                  trip: "Luna de miel en Bali",
-                  initials: "SE",
-                  color: "#7c3aed",
-                },
-              ].map(testimonial => (
-                <div key={testimonial.name} style={{
-                  background: "rgba(255,255,255,0.93)",
-                  backdropFilter: "blur(12px)",
-                  border: "1.5px solid rgba(26,42,108,0.08)",
-                  borderRadius: "16px",
-                  padding: "20px",
-                  boxShadow: "0 4px 16px rgba(26,42,108,0.08)",
-                }}>
-                  <p style={{
-                    fontSize: "13px", color: "#374151", lineHeight: 1.65,
-                    margin: "0 0 16px 0",
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontStyle: "italic",
-                  }}>
-                    &ldquo;{testimonial.text}&rdquo;
-                  </p>
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <div style={{
-                      width: "36px", height: "36px", borderRadius: "50%",
-                      background: testimonial.color,
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      flexShrink: 0,
-                    }}>
-                      <span style={{ fontSize: "12px", fontWeight: 800, color: "white", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{testimonial.initials}</span>
-                    </div>
-                    <div>
-                      <div style={{ fontSize: "13px", fontWeight: 700, color: "#111827", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{testimonial.name}</div>
-                      <div style={{ fontSize: "11px", color: "#2ab5a0", fontWeight: 600, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                        {testimonial.origin} · Viaje a {testimonial.trip}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         )}
 
