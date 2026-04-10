@@ -12,7 +12,7 @@ interface AdModalProps {
 const TEXTS: Record<string, { title: string; sub: string; adTitle: string; adSub: string; adCta: string; btnReady: string; btnWait: (n: number) => string }> = {
   es: {
     title: "Tu itinerario está listo",
-    sub: "Mirá este anuncio para continuar — así podemos seguir siendo gratis.",
+    sub: "Antes de verlo, te recomendamos esta oferta de nuestro patrocinador.",
     adTitle: "¿Ya reservaste tu hotel?",
     adSub: "Compará precios en miles de hoteles y encontrá la mejor oferta para tu viaje.",
     adCta: "Ver hoteles en Booking.com →",
@@ -21,7 +21,7 @@ const TEXTS: Record<string, { title: string; sub: string; adTitle: string; adSub
   },
   en: {
     title: "Your itinerary is ready",
-    sub: "Watch this ad to continue — it helps us stay free.",
+    sub: "Before viewing it, check out this offer from our sponsor.",
     adTitle: "Have you booked your hotel yet?",
     adSub: "Compare thousands of hotels and find the best deal for your trip.",
     adCta: "Find hotels on Booking.com →",
@@ -30,7 +30,7 @@ const TEXTS: Record<string, { title: string; sub: string; adTitle: string; adSub
   },
   fr: {
     title: "Votre itinéraire est prêt",
-    sub: "Regardez cette annonce pour continuer — ça nous permet de rester gratuit.",
+    sub: "Avant de le voir, découvrez cette offre de notre partenaire.",
     adTitle: "Avez-vous réservé votre hôtel ?",
     adSub: "Comparez des milliers d'hôtels et trouvez la meilleure offre.",
     adCta: "Voir les hôtels sur Booking.com →",
@@ -39,7 +39,7 @@ const TEXTS: Record<string, { title: string; sub: string; adTitle: string; adSub
   },
   it: {
     title: "Il tuo itinerario è pronto",
-    sub: "Guarda questo annuncio per continuare — ci aiuta a restare gratuiti.",
+    sub: "Prima di vederlo, dai un'occhiata a questa offerta del nostro sponsor.",
     adTitle: "Hai già prenotato il tuo hotel?",
     adSub: "Confronta migliaia di hotel e trova l'offerta migliore per il tuo viaggio.",
     adCta: "Trova hotel su Booking.com →",
@@ -48,7 +48,7 @@ const TEXTS: Record<string, { title: string; sub: string; adTitle: string; adSub
   },
   de: {
     title: "Dein Reiseplan ist fertig",
-    sub: "Sieh dir diese Anzeige an, um fortzufahren — so bleiben wir kostenlos.",
+    sub: "Schau dir vor dem Anzeigen dieses Angebot unseres Sponsors an.",
     adTitle: "Hast du dein Hotel schon gebucht?",
     adSub: "Vergleiche tausende Hotels und finde das beste Angebot für deine Reise.",
     adCta: "Hotels auf Booking.com finden →",
@@ -57,7 +57,7 @@ const TEXTS: Record<string, { title: string; sub: string; adTitle: string; adSub
   },
   pt: {
     title: "Seu itinerário está pronto",
-    sub: "Veja este anúncio para continuar — assim podemos continuar sendo gratuitos.",
+    sub: "Antes de vê-lo, confira esta oferta do nosso patrocinador.",
     adTitle: "Você já reservou seu hotel?",
     adSub: "Compare preços em milhares de hotéis e encontre a melhor oferta.",
     adCta: "Ver hotéis no Booking.com →",
@@ -170,7 +170,7 @@ export function AdModal({ onContinue, language = "es" }: AdModalProps) {
               color: "#9ca3af",
               textTransform: "uppercase", letterSpacing: "0.08em",
             }}>
-              Patrocinado
+              Enlace de afiliado
             </span>
           </div>
 
