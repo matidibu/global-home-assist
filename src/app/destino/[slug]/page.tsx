@@ -3,7 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { destinations, getDestination } from "@/data/destinations";
 import { blogPosts } from "@/data/blogPosts";
-import { ArrowLeft, Calendar, Coins, Globe, Backpack, Plane, Sparkles, ChevronRight, BookOpen, Lightbulb } from "lucide-react";
+import { itineraries } from "@/data/itineraries";
+import { ArrowLeft, Calendar, Coins, Globe, Backpack, Plane, Sparkles, ChevronRight, BookOpen, Lightbulb, MapPin } from "lucide-react";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -52,6 +53,8 @@ export default async function DestinoPage({ params }: Props) {
   const { slug } = await params;
   const dest = getDestination(slug);
   if (!dest) notFound();
+
+  const itinerary = itineraries[slug] ?? null;
 
   const relatedPosts = blogPosts
     .filter(p =>
@@ -205,6 +208,78 @@ export default async function DestinoPage({ params }: Props) {
             ))}
           </div>
         </div>
+
+        {/* Itinerario de muestra */}
+        {itinerary && (
+          <div style={{ marginBottom: "48px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+              <MapPin size={18} color="#2ab5a0" strokeWidth={2} />
+              <h2 style={{
+                fontFamily: "'Playfair Display', serif",
+                color: "white", fontSize: "1.6rem",
+                fontWeight: 700, margin: 0,
+              }}>
+                Itinerario de 3 días en {dest.name}
+              </h2>
+            </div>
+            <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", marginBottom: "24px", lineHeight: 1.6 }}>
+              {itinerary.intro}
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+              {itinerary.days.map(d => (
+                <div key={d.day} style={{
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.11)",
+                  borderRadius: "18px",
+                  padding: "24px",
+                }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
+                    <div style={{
+                      width: "36px", height: "36px",
+                      borderRadius: "10px",
+                      background: "linear-gradient(135deg, #2ab5a0, #1a9e8c)",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      fontSize: "14px", fontWeight: 800, color: "white", flexShrink: 0,
+                    }}>
+                      {d.day}
+                    </div>
+                    <h3 style={{
+                      fontFamily: "'Playfair Display', serif",
+                      color: "white", fontSize: "1.05rem",
+                      fontWeight: 700, margin: 0,
+                    }}>
+                      Día {d.day}: {d.title}
+                    </h3>
+                  </div>
+                  <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "10px" }}>
+                    {d.activities.map((act, i) => (
+                      <li key={i} style={{
+                        display: "flex", gap: "10px", alignItems: "flex-start",
+                        fontSize: "14px", color: "rgba(255,255,255,0.8)", lineHeight: 1.65,
+                      }}>
+                        <span style={{ color: "#2ab5a0", fontWeight: 700, flexShrink: 0, marginTop: "1px" }}>•</span>
+                        {act}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <div style={{
+              marginTop: "20px",
+              background: "rgba(42,181,160,0.08)",
+              border: "1px solid rgba(42,181,160,0.2)",
+              borderRadius: "12px",
+              padding: "14px 18px",
+              fontSize: "13px",
+              color: "rgba(255,255,255,0.7)",
+              lineHeight: 1.6,
+            }}>
+              <strong style={{ color: "#2ab5a0" }}>¿Querés un itinerario personalizado?</strong>{" "}
+              Este es un plan general de referencia. Nuestro planificador con IA lo adapta a tus intereses, días disponibles y presupuesto — gratis y en 30 segundos.
+            </div>
+          </div>
+        )}
 
         {/* Info práctica */}
         <div style={{
