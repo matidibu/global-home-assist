@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { destinations, getDestination } from "@/data/destinations";
 import { blogPosts } from "@/data/blogPosts";
-import { ArrowLeft, Calendar, Coins, Globe, Backpack, Plane, Sparkles, ChevronRight, BookOpen } from "lucide-react";
+import { ArrowLeft, Calendar, Coins, Globe, Backpack, Plane, Sparkles, ChevronRight, BookOpen, Lightbulb } from "lucide-react";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -244,6 +244,51 @@ export default async function DestinoPage({ params }: Props) {
             ))}
           </div>
         </div>
+
+        {/* Tips únicos de viajero */}
+        {dest.tips && dest.tips.length > 0 && (
+          <div style={{ marginBottom: "48px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "20px" }}>
+              <Lightbulb size={18} color="#2ab5a0" strokeWidth={2} />
+              <h2 style={{
+                fontFamily: "'Playfair Display', serif",
+                color: "white", fontSize: "1.4rem",
+                fontWeight: 700, margin: 0,
+              }}>
+                Consejos de viajero para {dest.name}
+              </h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              {dest.tips.map((tip, i) => (
+                <div key={i} style={{
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderLeft: "3px solid #2ab5a0",
+                  borderRadius: "12px",
+                  padding: "16px 20px",
+                  display: "flex",
+                  gap: "12px",
+                  alignItems: "flex-start",
+                }}>
+                  <span style={{
+                    color: "#2ab5a0", fontWeight: 800,
+                    fontSize: "13px", flexShrink: 0, marginTop: "1px",
+                  }}>
+                    {i + 1}.
+                  </span>
+                  <p style={{
+                    fontSize: "14px",
+                    color: "rgba(255,255,255,0.82)",
+                    lineHeight: 1.7,
+                    margin: 0,
+                  }}>
+                    {tip}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Artículos relacionados del blog */}
         {relatedPosts.length > 0 && (

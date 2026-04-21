@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { CookieBanner } from "@/components/CookieBanner";
 import { Footer } from "@/components/Footer";
+import { SiteNav } from "@/components/SiteNav";
 import "./globals.css";
 
 const META_PIXEL_ID = "939419192381738";
@@ -153,6 +154,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <SiteNav />
         {children}
         <Footer />
         <CookieBanner />

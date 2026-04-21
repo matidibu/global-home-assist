@@ -11,6 +11,7 @@ export interface Destination {
   language: string;
   avgBudget: string;
   continent: string;
+  tips: string[];
 }
 
 export const destinations: Destination[] = [
@@ -32,6 +33,12 @@ export const destinations: Destination[] = [
     language: "Árabe · inglés muy extendido",
     avgBudget: "$150–350 USD/día",
     continent: "Asia",
+    tips: [
+      "El Burj Khalifa se reserva online con semanas de anticipación en temporada alta. La terraza del piso 148 (At The Top SKY) cuesta el doble que la del 124, pero las vistas son notablemente superiores.",
+      "El alcohol solo se sirve en hoteles y restaurantes con licencia. Es significativamente más caro que en Europa: presupuestá $15–25 USD por copa si querés tomar.",
+      "Las mezquitas requieren vestimenta modesta: hombros, pecho y rodillas cubiertos. En muchas ofrecen abayyas gratuitas para mujeres, pero llevá una bufanda por las dudas.",
+      "El metro de Dubai (estaciones verdes y rojas) es la forma más económica de ir del aeropuerto al centro. Un viaje completo cuesta menos de $2 con la tarjeta Nol, vs $20–30 de taxi.",
+    ],
   },
   {
     slug: "paris",
@@ -51,6 +58,12 @@ export const destinations: Destination[] = [
     language: "Francés",
     avgBudget: "$120–250 USD/día",
     continent: "Europa",
+    tips: [
+      "Los museos nacionales de París son gratuitos el primer domingo de cada mes. El Louvre recibe 9 millones de visitantes por año: llegá antes de las 9am para evitar filas de una hora.",
+      "Pedí 'un café' (expresso) en pie en la barra de cualquier bistró parisino: es 30–50% más barato que sentado y así desayunan los parisinos de verdad.",
+      "La Torre Eiffel tiene listas de espera de 2+ horas en julio y agosto. Reservá el acceso online con semanas de anticipación — el ascensor al segundo piso se agota primero.",
+      "La tarjeta Navigo semana (lunes a domingo) cuesta €30 y cubre metro, RER y autobuses sin límite. Si llegás lunes o martes, suele convenir frente a los tickets individuales.",
+    ],
   },
   {
     slug: "roma",
@@ -70,6 +83,12 @@ export const destinations: Destination[] = [
     language: "Italiano",
     avgBudget: "$100–200 USD/día",
     continent: "Europa",
+    tips: [
+      "Los Museos del Vaticano requieren reserva anticipada obligatoria de mayo a octubre. Sin reserva, esperás 3–4 horas bajo el sol en la fila exterior. Reservá online al menos una semana antes.",
+      "El Coliseo, el Foro Romano y el Palatino comparten un mismo ticket (€18) válido para los tres sitios. Reservá online para evitar la fila — en verano puede ser de 90 minutos.",
+      "Los bares romanos cobran diferente según estés parado o sentado. Tomá el espresso en la barra como los locales: es más económico, más rápido y más auténtico.",
+      "Evitá los restaurantes en la primera fila de las plazas turísticas (Navona, Trevi, Campo de' Fiori): cobran el doble por la ubicación. A dos calles de distancia la calidad sube y el precio baja.",
+    ],
   },
   {
     slug: "barcelona",
@@ -89,6 +108,12 @@ export const destinations: Destination[] = [
     language: "Español · catalán",
     avgBudget: "$100–200 USD/día",
     continent: "Europa",
+    tips: [
+      "La Sagrada Família requiere reserva online obligatoria. Las entradas para subir a las torres se agotan con semanas de anticipación en temporada alta — comprá todo junto desde la web oficial.",
+      "El barrio de Gràcia (no confundir con el Eixample) es donde viven los barceloneses reales: mercados de barrio, restaurantes sin trampa turística y la mejor vida de café de la ciudad.",
+      "Para playa de calidad sin masificación, tomá el tren de cercanías (Renfe) a Sitges (40 min, $4) o Castelldefels (25 min, $3): arena más limpia y mucho menos gente que Barceloneta.",
+      "El mercado de La Boqueria está pensado para turistas; los locales compran en el Mercat de l'Abaceria en Gràcia o en Santa Caterina en el barrio gótico. Precios y calidad incomparables.",
+    ],
   },
   {
     slug: "londres",
@@ -108,6 +133,12 @@ export const destinations: Destination[] = [
     language: "Inglés",
     avgBudget: "$150–300 USD/día",
     continent: "Europa",
+    tips: [
+      "El British Museum, la National Gallery, la Tate Modern, el Natural History Museum y el Victoria & Albert Museum son completamente gratuitos. Planificá al menos dos visitas en tu itinerario.",
+      "Cruzar el Tower Bridge a pie es gratuito. La visita al interior con las pasarelas de vidrio cuesta £29.90 — vale si te gustan las alturas y la ingeniería victoriana.",
+      "En el TKTS de Leicester Square hay entradas de West End a 20–50% de descuento el mismo día. Abrí a las 10am y la fila ya está formada; llegá 30 minutos antes.",
+      "El Oyster Card o tu tarjeta de débito/crédito con contactless tiene un tope diario de gasto en el metro: después de cierto monto, los viajes adicionales son gratuitos. Aprovechalo.",
+    ],
   },
   {
     slug: "nueva-york",
@@ -127,6 +158,12 @@ export const destinations: Destination[] = [
     language: "Inglés",
     avgBudget: "$150–350 USD/día",
     continent: "América",
+    tips: [
+      "El Staten Island Ferry es completamente gratuito y ofrece las mejores vistas de la Estatua de la Libertad sin pagar el tour en barco. Sale cada 30 minutos desde Whitehall Terminal.",
+      "En el TKTS de Times Square conseguís entradas de Broadway a 20–50% de descuento el mismo día. La fila empieza antes de que abra a las 10am, pero avanza rápido.",
+      "El 'Top of the Rock' del Rockefeller Center tiene una ventaja sobre el Empire State: el Empire State aparece en el horizonte, dando una perspectiva única del skyline que no podés tener desde arriba del Empire.",
+      "El Metro de Nueva York corre las 24 horas. El OMNY (pago contactless) tiene un tope semanal: después de 12 viajes, los adicionales son gratuitos por el resto de la semana.",
+    ],
   },
   {
     slug: "tokio",
@@ -146,6 +183,12 @@ export const destinations: Destination[] = [
     language: "Japonés",
     avgBudget: "$100–200 USD/día",
     continent: "Asia",
+    tips: [
+      "El IC Card (Suica o Pasmo) es la tarjeta recargable para todo el transporte público de Tokio. Funcionan también en máquinas expendedoras y en algunos konbini. Mucho más cómodo que pagar cada viaje.",
+      "Los konbini (7-Eleven, FamilyMart, Lawson) tienen onigiri, bento y café de calidad sorprendente. Desayunar en un convenience store japonés por ¥500 es una experiencia cultural obligatoria.",
+      "La línea Yamanote (circular verde) conecta todas las estaciones turísticas principales de Tokio: Shibuya, Shinjuku, Harajuku, Akihabara, Ueno, Ikebukuro. Dominarla es dominar la ciudad.",
+      "Durante la temporada de cerezos (hanami, late marzo – principios de abril) los precios de hotel suben 50–100%. Reservá con 3+ meses de anticipación si es tu objetivo principal.",
+    ],
   },
   {
     slug: "cancun",
@@ -165,6 +208,12 @@ export const destinations: Destination[] = [
     language: "Español",
     avgBudget: "$80–180 USD/día",
     continent: "América",
+    tips: [
+      "El autobús ADO desde el aeropuerto a la Zona Hotelera cuesta $8 USD vs $60–80 de taxi. Sale cada hora, tarda 30 minutos y es completamente seguro. No hay razón para tomar taxi.",
+      "Los cenotes más fotogénicos no son los más famosos: el Cenote Zací en Valladolid y los de San Antonio Muul son igualmente bellos, casi vacíos y cobran la mitad.",
+      "Para ir a Chichén Itzá de manera independiente, tomá el ADO desde la terminal de Cancún (2.5 hs, $15). No es necesario el tour organizado — la visita libre es mejor.",
+      "La zona de Bacalar (3.5 hs al sur) tiene una laguna de 7 colores menos conocida que Cancún pero más impresionante. Si tenés días extra, vale absolutamente el viaje.",
+    ],
   },
   {
     slug: "miami",
@@ -184,6 +233,12 @@ export const destinations: Destination[] = [
     language: "Inglés · español muy extendido",
     avgBudget: "$120–250 USD/día",
     continent: "América",
+    tips: [
+      "Los murales más importantes de Wynwood están en las calles aledañas al recinto pago de Wynwood Walls, no adentro. El recorrido exterior es completamente gratuito y más extenso.",
+      "Las happy hours en los bares de Brickell y Midtown arrancan a las 3–4pm y tienen tragos premium desde $7. En South Beach el mismo trago cuesta $18–22.",
+      "La ruta A1A al norte de South Beach (Hollywood, Fort Lauderdale) tiene playas igual de hermosas, sin la masificación y con estacionamiento gratuito.",
+      "El Metrorail conecta el aeropuerto con Brickell en 15 minutos por $2.25 con tarjeta EASY. El taxi o Uber cuesta $30–45 según el tráfico.",
+    ],
   },
   {
     slug: "rio-de-janeiro",
@@ -203,6 +258,12 @@ export const destinations: Destination[] = [
     language: "Portugués",
     avgBudget: "$80–160 USD/día",
     continent: "América",
+    tips: [
+      "El Pan de Azúcar en días nublados puede tener visibilidad cero desde el mirador. Consultá el estado del cielo esa mañana antes de subir — es uno de los mayores errores del viajero.",
+      "En Ipanema y Copacabana, los 'postos' numeran las zonas de playa: el Posto 9 en Ipanema es el favorito de los cariocas jóvenes; el Posto 6 en Copa, más familiar y tranquilo.",
+      "Las caipirinhas más auténticas y económicas están en los bares de Santa Teresa y Lapa, no en Ipanema. La diferencia de precio es de hasta 3x por el mismo trago.",
+      "El Cristo Redentor tiene acceso en tren cremallera (Trem do Corcovado, $20 USD) o en van desde el Largo do Machado. El tren es más pintoresco; la van llega más lejos y es más cara.",
+    ],
   },
   {
     slug: "buenos-aires",
@@ -222,6 +283,12 @@ export const destinations: Destination[] = [
     language: "Español",
     avgBudget: "$60–130 USD/día",
     continent: "América",
+    tips: [
+      "El tipo de cambio informal (dólar blue) suele duplicar el oficial. Llevar dólares en efectivo para cambiar en casas de cambio habilitadas es la forma más común de optimizar el presupuesto como viajero extranjero.",
+      "Las milongas más auténticas son el Salón Canning, La Viruta y el Club Gricel — no los shows para turistas de La Boca. El precio de entrada suele incluir clase inicial.",
+      "El subte porteño (metro) requiere la tarjeta SUBE para pagar: la cargás en boletería o kioscosofficial. Sin tarjeta, no podés entrar. Sacátela el primer día.",
+      "Los restaurantes porteños cobran 'cubierto': un cargo de $2–5 USD por comensal que no es propina sino el servicio de mesa. Es completamente normal e incluye el pan.",
+    ],
   },
   {
     slug: "cartagena",
@@ -241,6 +308,12 @@ export const destinations: Destination[] = [
     language: "Español",
     avgBudget: "$60–130 USD/día",
     continent: "América",
+    tips: [
+      "Alojate dentro de la ciudad amurallada: la zona histórica de Cartagena se recorre completamente a pie y vivir dentro de las murallas es una experiencia diferente a quedarse en Bocagrande.",
+      "Las lanchas a las Islas del Rosario salen del Muelle de los Pegasos. Negociá directamente con los lancheros el precio de ida y vuelta: el ahorro frente a los tours organizados puede ser del 40%.",
+      "En Getsemaní encontrás artesanías a precios locales (no turísticos) y la mejor gastronomía económica de Cartagena. También tiene el mejor street art de la ciudad.",
+      "La temporada alta (diciembre–abril) es más seca pero los precios de hotel se duplican. Mayo y junio ofrecen el mejor balance: menos lluvia de lo que parece y mucho menos turismo.",
+    ],
   },
   {
     slug: "lima",
@@ -260,6 +333,12 @@ export const destinations: Destination[] = [
     language: "Español",
     avgBudget: "$60–120 USD/día",
     continent: "América",
+    tips: [
+      "El Parque Kennedy en Miraflores tiene una colonia de gatos comunitarios que se alimentan diariamente. Una curiosidad gratuita y completamente inesperada que encanta a todos los viajeros.",
+      "Miraflores y Barranco son los barrios más seguros para alojarse. El Centro Histórico es impresionante de día pero no se recomienda para moverse de noche.",
+      "Central, Maido y Astrid & Gastón están entre los 50 Mejores Restaurantes del Mundo. Si es tu objetivo, reservá con 2–3 meses de anticipación — son muy difíciles de conseguir sin reserva.",
+      "El bus Metropolitano conecta el Centro Histórico con Miraflores por S/0.50 (aproximadamente $0.13 USD). Es lento pero seguro, y te muestra Lima como la vive un limeño.",
+    ],
   },
   {
     slug: "cusco",
@@ -279,6 +358,12 @@ export const destinations: Destination[] = [
     language: "Español · quechua",
     avgBudget: "$50–120 USD/día",
     continent: "América",
+    tips: [
+      "La altitud de Cusco (3.400 msnm) afecta a casi todos los viajeros al llegar. Dedicá 1–2 días completos a aclimatarte — caminá despacio, evitá el alcohol y tomá mate de coca — antes de visitar Machu Picchu.",
+      "Machu Picchu tiene tres franjas horarias de ingreso: mañana (6–12hs), mediodía (10–14hs) y tarde (12–17hs). La mañana tiene menos gente, mejor luz para fotos y temperatura más fresca.",
+      "El tren a Machu Picchu sale desde Ollantaytambo (90 min en combi desde Cusco). Inca Rail es alternativa económica a Peru Rail con precios similares — comparalos siempre.",
+      "El mercado de Pisac los martes, jueves y domingos tiene artesanías a precios reales. La diferencia frente a los mercados de Cusco puede ser del 50–70%.",
+    ],
   },
   {
     slug: "amsterdam",
@@ -298,6 +383,12 @@ export const destinations: Destination[] = [
     language: "Neerlandés · inglés muy extendido",
     avgBudget: "$120–220 USD/día",
     continent: "Europa",
+    tips: [
+      "Alquilar bicicleta es la forma más auténtica de vivir Ámsterdam. MacBike o Yellow Bike tienen las mejores flotas. Recordá que los ciclistas tienen prioridad absoluta en esta ciudad.",
+      "El I Amsterdam City Card (24–72hs) incluye entrada gratuita a 60+ museos incluyendo el Rijksmuseum. Calculá si te conviene: la entrada individual al Rijks ya cuesta €22.50.",
+      "El museo Van Gogh y la Casa de Ana Frank tienen fila de 2+ horas en temporada alta sin reserva. Ambos requieren tickets online con fecha y hora — comprá antes de llegar.",
+      "El Vondelpark tiene conciertos gratuitos al aire libre en verano (junio–agosto). Combinalo con un picnic de quesos del mercado Albert Cuypmarkt, el más auténtico de la ciudad.",
+    ],
   },
   {
     slug: "lisboa",
@@ -317,6 +408,12 @@ export const destinations: Destination[] = [
     language: "Portugués",
     avgBudget: "$90–180 USD/día",
     continent: "Europa",
+    tips: [
+      "El Pastel de Belém en la Fábrica original de Belém siempre tiene fila, pero avanza en 10–15 minutos. Pedí una ración de tres con canela y azúcar en la mesa — es la forma local.",
+      "Los miradouros más recomendados son: Santa Catarina (bohemio, vistas al río), Graça (el mejor del casco histórico) y São Pedro de Alcântara (con el castillo al fondo).",
+      "El tranvía 28 es pintoresco pero lento, lleno de turistas y un blanco habitual para carteristas. Para moverte de forma eficiente, usá el metro o los autobuses de la Carris.",
+      "Los vinos del Alentejo (a 2 horas de Lisboa) son la mejor relación calidad-precio de Portugal: una botella de €5–8 en supermercado equivale a €25–30 en cualquier otro país europeo.",
+    ],
   },
   {
     slug: "praga",
@@ -336,6 +433,12 @@ export const destinations: Destination[] = [
     language: "Checo · inglés en zonas turísticas",
     avgBudget: "$70–140 USD/día",
     continent: "Europa",
+    tips: [
+      "Las casas de cambio en las calles turísticas (Václavské náměstí, aeropuerto) tienen comisiones altísimas. Usá el cajero automático con tu tarjeta de débito — obtenés el tipo de cambio oficial.",
+      "El Castillo de Praga tiene acceso libre a los jardines y patios; solo el interior de las catedrales e iglesias principales cobra entrada. Caminá los patios sin pagar si el presupuesto aprieta.",
+      "La cerveza Pilsner Urquell o Bernard en bares locales como el U Zlatého Tygra o Lokál Dlouhááá cuesta la mitad que en los restaurantes de la Ciudad Vieja. Seguí a los checos.",
+      "El tren nocturno Praga–Viena o Praga–Budapest cuesta $20–35 USD y te ahorra una noche de hotel. En temporada alta reservá con anticipación porque se agota.",
+    ],
   },
   {
     slug: "bangkok",
@@ -355,6 +458,12 @@ export const destinations: Destination[] = [
     language: "Tailandés · inglés en zonas turísticas",
     avgBudget: "$50–120 USD/día",
     continent: "Asia",
+    tips: [
+      "Los templos de Bangkok exigen cubrir hombros y rodillas. Llevá siempre una tela o bufanda liviana — muchos templos la venden afuera, pero a precio turístico.",
+      "El BTS Skytrain y el metro MRT son limpios, puntuales y con aire acondicionado. Los tuk-tuks son pintorescos pero cobran 3–5x más. Combiná ambos según el trayecto.",
+      "Chinatown (Yaowarat Road) tiene el mejor street food de Bangkok. Llegá entre las 6–8pm los fines de semana cuando todos los puestos están en pleno funcionamiento.",
+      "El mercado flotante de Amphawa (90 min al sur de Bangkok) es más auténtico y menos masificado que el de Damnoen Saduak. Funciona solo los fines de semana desde el mediodía.",
+    ],
   },
   {
     slug: "bali",
@@ -374,6 +483,12 @@ export const destinations: Destination[] = [
     language: "Balinés · indonesio · inglés en zonas turísticas",
     avgBudget: "$50–120 USD/día",
     continent: "Asia",
+    tips: [
+      "Los scooters de alquiler ($5–8/día) son el transporte local por excelencia, pero los accidentes son frecuentes en las rutas de montaña. Si no tenés experiencia, contratá un chofer privado ($30–50/día) para los trayectos largos.",
+      "Los templos balineses requieren 'sarong' (falda de tela) para entrar. En muchos lo ofrecen en préstamo gratuito, pero tener el tuyo es más cómodo — los comprás por IDR 30.000 en cualquier tienda.",
+      "Ubud tiene la mejor oferta gastronómica para vegetarianos y veganos de toda la isla. El Warung Babi Guling de Ibu Oka, en cambio, es obligatorio para carnívoros: lechón al estilo balinés.",
+      "La temporada alta en Bali (julio–agosto) tiene precios 50% más altos, playas más masificadas y menos chances de ver amaneceres despejados en el Monte Agung. Abril–junio es el mejor equilibrio.",
+    ],
   },
   {
     slug: "marrakech",
@@ -393,6 +508,12 @@ export const destinations: Destination[] = [
     language: "Árabe · bereber · francés",
     avgBudget: "$50–120 USD/día",
     continent: "África",
+    tips: [
+      "En los souks de la medina, el precio inicial suele ser 3–5x el precio real. Regatear es la norma cultural — empezá ofreciendo el 30–40% del precio pedido y negociá hacia el medio.",
+      "La Plaza Jemaa el-Fna se transforma completamente al anochecer: de mercado diurno a festival nocturno con músicos gnawa, teatreros, encantadores de serpientes y docenas de puestos de comida.",
+      "Los riads son la forma más auténtica de alojarse en Marrakech: casas tradicionales convertidas en posadas con patio central, terrazas privadas y desayuno marroquí incluido.",
+      "Los guías no oficiales en la medina suelen cobrarte por llevarte a lugares donde reciben comisión. Para explorar libremente, descargá el mapa offline de Maps.me antes de perderte.",
+    ],
   },
   {
     slug: "florencia",
@@ -412,6 +533,12 @@ export const destinations: Destination[] = [
     language: "Italiano",
     avgBudget: "$100–200 USD/día",
     continent: "Europa",
+    tips: [
+      "Los Uffizi tienen tickets de reserva anticipada (€4 adicionales) que evitan filas de 2+ horas en temporada alta. En julio y agosto es prácticamente obligatorio reservar online.",
+      "La Firenze Card (€72, 72 horas) incluye los Uffizi, el Bargello, el Palazzo Pitti y otros museos sin fila. Solo conviene si planeás 4+ museos en tres días.",
+      "El Mercato Centrale en el primer piso (el mercado cubierto de productores, no la planta baja turística) tiene algunos de los mejores almuerzos italianos calidad-precio de la ciudad.",
+      "Subir a la cúpula del Duomo de Brunelleschi requiere reserva online con días de anticipación en temporada alta. La vista desde la linterna (el nivel más alto) vale absolutamente los 463 escalones.",
+    ],
   },
   {
     slug: "estambul",
@@ -431,6 +558,12 @@ export const destinations: Destination[] = [
     language: "Turco · inglés en zonas turísticas",
     avgBudget: "$60–130 USD/día",
     continent: "Europa/Asia",
+    tips: [
+      "La tarjeta Istanbulkart es imprescindible: cargala con €10–15 y úsala en metro, tranvía, Metrobús y ferris. El pago individual en cada viaje es significativamente más caro.",
+      "Santa Sofía recuperó su estatus de mezquita activa en 2020 — la entrada sigue siendo gratuita, pero hay horarios de cierre durante las oraciones (especialmente el viernes a mediodía).",
+      "El Bazar de las Especias (Bazar Egipcio, junto al puente de Gálata) es más pequeño que el Gran Bazar pero más auténtico, más fotogénico y con mucho menos presión de vendedores.",
+      "El ferry İDO de Eminönü a Üsküdar o Kadıköy cuesta ₺17 (~$0.50 USD) y es el crucero más económico del Bósforo: 15 minutos de agua entre dos continentes.",
+    ],
   },
   {
     slug: "ciudad-de-mexico",
@@ -450,6 +583,12 @@ export const destinations: Destination[] = [
     language: "Español",
     avgBudget: "$50–100 USD/día",
     continent: "América",
+    tips: [
+      "Teotihuacán se visita mejor llegando antes de las 8am cuando hay poca gente y el sol no pega fuerte. A mediodía el calor es agotador y la pirámide del Sol especialmente castigadora.",
+      "El Metro de CDMX es el más barato del mundo ($0.25 USD por viaje) y llega a prácticamente todos los puntos turísticos. En horas pico las líneas 1, 2 y 3 están muy saturadas.",
+      "Los tacos de canasta en las colonias Doctores, Escandón o Narvarte cuestan la quinta parte que en las zonas turísticas de Polanco o Condesa. La calidad es igual o superior.",
+      "La Lucha Libre en la Arena México (martes y viernes desde las 7:30pm) tiene boletos desde $6 USD. Es una experiencia cultural única que va mucho más allá del deporte.",
+    ],
   },
   {
     slug: "singapur",
@@ -469,6 +608,12 @@ export const destinations: Destination[] = [
     language: "Inglés · chino · malayo · tamil",
     avgBudget: "$120–220 USD/día",
     continent: "Asia",
+    tips: [
+      "Los hawker centres tienen platos desde SGD 3–5 ($2–4 USD). El Chinatown Complex es el más auténtico; Newton Food Centre y Maxwell son famosos pero tienen precios turísticos más altos.",
+      "Las Gardens by the Bay de noche son más impresionantes que de día: el espectáculo de luces de los Supertrees (Garden Rhapsody) es gratuito a las 7:45pm y 8:45pm.",
+      "El transporte público de Singapur (MRT + buses) es el más eficiente de Asia. Usá tu tarjeta de débito/crédito contactless directamente — no necesitás comprar una tarjeta separada.",
+      "La visa de Singapur es gratuita para la mayoría de los países latinoamericanos. Igualmente, llevá comprobante de vuelo de regreso y fondos suficientes para mostrar en inmigración.",
+    ],
   },
   {
     slug: "medellin",
@@ -488,6 +633,12 @@ export const destinations: Destination[] = [
     language: "Español",
     avgBudget: "$40–80 USD/día",
     continent: "América",
+    tips: [
+      "El Metrocable es transporte público real (no turístico): la tarjeta Cívica cuesta igual que el metro. Desde la estación Santo Domingo, el Parque Biblioteca tiene arquitectura premiada internacionalmente.",
+      "La 70 (Avenida El Poblado) en el barrio de Laureles tiene mejor ambiente, mejor precio y más autenticidad que los bares del Parque Lleras. Para locales, es la primera opción.",
+      "La temporada de cerezos en el Parque del Poblado es en febrero. Una colonia de jacarandas florece en violeta intenso — completamente inesperado y gratuito en una ciudad tropical.",
+      "Los tours al Peñol de Guatapé (2.5 hs desde Medellín) se hacen en bus desde la Terminal del Norte por COP 20.000 ($5 USD) ida y vuelta. No necesitás tour organizado.",
+    ],
   },
   {
     slug: "viena",
@@ -507,6 +658,12 @@ export const destinations: Destination[] = [
     language: "Alemán",
     avgBudget: "$120–220 USD/día",
     continent: "Europa",
+    tips: [
+      "El pase de 72 horas de la Wiener Linien (€24) cubre metro, tranvía y autobús sin límite. Los inspectores son frecuentes y las multas altas — validá siempre el título de transporte.",
+      "La Ópera de Estado vende entradas de pie (Stehplatz) desde €4 para los mejores espectáculos. La cola empieza 80 minutos antes del inicio — es parte de la tradición vienesa.",
+      "Los cafés históricos (Café Central, Café Hawelka, Demel) cobran por la silla incluso si solo pedís agua. El Kleines Café en el Franziskanerplatz es el favorito de los vieneses cotidianos.",
+      "El Palacio de Schönbrunn tiene dos niveles de visita: el recorrido de 22 habitaciones (€16) y el Grand Tour de 40 habitaciones (€22). Las vistas desde la Gloriette al fondo del jardín son gratuitas.",
+    ],
   },
 ];
 
