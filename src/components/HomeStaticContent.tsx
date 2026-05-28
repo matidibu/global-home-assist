@@ -29,6 +29,11 @@ export function HomeStaticContent() {
     .filter(Boolean) as typeof destinations;
 
   return (
+    <div style={{
+      background: "rgba(8, 14, 45, 0.80)",
+      backdropFilter: "blur(14px)",
+      WebkitBackdropFilter: "blur(14px)",
+    }}>
     <section style={{
       maxWidth: "900px",
       margin: "0 auto",
@@ -215,5 +220,6 @@ export function HomeStaticContent() {
         </div>
       </div>
     </section>
+    </div>
   );
 }
