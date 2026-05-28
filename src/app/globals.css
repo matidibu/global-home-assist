@@ -335,6 +335,24 @@ html, body {
   /* Stats bar: reducir padding y permitir wrap de texto */
   .quality-stat-item { padding: 12px 6px !important; }
   .quality-stat-label { font-size: 9px !important; word-break: break-word !important; line-height: 1.3 !important; }
+
+  /* SiteNav: ocultar links, solo logo + CTA */
+  .sitenav-links { display: none !important; }
+
+  /* Form card: menos padding en mobile */
+  .search-form-card { padding: 16px !important; }
+
+  /* Itinerario: ocultar quick day nav (el sticky nav ya lo cubre) */
+  .itinerary-quick-day-nav { display: none !important; }
+
+  /* Bottom CTA: menos padding */
+  .bottom-cta-area { padding: 24px 16px !important; }
+
+  /* Hotel banner afiliado: menos padding */
+  .hotel-affiliate-banner { padding: 16px !important; }
+
+  /* "Por qué usar" section: menos padding */
+  .home-why-section { padding: 24px 16px !important; }
 }
 
 /* Print-only block: hidden on screen */

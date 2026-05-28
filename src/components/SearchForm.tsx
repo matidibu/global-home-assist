@@ -862,7 +862,7 @@ export default function SearchForm() {
         )}
 
         {/* ===== FORMULARIO ===== */}
-        {(loading || !itinerary) && <div key={formKey} style={{
+        {(loading || !itinerary) && <div key={formKey} className="search-form-card" style={{
           background: "rgba(255,255,255,0.93)",
           backdropFilter: "blur(20px)",
           borderRadius: "24px",
@@ -1297,7 +1297,7 @@ export default function SearchForm() {
                   </p>
                 </div>
                 {/* Quick day nav */}
-                <div style={{ display: "flex", gap: "5px", flexWrap: "wrap", justifyContent: "flex-end", maxWidth: "340px" }}>
+                <div className="itinerary-quick-day-nav" style={{ display: "flex", gap: "5px", flexWrap: "wrap", justifyContent: "flex-end", maxWidth: "340px" }}>
                   {itinerary.days.map((day: any) => (
                     <button key={day.day} onClick={() => document.getElementById(`dia-${day.day}`)?.scrollIntoView({ behavior: "smooth", block: "start" })} style={{
                       background: "rgba(26,42,108,0.07)", border: "1px solid rgba(26,42,108,0.15)",
@@ -1557,7 +1557,7 @@ export default function SearchForm() {
             </section>
 
             {/* Bottom CTA */}
-            <div className="no-print" style={{
+            <div className="no-print bottom-cta-area" style={{
               background: "linear-gradient(135deg, #1a2a6c, #2d3f8f)",
               borderRadius: "20px", padding: "36px 32px", textAlign: "center",
               boxShadow: "0 12px 40px rgba(26,42,108,0.3)",
@@ -1620,6 +1620,7 @@ export default function SearchForm() {
                 href="https://search.hotellook.com/?shmarker=712478&currency=USD"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
+                className="hotel-affiliate-banner"
                 style={{
                   display: "flex",
                   alignItems: "center",

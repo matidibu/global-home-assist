@@ -52,7 +52,26 @@
       "WebSearch",
       "WebFetch(domain:www.whois.com)",
       "WebFetch(domain:lookup.icann.org)",
-      "WebFetch(domain:who.is)"
+      "WebFetch(domain:who.is)",
+      "WebFetch(domain:ar.pinterest.com)",
+      "Skill(schedule)",
+      "Read(//tmp/**)",
+      "Bash(vercel env:*)",
+      "Bash(vercel link:*)",
+      "Bash(vercel logs:*)",
+      "Bash(python3 -c ':*)",
+      "Bash(vercel inspect:*)",
+      "Bash(vercel --prod --yes)",
+      "Bash(vercel project:*)",
+      "Read(//c/dev/**)",
+      "Bash(npx create-next-app@latest propatron --typescript --eslint --tailwind --src-dir --app --import-alias \"@/*\" --no-turbopack)",
+      "Bash(npx prisma:*)",
+      "Bash(npx shadcn@latest init --yes --base-color slate)",
+      "Bash(npx shadcn@latest init --yes)",
+      "Bash(npx shadcn@latest init -d)",
+      "Bash(npx shadcn@latest add badge --yes)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(Select-String -Pattern \"error|Error|warning|Warning|compiled|Failed\")"
     ]
   }
 }

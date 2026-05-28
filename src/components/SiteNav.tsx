@@ -31,7 +31,7 @@ export function SiteNav() {
           <img src="/logo.svg" alt="Global Home Assist" style={{ height: "22px", width: "auto" }} />
         </Link>
 
-        <nav style={{ display: "flex", gap: "2px", alignItems: "center", flex: 1 }}>
+        <nav className="sitenav-links" style={{ display: "flex", gap: "2px", alignItems: "center", flex: 1 }}>
           {NAV_LINKS.map(({ href, label }) => (
             <Link key={href} href={href} style={{
               fontSize: "13px",

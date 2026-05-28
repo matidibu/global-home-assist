@@ -158,7 +158,7 @@ export function HomeStaticContent() {
       </div>
 
       {/* Por qué usar Global Home Assist */}
-      <div style={{
+      <div className="home-why-section" style={{
         background: "rgba(255,255,255,0.05)",
         border: "1px solid rgba(255,255,255,0.1)",
         borderRadius: "24px",
