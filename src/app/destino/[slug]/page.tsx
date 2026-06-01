@@ -320,6 +320,146 @@ export default async function DestinoPage({ params }: Props) {
           </div>
         </div>
 
+        {/* Guía Práctica */}
+        {dest.guidePractical && (
+          <div style={{ marginBottom: "48px" }}>
+            <h2 style={{
+              fontFamily: "'Playfair Display', serif",
+              color: "white", fontSize: "1.6rem",
+              fontWeight: 700, marginBottom: "20px",
+            }}>
+              Guía práctica para {dest.name}
+            </h2>
+            <div style={{
+              background: "rgba(255,255,255,0.06)",
+              border: "1.5px solid rgba(255,255,255,0.1)",
+              borderRadius: "20px",
+              padding: "28px",
+            }}>
+              <p style={{
+                fontSize: "15px",
+                color: "rgba(255,255,255,0.85)",
+                lineHeight: 1.75,
+                margin: 0,
+              }}>
+                {dest.guidePractical}
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Información Práctica Detallada */}
+        {dest.practicalInfo && dest.practicalInfo.length > 0 && (
+          <div style={{ marginBottom: "48px" }}>
+            <h2 style={{
+              fontFamily: "'Playfair Display', serif",
+              color: "white", fontSize: "1.6rem",
+              fontWeight: 700, marginBottom: "20px",
+            }}>
+              Información práctica detallada
+            </h2>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "16px",
+            }}>
+              {dest.practicalInfo.map((section, idx) => (
+                <div key={idx} style={{
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.11)",
+                  borderRadius: "18px",
+                  padding: "20px",
+                }}>
+                  <h3 style={{
+                    color: "#2ab5a0",
+                    fontSize: "14px",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    margin: "0 0 14px 0",
+                  }}>
+                    {section.category}
+                  </h3>
+                  <ul style={{
+                    margin: 0,
+                    padding: 0,
+                    listStyle: "none",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                  }}>
+                    {section.details.map((detail, i) => (
+                      <li key={i} style={{
+                        fontSize: "13px",
+                        color: "rgba(255,255,255,0.75)",
+                        lineHeight: 1.6,
+                        display: "flex",
+                        gap: "8px",
+                        alignItems: "flex-start",
+                      }}>
+                        <span style={{ color: "#2ab5a0", fontWeight: 700, flexShrink: 0 }}>•</span>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* FAQ */}
+        {dest.faq && dest.faq.length > 0 && (
+          <div style={{ marginBottom: "48px" }}>
+            <h2 style={{
+              fontFamily: "'Playfair Display', serif",
+              color: "white", fontSize: "1.6rem",
+              fontWeight: 700, marginBottom: "20px",
+            }}>
+              Preguntas frecuentes sobre {dest.name}
+            </h2>
+            <div style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+            }}>
+              {dest.faq.map((item, idx) => (
+                <details key={idx} style={{
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.11)",
+                  borderRadius: "14px",
+                  padding: "16px 20px",
+                  cursor: "pointer",
+                }}>
+                  <summary style={{
+                    color: "white",
+                    fontWeight: 700,
+                    fontSize: "14px",
+                    outline: "none",
+                    cursor: "pointer",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}>
+                    {item.question}
+                    <span style={{ marginLeft: "12px", color: "#2ab5a0" }}>▼</span>
+                  </summary>
+                  <p style={{
+                    color: "rgba(255,255,255,0.75)",
+                    fontSize: "14px",
+                    lineHeight: 1.7,
+                    margin: "12px 0 0 0",
+                    paddingTop: "12px",
+                    borderTop: "1px solid rgba(255,255,255,0.1)",
+                  }}>
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Tips únicos de viajero */}
         {dest.tips && dest.tips.length > 0 && (
           <div style={{ marginBottom: "48px" }}>

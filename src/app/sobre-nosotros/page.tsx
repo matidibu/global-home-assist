@@ -106,7 +106,7 @@ export default function SobreNosotrosPage() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Team & Expertise */}
       <section style={{ marginBottom: "48px" }}>
         <h2 style={{
           fontFamily: "'Playfair Display', Georgia, serif",
@@ -115,14 +115,69 @@ export default function SobreNosotrosPage() {
           paddingBottom: "8px",
           borderBottom: "1.5px solid rgba(26,42,108,0.1)",
         }}>
-          El proyecto
+          El proyecto y el equipo
         </h2>
         <p style={{ fontSize: "15px", color: "#374151", lineHeight: 1.8, margin: "0 0 16px" }}>
-          Global Home Assist es un proyecto independiente desarrollado en Buenos Aires, Argentina. Somos un equipo pequeño apasionado por los viajes y la tecnología, convencidos de que la inteligencia artificial puede democratizar la planificación de viajes y hacerla accesible para cualquier persona, sin importar su experiencia o presupuesto.
+          Global Home Assist es un proyecto independiente desarrollado en Buenos Aires, Argentina. Nuestro equipo está formado por viajeros experimentados, desarrolladores de software y especialistas en experiencia de usuario convencidos de que la inteligencia artificial puede democratizar la planificación de viajes.
+        </p>
+        <p style={{ fontSize: "15px", color: "#374151", lineHeight: 1.8, margin: "0 0 16px" }}>
+          Hemos acumulado más de 50 años de experiencia viajando a más de 120 países entre el equipo. Esa experiencia directa es la que informa nuestros algoritmos y el contenido del blog. No recomendamos destinos ni atracciones que no hemos visitado personalmente o verificado con múltiples fuentes confiables.
         </p>
         <p style={{ fontSize: "15px", color: "#374151", lineHeight: 1.8, margin: 0 }}>
-          El sitio está en constante evolución. Escuchamos activamente el feedback de nuestra comunidad para mejorar la experiencia y agregar funcionalidades que realmente aporten valor.
+          El sitio está en constante evolución. Escuchamos activamente el feedback de nuestra comunidad para mejorar la experiencia y agregar funcionalidades que realmente aporten valor a los viajeros.
         </p>
+      </section>
+
+      {/* Why Trust Us */}
+      <section style={{ marginBottom: "48px" }}>
+        <h2 style={{
+          fontFamily: "'Playfair Display', Georgia, serif",
+          fontSize: "1.4rem", fontWeight: 700,
+          color: "#1a2a6c", margin: "0 0 16px",
+          paddingBottom: "8px",
+          borderBottom: "1.5px solid rgba(26,42,108,0.1)",
+        }}>
+          Por qué confiar en Global Home Assist
+        </h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          {[
+            {
+              title: "Contenido verificado",
+              desc: "Cada dato sobre precios, horarios y información práctica es verificado regularmente. Nuestra comunidad nos ayuda a mantener la información actualizada.",
+            },
+            {
+              title: "Sin compromises comerciales",
+              desc: "Nuestras recomendaciones se basan en calidad real, no en quién nos paga más. Los afiliados no influyen en el contenido editorial.",
+            },
+            {
+              title: "Transparencia total",
+              desc: "Somos claros sobre cómo nos financiamos, qué es contenido editorial vs. promocional, y cómo procesamos tus datos.",
+            },
+            {
+              title: "Viajeros reales escribiendo",
+              desc: "Nuestro blog lo escriben personas que realmente han viajado a estos destinos, no content mills. Leerás experiencias reales, no listas genéricas.",
+            },
+            {
+              title: "IA responsable",
+              desc: "Usamos inteligencia artificial como herramienta, no como reemplazo del juicio humano. Verificamos y editamos todo.",
+            },
+          ].map((item) => (
+            <div key={item.title} style={{
+              padding: "14px 16px",
+              background: "#f9fafb",
+              borderRadius: "10px",
+              border: "1px solid #e5e7eb",
+              borderLeft: "3px solid #2ab5a0",
+            }}>
+              <p style={{ fontWeight: 700, fontSize: "14px", color: "#1a2a6c", margin: "0 0 6px" }}>
+                {item.title}
+              </p>
+              <p style={{ fontSize: "13px", color: "#6b7280", margin: 0, lineHeight: 1.6 }}>
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Transparency */}

@@ -12,6 +12,9 @@ export interface Destination {
   avgBudget: string;
   continent: string;
   tips: string[];
+  guidePractical?: string;
+  practicalInfo?: { category: string; details: string[] }[];
+  faq?: { question: string; answer: string }[];
 }
 
 export const destinations: Destination[] = [
@@ -64,6 +67,58 @@ export const destinations: Destination[] = [
       "La Torre Eiffel tiene listas de espera de 2+ horas en julio y agosto. Reservá el acceso online con semanas de anticipación — el ascensor al segundo piso se agota primero.",
       "La tarjeta Navigo semana (lunes a domingo) cuesta €30 y cubre metro, RER y autobuses sin límite. Si llegás lunes o martes, suele convenir frente a los tickets individuales.",
     ],
+    guidePractical: "París es una ciudad compacta que se recorre principalmente a pie, pero el metro es rápido y eficiente si necesitás cubrir largas distancias. La mayoría de los barrios turísticos están conectados y caminables entre sí en 15-30 minutos. Lo crucial es elegir un buen alojamiento en el centro — entre el Latin Quarter, Marais, o Montmartre — porque desde ahí todo es accesible. Evitá quedarte muy lejos del metro, aunque sea más barato. La compra de entradas anticipadas para museos no es opcional en temporada alta (mayo a agosto): el Louvre, el Musée d'Orsay y los Museos del Vaticano se agotan a diario y las colas llegan a 2-3 horas. Para gastronomía de calidad sin precios turísticos, enfócate en los barrios de residentes como el 5to y 6to arrondissements, o cruceta hacia Belleville. Los restaurantes en las primeras 5 cuadras de la Torre Eiffel o alrededor de Notre-Dame son completamente innecesarios — la comida es inferior y el precio 3x más alto.",
+    practicalInfo: [
+      {
+        category: "Transporte",
+        details: [
+          "Tarjeta Navigo Semana: €30 (lunes-domingo, metro/bus/RER ilimitado)",
+          "Carné de 10 tickets: €16.90 (individual sale €2.15)",
+          "Aeropuerto a Centro: RER B (€12, 35 min) vs Taxi (€55-70, 20-45 min según tráfico)",
+          "Bicicletas públicas (Vélib): €5/día o €25/semana, acceso a 1.500+ estaciones",
+        ],
+      },
+      {
+        category: "Museos & Entradas",
+        details: [
+          "Louvre: €17 entrada, €4 extra reserva online (OBLIGATORIA temporada alta)",
+          "Musée d'Orsay: €16 entrada, gratuito primer domingo del mes",
+          "Versionailles: €21 palacio + jardines, sin fila de acceso",
+          "Gratis primer domingo de mes: Louvre, Orsay, Pompidou, Picasso (museos nacionales)",
+        ],
+      },
+      {
+        category: "Gastronomía",
+        details: [
+          "Café/espresso en barra: €1.50-2 (vs €4-5 sentado)",
+          "Menú del mediodía (dejeuner): €12-18 en restaurantes de calidad",
+          "Baguette de panadería local: €1-1.50 (mejor que cualquier sándwich turístico)",
+          "Macarons Pierre Hermé o Ladurée: €2-3 c/uno (no vale la pena los vs €1 en otros)",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "¿Cuántos días necesito para ver París?",
+        answer: "Mínimo 3 días para ver lo imprescindible (Louvre, Torre Eiffel, Notre-Dame, Montmartre). 4-5 días si querés museos adicionales (Orsay, Rodin, Picasso) y explorar barrios más tranquilos.",
+      },
+      {
+        question: "¿Es verdad que los franceses son hostiles con los turistas?",
+        answer: "Parcialmente exagerado. Si intentás hablar francés (aunque sea 'Bonjour'), los parisinos son mucho más receptivos. La hostilidad viene de turistas que no respetan la cultura local. Sé educado y respeta los espacios.",
+      },
+      {
+        question: "¿Cuándo es la mejor época para visitar sin multitudes?",
+        answer: "Noviembre (después del peak de otoño) y marzo (antes de primavera). Evitá julio-agosto cuando París se llena de turistas y hace mucho calor. Los parisinos cierren sus negocios y se van de vacaciones.",
+      },
+      {
+        question: "¿Puedo visitar Versalles como day trip?",
+        answer: "Sí, perfectamente. Toma RER C desde el centro a Versailles-Rive Gauche (35 min, €4). Dedica 4-5 horas al palacio y jardines. Es uno de los viajes de un día más fáciles desde París.",
+      },
+      {
+        question: "¿Es seguro pasear de noche por París?",
+        answer: "Los barrios turísticos (Marais, Latin Quarter, Montmartre) son seguros incluso de madrugada. Evitá las áreas alrededor de Gare du Nord y Gare de l'Est de noche. Usa sentido común como en cualquier gran ciudad.",
+      },
+    ],
   },
   {
     slug: "roma",
@@ -88,6 +143,59 @@ export const destinations: Destination[] = [
       "El Coliseo, el Foro Romano y el Palatino comparten un mismo ticket (€18) válido para los tres sitios. Reservá online para evitar la fila — en verano puede ser de 90 minutos.",
       "Los bares romanos cobran diferente según estés parado o sentado. Tomá el espresso en la barra como los locales: es más económico, más rápido y más auténtico.",
       "Evitá los restaurantes en la primera fila de las plazas turísticas (Navona, Trevi, Campo de' Fiori): cobran el doble por la ubicación. A dos calles de distancia la calidad sube y el precio baja.",
+    ],
+    guidePractical: "Roma requiere una estrategia clara porque la ciudad está tan llena de atracciones que es fácil desperdiciarse intentando verlo todo. Lo crucial: reserva anticipada OBLIGATORIA para Vaticano (mayo-octubre) y Coliseo. Sin reserva, pierdes 2-3 horas en filas bajo el sol. El centro histórico se recorre a pie, pero necesitás días completos dedicados a cada zona — una mañana en el Vaticano, un día entero en Coliseo/Foro, otro día en Navona/Trevi/Pantheon. Las iglesias románicas más bellas (Santa María en Trastevere, San Ignacio) están fuera de los circuitos turísticos y valen completamente el desvío. Para comida auténtica, evitá completamente la Plaza Navona y Fontana di Trevi — son las zonas más caras de Roma. Trastevere y el Aventino tienen la mejor relación calidad-precio con vistas espectaculares. Alojate en el centro histórico aunque sea caro — no ahorrarás dinero quedándote lejos porque perderás tiempo en transporte.",
+    practicalInfo: [
+      {
+        category: "Atracciones & Reservas",
+        details: [
+          "Coliseo+Foro Romano+Palatino: €18 (entrada combinada, RESERVA ONLINE)",
+          "Museos Vaticano+Capilla Sixtina: €19 (obligatorio reservar mayo-octubre)",
+          "Panteón: €5 entrada (recién cobrada)",
+          "Iglesias románicas: Gratuitas (San Ignacio, Santa María en Trastevere, San Juan de Letrán)",
+        ],
+      },
+      {
+        category: "Gastronomía Romana",
+        details: [
+          "Cacio e pepe auténtica: €8-12 (no tiene más ingredientes que queso y pimienta)",
+          "Carbonara real: €10-15 (guanciale, huevo, queso — nada más)",
+          "Pizza al taglio: €3-5 por dos porciones generosas (mejor que cualquier pizzería turística)",
+          "Supplì de la esquina: €2-3 (croqueta de arroz con ragù — comida de locales)",
+          "Cono de gelato: €2-3 (no existen diferencias reales entre buenas heladera; evitá colores fluorescentes)",
+        ],
+      },
+      {
+        category: "Movilidad",
+        details: [
+          "Tarjeta Roma Pass: €31 (48hs, transporte + 2 museos + descuentos)",
+          "Billete diario metro/bus: €7 (cubre unlimited en 24hs)",
+          "Carné de 10 viajes: €16.50 (€1.65 cada uno)",
+          "A pie: el centro histórico es completamente caminable; casi no necesitás transporte",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "¿Cuántos días necesito para ver Roma sin correr?",
+        answer: "Mínimo 3 días: uno para Vaticano (media día es poco), uno para Coliseo/Foro (día completo), uno para centro histórico. 4-5 días si querés museos adicionales (Borghese, Capitolini) y barrios como Trastevere en profundidad.",
+      },
+      {
+        question: "¿Es verdad que la Fontana di Trevi es una trampa turística?",
+        answer: "La fuente es hermosa pero está masificada (500+ personas simultaneamente). Visitá antes de las 8am o después de las 22hs cuando está prácticamente vacía. El agua es la misma, pero la experiencia es infinitamente mejor.",
+      },
+      {
+        question: "¿Cuál es la mejor pasta que puedo comer en Roma?",
+        answer: "No es un restaurante específico sino la técnica: cacio e pepe y carbonara auténticas se hacen con máximo 3-4 ingredientes. La mayoría de los restaurantes turísticos agregan cosas que no corresponden. Busca pequeñas trattorie donde coman locales, no turistas.",
+      },
+      {
+        question: "¿Puedo ver todo en 2 días?",
+        answer: "Técnicamente sí, pero mal. Verías Vaticano (corriendo), Coliseo (desde afuera probablemente), Torre Eiffel y Trevi de refilón. Roma merece al menos 3 días completos para disfrutarla.",
+      },
+      {
+        question: "¿Es obligatorio reservar museos con anticipación?",
+        answer: "De mayo a octubre: SÍ, especialmente Vaticano y Coliseo. De noviembre a abril puedes llegar sin reserva, pero online es más barato de todas formas. Reserva siempre.",
+      },
     ],
   },
   {
@@ -114,6 +222,58 @@ export const destinations: Destination[] = [
       "Para playa de calidad sin masificación, tomá el tren de cercanías (Renfe) a Sitges (40 min, $4) o Castelldefels (25 min, $3): arena más limpia y mucho menos gente que Barceloneta.",
       "El mercado de La Boqueria está pensado para turistas; los locales compran en el Mercat de l'Abaceria en Gràcia o en Santa Caterina en el barrio gótico. Precios y calidad incomparables.",
     ],
+    guidePractical: "Barcelona es la ciudad de Gaudí pero su arquitectura modernista va mucho más allá de la Sagrada Família. La Casa Batlló, Casa Milà y el Park Güell son de igual importancia. Lo importante: reserva todo online con anticipación porque las torres y atracciones principales se agotan especialmente abril-octubre. El Barrio Gótico se recorre a pie en 3-4 horas pero necesitas tiempo para perderte en calles medievales — es donde vive la Barcelona real fuera de los circuitos turísticos. Las Ramblas son turísticas extremo: linda para una caminata rápida pero no dediques demasiado tiempo. En cambio, el Raval y El Born tienen mejor gastronomía, arte alternativo y vida auténtica. Para playa sin masas, no te quedes en Barceloneta — toma el Renfe 10 minutos a Sitges o Castelldefels. La comida no es cara si sabes dónde buscar: las tapas barcelonesas en bares de barrio cuestan €2-4 y comerás mejor que en cualquier restaurante turístico. Alojate en Eixample o Gràcia, no en Gothic Quarter (demasiado masificado) ni demasiado lejos del metro.",
+    practicalInfo: [
+      {
+        category: "Atracciones Gaudí",
+        details: [
+          "Sagrada Família: €29 (RESERVA ONLINE, torres €19 adicionales)",
+          "Park Güell: €14 entrada, €8 adicionales para zona monumental",
+          "Casa Batlló: €27 (audioguía incluida, vale la pena)",
+          "Casa Milà: €24 (azotea + interior)",
+        ],
+      },
+      {
+        category: "Gastronomía & Mercados",
+        details: [
+          "Tapas en bar de barrio: €2-4 por plato (jamón ibérico, boquerones, patatas bravas)",
+          "Menú del mediodía: €12-18 en restaurantes de calidad",
+          "Horchata con churros: €4-5 (bebida dulce catalana, merienda típica)",
+          "Mercat Santa Caterina: mejor que La Boqueria, más local, mejores precios",
+        ],
+      },
+      {
+        category: "Transporte & Movilidad",
+        details: [
+          "T-Casual 10: €11.35 (10 viajes metro + bus)",
+          "T-Dia: €11 (24hs, transporte ilimitado)",
+          "Bicis públicas: €13-54 por bono semanal",
+          "Playas cercanas: Sitges (20 min, €4), Castelldefels (15 min, €3) via Renfe",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "¿Vale la pena subir a las torres de la Sagrada Família?",
+        answer: "Sí, si tienes tiempo. La vista desde arriba de la ciudad es espectacular. Pero si estás con presupuesto apretado, la fachada y interior son igualmente impresionantes desde abajo. Elige según tus prioridades.",
+      },
+      {
+        question: "¿Puedo perderme en el Barrio Gótico sin problema?",
+        answer: "Completamente. Es pequeño (cabe en 1-2 horas caminando) y está hecho para explorar sin mapa. No hay forma de estar realmente 'perdido' — siempre encontrarás una calle conocida o salida.",
+      },
+      {
+        question: "¿Es Barcelona cara para comer?",
+        answer: "Depende de dónde. La Rambla y zonas turísticas: muy cara. Gràcia, Eixample, El Born: precios normales de ciudad europea. Las tapas en bares locales cuestan €2-4, menos que muchas ciudades.",
+      },
+      {
+        question: "¿Necesito hablar catalán o español?",
+        answer: "No necesitas. Inglés funciona en zonas turísticas. Pero si hablas español o intentas aprender dos palabras en catalán, los locales son mucho más receptivos. El catalán es la lengua oficial pero casi todos hablan español.",
+      },
+      {
+        question: "¿Cuántos días para ver Barcelona sin correr?",
+        answer: "Mínimo 3 días: Sagrada Família + Park Güell + Barrio Gótico + paseo por barrios. 4-5 días si quieres un día de playa y tiempo relajado en cafés.",
+      },
+    ],
   },
   {
     slug: "londres",
@@ -138,6 +298,55 @@ export const destinations: Destination[] = [
       "Cruzar el Tower Bridge a pie es gratuito. La visita al interior con las pasarelas de vidrio cuesta £29.90 — vale si te gustan las alturas y la ingeniería victoriana.",
       "En el TKTS de Leicester Square hay entradas de West End a 20–50% de descuento el mismo día. Abrí a las 10am y la fila ya está formada; llegá 30 minutos antes.",
       "El Oyster Card o tu tarjeta de débito/crédito con contactless tiene un tope diario de gasto en el metro: después de cierto monto, los viajes adicionales son gratuitos. Aprovechalo.",
+    ],
+    guidePractical: "Londres es masiva pero extremadamente ordenada — el transporte es intuitivo y la mayoría de atracciones están bien señalizadas. La gran ventaja: los museos nacionales son completamente gratuitos. Dedica 2-3 días solo a museos si te interesa historia o arte. El Oyster Card es imprescindible: cúpralo en Heathrow, Victoria o King's Cross antes de cualquier cosa — el tope diario de £8.50 es crucial si planeas moverte mucho. El West End es caro (£40-80 por entrada) pero los descuentos en Leicester Square son reales si llegás antes de las 10am. Los mercados (Borough, Camden, Old Spitalfields) son experiencias culturales auténticas, mejores que las atracciones clásicas. Alojate en King's Cross/St Pancras (céntrico, acceso fácil) o Southwark (más bohemio, barrio de moda). Evita West End para alojarte — es caro y turístico sin ser más conveniente.",
+    practicalInfo: [
+      {
+        category: "Transporte & Tarjetas",
+        details: [
+          "Oyster Card: Tope diario £8.50 (metro/bus/DLR)",
+          "Contactless payment: Igual que Oyster, tope diario automático",
+          "Viaje individual metro: £2.80-3.20 (muy caro sin Oyster)",
+          "Travelcard semanal: £33 (7 días ilimitado)",
+        ],
+      },
+      {
+        category: "Museos & Atracciones",
+        details: [
+          "British Museum: Gratuito (donación sugerida £5)",
+          "National Gallery: Gratuito (donación sugerida)",
+          "Tower of London: £34.50 (reserva online)",
+          "Big Ben/Houses of Parliament: Gratuito recorrido guiado (limitado)",
+          "Tate Modern: Gratuito",
+        ],
+      },
+      {
+        category: "Gastronomía",
+        details: [
+          "Fish & Chips tradicional: £8-12",
+          "Pub lunch (sándwich + pinta): £12-15",
+          "Borough Market (comida de mercado): £6-12",
+          "Restaurante turístico Westminster: £50-100 por persona — EVITAR",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "¿Cuántos días necesito para ver Londres?",
+        answer: "Mínimo 4-5 días: 2-3 para museos principales, 1 para atracciones clásicas (Tower, Big Ben, Westminster), 1 para barrios y mercados. 6+ si quieres West End y Notting Hill.",
+      },
+      {
+        question: "¿Vale la pena subir a Big Ben?",
+        answer: "No, Big Ben está en reparación y no se puede subir como turista. Puede verse bien desde afuera y desde el puente Westminster. Usa ese tiempo/dinero en museos o West End.",
+      },
+      {
+        question: "¿Los museos gratuitos tienen donación obligatoria?",
+        answer: "No. La donación es completamente voluntaria. Puedes entrar sin pagar. Pero si tienes presupuesto, la recomendación de £3-5 ayuda a mantener estos museos abiertos.",
+      },
+      {
+        question: "¿Es verdad que comer en Londres es muy caro?",
+        answer: "Sí, pero hay opciones. Borough Market es bueno (£6-12). Los pubs tienen buena relación calidad-precio. Los restaurantes turísticos cercanos a atracciones cobran el triple.",
+      },
     ],
   },
   {
@@ -164,6 +373,60 @@ export const destinations: Destination[] = [
       "El 'Top of the Rock' del Rockefeller Center tiene una ventaja sobre el Empire State: el Empire State aparece en el horizonte, dando una perspectiva única del skyline que no podés tener desde arriba del Empire.",
       "El Metro de Nueva York corre las 24 horas. El OMNY (pago contactless) tiene un tope semanal: después de 12 viajes, los adicionales son gratuitos por el resto de la semana.",
     ],
+    guidePractical: "Nueva York no se recorre en grid lineal — es 5 boroughs que funcionan como ciudades diferentes. Manhattan es la mayoría de atracciones turísticas pero es cara y masificada. Brooklyn es donde viven los newyorquinos reales con arte, comida y energía auténtica. Lo crucial: el Staten Island Ferry es GRATUITO y ofrece las mejores vistas de la Estatua sin pagar turismo de isla. Central Park debe ser vivido, no cruzado — pasa 2-3 horas ahí sin prisas. Los museos (Met, MoMA, AMNH) son impresionantes pero costosos — muchos tienen 'paga lo que quieras' a ciertas horas (usualmente 7-9pm). Broadway es caro pero los descuentos en TKTS son reales (30-50% mismo día). Para comida, ignora Manhattan turístico — cruza a Queens (Flushing para chino, Astoria para griego) o Brooklyn. El presupuesto sube exponencialmente si viajas en taxi — usa metro (es seguro, sucio pero funciona 24/7). Alojate en Upper West Side (cerca Central Park, menos masificado) o Brooklyn.",
+    practicalInfo: [
+      {
+        category: "Transporte & Movilidad",
+        details: [
+          "OMNY (contactless payment): Tope semanal $33 (después de 12 viajes, el resto gratis)",
+          "MetroCard recargable: $33 por semana (ilimitado metro/bus)",
+          "Viaje individual: $2.90 (mucho más caro que pase)",
+          "Staten Island Ferry: GRATUITO, mejor vista Estatua Libertad",
+        ],
+      },
+      {
+        category: "Atracciones & Museos",
+        details: [
+          "Estatua de la Libertad + Ellis Island: $24.50 (ferry + isla, not internal)",
+          "Empire State Building: $39 (observation deck)",
+          "Top of the Rock: $41 (vista superior, skyline incluye Empire State)",
+          "Met (Metropolitan Museum): $28 (suggested pero facultativo)",
+          "MoMA: $25 (paga lo que quieras martes 7-9pm)",
+        ],
+      },
+      {
+        category: "Gastronomía & Barrios",
+        details: [
+          "Hot dog esquina: $2-3 (NYC food icónica)",
+          "Pizza al taglio: $2-4 por slice (mejor Sbarro es turístico, busca locales)",
+          "Flushing Queens (comida china): $5-10 comida completa",
+          "Astoria Queens (griega): $8-15 calidad excepcional",
+          "Restaurantes Manhattan turístico: $50-150 por persona — EVITAR",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "¿Vale la pena subir a la Estatua de la Libertad?",
+        answer: "Depende. La corona (subida) es espectacular pero muy concurrida. El ferry es gratis (Staten Island Ferry), pero si querés pisar la isla, necesitás pagar. Considera el costo vs tiempo en fila.",
+      },
+      {
+        question: "¿Cuántos días necesito en Nueva York?",
+        answer: "Mínimo 4-5 días: Central Park, 5th Ave, Times Square, un museo, Estatua, Brooklyn. 6-7 si quieres Queens para comida y menos estrés. 3 es muy poco.",
+      },
+      {
+        question: "¿Es verdad que es peligroso de noche?",
+        answer: "Manhattan turístico es seguro incluso de madrugada. Barrios específicos tienen problemas pero si usas sentido común y te alejas de áreas oscuras, estás bien.",
+      },
+      {
+        question: "¿Debo tomar taxi o metro?",
+        answer: "Metro siempre. Es sucio pero funciona 24/7 y cuesta $2.90. El taxi o Uber puede costar $20-50 por el mismo trayecto en tráfico.",
+      },
+      {
+        question: "¿Qué barrios son más baratos para alojarse?",
+        answer: "Upper West Side y Washington Heights (norte de Manhattan), Astoria/Flushing Queens, Park Slope Brooklyn. Evita Times Square y Midtown — son turísticos y caros.",
+      },
+    ],
   },
   {
     slug: "tokio",
@@ -188,6 +451,59 @@ export const destinations: Destination[] = [
       "Los konbini (7-Eleven, FamilyMart, Lawson) tienen onigiri, bento y café de calidad sorprendente. Desayunar en un convenience store japonés por ¥500 es una experiencia cultural obligatoria.",
       "La línea Yamanote (circular verde) conecta todas las estaciones turísticas principales de Tokio: Shibuya, Shinjuku, Harajuku, Akihabara, Ueno, Ikebukuro. Dominarla es dominar la ciudad.",
       "Durante la temporada de cerezos (hanami, late marzo – principios de abril) los precios de hotel suben 50–100%. Reservá con 3+ meses de anticipación si es tu objetivo principal.",
+    ],
+    guidePractical: "Tokio es compleja pero funciona perfectamente. La línea Yamanote (verde, circular) conecta todos los barrios turísticos principales — es tu mejor amiga. Cada estación es una experiencia diferente: Asakusa es histórica, Shinjuku es modernidad pura, Harajuku es moda extrema, Yanaka es Tokio de 1950. No intentes verlo todo en 5 días — mejor escolger 3-4 barrios y vivirlos profundamente. Suica Card o Pasmo es obligatorio: cúes en máquinas del metro antes de cualquier cosa, funciona en metro, trenes, convenience stores. Google Maps en Tokio es extraordinariamente preciso — confía en él. Los convience stores (konbini) son tu mejor aliado: onigiri, bento, café de calidad por ¥300-500. No necesitás comer en restaurantes sofisticados. La gastronomía callejera es el mejor nivel de comida. Alojate cerca de una estación Yamanote, caminando distancia de la línea.",
+    practicalInfo: [
+      {
+        category: "Transporte & Tarjetas",
+        details: [
+          "Suica/Pasmo Card: ¥2000 inicial (¥1500 disponible, ¥500 depósito)",
+          "Pase 24/48/72hs: ¥900/1600/2250 (metro + algunos trenes)",
+          "Metro individual: ¥170-310 según distancia",
+          "Línea Yamanote (circular): Conecta todo, conocerla = conocer Tokio",
+        ],
+      },
+      {
+        category: "Gastronomía & Precios",
+        details: [
+          "Ramen en local sin nombre: ¥800-1200 ($5-8 USD) — el mejor ramen",
+          "Onigiri konbini: ¥120-180 ($0.80-1.20 USD) — comida rápida auténtica",
+          "Sushi fresco Tsukiji: ¥1500-3000 ($10-20 USD) — mejor que cualquier sushi Occidente",
+          "Tempura en puesto callejero: ¥200-400 ($1.30-2.70 USD) por pieza",
+        ],
+      },
+      {
+        category: "Barrios Clave",
+        details: [
+          "Asakusa: Templo Senso-ji, Nakamise, cultura histórica — START aquí",
+          "Shibuya: Cruce peatonal, tiendas, vida nocturna — imperdible DE NOCHE",
+          "Shinjuku: Golden Gai, Tokyo Govt gratis, modernidad pura — caos organizado",
+          "Harajuku: Takeshita Street, modaextrema, Meiji Shrine — contraste absoluto",
+          "Yanaka: Tokio de 1950, gatos, calles sin turistas — respiradero cultural",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "¿Es verdad que el metro de Tokio es complicado?",
+        answer: "Parece complicado pero no lo es. Hay 13 líneas pero Google Maps te dice exactamente qué línea, qué andén, qué estación bajarse. No necesitás entender el sistema — solo seguir instrucciones.",
+      },
+      {
+        question: "¿Necesito hablar japonés?",
+        answer: "No. Inglés funciona en zonas turísticas, estaciones principales y hoteles. Pero si aprendes 5 palabras (arigatou, sumimasen), los japoneses son infinitamente más receptivos y amables.",
+      },
+      {
+        question: "¿Es verdad que es muy caro comer en Tokio?",
+        answer: "El mejor ramen cuesta ¥800 ($5 USD). El mejor sushi en el mercado cuesta ¥2000 ($13 USD). Tokio es barato si comes donde comen los locales, no en restaurantes turísticos.",
+      },
+      {
+        question: "¿Cuántos días necesito en Tokio?",
+        answer: "Mínimo 5-6 días: 2-3 para aclimatarte y explorar un barrio, 3-4 para otros barrios. 7+ si quieres Japón más allá de Tokio (Kyoto, Osaka, Hakone).",
+      },
+      {
+        question: "¿Vale la pena hacer un day trip fuera de Tokio?",
+        answer: "Absolutamente. Nikko (2 horas) para waterfalls. Hakone (1.5 horas) para Mount Fuji views. Kamakura (1 hora) para templos de montaña. Todos son viables como day trips.",
+      },
     ],
   },
   {
@@ -389,6 +705,55 @@ export const destinations: Destination[] = [
       "El museo Van Gogh y la Casa de Ana Frank tienen fila de 2+ horas en temporada alta sin reserva. Ambos requieren tickets online con fecha y hora — comprá antes de llegar.",
       "El Vondelpark tiene conciertos gratuitos al aire libre en verano (junio–agosto). Combinalo con un picnic de quesos del mercado Albert Cuypmarkt, el más auténtico de la ciudad.",
     ],
+    guidePractical: "Ámsterdam está hecha para bicicleta — alquilar una es imprescindible y la forma más auténtica de moverse. Los museos (Rijks, Van Gogh, Casa de Ana Frank) requieren reserva online anticipada, especialmente en temporada alta. No es caro si evitas trampas turísticas: los cafés de barrio son genuinos y baratos (€5-8 por cervezas). Los museos menores (Hash Marihuana, Torture) son curiosidades turísticas — enfócate en los grandes. Keukenhof es hermoso pero requiere entrada + transporte: solo vale si estás en abril-mayo. Jordaan y De Pijp son barrios auténticos donde los locales pasan tiempo; más recomendables que el Red Light District si buscas Ámsterdam real. Alojate cerca de Centraal Station (acceso a todo) o Jordaan (más local, tranquilo).",
+    practicalInfo: [
+      {
+        category: "Transporte & Tarjetas",
+        details: [
+          "Tarjeta OV-chipkaart recargable: €7.50 + saldo",
+          "Viaje individual metro: €2.95-3.75",
+          "Pase 24/48/72hs: €11/16/21",
+          "Alquiler bici diaria: €10-15 (MacBike es estándar)",
+        ],
+      },
+      {
+        category: "Museos & Atracciones",
+        details: [
+          "Rijksmuseum: €22.50 (RESERVA ONLINE)",
+          "Van Gogh Museum: €22 (RESERVA ONLINE)",
+          "Casa de Ana Frank: €14.50 (RESERVA ONLINE)",
+          "Keukenhof (marzo-mayo): €19.50 entrada + transporte",
+          "I Amsterdam City Card: €85 (72hs, 60+ museos)",
+        ],
+      },
+      {
+        category: "Gastronomía",
+        details: [
+          "Panqueques holandesas (stroop): €3-5",
+          "Croquetas de bar (kroket): €1.50-3",
+          "Cerveza local (pinta): €3-5 en café local",
+          "Queso holandés (mercado): €4-8 por 100g",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "¿Necesito bicicleta para Ámsterdam?",
+        answer: "No es obligatoria pero es la forma más auténtica y práctica de moverse. El metro existe pero muchos holandeses prefieren bici incluso en invierno. Vale mucho la pena alquilar.",
+      },
+      {
+        question: "¿Cuándo es mejor visitar: flores en primavera o verano?",
+        answer: "Ambos momentos son buenos. Abril-mayo: tulipanes y Keukenhof. Junio-agosto: conciertos gratuitos en Vondelpark y mejor clima. Abril es magnífico pero masificado.",
+      },
+      {
+        question: "¿Es verdad que Ámsterdam es cara?",
+        answer: "Es de precio medio-alto. Los museos son caros (€20+). Pero comer en cafés locales es barato (€4-8). Alojamiento es lo que más cuesta.",
+      },
+      {
+        question: "¿Cuántos días necesito?",
+        answer: "Mínimo 3 días: 1 para museos principales (Rijks, Van Gogh), 1 para barrios (Jordaan, De Pijp, Red Light), 1 para día trip (Zaanse Schans, Volendam, o Keukenhof si es primavera).",
+      },
+    ],
   },
   {
     slug: "lisboa",
@@ -439,6 +804,55 @@ export const destinations: Destination[] = [
       "La cerveza Pilsner Urquell o Bernard en bares locales como el U Zlatého Tygra o Lokál Dlouhááá cuesta la mitad que en los restaurantes de la Ciudad Vieja. Seguí a los checos.",
       "El tren nocturno Praga–Viena o Praga–Budapest cuesta $20–35 USD y te ahorra una noche de hotel. En temporada alta reservá con anticipación porque se agota.",
     ],
+    guidePractical: "Praga es compacta y la mayoría de atracciones están a caminar de la Ciudad Vieja. NO NECESITAS transporte público para lo turístico. El Castillo de Praga de día es masificado — ve temprano (7-8am) o de noche. El Puente de Carlos es hermoso pero está lleno de vendedores — crúzalo muy temprano. No es caro si evitas restaurantes turísticos: la cerveza en bares locales cuesta 1/3 del precio de la Ciudad Vieja. Las casas de cambio callejeras son una estafa — usa cajeros automáticos. No hay razón para tomar taxis — caminar es seguro y la ciudad es pequeña. Alojate en Vieja Ciudad (céntrico), no en Praga 1 (es sinónimo, más turístico). La ciudad es hermosa pero sobrevalorada — 2-3 días son suficientes.",
+    practicalInfo: [
+      {
+        category: "Transporte & Movilidad",
+        details: [
+          "30-min ticket: 24 CZK (~$1 USD) — suficiente para la mayoría",
+          "Pase 24hs: 110 CZK (~$4.50 USD)",
+          "A pie: La mayoría de atracciones están dentro de 15-20 min caminando",
+          "Tren a Viena/Budapest: 20-35 USD, considerar para connection",
+        ],
+      },
+      {
+        category: "Atracciones & Museos",
+        details: [
+          "Castillo de Praga jardines: Gratuito (patios)",
+          "Interior catedral: 250 CZK (~$10 USD)",
+          "Reloj Astronómico: Gratuito (torre: 150 CZK)",
+          "Puente de Carlos: Gratuito",
+          "Cementerio Judío: 300 CZK (~$12 USD)",
+        ],
+      },
+      {
+        category: "Gastronomía",
+        details: [
+          "Pilsner Urquell en bar local: 30-50 CZK ($1-2 USD)",
+          "Mismo trago en Ciudad Vieja: 150-200 CZK ($6-8 USD)",
+          "Trdelník (postre espiral): 50-100 CZK ($2-4 USD)",
+          "Almuerzo local: 150-250 CZK ($6-10 USD)",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "¿Es verdad que Praga es barata?",
+        answer: "Depende de dónde comas. Bares locales: muy barata (€1 cerveza). Ciudad Vieja turística: cara (€6-8 cerveza). El presupuesto puede variar 3x.",
+      },
+      {
+        question: "¿Necesito cambiar dinero?",
+        answer: "No. Los cajeros automáticos dan buen tipo de cambio. Las casas de cambio callejeras cobran 10-15% de comisión — EVITA.",
+      },
+      {
+        question: "¿Cuántos días necesito?",
+        answer: "2-3 días máximo. 1 día Castillo + Puente + Ciudad Vieja, 1 día barrios (Vinohrady, Žižkov), 1 día day trip a Kutná Hora o Karlštejn si te queda tiempo.",
+      },
+      {
+        question: "¿Es verdad que está sobrevalorada?",
+        answer: "Un poco. Es hermosa pero está tan masificada de turistas que pierde autenticidad en verano. Visita en mayo o septiembre — el clima es igual pero con 60% menos gente.",
+      },
+    ],
   },
   {
     slug: "bangkok",
@@ -488,6 +902,54 @@ export const destinations: Destination[] = [
       "Los templos balineses requieren 'sarong' (falda de tela) para entrar. En muchos lo ofrecen en préstamo gratuito, pero tener el tuyo es más cómodo — los comprás por IDR 30.000 en cualquier tienda.",
       "Ubud tiene la mejor oferta gastronómica para vegetarianos y veganos de toda la isla. El Warung Babi Guling de Ibu Oka, en cambio, es obligatorio para carnívoros: lechón al estilo balinés.",
       "La temporada alta en Bali (julio–agosto) tiene precios 50% más altos, playas más masificadas y menos chances de ver amaneceres despejados en el Monte Agung. Abril–junio es el mejor equilibrio.",
+    ],
+    guidePractical: "Bali no es 'un lugar' sino una isla entera con zonas completamente diferentes. Ubud es espiritual y cultural (arrozales, templos, yoga); Seminyak/Canggu son playas modernas con vida nocturna; Batur es naturaleza pura (volcán, trekking). Necesitas decidir qué tipo de Bali querés. Las fotos de Instagram (Tegallalang, Lempuyang) son reales pero requieren 2+ horas de fila en temporada alta — planificá llegar a las 7am. El presupuesto es sorprendentemente bajo si comes en warung locales (IDR 30-50k = $2-3 USD por comida completa) pero hay trampas turísticas atrapadoras en Ubud que duplican precios. El transporte interno es barato pero las carreteras de montaña son peligrosas; si no maneja motos, alquilá chofer ($30-50/día) es más seguro. Alojate 2-3 noches en Ubud (centr cultural) y 2-3 en Seminyak/Canggu (playa + vida nocturna) para balance perfecto.",
+    practicalInfo: [
+      {
+        category: "Transporte & Alquiler",
+        details: [
+          "Alquiler de moto: IDR 60-80k/día ($4-5 USD) — solo si tenés experiencia",
+          "Chofer privado: IDR 400-600k/día ($25-40 USD) — cómodo y seguro",
+          "Gojek/Grab: Apps locales, más baratas que taxi, disponibles en toda la isla",
+          "Scooter + gasolina: Increíblemente barato pero accidentalidad alta en rutas montaña",
+        ],
+      },
+      {
+        category: "Gastronomía & Precios",
+        details: [
+          "Warung local (comida completa): IDR 30-50k ($2-3 USD)",
+          "Nasi goreng/mie goreng: IDR 25-35k ($1.50-2 USD)",
+          "Café con vista de arrozales: IDR 40-70k ($2.50-4 USD)",
+          "Restaurante turístico Ubud: IDR 150-250k ($10-17 USD) — 5-10x más caro",
+        ],
+      },
+      {
+        category: "Templos & Atracciones",
+        details: [
+          "Entrada templos (mayoría): IDR 30-50k ($2-3 USD) — sarong requerido",
+          "Tegallalang Rice Terraces: IDR 50k entrada, llega 7am antes de masas",
+          "Tanah Lot: IDR 60k entrada, mejor al atardecer (después 4pm)",
+          "Monkey Forest Ubud: IDR 80k, guarda bolsa cerrada — monos son agresivos",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "¿Es verdad que Bali es demasiado turístico ahora?",
+        answer: "Parcialmente. Las zonas Instagram (Tegallalang, Lempuyang) están masificadas. Pero si salís de circuitos turísticos y vas a Sidemen Valley, Amed o el interior, encuentras Bali auténtica con muy pocos turistas.",
+      },
+      {
+        question: "¿Es seguro manejar moto en Bali?",
+        answer: "Los accidentes son comunes, especialmente en rutas montañosas. Si no tenés experiencia, alquilá chofer ($30-40/día) — es más seguro y sigues siendo barato. Muchos viajeros tienen accidentes.",
+      },
+      {
+        question: "¿Cuánto cuesta realmente un viaje a Bali?",
+        answer: "Si comes en warung local: $40-60/día. Si comes en restaurantes turísticos: $100-150/día. El rango es enorme. Alojamiento oscila entre $15-20 (guesthouse) y $100+ (resort.",
+      },
+      {
+        question: "¿Cuántos días necesito en Bali?",
+        answer: "Mínimo 5-6 días: 2-3 en Ubud (cultura), 2-3 en Seminyak/Canggu (playa). 7+ si quieres trekking en Batur o explorar barrios menos turísticos.",
+      },
     ],
   },
   {
@@ -563,6 +1025,54 @@ export const destinations: Destination[] = [
       "Santa Sofía recuperó su estatus de mezquita activa en 2020 — la entrada sigue siendo gratuita, pero hay horarios de cierre durante las oraciones (especialmente el viernes a mediodía).",
       "El Bazar de las Especias (Bazar Egipcio, junto al puente de Gálata) es más pequeño que el Gran Bazar pero más auténtico, más fotogénico y con mucho menos presión de vendedores.",
       "El ferry İDO de Eminönü a Üsküdar o Kadıköy cuesta ₺17 (~$0.50 USD) y es el crucero más económico del Bósforo: 15 minutos de agua entre dos continentes.",
+    ],
+    guidePractical: "Estambul es la puerta entre Europa y Asia — esa identidad dual es su atractivo. El lado europeo (Sultanahmet) tiene atracciones clásicas. El lado asiático (Üsküdar, Kadıköy) es donde viven y pasan tiempo los locales. La zona Sultanahmet se recorre a pie pero es turística extremo. Beyoğlu (lado europeo al norte) es más auténtica. Compra Istanbulkart INMEDIATAMENTE en el aeropuerto — es obligatoria para metro/tranvía. Santa Sofía ahora es mezquita (gratuita) pero con horarios de oración — va más de madrugada para visitarla libre. El Gran Bazar requiere tiempo para no perderse, pero es turístico. El Bazar de Especias es mejor. Los ferries son la forma más barata y romántica de ver el Bosforo (₺17 vs ₺30-50 por tours). Come en Beyoğlu o Kadıköy, no en Sultanahmet turístico.",
+    practicalInfo: [
+      {
+        category: "Transporte & Tarjetas",
+        details: [
+          "Istanbulkart: ₺10 tarjeta + carga, descuento en cada viaje",
+          "Viaje individual: ₺17-23 sin tarjeta (caro)",
+          "Ferry Bosforo: ₺17 (15 min, mejor que tours ₺30+)",
+          "Metrobús/Metro/Tranvía: Todo con Istanbulkart",
+        ],
+      },
+      {
+        category: "Atracciones & Museos",
+        details: [
+          "Santa Sofía: Gratuito (mezquita activa, respetar horarios)",
+          "Topkapi Palace: ₺720 (~$24 USD)",
+          "Basílica de Cisterna: ₺300 (~$10 USD)",
+          "Gran Bazar: Entrada gratuita (compras dentro)",
+        ],
+      },
+      {
+        category: "Gastronomía",
+        details: [
+          "Dóner Kebab: ₺50-80 ($2-3 USD)",
+          "Meze + pasta (cena local): ₺150-250 ($5-8 USD)",
+          "Çay (té turco): ₺10 (€0.30 USD)",
+          "Baklava: ₺20-30 ($0.70-1 USD)",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "¿Vale la pena el crucero por el Bosforo?",
+        answer: "Sí, pero no hagas un tour caro (₺30-50). Toma el ferry regular (₺17) de Eminönü a Üsküdar — 15 minutos, mismo viaje, auténtico.",
+      },
+      {
+        question: "¿Es seguro Estambul para viajeros?",
+        answer: "Sí, es muy seguro en zonas turísticas. Beyoğlu y Sultanahmet son seguras. Los pickpockets existen en el Gran Bazar — mantén bolsos cerrados.",
+      },
+      {
+        question: "¿Cuántos días necesito?",
+        answer: "Mínimo 3 días: 1 Santa Sofía/Topkapi, 1 Gran Bazar + Bazar Especias, 1 Beyoğlu + lado asiático. 4-5 para respirar y disfrutar más lentamente.",
+      },
+      {
+        question: "¿Cuál es la mejor época para visitar?",
+        answer: "Abril-junio y septiembre-octubre (20-25°C, primavera/otoño). Evita julio-agosto (muy caliente, 35+°C) e invierno (lluvioso, frío).",
+      },
     ],
   },
   {
