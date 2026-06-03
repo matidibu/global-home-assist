@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { blogPosts, getBlogPost, categoryColors, ContentSection } from "@/data/blogPosts";
 import { RelatedPostCard } from "@/components/BlogCards";
 import { ArrowLeft, Lightbulb, Plane, ChevronRight, Sparkles } from "lucide-react";
+import { AdSenseUnit } from "@/components/AdSenseUnit";
+import { ADSENSE_SLOTS } from "@/lib/adsenseConfig";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -370,6 +372,14 @@ export default async function BlogPostPage({ params }: Props) {
       <article style={{ maxWidth: "820px", margin: "0 auto", padding: "40px 24px 0" }}>
         {post.sections.map((section, i) => renderSection(section, i))}
       </article>
+
+      {/* AdSense - In-article ad */}
+      <div style={{ maxWidth: "820px", margin: "0 auto", padding: "48px 24px 0" }}>
+        <AdSenseUnit
+          slot={ADSENSE_SLOTS.blogPost}
+          format="auto"
+        />
+      </div>
 
       {/* Affiliate banners */}
       <div style={{ maxWidth: "820px", margin: "0 auto", padding: "32px 24px 48px", display: "flex", flexDirection: "column", gap: "14px" }}>

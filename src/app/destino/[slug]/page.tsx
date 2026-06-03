@@ -5,6 +5,8 @@ import { destinations, getDestination } from "@/data/destinations";
 import { blogPosts } from "@/data/blogPosts";
 import { itineraries } from "@/data/itineraries";
 import { ArrowLeft, Calendar, Coins, Globe, Backpack, Plane, Sparkles, ChevronRight, BookOpen, Lightbulb, MapPin } from "lucide-react";
+import { AdSenseUnit } from "@/components/AdSenseUnit";
+import { ADSENSE_SLOTS } from "@/lib/adsenseConfig";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -171,6 +173,14 @@ export default async function DestinoPage({ params }: Props) {
           <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "12px", margin: "12px 0 0 0" }}>
             Gratis · Sin registro · Listo en 30 segundos
           </p>
+        </div>
+
+        {/* Publicidad */}
+        <div style={{ marginBottom: "48px" }}>
+          <AdSenseUnit
+            slot={ADSENSE_SLOTS.destinationContent}
+            format="auto"
+          />
         </div>
 
         {/* Highlights */}

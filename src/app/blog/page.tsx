@@ -5,6 +5,8 @@ import { blogPosts } from "@/data/blogPosts";
 import { FeaturedPostCard, PostCard } from "@/components/BlogCards";
 import { BlogCategoryFilter } from "@/components/BlogCategoryFilter";
 import { ArrowLeft, Plane } from "lucide-react";
+import { AdSenseUnit } from "@/components/AdSenseUnit";
+import { ADSENSE_SLOTS } from "@/lib/adsenseConfig";
 
 const BASE_URL = "https://global-home-assist.vercel.app";
 
@@ -128,6 +130,14 @@ export default async function BlogPage({ searchParams }: Props) {
         <Suspense fallback={null}>
           <BlogCategoryFilter active={activeCategory} />
         </Suspense>
+
+        {/* Publicidad */}
+        <div style={{ marginBottom: "48px" }}>
+          <AdSenseUnit
+            slot={ADSENSE_SLOTS.blogList}
+            format="auto"
+          />
+        </div>
 
         {filtered.length === 0 ? (
           <div style={{ textAlign: "center", padding: "60px 0", color: "rgba(255,255,255,0.4)", fontSize: "15px" }}>

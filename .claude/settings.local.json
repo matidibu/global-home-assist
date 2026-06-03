@@ -71,7 +71,15 @@
       "Bash(npx shadcn@latest init -d)",
       "Bash(npx shadcn@latest add badge --yes)",
       "Bash(pkill -f \"next dev\")",
-      "Bash(Select-String -Pattern \"error|Error|warning|Warning|compiled|Failed\")"
+      "Bash(Select-String -Pattern \"error|Error|warning|Warning|compiled|Failed\")",
+      "Bash(npx playwright *)",
+      "Bash(Start-Sleep -Seconds 5)",
+      "Bash(Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing -TimeoutSec 5)",
+      "Bash(Select-Object -ExpandProperty StatusCode)",
+      "Bash(Get-ChildItem -Path \"C:\\\\dev\\\\global-home-assist\" -Depth 1)",
+      "Bash(Select-Object Name)",
+      "Bash(Start-Sleep -Seconds 8)",
+      "PowerShell(Get-Process *)"
     ]
   }
 }
