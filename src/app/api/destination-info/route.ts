@@ -128,12 +128,20 @@ Rules:
 
     let text = completion.choices[0].message.content || "{}";
     text = text.replace(/```json/g, "").replace(/```/g, "").trim();
-    const info = JSON.parse(text);
+
+    let info;
+    try {
+      info = JSON.parse(text);
+    } catch (parseErr) {
+      console.error("[destination-info] JSON parse failed:", text.substring(0, 200));
+      return Response.json({ error: "No se pudo procesar la información del destino. Intenta de nuevo." }, { status: 500 });
+    }
 
     return Response.json({ weather, ...info });
 
   } catch (error) {
-    console.error("Destination info error:", error);
-    return Response.json({ error: "Error fetching destination info" }, { status: 500 });
+    const msg = error instanceof Error ? error.message : "Error desconocido";
+    console.error("[destination-info]", msg);
+    return Response.json({ error: "No se pudo obtener información del destino. Intenta de nuevo más tarde." }, { status: 500 });
   }
 }

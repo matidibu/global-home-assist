@@ -8,15 +8,14 @@ export async function GET(req: Request) {
   const url = searchParams.get('url');
 
   if (!url) {
-    return new Response('Missing url parameter', { status: 400 });
+    return new Response('URL parámetro faltante', { status: 400 });
   }
 
-  // Only allow known image CDN domains
   let parsed: URL;
   try {
     parsed = new URL(url);
   } catch {
-    return new Response('Invalid URL', { status: 400 });
+    return new Response('URL inválida', { status: 400 });
   }
 
   const allowed = [
@@ -31,20 +30,26 @@ export async function GET(req: Request) {
   ];
 
   if (!allowed.some(domain => parsed.hostname.endsWith(domain))) {
-    return new Response('Domain not allowed', { status: 403 });
+    return new Response('Dominio no autorizado', { status: 403 });
   }
 
   try {
     const res = await fetch(url, {
       headers: { 'User-Agent': 'GlobalHomeAssist/1.0' },
+      signal: AbortSignal.timeout(10000),
     });
 
     if (!res.ok) {
-      return new Response('Failed to fetch image', { status: res.status });
+      console.warn(`[image-proxy] Fetch failed: ${url} → ${res.status}`);
+      return new Response('No se pudo obtener la imagen', { status: 502 });
     }
 
     const contentType = res.headers.get('Content-Type') || 'image/jpeg';
     const buffer = await res.arrayBuffer();
+
+    if (buffer.byteLength === 0) {
+      return new Response('Imagen vacía', { status: 502 });
+    }
 
     return new Response(buffer, {
       status: 200,
@@ -54,7 +59,9 @@ export async function GET(req: Request) {
         'Access-Control-Allow-Origin': '*',
       },
     });
-  } catch {
-    return new Response('Proxy error', { status: 502 });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : 'Error desconocido';
+    console.error('[image-proxy] Error:', msg);
+    return new Response('Error al procesar imagen. Intenta de nuevo.', { status: 502 });
   }
 }

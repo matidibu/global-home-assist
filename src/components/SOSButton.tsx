@@ -19,23 +19,39 @@ export default function SOSButton({ city, country, emergencyNumbers }: Props) {
   const [open, setOpen] = useState(false);
   const [location, setLocation] = useState<{ lat: number; lon: number } | null>(null);
   const [locating, setLocating] = useState(false);
+  const [locationError, setLocationError] = useState<string>("");
   const [contactPhone, setContactPhone] = useState("");
   const [contactName, setContactName] = useState("");
   const [messageSent, setMessageSent] = useState(false);
 
   useEffect(() => {
-    if (open && !location) {
+    if (open && !location && !locationError && !locating) {
       setLocating(true);
+      setLocationError("");
+
+      if (!navigator.geolocation) {
+        setLocationError("Geolocalización no disponible en este navegador");
+        setLocating(false);
+        return;
+      }
+
       navigator.geolocation.getCurrentPosition(
-        pos => {
+        (pos) => {
           setLocation({ lat: pos.coords.latitude, lon: pos.coords.longitude });
           setLocating(false);
         },
-        () => setLocating(false),
-        { timeout: 8000 }
+        (error) => {
+          let msg = "No se pudo obtener tu ubicación";
+          if (error.code === 1) msg = "Permiso denegado. Activa geolocalización en tu dispositivo.";
+          if (error.code === 2) msg = "Ubicación no disponible en este momento.";
+          if (error.code === 3) msg = "Solicitud de ubicación expirada.";
+          setLocationError(msg);
+          setLocating(false);
+        },
+        { timeout: 8000, maximumAge: 0, enableHighAccuracy: false }
       );
     }
-  }, [open]);
+  }, [open, location, locationError, locating]);
 
   const mapsLink = location
     ? `https://maps.google.com/?q=${location.lat},${location.lon}`
@@ -146,23 +162,16 @@ export default function SOSButton({ city, country, emergencyNumbers }: Props) {
                 📍 Tu ubicación
               </div>
               {locating ? (
-                <div style={{ fontSize: "13px", color: "#6b7280" }}>Obteniendo ubicación GPS...</div>
-              ) : location ? (
-                <div>
-                  <div style={{ fontSize: "13px", color: "#374151", marginBottom: "6px" }}>
-                    {location.lat.toFixed(5)}, {location.lon.toFixed(5)}
-                  </div>
-                  <div
-                    onClick={() => window.open(mapsLink, "_blank")}
-                    style={{ fontSize: "12px", color: "#2563eb", cursor: "pointer", textDecoration: "underline" }}
-                  >
-                    Ver en Google Maps →
-                  </div>
+                <div style={{ fontSize: "13px", color: "#6b7280" }}>
+                  ⏳ Obteniendo ubicación GPS...
                 </div>
-              ) : (
+              ) : locationError ? (
                 <div>
-                  <div style={{ fontSize: "13px", color: "#6b7280", marginBottom: "6px" }}>
-                    No se pudo obtener GPS. Usando ciudad: {city}
+                  <div style={{ fontSize: "13px", color: "#dc2626", marginBottom: "6px", fontWeight: 500 }}>
+                    ⚠️ {locationError}
+                  </div>
+                  <div style={{ fontSize: "12px", color: "#6b7280", marginBottom: "6px" }}>
+                    Usando ubicación aproximada: {city}
                   </div>
                   <div
                     onClick={() => window.open(mapsLink, "_blank")}
@@ -171,7 +180,19 @@ export default function SOSButton({ city, country, emergencyNumbers }: Props) {
                     Ver {city} en Google Maps →
                   </div>
                 </div>
-              )}
+              ) : location ? (
+                <div>
+                  <div style={{ fontSize: "13px", color: "#374151", marginBottom: "6px" }}>
+                    ✅ {location.lat.toFixed(5)}, {location.lon.toFixed(5)}
+                  </div>
+                  <div
+                    onClick={() => window.open(mapsLink, "_blank")}
+                    style={{ fontSize: "12px", color: "#2563eb", cursor: "pointer", textDecoration: "underline" }}
+                  >
+                    Ver en Google Maps →
+                  </div>
+                </div>
+              ) : null}
             </div>
 
             <div style={{

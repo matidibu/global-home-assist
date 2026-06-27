@@ -272,7 +272,13 @@ OUTPUT RULES:
     const jsonEnd = text.lastIndexOf('}');
     if (jsonStart !== -1 && jsonEnd > jsonStart) text = text.substring(jsonStart, jsonEnd + 1);
 
-    const aiData = JSON.parse(text);
+    let aiData;
+    try {
+      aiData = JSON.parse(text);
+    } catch (parseErr) {
+      console.error("[AI] JSON parse failed:", text.substring(0, 200));
+      return Response.json({ error: "El itinerario generado tiene formato inválido. Intenta de nuevo." }, { status: 500 });
+    }
 
     // === GOOGLE PLACES: fetch real coords + photos for all places in parallel ===
     // Collect all place names across all days
@@ -450,7 +456,8 @@ OUTPUT RULES:
     return Response.json({ ...itinerary, travelHacks, milesOpportunity });
 
   } catch (error) {
-    console.error(error);
-    return Response.json({ error: "Error generating itinerary", details: (error as Error).message || error }, { status: 500 });
+    const msg = error instanceof Error ? error.message : "Error desconocido";
+    console.error("[generate-itinerary]", msg);
+    return Response.json({ error: "No se pudo generar el itinerario. Intenta de nuevo más tarde." }, { status: 500 });
   }
 }

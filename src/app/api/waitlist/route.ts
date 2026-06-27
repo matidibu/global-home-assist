@@ -10,39 +10,25 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   try {
-    const { email, days, destination } = await req.json();
+    let body;
+    try {
+      body = await req.json();
+    } catch {
+      return NextResponse.json({ error: "JSON inválido en request" }, { status: 400 });
+    }
 
-    if (!email || !email.includes("@")) {
+    const { email, days, destination } = body;
+
+    if (!email || typeof email !== "string" || !email.includes("@")) {
       return NextResponse.json({ error: "Email inválido" }, { status: 400 });
     }
 
-    // Log (visible in Vercel Functions logs under vercel.com → project → logs)
     console.log(`[WAITLIST] ${new Date().toISOString()} | ${email} | ${days} días | ${destination}`);
-
-    // ─────────────────────────────────────────────────────────────
-    // ACTIVAR CUANDO TENGAS LEMONSQUEEZY (descomentá y completá):
-    // ─────────────────────────────────────────────────────────────
-    // const LS_API_KEY = process.env.LEMONSQUEEZY_API_KEY;
-    // if (LS_API_KEY) {
-    //   await fetch("https://api.lemonsqueezy.com/v1/customers", {
-    //     method: "POST",
-    //     headers: {
-    //       "Authorization": `Bearer ${LS_API_KEY}`,
-    //       "Content-Type": "application/vnd.api+json",
-    //     },
-    //     body: JSON.stringify({
-    //       data: {
-    //         type: "customers",
-    //         attributes: { email, name: destination },
-    //       }
-    //     }),
-    //   });
-    // }
-    // ─────────────────────────────────────────────────────────────
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("[WAITLIST ERROR]", err);
-    return NextResponse.json({ error: "Error interno" }, { status: 500 });
+    const errorMsg = err instanceof Error ? err.message : "Error desconocido";
+    console.error("[WAITLIST ERROR]", errorMsg);
+    return NextResponse.json({ error: "No se pudo procesar tu solicitud. Intenta de nuevo más tarde." }, { status: 500 });
   }
 }

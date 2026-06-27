@@ -254,12 +254,29 @@ export default async function BlogPostPage({ params }: Props) {
     "@type": "BlogPosting",
     headline: post.metaTitle,
     description: post.metaDescription,
+    image: {
+      "@type": "ImageObject",
+      url: `${BASE_URL}/sky.jpg`,
+      width: 1200,
+      height: 630,
+    },
     author: { "@type": "Organization", name: "Global Home Assist" },
-    publisher: { "@type": "Organization", name: "Global Home Assist", url: "https://global-home-assist.vercel.app" },
+    publisher: {
+      "@type": "Organization",
+      name: "Global Home Assist",
+      url: BASE_URL,
+      logo: { "@type": "ImageObject", url: `${BASE_URL}/logo.png`, width: 512, height: 512 },
+    },
     datePublished: post.publishDate,
+    dateModified: post.publishDate,
     inLanguage: "es",
     keywords: post.tags.join(", "),
-    url: `https://global-home-assist.vercel.app/blog/${post.slug}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${BASE_URL}/blog/${post.slug}`,
+    },
+    isPartOf: { "@type": "Blog", name: "Global Home Assist Blog", url: `${BASE_URL}/blog` },
+    wordCount: post.sections.reduce((sum, s) => sum + (s.text?.split(" ").length || 0) + (s.items?.reduce((itemSum, item) => itemSum + item.split(" ").length, 0) || 0), 0),
   };
 
   return (
