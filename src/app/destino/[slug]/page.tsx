@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { destinations, getDestination } from "@/data/destinations";
 import { blogPosts } from "@/data/blogPosts";
 import { itineraries } from "@/data/itineraries";
+import { generatePlaceSchema, generateFAQSchema } from "@/lib/schemaMarkup";
 import { ArrowLeft, Calendar, Coins, Globe, Backpack, Plane, Sparkles, ChevronRight, BookOpen, Lightbulb, MapPin } from "lucide-react";
 import { AdSenseUnit } from "@/components/AdSenseUnit";
 import { ADSENSE_SLOTS } from "@/lib/adsenseConfig";
@@ -66,12 +67,54 @@ export default async function DestinoPage({ params }: Props) {
     )
     .slice(0, 3);
 
+  // Generate latitude/longitude for major destinations (simplified coordinates)
+  const destCoordinates: Record<string, { lat: number; lng: number }> = {
+    dubai: { lat: 25.2048, lng: 55.2708 },
+    tokio: { lat: 35.6762, lng: 139.6503 },
+    "buenos-aires": { lat: -34.6037, lng: -58.3816 },
+    cancun: { lat: 21.1619, lng: -86.8515 },
+    miami: { lat: 25.7617, lng: -80.1918 },
+    lisboa: { lat: 38.7223, lng: -9.1393 },
+    bangkok: { lat: 13.7563, lng: 100.5018 },
+    praga: { lat: 50.0755, lng: 14.4378 },
+    paris: { lat: 48.8566, lng: 2.3522 },
+    roma: { lat: 41.9028, lng: 12.4964 },
+    barcelona: { lat: 41.3851, lng: 2.1734 },
+    amsterdam: { lat: 52.3676, lng: 4.9041 },
+  };
+
+  const coords = destCoordinates[slug] || { lat: 0, lng: 0 };
+
   return (
     <main style={{
       minHeight: "100vh",
       background: "linear-gradient(160deg, #0f1f5c 0%, #1a2a6c 40%, #1e3a5f 100%)",
       fontFamily: "'Plus Jakarta Sans', sans-serif",
     }}>
+      {/* Place Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generatePlaceSchema({
+              name: dest.name,
+              country: dest.country,
+              latitude: coords.lat,
+              longitude: coords.lng,
+              description: dest.description,
+            })
+          ),
+        }}
+      />
+      {/* FAQ Schema */}
+      {dest.faq && dest.faq.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateFAQSchema(dest.faq)),
+          }}
+        />
+      )}
       {/* Nav */}
       <nav style={{
         padding: "16px 24px",
