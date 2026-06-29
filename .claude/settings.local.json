@@ -79,7 +79,11 @@
       "Bash(Get-ChildItem -Path \"C:\\\\dev\\\\global-home-assist\" -Depth 1)",
       "Bash(Select-Object Name)",
       "Bash(Start-Sleep -Seconds 8)",
-      "PowerShell(Get-Process *)"
+      "PowerShell(Get-Process *)",
+      "Bash(gh deployment *)",
+      "Bash(vercel deploy *)",
+      "Bash(vercel redeploy *)",
+      "WebFetch(domain:global-home-assist.vercel.app)"
     ]
   }
 }

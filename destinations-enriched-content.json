@@ -1,0 +1,495 @@
+{
+  "dubai": {
+    "guidePractical": "Dubai es una ciudad de contrastes donde el lujo es la norma y todo es intentadamente extremo, pero también es una ciudad que planifica el turismo de manera extraordinaria. La experiencia se divide entre dos Dubais: la zona hotelera (rascacielos, compras, playas privadas) y la zona histórica (Old Dubai, Al Fahidi, souks). Muchos viajeros solo ven el primero y se pierden la autenticidad de la ciudad. El clima es agresivo de junio a septiembre (50°C+), así que la temporada real es octubre a abril. El presupuesto no tiene límite en Dubai — puedes gastar $20 por día en un hostal compartido y comida callejera, o $1000+ en un resort. La llave para no quedar quebrado: evita los tours turísticos caros (99 AED = $27 USD). El safari en el desierto con agencia cuesta 300 AED; el mismo safari yendo directo a una agencia local en Deira cuesta 100-120 AED. El metro de Dubai es extraordinario — moderno, puntual, barato (máx. $2 por viaje). Alojate cerca de una estación del metro, no en la Zona Hotelera turística. El Burj Khalifa es obligatorio pero reserva online con semanas de anticipación (última hora tiene precios dinámicos de $80+). La verdadera Dubai se encuentra en Deira, Al Karama y Al Fahidi — son barrios donde viven los trabajadores expatriados, con comida auténtica india, filipina y emiratí, cafés tradicionales y souks sin turistas. El atardecer en el Gold Souk es gratuito y espectacular — es la forma más auténtica de sentir la ciudad.",
+    "practicalInfo": [
+      {
+        "category": "Transporte & Movilidad",
+        "details": [
+          "Tarjeta Nol (metro): AED 25 inicial (AED 19.50 viaje máx, viajes múltiples más baratos)",
+          "Taxi: AED 3 base + AED 1.99/km (solo usar si Uber con surge pricing)",
+          "Uber/Careem: Precio justo, disponible 24/7, mejor que taxi — compara siempre",
+          "Autobús público: AED 2-5 según distancia, puntual y con aire acondicionado",
+          "Aeropuerto a zona hotelera: Metro línea roja AED 8.50 (35 min, vs Uber AED 40-50)"
+        ]
+      },
+      {
+        "category": "Atracciones & Actividades",
+        "details": [
+          "Burj Khalifa (124/148): AED 150-270 (RESERVA ONLINE, última hora $80+)",
+          "Dubai Mall: Gratuito acceso (compras internas), acuario AED 105",
+          "Safari desierto local (Deira): AED 100-120 (6 horas, cena beduina), vs. agencia turística AED 300",
+          "Gold Souk: Gratuito (atardecer es el mejor momento, 6-8pm)",
+          "Playa pública Umm Suqeim: Gratuita, arena blanca, menos turistas que Jumeirah",
+          "Bastakiya Quarter: Gratuito (barrio histórico restaurado, museos pequeños)"
+        ]
+      },
+      {
+        "category": "Gastronomía & Precios",
+        "details": [
+          "Shawarma/kebab callejero: AED 15-25 ($4-7 USD) — mejor que restaurantes",
+          "Al Mallah (hummus/falafel legendario): AED 20 por plato en Deira",
+          "Mandado (biryani indio): AED 25-35 en Al Karama, comida completa",
+          "Café árabe tradicional: AED 5 por café + dátiles (experiencia cultural)",
+          "Restaurante de lujo turístico: AED 200-400 por persona (EVITAR)",
+          "Mercadería/supermercado: Lulu o Carrefour tienen precios bajos vs. hoteles"
+        ]
+      },
+      {
+        "category": "Alojamiento",
+        "details": [
+          "Deira/Bur Dubai (auténtico): AED 150-250/noche ($40-70 USD) — mejor localización y precio",
+          "Zona hotelera (turística): AED 400-800/noche ($110-220 USD) — caro, vibes turísticas",
+          "Apartamento Airbnb: AED 200-350/noche, mejor si viajes con grupo",
+          "Hostales (Deira): AED 60-100 cama compartida — mochileros y presupuesto bajo",
+          "Recomendación: Evita Zona Hotelera a menos que busques resort de lujo puro"
+        ]
+      },
+      {
+        "category": "Compras & Entretenimiento",
+        "details": [
+          "Gold Souk (Deira): Precios por peso de oro (mejor que joyerías turísticas)",
+          "Spice Souk: Especies frescas, aromas authenticos, fotogénico",
+          "Dubai Mall: 1200+ tiendas (abridor, pero Dubai es caro para shopping)",
+          "Vida nocturna (bares hoteleros): AED 80-150 por copa (muy caro)",
+          "Vida nocturna local (Bastakiya/Al Fahidi): AED 30-50 por cerveza en bares locales"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "¿Necesito cubierta para visitar mezquitas?",
+        "answer": "La mayoría de mezquitas exigen hombros y rodillas cubiertos. Muchas temples ofrecen abayyas (tela negra) gratuitas para mujeres al entrar. Los hombres pueden entrar con pantalones largos. Es completamente respetable y es parte de la experiencia cultural."
+      },
+      {
+        "question": "¿Es verdad que no hay vida más allá de la Zona Hotelera?",
+        "answer": "Completamente falso y es el error más común. La Zona Hotelera es turística extremo — es para fotos del Burj y compras. La verdadera Dubai está en Deira, Al Fahidi y Al Karama: mercados auténticos, comida increíble y vida local que no verás en Instagram."
+      },
+      {
+        "question": "¿Cuánto cuesta realmente un viaje a Dubai?",
+        "answer": "Varía enormemente: mochilero presupuesto: $40-60/día (metro, comida callejera, hostales). Viajero de clase media: $100-150/día. Turista de lujo: $200+ sin límite. Lo mejor: mezcla los dos — hospédate en Deira (barato), come en souks (barato), gasta en Burj Khalifa y compras."
+      },
+      {
+        "question": "¿Vale la pena el Burj Khalifa si tengo presupuesto apretado?",
+        "answer": "Es caro (AED 150-270). La alternativa: sube al piso 124 en la terraza (más barato), o ve a un rooftop bar gratis en la Zona Hotelera con vistas casi iguales pagando una copa. La vista es espectacular desde cualquier lugar, pero el Burj es la experiencia icónica."
+      },
+      {
+        "question": "¿Es seguro Dubai para viajeros?",
+        "answer": "Extremadamente seguro. La policía es visible, no hay criminalidad de calle y es fácil moverte de noche. El único riesgo es los carteristas en souks masificados — mantén bolsas cerradas como en cualquier ciudad."
+      },
+      {
+        "question": "¿Cuál es la mejor épóca para visitar Dubai?",
+        "answer": "Octubre a abril (20-30°C). Noviembre a febrero es pico turístico — ven en octubre o marzo-abril para menos gente y precios menores. Junio-agosto es invierno infernal (50+°C), la mayoría de atracciones exteriores cierran temprano y el calor es insoportable."
+      },
+      {
+        "question": "¿Necesito coche de alquiler en Dubai?",
+        "answer": "No. El metro es excelente, los uber/taxis funcionan bien. Solo alquila coche si planeas salidas al desierto de varios días (Liwa, Fujaira). Para la ciudad, transporte público es más económico y práctico."
+      }
+    ]
+  },
+
+  "tokio-guidepractical": "Tokio requiere una estrategia porque el caos es su naturaleza. Pero una vez entiendes el flujo de la ciudad, es casi imposible estar realmente perdido. La Línea Yamanote verde (circular, 23 estaciones principales) es tu mejor amiga — memoriza dónde están los barrios y dominarás la ciudad. Cada estación es una experiencia diferente: Asakusa es histórica y templos antiguos, Shinjuku es modernidad pura con 3 millones de personas/día cruzando la estación, Harajuku es modas extremas y adolescentes, Shibuya es vida nocturna y tiendas de lujo, Yanaka es Tokio de 1950 sin turistas. NO intentes verlo todo en 5 días — es imposible. Elige 3-4 barrios y vívelos profundamente. Suica Card es obligatoria desde el primer minuto: cúprala en la estación Narita antes de salir del aeropuerto, funciona en metro, trenes locales y hasta máquinas expendedoras. Google Maps en Tokio es extraordinariamente preciso — confía ciegamente en él, incluso en estaciones subterráneas complejas. Los convenience stores (konbini) son tu mejor aliado: onigiri de salmón, ramen instantáneo, café caliente, todo a ¥300-500. No necesitas gastar dinero en restaurantes sofisticados a menos que busques experiencia gastronómica específica. La gastronomía callejera (yakitori, takoyaki, ramen en callejuelas) es el mejor nivel de comida en Tokio. Alojate cerca de una estación Yamanote — 200m de distancia es la diferencia entre accesible y laberinto. La temporada de cerezos (late marzo-early abril) es mágica pero los precios se disparan 50-100% — reserva con 3+ meses si es objetivo.",
+
+  "buenos-aires": {
+    "guidePractical": "Buenos Aires se siente como una ciudad europea tropical — tiene una energía que ninguna otra ciudad latinoamericana posee. La clave es no tratar de 'hacer todo' sino elegir ritmo lento, pasear sin destino y dejarse llevar por los barrios. San Telmo es histórico y tanguero, La Boca es colorido pero turístico (20 minutos es suficiente), Palermo es moderno con parques y vida bohemia, Recoleta es elegante, Almagro tiene mejor relación calidad-precio para viajeros. El tipo de cambio es crucial: el 'dólar blue' (cambio paralelo, ilegal pero normal) duplica el oficial. Llevar dólares en efectivo y cambiar en casas de cambio habilitadas es como viven la mayoría de porteños y turistas inteligentes. El subte requiere tarjeta SUBE — cúprala el primer día en cualquier kioscorro. Los tours de milongas turísticas (La Boca) son completamente innecesarios — el Salón Canning, La Viruta o Club Gricel tienen milongas auténticas donde comen locales, muchas incluyen clase inicial de 30 minutos. El tango no es para turistas, es una práctica viva de porteños. La gastronomía es obsesiva: toma choripanes en la calle, asados en parrillas de barrio (mucho mejor que turísticas), alfajores, pizza porteña. No hagas un steakhouse famoso de $80 por persona — los mejores asados están en parrillas de barrio por $15. El Bife de Chorizo, choripán, milanesa — son lo que come un porteño real. Alojate en Almagro o San Telmo para balance entre vida local y acceso turístico.",
+    "practicalInfo": [
+      {
+        "category": "Transporte & Tarjeta SUBE",
+        "details": [
+          "Tarjeta SUBE: $200 ARS (~$0.50 USD) compra + carga, fundamental",
+          "Metro/subte: $0.38 USD por viaje con SUBE (el más barato de América Latina)",
+          "Colectivo (autobús): $0.38 USD con SUBE, llega a todos lados",
+          "Taxi/Uber: Caro comparado con metro — usar solo late night o maletas grandes",
+          "Remis (taxi por teléfono): Más caro pero más seguro que callejero"
+        ]
+      },
+      {
+        "category": "Gastronomía & Cambio",
+        "details": [
+          "Dólar blue (cambio paralelo): 1000-1200 ARS por USD (vs oficial 900 ARS) — cambiar en casa de cambio",
+          "Choripán en kiosco: 500 ARS ($0.40 USD) — comida callejera icónica",
+          "Milanesa + puré: 800 ARS ($0.70 USD) en parrilla de barrio",
+          "Bife de Chorizo: 1500-2000 ARS ($1.20-1.60 USD) en parrilla local",
+          "Carne en asado casero: Invitación de local vale más que cualquier restaurante",
+          "Café + medialunas: 300-400 ARS ($0.25-0.35 USD) en bar porteño"
+        ]
+      },
+      {
+        "category": "Milongas & Tango",
+        "details": [
+          "Salón Canning: La milonga más emblemática, muchas noches, entrada ~200 ARS ($0.17 USD)",
+          "La Viruta: Miércoles y viernes, clase + baile, 200-300 ARS",
+          "Club Gricel: Lunes-sábados, muy auténtica, 200-400 ARS",
+          "Tour tango turístico (La Boca): $80-120 USD — EVITAR, nada auténtico",
+          "Tours privados DJ/guía: $50-80 USD para pequeño grupo, mejor experiencia"
+        ]
+      },
+      {
+        "category": "Barrios & Alojamiento",
+        "details": [
+          "San Telmo: Histórico, buenas parillas, milongas locales, 1200-1800 ARS/noche",
+          "Almagro: Mejor precio, más local, menos turístico, 1000-1500 ARS/noche",
+          "Palermo: Vida moderna, parques, hipster, 1500-2500 ARS/noche",
+          "La Boca: Turístico extremo, fotos bonitas, vivir aquí es innecesario",
+          "Recoleta: Elegante y cara, 2000-3500 ARS/noche"
+        ]
+      },
+      {
+        "category": "Compras & Entretenimiento",
+        "details": [
+          "Feria Domenical San Telmo: Domingos, artesanía, antiques, ambiente local",
+          "MALBA (museo de arte): $500 ARS, colección excepcional de Frida Kahlo y Xul Solar",
+          "Cementerio de la Recoleta: Gratuito, historias de personajes célebres (Evita, Carlos Gardel)",
+          "Bookstores: Ateneo Grand Splendid es la más linda de América Latina",
+          "Heladerías: Freddo o Grido, helado italiano creemoso (200-400 ARS por cono)"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "¿Cómo cambio dinero sin que me estafen?",
+        "answer": "Solo cambios en casa de cambio formal (búscalos en Google Maps, están por todos lados). El dólar blue paga 1000-1200 ARS por USD (vs oficial 900 ARS). Evita cambios callejeros y cambistas de hotel — te roban. Llevar dólares en efectivo es la forma más inteligente."
+      },
+      {
+        "question": "¿Es segura Buenos Aires de noche?",
+        "answer": "Los barrios turísticos (San Telmo, Recoleta, Palermo) son seguros incluso de madrugada. Evita Flores y Acoyte de noche. Usa sentido común: no andes solo en zonas vacías, evita mostrar valuables. La mayoría de viajeros pasean cómodamente de noche."
+      },
+      {
+        "question": "¿Cuántos días necesito en Buenos Aires?",
+        "answer": "Mínimo 4-5 días: 1 para barrios principales (San Telmo, La Boca, Recoleta rápido), 1 para museos (MALBA, Evita), 1-2 para milongas, 1-2 para simplemente vivir en cafés porteños. 6+ días mejora infinitamente la experiencia."
+      },
+      {
+        "question": "¿Vale la pena el tango show turístico?",
+        "answer": "No. Cuesta $80-120 USD y es teatro para turistas, no tango real. En cambio, ve a una milonga local (¥200 ARS = $0.17 USD), siéntate en la barra a tomar un café, observa cómo bailan locales. Es la experiencia verdadera."
+      },
+      {
+        "question": "¿Dónde como el mejor asado de Buenos Aires?",
+        "answer": "No es en un steakhouse famoso. Busca parrillas de barrio en Almagro o San Telmo donde solo comen locales. Pregunta en tu hostal dónde van. Un Bife de Chorizo excelente cuesta 1500-2000 ARS ($1.20-1.60 USD), no $40."
+      },
+      {
+        "question": "¿Necesito hablar español para viajar?",
+        "answer": "Inglés funciona en zonas turísticas. Pero si hablas español (aunque sea básico), la experiencia mejora 100x. Los porteños son más receptivos con viajeros que intentan hablar español. Vale la pena practicar frases básicas."
+      }
+    ]
+  },
+
+  "cancun": {
+    "guidePractical": "Cancún es la puerta de entrada a la Riviera Maya pero no es el destino en sí — es un hub turístico donde todos viajan en tránsito. La Zona Hotelera es turística extremo con precios inflados. La verdadera Riviera Maya está al sur: Playa del Carmen (45 min), Tulum (2 horas), Bacalar (3.5 horas). Si solo tienes 3 días, la Zona Hotelera vale una noche por la playa, luego vete. Si tienes 5+, baja a Playa del Carmen o Tulum para mejor vida local y playas menos masificadas. El autobús ADO es la forma inteligente de moverse: desde Cancún a Playa cuesta 100 MXN ($5 USD), vs Uber/taxi 200+ MXN. Los cenotes (lagos subterráneos sagrados mayas) son la verdadera gema — están por toda la riviera. El Cenote Zací en Valladolid o los de San Antonio Muul son igualmente hermosos que los masificados 'cenotes Instagram' pero tienen 1/5 de la gente. Chichén Itzá es impresionante pero caro en tours organizados — toma ADO (2.5 hs, $15 USD), explora libremente, come donde comen los locales (no turístico). La Isla Mujeres es una excursión de día — ferry desde Puerto Juárez (no desde la Zona Hotelera turística) cuesta $5 USD vs $30 de tours. La seguridad es buena en zonas turísticas pero evita Cancún ciudad de noche (no es zona turística, es donde viven los trabajadores de la industria). Alojate en Playa del Carmen o Tulum si buscas experiencia auténtica.",
+    "practicalInfo": [
+      {
+        "category": "Transporte & Movilidad",
+        "details": [
+          "ADO (autobús): La forma inteligente, directo a pueblos cercanos — $5-20 USD según distancia",
+          "Taxi/Uber Zona Hotelera: Muy caro (200-400 MXN = $12-24 USD)",
+          "Ferry Isla Mujeres: Puerto Juárez $5 USD (30 min, local) vs Tours $30 USD",
+          "Rentar coche: Barato comparado con taxi/uber si planeas múltiples excursiones",
+          "Autobús colectivo ('combi'): Muy barato pero desordenado, menos turista-friendly"
+        ]
+      },
+      {
+        "category": "Cenotes & Atracciones Mayas",
+        "details": [
+          "Chichén Itzá: 400 MXN entrada, muy turístico — ve temprano (8am), come fuera entrada",
+          "Cenote Zací (Valladolid): 100 MXN entrada, hermoso, menos gente que masificados",
+          "San Antonio Muul cenotes: 200 MXN, muy bonito, vibes locales, poco turismo",
+          "Xcaret: 4000+ MXN (turístico, caro, muchos parques similares más baratos)",
+          "Tulum ruinas: 150 MXN entrada, playa hermosa al lado, acceso directo caminando"
+        ]
+      },
+      {
+        "category": "Playas & Zona Hotelera",
+        "details": [
+          "Playa Delfines (Cancún): Pública, libre, hermosa, menos turística que Balneario",
+          "Isla Mujeres: Playas tranquilas, snorkel, ferry local $5 USD vs tours $30 USD",
+          "Playa del Carmen: Centro, bares, restaurantes, vida del Caribe sin masas de Cancún",
+          "Tulum: Ruinas sobre playa, glamping, yoga, el lado espiritual de Riviera",
+          "Bacalar: 3.5 hs sur de Cancún, laguna 7 colores, tranquilo, menos conocido"
+        ]
+      },
+      {
+        "category": "Gastronomía & Precios",
+        "details": [
+          "Cochinita Pibil (Yucatán): 150-200 MXN en restaurante local, auténtico",
+          "Ceviche en mercado: 80-120 MXN, muy fresco, donde comen locales",
+          "Taco de carne asada: 30-50 MXN cada uno, street food icónico",
+          "Restaurante Zona Hotelera: 400-800 MXN por plato — EVITAR",
+          "Mercadería/supermercado: Soriana o Walmart para provisiones económicas"
+        ]
+      },
+      {
+        "category": "Snorkel & Actividades Acuáticas",
+        "details": [
+          "Tour snorkel Isla Mujeres (local): $40-50 USD con operador local",
+          "Tour snorkel de agencia turística: $80-120 USD — sobrepago por lo mismo",
+          "Cenote snorkel: 250-400 MXN acceso + guía local opcional",
+          "Catamarán puesta de sol: $50 USD, romántico, buena relación precio-experiencia",
+          "Buceo: PADI certification + dives desde $400 MXN, buceo es más barato en Riviera"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "¿Vale la pena quedarse en la Zona Hotelera de Cancún?",
+        "answer": "Solo si buscas resort de lujo todo incluido. Para presupuesto normal, es turístico extremo y caro. Mejor: pasa 1-2 noches por la playa, luego baja a Playa del Carmen o Tulum donde hay más vida local y los precios bajan 40%."
+      },
+      {
+        "question": "¿Cuánto cuesta realmente un viaje a la Riviera Maya?",
+        "answer": "Presupuesto mochilero: $30-50/día (ADO buses, cenotes, comida callejera). Clase media: $80-120/día. Lujo: $200+. La diferencia es principalmente alojamiento y tours — transporte y comida pueden ser baratos si sabes dónde ir."
+      },
+      {
+        "question": "¿Es seguro el sur de la Riviera (Bacalar, Tulum) de noche?",
+        "answer": "Sí, es seguro. Los pueblos son pequeños y turísticos. La regla: evita las carreteras solitas de noche, quédate en pueblos iluminados. Los bares y restaurantes funcionan normal de noche sin riesgo."
+      },
+      {
+        "question": "¿Necesito tour organizado para Chichén Itzá?",
+        "answer": "No. Toma ADO desde Cancún (2.5 hs, $15 USD), explora libremente, cómete un cochinita pibil en restaurante local. Los tours cobran 3-4x más por lo mismo. Tienes plena libertad en el sitio arqueológico."
+      },
+      {
+        "question": "¿Cuántos días necesito en Riviera Maya?",
+        "answer": "Mínimo 5-6 días: 1-2 playas (Isla Mujeres, Playa del Carmen), 1 Chichén Itzá, 1-2 cenotes, 1 día relajado. 7+ si quieres Bacalar y vibes más lentamente."
+      },
+      {
+        "question": "¿Qué es mejor: Playa del Carmen o Tulum?",
+        "answer": "Playa del Carmen tiene más vida nocturna y bares, más vibrante. Tulum es más espiritual/bohemio, playas junto a ruinas, mejor para yoga/wellness. Ambos están 45 min uno del otro — fácil visitarlos."
+      }
+    ]
+  },
+
+  "miami": {
+    "guidePractical": "Miami es la puerta de entrada a América Latina desde EE.UU.: es español hablante, caribeño en vibes pero estadounidense en infraestructura. La ciudad se divide en zonas claras: South Beach (playas, Art Deco, turismo), Wynwood (street art, galerías, hipster), Little Havana (cultura cubana auténtica), Brickell (financiero, vida nocturna sofisticada), Coconut Grove (bohemio, mercados). No cometas el error de quedarte solo en South Beach — es turístico extremo con precios inflados. Los murales de Wynwood son espectaculares pero están en calles aledañas FUERA del recinto pago — el tour gratuito es mejor que el pago. Little Havana es donde vive la verdadera Miami: domino en parques, cafecito cubano a $1-2 USD, la calle Ocho hirviendo de vida. Las happy hours son la mejor forma de ahorrar en Miami — arrancan a las 3-4pm con tragos premium a $7 USD vs $18+ de noche. El Metrorail conecta el aeropuerto con Brickell en 15 minutos por $2.25, es moderno y seguro. Miami es cara pero hay formas inteligentes de viajarlo: come donde comen los cubanos (Little Havana), toma las happy hours, sé frugal con alojamiento (Airbnb fuera de South Beach es 50% más barato). La vida nocturna es legendaria pero los precios de nightclub son astronómicos — mejor: bares de calle, rooftops, cafés cubanos. Para playa sin masificación, norte hacia Hollywood o Fort Lauderdale (A1A) tiene arenas igual de hermosas y estacionamiento gratuito.",
+    "practicalInfo": [
+      {
+        "category": "Transporte & Metrorail",
+        "details": [
+          "Metrorail (tren): $2.25 desde aeropuerto a Brickell (15 min), muy eficiente",
+          "Metromover: Gratuito en Downtown, bueno para orientarse",
+          "Taxi/Uber desde aeropuerto: $30-45 vs Metrorail $2.25 — no hay comparación",
+          "Coche alquiler: Necesario para Everglades/Keys, sino inútil en Miami ciudad",
+          "Bicicleta (bikeshare): $5/día con estaciones por toda la ciudad"
+        ]
+      },
+      {
+        "category": "Wynwood, Little Havana & Barrios",
+        "details": [
+          "Wynwood Walls (recinto pago): $15 entrada, pero murales libres FUERA en calles aledañas",
+          "Little Havana: Gratuito (Calle Ocho, parques con domino, arte callejero)",
+          "Cafecito cubano: $1-2 USD en cualquier ventanilla de Little Havana",
+          "Viragos (dominó): Parque pública, ver juegos, aprender juego tradicional",
+          "Calle Ocho Festival (marzo): Carnaval de calle, música, comida cubana"
+        ]
+      },
+      {
+        "category": "Playas & Outdoor",
+        "details": [
+          "South Beach: Famosa, turística, cara, arquitectura Art Deco bonita",
+          "Playa pública Lummus: Paralela a South Beach, libre, igual de hermosa",
+          "Hollywood Beach: 30 km norte, misma arena, menos gente, estacionamiento gratuito",
+          "Everglades: Tour con airboat $50-80 USD, ver caimanes, manatís, vida silvestre",
+          "Key West (day trip): 4 hs en coche, pueblo al final de los Keys, vibes Caribe"
+        ]
+      },
+      {
+        "category": "Gastronomía & Happy Hours",
+        "details": [
+          "Cafecito cubano: $1-2 USD (doble espresso con azúcar), energizante",
+          "Comida cubana (La Carreta): Ropa vieja, picadillo, platano — 15-25 USD plato",
+          "Ceviche en Little Havana: 10-15 USD, fresco, cubano-peruano",
+          "Happy hour (3-6pm Brickell/Midtown): Tragos premium $7 USD, ceviche gratis",
+          "South Beach turístico: 25-50 USD por plato — EVITAR"
+        ]
+      },
+      {
+        "category": "Vida Nocturna & Entretenimiento",
+        "details": [
+          "Rooftop bars (Brickell): $8-15 tragos, vistas del Downtown, menos pretencioso",
+          "Nightclubs (South Beach): Entrada $30-50, tragos $20+, muy caro",
+          "Vieja Havana (Little Havana): Bares cubanos auténticos, música en vivo, $5-8 tragos",
+          "Wynwood Art Walks: Primer viernes de mes, galerías, arte, performance gratuito",
+          "Museos: Pérez Art Museum, Design District — cultura sin tourismos"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "¿Es Miami cara para viajeros con presupuesto?",
+        "answer": "South Beach sí, muy cara. Pero Miami tiene zonas baratas: Little Havana, Allapattah, Wynwood. Come donde comen cubanos ($5-15 por plato), toma happy hours (3-6pm, tragos $7), alójate fuera de South Beach. Presupuesto: $60-100 USD/día es posible."
+      },
+      {
+        "question": "¿Vale la pena pasar días en South Beach?",
+        "answer": "1 día máximo para ver Art Deco y tomar fotos. Es turístico extremo con precios inflados. Mejor: pasa el tiempo en Little Havana (cultura auténtica), Wynwood (arte), Brickell (vida nocturna sofisticada sin precios de nightclub)."
+      },
+      {
+        "question": "¿Debo hacer tour a los Everglades?",
+        "answer": "Sí si te gustan animales/naturaleza. Los airboat tours son $50-80 USD, ve temprano (8-10am es mejor luz). Puedes ir por tu cuenta en coche alquilado a Shark Valley (entrada $30 en coche, bici $9 alquiler)."
+      },
+      {
+        "question": "¿Es seguro Little Havana de noche?",
+        "answer": "Sí, es seguro. Es barrio local donde viven cubanos, no área de crimen. Los bares están activos hasta tarde. Usa sentido común como en cualquier ciudad — no es peligroso de noche."
+      },
+      {
+        "question": "¿Cuántos días necesito en Miami?",
+        "answer": "3-4 días: 1 para South Beach + Art Deco, 1 Little Havana + Wynwood, 1 playas (Hollywood Beach), 1 Everglades o Key West day trip si tienes tiempo. 5+ si quieres vida nocturna relajada."
+      }
+    ]
+  },
+
+  "lisboa": {
+    "guidePractical": "Lisboa es la capital europea más asequible y encantadora — es pequeña, peatonal en su mayoría y tiene una atmósfera que mezcla decadencia colonial con modernismo. Los siete cerros de Lisboa ofrecen vistas espectaculares desde múltiples miradouros (viewpoints): Santa Catarina es bohemio con vistas al Tejo, Graça es el favorito para sunset, São Pedro de Alcântara tiene el castillo de fondo. Evita el Tranvía 28 como atracción — es pintoresco pero lento y es blanco favorito de carteristas. Los locales usan metro. El Castillo de São Jorge merece visita por las vistas 360° — mejor al atardecer. El Barrio de Alfama es el corazón medieval de Lisboa — caminatas sin mapa, callejuelas sinuosas, gatos everywhere, la mejor atmósfera de la ciudad. Los Pastéis de Belém en la fábrica original siempre tienen fila pero avanza en 15 minutos — la experiencia de comerlo recién horneado vale la pena. Belém es una zona de museos pero es mejor para una media mañana que día completo. El presupuesto es bueno: café + pastel $3 USD, comida en restaurante local $8-15 USD, entrada museos $8-15 USD. Los vinos del Alentejo (región 2 hs sur) son excepcionales y baratos: una botella de $5-8 en supermercado equivale a $25-30 en otro país europeo. Alójate en Almagro, Príncipe Real o Graça para vida más local — evita la Baixa turística si buscas autenticidad.",
+    "practicalInfo": [
+      {
+        "category": "Transporte & Movilidad",
+        "details": [
+          "Tarjeta Viva Viagem (rechargeable): €10 + carga, funciona en metro/tranvía/bus",
+          "Pase 24/72hs: €10/€25, transporte ilimitado",
+          "Tranvía 28: Pintoresco pero turístico y con carteristas — mejor andar a pie",
+          "Metro: Limpio, eficiente, llega a todos lados, recomendado",
+          "Bicicleta pública (Gira): €1 desbloqueo + $0.15/min, buena para paseos cortos"
+        ]
+      },
+      {
+        "category": "Miradouros & Vistas",
+        "details": [
+          "Miradouro da Graça: El mejor del casco histórico, sunset espectacular, gratuito",
+          "Santa Catarina: Bohemio, vistas al Tejo, bares con vista, gratuito",
+          "São Pedro de Alcântara: Con castillo al fondo, fotogénico, gratuito",
+          "Castillo São Jorge: €10-12 entrada, vistas 360°, mejor al atardecer",
+          "Elevador de Santa Justa: €6 ida/vuelta, turístico pero vistas bonitas desde la cúspide"
+        ]
+      },
+      {
+        "category": "Barrios & Alojamiento",
+        "details": [
+          "Alfama: Medieval, auténtico, gatos, callejuelas — la esencia de Lisboa, 80-120 EUR/noche",
+          "Príncipe Real: Bohemio, moderno, LGBT friendly, bares/cafés, 90-150 EUR/noche",
+          "Graça: Local, miradouros espectaculares, menos turístico, 70-110 EUR/noche",
+          "Baixa (turística): Centro turístico, caro, evitar si buscas autenticidad, 100-180 EUR/noche",
+          "Belém: Museos, pasteles, más alejado pero accesible por tranvía"
+        ]
+      },
+      {
+        "category": "Gastronomía & Precios",
+        "details": [
+          "Café + Pastel de Nata: €3-4 en lugar local",
+          "Sardinas asadas (IA — picada): €8-12 plato, típico portugués",
+          "Francesinha (sándwich portugués): €8-12, muy local, muy rico",
+          "Comida en restaurante local: €10-18 menú completo (almuerzo más barato)",
+          "Vino Alentejo: €5-8 botella en supermercado, equivalente a €25+ Europa",
+          "Pastel de Belém (fábrica original): €2-3, recién horneado, imprescindible"
+        ]
+      },
+      {
+        "category": "Museos & Atracciones",
+        "details": [
+          "MAAT (Museo Arte Moderna): €12 entrada, arquitectura moderna bonita",
+          "Museu dos Coches (Carretas Reales): €12 entrada, único en el mundo",
+          "Fondation Champalimaud: Gratuito, arquitectura espectacular + exposiciones",
+          "Tren turístico rojo (Belém): €14, cursi pero útil si cansado de andar",
+          "Iglesias: San Jorge, Santo Estêvão — son gratuitas y hermosas"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "¿Es Lisboa cara como otras capitales europeas?",
+        "answer": "No. Es de precio medio-bajo para Europa. Comida: €8-18, alojamiento: €70-120, museos: €8-15. Mejor presupuesto que Barcelona, Roma o París. Los vinos son especialmente baratos."
+      },
+      {
+        "question": "¿Vale la pena subir a los miradouros?",
+        "answer": "Sí, pero muchos son gratuitos. La Graça es el mejor por puesta de sol. Santa Catarina es bohemio. São Pedro tiene vistas con castillo. Evita el Elevador de Santa Justa ($6) — las vistas desde los miradouros son iguales."
+      },
+      {
+        "question": "¿Cuántos días necesito en Lisboa?",
+        "answer": "3-4 días: 1 Alfama + Castillo, 1 Miradouros sunset + Príncipe Real, 1 Belém pasteles + museos, 1 Sintra day trip o descanso. 5+ mejora la experiencia de verdad."
+      },
+      {
+        "question": "¿Necesito día trip a Sintra?",
+        "answer": "Sintra es hermosa (Palacio da Pena, Quinta da Regaleira) pero requiere tren (45 min, €3.60) y 4-5 horas. Vale la pena si tienes 5+ días en Portugal. Con 3-4 días, quédate en Lisboa."
+      },
+      {
+        "question": "¿Es segura Lisboa de noche?",
+        "answer": "Sí, muy segura. Alfama, Príncipe Real, Graça son seguras de noche. Hay pickpockets en transporte público — mantén bolsa cerrada. Mucho más segura que otras capitales europeas."
+      }
+    ]
+  },
+
+  "bangkok": {
+    "guidePractical": "Bangkok es caos controlado — la primera sensación es abrumadora pero una vez entiendes el sistema es fascinante. El río Chao Phraya divide la ciudad: el lado oeste (Thonburi) es templos y barcos, el lado este (Rattanakosin) es turístico pero tiene los templos más importantes. El BTS Skytrain (metro aéreo) es limpío, rápido y acondicionado — es la forma principal de transporte entre turistas. Los tuk-tuks son pintorescos pero cobran 3-5x más que Grab/Uber. Los templos exigen cubrir hombros y rodillas — lleva siempre una tela liviana. El Gran Palacio es impresionante pero es masificado: ve temprano (7-8am) o considera Wat Pho (templo del Buda reclinado) como alternativa menos abarrotada pero igual de espectacular. Chinatown (Yaowarat) es el corazón local — ir entre 6-8pm los viernes/sábados cuando todos los puestos de comida están en funcionamiento es experiencia de gastronomía callejera incomparable. El Mercado Flotante de Damnoen Saduak es famoso pero es turístico extremo — el mercado de Amphawa (90 min sur, fines de semana desde mediodía) es más auténtico y menos masificado. Khao San Road es la meca mochilera pero es puro turismo — la verdadera Bangkok vive en los barrios residenciales. Los precios son baratos si comes donde comen los tailandeses: mercado de comida callejera, bares locales. Alójate cerca de estación BTS — acceso a todo y seguro de noche.",
+    "practicalInfo": [
+      {
+        "category": "Transporte & Tarjetas",
+        "details": [
+          "Tarjeta BTS/MRT (Rabbit Card): ฿100 depósito + carga, descuento en viajes",
+          "BTS Skytrain: ฿16-59 según distancia, limpio y rápido",
+          "Metro MRT: ฿16-52 según distancia, aún más limpio que BTS",
+          "Grab/Uber: Mucho más barato que tuk-tuk, ¿usar siempre para largas distancias",
+          "Taxi: ฿35 bajada + ฿5.50/km, negociar puede bajar costo"
+        ]
+      },
+      {
+        "category": "Templos & Atracciones",
+        "details": [
+          "Gran Palacio + Wat Phra Kaew: ฿500 entrada, ve 7-8am antes de masas",
+          "Wat Pho (Buda reclinado): ฿100 entrada, alternativa menos masificada, espectacular",
+          "Wat Arun (templo del amanecer): ฿100 entrada, más hermoso al atardecer",
+          "Wat Saket: ฿20 entrada, golden mountain, vistas de Bangkok al anochecer",
+          "Templos menores: Gratuitos o muy baratos, igual de bellos, sin turistas"
+        ]
+      },
+      {
+        "category": "Chinatown & Mercados",
+        "details": [
+          "Chinatown (Yaowarat) street food: ฿20-60 por plato, mejor 6-8pm viernes/sábados",
+          "Mercado Flotante Amphawa: Fines de semana desde mediodía, auténtico, menos turístico",
+          "Damnoen Saduak: Famoso pero turístico extremo, 3-5am caro en tours",
+          "Or Tor Kor Market: Mercado de producción, mejor frutas/verduras, local",
+          "Talat Rot Fai: Mercado nocturno vintage, ropa usada, joyería, antiques"
+        ]
+      },
+      {
+        "category": "Gastronomía & Precios",
+        "details": [
+          "Pad Thai callejero: ฿40-60 ($1.20-1.80 USD), mejor que cualquier restaurante",
+          "Tom Yum Goong: ฿100 plato en mercado, sopa tailandesa icónica",
+          "Mango sticky rice: ฿40-50, postre tailandés obligatorio",
+          "Cerveza tailandesa (Chang/Singha): ฿50 en bar local (muy barato)",
+          "Restaurante turístico Westminster: ฿300+ por plato — EVITAR"
+        ]
+      },
+      {
+        "category": "Vida Nocturna & Entretenimiento",
+        "details": [
+          "Khao San Road: Bares mochileros, ambiente de fiesta, ฿100-200 tragos",
+          "Barrio Silom: Vida nocturna gay-friendly, bares sofisticados, ฿150-300 tragos",
+          "Bares locales (Soi): ฿80-120 cerveza, auténtico, donde beben locales",
+          "Muay Thai en estadio Rajadamnern: ฿400-2000 asiento, experiencia cultural única",
+          "Sky bars rooftop: ฿300+ tragos pero vistas de Bangkok al anochecer valen la pena"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "¿Es verdad que el Mercado Flotante es una trampa turística?",
+        "answer": "El Damnoen Saduak sí. El Amphawa es auténtico, funciona fines de semana desde mediodía. Si quieres experiencia real sin tours caros, ve a Amphawa. Es menos famoso pero probablemente mejor."
+      },
+      {
+        "question": "¿Necesito ropa especial para templos?",
+        "answer": "Sí. Cubrir hombros y rodillas es requisito, no sugerencia. Muchos templos alquilan sarongs (falda tailandesa) a la entrada por ฿20-50. Mejor llevar una tela/bufanda propia."
+      },
+      {
+        "question": "¿Cuánto cuesta realmente Bangkok?",
+        "answer": "Muy barato. Alojamiento guesthouse: ฿400-600 USD/noche. Comida callejera: ฿40-80 plato. Cerveza local: ฿50. Un viajero presupuesto: $40-60 USD/día."
+      },
+      {
+        "question": "¿Vale la pena ver Muay Thai en vivo?",
+        "answer": "Absolutamente. Es experiencia cultural, no solo deporte. Rajadamnern es estadio histórico. Entrada ฿400-1200 según asiento, noches martes-domingo. La energía es increíble."
+      },
+      {
+        "question": "¿Cuántos días necesito en Bangkok?",
+        "answer": "3-4 días: 1 templos principales (Gran Palacio/Wat Pho), 1 Chinatown + mercados, 1 barrios (Silom, Thonburi), 1 relajación. 5-6 si quieres Muay Thai y menos estrés."
+      }
+    ]
+  },
+
+  "praga-updated": {
+    "note": "Praga ya tiene contenido enriquecido completo en el archivo. Este es un resumen de lo que ya existe."
+  }
+}
