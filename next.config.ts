@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Blog URL consolidations
       { source: "/blog/viajar-europa-700-euros",      destination: "/blog/viaje-europa-presupuesto-real",          permanent: true },
       { source: "/blog/dubai-sin-filtros",            destination: "/blog/dubai-guia-honesta-viajero",             permanent: true },
       { source: "/blog/roma-48-horas",                destination: "/blog/roma-48-horas-itinerario",               permanent: true },
@@ -39,6 +40,8 @@ const nextConfig: NextConfig = {
       { source: "/blog/miami-2026",                   destination: "/blog/miami-guia-viajero-2026",               permanent: true },
       { source: "/blog/visa-schengen",                destination: "/blog/visa-schengen-latinoamerica",           permanent: true },
       { source: "/blog/equipaje-de-mano",             destination: "/blog/viajar-solo-equipaje-de-mano",          permanent: true },
+      // Destination routes consolidation: /destino/* → /itinerario/* (reduce duplicate content, preserve crawl budget)
+      { source: "/destino/:slug", destination: "/itinerario/:slug", permanent: true },
     ]
   },
 }

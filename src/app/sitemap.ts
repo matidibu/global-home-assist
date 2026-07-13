@@ -13,11 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  const destinationEntries: MetadataRoute.Sitemap = destinations.map((dest) => ({
-    url: `${BASE_URL}/destino/${dest.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
+  // Removed /destino/ entries — consolidated under /itinerario/ (301 redirects active in next.config.ts)
+  const destinationEntries: MetadataRoute.Sitemap = [];
 
   return [
     {
