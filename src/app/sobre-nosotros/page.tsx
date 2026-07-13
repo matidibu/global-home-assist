@@ -118,19 +118,39 @@ export default function SobreNosotrosPage() {
           paddingBottom: "8px",
           borderBottom: "1.5px solid rgba(26,42,108,0.1)",
         }}>
-          Cómo lo construimos
+          Quiénes somos y por qué confiar en nosotros
         </h2>
         <p style={{ fontSize: "15px", color: "#374151", lineHeight: 1.8, margin: "0 0 16px" }}>
-          Global Home Assist es un proyecto desarrollado en Buenos Aires, Argentina. No somos expertos viajeros con credenciales de la industria del turismo. Somos ingenieros y diseñadores que identificamos un problema claro de experiencia de usuario y construimos una solución.
+          Global Home Assist es un proyecto desarrollado en Buenos Aires, Argentina, por un equipo de ingenieros y especialistas en datos. <strong>No pretendemos ser "expertos en turismo"</strong> — no somos agencia de viajes, no trabajamos en la industria turística, y eso es exactamente nuestro valor.
         </p>
         <p style={{ fontSize: "15px", color: "#374151", lineHeight: 1.8, margin: "0 0 16px" }}>
-          <strong>Nuestra expertise es en centralización de información</strong>, no en viajes. Integramos datos de múltiples fuentes confiables: APIs de clima reales, información oficial de embajadas, datos de seguridad de agencias gubernamentales, reviews de viajeros verificados en plataformas consolidadas, y análisis de patrones de viaje de millones de usuarios. La IA sintetiza esa información para crear itinerarios personalizados, pero siempre basándose en datos reales y verificables.
+          <strong>Nuestra expertise real es en integración de datos y construcción de información confiable</strong>. Identificamos un problema claro: cuando planeás un viaje, nadie centraliza información de múltiples fuentes verificadas. Google te da imágenes, Booking te da hoteles, un blog de viajeros te da opiniones. Global Home Assist hizo lo que haría un ingeniero: construir un sistema que integra TODO eso en un solo lugar.
         </p>
         <p style={{ fontSize: "15px", color: "#374151", lineHeight: 1.8, margin: "0 0 16px" }}>
-          Cada dato que mostramos viene con una fuente. No inventamos precios, no recomendamos lugares que desconocemos, no buscamos comisiones antes que la verdad. Si algo no está verificado, lo marcamos como tal.
+          Eso significa que cada dato que mostramos viene de fuentes verificables:
+        </p>
+        <div style={{ margin: "0 0 16px 20px" }}>
+          {[
+            "APIs de clima real de servicios meteorológicos confiables",
+            "Información oficial de embajadas y ministerios de salud",
+            "Datos de seguridad de agencias gubernamentales (como US State Department)",
+            "Reviews de viajeros verificados de plataformas consolidadas (TripAdvisor, Google Maps)",
+            "Patrones de viaje de millones de usuarios reales",
+            "Integración con buscadores de vuelos y hoteles establecidos",
+          ].map((item, i) => (
+            <p key={i} style={{ fontSize: "14px", color: "#374151", lineHeight: 1.7, margin: "8px 0" }}>
+              • {item}
+            </p>
+          ))}
+        </div>
+        <p style={{ fontSize: "15px", color: "#374151", lineHeight: 1.8, margin: "0 0 16px" }}>
+          <strong>La IA sintetiza esa información</strong> para crear itinerarios personalizados, pero nunca inventa. Si un precio no está verificado, no lo mostramos. Si un lugar es inseguro según datos oficiales, lo marcamos. Si algo requiere disclaimers, los agregamos.
+        </p>
+        <p style={{ fontSize: "15px", color: "#374151", lineHeight: 1.8, margin: "0 0 16px" }}>
+          Los afiliados (Booking, GetYourGuide, Travelpayouts) están claramente divulgados. Ganamos una comisión si reservás a través de nuestros links, pero eso NO determina nuestras recomendaciones. Muchas de nuestras sugerencias son lugares gratuitos o de acceso público. Si un lugar tiene mejor experiencia en otra plataforma, lo decimos.
         </p>
         <p style={{ fontSize: "15px", color: "#374151", lineHeight: 1.8, margin: 0 }}>
-          El sitio está en constante evolución. Recibimos feedback de nuestra comunidad y iteramos constantemente para mejorar.
+          <strong>Transparencia total:</strong> el sitio evoluciona constantemente. Recibimos feedback de nuestra comunidad y ajustamos. Si cometemos un error, lo corregimos. Si encontramos información mejor, la actualizamos. No pretendemos ser perfectos — pretendemos ser honestos.
         </p>
       </section>
 
