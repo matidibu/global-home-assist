@@ -122,6 +122,8 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        {/* Map library preload */}
+        <link rel="dns-prefetch" href="https://unpkg.com" />
         <link
           rel="stylesheet"
           href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -132,8 +134,16 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://unpkg.com/@geoapify/geocoder-autocomplete@2/styles/minimal.css"
         />
+        {/* Font optimization for mobile LCP */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+          as="style"
+        />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
