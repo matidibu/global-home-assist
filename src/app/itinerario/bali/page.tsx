@@ -10,6 +10,7 @@ import DestinationInfo from "@/components/DestinationInfo";
 import MedicalAssistance from "@/components/MedicalAssistance";
 import SOSButton from "@/components/SOSButton";
 import BaliMap from "./BaliMap";
+import { getBlogPost } from "@/data/blogPosts";
 
 export const revalidate = 86400; // revalidar imágenes 1 vez por día
 
@@ -30,6 +31,9 @@ export const metadata: Metadata = {
     "templos bali",
     "playas bali",
     "ubud bali",
+    "bali desde españa",
+    "vuelos españa bali",
+    "bali para españoles",
   ],
   openGraph: {
     type: "article",
@@ -336,6 +340,8 @@ function TransportDivider({ transport }: { transport: { walk?: number; bike?: nu
 // ─── Página ───────────────────────────────────────────────────────────────────
 
 export default async function BaliItineraryPage() {
+
+  const spainGuide = getBlogPost("bali-desde-espana-guia-vuelos-presupuesto-visado");
 
   // Buscar todas las imágenes en paralelo con los 4 filtros existentes
   const allActivities = itinerary.days.flatMap((d) => d.activities);
@@ -667,6 +673,37 @@ export default async function BaliItineraryPage() {
           </h2>
           <BaliMap activities={mapActivities} />
         </div>
+
+        {/* ─── GUÍA RELACIONADA ─── */}
+        {spainGuide && (
+          <Link
+            href={`/blog/${spainGuide.slug}`}
+            style={{
+              display: "flex", alignItems: "center", justifyContent: "space-between",
+              gap: "16px", flexWrap: "wrap",
+              background: "rgba(255,255,255,0.92)",
+              border: "1.5px solid rgba(26,42,108,0.1)",
+              borderRadius: "16px", padding: "20px 24px", textDecoration: "none",
+              boxShadow: "0 4px 16px rgba(26,42,108,0.08)",
+            }}
+          >
+            <div>
+              <p style={{ margin: "0 0 3px", fontSize: "15px", fontWeight: 700, color: "#1a2a6c" }}>
+                🇪🇸 ¿Viajás desde España? {spainGuide.title}
+              </p>
+              <p style={{ margin: 0, fontSize: "13px", color: "#6b7280" }}>
+                {spainGuide.excerpt}
+              </p>
+            </div>
+            <span style={{
+              background: "#1a2a6c", color: "white",
+              padding: "10px 20px", borderRadius: "10px",
+              fontSize: "13px", fontWeight: 700, whiteSpace: "nowrap",
+            }}>
+              Leer guía →
+            </span>
+          </Link>
+        )}
 
         {/* ─── VUELOS ─── */}
         <FlightSearch destination="Bali" language="es" />

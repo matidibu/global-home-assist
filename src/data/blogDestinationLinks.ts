@@ -18,6 +18,7 @@ export const BLOG_TO_DESTINATION: Record<string, string> = {
   "marrakech-medina-guia-2026": "marrakech",
   "amsterdam-canales-guia-2026": "amsterdam",
   "bali-guia-honesta-2026": "bali",
+  "bali-desde-espana-guia-vuelos-presupuesto-visado": "bali",
 };
 
 export function getDestinationSlugForPost(postSlug: string): string | undefined {

@@ -869,6 +869,103 @@ export const blogPosts: BlogPost[] = [
   },
 
   {
+    slug: "bali-desde-espana-guia-vuelos-presupuesto-visado",
+    title: "Bali desde España: vuelos, presupuesto en euros y visado (guía 2026)",
+    excerpt: "No hay vuelo directo desde España a Bali, así que el viaje empieza con una decisión de ruta y termina siendo más largo y más caro de lo que parece en la búsqueda inicial. Esta guía resuelve eso: rutas reales, presupuesto en euros y visado para españoles.",
+    category: "destinos",
+    categoryLabel: "Destinos",
+    readTime: 9,
+    publishDate: "2026-07-30",
+    tags: ["bali desde españa", "vuelos españa bali", "bali para españoles", "presupuesto bali euros", "visado bali españoles"],
+    heroEmoji: "🛫",
+    metaTitle: "Bali desde España 2026: vuelos, presupuesto en euros y visado",
+    metaDescription: "Guía completa para viajar a Bali desde España: mejores rutas de vuelo con escala, cuánto cuesta en euros, visado para ciudadanos españoles y la mejor época según el calendario de vacaciones.",
+    sections: [
+      {
+        type: "intro",
+        text: "Bali es uno de los destinos que más se busca desde España, y también uno de los que menos información específica tiene para viajeros españoles. La razón es simple: no hay vuelo directo, el trayecto son entre 18 y 24 horas reales de viaje, y casi toda la información en español sobre Bali está escrita pensando en un lector genérico, no en alguien que sale de Madrid o Barcelona. Esta guía completa esos huecos.",
+      },
+      {
+        type: "h2",
+        text: "Cómo llegar: no hay vuelo directo, estas son las rutas reales",
+      },
+      {
+        type: "p",
+        text: "Ninguna aerolínea vuela directo entre España y Denpasar (DPS), el aeropuerto de Bali. Todas las opciones tienen al menos una escala, y la ruta que elijas cambia bastante el precio y la duración total del viaje.",
+      },
+      {
+        type: "list",
+        heading: "Rutas con escala más habituales desde Madrid o Barcelona",
+        items: [
+          "Qatar Airways vía Doha — una de las conexiones más rápidas y con buena valoración de servicio; escala de 2-4 horas típica",
+          "Turkish Airlines vía Estambul — suele ser de las opciones más económicas, con más frecuencias semanales",
+          "Emirates vía Dubái — buena opción si preferís volar de noche en el tramo largo",
+          "KLM vía Ámsterdam (con escala adicional en Singapur o Kuala Lumpur) — útil si ya tenés millas o preferís sumar tramos con aerolíneas europeas",
+        ],
+      },
+      {
+        type: "callout",
+        emoji: "🕐",
+        text: "Contá entre 18 y 24 horas de viaje puerta a puerta según la escala, y un precio ida y vuelta que ronda entre 600€ y 950€ en temporada media, y bastante más en julio-agosto. Reservar con 3-4 meses de anticipación es donde más se nota la diferencia de precio.",
+      },
+      {
+        type: "h2",
+        text: "Presupuesto en euros para un viaje desde España",
+      },
+      {
+        type: "p",
+        text: "Como el vuelo ya es una inversión grande, la mayoría de los viajeros españoles se quedan entre 10 y 14 días para que el trayecto valga la pena. Esto es lo que suele costar, por persona:",
+      },
+      {
+        type: "list",
+        heading: "Estimación para 12 días, temporada media",
+        items: [
+          "Vuelo ida y vuelta con escala: 600€-950€",
+          "Alojamiento (villa con piscina compartida o guesthouse cómoda): 350€-600€ para las 12 noches",
+          "Comida (de warung local a restaurante para turistas): 12€-25€/día",
+          "Transporte local (moto alquilada o Gojek/Grab): 4€-9€/día",
+          "Entradas, actividades y excursiones: 100€-180€ en total",
+          "TOTAL estimado: 1.200€-1.900€ por persona, vuelo incluido",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Visado para ciudadanos españoles",
+      },
+      {
+        type: "p",
+        text: "Los ciudadanos españoles que viajan a Indonesia por turismo suelen poder tramitar el permiso de entrada a la llegada (visa on arrival) para estadías cortas, con costo y duración que Indonesia actualiza con cierta frecuencia. Como esta política cambia, no la des por definitiva leyendo esta guía: confirmá el requisito vigente en la web oficial de inmigración de Indonesia o en el consulado antes de comprar el pasaje, y llevá el pasaporte con al menos 6 meses de validez y un billete de salida del país, que suelen pedir para el ingreso.",
+      },
+      {
+        type: "h2",
+        text: "La diferencia horaria y cómo no perder los primeros 2 días",
+      },
+      {
+        type: "p",
+        text: "Bali está en GMT+8 todo el año (Indonesia no tiene horario de verano). España está en GMT+1 en invierno y GMT+2 en verano, así que la diferencia real es de 6 horas en invierno europeo y 7 en verano. No es un jet lag brutal, pero sí lo suficiente como para perder medio día si no lo planificás: los vuelos suelen llegar a Bali por la tarde/noche hora local — la recomendación es no agendar nada exigente el primer día completo y dejar que el cuerpo se acomode con luz solar y horarios de comida locales desde el primer momento.",
+      },
+      {
+        type: "h2",
+        text: "Cuándo ir, pensando en el calendario español",
+      },
+      {
+        type: "p",
+        text: "Acá hay una coincidencia útil: la temporada seca de Bali (mayo a septiembre) se solapa casi por completo con el verano europeo, así que para quien viaja en vacaciones de julio o agosto el clima va a acompañar — al costo de precios más altos y más turistas. Si tu trabajo o estudios te dan flexibilidad, mayo-junio o septiembre tienen el mismo clima seco con bastante menos gente y mejores precios de vuelo y alojamiento. Semana Santa y Navidad caen en temporada de lluvias (octubre a abril), que en Bali no significa lluvia todo el día, sino chaparrones fuertes y cortos, generalmente por la tarde — el viaje se sigue disfrutando, y los precios bajan de forma notable.",
+      },
+      {
+        type: "tip",
+        title: "Un detalle que ahorra tiempo",
+        text: "Indonesia usa el mismo tipo de enchufe (tipo C/F) y voltaje (230V) que España, así que no hace falta adaptador de corriente — un detalle chico que en un viaje tan largo se agradece.",
+      },
+      {
+        type: "cta",
+        destination: "bali",
+        text: "Generá tu itinerario personalizado para Bali →",
+      },
+    ],
+  },
+
+  {
     slug: "buenos-aires-guia-viajero-extranjero",
     title: "Buenos Aires para el viajero del resto del mundo: la guía que escribiría un porteño",
     excerpt: "Buenos Aires tiene barrios que compiten con los mejores de Europa, una gastronomía que mezcla influencia italiana, española y judía, y una cultura nocturna que empieza cuando otras ciudades ya duermen. Pero también tiene trampas que solo los locales conocen.",
