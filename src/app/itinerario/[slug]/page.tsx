@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Sparkles, Clock, ArrowLeft, Coins, Lightbulb } from "lucide-react";
+import { Sparkles, Clock, ArrowLeft, Coins, Lightbulb, BookOpen } from "lucide-react";
 import FlightSearch from "@/components/FlightSearch";
 import InsuranceBanner from "@/components/InsuranceBanner";
 import FloatingCTA from "@/components/FloatingCTA";
 import CollapsibleDays from "@/components/CollapsibleDays";
 import { getDestinationPage, getAllDestinationSlugs, type DestActivity } from "@/data/destinationPages";
+import { getBlogSlugsForDestination } from "@/data/blogDestinationLinks";
+import { getBlogPost } from "@/data/blogPosts";
 
 const BASE_URL = "https://global-home-assist.vercel.app";
 const AFFILIATE_GYG = "NGZASHD";
@@ -209,6 +211,10 @@ export default async function DestinationItineraryPage({
   const expandedDays = dest.days.slice(0, 2);
   const collapsibleDays = dest.days.slice(2);
 
+  const relatedBlogPost = getBlogSlugsForDestination(dest.slug)
+    .map((s) => getBlogPost(s))
+    .find(Boolean);
+
   return (
     <div style={{
       minHeight: "100vh",
@@ -357,6 +363,40 @@ export default async function DestinationItineraryPage({
             ))}
           </ul>
         </div>
+
+        {/* ── Related blog guide ── */}
+        {relatedBlogPost && (
+          <div style={{ marginBottom: "32px" }}>
+            <Link
+              href={`/blog/${relatedBlogPost.slug}`}
+              style={{
+                display: "flex", alignItems: "center", justifyContent: "space-between",
+                gap: "16px", flexWrap: "wrap",
+                background: "rgba(255,255,255,0.92)",
+                border: "1.5px solid rgba(26,42,108,0.1)",
+                borderRadius: "16px", padding: "20px 24px", textDecoration: "none",
+                boxShadow: "0 4px 16px rgba(26,42,108,0.08)",
+              }}
+            >
+              <div>
+                <p style={{ margin: "0 0 3px", fontSize: "15px", fontWeight: 700, color: "#1a2a6c" }}>
+                  📖 {relatedBlogPost.title}
+                </p>
+                <p style={{ margin: 0, fontSize: "13px", color: "#6b7280" }}>
+                  {relatedBlogPost.excerpt}
+                </p>
+              </div>
+              <span style={{
+                background: "#1a2a6c", color: "white",
+                padding: "10px 20px", borderRadius: "10px",
+                fontSize: "13px", fontWeight: 700, whiteSpace: "nowrap",
+                display: "flex", alignItems: "center", gap: "6px",
+              }}>
+                <BookOpen size={14} /> Leer guía
+              </span>
+            </Link>
+          </div>
+        )}
 
         {/* ── GYG banner ── */}
         <div style={{

@@ -3,9 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getBlogPost, categoryColors, ContentSection } from "@/data/blogPosts";
 import { RelatedPostCard } from "@/components/BlogCards";
-import { ArrowLeft, Lightbulb, Plane, ChevronRight, Sparkles } from "lucide-react";
+import { ArrowLeft, Lightbulb, Plane, ChevronRight, Sparkles, MapPin } from "lucide-react";
 import { AdSenseUnit } from "@/components/AdSenseUnit";
 import { ADSENSE_SLOTS } from "@/lib/adsenseConfig";
+import { getDestinationSlugForPost } from "@/data/blogDestinationLinks";
+import { getDestinationPage } from "@/data/destinationPages";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -248,6 +250,8 @@ export default async function BlogPostPage({ params }: Props) {
 
   const catColor = categoryColors[post.category];
   const relatedPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const relatedDestSlug = getDestinationSlugForPost(post.slug);
+  const relatedDest = relatedDestSlug ? getDestinationPage(relatedDestSlug) : undefined;
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -389,6 +393,43 @@ export default async function BlogPostPage({ params }: Props) {
       <article style={{ maxWidth: "820px", margin: "0 auto", padding: "40px 24px 0" }}>
         {post.sections.map((section, i) => renderSection(section, i))}
       </article>
+
+      {/* Related destination guide */}
+      {relatedDest && (
+        <div style={{ maxWidth: "820px", margin: "0 auto", padding: "0 24px" }}>
+          <Link
+            href={`/itinerario/${relatedDest.slug}`}
+            style={{
+              display: "flex", alignItems: "center", justifyContent: "space-between",
+              gap: "16px", flexWrap: "wrap",
+              background: "rgba(42,181,160,0.08)",
+              border: "1.5px solid rgba(42,181,160,0.25)",
+              borderRadius: "16px", padding: "20px 24px", textDecoration: "none",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+              <span style={{ fontSize: "28px" }}>{relatedDest.emoji}</span>
+              <div>
+                <p style={{ margin: "0 0 3px", fontSize: "15px", fontWeight: 700, color: "white", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  Itinerario día por día de {relatedDest.city}
+                </p>
+                <p style={{ margin: 0, fontSize: "13px", color: "rgba(255,255,255,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  {relatedDest.totalDays} días, horarios y precios verificados
+                </p>
+              </div>
+            </div>
+            <span style={{
+              background: "#2ab5a0", color: "white",
+              padding: "10px 20px", borderRadius: "10px",
+              fontSize: "13px", fontWeight: 700, whiteSpace: "nowrap",
+              display: "flex", alignItems: "center", gap: "6px",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+            }}>
+              <MapPin size={14} /> Ver guía completa
+            </span>
+          </Link>
+        </div>
+      )}
 
       {/* AdSense - In-article ad */}
       <div style={{ maxWidth: "820px", margin: "0 auto", padding: "48px 24px 0" }}>

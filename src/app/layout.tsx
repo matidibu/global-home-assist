@@ -1,11 +1,10 @@
 import type { Metadata, Viewport } from "next";
+import { AnalyticsScripts } from "@/components/AnalyticsScripts";
 import { CookieBanner } from "@/components/CookieBanner";
 import { Footer } from "@/components/Footer";
 import { SiteNav } from "@/components/SiteNav";
 import { generateOrganizationSchema, generateWebsiteSchema } from "@/lib/schemaMarkup";
 import "./globals.css";
-
-const META_PIXEL_ID = "939419192381738";
 
 const BASE_URL = "https://global-home-assist.vercel.app";
 
@@ -122,6 +121,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <link rel="alternate" type="application/rss+xml" title="Global Home Assist — Blog de viajes" href="/blog/rss.xml" />
         {/* Map library preload */}
         <link rel="dns-prefetch" href="https://unpkg.com" />
         <link
@@ -149,16 +149,6 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
         />
-        {/* Google AdSense - deferred to avoid render blocking */}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6133557054306983" crossOrigin="anonymous" />
-        {/* Travelpayouts - async load */}
-        <script async data-noptimize="1" data-cfasync="false" data-wpfc-render="false" dangerouslySetInnerHTML={{ __html: `(function(){var script=document.createElement("script");script.async=1;script.src='https://emrld.ltd/NTEwNjM3.js?t=510637';document.head.appendChild(script);})();` }} />
-        {/* Google Analytics - async */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEN7PWJEWK" />
-        <script async dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WEN7PWJEWK');` }} />
-        {/* Meta Pixel - defer to after page load */}
-        <script defer dangerouslySetInnerHTML={{ __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');` }} />
-        <noscript><img height="1" width="1" style={{display:"none"}} src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`} /></noscript>
         {/* Structured data */}
         <script
           type="application/ld+json"
@@ -180,6 +170,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <CookieBanner />
+        <AnalyticsScripts />
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { useHasAdConsent } from '@/lib/consent';
 
 interface AdSenseUnitProps {
   slot: string;
@@ -15,13 +16,20 @@ export function AdSenseUnit({
   responsive = true,
   className = ''
 }: AdSenseUnitProps) {
+  const consented = useHasAdConsent();
+
   useEffect(() => {
+    if (!consented || !slot) return;
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {
       console.log('AdSense error:', e);
     }
-  }, []);
+  }, [consented, slot]);
+
+  // No real slot configured yet, or user hasn't consented to ads — render nothing
+  // rather than push an invalid/placeholder ad request.
+  if (!slot || !consented) return null;
 
   return (
     <div className={`my-8 ${className}`}>

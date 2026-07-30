@@ -1275,14 +1275,14 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Sí se puede viajar con bebés y niños pequeños. La clave no es heroísmo — es elegir bien el destino, el ritmo y las expectativas.",
     category: "consejos",
     categoryLabel: "Consejos",
-    readTime: 4,
+    readTime: 11,
     publishDate: "2026-04-07",
     tags: ["viajar con bebés", "viaje con niños pequeños", "turismo familiar", "viaje familia"],
     heroEmoji: "👶",
     metaTitle: "Viajar con hijos chicos (0 a 6 años): guía práctica 2026",
     metaDescription: "Consejos reales para viajar con bebés y niños pequeños: qué destinos elegir, cómo organizarse en el avión, qué llevar y qué expectativas tener.",
     sections: [
-      { type: "intro", text: "Viajar con un hijo de 2 años no es un viaje de placer adulto con un pasajero extra. Es otro tipo de viaje — con su propio ritmo, sus propias recompensas y sus propios límites. Conocerlos de antemano lo cambia todo." },
+      { type: "intro", text: "Viajar con un hijo de 2 años no es un viaje de placer adulto con un pasajero extra. Es otro tipo de viaje — con su propio ritmo, sus propias recompensas y sus propios límites. Conocerlos de antemano lo cambia todo, y la diferencia entre un viaje que funciona y uno que se convierte en una pesadilla de dos semanas suele estar en tres o cuatro decisiones tomadas antes de salir de casa." },
       { type: "h2", text: "Qué funciona" },
       {
         type: "list", items: [
@@ -1302,10 +1302,54 @@ export const blogPosts: BlogPost[] = [
           "Horarios rígidos — siempre va a pasar algo que los tire",
         ],
       },
+      { type: "h2", text: "Por edad: no es lo mismo 6 meses que 5 años" },
+      { type: "p", text: "\"Viajar con niños chicos\" mete en la misma bolsa etapas completamente distintas. Un bebé de 4 meses y un nene de 5 años tienen necesidades, tolerancias y capacidad de adaptación totalmente diferentes — vale la pena separarlo." },
+      {
+        type: "list", heading: "0 a 12 meses", items: [
+          "Es, paradójicamente, una de las edades más fáciles para viajar: no caminan, no opinan sobre el itinerario y duermen gran parte del día",
+          "El desafío real es la logística (esterilización de mamaderas, changing table, horarios de sueño) más que el humor del bebé",
+          "Evitar vuelos de más de 2-3 horas sin escala si es el primer vuelo largo — probar con trayectos cortos antes",
+        ],
+      },
+      {
+        type: "list", heading: "1 a 3 años", items: [
+          "La etapa más exigente: caminan, tienen opiniones, pierden la siesta en cualquier cambio de rutina y no entienden por qué hay que esperar",
+          "Los espacios abiertos (playa, parques, piletas) rinden mucho más que cualquier atracción cultural",
+          "La regresión del sueño en viaje es normal — no pelear contra eso, solo sostener el resto de la rutina lo más posible",
+        ],
+      },
+      {
+        type: "list", heading: "4 a 6 años", items: [
+          "Ya pueden disfrutar actividades más largas (un museo interactivo, un zoológico, una excursión corta) si se alternan con tiempo libre",
+          "Empiezan a recordar el viaje — vale la pena incluir 1-2 actividades pensadas específicamente para ellos, no solo para los adultos",
+          "Todavía se cansan mucho más rápido que un adulto: 2 actividades por día suele ser el techo real",
+        ],
+      },
+      { type: "h2", text: "El vuelo: antes, durante y después" },
       {
         type: "callout", emoji: "✈️",
         text: "Antes de embarcar: cambiá el pañal, dale de comer y esperá que esté relajado. Los primeros 10 minutos del vuelo marcan el tono de todo el resto.",
       },
+      {
+        type: "list", heading: "Durante el vuelo", items: [
+          "Despegue y aterrizaje: ofrecer mamadera, pecho o un chupetín — tragar ayuda a igualar la presión y evita el dolor de oídos que suele desatar el llanto",
+          "Reservar asientos con anticipación cuando la aerolínea lo permite — la bassinet de pared (para bebés hasta ~10 kg) se pide, no se asigna sola",
+          "Avisar en el check-in si hay un cochecito para despachar en la puerta del avión (gate-check) — se retira ahí mismo al bajar, no en cinta de equipaje",
+          "Llevar un juguete o libro \"nuevo\" que el niño no conozca — la novedad entretiene más que el favorito de siempre",
+        ],
+      },
+      { type: "p", text: "Después de aterrizar, calculá al menos medio día de margen antes de la primera actividad \"importante\" del viaje. El jet lag en niños chicos se maneja mejor exponiéndolos a luz natural y horarios locales de comida desde el primer día, en vez de tratar de mantener el huso horario de origen." },
+      { type: "h2", text: "Salud y seguridad: lo que conviene resolver antes de salir" },
+      {
+        type: "list", items: [
+          "Consultar al pediatra sobre vacunas específicas del destino (fiebre amarilla, por ejemplo) con al menos 4-6 semanas de anticipación — algunas requieren ese margen para hacer efecto",
+          "Llevar un botiquín básico: antitérmico/analgésico pediátrico, suero de rehidratación oral, repelente apto para la edad del niño, y cualquier medicación de uso habitual con receta a mano",
+          "Contratar un seguro de viaje que cubra específicamente a menores — revisar que incluya asistencia pediátrica y no solo urgencias generales",
+          "Anotar la dirección y teléfono del hospital más cercano al alojamiento apenas se llega — no es necesario memorizarlo, alcanza con tenerlo guardado",
+        ],
+      },
+      { type: "h2", text: "Alojamiento: qué priorizar" },
+      { type: "p", text: "Más que la categoría del hotel, lo que cambia el viaje es la funcionalidad. Un departamento con cocina y lavarropas rinde más que una suite de cinco estrellas sin espacio para tender la ropa mojada de la pileta. Antes de reservar, conviene confirmar explícitamente con el anfitrión o el hotel si proveen cuna, si el piso es apto para gatear, y si hay ascensor (bajar escaleras con cochecito y valijas todos los días desgasta rápido)." },
       { type: "h2", text: "Qué llevar (lo que no es obvio)" },
       {
         type: "list", items: [
@@ -1314,8 +1358,11 @@ export const blogPosts: BlogPost[] = [
           "Una muda extra en el bolso de mano — siempre, sin excepción",
           "Tablet con contenido descargado offline",
           "Coche de paseo liviano — aunque ya camine, lo vas a agradecer",
+          "Un enchufe/adaptador extra solo para el esterilizador o calentador de mamaderas, si el destino usa otro estándar eléctrico",
         ],
       },
+      { type: "h2", text: "El presupuesto extra que no siempre se calcula" },
+      { type: "p", text: "Viajar con hijos chicos suele costar más de lo que se planea, no por los chicos en sí sino por las decisiones que se toman para que el viaje funcione: un vuelo directo más caro en vez de uno con escala, un departamento con una habitación más para poder acostarlos temprano sin cortar la noche de los adultos, o un taxi en vez de transporte público a las 21:00 con un chico que se durmió en el cochecito. Calcular ese margen de antemano evita la sensación de que \"todo sale más caro de lo pensado\" a mitad de viaje." },
       {
         type: "tip", title: "La expectativa correcta",
         text: "Un viaje con hijos chicos es exitoso si los adultos volvieron sin querer matar a nadie y los niños tuvieron momentos felices. No tiene que ser épico — tiene que funcionar.",

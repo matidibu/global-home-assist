@@ -2,22 +2,22 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { getConsent, setConsent } from "@/lib/consent";
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("cookie-consent");
-    if (!consent) setVisible(true);
+    if (!getConsent()) setVisible(true);
   }, []);
 
   function accept() {
-    localStorage.setItem("cookie-consent", "all");
+    setConsent("all");
     setVisible(false);
   }
 
   function essential() {
-    localStorage.setItem("cookie-consent", "essential");
+    setConsent("essential");
     setVisible(false);
   }
 
