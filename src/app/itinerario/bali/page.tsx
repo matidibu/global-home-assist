@@ -795,7 +795,7 @@ export default async function BaliItineraryPage() {
               { slug: "barcelona", label: "🏖️ Barcelona" },
               { slug: "cancun", label: "🏝️ Cancún" },
             ].map((d) => (
-              <Link key={d.slug} href={`/destino/${d.slug}`} style={{
+              <Link key={d.slug} href={`/itinerario/${d.slug}`} style={{
                 color: "rgba(255,255,255,0.75)",
                 textDecoration: "none",
                 fontSize: "13px",

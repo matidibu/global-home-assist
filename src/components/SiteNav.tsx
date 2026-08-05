@@ -3,7 +3,7 @@ import Link from "next/link";
 const NAV_LINKS = [
   { href: "/", label: "Planificador" },
   { href: "/blog", label: "Blog de viajes" },
-  { href: "/destino/paris", label: "Destinos" },
+  { href: "/itinerario", label: "Destinos" },
   { href: "/sobre-nosotros", label: "Sobre nosotros" },
 ];
 
