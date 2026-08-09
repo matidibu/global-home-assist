@@ -8,6 +8,10 @@ interface ServiceCard {
   bgColor: string;
   borderColor: string;
   url: string;
+  // True when `url` carries our affiliate tracking (tpk.lu shortener or a
+  // partner_id param) — only those links get rel="sponsored". Plain outbound
+  // links (no tracking id) are not paid placements, so they stay untagged.
+  sponsored?: boolean;
 }
 
 const accommodationServices: ServiceCard[] = [
@@ -17,37 +21,36 @@ const accommodationServices: ServiceCard[] = [
 ];
 
 const transferServices: ServiceCard[] = [
-  { name: "Recogidas Bienvenidas", description: "Traslados al aeropuerto en todo el mundo", icon: "🚐", color: "#0f766e", bgColor: "#f0fdfa", borderColor: "#99f6e4", url: "https://tpk.lu/ZaDJnmc8" },
+  { name: "Recogidas Bienvenidas", description: "Traslados al aeropuerto en todo el mundo", icon: "🚐", color: "#0f766e", bgColor: "#f0fdfa", borderColor: "#99f6e4", url: "https://tpk.lu/ZaDJnmc8", sponsored: true },
 ];
 
 const carServices: ServiceCard[] = [
-  { name: "GetRentaCar", description: "Comparador de autos en todo el mundo", icon: "🚗", color: "#0066cc", bgColor: "#eff6ff", borderColor: "#bfdbfe", url: "https://getrentacar.tpk.lu/dwvZlHtW" },
+  { name: "GetRentaCar", description: "Comparador de autos en todo el mundo", icon: "🚗", color: "#0066cc", bgColor: "#eff6ff", borderColor: "#bfdbfe", url: "https://getrentacar.tpk.lu/dwvZlHtW", sponsored: true },
   { name: "DiscoverCars", description: "Las mejores tarifas de alquiler", icon: "🔑", color: "#1a7a4a", bgColor: "#f0fdf4", borderColor: "#bbf7d0", url: "https://www.discovercars.com" },
 ];
 
 const activityServices: ServiceCard[] = [
-  { name: "GetYourGuide", description: "Tours, actividades y experiencias", icon: "🎯", color: "#FF5500", bgColor: "#fff7ed", borderColor: "#fed7aa", url: "https://www.getyourguide.com/s/?partner_id=NGZASHD" },
-  { name: "Klook", description: "Actividades y atracciones en Asia", icon: "🎪", color: "#e63946", bgColor: "#fff1f2", borderColor: "#fecdd3", url: "https://klook.tpk.lu/AVr0usKH" },
-  { name: "WeGoTrip", description: "Audioguías para recorrer atracciones", icon: "🎧", color: "#2563eb", bgColor: "#eff6ff", borderColor: "#bfdbfe", url: "https://wegotrip.tpk.lu/6sPuEQdr" },
-  { name: "Tiqets", description: "Entradas sin fila para museos y atracciones", icon: "🎟️", color: "#16a34a", bgColor: "#f0fdf4", borderColor: "#bbf7d0", url: "https://tiqets.tpk.lu/iKrDo8Up" },
+  { name: "GetYourGuide", description: "Tours, actividades y experiencias", icon: "🎯", color: "#FF5500", bgColor: "#fff7ed", borderColor: "#fed7aa", url: "https://www.getyourguide.com/s/?partner_id=NGZASHD", sponsored: true },
+  { name: "Klook", description: "Actividades y atracciones en Asia", icon: "🎪", color: "#e63946", bgColor: "#fff1f2", borderColor: "#fecdd3", url: "https://klook.tpk.lu/AVr0usKH", sponsored: true },
+  { name: "WeGoTrip", description: "Audioguías para recorrer atracciones", icon: "🎧", color: "#2563eb", bgColor: "#eff6ff", borderColor: "#bfdbfe", url: "https://wegotrip.tpk.lu/6sPuEQdr", sponsored: true },
+  { name: "Tiqets", description: "Entradas sin fila para museos y atracciones", icon: "🎟️", color: "#16a34a", bgColor: "#f0fdf4", borderColor: "#bbf7d0", url: "https://tiqets.tpk.lu/iKrDo8Up", sponsored: true },
 ];
 
 const nauticalServices: ServiceCard[] = [
-  { name: "SeaRadar", description: "Excursiones y alquiler de embarcaciones", icon: "⛵", color: "#0369a1", bgColor: "#f0f9ff", borderColor: "#bae6fd", url: "https://searadar.tpk.lu/G9LHcIVb" },
+  { name: "SeaRadar", description: "Excursiones y alquiler de embarcaciones", icon: "⛵", color: "#0369a1", bgColor: "#f0f9ff", borderColor: "#bae6fd", url: "https://searadar.tpk.lu/G9LHcIVb", sponsored: true },
 ];
 
 const eventServices: ServiceCard[] = [
-  { name: "TicketNetwork", description: "Entradas para conciertos, deportes y teatro", icon: "🎭", color: "#7c3aed", bgColor: "#f5f3ff", borderColor: "#ddd6fe", url: "https://ticketnetwork.tpk.lu/3DDbH7oY" },
-  { name: "Tiqets Eventos", description: "Espectáculos y eventos culturales", icon: "🎫", color: "#16a34a", bgColor: "#f0fdf4", borderColor: "#bbf7d0", url: "https://tiqets.tpk.lu/iKrDo8Up" },
+  { name: "TicketNetwork", description: "Entradas para conciertos, deportes y teatro", icon: "🎭", color: "#7c3aed", bgColor: "#f5f3ff", borderColor: "#ddd6fe", url: "https://ticketnetwork.tpk.lu/3DDbH7oY", sponsored: true },
+  { name: "Tiqets Eventos", description: "Espectáculos y eventos culturales", icon: "🎫", color: "#16a34a", bgColor: "#f0fdf4", borderColor: "#bbf7d0", url: "https://tiqets.tpk.lu/iKrDo8Up", sponsored: true },
 ];
 
 function Card({ card }: { card: ServiceCard }) {
   return (
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={() => window.open(card.url, "_blank", "noopener,noreferrer")}
-      onKeyDown={e => e.key === "Enter" && window.open(card.url, "_blank", "noopener,noreferrer")}
+    <a
+      href={card.url}
+      target="_blank"
+      rel={card.sponsored ? "noopener noreferrer sponsored" : "noopener noreferrer"}
       className="service-card"
       style={{
         display: "flex",
@@ -58,6 +61,7 @@ function Card({ card }: { card: ServiceCard }) {
         border: `1px solid ${card.borderColor}`,
         borderRadius: "12px",
         cursor: "pointer",
+        textDecoration: "none",
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -66,7 +70,7 @@ function Card({ card }: { card: ServiceCard }) {
       </div>
       <p style={{ fontSize: "12px", color: "#6b7280", margin: 0 }}>{card.description}</p>
       <span style={{ fontSize: "11px", color: card.color, fontWeight: 500, marginTop: "4px" }}>Ver ofertas →</span>
-    </div>
+    </a>
   );
 }
 

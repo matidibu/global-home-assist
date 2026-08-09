@@ -11,6 +11,9 @@ import MedicalAssistance from "@/components/MedicalAssistance";
 import SOSButton from "@/components/SOSButton";
 import BaliMap from "./BaliMap";
 import { getBlogPost } from "@/data/blogPosts";
+import { AdSenseUnit } from "@/components/AdSenseUnit";
+import { ADSENSE_SLOTS } from "@/lib/adsenseConfig";
+import { generateBreadcrumbSchema } from "@/lib/schemaMarkup";
 
 export const revalidate = 86400; // revalidar imágenes 1 vez por día
 
@@ -369,12 +372,59 @@ export default async function BaliItineraryPage() {
 
   const photoRotation = (i: number) => i % 2 === 0 ? "rotate(2deg)" : "rotate(-1.5deg)";
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Itinerario de 5 días en Bali, Indonesia",
+    description:
+      "Descubrí Bali en 5 días: terrazas de arroz de Tegallalang, templo de Tanah Lot, Ubud, Seminyak, Uluwatu y el volcán Batur. Itinerario completo con rutas, horarios, precios y consejos de viaje.",
+    image: {
+      "@type": "ImageObject",
+      url: `${BASE_URL}/sky.jpg`,
+      width: 1200,
+      height: 630,
+    },
+    author: { "@type": "Organization", name: "Global Home Assist" },
+    publisher: {
+      "@type": "Organization",
+      name: "Global Home Assist",
+      url: BASE_URL,
+      logo: { "@type": "ImageObject", url: `${BASE_URL}/logo.png`, width: 512, height: 512 },
+    },
+    datePublished: "2026-03-23",
+    dateModified: "2026-03-23",
+    inLanguage: "es",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${BASE_URL}/itinerario/bali`,
+    },
+    about: {
+      "@type": "TouristDestination",
+      name: "Bali",
+      address: { "@type": "PostalAddress", addressCountry: "Indonesia" },
+    },
+  };
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Inicio", url: BASE_URL },
+    { name: "Itinerarios", url: `${BASE_URL}/itinerario` },
+    { name: "Bali", url: `${BASE_URL}/itinerario/bali` },
+  ]);
+
   return (
     <main style={{
       minHeight: "100vh",
       background: "linear-gradient(160deg, #0f1f5c 0%, #1a2a6c 40%, #1e3a5f 100%)",
       fontFamily: "'Plus Jakarta Sans', sans-serif",
     }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
       {/* Nav */}
       <nav style={{
@@ -673,6 +723,12 @@ export default async function BaliItineraryPage() {
           </h2>
           <BaliMap activities={mapActivities} />
         </div>
+
+        {/* ─── ADSENSE — anuncio en contenido ─── */}
+        <AdSenseUnit
+          slot={ADSENSE_SLOTS.destinationContent}
+          format="auto"
+        />
 
         {/* ─── GUÍA RELACIONADA ─── */}
         {spainGuide && (

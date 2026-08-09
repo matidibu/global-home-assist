@@ -86,7 +86,7 @@ export function generatePlaceSchema(place: {
       latitude: place.latitude,
       longitude: place.longitude,
     },
-    url: `${BASE_URL}/destino/${place.name.toLowerCase().replace(/ /g, "-")}`,
+    url: `${BASE_URL}/itinerario/${place.name.toLowerCase().replace(/ /g, "-")}`,
   };
 }
 

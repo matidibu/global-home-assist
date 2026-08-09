@@ -6,6 +6,7 @@ import { RelatedPostCard } from "@/components/BlogCards";
 import { ArrowLeft, Lightbulb, Plane, ChevronRight, Sparkles, MapPin } from "lucide-react";
 import { AdSenseUnit } from "@/components/AdSenseUnit";
 import { ADSENSE_SLOTS } from "@/lib/adsenseConfig";
+import { generateBreadcrumbSchema } from "@/lib/schemaMarkup";
 import { getDestinationSlugForPost } from "@/data/blogDestinationLinks";
 import { getDestinationPage } from "@/data/destinationPages";
 
@@ -283,6 +284,12 @@ export default async function BlogPostPage({ params }: Props) {
     wordCount: post.sections.reduce((sum, s) => sum + (s.text?.split(" ").length || 0) + (s.items?.reduce((itemSum, item) => itemSum + item.split(" ").length, 0) || 0), 0),
   };
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Inicio", url: BASE_URL },
+    { name: "Blog", url: `${BASE_URL}/blog` },
+    { name: post.title, url: `${BASE_URL}/blog/${post.slug}` },
+  ]);
+
   return (
     <main style={{
       minHeight: "100vh",
@@ -292,6 +299,10 @@ export default async function BlogPostPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Nav */}

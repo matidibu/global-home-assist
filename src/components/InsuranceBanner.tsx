@@ -19,11 +19,10 @@ export default function InsuranceBanner({ language }: Props) {
   const lb = labels[language] || labels.es;
 
   return (
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={() => window.open(INSURANCE_URL, "_blank", "noopener,noreferrer")}
-      onKeyDown={e => e.key === "Enter" && window.open(INSURANCE_URL, "_blank", "noopener,noreferrer")}
+    <a
+      href={INSURANCE_URL}
+      target="_blank"
+      rel="noopener noreferrer sponsored"
       className="insurance-inner insurance-banner"
       style={{
         background: "linear-gradient(135deg, #fffbeb, #fef3c7)",
@@ -35,6 +34,7 @@ export default function InsuranceBanner({ language }: Props) {
         justifyContent: "space-between",
         gap: "20px",
         cursor: "pointer",
+        textDecoration: "none",
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
@@ -64,6 +64,6 @@ export default function InsuranceBanner({ language }: Props) {
       }}>
         {lb.cta}
       </div>
-    </div>
+    </a>
   );
 }

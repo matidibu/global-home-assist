@@ -6,6 +6,9 @@ import FlightSearch from "@/components/FlightSearch";
 import InsuranceBanner from "@/components/InsuranceBanner";
 import FloatingCTA from "@/components/FloatingCTA";
 import CollapsibleDays from "@/components/CollapsibleDays";
+import { AdSenseUnit } from "@/components/AdSenseUnit";
+import { ADSENSE_SLOTS } from "@/lib/adsenseConfig";
+import { generateBreadcrumbSchema } from "@/lib/schemaMarkup";
 import { getDestinationPage, getAllDestinationSlugs, type DestActivity } from "@/data/destinationPages";
 import { getBlogSlugsForDestination } from "@/data/blogDestinationLinks";
 import { getBlogPost } from "@/data/blogPosts";
@@ -40,6 +43,20 @@ export async function generateMetadata({
       description: dest.metaDescription,
       url: `${BASE_URL}/itinerario/${dest.slug}`,
       type: "article",
+      images: [
+        {
+          url: `${BASE_URL}/sky.jpg`,
+          width: 1200,
+          height: 630,
+          alt: dest.heroTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dest.metaTitle,
+      description: dest.metaDescription,
+      images: [`${BASE_URL}/sky.jpg`],
     },
     alternates: {
       canonical: `${BASE_URL}/itinerario/${dest.slug}`,
@@ -215,12 +232,60 @@ export default async function DestinationItineraryPage({
     .map((s) => getBlogPost(s))
     .find(Boolean);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: dest.metaTitle,
+    description: dest.metaDescription,
+    image: {
+      "@type": "ImageObject",
+      url: `${BASE_URL}/sky.jpg`,
+      width: 1200,
+      height: 630,
+    },
+    author: { "@type": "Organization", name: "Global Home Assist" },
+    publisher: {
+      "@type": "Organization",
+      name: "Global Home Assist",
+      url: BASE_URL,
+      logo: { "@type": "ImageObject", url: `${BASE_URL}/logo.png`, width: 512, height: 512 },
+    },
+    datePublished: dest.publishDate,
+    dateModified: dest.publishDate,
+    inLanguage: "es",
+    keywords: dest.keywords.join(", "),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${BASE_URL}/itinerario/${dest.slug}`,
+    },
+    about: {
+      "@type": "TouristDestination",
+      name: dest.city,
+      address: { "@type": "PostalAddress", addressCountry: dest.country },
+    },
+  };
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Inicio", url: BASE_URL },
+    { name: "Itinerarios", url: `${BASE_URL}/itinerario` },
+    { name: dest.city, url: `${BASE_URL}/itinerario/${dest.slug}` },
+  ]);
+
   return (
     <div style={{
       minHeight: "100vh",
       background: "linear-gradient(135deg, #f0f4ff 0%, #e8f7f5 100%)",
       fontFamily: "'Plus Jakarta Sans', sans-serif",
     }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       {/* Floating CTA — appears after scrolling */}
       <FloatingCTA generatorUrl={generatorUrl} city={dest.city} />
 
@@ -251,11 +316,11 @@ export default async function DestinationItineraryPage({
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 20px 80px" }}>
 
         {/* ── Back ── */}
-        <Link href="/blog" style={{
+        <Link href="/itinerario" style={{
           display: "inline-flex", alignItems: "center", gap: "6px",
           color: "#6b7280", fontSize: "13px", textDecoration: "none", marginBottom: "28px",
         }}>
-          <ArrowLeft size={14} /> Volver al blog de viajes
+          <ArrowLeft size={14} /> Volver a itinerarios
         </Link>
 
         {/* ── Hero ── */}
@@ -362,6 +427,14 @@ export default async function DestinationItineraryPage({
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* ── AdSense — in-content ad ── */}
+        <div style={{ marginBottom: "32px" }}>
+          <AdSenseUnit
+            slot={ADSENSE_SLOTS.destinationContent}
+            format="auto"
+          />
         </div>
 
         {/* ── Related blog guide ── */}
