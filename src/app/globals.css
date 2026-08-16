@@ -313,9 +313,9 @@ html, body {
   }
   .insurance-cta { width: 100% !important; text-align: center !important; }
 
-  /* Days selector: smaller buttons */
-  .days-selector { gap: 5px !important; flex-wrap: wrap !important; }
-  .day-btn { width: 38px !important; height: 38px !important; font-size: 13px !important; }
+  /* Days selector: keep a real touch target size (min 44px), wrap instead of shrinking */
+  .days-selector { gap: 6px !important; flex-wrap: wrap !important; }
+  .day-btn { width: 44px !important; height: 44px !important; font-size: 14px !important; }
 
   /* Expert badge: allow wrap */
   .expert-badge { font-size: 10px !important; text-align: center !important; padding: 5px 12px !important; }

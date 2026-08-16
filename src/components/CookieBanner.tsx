@@ -31,7 +31,7 @@ export function CookieBanner() {
       background: "rgba(6,12,44,0.97)",
       backdropFilter: "blur(14px)",
       borderTop: "1px solid rgba(255,255,255,0.1)",
-      padding: "14px 24px",
+      padding: "10px 16px",
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
@@ -40,12 +40,12 @@ export function CookieBanner() {
       boxShadow: "0 -4px 24px rgba(0,0,0,0.3)",
     }}>
       <p style={{
-        fontSize: "13px",
+        fontSize: "12px",
         color: "rgba(255,255,255,0.78)",
         margin: 0,
         flex: 1,
-        minWidth: "260px",
-        lineHeight: 1.55,
+        minWidth: "180px",
+        lineHeight: 1.4,
         fontFamily: "'Plus Jakarta Sans', sans-serif",
       }}>
         🍪 Usamos cookies propias y de terceros — Google Analytics y servicios de afiliados — para mejorar tu experiencia y medir el uso del sitio.{" "}

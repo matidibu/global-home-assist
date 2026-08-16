@@ -125,11 +125,13 @@ const T: Record<string, Record<string, any>> = {
     budget: "Presupuesto (USD)",
     budgetPlaceholder: "Ej: 1500",
     destination: "¿A qué ciudad querés ir?",
+    cityRequiredError: "Ingresá tu destino y elegilo de la lista de sugerencias.",
+    cityNotFoundError: "No pudimos encontrar esa ciudad. Probá elegirla de la lista de sugerencias.",
     interests: "Intereses",
     duration: "Duración",
     day: "día", days: "días",
     accommodation: "Hospedaje",
-    accommodationOptional: "(si ya lo tenés, ingresalo aquí)",
+    accommodationOptional: "así calculamos los traslados desde tu llegada",
     accommodationSearch: "Hotel / Hostel",
     accommodationAddress: "Dirección / Airbnb",
     accommodationHint: "Primero elegí la ciudad de destino",
@@ -162,11 +164,13 @@ const T: Record<string, Record<string, any>> = {
     budget: "Budget (USD)",
     budgetPlaceholder: "E.g: 1500",
     destination: "Which city do you want to visit?",
+    cityRequiredError: "Enter your destination and pick it from the suggestions list.",
+    cityNotFoundError: "We couldn't find that city. Try selecting it from the suggestions list.",
     interests: "Interests",
     duration: "Duration",
     day: "day", days: "days",
     accommodation: "Accommodation",
-    accommodationOptional: "(if you already have one, enter it here)",
+    accommodationOptional: "so we can calculate travel times from it",
     accommodationSearch: "Hotel / Hostel",
     accommodationAddress: "Address / Airbnb",
     accommodationHint: "First choose your destination city",
@@ -199,11 +203,13 @@ const T: Record<string, Record<string, any>> = {
     budget: "Budget (USD)",
     budgetPlaceholder: "Ex: 1500",
     destination: "Quelle ville voulez-vous visiter ?",
+    cityRequiredError: "Entrez votre destination et sélectionnez-la dans la liste.",
+    cityNotFoundError: "Nous n'avons pas trouvé cette ville. Essayez de la sélectionner dans la liste de suggestions.",
     interests: "Intérêts",
     duration: "Durée",
     day: "jour", days: "jours",
     accommodation: "Hébergement",
-    accommodationOptional: "(si vous en avez déjà un, entrez-le ici)",
+    accommodationOptional: "pour calculer les temps de trajet depuis votre arrivée",
     accommodationSearch: "Hôtel / Hostel",
     accommodationAddress: "Adresse / Airbnb",
     accommodationHint: "Choisissez d'abord la ville",
@@ -236,11 +242,13 @@ const T: Record<string, Record<string, any>> = {
     budget: "Budget (USD)",
     budgetPlaceholder: "Es: 1500",
     destination: "Quale città vuoi visitare?",
+    cityRequiredError: "Inserisci la tua destinazione e selezionala dall'elenco.",
+    cityNotFoundError: "Non abbiamo trovato questa città. Prova a selezionarla dall'elenco dei suggerimenti.",
     interests: "Interessi",
     duration: "Durata",
     day: "giorno", days: "giorni",
     accommodation: "Alloggio",
-    accommodationOptional: "(se hai già un alloggio, inseriscilo qui)",
+    accommodationOptional: "per calcolare gli spostamenti dal tuo arrivo",
     accommodationSearch: "Hotel / Hostel",
     accommodationAddress: "Indirizzo / Airbnb",
     accommodationHint: "Prima scegli la città",
@@ -273,11 +281,13 @@ const T: Record<string, Record<string, any>> = {
     budget: "Budget (USD)",
     budgetPlaceholder: "z.B: 1500",
     destination: "Welche Stadt möchten Sie besuchen?",
+    cityRequiredError: "Geben Sie Ihr Reiseziel ein und wählen Sie es aus der Liste.",
+    cityNotFoundError: "Wir konnten diese Stadt nicht finden. Wählen Sie sie aus der Vorschlagsliste aus.",
     interests: "Interessen",
     duration: "Dauer",
     day: "Tag", days: "Tage",
     accommodation: "Unterkunft",
-    accommodationOptional: "(falls bereits gebucht, hier eingeben)",
+    accommodationOptional: "damit wir die Fahrzeiten ab Ihrer Ankunft berechnen können",
     accommodationSearch: "Hotel / Hostel",
     accommodationAddress: "Adresse / Airbnb",
     accommodationHint: "Wählen Sie zuerst die Zielstadt",
@@ -310,11 +320,13 @@ const T: Record<string, Record<string, any>> = {
     budget: "Orçamento (USD)",
     budgetPlaceholder: "Ex: 1500",
     destination: "Qual cidade você quer visitar?",
+    cityRequiredError: "Digite seu destino e selecione-o na lista de sugestões.",
+    cityNotFoundError: "Não encontramos essa cidade. Tente selecioná-la na lista de sugestões.",
     interests: "Interesses",
     duration: "Duração",
     day: "dia", days: "dias",
     accommodation: "Hospedagem",
-    accommodationOptional: "(se já tem, insira aqui)",
+    accommodationOptional: "para calcularmos os deslocamentos a partir da sua chegada",
     accommodationSearch: "Hotel / Hostel",
     accommodationAddress: "Endereço / Airbnb",
     accommodationHint: "Primeiro escolha a cidade",
@@ -441,7 +453,28 @@ async function tryGeocode(text: string, cityCoords: { lat: number; lon: number }
     const data = await res.json();
     const feature = data?.features?.[0];
     if (!feature) return null;
-    return { lat: feature.properties.lat, lon: feature.properties.lon, name: feature.properties.name || feature.properties.formatted || text };
+    // Prefer a short label (place name or street address) over the full formatted
+    // string (which includes municipality/postal code/country and reads badly
+    // as a one-line "from" badge on the itinerary).
+    const p = feature.properties;
+    const name = p.name || p.address_line1 || p.street || p.formatted || text;
+    return { lat: p.lat, lon: p.lon, name };
+  } catch { return null; }
+}
+
+// Fallback for when the user types a destination but never clicks a suggestion
+// from the autocomplete dropdown — without this, city/country/cityCoords stay
+// empty and "Generar itinerario" silently does nothing on click.
+async function tryGeocodeCity(text: string, apiKey: string): Promise<{ lat: number; lon: number; city: string; country: string; province: string } | null> {
+  try {
+    const url = `https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(text)}&type=city&limit=1&apiKey=${apiKey}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const feature = data?.features?.[0];
+    if (!feature) return null;
+    const p = feature.properties;
+    const city = p.city || p.municipality || p.county || p.name || p.state || p.formatted?.split(",")[0]?.trim() || "";
+    return { lat: p.lat, lon: p.lon, city, country: p.country || "", province: p.state || p.county || p.region || "" };
   } catch { return null; }
 }
 
@@ -465,6 +498,8 @@ export default function SearchForm() {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [loadingMsgIdx, setLoadingMsgIdx] = useState(0);
   const [cityCoords, setCityCoords] = useState<{ lat: number; lon: number } | null>(null);
+  const [cityTyped, setCityTyped] = useState("");
+  const [formError, setFormError] = useState("");
   const [emergencyNumbers, setEmergencyNumbers] = useState<any>(null);
   const [accommodationName, setAccommodationName] = useState("");
   const [accommodationCoords, setAccommodationCoords] = useState<{ lat: number; lon: number } | null>(null);
@@ -583,8 +618,10 @@ export default function SearchForm() {
       setProvince(props.state || props.county || props.region || "");
       setCityCoords({ lat: props.lat, lon: props.lon });
       setAccommodationName(""); setAccommodationCoords(null); setAccommodationTyped("");
+      setFormError("");
     };
 
+    ac.on("input", (value: string) => setCityTyped(value));
     ac.on("select", handleCitySelect);
     ac.on("place_select" as any, handleCitySelect);
     autocompleteRef.current = ac;
@@ -616,15 +653,36 @@ export default function SearchForm() {
   };
 
   async function generateTrip() {
-    if (!city || !country) return;
+    setFormError("");
+    let finalCity = city, finalCountry = country, finalProvince = province, finalCityCoords = cityCoords;
+
+    // If the user typed a destination but never selected a suggestion from the
+    // dropdown, city/country/cityCoords are still empty — try to geocode what
+    // they typed instead of failing silently.
+    if ((!finalCity || !finalCountry) && cityTyped) {
+      const apiKey = process.env.NEXT_PUBLIC_GEOAPIFY_KEY;
+      if (apiKey) {
+        const result = await tryGeocodeCity(cityTyped, apiKey);
+        if (result) {
+          finalCity = result.city; finalCountry = result.country; finalProvince = result.province; finalCityCoords = { lat: result.lat, lon: result.lon };
+          setCity(finalCity); setCountry(finalCountry); setProvince(finalProvince); setCityCoords(finalCityCoords);
+        }
+      }
+    }
+
+    if (!finalCity || !finalCountry) {
+      setFormError(cityTyped ? t.cityNotFoundError : t.cityRequiredError);
+      return;
+    }
+
     setPlaneAnimKey(k => k + 1);
     setLoading(true);
     let finalCoords = accommodationCoords;
     let finalName = accommodationName;
-    if (accommodationTyped && !accommodationCoords && cityCoords) {
+    if (accommodationTyped && !accommodationCoords && finalCityCoords) {
       const apiKey = process.env.NEXT_PUBLIC_GEOAPIFY_KEY;
       if (apiKey) {
-        const result = await tryGeocode(accommodationTyped, cityCoords, apiKey);
+        const result = await tryGeocode(accommodationTyped, finalCityCoords, apiKey);
         if (result) { finalCoords = { lat: result.lat, lon: result.lon }; finalName = result.name || accommodationTyped; setAccommodationCoords(finalCoords); setAccommodationName(finalName); }
       }
     }
@@ -632,7 +690,7 @@ export default function SearchForm() {
       const res = await fetch("/api/generate-itinerary", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ city, country, province, nationality, language, tripType, interests, budget, days, accommodationCoords: finalCoords, accommodationName: finalName, accommodationMode }),
+        body: JSON.stringify({ city: finalCity, country: finalCountry, province: finalProvince, nationality, language, tripType, interests, budget, days, accommodationCoords: finalCoords, accommodationName: finalName, accommodationMode }),
       });
       if (!res.ok) { console.error("API error:", res.status); return; }
       const data = await res.json();
@@ -658,6 +716,8 @@ export default function SearchForm() {
     setCountry("");
     setProvince("");
     setCityCoords(null);
+    setCityTyped("");
+    setFormError("");
     setFormKey(k => k + 1);
     // Limpiar cualquier ?s= que pueda quedar en la URL
     window.history.replaceState(null, '', window.location.pathname);
@@ -955,11 +1015,29 @@ export default function SearchForm() {
               </div>
               <div>
                 <label style={labelStyle}>{t.interests}</label>
-                <select multiple value={interests} onChange={e => setInterests(Array.from(e.target.selectedOptions, o => o.value))} className="form-input" style={{ height: "110px" }}>
-                  {(t.interestOptions as string[]).map((label: string, idx: number) => (
-                    <option key={idx} value={(t.interestValues as string[])[idx]}>{label}</option>
-                  ))}
-                </select>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                  {(t.interestOptions as string[]).map((label: string, idx: number) => {
+                    const value = (t.interestValues as string[])[idx];
+                    const active = interests.includes(value);
+                    return (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setInterests(prev => active ? prev.filter(v => v !== value) : [...prev, value])}
+                        style={{
+                          padding: "8px 14px", borderRadius: "999px", fontSize: "12px", fontWeight: 600,
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
+                          background: active ? "linear-gradient(135deg, #1a2a6c, #2d3f8f)" : "rgba(255,255,255,0.9)",
+                          color: active ? "white" : "#1a2a6c",
+                          border: `2px solid ${active ? "#1a2a6c" : "rgba(26,42,108,0.18)"}`,
+                          cursor: "pointer", boxShadow: "0 2px 6px rgba(26,42,108,0.08)",
+                        }}
+                      >
+                        {label}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           )}
@@ -1060,6 +1138,9 @@ export default function SearchForm() {
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "6px", marginTop: "16px" }}>
+            {formError && (
+              <p style={{ margin: 0, fontSize: "12px", color: "#dc2626", fontWeight: 600, textAlign: "right" }}>{formError}</p>
+            )}
             <button
               onClick={generateTrip}
               disabled={loading || !termsAccepted}
