@@ -323,6 +323,14 @@ html, body {
   /* Form padding */
   .main-container { padding: 16px 12px !important; }
 
+  /* Floating "generate itinerary" CTA on destination pages: collapse to an
+     icon-only circular FAB on mobile. As a full text pill it was wide/tall
+     enough to sit directly on top of headings and affiliate CTAs while
+     scrolling through a single-column layout; icon-only shrinks its footprint
+     enough to make that far less likely. */
+  .floating-cta-label { display: none; }
+  .floating-cta-link { padding: 14px !important; border-radius: 50% !important; }
+
   /* Header pre-formulario: reducir padding y ocultar separador vertical */
   .pre-gen-header { padding: 1rem 1.2rem !important; gap: 16px !important; }
   .header-separator { display: none !important; }

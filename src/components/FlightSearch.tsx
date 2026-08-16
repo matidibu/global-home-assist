@@ -111,10 +111,10 @@ export default function FlightSearch({ destination, language }: Props) {
         )}
         <div>
           <label style={labelStyle}>{lb.pax}</label>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", background: "rgba(255,255,255,0.15)", borderRadius: "10px", border: "1px solid rgba(255,255,255,0.3)", padding: "9px 14px" }}>
-            <button onClick={() => setPax(p => Math.max(1, p - 1))} style={{ background: "none", border: "none", color: "white", cursor: "pointer", fontSize: "18px", lineHeight: 1, padding: 0 }}>−</button>
+          <div style={{ display: "flex", alignItems: "center", gap: "4px", background: "rgba(255,255,255,0.15)", borderRadius: "10px", border: "1px solid rgba(255,255,255,0.3)", padding: "4px" }}>
+            <button onClick={() => setPax(p => Math.max(1, p - 1))} style={{ background: "none", border: "none", color: "white", cursor: "pointer", fontSize: "18px", lineHeight: 1, width: "36px", height: "36px", display: "flex", alignItems: "center", justifyContent: "center" }}>−</button>
             <span style={{ fontSize: "14px", minWidth: "16px", textAlign: "center", fontWeight: 600 }}>{pax}</span>
-            <button onClick={() => setPax(p => Math.min(9, p + 1))} style={{ background: "none", border: "none", color: "white", cursor: "pointer", fontSize: "18px", lineHeight: 1, padding: 0 }}>+</button>
+            <button onClick={() => setPax(p => Math.min(9, p + 1))} style={{ background: "none", border: "none", color: "white", cursor: "pointer", fontSize: "18px", lineHeight: 1, width: "36px", height: "36px", display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
           </div>
         </div>
       </div>

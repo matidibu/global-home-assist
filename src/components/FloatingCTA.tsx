@@ -28,7 +28,7 @@ export default function FloatingCTA({ generatorUrl, city }: Props) {
       transform: visible ? "translateY(0)" : "translateY(16px)",
       pointerEvents: visible ? "auto" : "none",
     }}>
-      <Link href={generatorUrl} style={{
+      <Link href={generatorUrl} className="floating-cta-link" style={{
         display: "flex",
         alignItems: "center",
         gap: "8px",
@@ -44,7 +44,7 @@ export default function FloatingCTA({ generatorUrl, city }: Props) {
         fontFamily: "'Plus Jakarta Sans', sans-serif",
       }}>
         <Sparkles size={15} />
-        Generá tu itinerario — {city}
+        <span className="floating-cta-label">Generá tu itinerario — {city}</span>
       </Link>
     </div>
   );

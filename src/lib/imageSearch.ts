@@ -146,21 +146,29 @@ async function fetchWikipediaImageByQuery(
         !placeWords.test(title);
     }
 
-    function scoreResult(r: { title: string }): number {
+    function scoreResult(r: { title: string }): { score: number; matchCount: number; cityMatch: boolean } {
       const t = r.title.toLowerCase();
       const matchCount = nameParts.filter(p => t.includes(p)).length;
-      const cityBonus = t.includes(cityLower) ? 2 : 0;
+      const cityMatch = t.includes(cityLower);
       const badPenalty = badWords.test(r.title) ? -10 : 0;
-      return matchCount + cityBonus + badPenalty;
+      return { score: matchCount + (cityMatch ? 2 : 0) + badPenalty, matchCount, cityMatch };
     }
 
     const filtered = results.filter(r => !looksLikePerson(r.title));
     const ranked = (filtered.length > 0 ? filtered : results)
-      .sort((a, b) => scoreResult(b) - scoreResult(a));
+      .sort((a, b) => scoreResult(b).score - scoreResult(a).score);
 
-    // Only use result if it has a meaningful score — avoids totally unrelated articles
+    // A result is only trustworthy if the place NAME actually matched (not just
+    // the city — a title like "Alexander Nevsky Cathedral, Tbilisi" would pass a
+    // city-only bonus with zero relation to the actual place being searched for).
+    // Require either city confirmation on top of a name match, or ≥2 distinctive
+    // name words matching (a single generic word like "nacional"/"central" isn't
+    // enough evidence on its own).
     const best = ranked[0];
-    if (!best || scoreResult(best) < 1) return null;
+    if (!best) return null;
+    const bestScore = scoreResult(best);
+    if (bestScore.matchCount < 1) return null;
+    if (!bestScore.cityMatch && bestScore.matchCount < 2) return null;
 
     return await fetchImageForTitle(best.title, lang);
   } catch {
@@ -222,7 +230,14 @@ async function searchPexels(query: string): Promise<string | null> {
  * 1. Wikipedia in destination language + coordinates (most accurate)
  * 2. Wikipedia in English + coordinates
  * 3. Wikipedia text search
- * 4. Pexels: category + country (generic but safe — avoids cross-city confusion)
+ * 4. Pexels: specific place name, then category + city
+ *
+ * Deliberately no fully-generic Pexels fallback (bare category with no city/
+ * country signal, e.g. "mercado"): for an unfamiliar destination that returns
+ * whatever stock photo ranks top worldwide for that word, which produced real
+ * wrong-place photos (a Latin American market gate standing in for a bazaar in
+ * Tbilisi, a random seaside park for a landlocked city). No photo is better
+ * than a wrong one.
  */
 export async function searchPlaceImage(
   name: string,
@@ -237,12 +252,9 @@ export async function searchPlaceImage(
 
   if (!PEXELS_KEY) return null;
 
-  // Pexels fallback chain: try specific place name first, then generic category
   return (
     (await searchPexels(`${name}`)) ??
-    (await searchPexels(`${category} ${city}`)) ??
-    (await searchPexels(`${category} architecture exterior`)) ??
-    (await searchPexels(`${category} travel landmark`))
+    (await searchPexels(`${category} ${city}`))
   );
 }
 

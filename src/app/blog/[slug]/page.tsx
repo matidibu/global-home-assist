@@ -218,9 +218,7 @@ function renderSection(section: ContentSection, index: number) {
           <Link
             href={section.city ? `/?city=${encodeURIComponent(section.city)}&country=${encodeURIComponent(section.country ?? '')}` : section.destination ? `/?destino=${section.destination}` : "/"}
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
+              display: "inline-block",
               background: "white",
               color: "#1a2a6c",
               padding: "14px 40px",
@@ -229,9 +227,15 @@ function renderSection(section: ContentSection, index: number) {
               fontWeight: 800,
               textDecoration: "none",
               boxShadow: "0 6px 20px rgba(0,0,0,0.2)",
+              lineHeight: 1.4,
             }}
           >
-            <Plane size={15} strokeWidth={2.5} /> {section.text} <ChevronRight size={15} strokeWidth={2.5} />
+            {/* inline (not flex) so the icons stay attached to the first/last
+                line if the text wraps on narrow viewports, instead of both
+                centering against the full multi-line block height */}
+            <Plane size={15} strokeWidth={2.5} style={{ verticalAlign: "middle", marginRight: "8px" }} />
+            <span style={{ verticalAlign: "middle" }}>{section.text}</span>
+            <ChevronRight size={15} strokeWidth={2.5} style={{ verticalAlign: "middle", marginLeft: "8px" }} />
           </Link>
           <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "12px", margin: "12px 0 0 0" }}>
             Gratis · Sin registro · Listo en 30 segundos

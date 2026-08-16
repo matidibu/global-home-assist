@@ -125,6 +125,7 @@ const T: Record<string, Record<string, any>> = {
     budget: "Presupuesto (USD)",
     budgetPlaceholder: "Ej: 1500",
     destination: "¿A qué ciudad querés ir?",
+    destinationPlaceholder: "Ej: Buenos Aires, Argentina",
     cityRequiredError: "Ingresá tu destino y elegilo de la lista de sugerencias.",
     cityNotFoundError: "No pudimos encontrar esa ciudad. Probá elegirla de la lista de sugerencias.",
     interests: "Intereses",
@@ -135,11 +136,13 @@ const T: Record<string, Record<string, any>> = {
     accommodationSearch: "Hotel / Hostel",
     accommodationAddress: "Dirección / Airbnb",
     accommodationHint: "Primero elegí la ciudad de destino",
+    accommodationPlaceholder: "Buscá tu hotel o alojamiento",
     accommodationAddressHint: 'Ej: "Calle Mayor 15, Madrid"',
     generate: "Generar itinerario",
     generating: "Generando itinerario...",
     mapTitle: "Mapa del viaje",
     mustSee: "Imperdible",
+    free: "Gratis",
     bestTime: "Mejor horario",
     official: "Sitio oficial",
     expertBadge: "Generado por IA · Validado por expertos en turismo",
@@ -164,6 +167,7 @@ const T: Record<string, Record<string, any>> = {
     budget: "Budget (USD)",
     budgetPlaceholder: "E.g: 1500",
     destination: "Which city do you want to visit?",
+    destinationPlaceholder: "E.g: Buenos Aires, Argentina",
     cityRequiredError: "Enter your destination and pick it from the suggestions list.",
     cityNotFoundError: "We couldn't find that city. Try selecting it from the suggestions list.",
     interests: "Interests",
@@ -174,11 +178,13 @@ const T: Record<string, Record<string, any>> = {
     accommodationSearch: "Hotel / Hostel",
     accommodationAddress: "Address / Airbnb",
     accommodationHint: "First choose your destination city",
+    accommodationPlaceholder: "Search your hotel or accommodation",
     accommodationAddressHint: 'E.g: "15 Main Street, Paris"',
     generate: "Generate itinerary",
     generating: "Generating itinerary...",
     mapTitle: "🗺️ Trip map",
     mustSee: "⭐ Must-see",
+    free: "Free",
     bestTime: "Best time",
     official: "Official site",
     expertBadge: "AI-Generated · Validated by Tourism Experts",
@@ -203,6 +209,7 @@ const T: Record<string, Record<string, any>> = {
     budget: "Budget (USD)",
     budgetPlaceholder: "Ex: 1500",
     destination: "Quelle ville voulez-vous visiter ?",
+    destinationPlaceholder: "Ex: Buenos Aires, Argentine",
     cityRequiredError: "Entrez votre destination et sélectionnez-la dans la liste.",
     cityNotFoundError: "Nous n'avons pas trouvé cette ville. Essayez de la sélectionner dans la liste de suggestions.",
     interests: "Intérêts",
@@ -213,11 +220,13 @@ const T: Record<string, Record<string, any>> = {
     accommodationSearch: "Hôtel / Hostel",
     accommodationAddress: "Adresse / Airbnb",
     accommodationHint: "Choisissez d'abord la ville",
+    accommodationPlaceholder: "Recherchez votre hôtel ou logement",
     accommodationAddressHint: 'Ex: "15 rue de Rivoli, Paris"',
     generate: "Générer l'itinéraire",
     generating: "Génération en cours...",
     mapTitle: "🗺️ Carte du voyage",
     mustSee: "⭐ Incontournable",
+    free: "Gratuit",
     bestTime: "Meilleur moment",
     official: "Site officiel",
     expertBadge: "Généré par IA · Validé par des experts en voyage",
@@ -242,6 +251,7 @@ const T: Record<string, Record<string, any>> = {
     budget: "Budget (USD)",
     budgetPlaceholder: "Es: 1500",
     destination: "Quale città vuoi visitare?",
+    destinationPlaceholder: "Es: Buenos Aires, Argentina",
     cityRequiredError: "Inserisci la tua destinazione e selezionala dall'elenco.",
     cityNotFoundError: "Non abbiamo trovato questa città. Prova a selezionarla dall'elenco dei suggerimenti.",
     interests: "Interessi",
@@ -252,11 +262,13 @@ const T: Record<string, Record<string, any>> = {
     accommodationSearch: "Hotel / Hostel",
     accommodationAddress: "Indirizzo / Airbnb",
     accommodationHint: "Prima scegli la città",
+    accommodationPlaceholder: "Cerca il tuo hotel o alloggio",
     accommodationAddressHint: 'Es: "Via Roma 15, Roma"',
     generate: "Genera itinerario",
     generating: "Generazione in corso...",
     mapTitle: "🗺️ Mappa del viaggio",
     mustSee: "⭐ Da non perdere",
+    free: "Gratuito",
     bestTime: "Orario migliore",
     official: "Sito ufficiale",
     expertBadge: "Generato da IA · Validato da esperti di viaggio",
@@ -281,6 +293,7 @@ const T: Record<string, Record<string, any>> = {
     budget: "Budget (USD)",
     budgetPlaceholder: "z.B: 1500",
     destination: "Welche Stadt möchten Sie besuchen?",
+    destinationPlaceholder: "z.B: Buenos Aires, Argentinien",
     cityRequiredError: "Geben Sie Ihr Reiseziel ein und wählen Sie es aus der Liste.",
     cityNotFoundError: "Wir konnten diese Stadt nicht finden. Wählen Sie sie aus der Vorschlagsliste aus.",
     interests: "Interessen",
@@ -291,11 +304,13 @@ const T: Record<string, Record<string, any>> = {
     accommodationSearch: "Hotel / Hostel",
     accommodationAddress: "Adresse / Airbnb",
     accommodationHint: "Wählen Sie zuerst die Zielstadt",
+    accommodationPlaceholder: "Suchen Sie Ihr Hotel oder Ihre Unterkunft",
     accommodationAddressHint: 'z.B: "Hauptstraße 15, Berlin"',
     generate: "Reiseplan erstellen",
     generating: "Wird erstellt...",
     mapTitle: "🗺️ Reisekarte",
     mustSee: "⭐ Sehenswert",
+    free: "Kostenlos",
     bestTime: "Beste Zeit",
     official: "Offizielle Website",
     expertBadge: "KI-generiert · Von Reiseexperten validiert",
@@ -320,6 +335,7 @@ const T: Record<string, Record<string, any>> = {
     budget: "Orçamento (USD)",
     budgetPlaceholder: "Ex: 1500",
     destination: "Qual cidade você quer visitar?",
+    destinationPlaceholder: "Ex: Buenos Aires, Argentina",
     cityRequiredError: "Digite seu destino e selecione-o na lista de sugestões.",
     cityNotFoundError: "Não encontramos essa cidade. Tente selecioná-la na lista de sugestões.",
     interests: "Interesses",
@@ -330,11 +346,13 @@ const T: Record<string, Record<string, any>> = {
     accommodationSearch: "Hotel / Hostel",
     accommodationAddress: "Endereço / Airbnb",
     accommodationHint: "Primeiro escolha a cidade",
+    accommodationPlaceholder: "Busque seu hotel ou hospedagem",
     accommodationAddressHint: 'Ex: "Rua Augusta 15, Lisboa"',
     generate: "Gerar itinerário",
     generating: "Gerando itinerário...",
     mapTitle: "🗺️ Mapa da viagem",
     mustSee: "⭐ Imperdível",
+    free: "Grátis",
     bestTime: "Melhor horário",
     official: "Site oficial",
     expertBadge: "Gerado por IA · Validado por especialistas em viagens",
@@ -483,12 +501,12 @@ export default function SearchForm() {
   const [country, setCountry] = useState("");
   const [province, setProvince] = useState("");
   const [nationality, setNationality] = useState("");
-  const [language, setLanguage] = useState(() => {
-    if (typeof window === "undefined") return "en";
-    const browserLang = navigator.language?.slice(0, 2).toLowerCase();
-    const supported = ["es", "en", "fr", "it", "de", "pt"];
-    return supported.includes(browserLang) ? browserLang : "en";
-  });
+  // Always starts as "es" (matches server render — navigator.language isn't
+  // available during SSR) and is corrected to the real browser language after
+  // mount. Deriving the initial value from navigator.language directly used to
+  // make the very first client render disagree with the server-rendered HTML
+  // for any non-English browser, causing a React hydration error on every load.
+  const [language, setLanguage] = useState("es");
   const [tripType, setTripType] = useState("");
   const [interests, setInterests] = useState<string[]>([]);
   const [budget, setBudget] = useState("");
@@ -518,6 +536,20 @@ export default function SearchForm() {
 
   const t = T[language] || T.es;
   const lc = LOADING_CONTENT[language] || LOADING_CONTENT.es;
+  // The AI always outputs the literal English "Free" for free activities (see
+  // generate-itinerary/route.ts prompt) so tickets.required / price-check logic
+  // stays a stable string comparison — translate only at display time.
+  const priceLabel = (price: string) => (price === "Free" ? t.free : price);
+
+  // Runs only on the client, after the "es" SSR-matching first render — safe to
+  // read navigator.language here since there's no more hydration to mismatch.
+  useEffect(() => {
+    const browserLang = navigator.language?.slice(0, 2).toLowerCase();
+    const supported = ["es", "en", "fr", "it", "de", "pt"];
+    if (browserLang && browserLang !== "es" && supported.includes(browserLang)) {
+      setLanguage(browserLang);
+    }
+  }, []);
 
   useEffect(() => {
     if (!loading) { setLoadingMsgIdx(0); return; }
@@ -600,7 +632,11 @@ export default function SearchForm() {
     const container = document.getElementById("autocomplete");
     if (!container) return;
     if (autocompleteRef.current) { container.innerHTML = ""; autocompleteRef.current = null; }
-    const ac = new GeocoderAutocomplete(container, process.env.NEXT_PUBLIC_GEOAPIFY_KEY as string, { type: "city" });
+    const ac = new GeocoderAutocomplete(container, process.env.NEXT_PUBLIC_GEOAPIFY_KEY as string, {
+      type: "city",
+      lang: language as any,
+      placeholder: t.destinationPlaceholder,
+    });
 
     const handleCitySelect = (loc: any) => {
       const props = loc?.properties ?? loc;
@@ -626,7 +662,7 @@ export default function SearchForm() {
     ac.on("place_select" as any, handleCitySelect);
     autocompleteRef.current = ac;
     return () => { container.innerHTML = ""; autocompleteRef.current = null; };
-  }, [formKey]); // re-inicializar cuando el form se re-monta tras resetSearch
+  }, [formKey, language]); // re-inicializar cuando el form se re-monta tras resetSearch, o cambia el idioma
 
   useEffect(() => {
     const containerId = accommodationMode === "search" ? "accommodation-search" : "accommodation-address";
@@ -637,6 +673,8 @@ export default function SearchForm() {
     const ac = new GeocoderAutocomplete(container, process.env.NEXT_PUBLIC_GEOAPIFY_KEY as string, {
       bias: `proximity:${cityCoords.lon},${cityCoords.lat}`,
       filter: { circle: { lon: cityCoords.lon, lat: cityCoords.lat, radiusMeters: 30000 } },
+      lang: language as any,
+      placeholder: accommodationMode === "address" ? t.accommodationAddressHint : t.accommodationPlaceholder,
     } as any);
     ac.on("input", (value: string) => { setAccommodationTyped(value); if (!value) { setAccommodationName(""); setAccommodationCoords(null); } });
     ac.on("select", (loc: any) => {
@@ -645,7 +683,7 @@ export default function SearchForm() {
     });
     accommodationRef.current = ac;
     return () => { container.innerHTML = ""; accommodationRef.current = null; };
-  }, [cityCoords, accommodationMode]);
+  }, [cityCoords, accommodationMode, language]);
 
 
   const handleModeChange = (mode: "search" | "address") => {
@@ -1299,7 +1337,7 @@ export default function SearchForm() {
                         <div style={{ flex: 1 }}>
                           <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "3px" }}>
                             <span style={{ fontWeight: 800, fontSize: "13px", color: "#1a2a6c" }}>{activity.place_name}</span>
-                            {activity.mustSee && <span style={{ fontSize: "9px", background: "#fef3c7", color: "#92400e", padding: "1px 6px", borderRadius: "999px", fontWeight: 700, border: "1px solid #fbbf24" }}>MUST SEE</span>}
+                            {activity.mustSee && <span style={{ fontSize: "9px", background: "#fef3c7", color: "#92400e", padding: "1px 6px", borderRadius: "999px", fontWeight: 700, border: "1px solid #fbbf24" }}>{t.mustSee}</span>}
                           </div>
                           {activity.short_description && (
                             <div style={{ fontSize: "11px", color: "#4b5563", lineHeight: 1.5, marginBottom: "4px" }}>{activity.short_description}</div>
@@ -1307,7 +1345,7 @@ export default function SearchForm() {
                           <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", fontSize: "10px", color: "#6b7280" }}>
                             {activity.visit?.recommended_duration && <span>⏱ {activity.visit.recommended_duration}</span>}
                             {activity.visit?.best_time_to_visit && <span>🕐 {activity.visit.best_time_to_visit}</span>}
-                            {activity.tickets?.price_estimate && <span style={{ color: "#1a2a6c", fontWeight: 700 }}>💰 {activity.tickets.price_estimate}</span>}
+                            {activity.tickets?.price_estimate && <span style={{ color: "#1a2a6c", fontWeight: 700 }}>💰 {priceLabel(activity.tickets.price_estimate)}</span>}
                           </div>
                           {activity.tips?.length > 0 && (
                             <div style={{ fontSize: "10px", color: "#2ab5a0", marginTop: "4px", fontStyle: "italic" }}>💡 {activity.tips[0]}</div>
@@ -1347,7 +1385,7 @@ export default function SearchForm() {
                 ].map(({ icon, label, id }) => (
                   <button key={id} onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" })} style={{
                     background: "rgba(255,255,255,0.09)", border: "1px solid rgba(255,255,255,0.18)",
-                    borderRadius: "8px", padding: "6px 14px", color: "white",
+                    borderRadius: "8px", padding: "6px 14px", minHeight: "44px", color: "white",
                     fontSize: "12px", fontWeight: 600, cursor: "pointer",
                     display: "flex", alignItems: "center", gap: "5px",
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -1505,7 +1543,7 @@ export default function SearchForm() {
                                 )}
                                 {activity.tickets?.price_estimate && (
                                   <p style={{ fontSize: "13px", color: "#1a2a6c", fontWeight: 700, marginBottom: "12px" }}>
-                                    💰 {activity.tickets.price_estimate}
+                                    💰 {priceLabel(activity.tickets.price_estimate)}
                                   </p>
                                 )}
                                 {activity.tickets?.price_estimate && activity.tickets.price_estimate !== 'Free' && activity.tickets.price_estimate !== 'Gratis' && activity.tickets.price_estimate !== '' && (
