@@ -986,9 +986,15 @@ export default function SearchForm() {
             </div>
           </div>
 
-          {/* Hospedaje — dentro del colapsable avanzado */}
-          {showAdvanced && (
-            <div style={{ marginBottom: "16px" }}>
+          {/* Hospedaje — visible por defecto (no en el colapsable avanzado) */}
+          <div style={{
+              background: "rgba(124,58,237,0.05)",
+              border: "1.5px solid rgba(124,58,237,0.2)",
+              borderRadius: "16px",
+              padding: "16px",
+              marginTop: "20px",
+              marginBottom: "16px",
+            }}>
               <label style={labelStyle}>
                 🏨 {t.accommodation} <span style={{ fontWeight: 400, color: "#9ca3af", fontSize: "12px" }}>{t.accommodationOptional}</span>
               </label>
@@ -1022,7 +1028,6 @@ export default function SearchForm() {
                 </div>
               )}
             </div>
-          )}
 
           {/* Checkbox de aceptación de términos */}
           <div style={{
