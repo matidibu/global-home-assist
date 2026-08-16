@@ -697,7 +697,6 @@ export default async function BaliItineraryPage() {
                                   alt={activity.name}
                                   fill
                                   style={{ objectFit: "cover" }}
-                                  unoptimized
                                 />
                               </div>
                               <p style={{ textAlign: "center", fontSize: "10px", color: "#888", marginTop: "6px", fontFamily: "Georgia, serif", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
