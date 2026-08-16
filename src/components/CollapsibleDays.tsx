@@ -1,8 +1,12 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { Clock, Coins, Lightbulb, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
 import Link from "next/link";
 import type { DestDay, DestActivity } from "@/data/destinationPages";
+import type { ItineraryPlace } from "@/data/itineraryPlaces";
+import { matchItineraryPlace } from "@/lib/itineraryPlaceMatch";
+import DayMap from "@/components/DayMap";
 
 const AFFILIATE_GYG = "NGZASHD";
 function gygLink(query: string) {
@@ -20,7 +24,35 @@ const CATEGORY_STYLE: Record<string, { bg: string; color: string; label: string 
   relax:       { bg: "rgba(99,102,241,0.12)",  color: "#6366f1", label: "Relax" },
 };
 
-function ActivityCard({ activity, index }: { activity: DestActivity; index: number }) {
+const photoRotation = (i: number) => (i % 2 === 0 ? "rotate(2deg)" : "rotate(-1.5deg)");
+
+function ActivityPhoto({ name, imageUrl, index }: { name: string; imageUrl: string; index: number }) {
+  return (
+    <div className="activity-card-photo" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 0 0 8px", flexShrink: 0 }}>
+      <div
+        className="activity-card-photo-inner"
+        style={{
+          transform: photoRotation(index),
+          transition: "transform 0.3s ease",
+          backgroundColor: "#fff",
+          padding: "6px 6px 22px 6px",
+          boxShadow: "3px 4px 20px rgba(26,42,108,0.22)",
+          borderRadius: "2px",
+          width: "150px",
+        }}
+      >
+        <div style={{ position: "relative", width: "138px", height: "138px", overflow: "hidden", backgroundColor: "#f0f0f0" }}>
+          <Image src={imageUrl} alt={name} fill style={{ objectFit: "cover" }} unoptimized />
+        </div>
+        <p style={{ textAlign: "center", fontSize: "9px", color: "#888", marginTop: "5px", fontFamily: "Georgia, serif", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+          {name}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ActivityCard({ activity, index, place }: { activity: DestActivity; index: number; place?: ItineraryPlace }) {
   const cat = CATEGORY_STYLE[activity.category] ?? CATEGORY_STYLE.cultura;
   return (
     <div style={{
@@ -30,70 +62,77 @@ function ActivityCard({ activity, index }: { activity: DestActivity; index: numb
       padding: "20px 22px",
       boxShadow: "0 4px 16px rgba(26,42,108,0.08)",
     }}>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: "14px", marginBottom: "10px" }}>
-        <div style={{
-          width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0,
-          background: "linear-gradient(135deg, #1a2a6c, #2d3f8f)",
-          color: "white", display: "flex", alignItems: "center", justifyContent: "center",
-          fontSize: "13px", fontWeight: 800, marginTop: "2px",
-        }}>
-          {index + 1}
-        </div>
-        <div style={{ flex: 1 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap", marginBottom: "4px" }}>
-            <h3 style={{ margin: 0, fontSize: "16px", fontWeight: 800, color: "#1a2a6c", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              {activity.name}
-            </h3>
-            <span style={{ fontSize: "11px", fontWeight: 700, padding: "2px 10px", borderRadius: "999px", background: cat.bg, color: cat.color }}>
-              {cat.label}
-            </span>
+      <div className="activity-card-row" style={{ display: "flex", alignItems: "flex-start", gap: "6px" }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: "flex", alignItems: "flex-start", gap: "14px", marginBottom: "10px" }}>
+            <div style={{
+              width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0,
+              background: "linear-gradient(135deg, #1a2a6c, #2d3f8f)",
+              color: "white", display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: "13px", fontWeight: 800, marginTop: "2px",
+            }}>
+              {index + 1}
+            </div>
+            <div style={{ flex: 1 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap", marginBottom: "4px" }}>
+                <h3 style={{ margin: 0, fontSize: "16px", fontWeight: 800, color: "#1a2a6c", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  {activity.name}
+                </h3>
+                <span style={{ fontSize: "11px", fontWeight: 700, padding: "2px 10px", borderRadius: "999px", background: cat.bg, color: cat.color }}>
+                  {cat.label}
+                </span>
+              </div>
+              <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
+                <span style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "12px", color: "#6b7280" }}>
+                  <Clock size={12} /> {activity.time}
+                </span>
+                {activity.price && (
+                  <span style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "12px", color: "#1a2a6c", fontWeight: 700 }}>
+                    <Coins size={12} /> {activity.price}
+                  </span>
+                )}
+              </div>
+            </div>
           </div>
-          <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
-            <span style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "12px", color: "#6b7280" }}>
-              <Clock size={12} /> {activity.time}
-            </span>
-            {activity.price && (
-              <span style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "12px", color: "#1a2a6c", fontWeight: 700 }}>
-                <Coins size={12} /> {activity.price}
+          <p style={{ margin: "0 0 10px 46px", fontSize: "14px", color: "#374151", lineHeight: 1.6, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            {activity.description}
+          </p>
+          {activity.tip && (
+            <div style={{
+              marginLeft: "46px",
+              background: "rgba(42,181,160,0.08)", border: "1px solid rgba(42,181,160,0.25)",
+              borderRadius: "10px", padding: "10px 14px",
+              display: "flex", alignItems: "flex-start", gap: "8px",
+            }}>
+              <Lightbulb size={14} style={{ color: "#2ab5a0", flexShrink: 0, marginTop: "2px" }} />
+              <span style={{ fontSize: "12px", color: "#374151", lineHeight: 1.5, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                {activity.tip}
               </span>
-            )}
-          </div>
+            </div>
+          )}
+          {activity.gyg && (
+            <div style={{ marginLeft: "46px", marginTop: "10px" }}>
+              <a href={gygLink(activity.gyg)} target="_blank" rel="noopener noreferrer sponsored" style={{
+                display: "inline-flex", alignItems: "center", gap: "6px",
+                background: "#ff6600", color: "white",
+                padding: "6px 14px", borderRadius: "8px",
+                fontSize: "12px", fontWeight: 700, textDecoration: "none",
+                boxShadow: "0 2px 8px rgba(255,102,0,0.3)",
+              }}>
+                🎯 Tours y entradas — GetYourGuide
+              </a>
+            </div>
+          )}
         </div>
+        {place?.imageUrl && (
+          <ActivityPhoto name={activity.name} imageUrl={place.imageUrl} index={index} />
+        )}
       </div>
-      <p style={{ margin: "0 0 10px 46px", fontSize: "14px", color: "#374151", lineHeight: 1.6, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-        {activity.description}
-      </p>
-      {activity.tip && (
-        <div style={{
-          marginLeft: "46px",
-          background: "rgba(42,181,160,0.08)", border: "1px solid rgba(42,181,160,0.25)",
-          borderRadius: "10px", padding: "10px 14px",
-          display: "flex", alignItems: "flex-start", gap: "8px",
-        }}>
-          <Lightbulb size={14} style={{ color: "#2ab5a0", flexShrink: 0, marginTop: "2px" }} />
-          <span style={{ fontSize: "12px", color: "#374151", lineHeight: 1.5, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-            {activity.tip}
-          </span>
-        </div>
-      )}
-      {activity.gyg && (
-        <div style={{ marginLeft: "46px", marginTop: "10px" }}>
-          <a href={gygLink(activity.gyg)} target="_blank" rel="noopener noreferrer sponsored" style={{
-            display: "inline-flex", alignItems: "center", gap: "6px",
-            background: "#ff6600", color: "white",
-            padding: "6px 14px", borderRadius: "8px",
-            fontSize: "12px", fontWeight: 700, textDecoration: "none",
-            boxShadow: "0 2px 8px rgba(255,102,0,0.3)",
-          }}>
-            🎯 Tours y entradas — GetYourGuide
-          </a>
-        </div>
-      )}
     </div>
   );
 }
 
-function CollapsibleDay({ day, generatorUrl }: { day: DestDay; generatorUrl: string }) {
+function CollapsibleDay({ day, generatorUrl, places }: { day: DestDay; generatorUrl: string; places: ItineraryPlace[] }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -144,8 +183,9 @@ function CollapsibleDay({ day, generatorUrl }: { day: DestDay; generatorUrl: str
       {open && (
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
           {day.activities.map((activity, i) => (
-            <ActivityCard key={i} activity={activity} index={i} />
+            <ActivityCard key={i} activity={activity} index={i} place={matchItineraryPlace(activity.name, places)} />
           ))}
+          {places.length > 0 && <DayMap places={places} />}
         </div>
       )}
     </div>
@@ -156,13 +196,14 @@ interface Props {
   days: DestDay[];
   generatorUrl: string;
   city: string;
+  placesByDay?: Record<number, ItineraryPlace[]>;
 }
 
-export default function CollapsibleDays({ days, generatorUrl, city }: Props) {
+export default function CollapsibleDays({ days, generatorUrl, city, placesByDay = {} }: Props) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
       {days.map((day) => (
-        <CollapsibleDay key={day.day} day={day} generatorUrl={generatorUrl} />
+        <CollapsibleDay key={day.day} day={day} generatorUrl={generatorUrl} places={placesByDay[day.day] ?? []} />
       ))}
 
       {/* Inline CTA after last collapsed day */}

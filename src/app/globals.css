@@ -285,6 +285,12 @@ html, body {
   .activity-card {
     flex-direction: column !important;
   }
+  /* Activity card row (itinerario/[slug]): same stacking, but scoped to its
+     own class since .activity-card already carries full card chrome that's
+     applied to the outer element on this template, not this inner row. */
+  .activity-card-row {
+    flex-direction: column !important;
+  }
   .activity-card-photo {
     justify-content: center !important;
     padding: 0 20px 20px 20px !important;
