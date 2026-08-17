@@ -16,4 +16,10 @@ export const ADSENSE_SLOTS = {
 
   // Blog post - in-article ad
   blogPost: process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG_POST || '',
+
+  // Herramientas - chequeo de seguridad/salud/embajada
+  toolsSeguridad: process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOLS_SEGURIDAD || '',
+
+  // Herramientas - calculadora de presupuesto
+  toolsCalculadora: process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOLS_CALCULADORA || '',
 };

@@ -4,6 +4,7 @@ const NAV_LINKS = [
   { href: "/", label: "Planificador" },
   { href: "/blog", label: "Blog de viajes" },
   { href: "/itinerario", label: "Destinos" },
+  { href: "/herramientas", label: "Herramientas" },
   { href: "/sobre-nosotros", label: "Sobre nosotros" },
 ];
 

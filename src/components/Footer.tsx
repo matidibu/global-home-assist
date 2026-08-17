@@ -77,6 +77,7 @@ export function Footer() {
                 { label: "Generá tu itinerario", href: "/" },
                 { label: "Revista de viajes", href: "/blog" },
                 { label: "Destinos", href: "/itinerario" },
+                { label: "Herramientas", href: "/herramientas" },
                 { label: "Sobre nosotros", href: "/sobre-nosotros" },
                 { label: "Términos y condiciones", href: "/terminos" },
                 { label: "Política de Privacidad", href: "/privacidad" },
