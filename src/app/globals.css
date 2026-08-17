@@ -72,6 +72,10 @@ html, body {
   box-shadow: 0 8px 32px rgba(26,42,108,0.18) !important;
   font-family: 'Plus Jakarta Sans', sans-serif !important;
   overflow: hidden !important;
+  /* Above the cookie banner (position:fixed, z-index:9999) so suggestions
+     never render hidden behind it on mobile, where the dropdown can extend
+     past the banner's top edge. */
+  z-index: 10000 !important;
 }
 .geoapify-autocomplete-item:hover {
   background: #e6f7f5 !important;
