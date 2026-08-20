@@ -155,6 +155,11 @@ const T: Record<string, Record<string, any>> = {
     destinoInfoSubtitle: "Emergencias, salud, asistencia legal y consejos de seguridad",
     milesLabel: "Millas y puntos",
     proToolsTitle: "Herramientas de viajeros expertos",
+    mapSubtitle: (dest: string) => `Todas las actividades georeferenciadas en ${dest}`,
+    proToolDescs: ["Alertas de precio", "Comparar aerolíneas", "Vuelos combinados", "Alojamiento gratis"],
+    exploreAnotherTitle: "¿Querés explorar otro destino?",
+    exploreAnotherSub: "Generá un nuevo itinerario personalizado — gratis, en segundos.",
+    exploreAnotherBtn: "Generá otro itinerario",
   },
   en: {
     slogan: "Your trip, your world... our company.",
@@ -199,6 +204,11 @@ const T: Record<string, Record<string, any>> = {
     destinoInfoSubtitle: "Emergencies, health, legal assistance, and safety tips",
     milesLabel: "Miles & points",
     proToolsTitle: "Expert traveler tools",
+    mapSubtitle: (dest: string) => `All activities mapped out across ${dest}`,
+    proToolDescs: ["Price alerts", "Compare airlines", "Combined flights", "Free accommodation"],
+    exploreAnotherTitle: "Want to explore another destination?",
+    exploreAnotherSub: "Generate a new personalized itinerary — free, in seconds.",
+    exploreAnotherBtn: "Generate another itinerary",
   },
   fr: {
     slogan: "Votre voyage, votre monde... notre compagnie.",
@@ -243,6 +253,11 @@ const T: Record<string, Record<string, any>> = {
     destinoInfoSubtitle: "Urgences, santé, assistance juridique et conseils de sécurité",
     milesLabel: "Miles et points",
     proToolsTitle: "Outils des voyageurs experts",
+    mapSubtitle: (dest: string) => `Toutes les activités géolocalisées à ${dest}`,
+    proToolDescs: ["Alertes de prix", "Comparer les compagnies", "Vols combinés", "Hébergement gratuit"],
+    exploreAnotherTitle: "Envie d'explorer une autre destination ?",
+    exploreAnotherSub: "Générez un nouvel itinéraire personnalisé — gratuit, en quelques secondes.",
+    exploreAnotherBtn: "Générer un autre itinéraire",
   },
   it: {
     slogan: "Il tuo viaggio, il tuo mondo... la nostra compagnia.",
@@ -287,6 +302,11 @@ const T: Record<string, Record<string, any>> = {
     destinoInfoSubtitle: "Emergenze, salute, assistenza legale e consigli di sicurezza",
     milesLabel: "Miglia e punti",
     proToolsTitle: "Strumenti dei viaggiatori esperti",
+    mapSubtitle: (dest: string) => `Tutte le attività geolocalizzate a ${dest}`,
+    proToolDescs: ["Avvisi di prezzo", "Confronta compagnie aeree", "Voli combinati", "Alloggio gratuito"],
+    exploreAnotherTitle: "Vuoi esplorare un'altra destinazione?",
+    exploreAnotherSub: "Genera un nuovo itinerario personalizzato — gratis, in pochi secondi.",
+    exploreAnotherBtn: "Genera un altro itinerario",
   },
   de: {
     slogan: "Ihre Reise, Ihre Welt... unsere Begleitung.",
@@ -331,6 +351,11 @@ const T: Record<string, Record<string, any>> = {
     destinoInfoSubtitle: "Notfälle, Gesundheit, rechtliche Hilfe und Sicherheitstipps",
     milesLabel: "Meilen & Punkte",
     proToolsTitle: "Tools für erfahrene Reisende",
+    mapSubtitle: (dest: string) => `Alle Aktivitäten verortet in ${dest}`,
+    proToolDescs: ["Preisalarme", "Fluggesellschaften vergleichen", "Kombinierte Flüge", "Kostenlose Unterkunft"],
+    exploreAnotherTitle: "Möchtest du ein anderes Reiseziel entdecken?",
+    exploreAnotherSub: "Erstelle einen neuen personalisierten Reiseplan — kostenlos, in Sekunden.",
+    exploreAnotherBtn: "Weiteren Reiseplan erstellen",
   },
   pt: {
     slogan: "Sua viagem, seu mundo... nossa companhia.",
@@ -375,6 +400,11 @@ const T: Record<string, Record<string, any>> = {
     destinoInfoSubtitle: "Emergências, saúde, assistência legal e dicas de segurança",
     milesLabel: "Milhas e pontos",
     proToolsTitle: "Ferramentas de viajantes experientes",
+    mapSubtitle: (dest: string) => `Todas as atividades georreferenciadas em ${dest}`,
+    proToolDescs: ["Alertas de preço", "Comparar companhias aéreas", "Voos combinados", "Hospedagem gratuita"],
+    exploreAnotherTitle: "Quer explorar outro destino?",
+    exploreAnotherSub: "Gere um novo roteiro personalizado — grátis, em segundos.",
+    exploreAnotherBtn: "Gerar outro roteiro",
   },
 };
 
@@ -1667,10 +1697,10 @@ export default function SearchForm() {
                 </div>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "0", padding: "0" }}>
                   {[
-                    { name: "Google Flights", icon: "✈️", url: "https://www.google.com/flights", desc: "Alertas de precio" },
-                    { name: "Skyscanner", icon: "🔍", url: "https://www.skyscanner.com", desc: "Comparar aerolíneas" },
-                    { name: "Kiwi.com", icon: "🥝", url: "https://www.kiwi.com", desc: "Vuelos combinados" },
-                    { name: "TrustedHousesitters", icon: "🏠", url: "https://www.trustedhousesitters.com", desc: "Alojamiento gratis" },
+                    { name: "Google Flights", icon: "✈️", url: "https://www.google.com/flights" },
+                    { name: "Skyscanner", icon: "🔍", url: "https://www.skyscanner.com" },
+                    { name: "Kiwi.com", icon: "🥝", url: "https://www.kiwi.com" },
+                    { name: "TrustedHousesitters", icon: "🏠", url: "https://www.trustedhousesitters.com" },
                   ].map((tool, idx, arr) => (
                     <a key={tool.name} href={tool.url} target="_blank" rel="noopener noreferrer" style={{
                       display: "flex", alignItems: "center", gap: "10px",
@@ -1684,7 +1714,7 @@ export default function SearchForm() {
                       <span style={{ fontSize: "22px", flexShrink: 0 }}>{tool.icon}</span>
                       <div>
                         <p style={{ margin: 0, fontSize: "12px", fontWeight: 700, color: "#1a2a6c", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{tool.name}</p>
-                        <p style={{ margin: 0, fontSize: "11px", color: "#9ca3af", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{tool.desc}</p>
+                        <p style={{ margin: 0, fontSize: "11px", color: "#9ca3af", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{t.proToolDescs[idx]}</p>
                       </div>
                     </a>
                   ))}
@@ -1701,10 +1731,10 @@ export default function SearchForm() {
             }}>
               <p style={{ fontSize: "28px", margin: "0 0 10px" }}>✈️</p>
               <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", color: "white", margin: "0 0 10px", fontWeight: 700 }}>
-                ¿Querés explorar otro destino?
+                {t.exploreAnotherTitle}
               </h2>
               <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "13px", margin: "0 0 20px", lineHeight: 1.6 }}>
-                Generá un nuevo itinerario personalizado — gratis, en segundos.
+                {t.exploreAnotherSub}
               </p>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -1717,7 +1747,7 @@ export default function SearchForm() {
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                 }}
               >
-                <Sparkles size={16} /> Generá otro itinerario
+                <Sparkles size={16} /> {t.exploreAnotherBtn}
               </button>
             </div>
 
@@ -1735,11 +1765,11 @@ export default function SearchForm() {
                   <div>
                     <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.3rem", color: "#1a2a6c", margin: 0, fontWeight: 700 }}>{t.mapTitle}</h2>
                     <p style={{ margin: "2px 0 0", fontSize: "12px", color: "#6b7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                      Todas las actividades georeferenciadas en {itinerary.destination}
+                      {t.mapSubtitle(itinerary.destination)}
                     </p>
                   </div>
                 </div>
-                <TravelMap activities={allActivities} language="en" accommodation={itineraryAccommodation} />
+                <TravelMap activities={allActivities} language={language} accommodation={itineraryAccommodation} />
               </section>
             )}
 
