@@ -1,5 +1,7 @@
 "use client";
 
+import { useAutoLanguage } from "@/hooks/useAutoLanguage";
+
 const SOCIAL = [
   {
     name: "Instagram",
@@ -43,7 +45,124 @@ const SOCIAL = [
 
 const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "globalhomeassist.app@gmail.com";
 
+type Copy = {
+  tagline: string;
+  product: string;
+  links: { label: string; href: string }[];
+  contact: string;
+  respondTime: string;
+  rights: (year: number) => string;
+  madeWith: string;
+};
+
+const T: Record<string, Copy> = {
+  es: {
+    tagline: "Planificador de viajes con inteligencia artificial. Itinerarios personalizados, fotos reales y todo lo que necesitás para viajar mejor.",
+    product: "Producto",
+    links: [
+      { label: "Generá tu itinerario", href: "/" },
+      { label: "Revista de viajes", href: "/blog" },
+      { label: "Destinos", href: "/itinerario" },
+      { label: "Herramientas", href: "/herramientas" },
+      { label: "Sobre nosotros", href: "/sobre-nosotros" },
+      { label: "Términos y condiciones", href: "/terminos" },
+      { label: "Política de Privacidad", href: "/privacidad" },
+    ],
+    contact: "Contacto",
+    respondTime: "Respondemos en menos de 24 hs.",
+    rights: year => `© ${year} Global Home Assist. Todos los derechos reservados.`,
+    madeWith: "Hecho con IA · Buenos Aires, Argentina",
+  },
+  en: {
+    tagline: "AI-powered travel planner. Personalized itineraries, real photos, and everything you need to travel better.",
+    product: "Product",
+    links: [
+      { label: "Build your itinerary", href: "/" },
+      { label: "Travel magazine", href: "/blog" },
+      { label: "Destinations", href: "/itinerario" },
+      { label: "Tools", href: "/herramientas" },
+      { label: "About us", href: "/sobre-nosotros" },
+      { label: "Terms and conditions", href: "/terminos" },
+      { label: "Privacy policy", href: "/privacidad" },
+    ],
+    contact: "Contact",
+    respondTime: "We reply within 24 hours.",
+    rights: year => `© ${year} Global Home Assist. All rights reserved.`,
+    madeWith: "Made with AI · Buenos Aires, Argentina",
+  },
+  fr: {
+    tagline: "Planificateur de voyage propulsé par l'IA. Itinéraires personnalisés, vraies photos et tout ce qu'il faut pour mieux voyager.",
+    product: "Produit",
+    links: [
+      { label: "Créer votre itinéraire", href: "/" },
+      { label: "Magazine de voyage", href: "/blog" },
+      { label: "Destinations", href: "/itinerario" },
+      { label: "Outils", href: "/herramientas" },
+      { label: "À propos", href: "/sobre-nosotros" },
+      { label: "Conditions générales", href: "/terminos" },
+      { label: "Politique de confidentialité", href: "/privacidad" },
+    ],
+    contact: "Contact",
+    respondTime: "Nous répondons en moins de 24 h.",
+    rights: year => `© ${year} Global Home Assist. Tous droits réservés.`,
+    madeWith: "Fait avec l'IA · Buenos Aires, Argentine",
+  },
+  it: {
+    tagline: "Pianificatore di viaggi basato sull'IA. Itinerari personalizzati, foto reali e tutto ciò che serve per viaggiare meglio.",
+    product: "Prodotto",
+    links: [
+      { label: "Crea il tuo itinerario", href: "/" },
+      { label: "Rivista di viaggio", href: "/blog" },
+      { label: "Destinazioni", href: "/itinerario" },
+      { label: "Strumenti", href: "/herramientas" },
+      { label: "Chi siamo", href: "/sobre-nosotros" },
+      { label: "Termini e condizioni", href: "/terminos" },
+      { label: "Informativa sulla privacy", href: "/privacidad" },
+    ],
+    contact: "Contatti",
+    respondTime: "Rispondiamo entro 24 ore.",
+    rights: year => `© ${year} Global Home Assist. Tutti i diritti riservati.`,
+    madeWith: "Realizzato con l'IA · Buenos Aires, Argentina",
+  },
+  de: {
+    tagline: "KI-gestützter Reiseplaner. Personalisierte Reisepläne, echte Fotos und alles, was du für bessere Reisen brauchst.",
+    product: "Produkt",
+    links: [
+      { label: "Reiseplan erstellen", href: "/" },
+      { label: "Reisemagazin", href: "/blog" },
+      { label: "Reiseziele", href: "/itinerario" },
+      { label: "Tools", href: "/herramientas" },
+      { label: "Über uns", href: "/sobre-nosotros" },
+      { label: "Allgemeine Geschäftsbedingungen", href: "/terminos" },
+      { label: "Datenschutzerklärung", href: "/privacidad" },
+    ],
+    contact: "Kontakt",
+    respondTime: "Wir antworten innerhalb von 24 Stunden.",
+    rights: year => `© ${year} Global Home Assist. Alle Rechte vorbehalten.`,
+    madeWith: "Mit KI erstellt · Buenos Aires, Argentinien",
+  },
+  pt: {
+    tagline: "Planejador de viagens com inteligência artificial. Roteiros personalizados, fotos reais e tudo o que você precisa para viajar melhor.",
+    product: "Produto",
+    links: [
+      { label: "Crie seu roteiro", href: "/" },
+      { label: "Revista de viagens", href: "/blog" },
+      { label: "Destinos", href: "/itinerario" },
+      { label: "Ferramentas", href: "/herramientas" },
+      { label: "Sobre nós", href: "/sobre-nosotros" },
+      { label: "Termos e condições", href: "/terminos" },
+      { label: "Política de privacidade", href: "/privacidad" },
+    ],
+    contact: "Contato",
+    respondTime: "Respondemos em menos de 24 horas.",
+    rights: year => `© ${year} Global Home Assist. Todos os direitos reservados.`,
+    madeWith: "Feito com IA · Buenos Aires, Argentina",
+  },
+};
+
 export function Footer() {
+  const [language] = useAutoLanguage();
+  const t = T[language] || T.es;
   const activeSocials = SOCIAL.filter(s => s.url);
 
   return (
@@ -63,7 +182,7 @@ export function Footer() {
           <div style={{ flex: 1, minWidth: "240px" }}>
             <img src="/logo.svg" alt="Global Home Assist" style={{ width: "160px", height: "auto", marginBottom: "12px", filter: "drop-shadow(0 2px 10px rgba(42,181,160,0.25))" }} />
             <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.55)", lineHeight: 1.65, maxWidth: "320px", margin: 0 }}>
-              Planificador de viajes con inteligencia artificial. Itinerarios personalizados, fotos reales y todo lo que necesitás para viajar mejor.
+              {t.tagline}
             </p>
           </div>
 
@@ -71,17 +190,9 @@ export function Footer() {
           <div style={{ display: "flex", gap: "48px", flexWrap: "wrap" }}>
             <div>
               <p style={{ fontSize: "11px", fontWeight: 800, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.1em", margin: "0 0 12px" }}>
-                Producto
+                {t.product}
               </p>
-              {[
-                { label: "Generá tu itinerario", href: "/" },
-                { label: "Revista de viajes", href: "/blog" },
-                { label: "Destinos", href: "/itinerario" },
-                { label: "Herramientas", href: "/herramientas" },
-                { label: "Sobre nosotros", href: "/sobre-nosotros" },
-                { label: "Términos y condiciones", href: "/terminos" },
-                { label: "Política de Privacidad", href: "/privacidad" },
-              ].map(({ label, href }) => (
+              {t.links.map(({ label, href }) => (
                 <a key={href} href={href} style={{ display: "block", fontSize: "13px", color: "rgba(255,255,255,0.6)", textDecoration: "none", marginBottom: "8px", transition: "color 0.15s" }}>
                   {label}
                 </a>
@@ -90,13 +201,13 @@ export function Footer() {
 
             <div>
               <p style={{ fontSize: "11px", fontWeight: 800, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.1em", margin: "0 0 12px" }}>
-                Contacto
+                {t.contact}
               </p>
               <a href={`mailto:${CONTACT_EMAIL}`} style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "13px", color: "#2ab5a0", textDecoration: "none", marginBottom: "8px", fontWeight: 600 }}>
                 ✉️ {CONTACT_EMAIL}
               </a>
               <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)", margin: 0, lineHeight: 1.6 }}>
-                Respondemos en menos de 24 hs.
+                {t.respondTime}
               </p>
             </div>
           </div>
@@ -108,7 +219,7 @@ export function Footer() {
         {/* Bottom row */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px" }}>
           <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)", margin: 0 }}>
-            © {new Date().getFullYear()} Global Home Assist. Todos los derechos reservados.
+            {t.rights(new Date().getFullYear())}
           </p>
 
           {/* Social icons */}
@@ -131,7 +242,7 @@ export function Footer() {
           )}
 
           <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.25)", margin: 0 }}>
-            Hecho con IA · Buenos Aires, Argentina
+            {t.madeWith}
           </p>
         </div>
       </div>

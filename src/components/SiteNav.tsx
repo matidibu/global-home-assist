@@ -1,14 +1,80 @@
-import Link from "next/link";
+"use client";
 
-const NAV_LINKS = [
-  { href: "/", label: "Planificador" },
-  { href: "/blog", label: "Blog de viajes" },
-  { href: "/itinerario", label: "Destinos" },
-  { href: "/herramientas", label: "Herramientas" },
-  { href: "/sobre-nosotros", label: "Sobre nosotros" },
-];
+import Link from "next/link";
+import { useAutoLanguage } from "@/hooks/useAutoLanguage";
+
+type Copy = {
+  links: { href: string; label: string }[];
+  cta: string;
+};
+
+const T: Record<string, Copy> = {
+  es: {
+    links: [
+      { href: "/", label: "Planificador" },
+      { href: "/blog", label: "Blog de viajes" },
+      { href: "/itinerario", label: "Destinos" },
+      { href: "/herramientas", label: "Herramientas" },
+      { href: "/sobre-nosotros", label: "Sobre nosotros" },
+    ],
+    cta: "Crear itinerario →",
+  },
+  en: {
+    links: [
+      { href: "/", label: "Planner" },
+      { href: "/blog", label: "Travel blog" },
+      { href: "/itinerario", label: "Destinations" },
+      { href: "/herramientas", label: "Tools" },
+      { href: "/sobre-nosotros", label: "About us" },
+    ],
+    cta: "Create itinerary →",
+  },
+  fr: {
+    links: [
+      { href: "/", label: "Planificateur" },
+      { href: "/blog", label: "Blog de voyage" },
+      { href: "/itinerario", label: "Destinations" },
+      { href: "/herramientas", label: "Outils" },
+      { href: "/sobre-nosotros", label: "À propos" },
+    ],
+    cta: "Créer un itinéraire →",
+  },
+  it: {
+    links: [
+      { href: "/", label: "Pianificatore" },
+      { href: "/blog", label: "Blog di viaggio" },
+      { href: "/itinerario", label: "Destinazioni" },
+      { href: "/herramientas", label: "Strumenti" },
+      { href: "/sobre-nosotros", label: "Chi siamo" },
+    ],
+    cta: "Crea itinerario →",
+  },
+  de: {
+    links: [
+      { href: "/", label: "Planer" },
+      { href: "/blog", label: "Reiseblog" },
+      { href: "/itinerario", label: "Reiseziele" },
+      { href: "/herramientas", label: "Tools" },
+      { href: "/sobre-nosotros", label: "Über uns" },
+    ],
+    cta: "Reiseplan erstellen →",
+  },
+  pt: {
+    links: [
+      { href: "/", label: "Planejador" },
+      { href: "/blog", label: "Blog de viagens" },
+      { href: "/itinerario", label: "Destinos" },
+      { href: "/herramientas", label: "Ferramentas" },
+      { href: "/sobre-nosotros", label: "Sobre nós" },
+    ],
+    cta: "Criar roteiro →",
+  },
+};
 
 export function SiteNav() {
+  const [language] = useAutoLanguage();
+  const t = T[language] || T.es;
+
   return (
     <header style={{
       background: "rgba(6,12,44,0.97)",
@@ -33,7 +99,7 @@ export function SiteNav() {
         </Link>
 
         <nav className="sitenav-links" style={{ display: "flex", gap: "2px", alignItems: "center", flex: 1 }}>
-          {NAV_LINKS.map(({ href, label }) => (
+          {t.links.map(({ href, label }) => (
             <Link key={href} href={href} style={{
               fontSize: "13px",
               fontWeight: 600,
@@ -59,7 +125,7 @@ export function SiteNav() {
           whiteSpace: "nowrap",
           flexShrink: 0,
         }}>
-          Crear itinerario →
+          {t.cta}
         </Link>
       </div>
     </header>
