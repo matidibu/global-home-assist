@@ -1334,7 +1334,7 @@ export default function SearchForm() {
 
 
           {/* Índice de calidad — solo visible cuando no hay itinerario generado */}
-          {!itinerary && <QualityIndex />}
+          {!loading && !itinerary && <QualityIndex />}
 
           {/* Blog teaser — solo visible cuando no hay itinerario generado */}
           {!itinerary && <HomeBlogTeaser />}
