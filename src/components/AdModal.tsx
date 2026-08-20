@@ -68,8 +68,8 @@ const TEXTS: Record<string, { title: string; sub: string; adTitle: string; adSub
 
 const COUNTDOWN_SECONDS = 8;
 
-// Travelpayouts HotelLook affiliate link (marker: 712478)
-const BOOKING_URL = "https://search.hotellook.com/?shmarker=712478&currency=USD";
+// Booking.com Spain & Portugal affiliate link via CJ (Site ID 101861930, Link ID 11891543)
+const BOOKING_URL = "https://www.kqzyfj.com/click-101861930-11891543";
 
 export function AdModal({ onContinue, language = "es" }: AdModalProps) {
   const [seconds, setSeconds] = useState(COUNTDOWN_SECONDS);

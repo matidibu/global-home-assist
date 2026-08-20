@@ -15,7 +15,7 @@ interface ServiceCard {
 }
 
 const accommodationServices: ServiceCard[] = [
-  { name: "Booking.com", descKey: "Booking.com", icon: "🏨", color: "#003580", bgColor: "#eff6ff", borderColor: "#bfdbfe", url: "https://www.booking.com" },
+  { name: "Booking.com", descKey: "Booking.com", icon: "🏨", color: "#003580", bgColor: "#eff6ff", borderColor: "#bfdbfe", url: "https://www.kqzyfj.com/click-101861930-11891543", sponsored: true },
   { name: "Airbnb", descKey: "Airbnb", icon: "🏠", color: "#FF5A5F", bgColor: "#fff1f2", borderColor: "#fecdd3", url: "https://www.airbnb.com" },
   { name: "Hostelworld", descKey: "Hostelworld", icon: "🛏️", color: "#FF6600", bgColor: "#fff7ed", borderColor: "#fed7aa", url: "https://www.hostelworld.com" },
 ];
