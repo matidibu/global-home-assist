@@ -84,6 +84,13 @@ function slugify(text) {
 
   console.log(`[2/6] Buscando destino: ${destination} ...`);
   const input = page.locator('.geoapify-autocomplete-input').first();
+  // Timestamp for "first real content is on screen" -- distinct from
+  // loadingStart. The window before this (page navigation + first paint)
+  // is blank/white and its length varies run to run (confirmed 2026-08-19:
+  // one Paris capture had a noticeably slower first paint, and a fixed 3x
+  // intro speedup wasn't enough to hide ~2s of blank screen at the start
+  // of the final video). Sped up much harder than the rest of the intro.
+  const contentReady = (Date.now() - t0) / 1000;
   await input.scrollIntoViewIfNeeded();
   await input.click();
   await input.type(destination, { delay: 55 });
@@ -105,7 +112,14 @@ function slugify(text) {
   // secciones lo reemplaza ahi) -- #sec-itinerario si es visible siempre.
   await page.waitForSelector('#sec-itinerario', { timeout: 60000 });
   const loadingEnd = (Date.now() - t0) / 1000;
-  await page.waitForTimeout(1500);
+  // Longer settle wait -- below-the-fold widgets (FlightSearch's Aviasales
+  // iframe, InsuranceBanner, etc.) can still be mounting/loading here. If
+  // one of them inserts itself or resizes AFTER we've already started
+  // scrolling, the page layout shifts mid-scroll and looks like a jump/
+  // glitch in the recorded video (confirmed 2026-08-19 on the Barcelona EN
+  // capture -- a "Search flights" section popped in around the map/
+  // insurance area between two scroll steps).
+  await page.waitForTimeout(3000);
 
   console.log('[6/6] Recorriendo el itinerario para la grabación ...');
   // Scroll continuo y suave (no saltos de sección a sección) con más tiempo
@@ -118,14 +132,23 @@ function slugify(text) {
     const itin = document.querySelector('#sec-itinerario');
     const itinTop = itin ? window.scrollY + itin.getBoundingClientRect().top : 0;
     const itinBottom = itin ? itinTop + itin.offsetHeight : 0;
-    const maxScroll = document.body.scrollHeight - window.innerHeight;
     const stepPx = 90;
-    for (let y = 0; y < maxScroll; y += stepPx) {
-      window.scrollTo({ top: y, behavior: 'smooth' });
+    let y = 0;
+    // maxScroll recomputed every step (not once up front) -- a late-
+    // mounting widget below the fold (e.g. FlightSearch's Aviasales
+    // iframe) can still grow the page height after scrolling starts, which
+    // made the fixed-bound version jump/glitch mid-scroll (confirmed
+    // 2026-08-19). behavior:'auto' (instant) instead of 'smooth' -- calling
+    // scrollTo again before a smooth animation finishes interrupts it and
+    // can look jittery; instant steps at this cadence already read as a
+    // continuous scroll once the video is re-encoded, without that risk.
+    while (y < document.body.scrollHeight - window.innerHeight) {
+      window.scrollTo({ top: y, behavior: 'auto' });
       const dwelling = y >= itinTop - 150 && y <= itinBottom;
       await sleep(dwelling ? 170 : 45);
+      y += stepPx;
     }
-    window.scrollTo({ top: maxScroll, behavior: 'smooth' });
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'auto' });
     await sleep(1000);
   });
 
@@ -142,7 +165,7 @@ function slugify(text) {
     const dest = path.join(OUTPUT_DIR, `${slugify(destination)}-${lang}-${stamp}.webm`);
     fs.renameSync(path.join(OUTPUT_DIR, latest.f), dest);
     const metaPath = dest.replace(/\.webm$/, '.meta.json');
-    fs.writeFileSync(metaPath, JSON.stringify({ destination, lang, days, loadingStart, loadingEnd }, null, 2));
+    fs.writeFileSync(metaPath, JSON.stringify({ destination, lang, days, contentReady, loadingStart, loadingEnd }, null, 2));
     console.log(`\n✅ Video guardado en: ${dest}`);
     console.log(`   Loading segment: ${loadingStart.toFixed(1)}s -> ${loadingEnd.toFixed(1)}s (meta: ${metaPath})`);
   } else {

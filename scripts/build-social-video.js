@@ -17,6 +17,7 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 
+const sharp = require('sharp');
 const FFMPEG = require('ffmpeg-static');
 const API_KEY = process.env.ELEVEN_API_KEY;
 const VOICE_ID = 'TX3LPaxmHKxFdv7VOQHJ'; // Liam - Energetic, Social Media Creator (free-tier ElevenLabs voice, works well multilingually)
@@ -26,13 +27,17 @@ const MAX_BROWSING_SPEEDUP = 1.7; // never compress the scroll past this, or it 
 const END_BUFFER = 0.6; // small buffer after the voice stops, not a fixed minimum length
 const MAX_TOTAL_DUR = 34; // don't let it drag even if the script is long
 const VIDEO_W = 480, VIDEO_H = 854; // must match capture-itinerary-video.js VIDEO_SIZE
+const REPO_ROOT = path.join(__dirname, '..');
+const BRAND_CARD_DUR = 1.2; // short bumper, same clip reused at open and close
+const BRAND_BG = '#152060'; // matches the logo's own dark navy gradient stop
 
-const [rawVideoPath, scriptPath, lang, outLabel] = process.argv.slice(2);
+const [rawVideoPath, scriptPath, lang, outLabel, reuseVoicePath] = process.argv.slice(2);
 if (!rawVideoPath || !scriptPath || !lang || !outLabel) {
-  console.error('Usage: node scripts/build-social-video.js <rawVideoPath> <scriptTextPath> <lang> <outLabel>');
+  console.error('Usage: node scripts/build-social-video.js <rawVideoPath> <scriptTextPath> <lang> <outLabel> [reuseVoicePath]');
+  console.error('  reuseVoicePath: skip the ElevenLabs call and reuse an existing voice mp3 (script text unchanged, only the raw footage changed -- saves credits).');
   process.exit(1);
 }
-if (!API_KEY) {
+if (!reuseVoicePath && !API_KEY) {
   console.error('Missing ELEVEN_API_KEY env var');
   process.exit(1);
 }
@@ -118,12 +123,21 @@ function trimVoiceTail(voicePath) {
 function prepRawVideo(rawPath, targetDur) {
   const metaPath = rawPath.replace(/\.webm$/, '.meta.json');
   const rawDur = getDuration(rawPath);
-  let loadingStart = 0, loadingEnd = 0;
+  let loadingStart = 0, loadingEnd = 0, contentReady = 0;
   if (fs.existsSync(metaPath)) {
-    ({ loadingStart, loadingEnd } = JSON.parse(fs.readFileSync(metaPath, 'utf8')));
+    ({ loadingStart = 0, loadingEnd = 0, contentReady = 0 } = JSON.parse(fs.readFileSync(metaPath, 'utf8')));
   }
   const hasLoading = loadingEnd - loadingStart >= 2;
-  const introDur = hasLoading ? loadingStart : 0;
+  // Pre-content: blank page-load sliver before the search form is even on
+  // screen. Dropped ENTIRELY (not just compressed) -- confirmed 2026-08-19
+  // that even a hard-capped 0.3s of it still read as a noticeable blank gap
+  // right after the brand card's solid-color close, since both are visually
+  // "nothing happening." There's nothing worth seeing in these frames
+  // regardless, so the content segment now starts exactly at contentReady
+  // with zero blank frames carried over.
+  const hasPreContent = contentReady > 0.1 && contentReady < loadingStart;
+  const introRawStart = hasPreContent ? contentReady : 0;
+  const introDur = hasLoading ? loadingStart - introRawStart : 0;
   const introCompressed = introDur / INTRO_SPEEDUP;
   const loadingCompressed = hasLoading ? (loadingEnd - loadingStart) / LOADING_SPEEDUP : 0;
   const browsingStart = hasLoading ? loadingEnd : 0;
@@ -136,26 +150,83 @@ function prepRawVideo(rawPath, targetDur) {
   console.log(`[${outLabel}]   intro=${introCompressed.toFixed(1)}s(${INTRO_SPEEDUP}x) loading=${loadingCompressed.toFixed(1)}s(${LOADING_SPEEDUP}x) browsing=${browsingCompressed.toFixed(1)}s(${browsingSpeed.toFixed(2)}x) -> ${finalDur.toFixed(1)}s`);
 
   const outPath = path.join(WORKDIR, `${outLabel}-detimed.mp4`);
-  let filter;
+  const segments = [];
   if (hasLoading) {
-    filter =
-      `[0:v]trim=0:${introDur},setpts=(PTS-STARTPTS)/${INTRO_SPEEDUP}[v1];` +
-      `[0:v]trim=${loadingStart}:${loadingEnd},setpts=(PTS-STARTPTS)/${LOADING_SPEEDUP}[v2];` +
-      `[0:v]trim=${browsingStart},setpts=(PTS-STARTPTS)/${browsingSpeed}[v3];` +
-      `[v1][v2][v3]concat=n=3:v=1:a=0[vout]`;
+    segments.push(`[0:v]trim=${introRawStart}:${loadingStart},setpts=(PTS-STARTPTS)/${INTRO_SPEEDUP}[vintro]`);
+    segments.push(`[0:v]trim=${loadingStart}:${loadingEnd},setpts=(PTS-STARTPTS)/${LOADING_SPEEDUP}[vload]`);
+    segments.push(`[0:v]trim=${browsingStart},setpts=(PTS-STARTPTS)/${browsingSpeed}[vbrowse]`);
   } else {
-    filter = `[0:v]setpts=(PTS-STARTPTS)/${browsingSpeed}[vout]`;
+    segments.push(`[0:v]trim=${introRawStart},setpts=(PTS-STARTPTS)/${browsingSpeed}[vbrowse]`);
   }
+  const labels = segments.map(s => s.match(/\[v\w+\]$/)[0]).join('');
+  const n = segments.length;
+  const filter = `${segments.join(';')};${labels}concat=n=${n}:v=1:a=0[vout]`;
   sh(['-y', '-i', rawPath, '-filter_complex', filter, '-map', '[vout]', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', outPath]);
   return { path: outPath, dur: finalDur };
 }
 
+// Short branded slate (logo on a solid navy card) reused at the open and
+// close of every video -- cached to disk since it's identical across all
+// runs/languages, so it's only rendered once per machine. Delete
+// WORKDIR/brand-card.mp4 by hand if the logo art or card design changes.
+async function ensureBrandCard() {
+  const cardPath = path.join(WORKDIR, 'brand-card.mp4');
+  if (fs.existsSync(cardPath)) return cardPath;
+  console.log(`[${outLabel}]   Building brand card (first run, cached after this)...`);
+  const logoSvg = fs.readFileSync(path.join(REPO_ROOT, 'public', 'logo.svg'));
+  const logoPng = await sharp(logoSvg, { density: 300 }).resize({ width: 300 }).png().toBuffer();
+  const { width: logoW, height: logoH } = await sharp(logoPng).metadata();
+  const cardPngPath = path.join(WORKDIR, 'brand-card.png');
+  await sharp({ create: { width: VIDEO_W, height: VIDEO_H, channels: 3, background: BRAND_BG } })
+    .composite([{ input: logoPng, left: Math.round((VIDEO_W - logoW) / 2), top: Math.round((VIDEO_H - logoH) / 2) }])
+    .png()
+    .toFile(cardPngPath);
+  sh([
+    '-y', '-loop', '1', '-i', cardPngPath,
+    '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo',
+    '-t', String(BRAND_CARD_DUR),
+    '-vf', `scale=${VIDEO_W}:${VIDEO_H},format=yuv420p`,
+    '-c:v', 'libx264', '-crf', '18',
+    '-c:a', 'aac', '-shortest',
+    cardPath,
+  ]);
+  return cardPath;
+}
+
+// Concats [brandCard][main][brandCard] into the final output. Re-encodes
+// (rather than the concat demuxer's stream-copy) so a still-image card and
+// a real screen-recording with different source fps/audio params splice
+// together cleanly instead of risking a demuxer mismatch error.
+function concatWithBrandCard(mainPath, brandCardPath, outPath) {
+  const filter =
+    `[0:v]scale=${VIDEO_W}:${VIDEO_H},setsar=1,fps=30[v0];[0:a]aformat=sample_rates=44100:channel_layouts=stereo[a0];` +
+    `[1:v]scale=${VIDEO_W}:${VIDEO_H},setsar=1,fps=30[v1];[1:a]aformat=sample_rates=44100:channel_layouts=stereo[a1];` +
+    `[2:v]scale=${VIDEO_W}:${VIDEO_H},setsar=1,fps=30[v2];[2:a]aformat=sample_rates=44100:channel_layouts=stereo[a2];` +
+    `[v0][a0][v1][a1][v2][a2]concat=n=3:v=1:a=1[vout][aout]`;
+  sh([
+    '-y',
+    '-i', brandCardPath, '-i', mainPath, '-i', brandCardPath,
+    '-filter_complex', filter,
+    '-map', '[vout]', '-map', '[aout]',
+    '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-preset', 'medium', '-crf', '20',
+    '-c:a', 'aac', '-b:a', '128k',
+    outPath,
+  ]);
+}
+
 async function main() {
-  console.log(`[${outLabel}] 1/5 Generating voiceover (${lang}) via ElevenLabs...`);
   const text = fs.readFileSync(scriptPath, 'utf8').trim();
-  const rawVoicePath = path.join(WORKDIR, `${outLabel}-voice.mp3`);
-  await generateVoice(text, rawVoicePath);
-  const voicePath = trimVoiceTail(rawVoicePath);
+  let sourceVoicePath;
+  if (reuseVoicePath) {
+    console.log(`[${outLabel}] 1/5 Reusing existing voice (no ElevenLabs call): ${reuseVoicePath}`);
+    if (!fs.existsSync(reuseVoicePath)) throw new Error(`reuseVoicePath not found: ${reuseVoicePath}`);
+    sourceVoicePath = reuseVoicePath;
+  } else {
+    console.log(`[${outLabel}] 1/5 Generating voiceover (${lang}) via ElevenLabs...`);
+    sourceVoicePath = path.join(WORKDIR, `${outLabel}-voice.mp3`);
+    await generateVoice(text, sourceVoicePath);
+  }
+  const voicePath = trimVoiceTail(sourceVoicePath);
   const audioDur = getDuration(voicePath);
   if (!audioDur) throw new Error('Could not read audio duration');
 
@@ -222,19 +293,30 @@ async function main() {
   const srtPath = path.join(WORKDIR, `${outLabel}.srt`);
   fs.writeFileSync(srtPath, srtLines.join('\n'), 'utf8');
 
-  console.log(`[${outLabel}] 5/5 Rendering final video with ffmpeg...`);
-  const outPath = path.join(OUT_DIR, `${outLabel}.mp4`);
+  console.log(`[${outLabel}] 5/6 Rendering captioned video with ffmpeg...`);
+  const mainPath = path.join(WORKDIR, `${outLabel}-main.mp4`);
   const srtRel = `${outLabel}.srt`;
   // BackColour + BorderStyle=3 draws a solid readable box behind the text
   // (BorderStyle=1 outline-only rendered oversized/unreadable before --
   // fixed here via original_size, which was the real bug: libass defaults
   // to a 384x288 script resolution when the input is a plain .srt and
   // scales the font up to match the real video size).
-  const style = "FontName=Arial,FontSize=11,Bold=1,PrimaryColour=&H00FFFFFF,BackColour=&H90000000,BorderStyle=3,Outline=0,Shadow=0,Alignment=2,MarginV=25,MarginL=20,MarginR=20";
-  // Video ends a beat after the voice, never dragged out further -- if the
-  // prepped footage still runs longer (browsing speed-up hit its cap), trim
-  // it rather than let the tail sit in silence.
-  const finalDur = Math.min(prepped.dur, audioDur + END_BUFFER);
+  // White fill + black outline (no background box) -- the semi-transparent
+  // box (BorderStyle=3) still lost contrast against bright/white app
+  // backgrounds; a per-glyph outline (BorderStyle=1) stays legible
+  // regardless of what's behind it. Confirmed by user feedback 2026-08-19.
+  const style = "FontName=Arial,FontSize=11,Bold=1,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=1.4,Shadow=0,Alignment=2,MarginV=25,MarginL=20,MarginR=20";
+  // finalDur is always audioDur-driven (the narration is the thing that
+  // must play in full) -- NOT capped by the prepped video's own length.
+  // A real bug lived here: capping finalDur at prepped.dur assumed the
+  // video is always >= the audio, which held for full-page destination
+  // scrolls but broke for short targeted feature clips (confirmed
+  // 2026-08-19: a 23.7s voiceover got hard-cut to 15.8s because the prepped
+  // footage was only 15.8s). If the video is shorter, pad it (tpad, hold
+  // last frame) instead of truncating the audio. If it's longer (browsing
+  // speed-up hit its cap), trim it via `-t` below instead of dragging the
+  // tail out in silence.
+  const finalDur = targetDur;
   const videoPad = Math.max(0, finalDur - prepped.dur);
   const audioPad = Math.max(0, finalDur - audioDur);
   sh([
@@ -248,10 +330,15 @@ async function main() {
     '-t', String(finalDur),
     '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-preset', 'medium', '-crf', '20',
     '-c:a', 'aac', '-b:a', '128k',
-    outPath,
+    mainPath,
   ]);
 
-  console.log(`[${outLabel}] Done: ${outPath} (~${finalDur.toFixed(1)}s)`);
+  console.log(`[${outLabel}] 6/6 Adding brand card at open/close...`);
+  const brandCardPath = await ensureBrandCard();
+  const outPath = path.join(OUT_DIR, `${outLabel}.mp4`);
+  concatWithBrandCard(mainPath, brandCardPath, outPath);
+
+  console.log(`[${outLabel}] Done: ${outPath} (~${(finalDur + 2 * BRAND_CARD_DUR).toFixed(1)}s incl. brand card)`);
 }
 
 main().catch(e => { console.error(`[${outLabel}] FAILED:`, e.message); process.exitCode = 1; });
