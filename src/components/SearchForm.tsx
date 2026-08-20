@@ -151,6 +151,8 @@ const T: Record<string, Record<string, any>> = {
     interestValues: ["cultura, historia y arte","gastronomía","aventura y deportes","naturaleza y relax","shopping","vida nocturna"],
     flightFirstTip: "Buscá el vuelo antes de confirmar el hotel — es la estrategia que usan los mejores viajeros.",
     travelHacksTitle: "Travel Hacks para tu viaje",
+    destinoInfoTitle: "Información del destino",
+    destinoInfoSubtitle: "Emergencias, salud, asistencia legal y consejos de seguridad",
     milesLabel: "Millas y puntos",
     proToolsTitle: "Herramientas de viajeros expertos",
   },
@@ -193,6 +195,8 @@ const T: Record<string, Record<string, any>> = {
     interestValues: ["culture, history and art","gastronomy","adventure and sports","nature and relax","shopping","nightlife"],
     flightFirstTip: "Search for flights before booking your hotel — it's the strategy the smartest travelers use.",
     travelHacksTitle: "Travel Hacks for your trip",
+    destinoInfoTitle: "Destination info",
+    destinoInfoSubtitle: "Emergencies, health, legal assistance, and safety tips",
     milesLabel: "Miles & points",
     proToolsTitle: "Expert traveler tools",
   },
@@ -235,6 +239,8 @@ const T: Record<string, Record<string, any>> = {
     interestValues: ["culture, histoire et art","gastronomie","aventure et sports","nature et détente","shopping","vie nocturne"],
     flightFirstTip: "Recherchez les vols avant de confirmer l'hôtel — c'est la stratégie des meilleurs voyageurs.",
     travelHacksTitle: "Travel Hacks pour votre voyage",
+    destinoInfoTitle: "Informations sur la destination",
+    destinoInfoSubtitle: "Urgences, santé, assistance juridique et conseils de sécurité",
     milesLabel: "Miles et points",
     proToolsTitle: "Outils des voyageurs experts",
   },
@@ -277,6 +283,8 @@ const T: Record<string, Record<string, any>> = {
     interestValues: ["cultura, storia e arte","gastronomia","avventura e sport","natura e relax","shopping","vita notturna"],
     flightFirstTip: "Cerca i voli prima di confermare l'hotel — è la strategia dei viaggiatori più intelligenti.",
     travelHacksTitle: "Travel Hacks per il tuo viaggio",
+    destinoInfoTitle: "Informazioni sulla destinazione",
+    destinoInfoSubtitle: "Emergenze, salute, assistenza legale e consigli di sicurezza",
     milesLabel: "Miglia e punti",
     proToolsTitle: "Strumenti dei viaggiatori esperti",
   },
@@ -319,6 +327,8 @@ const T: Record<string, Record<string, any>> = {
     interestValues: ["kultur, geschichte und kunst","gastronomie","abenteuer und sport","natur und entspannung","shopping","nachtleben"],
     flightFirstTip: "Suchen Sie zuerst nach Flügen, bevor Sie das Hotel buchen — die Strategie der klügsten Reisenden.",
     travelHacksTitle: "Travel Hacks für Ihre Reise",
+    destinoInfoTitle: "Infos zum Reiseziel",
+    destinoInfoSubtitle: "Notfälle, Gesundheit, rechtliche Hilfe und Sicherheitstipps",
     milesLabel: "Meilen & Punkte",
     proToolsTitle: "Tools für erfahrene Reisende",
   },
@@ -361,6 +371,8 @@ const T: Record<string, Record<string, any>> = {
     interestValues: ["cultura, história e arte","gastronomia","aventura e esportes","natureza e relax","shopping","vida noturna"],
     flightFirstTip: "Busque o voo antes de confirmar o hotel — é a estratégia dos viajantes mais inteligentes.",
     travelHacksTitle: "Travel Hacks para sua viagem",
+    destinoInfoTitle: "Informações do destino",
+    destinoInfoSubtitle: "Emergências, saúde, assistência legal e dicas de segurança",
     milesLabel: "Milhas e pontos",
     proToolsTitle: "Ferramentas de viajantes experientes",
   },
@@ -1793,9 +1805,9 @@ export default function SearchForm() {
                 <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "20px", padding: "20px 24px", background: "rgba(255,255,255,0.96)", borderRadius: "18px", border: "1.5px solid rgba(220,38,38,0.15)", boxShadow: "0 2px 12px rgba(220,38,38,0.06)" }}>
                   <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "linear-gradient(135deg, #dc2626, #ef4444)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", flexShrink: 0 }}>🏥</div>
                   <div>
-                    <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.3rem", color: "#1a2a6c", margin: 0, fontWeight: 700 }}>Información del destino</h2>
+                    <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.3rem", color: "#1a2a6c", margin: 0, fontWeight: 700 }}>{t.destinoInfoTitle}</h2>
                     <p style={{ margin: "2px 0 0", fontSize: "12px", color: "#6b7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                      Emergencias, salud, asistencia legal y consejos de seguridad
+                      {t.destinoInfoSubtitle}
                     </p>
                   </div>
                 </div>
