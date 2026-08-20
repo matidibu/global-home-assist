@@ -1782,7 +1782,7 @@ export default function SearchForm() {
             </div>
 
             <div className="no-print" style={{ marginBottom: "40px" }}>
-              <ServicesSection city={city} country={country} />
+              <ServicesSection city={city} country={country} language={language} />
             </div>
 
             {/* ══════════════════════════════════════════════════════ */}
@@ -1802,7 +1802,7 @@ export default function SearchForm() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                   <DestinationInfo city={city} country={country} province={province} nationality={nationality || "Argentina"} language={language} latitude={cityCoords.lat} longitude={cityCoords.lon} onEmergencyNumbers={setEmergencyNumbers} />
                   <MedicalAssistance city={city} country={country} language={language} />
-                  <SOSButton city={city} country={country} emergencyNumbers={emergencyNumbers} />
+                  <SOSButton city={city} country={country} emergencyNumbers={emergencyNumbers} language={language} />
                 </div>
               </section>
             )}
