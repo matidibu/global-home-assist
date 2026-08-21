@@ -11,7 +11,110 @@ const FEATURED_SLUGS = [
   "vuelos-latinoamerica-europa-guia",
 ];
 
-export function HomeBlogTeaser() {
+type Copy = {
+  eyebrow: string;
+  title: string;
+  articlesCount: (n: number) => string;
+  seeAll: string;
+  categories: { destinos: string; guias: string; presupuesto: string; consejos: string };
+  read: string;
+  also: string;
+  petsLink: string;
+  conflictLink: string;
+  baliLink: string;
+  budgetLink: string;
+};
+
+// Wrapper chrome only (title/subtitle/labels) is translated here -- the
+// actual post titles/categoryLabel/content come from blogPosts.ts, which is
+// Spanish-only (a much bigger separate translation task, not done yet).
+const T: Record<string, Copy> = {
+  es: {
+    eyebrow: "Blog de Viajes",
+    title: "Guías para viajeros inteligentes",
+    articlesCount: n => `${n} artículos originales · Actualizados en 2026`,
+    seeAll: "Ver todas",
+    categories: { destinos: "Destinos", guias: "Guías", presupuesto: "Presupuesto", consejos: "Consejos" },
+    read: "Leer →",
+    also: "También:",
+    petsLink: "viajar con mascotas",
+    conflictLink: "zonas de conflicto",
+    baliLink: "Bali 2026",
+    budgetLink: "presupuesto",
+  },
+  en: {
+    eyebrow: "Travel Blog",
+    title: "Guides for smart travelers",
+    articlesCount: n => `${n} original articles · Updated in 2026`,
+    seeAll: "See all",
+    categories: { destinos: "Destinations", guias: "Guides", presupuesto: "Budget", consejos: "Tips" },
+    read: "Read →",
+    also: "Also:",
+    petsLink: "traveling with pets",
+    conflictLink: "conflict zones",
+    baliLink: "Bali 2026",
+    budgetLink: "budget",
+  },
+  fr: {
+    eyebrow: "Blog Voyage",
+    title: "Guides pour voyageurs avisés",
+    articlesCount: n => `${n} articles originaux · Mis à jour en 2026`,
+    seeAll: "Voir tout",
+    categories: { destinos: "Destinations", guias: "Guides", presupuesto: "Budget", consejos: "Conseils" },
+    read: "Lire →",
+    also: "Aussi :",
+    petsLink: "voyager avec des animaux",
+    conflictLink: "zones de conflit",
+    baliLink: "Bali 2026",
+    budgetLink: "budget",
+  },
+  it: {
+    eyebrow: "Blog di Viaggio",
+    title: "Guide per viaggiatori intelligenti",
+    articlesCount: n => `${n} articoli originali · Aggiornati nel 2026`,
+    seeAll: "Vedi tutte",
+    categories: { destinos: "Destinazioni", guias: "Guide", presupuesto: "Budget", consejos: "Consigli" },
+    read: "Leggi →",
+    also: "Anche:",
+    petsLink: "viaggiare con animali",
+    conflictLink: "zone di conflitto",
+    baliLink: "Bali 2026",
+    budgetLink: "budget",
+  },
+  de: {
+    eyebrow: "Reiseblog",
+    title: "Guides für clevere Reisende",
+    articlesCount: n => `${n} Originalartikel · Aktualisiert 2026`,
+    seeAll: "Alle ansehen",
+    categories: { destinos: "Reiseziele", guias: "Guides", presupuesto: "Budget", consejos: "Tipps" },
+    read: "Lesen →",
+    also: "Außerdem:",
+    petsLink: "Reisen mit Haustieren",
+    conflictLink: "Konfliktgebiete",
+    baliLink: "Bali 2026",
+    budgetLink: "Budget",
+  },
+  pt: {
+    eyebrow: "Blog de Viagens",
+    title: "Guias para viajantes inteligentes",
+    articlesCount: n => `${n} artigos originais · Atualizados em 2026`,
+    seeAll: "Ver todos",
+    categories: { destinos: "Destinos", guias: "Guias", presupuesto: "Orçamento", consejos: "Dicas" },
+    read: "Ler →",
+    also: "Também:",
+    petsLink: "viajar com animais de estimação",
+    conflictLink: "zonas de conflito",
+    baliLink: "Bali 2026",
+    budgetLink: "orçamento",
+  },
+};
+
+interface Props {
+  language?: string;
+}
+
+export function HomeBlogTeaser({ language = "es" }: Props) {
+  const t = T[language] || T.es;
   const featured = FEATURED_SLUGS
     .map((slug) => blogPosts.find((p) => p.slug === slug))
     .filter(Boolean) as typeof blogPosts;
@@ -40,7 +143,7 @@ export function HomeBlogTeaser() {
               textTransform: "uppercase",
               letterSpacing: "0.12em",
             }}>
-              Blog de Viajes
+              {t.eyebrow}
             </span>
           </div>
           <h2 style={{
@@ -51,10 +154,10 @@ export function HomeBlogTeaser() {
             margin: 0,
             lineHeight: 1.2,
           }}>
-            Guías para viajeros inteligentes
+            {t.title}
           </h2>
           <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "13px", margin: "6px 0 0 0" }}>
-            {totalArticles} artículos originales · Actualizados en 2026
+            {t.articlesCount(totalArticles)}
           </p>
         </div>
         <Link href="/blog" style={{
@@ -71,7 +174,7 @@ export function HomeBlogTeaser() {
           textDecoration: "none",
           whiteSpace: "nowrap",
         }}>
-          Ver todas <ArrowRight size={13} strokeWidth={2.5} />
+          {t.seeAll} <ArrowRight size={13} strokeWidth={2.5} />
         </Link>
       </div>
 
@@ -83,12 +186,12 @@ export function HomeBlogTeaser() {
         flexWrap: "wrap",
       }}>
         {[
-          { label: "Destinos", count: blogPosts.filter(p => p.category === "destinos").length },
-          { label: "Guías", count: blogPosts.filter(p => p.category === "guias").length },
-          { label: "Presupuesto", count: blogPosts.filter(p => p.category === "presupuesto").length },
-          { label: "Consejos", count: blogPosts.filter(p => p.category === "consejos").length },
+          { label: t.categories.destinos, urlKey: "destinos", count: blogPosts.filter(p => p.category === "destinos").length },
+          { label: t.categories.guias, urlKey: "guias", count: blogPosts.filter(p => p.category === "guias").length },
+          { label: t.categories.presupuesto, urlKey: "presupuesto", count: blogPosts.filter(p => p.category === "presupuesto").length },
+          { label: t.categories.consejos, urlKey: "consejos", count: blogPosts.filter(p => p.category === "consejos").length },
         ].map((cat) => (
-          <Link key={cat.label} href={`/blog?categoria=${cat.label.toLowerCase()}`} style={{
+          <Link key={cat.label} href={`/blog?categoria=${cat.urlKey}`} style={{
             display: "inline-flex",
             alignItems: "center",
             gap: "5px",
@@ -157,7 +260,7 @@ export function HomeBlogTeaser() {
                   <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.62)" }}>
                     {post.readTime} min
                   </span>
-                  <span style={{ color: "#2ab5a0", fontSize: "12px", fontWeight: 700 }}>Leer →</span>
+                  <span style={{ color: "#2ab5a0", fontSize: "12px", fontWeight: 700 }}>{t.read}</span>
                 </div>
               </div>
             </Link>
@@ -176,13 +279,13 @@ export function HomeBlogTeaser() {
       }}>
         <TrendingUp size={14} color="#2ab5a0" strokeWidth={2} />
         <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.68)", margin: 0 }}>
-          También: <Link href="/blog/viajar-con-mascotas-guia-completa" style={{ color: "rgba(255,255,255,0.88)", textDecoration: "none", fontWeight: 600 }}>viajar con mascotas</Link>
+          {t.also} <Link href="/blog/viajar-con-mascotas-guia-completa" style={{ color: "rgba(255,255,255,0.88)", textDecoration: "none", fontWeight: 600 }}>{t.petsLink}</Link>
           {" · "}
-          <Link href="/blog/viajar-en-tiempos-de-conflicto-belico" style={{ color: "rgba(255,255,255,0.88)", textDecoration: "none", fontWeight: 600 }}>zonas de conflicto</Link>
+          <Link href="/blog/viajar-en-tiempos-de-conflicto-belico" style={{ color: "rgba(255,255,255,0.88)", textDecoration: "none", fontWeight: 600 }}>{t.conflictLink}</Link>
           {" · "}
-          <Link href="/blog/bali-guia-honesta-2026" style={{ color: "rgba(255,255,255,0.88)", textDecoration: "none", fontWeight: 600 }}>Bali 2026</Link>
+          <Link href="/blog/bali-guia-honesta-2026" style={{ color: "rgba(255,255,255,0.88)", textDecoration: "none", fontWeight: 600 }}>{t.baliLink}</Link>
           {" · "}
-          <Link href="/blog?categoria=presupuesto" style={{ color: "rgba(255,255,255,0.88)", textDecoration: "none", fontWeight: 600 }}>presupuesto</Link>
+          <Link href="/blog?categoria=presupuesto" style={{ color: "rgba(255,255,255,0.88)", textDecoration: "none", fontWeight: 600 }}>{t.budgetLink}</Link>
         </p>
       </div>
     </div>

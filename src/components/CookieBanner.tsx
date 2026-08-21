@@ -3,9 +3,53 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { getConsent, setConsent } from "@/lib/consent";
+import { useAutoLanguage } from "@/hooks/useAutoLanguage";
+
+type Copy = { text: string; cookiePolicy: string; essentialOnly: string; acceptAll: string };
+
+const T: Record<string, Copy> = {
+  es: {
+    text: "🍪 Usamos cookies propias y de terceros — Google Analytics y servicios de afiliados — para mejorar tu experiencia y medir el uso del sitio.",
+    cookiePolicy: "Política de cookies",
+    essentialOnly: "Solo esenciales",
+    acceptAll: "Aceptar todo",
+  },
+  en: {
+    text: "🍪 We use our own and third-party cookies — Google Analytics and affiliate services — to improve your experience and measure site usage.",
+    cookiePolicy: "Cookie policy",
+    essentialOnly: "Essential only",
+    acceptAll: "Accept all",
+  },
+  fr: {
+    text: "🍪 Nous utilisons des cookies propres et tiers — Google Analytics et services d'affiliation — pour améliorer votre expérience et mesurer l'utilisation du site.",
+    cookiePolicy: "Politique de cookies",
+    essentialOnly: "Essentiels uniquement",
+    acceptAll: "Tout accepter",
+  },
+  it: {
+    text: "🍪 Utilizziamo cookie propri e di terze parti — Google Analytics e servizi di affiliazione — per migliorare la tua esperienza e misurare l'utilizzo del sito.",
+    cookiePolicy: "Informativa sui cookie",
+    essentialOnly: "Solo essenziali",
+    acceptAll: "Accetta tutto",
+  },
+  de: {
+    text: "🍪 Wir verwenden eigene und Cookies von Drittanbietern — Google Analytics und Affiliate-Dienste —, um deine Erfahrung zu verbessern und die Nutzung der Website zu messen.",
+    cookiePolicy: "Cookie-Richtlinie",
+    essentialOnly: "Nur essenzielle",
+    acceptAll: "Alle akzeptieren",
+  },
+  pt: {
+    text: "🍪 Usamos cookies próprios e de terceiros — Google Analytics e serviços de afiliados — para melhorar sua experiência e medir o uso do site.",
+    cookiePolicy: "Política de cookies",
+    essentialOnly: "Somente essenciais",
+    acceptAll: "Aceitar tudo",
+  },
+};
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false);
+  const [language] = useAutoLanguage();
+  const t = T[language] || T.es;
 
   useEffect(() => {
     if (!getConsent()) setVisible(true);
@@ -48,9 +92,9 @@ export function CookieBanner() {
         lineHeight: 1.4,
         fontFamily: "'Plus Jakarta Sans', sans-serif",
       }}>
-        🍪 Usamos cookies propias y de terceros — Google Analytics y servicios de afiliados — para mejorar tu experiencia y medir el uso del sitio.{" "}
+        {t.text}{" "}
         <Link href="/terminos#cookies" style={{ color: "#2ab5a0", textDecoration: "underline" }}>
-          Política de cookies
+          {t.cookiePolicy}
         </Link>
       </p>
       <div style={{ display: "flex", gap: "8px", flexShrink: 0 }}>
@@ -68,7 +112,7 @@ export function CookieBanner() {
             fontFamily: "'Plus Jakarta Sans', sans-serif",
           }}
         >
-          Solo esenciales
+          {t.essentialOnly}
         </button>
         <button
           onClick={accept}
@@ -85,7 +129,7 @@ export function CookieBanner() {
             boxShadow: "0 2px 12px rgba(42,181,160,0.4)",
           }}
         >
-          Aceptar todo
+          {t.acceptAll}
         </button>
       </div>
     </div>

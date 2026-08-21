@@ -160,6 +160,23 @@ const T: Record<string, Record<string, any>> = {
     exploreAnotherTitle: "¿Querés explorar otro destino?",
     exploreAnotherSub: "Generá un nuevo itinerario personalizado — gratis, en segundos.",
     exploreAnotherBtn: "Generá otro itinerario",
+    heroTitlePrefix: "Tu itinerario en",
+    heroTitleHighlight: "30 segundos.",
+    heroSubtitlePrefix: "IA + expertos en turismo —",
+    heroSubtitleMuted: "no es ChatGPT.",
+    heroDescription: "Elegís el destino, nosotros armamos el itinerario día por día con fotos reales, mapa interactivo y tips de viajeros expertos.",
+    heroBadges: ["✓ Gratis", "✓ Sin registro", "✓ 6 idiomas", "✓ Con mapa"],
+    heroBlogLink: "Revista",
+    statAI: "IA + Expertos",
+    statAILabel: "no es ChatGPT",
+    stat30s: "30 seg",
+    stat30sLabel: "tiempo promedio",
+    statCountries: "80+ países",
+    statCountriesLabel: "destinos disponibles",
+    statLangs: "6 idiomas",
+    statLangsLabel: "español, inglés y más",
+    customizeMore: "Personalizar más",
+    firstFreeNote: "Primer itinerario gratis · Los siguientes incluyen un breve anuncio",
   },
   en: {
     slogan: "Your trip, your world... our company.",
@@ -209,6 +226,23 @@ const T: Record<string, Record<string, any>> = {
     exploreAnotherTitle: "Want to explore another destination?",
     exploreAnotherSub: "Generate a new personalized itinerary — free, in seconds.",
     exploreAnotherBtn: "Generate another itinerary",
+    heroTitlePrefix: "Your itinerary in",
+    heroTitleHighlight: "30 seconds.",
+    heroSubtitlePrefix: "AI + tourism experts —",
+    heroSubtitleMuted: "not ChatGPT.",
+    heroDescription: "Pick the destination, we build the day-by-day itinerary with real photos, an interactive map, and tips from expert travelers.",
+    heroBadges: ["✓ Free", "✓ No sign-up", "✓ 6 languages", "✓ With map"],
+    heroBlogLink: "Magazine",
+    statAI: "AI + Experts",
+    statAILabel: "not ChatGPT",
+    stat30s: "30 sec",
+    stat30sLabel: "average time",
+    statCountries: "80+ countries",
+    statCountriesLabel: "available destinations",
+    statLangs: "6 languages",
+    statLangsLabel: "Spanish, English, and more",
+    customizeMore: "Customize more",
+    firstFreeNote: "First itinerary free · The next ones include a short ad",
   },
   fr: {
     slogan: "Votre voyage, votre monde... notre compagnie.",
@@ -258,6 +292,23 @@ const T: Record<string, Record<string, any>> = {
     exploreAnotherTitle: "Envie d'explorer une autre destination ?",
     exploreAnotherSub: "Générez un nouvel itinéraire personnalisé — gratuit, en quelques secondes.",
     exploreAnotherBtn: "Générer un autre itinéraire",
+    heroTitlePrefix: "Votre itinéraire en",
+    heroTitleHighlight: "30 secondes.",
+    heroSubtitlePrefix: "IA + experts du tourisme —",
+    heroSubtitleMuted: "pas ChatGPT.",
+    heroDescription: "Choisissez la destination, nous créons l'itinéraire jour par jour avec de vraies photos, une carte interactive et des conseils de voyageurs experts.",
+    heroBadges: ["✓ Gratuit", "✓ Sans inscription", "✓ 6 langues", "✓ Avec carte"],
+    heroBlogLink: "Magazine",
+    statAI: "IA + Experts",
+    statAILabel: "pas ChatGPT",
+    stat30s: "30 sec",
+    stat30sLabel: "temps moyen",
+    statCountries: "80+ pays",
+    statCountriesLabel: "destinations disponibles",
+    statLangs: "6 langues",
+    statLangsLabel: "espagnol, anglais et plus",
+    customizeMore: "Plus d'options",
+    firstFreeNote: "Premier itinéraire gratuit · Les suivants incluent une courte publicité",
   },
   it: {
     slogan: "Il tuo viaggio, il tuo mondo... la nostra compagnia.",
@@ -307,6 +358,23 @@ const T: Record<string, Record<string, any>> = {
     exploreAnotherTitle: "Vuoi esplorare un'altra destinazione?",
     exploreAnotherSub: "Genera un nuovo itinerario personalizzato — gratis, in pochi secondi.",
     exploreAnotherBtn: "Genera un altro itinerario",
+    heroTitlePrefix: "Il tuo itinerario in",
+    heroTitleHighlight: "30 secondi.",
+    heroSubtitlePrefix: "IA + esperti di turismo —",
+    heroSubtitleMuted: "non è ChatGPT.",
+    heroDescription: "Scegli la destinazione, noi creiamo l'itinerario giorno per giorno con foto reali, mappa interattiva e consigli di viaggiatori esperti.",
+    heroBadges: ["✓ Gratis", "✓ Senza registrazione", "✓ 6 lingue", "✓ Con mappa"],
+    heroBlogLink: "Rivista",
+    statAI: "IA + Esperti",
+    statAILabel: "non è ChatGPT",
+    stat30s: "30 sec",
+    stat30sLabel: "tempo medio",
+    statCountries: "80+ paesi",
+    statCountriesLabel: "destinazioni disponibili",
+    statLangs: "6 lingue",
+    statLangsLabel: "spagnolo, inglese e altro",
+    customizeMore: "Altre opzioni",
+    firstFreeNote: "Primo itinerario gratis · I successivi includono un breve annuncio",
   },
   de: {
     slogan: "Ihre Reise, Ihre Welt... unsere Begleitung.",
@@ -356,6 +424,23 @@ const T: Record<string, Record<string, any>> = {
     exploreAnotherTitle: "Möchtest du ein anderes Reiseziel entdecken?",
     exploreAnotherSub: "Erstelle einen neuen personalisierten Reiseplan — kostenlos, in Sekunden.",
     exploreAnotherBtn: "Weiteren Reiseplan erstellen",
+    heroTitlePrefix: "Dein Reiseplan in",
+    heroTitleHighlight: "30 Sekunden.",
+    heroSubtitlePrefix: "KI + Reiseexperten —",
+    heroSubtitleMuted: "kein ChatGPT.",
+    heroDescription: "Wähle das Reiseziel, wir erstellen den Tag-für-Tag-Reiseplan mit echten Fotos, interaktiver Karte und Tipps erfahrener Reisender.",
+    heroBadges: ["✓ Kostenlos", "✓ Keine Anmeldung", "✓ 6 Sprachen", "✓ Mit Karte"],
+    heroBlogLink: "Magazin",
+    statAI: "KI + Experten",
+    statAILabel: "kein ChatGPT",
+    stat30s: "30 Sek",
+    stat30sLabel: "durchschnittliche Zeit",
+    statCountries: "80+ Länder",
+    statCountriesLabel: "verfügbare Reiseziele",
+    statLangs: "6 Sprachen",
+    statLangsLabel: "Spanisch, Englisch und mehr",
+    customizeMore: "Mehr anpassen",
+    firstFreeNote: "Erster Reiseplan kostenlos · Die nächsten enthalten eine kurze Werbung",
   },
   pt: {
     slogan: "Sua viagem, seu mundo... nossa companhia.",
@@ -405,6 +490,23 @@ const T: Record<string, Record<string, any>> = {
     exploreAnotherTitle: "Quer explorar outro destino?",
     exploreAnotherSub: "Gere um novo roteiro personalizado — grátis, em segundos.",
     exploreAnotherBtn: "Gerar outro roteiro",
+    heroTitlePrefix: "Seu roteiro em",
+    heroTitleHighlight: "30 segundos.",
+    heroSubtitlePrefix: "IA + especialistas em turismo —",
+    heroSubtitleMuted: "não é ChatGPT.",
+    heroDescription: "Escolha o destino, nós montamos o roteiro dia a dia com fotos reais, mapa interativo e dicas de viajantes experientes.",
+    heroBadges: ["✓ Grátis", "✓ Sem cadastro", "✓ 6 idiomas", "✓ Com mapa"],
+    heroBlogLink: "Revista",
+    statAI: "IA + Especialistas",
+    statAILabel: "não é ChatGPT",
+    stat30s: "30 seg",
+    stat30sLabel: "tempo médio",
+    statCountries: "80+ países",
+    statCountriesLabel: "destinos disponíveis",
+    statLangs: "6 idiomas",
+    statLangsLabel: "espanhol, inglês e mais",
+    customizeMore: "Personalizar mais",
+    firstFreeNote: "Primeiro roteiro grátis · Os próximos incluem um anúncio curto",
   },
 };
 
@@ -928,26 +1030,26 @@ export default function SearchForm() {
                 lineHeight: 1.15, letterSpacing: "-0.01em",
                 textShadow: "0 2px 16px rgba(0,0,0,0.4)",
               }}>
-                Tu itinerario en{" "}
-                <span style={{ color: "#2ab5a0" }}>30 segundos.</span>
+                {t.heroTitlePrefix}{" "}
+                <span style={{ color: "#2ab5a0" }}>{t.heroTitleHighlight}</span>
               </h1>
               <p style={{
                 fontSize: "clamp(13px, 1.7vw, 15px)",
                 color: "white", margin: 0, lineHeight: 1.4,
                 fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700,
               }}>
-                IA + expertos en turismo —{" "}
-                <span style={{ color: "rgba(255,255,255,0.65)", fontWeight: 400 }}>no es ChatGPT.</span>
+                {t.heroSubtitlePrefix}{" "}
+                <span style={{ color: "rgba(255,255,255,0.65)", fontWeight: 400 }}>{t.heroSubtitleMuted}</span>
               </p>
               <p style={{
                 fontSize: "clamp(12px, 1.5vw, 13px)",
                 color: "rgba(255,255,255,0.62)", margin: 0, lineHeight: 1.6,
                 fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 400,
               }}>
-                Elegís el destino, nosotros armamos el itinerario día por día con fotos reales, mapa interactivo y tips de viajeros expertos.
+                {t.heroDescription}
               </p>
               <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
-                {["✓ Gratis", "✓ Sin registro", "✓ 6 idiomas", "✓ Con mapa"].map(label => (
+                {(t.heroBadges as string[]).map((label: string) => (
                   <span key={label} style={{
                     fontSize: "11px", fontWeight: 700,
                     color: "rgba(255,255,255,0.75)",
@@ -965,7 +1067,7 @@ export default function SearchForm() {
                   color: "#1a2a6c", textDecoration: "none",
                   boxShadow: "0 2px 12px rgba(0,0,0,0.2)",
                 }}>
-                  ✍️ Revista <span style={{ color: "#2ab5a0" }}>→</span>
+                  ✍️ {t.heroBlogLink} <span style={{ color: "#2ab5a0" }}>→</span>
                 </a>
               </div>
             </div>
@@ -978,10 +1080,10 @@ export default function SearchForm() {
             {/* Stats */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "12px", marginBottom: "1.5rem" }}>
               {[
-                { value: "IA + Expertos", label: "no es ChatGPT" },
-                { value: "30 seg", label: "tiempo promedio" },
-                { value: "80+ países", label: "destinos disponibles" },
-                { value: "6 idiomas", label: "español, inglés y más" },
+                { value: t.statAI, label: t.statAILabel },
+                { value: t.stat30s, label: t.stat30sLabel },
+                { value: t.statCountries, label: t.statCountriesLabel },
+                { value: t.statLangs, label: t.statLangsLabel },
               ].map(stat => (
                 <div key={stat.label} style={{
                   background: "rgba(255,255,255,0.88)",
@@ -1068,7 +1170,7 @@ export default function SearchForm() {
               gap: "4px",
             }}
           >
-            ⚙ Personalizar más {showAdvanced ? "▴" : "▾"}
+            ⚙ {t.customizeMore} {showAdvanced ? "▴" : "▾"}
           </button>
 
           {/* Campos colapsables */}
@@ -1241,7 +1343,7 @@ export default function SearchForm() {
               color: "#9ca3af",
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}>
-              Primer itinerario gratis · Los siguientes incluyen un breve anuncio
+              {t.firstFreeNote}
             </p>
           </div>
 
@@ -1334,10 +1436,10 @@ export default function SearchForm() {
 
 
           {/* Índice de calidad — solo visible cuando no hay itinerario generado */}
-          {!loading && !itinerary && <QualityIndex />}
+          {!loading && !itinerary && <QualityIndex language={language} />}
 
           {/* Blog teaser — solo visible cuando no hay itinerario generado */}
-          {!itinerary && <HomeBlogTeaser />}
+          {!itinerary && <HomeBlogTeaser language={language} />}
 
         </div>}
 
