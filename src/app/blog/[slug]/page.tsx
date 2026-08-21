@@ -3,12 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getBlogPost, categoryColors, ContentSection } from "@/data/blogPosts";
 import { RelatedPostCard } from "@/components/BlogCards";
-import { ArrowLeft, Lightbulb, Plane, ChevronRight, Sparkles, MapPin } from "lucide-react";
+import { Lightbulb } from "lucide-react";
 import { AdSenseUnit } from "@/components/AdSenseUnit";
 import { ADSENSE_SLOTS } from "@/lib/adsenseConfig";
 import { generateBreadcrumbSchema } from "@/lib/schemaMarkup";
 import { getDestinationSlugForPost } from "@/data/blogDestinationLinks";
 import { getDestinationPage } from "@/data/destinationPages";
+import { BlogPostNav, BlogPostMeta, BlogPostCtaSection, RelatedDestinationBox, BlogPostAffiliateBanners, KeepReadingHeading } from "@/components/BlogPostChrome";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -204,43 +205,11 @@ function renderSection(section: ContentSection, index: number) {
 
     case "cta":
       return (
-        <div key={index} style={{
-          background: "linear-gradient(135deg, #2ab5a0, #1a9e8c)",
-          borderRadius: "20px",
-          padding: "32px",
-          textAlign: "center",
-          margin: "40px 0",
-          boxShadow: "0 12px 40px rgba(42,181,160,0.3)",
-        }}>
-          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "14px", margin: "0 0 16px 0", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px" }}>
-            <Sparkles size={14} /> Planificador de viajes con inteligencia artificial
-          </p>
-          <Link
-            href={section.city ? `/?city=${encodeURIComponent(section.city)}&country=${encodeURIComponent(section.country ?? '')}` : section.destination ? `/?destino=${section.destination}` : "/"}
-            style={{
-              display: "inline-block",
-              background: "white",
-              color: "#1a2a6c",
-              padding: "14px 40px",
-              borderRadius: "14px",
-              fontSize: "15px",
-              fontWeight: 800,
-              textDecoration: "none",
-              boxShadow: "0 6px 20px rgba(0,0,0,0.2)",
-              lineHeight: 1.4,
-            }}
-          >
-            {/* inline (not flex) so the icons stay attached to the first/last
-                line if the text wraps on narrow viewports, instead of both
-                centering against the full multi-line block height */}
-            <Plane size={15} strokeWidth={2.5} style={{ verticalAlign: "middle", marginRight: "8px" }} />
-            <span style={{ verticalAlign: "middle" }}>{section.text}</span>
-            <ChevronRight size={15} strokeWidth={2.5} style={{ verticalAlign: "middle", marginLeft: "8px" }} />
-          </Link>
-          <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "12px", margin: "12px 0 0 0" }}>
-            Gratis · Sin registro · Listo en 30 segundos
-          </p>
-        </div>
+        <BlogPostCtaSection
+          key={index}
+          href={section.city ? `/?city=${encodeURIComponent(section.city)}&country=${encodeURIComponent(section.country ?? '')}` : section.destination ? `/?destino=${section.destination}` : "/"}
+          text={section.text}
+        />
       );
 
     default:
@@ -309,31 +278,7 @@ export default async function BlogPostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      {/* Nav */}
-      <nav style={{
-        padding: "16px 24px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        borderBottom: "1px solid rgba(255,255,255,0.1)",
-        maxWidth: "820px",
-        margin: "0 auto",
-      }}>
-        <Link href="/blog" style={{
-          color: "white",
-          textDecoration: "none",
-          fontWeight: 700,
-          fontSize: "15px",
-          display: "flex",
-          alignItems: "center",
-          gap: "6px",
-        }}>
-          <ArrowLeft size={16} strokeWidth={2.5} /> Blog
-        </Link>
-        <Link href="/" style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", textDecoration: "none", fontWeight: 600 }}>
-          Global Home Assist
-        </Link>
-      </nav>
+      <BlogPostNav />
 
       {/* Hero */}
       <div style={{
@@ -356,13 +301,7 @@ export default async function BlogPostPage({ params }: Props) {
           }}>
             {post.categoryLabel}
           </span>
-          <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>
-            {post.readTime} min de lectura
-          </span>
-          <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.3)" }}>·</span>
-          <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>
-            {new Date(post.publishDate).toLocaleDateString("es-ES", { year: "numeric", month: "long", day: "numeric" })}
-          </span>
+          <BlogPostMeta readTime={post.readTime} publishDate={post.publishDate} />
         </div>
 
         <div style={{ fontSize: "56px", marginBottom: "20px" }}>{post.heroEmoji}</div>
@@ -412,37 +351,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Related destination guide */}
       {relatedDest && (
         <div style={{ maxWidth: "820px", margin: "0 auto", padding: "0 24px" }}>
-          <Link
-            href={`/itinerario/${relatedDest.slug}`}
-            style={{
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-              gap: "16px", flexWrap: "wrap",
-              background: "rgba(42,181,160,0.08)",
-              border: "1.5px solid rgba(42,181,160,0.25)",
-              borderRadius: "16px", padding: "20px 24px", textDecoration: "none",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-              <span style={{ fontSize: "28px" }}>{relatedDest.emoji}</span>
-              <div>
-                <p style={{ margin: "0 0 3px", fontSize: "15px", fontWeight: 700, color: "white", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                  Itinerario día por día de {relatedDest.city}
-                </p>
-                <p style={{ margin: 0, fontSize: "13px", color: "rgba(255,255,255,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                  {relatedDest.totalDays} días, horarios y precios verificados
-                </p>
-              </div>
-            </div>
-            <span style={{
-              background: "#2ab5a0", color: "white",
-              padding: "10px 20px", borderRadius: "10px",
-              fontSize: "13px", fontWeight: 700, whiteSpace: "nowrap",
-              display: "flex", alignItems: "center", gap: "6px",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-            }}>
-              <MapPin size={14} /> Ver guía completa
-            </span>
-          </Link>
+          <RelatedDestinationBox slug={relatedDest.slug} emoji={relatedDest.emoji} city={relatedDest.city} totalDays={relatedDest.totalDays} />
         </div>
       )}
 
@@ -456,65 +365,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* Affiliate banners */}
       <div style={{ maxWidth: "820px", margin: "0 auto", padding: "32px 24px 48px", display: "flex", flexDirection: "column", gap: "14px" }}>
-        <a
-          href="https://search.hotellook.com/?shmarker=712478&currency=USD"
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          style={{
-            display: "flex", alignItems: "center", justifyContent: "space-between",
-            gap: "16px", flexWrap: "wrap",
-            background: "rgba(255,255,255,0.06)",
-            border: "1.5px solid rgba(255,255,255,0.12)",
-            borderRadius: "16px", padding: "20px 24px", textDecoration: "none",
-          }}
-        >
-          <div>
-            <p style={{ margin: "0 0 3px", fontSize: "15px", fontWeight: 700, color: "white", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              🏨 ¿Ya reservaste tu hotel?
-            </p>
-            <p style={{ margin: 0, fontSize: "13px", color: "rgba(255,255,255,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Compará precios en miles de hoteles y encontrá la mejor oferta.
-            </p>
-          </div>
-          <span style={{
-            background: "#003580", color: "white",
-            padding: "10px 20px", borderRadius: "10px",
-            fontSize: "13px", fontWeight: 700, whiteSpace: "nowrap",
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-          }}>
-            Buscar hoteles →
-          </span>
-        </a>
-
-        <a
-          href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(post.tags[0] ?? "travel")}&partner_id=NGZASHD`}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          style={{
-            display: "flex", alignItems: "center", justifyContent: "space-between",
-            gap: "16px", flexWrap: "wrap",
-            background: "rgba(255,102,0,0.07)",
-            border: "1.5px solid rgba(255,102,0,0.2)",
-            borderRadius: "16px", padding: "20px 24px", textDecoration: "none",
-          }}
-        >
-          <div>
-            <p style={{ margin: "0 0 3px", fontSize: "15px", fontWeight: 700, color: "#ff6600", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              🎯 Tours y experiencias
-            </p>
-            <p style={{ margin: 0, fontSize: "13px", color: "rgba(255,255,255,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Entradas sin fila, tours guiados y experiencias únicas en tu destino.
-            </p>
-          </div>
-          <span style={{
-            background: "#ff6600", color: "white",
-            padding: "10px 20px", borderRadius: "10px",
-            fontSize: "13px", fontWeight: 700, whiteSpace: "nowrap",
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-          }}>
-            Ver tours →
-          </span>
-        </a>
+        <BlogPostAffiliateBanners tourQuery={post.tags[0] ?? "travel"} />
       </div>
 
       {/* Related posts */}
@@ -526,15 +377,7 @@ export default async function BlogPostPage({ params }: Props) {
           borderTop: "1px solid rgba(255,255,255,0.08)",
           paddingTop: "48px",
         }}>
-          <h3 style={{
-            fontFamily: "'Playfair Display', serif",
-            color: "white",
-            fontSize: "1.3rem",
-            fontWeight: 700,
-            marginBottom: "24px",
-          }}>
-            Seguí leyendo
-          </h3>
+          <KeepReadingHeading />
           <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
