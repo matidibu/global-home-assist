@@ -99,6 +99,221 @@ export const destinationPagesI18n: Partial<Record<string, Record<DestLang, Desti
       ],
     },
   },
+  lisboa: {
+    en: {
+      city: "Lisbon",
+      country: "Portugal",
+      heroTitle: "3 days in Lisbon: Alfama, pastéis, and miradouros",
+      heroSubtitle: "São Jorge Castle, tram 28, Belém, and nighttime fado — the perfect itinerary to fall in love with the Portuguese capital.",
+      bestMonths: "March to May and September to October",
+      budget: "€70-120/day",
+      travelTips: [
+        "The rechargeable Viva Viagem card, loaded with €5-10, covers the metro, trams, and buses — much cheaper than individual tickets",
+        "The miradouros (viewpoints) are Lisbon's cheapest, most beautiful activity — there are more than 20 scattered around the city",
+        "Uber is very cheap in Lisbon — a convenient alternative to the trams during rush hour",
+        "Restaurants with a 'menu do dia' (€9-12 with a drink, dessert, and main course) are the most authentic lunch option",
+        "Wear comfortable shoes with good grip — Portuguese cobblestones get slippery in the rain and hard on your feet after a lot of walking",
+      ],
+      days: [
+        {
+          theme: "Alfama and the historic heart",
+          activities: [
+            { name: "São Jorge Castle", description: "The medieval fortress overlooking Lisbon from above, with 360° views over the city, the Tagus River, and the 25 de Abril Bridge. The 11th-century Moorish walls are perfectly preserved.", price: "€15", tip: "Arrive when it opens to see the views without the crowds. Walking up through Alfama's narrow streets is part of the experience — skip the direct taxi." },
+            { name: "Alfama neighborhood and Miradouro da Graça", description: "Lisbon's oldest neighborhood, a charming maze of tiled houses, laundry hanging out to dry, and fado echoing out of restaurants. Miradouro da Graça has the best views in the city.", price: "Free", tip: "Getting lost in Alfama is the plan — there's no need to look for a specific route. The narrowest alleys above the Sé cathedral have the most authentic atmosphere." },
+            { name: "Cod lunch in Alfama", description: "Portugal has 365 cod recipes (one for every day of the year). Bacalhau à brás, à lagareiro, or com natas are the classics. Alfama's tascas serve the city's most authentic versions.", price: "€10-18", tip: "Look for restaurants without an English menu taped to the door — a sign they're for locals. The daily menu price includes a main dish + dessert + drink." },
+            { name: "Tram 28 — the most picturesque route", description: "The iconic yellow tram that climbs and descends Lisbon's hills from Martim Moniz to Prazeres, passing through Alfama, Graça, and Estrela. It's real city transport, not just a tourist ride.", price: "€3 (single ticket)", tip: "Buy the ticket on board with cash or use the Viva Viagem card. The tram is always packed — board at the starting stop to get a seat." },
+          ],
+        },
+        {
+          theme: "Belém and the Age of Discovery",
+          activities: [
+            { name: "Pastéis de Belém", description: "The original pastel de nata bakery, founded in 1837, still using a secret recipe known to only three people. The morning line is long but moves fast.", price: "€1.30 per pastry", tip: "Order them warm with sugar and cinnamon on top, and eat them inside the bakery. The tiled interior room is as special as the pastry itself." },
+            { name: "Jerónimos Monastery", description: "The masterpiece of Manueline (Portuguese Gothic) architecture, a UNESCO World Heritage site. The cloister, with stone columns carved to resemble rope and coral, is one of the most impressive spaces in Europe.", price: "€12", tip: "The main church is free and holds the tombs of Vasco da Gama and Luís de Camões. Go in first to take in the building's scale before paying for the cloister." },
+            { name: "Belém Tower and the Monument to the Discoveries", description: "Belém Tower (16th century) was the last thing sailors saw as they left and the first as they returned. 300 meters away, the Monument to the Discoveries features the figures of Portuguese explorers.", price: "Tower €6 / Monument €4", tip: "The line for the Tower can be long — the interior is small and only admits small groups. The Monument has a viewpoint at the top overlooking the Tagus that few people bother climbing to." },
+            { name: "Fado house in Alfama", description: "Fado is Lisbon's musical soul, recognized as UNESCO Intangible Cultural Heritage. Alfama's fado houses offer dinner with live performances — the city's most authentic experience.", price: "€30-50 (dinner + fado)", tip: "Book ahead at Clube de Fado, Sr. Fado, or Tasca do Chico. Absolute silence is expected during the performance — it's a cultural norm, not just a request." },
+          ],
+        },
+        {
+          theme: "Bairro Alto, LX Factory, and the Tagus",
+          activities: [
+            { name: "Miradouro da Senhora do Monte", description: "Lisbon's highest viewpoint, with panoramic views that take in the Castle, the Tagus, the Cristo Rei on the far bank, and the 25 de Abril Bridge. Less known than Santa Catarina.", price: "Free", tip: "It's a local favorite for weekend brunch. The viewpoint's café serves the best coffee-with-a-view in the city." },
+            { name: "LX Factory — the creative market", description: "A 19th-century textile factory turned creative space, with restaurants, bookshops, design studios, and Lisbon's best market on Sundays. The Ler Devagar bookshop, with its hanging bicycles, is a must-see.", price: "Free (shopping not included)", tip: "The Sunday LX Market runs from 11am to 8pm and is the best in Lisbon. Saturdays and Sundays are when the restaurants inside are at their best." },
+            { name: "Ribeira das Naus — the Tagus riverfront", description: "The riverside promenade by the naval ministry, where lisboetas relax in wooden hammocks facing the river. A 10-minute walk away, Praça do Comércio offers the best perspective on the mouth of the Tagus.", price: "Free", tip: "The hammocks are free and first-come, first-served. Order a ginjinha (cherry liqueur) from the kiosks along the promenade — Lisbon's most typical drink." },
+            { name: "Bairro Alto at sunset", description: "Lisbon's bar and nightlife neighborhood starts buzzing from 6pm on. Small bars with open doors and music spilling into the street make Bairro Alto the city's most authentic night out.", price: "€2-4 per drink", tip: "Bairro Alto's bars usually don't have seating — people drink in the street, glass in hand, moving from bar to bar. It's perfectly normal and safe." },
+          ],
+        },
+      ],
+    },
+  },
+
+  amsterdam: {
+    en: {
+      city: "Amsterdam",
+      country: "Netherlands",
+      heroTitle: "3 days in Amsterdam: canals, museums, and bicycles",
+      heroSubtitle: "The Rijksmuseum, the Anne Frank House, Jordaan, and the tulips — the perfect itinerary for a first visit to the Dutch capital.",
+      bestMonths: "April to May (tulips) and June to August",
+      budget: "€90-150/day",
+      travelTips: [
+        "Rent a bike from day one — it's the fastest, cheapest, and most local way to get around Amsterdam",
+        "Book the Anne Frank House and Van Gogh Museum weeks in advance — they always sell out in high season",
+        "Trams cover the whole city; buy a GVB day ticket for €9.50 for unlimited rides",
+        "The I amsterdam City Card (€75/24h) includes museums, transport, and a canal cruise — worth it if you're visiting 3+ museums",
+        "Watch out for the bike lanes in the street — cyclists have priority over pedestrians and won't slow down",
+      ],
+      days: [
+        {
+          theme: "The great museums: Van Gogh and the Rijksmuseum",
+          activities: [
+            { name: "Rijksmuseum", description: "The Dutch national museum, in the heart of Museumplein. It holds Rembrandt's The Night Watch, Vermeer's The Milkmaid, and more than a million objects from the Dutch Golden Age.", price: "€22.50", tip: "Book online and pick the 9am slot. The Night Watch hangs in the Gallery of Honor on the 2nd floor — view it from the back of the room to appreciate its true scale." },
+            { name: "Van Gogh Museum", description: "The world's largest collection of Vincent van Gogh's work, with more than 200 paintings and 500 drawings. Sunflowers, The Bedroom, and the Self-Portrait with Bandaged Ear are all here.", price: "€22", tip: "You need to book weeks ahead in high season. The free audio guide through the museum's app is excellent and covers all the major works." },
+            { name: "Vondelpark", description: "Amsterdam's most famous park, with 47 hectares where locals picnic, play music, and ride their bikes. In summer there's free open-air theater.", price: "Free", tip: "Rent a bike from MacBike (€15/day) to get around the whole city — the most local, practical way to explore Amsterdam." },
+            { name: "Dinner in De Pijp", description: "Amsterdam's most multicultural, food-focused neighborhood, home to the Albert Cuyp Market (the biggest in the Netherlands), Surinamese and Indonesian restaurants, and the best selection of artisan cafés.", price: "€15-25", tip: "Rijsttafel (Indonesian rice table) is the Netherlands' tastiest colonial legacy — a unique dining experience worth the extra cost." },
+          ],
+        },
+        {
+          theme: "History and canals: Anne Frank and Jordaan",
+          activities: [
+            { name: "Anne Frank House", description: "The hiding place where Anne Frank and her family sheltered from the Nazis between 1942 and 1944. The original diary, the secret bookcase, and the rooms preserved as they were make this one of the most powerful visits in Europe.", price: "€16", tip: "You MUST book online weeks in advance — there are no tickets at the door. The 9am slot is the least crowded." },
+            { name: "Jordaan neighborhood and the canals", description: "Amsterdam's most picturesque neighborhood, with 17th-century houses leaning over the canals, art galleries, vintage shops, and the coziest terraces in the city.", price: "Free", tip: "Cross the Prinsengracht and explore the Bloemgracht and Egelantiersgracht — these secondary canals have fewer tourists and more local charm." },
+            { name: "Herring lunch at the market", description: "Haring (raw herring with onion and pickles) is the Netherlands' most typical snack. The fresh fish stalls on Jordaan's bridges offer the most authentic experience.", price: "€4-6", tip: "Herring is eaten by holding the piece by the tail and dropping it into your mouth — that's how the Dutch do it. Don't order a single bite, get the whole piece." },
+            { name: "Canal boat tour", description: "Amsterdam's 165 canals and 1,753 bridges are a UNESCO World Heritage site. A boat tour shows the city from water level, with perspectives you can't get from land.", price: "€15-20", tip: "The 3pm cruises have better light for photos than the morning ones. Bring a jacket even in summer — the water brings the temperature down." },
+          ],
+        },
+        {
+          theme: "Keukenhof (spring) or alternative neighborhoods",
+          activities: [
+            { name: "Keukenhof (March-May only) or NDSM Wharf", description: "In spring, the Keukenhof gardens, with 7 million tulips in bloom, are one of the most beautiful natural sights in Europe. Out of season, NDSM Wharf is the former shipyard turned creative hub.", price: "Keukenhof €20 / NDSM free", tip: "The direct bus from Schiphol Airport to Keukenhof is the easiest option — no need to go through Amsterdam." },
+            { name: "Oud-West neighborhood and Ten Katemarkt", description: "Amsterdam's most authentic neighborhood market, with fresh produce, secondhand clothes, and Mediterranean street food. The cafés on Jan Pieter Heijestraat are the local alternative to the touristy Leidseplein.", price: "Free", tip: "Oud-West is where young locals live — the cafés have wifi, good prices, and a genuinely Dutch atmosphere." },
+            { name: "Amsterdam Noord — A'DAM Tower and EYE Film Museum", description: "Across the harbor, Amsterdam Noord has the city's best skyline. The A'DAM Tower has Europe's highest swing on its rooftop, and the EYE Film Museum is one of the city's most photogenic buildings.", price: "Ferry free / A'DAM Tower €17.50", tip: "The ferry from Central Station to Amsterdam Noord is free and takes 5 minutes. It runs every 7-8 minutes, 24 hours a day." },
+            { name: "Brouwerij 't IJ — the brewery in the windmill", description: "Amsterdam's most famous craft brewery, set inside an 18th-century windmill by the canal. Its craft beers (Plzen, Zatte, Columbus) are some of the best in the Netherlands.", price: "€3.50-5 per beer", tip: "The little terrace facing the windmill is one of the best sunset spots in the city. Get there before 5pm in summer to grab an outdoor table." },
+          ],
+        },
+      ],
+    },
+  },
+
+  londres: {
+    en: {
+      city: "London",
+      country: "United Kingdom",
+      heroTitle: "4 days in London: the itinerary to not miss anything essential",
+      heroSubtitle: "Tower Bridge, the British Museum, Notting Hill, and the West End — with the free museums and the pubs locals actually choose.",
+      bestMonths: "May to September",
+      budget: "£120-200/day",
+      travelTips: [
+        "An Oyster Card or contactless card is essential — paying cash on the Tube costs double what a card does",
+        "Almost all the major museums are free: British Museum, National Gallery, Tate Modern, V&A, Natural History Museum",
+        "Service (tip) isn't included at most restaurants — 10-12% is standard if the service was good",
+        "The City shuts down almost entirely on weekends — plan the financial district for weekdays",
+        "Download the TfL (Transport for London) app to plan Tube, bus, and DLR routes in real time",
+      ],
+      days: [
+        {
+          theme: "Historic London: Tower Bridge and the City",
+          activities: [
+            { name: "Tower of London", description: "A thousand-year-old fortress founded by William the Conqueror in 1078. It houses the British Crown Jewels, including the Imperial State Crown with 2,868 diamonds. The famous Beefeaters are its only official guides.", price: "£34", tip: "Arrive when it opens to see the Crown Jewels without the crowds. The Beefeaters give free tours included with admission — well worth it." },
+            { name: "Tower Bridge", description: "London's most famous bridge, opened in 1894. The indoor exhibition shows off the Victorian machinery that raises the bridge. Walking the glass floor walkway 42 meters above the Thames is impressive.", price: "£14", tip: "The bridge lifts several times a day to let large ships through — check the schedule online to catch it." },
+            { name: "Borough Market", description: "London's most famous food market, open since the 13th century. More than 100 stalls of artisan producers, cheeses, meats, street food from around the world, and the best selection of ready-to-eat food in the city center.", price: "£8-15 (lunch)", tip: "Thursday, Friday, and Saturday are when it's in full swing. Roast's pulled pork and Rabot 1745's chocolates are must-tries." },
+            { name: "Tate Modern", description: "The contemporary art museum housed in a 20th-century power station, with works by Picasso, Warhol, and Dalí. The view of the Millennium Bridge and St Paul's from room 10 on the 4th floor is free and spectacular.", price: "Free (temporary exhibitions £20)", tip: "The 6th-floor café has the best terrace, with views of the Thames and the cathedral. Perfect for a 4 o'clock tea." },
+          ],
+        },
+        {
+          theme: "Imperial London: the British Museum and Bloomsbury",
+          activities: [
+            { name: "British Museum", description: "The UK's most-visited museum holds 8 million objects: the Rosetta Stone, the Parthenon sculptures, Egyptian mummies, and the Sutton Hoo treasure. Impossible to see it all in one day.", price: "Free", tip: "Arrive at 9am (an hour before it opens to the general public with an online ticket) to see the Rosetta Stone without the crowds. The Great Court is impressive." },
+            { name: "Covent Garden", description: "The old market square turned shopping, dining, and entertainment destination. Street performers, restaurants, and the Covent Garden Market with its Victorian iron structures.", price: "Free (shopping and food not included)", tip: "The street performers in the Piazza have to pass a council audition — the standard is very high. The 12:30 performance is usually the best of the day." },
+            { name: "National Gallery", description: "Britain's most important collection of European painting, on Trafalgar Square. Van Eyck, Leonardo, Rembrandt, Monet, and Turner are among the museum's 2,300 works.", price: "Free", tip: "Room 30, with the French Impressionists (Monet, Renoir, Seurat), is a local favorite. A selfie in front of the Trafalgar Square lions is mandatory." },
+            { name: "A show in the West End", description: "London's theater district has more than 50 active theaters, staging the world's best musicals and plays. Les Misérables, Mamma Mia, and The Phantom of the Opera have run for decades.", price: "£30-100", tip: "Day seats or last-minute standby tickets go on sale at the box office in the morning. You can get good seats for half price." },
+          ],
+        },
+        {
+          theme: "Notting Hill, Hyde Park, and Kensington",
+          activities: [
+            { name: "Portobello Road Market", description: "London's most famous market, running since 1837, with antiques on Saturdays and fruit and flowers all week. Notting Hill's colorful houses make the perfect backdrop.", price: "Free (shopping not included)", tip: "Saturday is the big day, with up to 1,000 antique stalls. Get there before 10am to see the best pieces before they're bought up." },
+            { name: "Hyde Park and Kensington Gardens", description: "The two connected royal parks form one of London's largest green lungs. The Serpentine Lake, Speaker's Corner, and the Princess Diana memorial are the most visited spots.", price: "Free", tip: "Rent a folding chair by the Serpentine and watch Londoners go by. Sitting on the grass is free — the chairs cost extra (£2)." },
+            { name: "Victoria & Albert Museum", description: "The world's largest museum of design and decorative arts, with fashion, ceramics, jewelry, photography, and furniture collections spanning 5,000 years of human history.", price: "Free", tip: "The inner courtyard with the café and garden is one of the museum's best-kept secrets. Perfect for a Londoner-style lunch break." },
+            { name: "Harrods and Knightsbridge", description: "The world's most famous department store, in the heart of Knightsbridge. Even if you don't buy anything, the gourmet food halls, perfume section, and fashion gallery are a visual spectacle.", price: "Free (to enter)", tip: "Harrods' basement food hall is one of the best in the world. You can grab a pastry or tea to go for £5-10 and experience it without spending a fortune." },
+          ],
+        },
+        {
+          theme: "Greenwich, the Thames, and farewell",
+          activities: [
+            { name: "Buckingham Palace and the Changing of the Guard", description: "The official residence of the British royal family. The Changing of the Guard happens at 11am and lasts 45 minutes — a ritual with Army Band music that's worth seeing at least once.", price: "Free (exterior) / £35 (interior, summer only)", tip: "To get a good view of the Changing of the Guard, arrive at 10:30am and position yourself in front of the central gate. Tour groups arrive late and see nothing." },
+            { name: "St James's Park", description: "London's oldest royal park, with direct views of the palace, the lake's famous pelicans, and the footbridge with the most photogenic view of Buckingham Palace in London.", price: "Free", tip: "The park's pelicans are descendants of a gift from the Russian tsar in 1664. They're fed at 2:30pm every day by the lake — quite a sight." },
+            { name: "Greenwich: the Meridian and the Observatory", description: "Greenwich is home to the Prime Meridian (longitude 0°), the Royal Observatory, and the Cutty Sark, history's most famous tea clipper. Taking a ferry down the Thames to get here is part of the experience.", price: "Ferry £6 / Observatory £18", tip: "You can straddle the Meridian with one foot in each hemisphere for free — the green line is marked on the ground just outside the Observatory." },
+            { name: "A traditional pub in Soho", description: "Soho's pubs are London's social heart. The Lamb and Flag (founded in 1623), The Nellie Dean, and the French House have the atmosphere and history no chain can imitate.", price: "£6-8 per pint", tip: "In London you order at the bar — don't wait for table service. A pint of Guinness or a local bitter are the most typical drinks." },
+          ],
+        },
+      ],
+    },
+  },
+
+  cancun: {
+    en: {
+      city: "Cancún",
+      country: "Mexico",
+      heroTitle: "5 days in Cancún and the Riviera Maya: beyond the resort",
+      heroSubtitle: "Cenotes, Mayan ruins, white sand beaches, and the Mexican culture that lives on the other side of the lagoon.",
+      bestMonths: "December to April",
+      budget: "USD 80-200/day",
+      travelTips: [
+        "Sargassum (seaweed) affects some beaches between May and September — check ahead which beaches are clear",
+        "ADO buses are comfortable and affordable for getting between Cancún, Playa del Carmen, and Tulum",
+        "Travel insurance is highly recommended — medical care in Mexico can be expensive for foreigners",
+        "Bring Mexican pesos for markets and local restaurants — dollars are accepted but you'll lose on the exchange rate",
+        "Reef-safe sunscreen is mandatory at cenotes and recommended on Tulum's beaches",
+      ],
+      days: [
+        {
+          theme: "The Hotel Zone and Cancún's beaches",
+          activities: [
+            { name: "Playa Delfines", description: "The Hotel Zone's most spectacular public beach, with the iconic Cancún sign, white sand, and Mexico's most turquoise water. No hotel palapa, no fee.", price: "Free", tip: "The northern beaches in the Hotel Zone have smaller waves. The southern ones (Delfines, Ballenas) have more surf and are better for bodysurfing." },
+            { name: "Mercado 28 — the real Cancún", description: "The craft market in downtown Cancún, away from the Hotel Zone. Tacos al pastor, authentic crafts, and local prices instead of mass-tourism markups.", price: "USD 5-10", tip: "Cochinita pibil tacos are the Yucatecan dish that'll haunt you once you're home. Order them with pickled red onion and habanero." },
+            { name: "Nichupté Lagoon — kayaking or paddleboarding", description: "The lagoon separating the Hotel Zone from the mainland, with mangroves, tropical birds, and calm water. Several companies rent kayaks and paddleboards with no guide required.", price: "USD 20-35/hour", tip: "Sunsets over the lagoon with the Hotel Zone in the background are some of the most photogenic in Cancún." },
+            { name: "Downtown Cancún at dusk", description: "Parque Las Palapas downtown is where locals gather at dusk: craftspeople, street snacks, live music, and the rhythm of a real Mexican city.", price: "Free", tip: "Downtown Cancún, 20 minutes from your hotel by bus (USD 0.50), gives you an authentic night out that the Hotel Zone can never offer." },
+          ],
+        },
+        {
+          theme: "Isla Mujeres: paradise 20 minutes away",
+          activities: [
+            { name: "Ferry to Isla Mujeres", description: "The ferry departs every 30 minutes from Puerto Juárez. The 20-minute crossing is already spectacular with the Caribbean's color.", price: "USD 8 round trip", tip: "Get to the dock before 8am to catch the first ferry. Isla Mujeres with hardly anyone around (first hour) is a dream." },
+            { name: "Playa Norte — the best beach in the Caribbean", description: "Repeatedly voted among the best beaches in the world, with pool-like water, fine white sand, and a protected, waveless lagoon. Only 2 km long.", price: "Free", tip: "Rent a golf cart (USD 40/day) to explore the whole 8 km island. It's how everyone gets around Isla Mujeres." },
+            { name: "Garrafón — snorkeling on the coral reef", description: "The southern tip of the island has one of the best coral reefs in the Mexican Caribbean, with colorful fish, rays, and turtles. Garrafón park includes snorkeling.", price: "USD 25-45", tip: "Free snorkeling outside the park (from the rocks south of Zac-Ha beach) is just as good and free." },
+            { name: "Isla Mujeres town", description: "Colorfully painted streets, local craft boutiques, and seafront seafood restaurants make the town a place worth lingering in.", price: "Free", tip: "Hidalgo street has the best seafood restaurants at a fair price. The island's ceviche is different from Cancún's." },
+          ],
+        },
+        {
+          theme: "Chichén Itzá and a swim in a cenote",
+          activities: [
+            { name: "Departure for Chichén Itzá", description: "The ancient Mayan city, named one of the 7 wonders of the modern world, is 2.5 hours from Cancún. Leaving early avoids the extreme heat and the thousands of tourists.", price: "Tour from USD 60 (includes transport)", tip: "During the equinoxes (March 21 and September 23) the sun creates the serpent of light on the El Castillo pyramid — mass tourism, but spectacular." },
+            { name: "El Castillo and the Mayan city", description: "The Kukulcán pyramid has 365 steps (one for each day of the year), plus the Temple of the Warriors, the largest ballcourt in Mesoamerica, and the Sacred Cenote.", price: "USD 35 (admission)", tip: "You haven't been able to climb the pyramid since 2006, but you can touch it. Guides demonstrate the echo that mimics a quetzal's call by clapping in front of the staircase." },
+            { name: "Cenote Ik-Kil", description: "The most photogenic cenote in the Riviera Maya, 3 km from Chichén Itzá: a circular sinkhole 40m across, open to the sky, with walls draped in cascading ferns.", price: "USD 15", tip: "Arrive right after lunch when the tour groups leave. Between 2 and 4pm is when it's quietest and sunlight streams into the cenote." },
+            { name: "Return to Cancún via Valladolid", description: "The colonial city of Valladolid is on the way back. A 45-minute stop to see the Zaci cenote (right in town) and the historic center.", price: "Zaci cenote USD 5", tip: "Valladolid is an authentic Yucatecan city where you can get the best café de olla of the whole trip." },
+          ],
+        },
+        {
+          theme: "Tulum: Mayan ruins above the Caribbean",
+          activities: [
+            { name: "Tulum Ruins", description: "The only Mayan city built on a cliff with direct views over the turquoise Caribbean. El Castillo de Tulum with the sea behind it is one of Mexico's most iconic photos.", price: "USD 10", tip: "Arrive at 8am when it opens. By 10am there are already hundreds of people. The beach at the foot of the ruins is included — you can swim before the crowds arrive." },
+            { name: "Gran Cenote, Tulum", description: "The most accessible, photogenic cenote in the area, with crystal-clear water, submerged stalagmites, and fish swimming around the bathers.", price: "USD 20", tip: "Bring your own snorkel gear (or rent it there for USD 5). The water stays between 23-25°C year-round. Sargassum-free." },
+            { name: "Tulum town", description: "Tulum's original town, distinct from the boutique-hotel-lined Tulum Hotel Zone. Cochinita tacos, honey and achiote shops, at Mexican prices.", price: "USD 8-15", tip: "The Instagram version of Tulum (the hotel zone) is expensive and geared toward a different kind of trip. The town has the same thing for a third of the price." },
+            { name: "Akumal — swimming with sea turtles", description: "Akumal Bay (45 min north of Tulum) is the most accessible place in the world to swim freely with sea turtles in their natural habitat.", price: "Free (just the beach and water)", tip: "Get in the water between 9 and 11am to see more turtles. Don't wear regular sunscreen — it damages the reef. Reef-safe sunscreen is allowed." },
+          ],
+        },
+        {
+          theme: "Playa del Carmen and the last Caribbean day",
+          activities: [
+            { name: "Fifth Avenue, Playa del Carmen", description: "The liveliest pedestrian street in the Mexican Caribbean, 4 km of shops, restaurants, bars, and street art facing the beach. The social heart of the Riviera Maya.", price: "Free (walking around)", tip: "Skip the restaurants right on Fifth Ave — they're all tourist-priced. Head two blocks inland and you'll find where locals get their tacos." },
+            { name: "Playa del Carmen's beach", description: "The liveliest urban beach in the Riviera Maya, with white sand and direct access from Fifth Avenue. Livelier than the beaches in Cancún's Hotel Zone.", price: "Free", tip: "The boutique-hotel beaches south of Fifth Ave (from Calle 38 onward) are less crowded and almost as accessible." },
+            { name: "Xcaret or Xel-Há (optional)", description: "Mexico's largest natural parks. Xcaret combines Mayan culture, nature, and nighttime shows. Xel-Há is more intimate and centers on snorkeling in a seawater river.", price: "USD 80-130", tip: "Xel-Há is calmer and more natural. Xcaret is better for families with young kids. Tickets bought online cost 30% less." },
+            { name: "One last Caribbean sunset", description: "Playa del Carmen's beach faces east — the most spectacular sunsets are seen from the Playa pier or from the ferry to Cozumel.", price: "Free", tip: "The ferry to Cozumel departs from the Fifth Avenue pier. Just the 45-minute ride out over the open Caribbean is already a spectacle." },
+          ],
+        },
+      ],
+    },
+  },
+
   roma: {
     en: {
       city: "Rome",
