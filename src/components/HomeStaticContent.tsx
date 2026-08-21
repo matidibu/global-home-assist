@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { destinations } from "@/data/destinations";
+import { localizeDestinationCard } from "@/data/destinationsI18n";
 import { generateFAQSchema } from "@/lib/schemaMarkup";
 import { useAutoLanguage } from "@/hooks/useAutoLanguage";
 
@@ -36,9 +37,12 @@ type Copy = {
 // section, so it needs to follow the same auto-detected browser language
 // as the rest of the page (confirmed missing 2026-08-19: an English-locale
 // visitor/video capture still saw this whole section in Spanish).
-// Destination card content (dest.name/country/tagline below) comes from
-// the shared `destinations` data file used across dozens of pages and is
-// NOT translated here -- that's a separate, much larger undertaking.
+// Destination card content (name/country/tagline/avgBudget) is localized via
+// `localizeDestinationCard` (src/data/destinationsI18n.ts) below -- the base
+// `destinations` array itself stays Spanish-only (most of its fields, like
+// guidePractical/practicalInfo/faq, turned out to be unused dead content,
+// confirmed 2026-08-21: only this component and sitemap.ts import it, and
+// sitemap only needs the slug).
 const T: Record<string, Copy> = {
   es: {
     howItWorksTitle: "¿Cómo funciona el planificador?",
@@ -282,7 +286,8 @@ export function HomeStaticContent() {
 
   const featured = FEATURED_DESTINATIONS
     .map(slug => destinations.find(d => d.slug === slug))
-    .filter(Boolean) as typeof destinations;
+    .filter(Boolean)
+    .map(d => localizeDestinationCard(d!, language)) as typeof destinations;
 
   return (
     <div style={{
