@@ -1783,7 +1783,7 @@ export default function SearchForm() {
 
             <div className="no-print" style={{ marginBottom: "40px" }}>
               <a
-                href="https://search.hotellook.com/?shmarker=712478&currency=USD"
+                href={`https://search.hotellook.com/?shmarker=712478&currency=USD&destination=${encodeURIComponent(city)}`}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="hotel-affiliate-banner"

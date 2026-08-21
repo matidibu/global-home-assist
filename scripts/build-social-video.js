@@ -31,15 +31,21 @@ const REPO_ROOT = path.join(__dirname, '..');
 const BRAND_CARD_DUR = 1.2; // short bumper, same clip reused at open and close
 const BRAND_BG = '#152060'; // matches the logo's own dark navy gradient stop
 
-const [rawVideoPath, scriptPath, lang, outLabel, reuseVoicePath] = process.argv.slice(2);
-if (!rawVideoPath || !scriptPath || !lang || !outLabel) {
-  console.error('Usage: node scripts/build-social-video.js <rawVideoPath> <scriptTextPath> <lang> <outLabel> [reuseVoicePath]');
-  console.error('  reuseVoicePath: skip the ElevenLabs call and reuse an existing voice mp3 (script text unchanged, only the raw footage changed -- saves credits).');
-  process.exit(1);
-}
-if (!reuseVoicePath && !API_KEY) {
-  console.error('Missing ELEVEN_API_KEY env var');
-  process.exit(1);
+// Only parsed/validated when run directly -- guarded so this file can also
+// be require()'d for its helpers (ensureBrandCard, concatBrandCardAtClose)
+// without needing dummy CLI args.
+let rawVideoPath, scriptPath, lang, outLabel, reuseVoicePath;
+if (require.main === module) {
+  [rawVideoPath, scriptPath, lang, outLabel, reuseVoicePath] = process.argv.slice(2);
+  if (!rawVideoPath || !scriptPath || !lang || !outLabel) {
+    console.error('Usage: node scripts/build-social-video.js <rawVideoPath> <scriptTextPath> <lang> <outLabel> [reuseVoicePath]');
+    console.error('  reuseVoicePath: skip the ElevenLabs call and reuse an existing voice mp3 (script text unchanged, only the raw footage changed -- saves credits).');
+    process.exit(1);
+  }
+  if (!reuseVoicePath && !API_KEY) {
+    console.error('Missing ELEVEN_API_KEY env var');
+    process.exit(1);
+  }
 }
 
 const WORKDIR = path.join(require('os').tmpdir(), 'gha-video-build');
@@ -193,19 +199,24 @@ async function ensureBrandCard() {
   return cardPath;
 }
 
-// Concats [brandCard][main][brandCard] into the final output. Re-encodes
-// (rather than the concat demuxer's stream-copy) so a still-image card and
-// a real screen-recording with different source fps/audio params splice
-// together cleanly instead of risking a demuxer mismatch error.
-function concatWithBrandCard(mainPath, brandCardPath, outPath) {
+// Concats [main][brandCard] into the final output -- brand card at the
+// CLOSE ONLY. Previously ran at open+close too, but that put a static,
+// silent 1.2s logo card in the very first frame of every video. Retention
+// data confirmed this was killing videos outright: average watch time on
+// the first 2 posts with this intro card was ~1.1s, matching the card's
+// duration almost exactly -- viewers were swiping away before the card even
+// finished, never reaching the actual hook. Fixed 2026-08-21.
+// Re-encodes (rather than the concat demuxer's stream-copy) so a still-image
+// card and a real screen-recording with different source fps/audio params
+// splice together cleanly instead of risking a demuxer mismatch error.
+function concatBrandCardAtClose(mainPath, brandCardPath, outPath) {
   const filter =
     `[0:v]scale=${VIDEO_W}:${VIDEO_H},setsar=1,fps=30[v0];[0:a]aformat=sample_rates=44100:channel_layouts=stereo[a0];` +
     `[1:v]scale=${VIDEO_W}:${VIDEO_H},setsar=1,fps=30[v1];[1:a]aformat=sample_rates=44100:channel_layouts=stereo[a1];` +
-    `[2:v]scale=${VIDEO_W}:${VIDEO_H},setsar=1,fps=30[v2];[2:a]aformat=sample_rates=44100:channel_layouts=stereo[a2];` +
-    `[v0][a0][v1][a1][v2][a2]concat=n=3:v=1:a=1[vout][aout]`;
+    `[v0][a0][v1][a1]concat=n=2:v=1:a=1[vout][aout]`;
   sh([
     '-y',
-    '-i', brandCardPath, '-i', mainPath, '-i', brandCardPath,
+    '-i', mainPath, '-i', brandCardPath,
     '-filter_complex', filter,
     '-map', '[vout]', '-map', '[aout]',
     '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-preset', 'medium', '-crf', '20',
@@ -333,12 +344,16 @@ async function main() {
     mainPath,
   ]);
 
-  console.log(`[${outLabel}] 6/6 Adding brand card at open/close...`);
+  console.log(`[${outLabel}] 6/6 Adding brand card at close...`);
   const brandCardPath = await ensureBrandCard();
   const outPath = path.join(OUT_DIR, `${outLabel}.mp4`);
-  concatWithBrandCard(mainPath, brandCardPath, outPath);
+  concatBrandCardAtClose(mainPath, brandCardPath, outPath);
 
-  console.log(`[${outLabel}] Done: ${outPath} (~${(finalDur + 2 * BRAND_CARD_DUR).toFixed(1)}s incl. brand card)`);
+  console.log(`[${outLabel}] Done: ${outPath} (~${(finalDur + BRAND_CARD_DUR).toFixed(1)}s incl. brand card)`);
 }
 
-main().catch(e => { console.error(`[${outLabel}] FAILED:`, e.message); process.exitCode = 1; });
+module.exports = { ensureBrandCard, concatBrandCardAtClose, WORKDIR, OUT_DIR, VIDEO_W, VIDEO_H, REPO_ROOT, BRAND_CARD_DUR };
+
+if (require.main === module) {
+  main().catch(e => { console.error(`[${outLabel}] FAILED:`, e.message); process.exitCode = 1; });
+}
