@@ -2,20 +2,34 @@
 
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { LayoutGrid, MapPin, BookOpen, Wallet, Lightbulb, Cpu } from "lucide-react";
+import { useAutoLanguage } from "@/hooks/useAutoLanguage";
 
-const categories = [
-  { key: "todos", label: "Todos", icon: <LayoutGrid size={13} strokeWidth={2} /> },
-  { key: "destinos", label: "Destinos", icon: <MapPin size={13} strokeWidth={2} /> },
-  { key: "guias", label: "Guías", icon: <BookOpen size={13} strokeWidth={2} /> },
-  { key: "presupuesto", label: "Presupuesto", icon: <Wallet size={13} strokeWidth={2} /> },
-  { key: "consejos", label: "Consejos", icon: <Lightbulb size={13} strokeWidth={2} /> },
-  { key: "tecnologia", label: "Tecnología", icon: <Cpu size={13} strokeWidth={2} /> },
-];
+const LABELS: Record<string, Record<string, string>> = {
+  es: { todos: "Todos", destinos: "Destinos", guias: "Guías", presupuesto: "Presupuesto", consejos: "Consejos", tecnologia: "Tecnología" },
+  en: { todos: "All", destinos: "Destinations", guias: "Guides", presupuesto: "Budget", consejos: "Tips", tecnologia: "Technology" },
+  fr: { todos: "Tout", destinos: "Destinations", guias: "Guides", presupuesto: "Budget", consejos: "Conseils", tecnologia: "Technologie" },
+  it: { todos: "Tutti", destinos: "Destinazioni", guias: "Guide", presupuesto: "Budget", consejos: "Consigli", tecnologia: "Tecnologia" },
+  de: { todos: "Alle", destinos: "Reiseziele", guias: "Guides", presupuesto: "Budget", consejos: "Tipps", tecnologia: "Technologie" },
+  pt: { todos: "Todos", destinos: "Destinos", guias: "Guias", presupuesto: "Orçamento", consejos: "Dicas", tecnologia: "Tecnologia" },
+};
+
+const CATEGORY_KEYS = ["todos", "destinos", "guias", "presupuesto", "consejos", "tecnologia"] as const;
+const ICONS: Record<string, React.ReactNode> = {
+  todos: <LayoutGrid size={13} strokeWidth={2} />,
+  destinos: <MapPin size={13} strokeWidth={2} />,
+  guias: <BookOpen size={13} strokeWidth={2} />,
+  presupuesto: <Wallet size={13} strokeWidth={2} />,
+  consejos: <Lightbulb size={13} strokeWidth={2} />,
+  tecnologia: <Cpu size={13} strokeWidth={2} />,
+};
 
 export function BlogCategoryFilter({ active }: { active: string }) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const [language] = useAutoLanguage();
+  const labels = LABELS[language] || LABELS.es;
+  const categories = CATEGORY_KEYS.map(key => ({ key, label: labels[key], icon: ICONS[key] }));
 
   function handleClick(key: string) {
     const params = new URLSearchParams(searchParams.toString());

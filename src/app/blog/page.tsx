@@ -4,9 +4,10 @@ import { Suspense } from "react";
 import { blogPosts } from "@/data/blogPosts";
 import { FeaturedPostCard, PostCard } from "@/components/BlogCards";
 import { BlogCategoryFilter } from "@/components/BlogCategoryFilter";
-import { ArrowLeft, Plane } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { AdSenseUnit } from "@/components/AdSenseUnit";
 import { ADSENSE_SLOTS } from "@/lib/adsenseConfig";
+import { BlogNavLabel, BlogHubHeader, BlogEmptyState, BlogBottomCta } from "@/components/BlogHubChrome";
 
 const BASE_URL = "https://global-home-assist.vercel.app";
 
@@ -80,51 +81,12 @@ export default async function BlogPage({ searchParams }: Props) {
         }}>
           <ArrowLeft size={16} strokeWidth={2.5} /> Global Home Assist
         </Link>
-        <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em" }}>
-          Blog de Viajes
-        </span>
+        <BlogNavLabel />
       </nav>
 
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 24px 100px" }}>
 
-        {/* Header */}
-        <div style={{ marginBottom: "40px" }}>
-          <div style={{
-            display: "inline-block",
-            background: "rgba(42,181,160,0.15)",
-            border: "1px solid rgba(42,181,160,0.3)",
-            borderRadius: "100px",
-            padding: "4px 16px",
-            fontSize: "11px",
-            fontWeight: 700,
-            color: "#2ab5a0",
-            textTransform: "uppercase",
-            letterSpacing: "0.1em",
-            marginBottom: "16px",
-          }}>
-            Contenido original · Actualizado regularmente
-          </div>
-          <h1 style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(2rem, 5vw, 3.2rem)",
-            fontWeight: 700,
-            color: "white",
-            margin: "0 0 12px 0",
-            lineHeight: 1.1,
-          }}>
-            La revista del viajero inteligente
-          </h1>
-          <p style={{
-            fontSize: "16px",
-            color: "rgba(255,255,255,0.65)",
-            maxWidth: "600px",
-            lineHeight: 1.65,
-            margin: 0,
-          }}>
-            Guías honestas, itinerarios reales y los errores que nadie menciona.
-            Sin listas genéricas. Sin información de 2019. Sin filtros de Instagram.
-          </p>
-        </div>
+        <BlogHubHeader />
 
         {/* Category filter — client component */}
         <Suspense fallback={null}>
@@ -140,9 +102,7 @@ export default async function BlogPage({ searchParams }: Props) {
         </div>
 
         {filtered.length === 0 ? (
-          <div style={{ textAlign: "center", padding: "60px 0", color: "rgba(255,255,255,0.4)", fontSize: "15px" }}>
-            No hay artículos en esta categoría todavía.
-          </div>
+          <BlogEmptyState />
         ) : (
           <>
             {/* Featured post */}
@@ -163,46 +123,7 @@ export default async function BlogPage({ searchParams }: Props) {
           </>
         )}
 
-        {/* Bottom CTA */}
-        <div style={{
-          marginTop: "64px",
-          background: "linear-gradient(135deg, rgba(42,181,160,0.15), rgba(26,42,108,0.3))",
-          border: "1.5px solid rgba(42,181,160,0.25)",
-          borderRadius: "24px",
-          padding: "40px",
-          textAlign: "center",
-        }}>
-          <p style={{ color: "#2ab5a0", fontWeight: 700, fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.1em", margin: "0 0 12px 0" }}>
-            ¿Listo para planificar?
-          </p>
-          <h3 style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(1.3rem, 3vw, 1.8rem)",
-            color: "white",
-            fontWeight: 700,
-            margin: "0 0 16px 0",
-          }}>
-            De la lectura al itinerario en 30 segundos
-          </h3>
-          <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "14px", margin: "0 0 24px 0" }}>
-            Usá la IA de Global Home Assist para convertir cualquier destino en un itinerario personalizado con mapas, fotos y rutas optimizadas.
-          </p>
-          <Link href="/" style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "8px",
-            background: "linear-gradient(135deg, #2ab5a0, #1a9e8c)",
-            color: "white",
-            padding: "14px 40px",
-            borderRadius: "14px",
-            fontSize: "15px",
-            fontWeight: 800,
-            textDecoration: "none",
-            boxShadow: "0 8px 24px rgba(42,181,160,0.35)",
-          }}>
-            <Plane size={16} strokeWidth={2.5} /> Planificar mi viaje gratis
-          </Link>
-        </div>
+        <BlogBottomCta />
 
       </div>
     </main>

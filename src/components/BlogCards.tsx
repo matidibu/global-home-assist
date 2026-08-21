@@ -2,9 +2,23 @@
 
 import Link from "next/link";
 import { BlogPost, categoryColors } from "@/data/blogPosts";
+import { useAutoLanguage } from "@/hooks/useAutoLanguage";
+
+type Copy = { featuredReadTime: (min: number) => string; readTimeMin: (min: number) => string; readArticle: string; read: string };
+
+const T: Record<string, Copy> = {
+  es: { featuredReadTime: min => `Destacado · ${min} min de lectura`, readTimeMin: min => `${min} min`, readArticle: "Leer artículo →", read: "Leer →" },
+  en: { featuredReadTime: min => `Featured · ${min} min read`, readTimeMin: min => `${min} min`, readArticle: "Read article →", read: "Read →" },
+  fr: { featuredReadTime: min => `À la une · ${min} min de lecture`, readTimeMin: min => `${min} min`, readArticle: "Lire l'article →", read: "Lire →" },
+  it: { featuredReadTime: min => `In evidenza · ${min} min di lettura`, readTimeMin: min => `${min} min`, readArticle: "Leggi l'articolo →", read: "Leggi →" },
+  de: { featuredReadTime: min => `Empfohlen · ${min} Min. Lesezeit`, readTimeMin: min => `${min} Min.`, readArticle: "Artikel lesen →", read: "Lesen →" },
+  pt: { featuredReadTime: min => `Destaque · ${min} min de leitura`, readTimeMin: min => `${min} min`, readArticle: "Ler artigo →", read: "Ler →" },
+};
 
 export function FeaturedPostCard({ post }: { post: BlogPost }) {
   const catColor = categoryColors[post.category];
+  const [language] = useAutoLanguage();
+  const t = T[language] || T.es;
   return (
     <Link href={`/blog/${post.slug}`} style={{ textDecoration: "none", display: "block", marginBottom: "40px" }}>
       <article
@@ -46,7 +60,7 @@ export function FeaturedPostCard({ post }: { post: BlogPost }) {
                 {post.categoryLabel}
               </span>
               <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>
-                Destacado · {post.readTime} min de lectura
+                {t.featuredReadTime(post.readTime)}
               </span>
             </div>
             <h2 style={{
@@ -68,7 +82,7 @@ export function FeaturedPostCard({ post }: { post: BlogPost }) {
               {post.excerpt}
             </p>
             <span style={{ color: "#2ab5a0", fontWeight: 700, fontSize: "14px" }}>
-              Leer artículo →
+              {t.readArticle}
             </span>
           </div>
         </div>
@@ -79,6 +93,8 @@ export function FeaturedPostCard({ post }: { post: BlogPost }) {
 
 export function PostCard({ post }: { post: BlogPost }) {
   const catColor = categoryColors[post.category];
+  const [language] = useAutoLanguage();
+  const t = T[language] || T.es;
   return (
     <Link href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
       <article
@@ -111,7 +127,7 @@ export function PostCard({ post }: { post: BlogPost }) {
             {post.categoryLabel}
           </span>
           <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.4)" }}>
-            {post.readTime} min
+            {t.readTimeMin(post.readTime)}
           </span>
         </div>
         <h2 style={{
@@ -138,7 +154,7 @@ export function PostCard({ post }: { post: BlogPost }) {
           {post.excerpt}
         </p>
         <span style={{ color: "#2ab5a0", fontWeight: 700, fontSize: "13px", marginTop: "auto" }}>
-          Leer →
+          {t.read}
         </span>
       </article>
     </Link>
@@ -147,6 +163,8 @@ export function PostCard({ post }: { post: BlogPost }) {
 
 export function RelatedPostCard({ post }: { post: BlogPost }) {
   const rc = categoryColors[post.category];
+  const [language] = useAutoLanguage();
+  const t = T[language] || T.es;
   return (
     <Link href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
       <div
@@ -185,7 +203,7 @@ export function RelatedPostCard({ post }: { post: BlogPost }) {
         }}>
           {post.title}
         </h4>
-        <span style={{ color: "#2ab5a0", fontSize: "12px", fontWeight: 700 }}>Leer →</span>
+        <span style={{ color: "#2ab5a0", fontSize: "12px", fontWeight: 700 }}>{t.read}</span>
       </div>
     </Link>
   );
