@@ -1,10 +1,27 @@
 import { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schemaMarkup";
 import { CalculadoraCostosTool } from "@/components/CalculadoraCostosTool";
+import { ToolPageChrome } from "@/components/ToolPageChrome";
 import { AdSenseUnit } from "@/components/AdSenseUnit";
 import { ADSENSE_SLOTS } from "@/lib/adsenseConfig";
+
+const HERO_TITLE: Record<string, string> = {
+  es: "Calculadora de presupuesto de viaje",
+  en: "Travel budget calculator",
+  fr: "Calculateur de budget de voyage",
+  it: "Calcolatore del budget di viaggio",
+  de: "Reisebudget-Rechner",
+  pt: "Calculadora de orçamento de viagem",
+};
+
+const HERO_SUBTITLE: Record<string, string> = {
+  es: "Elegí destino, días y estilo de viaje — te mostramos un rango real de cuánto vas a gastar, gratis.",
+  en: "Pick a destination, days, and travel style — we'll show you a real range of how much you'll spend, free.",
+  fr: "Choisissez une destination, le nombre de jours et le style de voyage — nous vous montrons une fourchette réelle de vos dépenses, gratuitement.",
+  it: "Scegli destinazione, giorni e stile di viaggio — ti mostriamo una fascia reale di quanto spenderai, gratis.",
+  de: "Wähle Reiseziel, Tage und Reisestil — wir zeigen dir eine realistische Spanne deiner Ausgaben, kostenlos.",
+  pt: "Escolha destino, dias e estilo de viagem — mostramos uma faixa real de quanto você vai gastar, grátis.",
+};
 
 const BASE_URL = "https://global-home-assist.vercel.app";
 
@@ -68,52 +85,7 @@ export default function CalculadoraCostosPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <nav style={{
-        padding: "16px 24px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        borderBottom: "1px solid rgba(255,255,255,0.1)",
-        maxWidth: "1100px",
-        margin: "0 auto",
-      }}>
-        <Link href="/herramientas" style={{
-          color: "white",
-          textDecoration: "none",
-          fontWeight: 700,
-          fontSize: "15px",
-          display: "flex",
-          alignItems: "center",
-          gap: "6px",
-        }}>
-          <ArrowLeft size={16} strokeWidth={2.5} /> Herramientas
-        </Link>
-      </nav>
-
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 24px 0" }}>
-        <div style={{ textAlign: "center", marginBottom: "36px" }}>
-          <div style={{ fontSize: "40px", marginBottom: "12px" }}>💰</div>
-          <h1 style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(1.7rem, 4.5vw, 2.5rem)",
-            fontWeight: 700,
-            color: "white",
-            margin: "0 0 14px 0",
-            lineHeight: 1.15,
-          }}>
-            Calculadora de presupuesto de viaje
-          </h1>
-          <p style={{
-            fontSize: "14.5px",
-            color: "rgba(255,255,255,0.7)",
-            lineHeight: 1.7,
-            maxWidth: "560px",
-            margin: "0 auto",
-          }}>
-            Elegí destino, días y estilo de viaje — te mostramos un rango real de cuánto vas a gastar, gratis.
-          </p>
-        </div>
-      </div>
+      <ToolPageChrome emoji="💰" title={HERO_TITLE} subtitle={HERO_SUBTITLE} />
 
       <CalculadoraCostosTool />
 

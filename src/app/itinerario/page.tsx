@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Plane } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { DESTINATIONS } from "@/data/destinationPages";
+import { ItinerarioHubIntro } from "@/components/ItinerarioHubIntro";
 
 const BASE_URL = "https://global-home-assist.vercel.app";
 
@@ -75,48 +76,7 @@ export default function ItinerarioIndexPage() {
 
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 24px 80px" }}>
 
-        {/* Hero */}
-        <div style={{ textAlign: "center", marginBottom: "48px" }}>
-          <h1 style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(2rem, 5vw, 3rem)",
-            fontWeight: 700,
-            color: "white",
-            margin: "0 0 16px 0",
-            lineHeight: 1.15,
-          }}>
-            Itinerarios de viaje por destino
-          </h1>
-          <p style={{
-            fontSize: "15px",
-            color: "rgba(255,255,255,0.7)",
-            lineHeight: 1.7,
-            maxWidth: "640px",
-            margin: "0 auto",
-          }}>
-            {destinations.length} destinos con itinerario completo — qué ver, dónde comer y cómo moverte.
-            Elegí un destino o generá el tuyo personalizado, gratis, en 30 segundos.
-          </p>
-        </div>
-
-        {/* CTA */}
-        <div style={{ textAlign: "center", marginBottom: "48px" }}>
-          <Link href="/" style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "8px",
-            background: "linear-gradient(135deg, #2ab5a0, #1a9e8c)",
-            color: "white",
-            padding: "14px 32px",
-            borderRadius: "14px",
-            fontSize: "14px",
-            fontWeight: 800,
-            textDecoration: "none",
-            boxShadow: "0 8px 24px rgba(42,181,160,0.3)",
-          }}>
-            <Plane size={16} strokeWidth={2.5} /> Generar mi itinerario personalizado
-          </Link>
-        </div>
+        <ItinerarioHubIntro count={destinations.length} />
 
         {/* Grid de destinos */}
         <div style={{
