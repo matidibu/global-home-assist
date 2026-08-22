@@ -99,6 +99,100 @@ export const destinationPagesI18n: Partial<Record<string, Record<DestLang, Desti
       ],
     },
   },
+  lima: {
+    en: {
+      city: "Lima",
+      country: "Peru",
+      heroTitle: "3 days in Lima: the world's culinary capital",
+      heroSubtitle: "Miraflores, Barranco, the Historic Center, and Latin America's best restaurants — Lima is much more than a gateway to Machu Picchu.",
+      bestMonths: "January to March (southern summer), though it's good year-round",
+      budget: "S/150-250/day (~$40-70 USD)",
+      travelTips: [
+        "Lima has coastal fog (the garúa) from May to November that dims the sky — the beach isn't the plan during those months",
+        "Lima's food scene is the city's biggest draw — book ahead at Central, Maido, and Kjolle if you want the best tables",
+        "Lima's traffic is legendarily chaotic — use Uber or Cabify to get around safely and predictably",
+        "Lima's sun is strong despite the haze — always wear sunscreen on the Miraflores boardwalk",
+        "Acclimatizing to Cusco is much easier if you arrive first in Lima (sea level) and gain altitude gradually",
+      ],
+      days: [
+        {
+          theme: "Miraflores and the Pacific cliffs",
+          activities: [
+            { name: "Parque Kennedy and the heart of Miraflores", description: "The central park of Lima's most modern district, surrounded by cafés, galleries, and the Church of the Virgen Milagrosa. The park's cats (more than 100) are the neighborhood's most beloved attraction.", price: "Free", tip: "The weekend crafts fair at Parque Kennedy has Lima's best souvenirs. The cats are friendly and can be photographed freely." },
+            { name: "Miraflores boardwalk and the cliffs", description: "The boardwalk atop 70-80 meter cliffs over the Pacific, with sea views and paragliders drifting overhead. Parque del Amor, with Víctor Delfín's mural and entwined couples, is one of the most romantic parks in the world.", price: "Free (paragliding S/150)", tip: "Paragliding off the cliffs is Lima's most adrenaline-filled activity — 15 minutes over the Pacific from 80 meters up. Operators like Aeroxtreme launch from the boardwalk." },
+            { name: "Ceviche at Mercado 28 or La Mar", description: "Ceviche is Peru's national dish and Lima has the best in the world. La Mar (Gastón Acurio) and Mercado 28 are popular go-tos, with lines and communal tables.", price: "S/35-80", tip: "Leche de tigre (the citrusy ceviche marinade) is drunk as a shot at the end and is said to have aphrodisiac properties. Always ask for it." },
+            { name: "Sunset from Larcomar", description: "The mall built into the Miraflores cliffs, with bars and restaurants over the Pacific. The upper-floor terrace has the best sunset view over the ocean in all of Lima.", price: "Free", tip: "Astrid & Gastón at Larcomar is the most historic restaurant in modern Peruvian cuisine. The sunset view with a pisco sour is worth the price." },
+          ],
+        },
+        {
+          theme: "Historic Center and Lima's colonial soul",
+          activities: [
+            { name: "Plaza Mayor and the Colonial Balconies", description: "Lima's heart since the Spanish founding in 1535. The Cathedral, the Government Palace, and the Municipal Palace define colonial Peru's most important square. The carved wooden balconies are one of a kind in the Americas.", price: "Free (Cathedral S/20)", tip: "The changing of the guard at the Government Palace happens at 11:30am, Monday through Friday — a free show with music from the Presidential Band." },
+            { name: "Convent of Santo Domingo and the Catacombs", description: "The 16th-century monastery where San Martín de Porres and Santa Rosa de Lima are buried. The catacombs beneath the church hold more than 25,000 remains of Lima's early colonizers and criollos.", price: "S/15", tip: "The catacombs are surprisingly well preserved, and the guide gives fascinating historical context. Flash photography is banned inside." },
+            { name: "Lima's Chinatown — the Barrio Chino", description: "Lima's Chinese community (200,000 people, the largest in Latin America) has the region's best Chinatown. The chifas (Chinese-Peruvian restaurants) on Jirón Ucayali are legendary.", price: "S/20-45", tip: "Chinese-Peruvian fusion (chifa) is one of the world's most interesting cuisines. Order arroz chaufa with lomo saltado — the perfect fusion of two cultures." },
+            { name: "Museo Larco — the pre-Columbian treasure", description: "The world's most important collection of pre-Columbian art, in a 17th-century hacienda in Pueblo Libre. Its 45,000 objects include the treasure of Sipán, Moche ceramics, and the famous erotic gallery.", price: "S/50", tip: "The garden café at Museo Larco (among the flowers and the huacas) is one of Lima's most beautiful. Book a table ahead for sunset." },
+          ],
+        },
+        {
+          theme: "Barranco — the most bohemian neighborhood",
+          activities: [
+            { name: "Barranco neighborhood and the Bridge of Sighs", description: "Lima's most bohemian, artistic neighborhood, with colonial mansions turned into galleries, bars, and the Mario Testino Museum. The Bridge of Sighs (1876) and the path down to the beach are the neighborhood's postcard images.", price: "Free", tip: "Tradition says if you cross the Bridge of Sighs holding your breath and make a wish, it comes true. The views down toward the sea are gorgeous." },
+            { name: "Lunch at Isolina — a Lima tavern", description: "Jose del Castillo's tavern in Barranco is the best example of Lima's creole cooking: pork chicharrón, beef heart anticuchos, carapulcra, and causa limeña at their most authentic.", price: "S/40-80", tip: "Book ahead — Isolina is on every list of Lima's best restaurants and has a line at both lunch and dinner. Monday at noon is the least crowded time." },
+            { name: "MATE — Mario Testino Museum", description: "The museum of the world's most famous Peruvian photographer, in a 19th-century mansion in Barranco. His portraits of Princess Diana, Kate Moss, and Naomi Campbell wearing Peruvian designers are striking.", price: "S/25", tip: "MATE's garden patio is one of the prettiest in Lima. The ground-floor café serves the neighborhood's best egg-yolk bread." },
+            { name: "Pisco Sour at a Barranco bar", description: "The pisco sour is Peru's national cocktail (slightly different from the Chilean version). Barranco's bars serve the most authentic versions: pisco quebranta, green lime, simple syrup, egg white, and bitters.", price: "S/25-35", tip: "Ayahuasca Bar in Barranco (the three-story Republican-era mansion) has the best pisco sours and the prettiest atmosphere in Lima's nightlife. El Refugio's speakeasy bar is also very special." },
+          ],
+        },
+      ],
+    },
+  },
+
+  praga: {
+    en: {
+      city: "Prague",
+      country: "Czech Republic",
+      heroTitle: "3 days in Prague: the castle, Charles Bridge, and Europe's cheapest beer",
+      heroSubtitle: "Old Town, Prague Castle, Josefov, and the Little Quarter — Europe's best-preserved medieval city in three full days.",
+      bestMonths: "May to September",
+      budget: "€60-100/day",
+      travelTips: [
+        "The Czech koruna (CZK) is not the euro — exchange at downtown offices, never at street ones that scam tourists",
+        "Prague's metro is efficient and cheap (CZK 30 per ride) — buy the day pass (CZK 120) if you're making more than 4 trips",
+        "Prague is very touristy, but Vinohrady, Žižkov, and Holešovice have the most authentic local atmosphere",
+        "Beer in Prague costs less than bottled water at bars — that's cultural, not a scam",
+        "High season (June-August) and Christmas are the most crowded times — spring and fall are ideal",
+      ],
+      days: [
+        {
+          theme: "Prague Castle and the Little Quarter",
+          activities: [
+            { name: "Prague Castle — opening time", description: "The largest castle complex in the world by area (70,000 m²), with 9 centuries of history. The complex includes St. Vitus Cathedral, the Royal Palace, and the picturesque Golden Lane where Franz Kafka once lived.", price: "CZK 350 (long tour)", tip: "Arrive at 8:30am when it opens to see St. Vitus Cathedral without the lines. The view from the castle's south garden over Prague's red rooftops is the city's most spectacular." },
+            { name: "Golden Lane — where Franz Kafka lived", description: "The 16th-century street of colorful houses inside the castle, where court goldsmiths and, later, Franz Kafka at number 22, lived their days. The tiny medieval houses are miniature museums.", price: "Included with the Castle", tip: "House number 22 (blue) is where Kafka wrote some of his stories. The bookshop there now sells his works in Czech and German — the best souvenir from Prague." },
+            { name: "Lunch in Malá Strana (Little Quarter)", description: "The Baroque neighborhood at the foot of the castle, with palaces, churches, and Prague's best beer. The Katedrinska brewery and the restaurants on Nerudova are local favorites.", price: "CZK 180-350", tip: "Svíčková (marinated beef sirloin with cream sauce and knedlíky dumplings) is the tastiest Czech national dish. Pilsner Urquell and Staropramen beers cost CZK 35-55 in the Little Quarter." },
+            { name: "Charles Bridge at sunset", description: "The 14th-century Gothic bridge, lined with 30 Baroque statues, crossing the Vltava River. By afternoon it fills with street musicians, artists, and Prague's best atmosphere.", price: "Free", tip: "The bridge is packed by day — the best time is early (7am) or late (9pm). Touching the statue of St. John of Nepomuk (the shiny bronze one) is said to bring luck." },
+          ],
+        },
+        {
+          theme: "Old Town and the Jewish Quarter",
+          activities: [
+            { name: "Old Town Square and the Astronomical Clock", description: "Central Europe's most beautiful square, with the 1410 Astronomical Clock (the oldest still working) that parades the figures of the 12 apostles every hour on the hour. The Church of Our Lady before Týn dominates the background.", price: "Free (clock tower CZK 250)", tip: "The clock's parade happens right on the hour — arrive 5 minutes early. The town hall tower (CZK 250) has the best view of the square and Prague's rooftops." },
+            { name: "Josefov — the Jewish Quarter", description: "One of the best-preserved medieval Jewish quarters in Europe, with six synagogues (13th-19th centuries), a Jewish cemetery with 12,000 stacked graves, and a museum documenting the history of the Holocaust in Prague.", price: "CZK 500 (combined ticket)", tip: "The Old Jewish Cemetery has up to 12 layers of stacked graves — space was so scarce that burials happened on top of each other. The visit is deeply moving." },
+            { name: "Nerudova Street and Malá Strana", description: "Prague's most photogenic street, with Baroque palaces, galleries, and embassies climbing from Charles Bridge up to the Castle. Every building has an identifying medieval heraldic plaque.", price: "Free", tip: "At Nerudova 47 is the Romanian embassy — the alchemist's house that appears in Paulo Coelho's The Alchemist. The secret rose garden at Vrtba Palace (CZK 95) is Prague's most beautiful." },
+            { name: "Cervecería U Fleků — 1499", description: "Prague's oldest brewery, running continuously since 1499, in the Nové Město neighborhood. It brews its own dark lager (černé pivo) and has medieval halls with live band music.", price: "CZK 65-100 per pint", tip: "You can't just sit at U Fleků without drinking — waiters automatically place a fresh pint on your table. If you don't want another, cover your glass with the coaster." },
+          ],
+        },
+        {
+          theme: "Vinohrady, Vyšehrad, and alternative Prague",
+          activities: [
+            { name: "Vyšehrad — the other fortress", description: "The medieval fortress from Prague's founding legend, with a basilica, a cemetery of notable Czechs (Dvořák, Smetana), and panoramic views over the Vltava. Far less touristy than the Castle.", price: "Free (some halls CZK 80)", tip: "Vyšehrad has the best views of the Vltava and Charles Bridge from above — without the Castle's crowds. The garden on the south wall is perfect for a picnic." },
+            { name: "Vinohrady neighborhood — local Prague", description: "The 19th-century bourgeois residential neighborhood with the city's best artisan cafés, wine bars, and modern Czech restaurants. Náměstí Míru (Peace Square) is its center.", price: "CZK 150-300", tip: "Eska Restaurant in Karlín (15 min by metro) has Prague's most innovative Czech cooking — fermented foods, sourdough, and local farm produce. Book ahead." },
+            { name: "Letná Park — the beer garden with the best view", description: "The great park above the Vltava with Prague's most famous beer garden. Direct views over Old Town's rooftops and the river, with beers at local bar prices.", price: "Free (beer CZK 45-60)", tip: "Letná's beer garden is young Praguers' favorite sunset spot. Ordering in English is no problem — just ask for 'one dark beer please'." },
+            { name: "Classical music concert in the city", description: "Prague has the richest classical music scene in Central Europe, with daily concerts at the Municipal House, the Opera House, and historic churches. Mozart and Dvořák are in the air on every street.", price: "CZK 400-900", tip: "Concerts in the historic churches (St. Nicholas, Holy Cross) are the most atmospheric and cost CZK 400-600. The sound and the Baroque architecture combine for a unique experience." },
+          ],
+        },
+      ],
+    },
+  },
+
   miami: {
     en: {
       city: "Miami",
