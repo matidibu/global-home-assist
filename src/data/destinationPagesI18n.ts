@@ -99,6 +99,109 @@ export const destinationPagesI18n: Partial<Record<string, Record<DestLang, Desti
       ],
     },
   },
+  estambul: {
+    en: {
+      city: "Istanbul",
+      country: "Turkey",
+      heroTitle: "4 days in Istanbul: where Europe meets Asia",
+      heroSubtitle: "Hagia Sophia, the Grand Bazaar, the Bosphorus, and the most authentic neighborhoods — the world's most fascinating city in four full days.",
+      bestMonths: "April to June and September to November",
+      budget: "$60-120 USD/day",
+      travelTips: [
+        "The Turkish lira has fluctuated a lot — bring dollars or euros and exchange at downtown exchange offices (döviz bürosu), never at the airport",
+        "The İstanbulkart (transit card) covers the metro, tram, ferry, and bus — load it with TL 100 for 2-3 days",
+        "Modest clothing is mandatory at mosques — always carry a headscarf and wear something covering your shoulders and knees",
+        "Turkish tea (çay) is served free or very cheap at almost every business — it's a hospitality custom, not a scam",
+        "Istanbul has 15 million residents — traffic is fierce. Use the metro, the T1 tram, and the ferries to get around quickly",
+      ],
+      days: [
+        {
+          theme: "Sultanahmet — the historic heart of two empires",
+          activities: [
+            { name: "Hagia Sophia", description: "Istanbul's architectural jewel, built in 537 AD as the largest church in the Christian world, later converted into an Ottoman mosque, and today a mosque once again. The 55-meter dome floating above Byzantine mosaics and Arabic calligraphy is unmatched.", price: "Free (open admission as a working mosque)", tip: "Hagia Sophia reopened as an active mosque in 2020 — go in barefoot and dressed modestly (shoulders and knees covered). The early morning hours have fewer visitors." },
+            { name: "Blue Mosque (Sultanahmet Camii)", description: "The only mosque in Istanbul with six minarets, famous for the 20,000 blue Iznik ceramic tiles covering its interior. The square between the Blue Mosque and Hagia Sophia is Istanbul's most photogenic space.", price: "Free", tip: "The Blue Mosque closes to visitors during the five daily prayers (15-30 min each time). Check the schedule posted at the door before waiting." },
+            { name: "Topkapi Palace", description: "The seat of the Ottoman Empire for 400 years, home to the sultans' treasury (the 86-carat Kaşıkçı Diamond), the imperial harem, and Islam's sacred relics. Direct views of the Bosphorus and the Sea of Marmara.", price: "TL 400 (palace) + TL 200 (harem)", tip: "Topkapi's harem requires a separate ticket but is well worth it — it's the palace's most fascinating section. The Imperial Treasury in Pavilion 3 has Turkey's largest diamond." },
+            { name: "Basilica Cistern — the underground palace", description: "The 6th-century Roman cistern, with 336 marble columns reflected in still water. The columns with upside-down Medusa heads and the mystical lighting make this one of the most unique places in the world.", price: "TL 200", tip: "The cistern stays cool even in summer — a refuge from Istanbul's heat. The Column of Tears (with spiral markings) is the most sought-out." },
+          ],
+        },
+        {
+          theme: "The Grand Bazaar, the Spice Bazaar, and the Egyptian quarter",
+          activities: [
+            { name: "Grand Bazaar", description: "The world's largest, oldest covered bazaar, with 61 streets, 4,000 shops, and 250,000 daily visitors. Rugs, glass lamps, ceramics, silver jewelry, and Turkish leather in a 15th-century maze.", price: "Free (to enter)", tip: "Haggling is mandatory — start by offering 40-50% of the asking price. Shops deeper inside (not on the main street) offer better value." },
+            { name: "Spice Bazaar (Mısır Çarşısı)", description: "Istanbul's most famous spice market, in the Egyptian quarter, with Iranian turmeric, Safranbolu saffron, Anatolian rose tea, lokum (Turkish Delight), and Turkey's best pistachios.", price: "Free", tip: "Loose spices are much cheaper and fresher than sealed packages. Always negotiate, and buy from shops deeper inside the bazaar — the ones near the entrance charge double." },
+            { name: "Lunch in the Eminönü neighborhood", description: "The Eminönü ferry dock has Istanbul's most famous balık ekmek (grilled mackerel sandwiches, made on boats). The floating restaurants along the Golden Horn have been operating for decades.", price: "TL 70-100", tip: "Balık ekmek is eaten standing by the water with a cup of turşu suyu (pickle juice). It's Istanbul's most local, cheapest food experience." },
+            { name: "Golden Horn cruise", description: "The 8 km estuary separating the historic heart from the modern European neighborhoods. A short cruise down the Golden Horn shows off the historic bridges, mosques, and wooden neighborhoods lining the water.", price: "TL 30-50 (public ferry)", tip: "The public ferry (vapur) is more authentic and cheaper than tourist cruises. It departs from Eminönü and reaches Eyüpsultan — Istanbul's most conservative, least touristy neighborhood." },
+          ],
+        },
+        {
+          theme: "Bosphorus cruise and Dolmabahçe Palace",
+          activities: [
+            { name: "Dolmabahçe Palace", description: "The sultan's palace on the Bosphorus, built in 1856 in a Neo-Baroque European style. The throne room, with a 4.5-ton crystal chandelier gifted by Queen Victoria, and its 285 rooms are a symbol of the Ottoman decline.", price: "TL 400", tip: "The tour is guided-only (you can't go in alone). The harem and the throne room are the two most impressive sections — make sure your ticket includes them." },
+            { name: "Bosphorus cruise", description: "The 30 km strait separating Europe from Asia, dotted with medieval fortresses, wooden yalı mansions, mosques, and the Bosphorus Bridge. The public ferry to Anadolu Kavağı (the Asian end) is the most epic experience.", price: "TL 50 (public ferry)", tip: "The public ferry (Boğaz Hattı) from Eminönü runs the full 6-hour route for TL 50 — far cheaper than tourist cruises. The return trip is just as beautiful." },
+            { name: "Beşiktaş neighborhood and the European shore", description: "The most authentic neighborhood on the Bosphorus's European shore, with a fish market, local breweries, the Beşiktaş Eagle statue, and Beşiktaş JK's stadium.", price: "Free", tip: "Çay (Turkish tea) at the cafés along the Bosphorus in Beşiktaş is served in a tulip-shaped glass with two sugar cubes — have it that way for the full experience." },
+            { name: "Kebab dinner in Beşiktaş or Kadıköy", description: "İskender kebab (lamb over pide bread with yogurt and melted butter) and balık (grilled Bosphorus fish) are Istanbul's two most representative dinners.", price: "TL 150-300", tip: "Kadıköy (Asian side, 15 min by ferry) has Istanbul's best restaurants and bars for locals. Crossing to Asia by ferry at night is a unique experience in itself." },
+          ],
+        },
+        {
+          theme: "Beyoğlu, Istiklal, and modern Istanbul",
+          activities: [
+            { name: "Istiklal Avenue and Beyoğlu", description: "Istanbul's most famous pedestrian street, 3 km of shops, cafés, galleries, and the historic red tram. Beyoğlu was the heart of 19th-century Ottoman modernization.", price: "Free", tip: "The Istiklal tram gets photographed more than it gets ridden — you'll need to step off the tracks when it passes. The secondhand bookshops and galleries in the historic passages are the street's hidden gems." },
+            { name: "Galata Tower", description: "The 14th-century medieval Genoese tower, 70 meters tall, in the Galata neighborhood. The views of the Golden Horn, the Bosphorus, Hagia Sophia, and the Blue Mosque from the terrace are Istanbul's best.", price: "TL 300", tip: "Lines can be long — buy your ticket online. The best photo of Galata is taken from below, with the neighborhood cascading down toward the Golden Horn." },
+            { name: "Karaköy neighborhood and its tea houses", description: "The neighborhood at the foot of the Galata Tower, with Istanbul's best specialty coffee shops, contemporary design galleries, and the Karaköy Güllüoğlu bakery, home to the city's best baklava.", price: "TL 30-60", tip: "Karaköy Güllüoğlu's baklava is made with Antep pistachios and buffalo butter — completely different from Greek or Arab baklava. Order the mixed tray." },
+            { name: "Sunset at Çemberlitaş Hamam", description: "Istanbul's most historic hammam, designed by the great architect Sinan in 1584 for Sultan Suleiman's wife. The Turkish hammam ritual (foam massage and kese exfoliation) is the perfect farewell.", price: "TL 400-600 (full treatment)", tip: "Çemberlitaş Hamamı has separate entrances for men and women. The full ritual (hot bath, exfoliation, soaping, massage) lasts 45-60 minutes." },
+          ],
+        },
+      ],
+    },
+  },
+
+  florencia: {
+    en: {
+      city: "Florence",
+      country: "Italy",
+      heroTitle: "3 days in Florence: the Renaissance in its purest form",
+      heroSubtitle: "The Uffizi, Michelangelo's David, Piazzale Michelangelo, and Italy's best bistecca — Florence in three essential days.",
+      bestMonths: "April to June and September to October",
+      budget: "€90-150/day",
+      travelTips: [
+        "Book the Uffizi, Galleria dell'Accademia, and the Duomo weeks in advance — the walk-in lines are brutal in high season",
+        "Florence is perfectly walkable — the historic center is only 2 km across",
+        "Tuscan aperitivo (6-9pm) at Oltrarno's bars includes a drink + a free antipasti spread",
+        "The historic pharmacies (Farmacia di Santa Maria Novella, founded 1221) sell Italy's most exclusive perfumes and creams",
+        "State museums are free on the first Sunday of each month — but they're also packed; better to go on a weekday",
+      ],
+      days: [
+        {
+          theme: "The Duomo and the historic heart",
+          activities: [
+            { name: "Cathedral of Santa Maria del Fiore (the Duomo)", description: "Brunelleschi's dome (1436) was the largest in the world for centuries and remains Florence's symbol. Climbing the dome's 463 steps offers the best view of the city's terracotta rooftops.", price: "€18 (full pass: cathedral + dome + baptistery + bell tower)", tip: "Book dome access online — spots are very limited. The first hours of the day have the most beautiful light for the views from above." },
+            { name: "Baptistery of San Giovanni", description: "Florence's oldest religious building (11th-12th century), with Lorenzo Ghiberti's gilded bronze Gates of Paradise, which Michelangelo called just that. The 10 Old Testament scenes are masterful reliefs.", price: "Included with the Duomo pass", tip: "The original door reliefs are in the Museo dell'Opera del Duomo (included with the pass) — the ones outside are replicas. The museum is worth the visit." },
+            { name: "Lunch at the Mercato Centrale", description: "Florence's Mercato Centrale, in its 19th-century iron building, has the city's highest concentration of Tuscan products: truffles, pecorino, wild boar cured meats, and the famous lampredotto (Florentine tripe).", price: "€8-15", tip: "Lampredotto (cow's fourth stomach) in a panino with salsa verde is Florence's most authentic street food. Nervi di bue (beef nerve) for the more adventurous." },
+            { name: "Palazzo Vecchio and Piazza della Signoria", description: "Florence's civic heart since the 14th century, with the Loggia dei Lanzi (a free open-air sculpture gallery) and the Palazzo Vecchio with the Salone dei Cinquecento painted by Vasari.", price: "Palazzo €12.50 / Loggia free", tip: "The Loggia dei Lanzi has world-class sculptures (Giambologna's Rape of the Sabine Women) completely outdoors and free — see this before going into the Palazzo." },
+          ],
+        },
+        {
+          theme: "The Uffizi and Michelangelo's David",
+          activities: [
+            { name: "Galleria degli Uffizi", description: "The world's most important Renaissance art museum, with works by Botticelli (The Birth of Venus, Primavera), Leonardo, Michelangelo, Raphael, and Titian. More than 100 rooms in the Medici palace.", price: "€25 (+ €4 advance booking fee)", tip: "Book your ticket online weeks ahead in high season — walk-in lines run over 3 hours. Botticelli's The Birth of Venus is in Room 10 — it's smaller than you'd expect." },
+            { name: "Ponte Vecchio and the Oltrarno", description: "Florence's most famous bridge, built in 1345, lined with jewelry shops on both sides since the 16th century. The Vasari Corridor (the Medici's secret passage above the bridge) is visible from the riverbank.", price: "Free", tip: "The jewelry shops on Ponte Vecchio are touristy but the prices are competitive — Florentine gold is guaranteed quality. The best angle of the bridge is from the Ponte Santa Trinità." },
+            { name: "Galleria dell'Accademia — the David", description: "The museum holding Michelangelo's David (1504), the world's most famous sculpture. The 5.17-meter white marble figure, in the museum's circular hall, is an experience no photo can convey.", price: "€16 (+ €4 booking fee)", tip: "Booking online is ESSENTIAL. The David has visible chisel marks — look for the detail in the neck tendons, the veins in the hands, and the focused expression." },
+            { name: "Bistecca alla Fiorentina at Buca dell'Orafo", description: "Bistecca alla fiorentina is Tuscany's most famous dish — a thick-cut Chianina beef T-bone, at least 1 kg, cooked medium-rare (always medium-rare, never well done). It's ordered by weight.", price: "€40-60 per person", tip: "Bistecca is priced per 100g (€3-5). A full one for two people weighs 1.2-1.5 kg. Order it 'al sangue' (rare) or 'al punto' (medium-rare) — never 'ben cotta' (well done)." },
+          ],
+        },
+        {
+          theme: "Oltrarno, Piazzale, and the Boboli Gardens",
+          activities: [
+            { name: "Boboli Gardens", description: "The gardens of the Pitti Palace, the Medici residence, with fountains, statues, a Baroque grotto, and views over Florence and the Tuscan olive groves. 45,000 m² of terraced Renaissance gardens.", price: "€10 (includes the Pitti Palace)", tip: "The Grotta Grande del Buontalenti (with Michelangelo sculptures embedded in artificial stalactite walls) is Florence's strangest, most fascinating spot." },
+            { name: "The Oltrarno neighborhood and its artisans", description: "The neighborhood south of the Arno, less touristy and more authentic, with workshops of art restorers, cabinetmakers, bookbinders, and artisan jewelers still working with Renaissance techniques.", price: "Free", tip: "Stefano Bemer on Via di San Niccolò makes Florence's most famous made-to-measure shoes. Artisan perfumeries like Lorenzo Villoresi have created unique fragrances since 1990." },
+            { name: "Truffled pasta lunch in Oltrarno", description: "Oltrarno's restaurants have Florence's best pappardelle al cinghiale (wild boar) and tagliolini al tartufo (truffle), at much more reasonable prices than downtown.", price: "€14-22", tip: "Buca Mario (1886, Florence's oldest restaurant) and Buca dell'Orafo have guaranteed authenticity. In Oltrarno, restaurants without an English menu are the best." },
+            { name: "Piazzale Michelangelo at sunset", description: "The terrace above Florence with the city's most classic view: the Duomo, the Palazzo Vecchio, the Arno, and the bridges seen from the hill. The golden hour before sunset is the best time.", price: "Free", tip: "Walk up from the Piazzale to the Church of San Miniato al Monte — 10 minutes further up, with even better views and far fewer people than the Piazzale." },
+          ],
+        },
+      ],
+    },
+  },
+
   lima: {
     en: {
       city: "Lima",
