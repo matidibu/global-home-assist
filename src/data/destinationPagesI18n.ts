@@ -99,6 +99,100 @@ export const destinationPagesI18n: Partial<Record<string, Record<DestLang, Desti
       ],
     },
   },
+  cusco: {
+    en: {
+      city: "Cusco",
+      country: "Peru",
+      heroTitle: "3 days in Cusco: the navel of the Inca world",
+      heroSubtitle: "Sacsayhuamán, the Sacred Valley, Machu Picchu, and the best Andean cuisine — Cusco is the gateway to the Inca Empire and one of the most thrilling destinations in the world.",
+      bestMonths: "May to September (dry season)",
+      budget: "$50-90 USD/day",
+      travelTips: [
+        "Cusco's altitude (3,400m) requires acclimatization — arrive 2 days before Machu Picchu and take it easy the first day",
+        "Coca tea is the Andean remedy for soroche (altitude sickness) — hotels offer it for free and it's legal in Peru",
+        "Book Machu Picchu and the train months ahead in high season — spots sell out quickly",
+        "Cusco's general tourist ticket (S/130) covers Sacsayhuamán and several archaeological sites — buy it on your first day",
+        "Cusco's weather is dry and sunny in the dry season (May-September) but cold at night (5-10°C) — bring a jacket",
+      ],
+      days: [
+        {
+          theme: "Acclimatizing, the square, and the Inca temples",
+          activities: [
+            { name: "Plaza de Armas, Cusco — arrival and acclimatizing", description: "Cusco's central square, built over the Inca Huacaypata (the square of tears), surrounded by the 16th-century Cathedral and the Church of the Compañía de Jesús. The Inca stonework visible beneath the colonial buildings is fascinating.", price: "Free", tip: "Your first day in Cusco (3,400m) should be low-key — acclimatize by drinking lots of water and coca tea (available at every café and hotel). Avoid alcohol and exercise on day one." },
+            { name: "Qorikancha — the Temple of the Sun", description: "The Inca Empire's most sacred temple, dedicated to the sun god Inti, its perfectly cut stone walls overlaid by the Convent of Santo Domingo. The Inca walls are more precisely built than the colonial construction on top of them.", price: "S/15", tip: "Qorikancha's Inca stones fit together without mortar, with tolerances under 0.5mm — modern engineers still don't know exactly how it was done. The gold niche that once held the image of the Sun was visible from all over Cusco." },
+            { name: "Cuy and chicha lunch in San Blas", description: "Cusco's artisan neighborhood, with the smallest church in the Americas and cuy (roast guinea pig) as the most representative dish of Andean cuisine. Chicha de jora (purple corn beer) is the oldest drink in the Andes.", price: "S/25-60", tip: "Cuy is served whole, roasted, with Andean potatoes and salad. For the less adventurous, lomo saltado with native potatoes and grilled alpaca are delicious and approachable." },
+            { name: "Sacsayhuamán — the Inca fortress", description: "The ceremonial Inca fortress overlooking Cusco, with limestone blocks weighing up to 125 tons, fitted together in a zigzag pattern without mortar. The view of Cusco from the walls, and the surrounding Andean landscape, is stunning.", price: "S/130 (general tourist ticket)", tip: "The general tourist ticket (S/130) covers Sacsayhuamán, Qenqo, Puca Pucara, and Tambomachay — four archaeological sites around Cusco. Worth it if you visit all of them the same day." },
+          ],
+        },
+        {
+          theme: "The Sacred Valley of the Incas",
+          activities: [
+            { name: "Pisac Market", description: "The Sacred Valley's most famous market, with textile crafts from Quechua communities, ceramics, silver jewelry, and Andean products. The town of Pisac has the Valley's largest Inca ruins after Machu Picchu.", price: "Free", tip: "The crafts market caters to tourists (with haggling), but the Sunday local market (7am-1pm) is for locals — selling native potatoes, giant corn, and Andean medicinal herbs." },
+            { name: "Pisac Ruins", description: "The Inca archaeological complex above the town of Pisac, with spiraling agricultural terraces covering the whole mountain, the Intihuatana (sundial), and tombs carved into the living rock.", price: "Included with the tourist ticket", tip: "The path to the ruins can be walked (45-minute climb) or reached by taxi from the town (S/10). The walk up passes active terraces where you'll see Quechua families at work." },
+            { name: "Lunch in Urubamba — the heart of the Valley", description: "The town of Urubamba, at the center of the Sacred Valley, has the Valley's best dining. Chicha morada, Andean chicken soup, chuño phuti, and Peru's best heart anticuchos.", price: "S/20-40", tip: "Kuychi Rumi restaurant in Urubamba has the best view of the Valley and serves traditional Andean cuisine. The midday buffet (S/45) includes more than 12 different dishes." },
+            { name: "Ollantaytambo — the living Inca town", description: "The only town in Latin America where people still live in original 15th-century Inca houses. The Ollantaytambo temple-fortress and its stepped terraces facing the river make up one of the best-preserved Inca sites.", price: "S/70 (archaeological site admission)", tip: "Ollantaytambo is the train station for Machu Picchu (Aguas Calientes). If you're heading to Machu Picchu the next day, stay here for the night — the Inca town's nighttime atmosphere is magical." },
+          ],
+        },
+        {
+          theme: "Machu Picchu — the wonder of the world",
+          activities: [
+            { name: "Train to Aguas Calientes (Machu Picchu Pueblo)", description: "The train ride from Ollantaytambo (or Cusco) to Aguas Calientes crosses the Sacred Valley and enters the high Amazon jungle. The landscape shifts dramatically from arid Andes to tropical jungle.", price: "S/120-200 (round trip)", tip: "Book the Inca Rail or Peru Rail train months ahead in high season (June-August). Seats on the right side (heading Ollantaytambo → Aguas Calientes) have better river views." },
+            { name: "Machu Picchu — the citadel", description: "The 15th-century Inca citadel among the clouds, built 2,430 meters above sea level between the peaks of Huayna Picchu and Cerro Machu Picchu. One of the 7 Wonders of the Modern World.", price: "S/200 (basic admission)", tip: "Booking online months ahead is ESSENTIAL — daily spots are limited. Circuit 1 (the classic) includes the Sun Gate and most of the main highlights." },
+            { name: "Climbing Huayna Picchu or Machu Picchu Mountain", description: "Huayna Picchu (the peak behind the citadel) climbs an additional 360 meters via Inca steps carved into the rock. Machu Picchu Mountain (easier) offers the famous aerial view of the citadel.", price: "S/80 (extra)", tip: "Huayna Picchu has only 400 daily spots and sells out months ahead — book it at the same time as your entry ticket. The climb is steep, with uneven steps." },
+            { name: "Return to Cusco", description: "The train back from Aguas Calientes to Ollantaytambo or Cusco closes the loop around the Sacred Valley. The afternoon train has the best views of the high jungle lit by the evening sun.", price: "Included with the round-trip train ticket", tip: "If your budget is tight, the bus from Aguas Calientes to Ollantaytambo (S/30, 4h) is an alternative to the train. The bus follows the river road, with views of the glaciers." },
+          ],
+        },
+      ],
+    },
+  },
+
+  medellin: {
+    en: {
+      city: "Medellín",
+      country: "Colombia",
+      heroTitle: "3 days in Medellín: the city of eternal spring",
+      heroSubtitle: "El Poblado, the Metrocable, Envigado's flowers, and Latin America's most incredible transformation story — Medellín today is Colombia's most innovative city.",
+      bestMonths: "December to March and July to August",
+      budget: "$40-70 USD/day",
+      travelTips: [
+        "Medellín's metro (MET), with its cable car system, is Colombia's best public transport — buy the Cívica card to use it",
+        "Medellín stays around 25°C year-round (the city of eternal spring) — light clothing always, maybe a cardigan for the evenings",
+        "Medellín's Colombian coffee is some of the best in the world — always ask for single-origin, fresh-brewed coffee, never instant",
+        "App-based taxis (InDriver, Uber) are safer than street taxis — always use them at night",
+        "Colombia is a biodiversity powerhouse — the Botanical Garden, Parque Arví, and the El Romeral Reserve give access to stunning tropical nature",
+      ],
+      days: [
+        {
+          theme: "The historic center and Plaza Botero",
+          activities: [
+            { name: "Plaza Botero and the Museo de Antioquia", description: "The square with 23 original sculptures by Fernando Botero, the world's most famous Colombian artist — all donated by him to his hometown. The adjacent Museo de Antioquia holds the world's largest collection of Botero's work.", price: "Free (Square) / COP 20,000 (Museum)", tip: "The sculptures are meant to be touched and photographed — Botero designed them for people to interact with. 'Hombre a Caballo' (Man on Horseback) is the most iconic for photos." },
+            { name: "Parque de las Luces and downtown Medellín", description: "The park of 300 light columns in the heart of the historic center, which creates a unique visual show at night. The Biblioteca España, on the hill above the Santo Domingo neighborhood, is visible from here.", price: "Free", tip: "Downtown Medellín is far safer than it was 20 years ago — walk around normally in the tourist areas during the day. The street vendors selling tropical fruit have the best mangoes and granadillas." },
+            { name: "Bandeja paisa lunch", description: "Bandeja paisa is Antioquia's most representative dish: rice, beans, pork rind, chorizo, fried egg, avocado, sweet plantain, and hogao sauce, all on one tray. Impossible to finish alone.", price: "COP 18,000-30,000", tip: "El Rancherito restaurant downtown has the most authentic bandeja paisa. The mazamorra (corn and milk dessert) that follows is a must." },
+            { name: "El Poblado neighborhood — parks and cafés", description: "Medellín's most modern, safe neighborhood, with Parque El Poblado, Calle del Lleras (the heart of the nightlife), and the city's highest concentration of cafés, restaurants, and boutiques.", price: "Free", tip: "Colombian coffee in El Poblado costs COP 2,000-5,000 and is top quality — Medellín sits at 1,400m altitude, and the coffee farms are just 30 minutes away by car." },
+          ],
+        },
+        {
+          theme: "The Metrocable and the hillside neighborhoods",
+          activities: [
+            { name: "Metrocable Line K — Santo Domingo", description: "The aerial cable car system connecting the metro to the neighborhoods on the hillsides of the Aburrá Valley. Line K climbs to the Santo Domingo neighborhood and offers the best view of Medellín and the valley from the cabins.", price: "COP 3,200 (with the metro's Cívica card)", tip: "Buy the Cívica card at the metro to use the cable car. The best angle for valley photos is at Andalucía station (second-to-last before the top)." },
+            { name: "Parque Arví — the forest above Medellín", description: "The 1,763-hectare ecological park above Medellín's mountains, reachable via Metrocable Line L from Santo Domingo. Trails, butterflies, an indigenous crafts market, and the most beautiful view of the Aburrá Valley.", price: "COP 5,000 (Arví cable car)", tip: "The indigenous crafts market inside Parque Arví on weekends has products from Antioquia's native communities — crafts, honey, and medicinal plants." },
+            { name: "Tour of the Past in the La Candelaria neighborhood", description: "A tour through the neighborhoods that document Medellín's transformation: from the Barrio Pablo Escobar to the housing developments that replaced the favelas. Local guides give the most honest perspective.", price: "COP 30,000-60,000 (guided tour)", tip: "Only book certified local guides — those who lived through the transformation give a human context international tours can't. Free walking tours depart from Parque de Bolívar." },
+            { name: "Dinner in Laureles — the most authentic neighborhood", description: "Medellín's professional middle-class residential neighborhood, with the best concentration of local restaurants, wine bars, and the city's most genuine nightlife.", price: "COP 25,000-60,000", tip: "Avenida Laureles has Medellín's best chicken sancocho. For fine dining, El Cielo (chef Juan Manuel Barrientos) does the most cutting-edge Colombian cuisine." },
+          ],
+        },
+        {
+          theme: "Feria de las Flores and the Botanical Garden",
+          activities: [
+            { name: "Medellín Botanical Garden", description: "Colombia's most biodiverse botanical garden, with 4,500 tropical plants, the Orquideórama (Medellín's most photographed wooden structure), and a lake with the largest water lilies in the Americas.", price: "Free", tip: "The Orquideórama is a work of parametric architecture that won an RIBA award. The blooming orchids (Colombia has 4,000 species) are impressive year-round." },
+            { name: "Manila neighborhood and Medellín's graffiti", description: "Medellín has Colombia's second-most important urban art scene after Bogotá. The Manila and Laureles neighborhoods have the best murals, by artists like Guache and Crisp.", price: "Free", tip: "The Medellín Urban Street Art graffiti tour (free, tip-based) departs from Parque El Poblado. The Calle 70 area in Laureles has the most recent murals." },
+            { name: "Mercado del Río", description: "Medellín's most popular food market, with more than 60 stalls of Colombian and international cuisine, tropical fruit cocktails, and the city's most festive lunchtime atmosphere.", price: "COP 15,000-40,000", tip: "The lulo, passion fruit, tree tomato, and soursop juices at Mercado del Río cost COP 3,000-5,000 and are Medellín's best. Tequila with chamoy isn't Colombian — order aguardiente instead." },
+            { name: "Sunset from Cerro de las Tres Cruces", description: "The three crosses atop the hill above the Boston neighborhood, with the best panoramic view of the entire Aburrá Valley: Medellín from end to end, the metro down on the plain, and the surrounding mountains.", price: "Free", tip: "The climb up the hill (45 min on foot) is safe during the day when there are people around. Sundays have more people and a livelier atmosphere. From the top, you can clearly see the Santo Domingo cable car." },
+          ],
+        },
+      ],
+    },
+  },
+
   singapur: {
     en: {
       city: "Singapore",
