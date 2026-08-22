@@ -99,6 +99,118 @@ export const destinationPagesI18n: Partial<Record<string, Record<DestLang, Desti
       ],
     },
   },
+  "rio-de-janeiro": {
+    en: {
+      city: "Rio de Janeiro",
+      country: "Brazil",
+      heroTitle: "4 days in Rio de Janeiro: Christ the Redeemer, Copacabana, and samba",
+      heroSubtitle: "Christ the Redeemer, Sugarloaf Mountain, Ipanema's beaches, and football at the Maracanã — the marvelous city in four perfect days.",
+      bestMonths: "May to October (dry season)",
+      budget: "R$200-400/day (~$40-80 USD)",
+      travelTips: [
+        "Safety in Rio requires caution: don't take your phone out on the street, use taxis/Uber instead of long walks at night",
+        "The South Zone beaches (Copacabana, Ipanema, Leblon) are the safest for tourists",
+        "App-based transport (Uber, 99) is safer than street taxis — always use it for nighttime trips",
+        "The original caipirinha is made with cachaça (not vodka) and limão (Brazilian lime) — always order the classic version",
+        "Exchange dollars for reais at airport exchange offices or downtown agencies — hotels give worse rates",
+      ],
+      days: [
+        {
+          theme: "Christ the Redeemer and the South Zone",
+          activities: [
+            { name: "Christ the Redeemer — first thing in the morning", description: "One of the 7 Wonders of the Modern World, 710 meters above sea level on the Corcovado. The 38-meter figure spreads its arms over the entire city. The view of Guanabara Bay, Sugarloaf, and the beaches from above is unmatched.", price: "R$87 (cog train + admission)", tip: "Book the train on the official Corcovado train site. 8am has the best visibility and the fewest visitors. Cloudy days leave you seeing nothing." },
+            { name: "Santa Teresa neighborhood", description: "Rio's bohemian neighborhood, on the slopes of the Corcovado, with restored colonial houses, art galleries, the electric bondinho tram, and some of the city's best restaurants.", price: "Free", tip: "Largo do Guimarães is the neighborhood's heart, with bars and restaurants in colonial houses. Art galleries are open Tuesday through Sunday." },
+            { name: "Ipanema Beach", description: "Rio's most famous, chic beach, immortalized by Bossa Nova. Each section has its own crowd (postos 9 and 10 for young Cariocas, posto 8 for the LGBT community). Beach football and volleyball are the sport of choice.", price: "Free", tip: "Chairs and umbrellas on the beach belong to vendors and cost extra (R$20-30). Buy coconut water straight from the stalls on the sand." },
+            { name: "Sunset at Arpoador", description: "The rock between Ipanema and Copacabana where Cariocas gather every evening to applaud the sunset. The moment the sun touches the horizon and everyone claps is one of the most beautiful urban rituals in the world.", price: "Free", tip: "Arrive 30 minutes before sunset to get a good spot on the rock. The collective applause is spontaneous and genuine — one of the most Carioca moments you can experience." },
+          ],
+        },
+        {
+          theme: "Sugarloaf and Copacabana",
+          activities: [
+            { name: "Sugarloaf Mountain — cable car", description: "The iconic 396-meter peak over Guanabara Bay. The cable car goes up in two stages: first to Morro da Urca (215m), then to the summit of Sugarloaf. The views of Rio from above are spectacular.", price: "R$160", tip: "The best time is sunset (same R$160 price), when Christ the Redeemer lights up and the bay shimmers with a thousand reflections. Mornings have better visibility — decide based on the weather." },
+            { name: "Urca neighborhood and lunch", description: "Rio's quietest, most residential neighborhood, at the foot of Sugarloaf. The stalls along the Boulevard Olímpico serve the best bolinhos de bacalhau and caipirinha with a bay view.", price: "R$30-60", tip: "Bar Circo da Urca has the neighborhood's prettiest terrace, with a direct view of the mountain. Order a caipirinha de limão — the original Brazilian version, not strawberry." },
+            { name: "Copacabana Beach", description: "Brazil's most famous beach, 4 km of sand bordered by the wave-patterned Portuguese stone mosaic. Forte de Copacabana at the southern tip offers the beach's best lookout.", price: "Free", tip: "The street vendors selling mate gelado (cold herbal iced tea), coconut water, and biscoito globo are an unmissable part of the Carioca beach experience." },
+            { name: "Samba in Lapa", description: "Lapa is Rio's samba neighborhood, with the Arcos da Lapa as its backdrop. Bars and clubs like Carioca da Gema and Rio Scenarium have live samba from 8pm on, Thursday through Saturday.", price: "R$20-40 (minimum spend)", tip: "Rio Scenarium has three floors packed with antiques and live samba — one of the most beautiful bars in the world. Arrive before 9pm to skip the line." },
+          ],
+        },
+        {
+          theme: "Favela, the Maracanã, and Carioca cuisine",
+          activities: [
+            { name: "Tour through Vidigal or Rocinha favela", description: "Rio's favelas aren't just TV news segments — they're living communities with history, food, and art. Guided tours to Vidigal or Rocinha are organized to benefit the community.", price: "R$80-150 (guided tour)", tip: "Only take the tour with certified operators (Favela Reality, RioLIVE). Never go in alone. The view from the top of Vidigal over the sea is just as impressive as the one from Sugarloaf." },
+            { name: "Feijoada lunch downtown", description: "Feijoada is Brazil's national dish: a black bean stew with ribs, sausage, and pork belly, served with rice, farofa, sautéed collard greens, and orange slices. Saturday is the traditional day for it.", price: "R$45-80", tip: "Bar do Mineiro in Santa Teresa and Jobi in Leblon serve Rio's best feijoada. The portions are huge — two people can share one." },
+            { name: "Maracanã Stadium — tour or match", description: "Latin America's most famous stadium and a symbol of Brazil, with capacity for 78,000 people. The tour shows the locker rooms, the trophy room, and the presidential box. If there's a match on, the experience is unmatched.", price: "R$70 (tour) / R$50-300 (match)", tip: "Flamengo and Fluminense matches at the Maracanã have the best atmosphere. Buy tickets on the club's official site — resellers charge 3x." },
+            { name: "Dinner in Leblon — the most elegant neighborhood", description: "Leblon has the highest concentration of world-class restaurants in Rio. The range goes from rodízios (all-you-can-eat Brazilian-style barbecue) to chef Thomas Troisgros's top restaurants.", price: "R$80-200", tip: "A meat rodízio at Porcão or Fogo de Chão is Brazil's most representative dining experience — grilled meat that keeps coming until you flip the little card to red." },
+          ],
+        },
+        {
+          theme: "Jardim Botânico and Rio's green soul",
+          activities: [
+            { name: "Jardim Botânico", description: "Rio's botanical garden, founded by Dom João VI in 1808, with 30-meter imperial palms, giant water lilies, and the world's largest bromeliad collection. Its 6,500 species across 54 hectares form a green oasis.", price: "R$30", tip: "The imperial palm avenue at the entrance is the garden's most iconic photo. Marmoset monkeys and agoutis are common — walk slowly to spot them." },
+            { name: "Lagoa Rodrigo de Freitas and the bike path", description: "The lagoon in the heart of Rio's South Zone, ringed by a 7 km bike path with views of Christ the Redeemer, the Corcovado, and the Ipanema and Leblon neighborhoods.", price: "Free (bike rental R$15/hour)", tip: "Kiosk 7 at the Lagoa (Guimas) has the best view and the best caipirinhas on the shore. On Sundays there's a flea market with antiques." },
+            { name: "Parque Lage — the mansion in the forest", description: "The park at the foot of the Corcovado, with a neoclassical mansion surrounded by Atlantic Forest. It now houses a visual arts school, and the courtyard café with garden views is perfect for the afternoon.", price: "Free", tip: "Parque Lage is the starting point for the hiking trail up to Christ the Redeemer — a 2-hour climb through the Atlantic Forest. A guide is recommended." },
+            { name: "One last caipirinha on the Ipanema shore", description: "The perfect farewell to Rio: a caipirinha at the kiosks on the Ipanema shore as the sun sets behind Morro Dois Irmãos and Cariocas applaud the sunset once more.", price: "R$15-25", tip: "Morro Dois Irmãos in the background of Ipanema, with the sun setting behind it, is Rio's most beautiful postcard image. The shore kiosks serve cold coconut water and the best cashew-fruit caipirinha." },
+          ],
+        },
+      ],
+    },
+  },
+
+  bangkok: {
+    en: {
+      city: "Bangkok",
+      country: "Thailand",
+      heroTitle: "4 days in Bangkok: golden temples, floating markets, and street food",
+      heroSubtitle: "The Grand Palace, Wat Pho, Chatuchak, and Asia's most vibrant street food — the perfect itinerary for a first trip to Thailand.",
+      bestMonths: "November to February",
+      budget: "$40-80 USD/day",
+      travelTips: [
+        "The BTS Skytrain and MRT Metro cover the main tourist areas — avoid taxis during rush hour (8-9am and 5-7pm)",
+        "The Thai baht is very stable — carry cash for local transport and street food, which don't take cards",
+        "Always take off your shoes before entering a temple or someone's home — it's a very serious cultural norm",
+        "Rainy season (June-October) brings daily torrential downpours, mostly in the late afternoon — it doesn't affect tourism much",
+        "Taxi drivers often don't speak English — have your address written in Thai or show the Google Maps pin",
+      ],
+      days: [
+        {
+          theme: "Bangkok's great temples",
+          activities: [
+            { name: "Grand Palace and Wat Phra Kaew", description: "Thailand's most sacred complex, built in 1782 and home to the Emerald Buddha (the country's most revered). The golden structures and the Ramakien murals in the cloisters are masterpieces of Thai art.", price: "฿500", tip: "Arrive when it opens at 8:30am to avoid the crowds and the heat. Admission also includes Vimanmek Mansion. Dress code is mandatory: shoulders and knees covered — clothing is lent at the entrance." },
+            { name: "Wat Pho — the Reclining Buddha", description: "Bangkok's oldest temple (16th century) houses Thailand's largest Reclining Buddha: 46 meters long, covered in gold leaf. It's also the official home of traditional Thai massage.", price: "฿200", tip: "Traditional Thai massage at the temple's schools costs ฿420 an hour — the most authentic, affordable in Bangkok. Book on-site." },
+            { name: "Street-side pad thai lunch", description: "The street stalls around Wat Pho and Tha Tien pier are some of Bangkok's most famous. Pad thai, khao pad (fried rice), and tom yum make the perfect lunch.", price: "฿50-80", tip: "Look for stalls with lines of locals — a foolproof sign of quality. Thip Samai on Maharaj Rd has served Bangkok's most famous pad thai since 1966." },
+            { name: "Wat Arun — the Temple of Dawn", description: "The temple on the Chao Phraya River, its main prang covered in porcelain fragments that shimmer in the sun. Reachable by boat across the river from Tha Tien pier (฿5).", price: "฿100", tip: "The best time is sunset, when the golden light lights up the porcelain mosaics. Climb to the second level of the prang for views over the river." },
+          ],
+        },
+        {
+          theme: "Markets, canals, and authentic Bangkok",
+          activities: [
+            { name: "Damnoen Saduak Floating Market", description: "Thailand's most photogenic floating market, 100 km from Bangkok. Vendors in boats loaded with tropical fruit, pad thai, and yellow curry navigate 19th-century canals.", price: "Tour ฿700-1,000 (from Bangkok)", tip: "Leave before 6:30am to arrive by 8am, when it's busiest. The boat ride back through the canals is as interesting as the market itself." },
+            { name: "Chinatown (Yaowarat)", description: "Bangkok's Chinatown, active since 1782, has the densest food streets in the city. Grilled seafood, Chinese roast duck, and dim sum are the neighborhood's specialties.", price: "฿60-150", tip: "Yaowarat Rd at night (from 6pm on) becomes Bangkok's best street market. By day, the spice and medicinal herb shops are fascinating." },
+            { name: "Khlong Saen Saeb — Bangkok's canals", description: "The express boat system running through Bangkok's canals — the fastest, cheapest way to get around downtown. The khlongs (canals) show the original waterborne Bangkok that existed before the highways.", price: "฿15-20 per leg", tip: "Use the Khlong Saen Saeb boats as real transport, not a tour. Board at Pratunam and reach Chit Lom in 10 minutes, no traffic." },
+            { name: "Khao San Road and backpacker nightlife", description: "Southeast Asia's most famous street for independent travelers, with bars, live music, tattoo artists, street masseuses, and Bangkok's best selection of late-night food.", price: "฿50-100 (food and drinks)", tip: "The fried scorpions and bugs on Khao San are for adventurous tourists — crickets and silkworms are what Thais actually eat. The pad see ew from the stalls at the end of the street is the best." },
+          ],
+        },
+        {
+          theme: "Chatuchak and Bangkok shopping",
+          activities: [
+            { name: "Chatuchak Market", description: "The world's largest weekend market, with 15,000 stalls and 200,000 visitors every week. Clothes, antiques, exotic animals, art, plants, and food in a 35-hectare maze.", price: "Free (shopping not included)", tip: "A market map is available at the entrance — absolutely necessary. Sections 1-5 have antiques; 7-27 have fashion and clothing; section 26 has the best street food." },
+            { name: "Terminal 21 — the airport-themed mall", description: "A unique mall where each floor is themed after a different city's airport (Tokyo, Istanbul, San Francisco). The basement food court is one of the best and cheapest in Bangkok.", price: "Free (to enter)", tip: "Terminal 21's food court has Thai dishes from ฿50-100. It's the cheapest air-conditioned lunch in downtown Bangkok." },
+            { name: "MBK Center and electronics", description: "Bangkok's department store famous for electronics, local clothing, and Thai food. The 4th floor has the city's largest concentration of accessories and secondhand electronics.", price: "Free (to enter)", tip: "MBK's food court floor has downtown's cheapest Thai food — pad thai for ฿60, mango sticky rice for ฿80." },
+            { name: "Dinner on Sukhumvit Soi 11 and nightlife", description: "Bangkok's most cosmopolitan street, with a mix of international restaurants, rooftop bars, and the city's most international nightlife. Levels, Demo, and Hard Rock Cafe are all on this strip.", price: "฿150-500", tip: "Pat Pong Night Market (soi 4-5) has more than a hundred stalls of clothes and souvenirs with a nighttime atmosphere. Always negotiate — the asking price is double the real one." },
+          ],
+        },
+        {
+          theme: "Alternative temples and farewell",
+          activities: [
+            { name: "Wat Benchamabophit — the Marble Temple", description: "Bangkok's most photogenic temple, built in 1900 with Italian Carrara marble. The 52 bronze Buddhas in the cloister and the canal in front of the temple make it especially serene.", price: "฿50", tip: "The best photo is from the stone bridge, with the temple reflected in the canal behind it. 9am has the best light and fewer tourists." },
+            { name: "Jim Thompson House", description: "The home of the American businessman who revived Thailand's silk industry in the 1950s. Six traditional Thai teak houses joined together form one of Bangkok's most elegant spaces.", price: "฿200 (guided tour included)", tip: "Jim Thompson mysteriously disappeared in Malaysia in 1967 — guides tell the story in great detail. The tour is only offered in English/French/Japanese." },
+            { name: "Farewell spa and Thai massage", description: "Bangkok has some of the best, cheapest spas in Asia. A 2-hour massage at a quality spa (not one on Khao San Road) costs ฿800-1,500 and includes a full-body massage and reflexology.", price: "฿600-1,500", tip: "Health Land and Divana are trusted chains with several locations in Bangkok. Book 2 hours ahead during high season." },
+            { name: "Sky Bar Lebua — the world's highest bar", description: "The bar at the Lebua State Tower hotel, 220 meters up, famous for appearing in The Hangover Part II. The view of the Chao Phraya and Bangkok's skyline at sunset is unmatched.", price: "฿600-900 (cocktails)", tip: "Book a table in advance — it's one of the most sought-after bars in the world. Dress code is mandatory: no sandals, shorts, or sleeveless shirts." },
+          ],
+        },
+      ],
+    },
+  },
+
   marrakech: {
     en: {
       city: "Marrakech",
