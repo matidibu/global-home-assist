@@ -1,9 +1,14 @@
 import type { BlogPost, ContentSection } from "./blogPosts";
 
-// English overlay for blogPosts.ts, same fallback-to-Spanish philosophy as
-// destinationPagesI18n.ts / baliI18n.ts. Sections are merged by index;
-// structural fields (destination/city/country on "cta", emoji on "callout")
-// always come from the Spanish base, only prose fields are overlaid.
+// Multi-language overlay for blogPosts.ts, same fallback-to-Spanish
+// philosophy as destinationPagesI18n.ts / baliI18n.ts. Sections are merged
+// by index; structural fields (destination/city/country on "cta", emoji on
+// "callout") always come from the Spanish base, only prose fields are
+// overlaid. Languages are added incrementally (en done, fr/de/it/pt next,
+// per explicit user direction) -- a post/language pair simply falls back to
+// Spanish until it's added here.
+
+export type BlogLang = "en" | "fr" | "de" | "it" | "pt";
 
 type ContentSectionI18n =
   | { type: "intro"; text: string }
@@ -22,7 +27,7 @@ interface BlogPostI18nEntry {
   sections: ContentSectionI18n[];
 }
 
-export const blogPostsI18n: Partial<Record<string, Record<"en", BlogPostI18nEntry>>> = {
+export const blogPostsI18n: Partial<Record<string, Partial<Record<BlogLang, BlogPostI18nEntry>>>> = {
   "planificar-viaje-con-ia": {
     en: {
       title: "The algorithm that plans trips better than any travel agency (and it's free)",
@@ -1528,8 +1533,7 @@ export const blogPostsI18n: Partial<Record<string, Record<"en", BlogPostI18nEntr
 };
 
 export function localizeBlogPost(post: BlogPost, language: string): BlogPost {
-  if (language !== "en") return post;
-  const overlay = blogPostsI18n[post.slug]?.en;
+  const overlay = blogPostsI18n[post.slug]?.[language as BlogLang];
   if (!overlay) return post;
 
   return {

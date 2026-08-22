@@ -1,15 +1,17 @@
 import type { DestinationPage } from "./destinationPages";
 
-// English-only overlay for now, per explicit user direction 2026-08-21: start
-// with English, add fr/it/de/pt later on request. Each entry only needs the
-// fields that are actually rendered to visitors (see /itinerario/[slug]/page.tsx
-// and CollapsibleDays.tsx) -- metaTitle/metaDescription/keywords stay Spanish
+// Multi-language overlay. Each entry only needs the fields that are
+// actually rendered to visitors (see /itinerario/[slug]/page.tsx and
+// CollapsibleDays.tsx) -- metaTitle/metaDescription/keywords stay Spanish
 // on purpose, since the site has a single URL per destination (no locale
 // routing) and metadata is generated server-side where the visitor's language
 // isn't known. `gyg`/`gygCity` (GetYourGuide search queries) are already
 // written in English in the Spanish source and don't need translating.
+// Languages are added incrementally (en done, fr/de/it/pt next, per explicit
+// user direction) -- a destination/language pair falls back to Spanish
+// until it's added here.
 
-export type DestLang = "en";
+export type DestLang = "en" | "fr" | "de" | "it" | "pt";
 
 interface ActivityI18n {
   name: string;
@@ -34,7 +36,7 @@ interface DestinationI18nEntry {
   travelTips: string[];
 }
 
-export const destinationPagesI18n: Partial<Record<string, Record<DestLang, DestinationI18nEntry>>> = {
+export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLang, DestinationI18nEntry>>>> = {
   paris: {
     en: {
       city: "Paris",
@@ -98,6 +100,68 @@ export const destinationPagesI18n: Partial<Record<string, Record<DestLang, Desti
         },
       ],
     },
+    fr: {
+      city: "Paris",
+      country: "France",
+      heroTitle: "5 jours à Paris : l'itinéraire que vous voudrez refaire",
+      heroSubtitle: "Le Louvre, la tour Eiffel, Montmartre et les quartiers que seuls les habitants connaissent — avec les horaires réels et des conseils pour chaque étape.",
+      bestMonths: "Avril à juin et septembre à octobre",
+      budget: "100-180€/jour",
+      travelTips: [
+        "Prenez le pass Navigo semaine si vous arrivez un lundi — il couvre le métro, le RER et les bus pour 30€/semaine",
+        "Réservez le Louvre, la tour Eiffel et Versailles au moins 2 semaines à l'avance en haute saison",
+        "Les musées nationaux sont gratuits le premier dimanche de chaque mois — ils sont aussi bondés",
+        "Téléchargez l'application RATP pour les transports et une carte Google Maps hors ligne de Paris",
+        "Les supermarchés (Monoprix, Franprix) ont d'excellentes charcuteries et fromages pour un pique-nique économique",
+      ],
+      days: [
+        {
+          theme: "Le cœur historique : le Louvre et les Champs-Élysées",
+          activities: [
+            { name: "Le musée du Louvre", description: "Le musée le plus visité au monde abrite 380 000 œuvres, dont la Joconde et la Vénus de Milo. Réservez votre billet en ligne pour éviter la file, qui peut atteindre 2 heures.", price: "22€", tip: "Entrez par la pyramide de verre. Arrivez pile à 9h et filez directement vers la Joconde avant l'arrivée des groupes." },
+            { name: "Jardin des Tuileries", description: "Une promenade parisienne classique entre le Louvre et la place de la Concorde. Parfait pour déjeuner sur les terrasses du jardin avec vue sur les fontaines et les sculptures.", price: "Gratuit", tip: "Les cafés du jardin sont plus chers que ceux des quartiers alentour, mais la vue en vaut la peine." },
+            { name: "les Champs-Élysées et l'Arc de Triomphe", description: "L'avenue la plus célèbre de Paris, 1,9 km de boutiques de luxe, cafés et théâtres. L'Arc de Triomphe offre la meilleure vue panoramique gratuite sur Paris depuis sa terrasse.", price: "Terrasse 13€", tip: "Montez à l'Arc au coucher du soleil pour voir les phares des voitures former deux rivières dorées le long des Champs-Élysées." },
+            { name: "Dîner dans le Marais", description: "Le quartier le plus vivant de Paris, avec des restaurants juifs, libanais et de cuisine française moderne. La rue des Rosiers est l'épicentre culinaire du quartier.", price: "20-35€ par personne", tip: "L'As du Fallafel, rue des Rosiers, sert le meilleur falafel de Paris. Arrivez avant 19h pour éviter la file." },
+          ],
+        },
+        {
+          theme: "La tour Eiffel et le quartier de rêve",
+          activities: [
+            { name: "Tour Eiffel — premier créneau", description: "Avec ses 330 mètres de haut, c'est le monument le plus visité au monde. Le créneau du matin implique moins d'attente et offre la meilleure lumière pour les photos.", price: "29€ (2e étage) / 46€ (sommet)", tip: "Réservez votre billet au moins 2 semaines à l'avance. L'ascenseur du sommet est souvent le premier complet." },
+            { name: "Trocadéro et vues panoramiques", description: "L'esplanade du Trocadéro offre la vue frontale la plus emblématique sur la tour Eiffel. Le Palais de Chaillot, avec son architecture et ses musées de la Marine, se trouve ici aussi.", price: "Gratuit", tip: "La photo classique de la tour Eiffel se prend depuis le centre de l'esplanade. Idéal à 7h — après, elle se remplit de vendeurs." },
+            { name: "Musée d'Orsay", description: "Installé dans une ancienne gare, il abrite la collection d'art impressionniste la plus importante au monde : Monet, Renoir, Van Gogh et Cézanne.", price: "16€", tip: "L'horloge transparente du 5e étage offre une vue unique sur la Seine et le Sacré-Cœur. La file est bien plus courte qu'au Louvre." },
+            { name: "Spectacle lumineux de la tour Eiffel", description: "Chaque heure pile, du crépuscule jusqu'à 1h du matin, la tour Eiffel scintille avec 20 000 lumières pendant 5 minutes. Le meilleur spectacle gratuit de Paris.", price: "Gratuit", tip: "Regardez-le depuis le pont de Bir-Hakeim — la vue avec le pont au premier plan est spectaculaire." },
+          ],
+        },
+        {
+          theme: "Montmartre et le Paris bohème",
+          activities: [
+            { name: "Basilique du Sacré-Cœur", description: "La basilique en pierre blanche qui domine Montmartre et tout Paris depuis le sommet de la Butte. La vue sur les toits parisiens depuis les marches est gratuite et spectaculaire.", price: "Gratuit (intérieur)", tip: "Montez par la rue Lepic pour découvrir le vrai Montmartre local, plutôt que l'escalier touristique." },
+            { name: "Place du Tertre", description: "La place des artistes de Montmartre, où peintres et portraitistes travaillent en plein air depuis le XIXe siècle. Vous pouvez commander un portrait ou simplement observer.", price: "Gratuit (portraits 20-50€)", tip: "Les artistes commencent à arriver vers 10h. Ceux installés en bordure de place sont souvent plus authentiques que ceux du centre." },
+            { name: "Déjeuner aux Abbesses", description: "Le cœur local de Montmartre, loin du circuit touristique. La rue Lepic regorge de boulangeries, épiceries fines et restaurants de quartier à prix raisonnables.", price: "12-18€", tip: "Goûtez un croissant au beurre à La Maison Rose, rue Lepic — la boulangerie qui apparaît dans 'Amélie'." },
+            { name: "Canal Saint-Martin", description: "Le canal parisien où les habitants passent leurs après-midis ensoleillés. Cafés en terrasse, librairies indépendantes et l'ambiance hipster la plus authentique de Paris.", price: "Gratuit", tip: "Le dimanche, le canal est fermé à la circulation et les Parisiens l'envahissent avec leurs pique-niques — une expérience aussi locale que possible." },
+          ],
+        },
+        {
+          theme: "Saint-Germain et la rive gauche",
+          activities: [
+            { name: "le Quartier latin et la Sorbonne", description: "Le plus ancien quartier universitaire d'Europe, avec des librairies centenaires comme Shakespeare and Company, le marché de la rue Mouffetard et les cafés jadis fréquentés par Sartre et Beauvoir.", price: "Gratuit", tip: "Shakespeare and Company (en face de Notre-Dame) organise des lectures d'auteurs gratuites. Consultez leur programme avant d'y aller." },
+            { name: "Cathédrale Notre-Dame (extérieur)", description: "Toujours en reconstruction après l'incendie de 2019, la cathédrale a partiellement rouvert en 2024. L'extérieur restauré et les arcs-boutants gothiques sont de nouveau impressionnants.", price: "Gratuit", tip: "L'intérieur complet rouvre progressivement. Consultez le site officiel avant votre voyage pour savoir quelles zones sont accessibles." },
+            { name: "Jardin du Luxembourg", description: "Le parc préféré des Parisiens, avec ses bassins, ses statues et le palais du Luxembourg. Parfait pour se reposer entre deux visites et observer la vie locale.", price: "Gratuit", tip: "Louez un petit voilier jouet pour le faire naviguer sur le grand bassin central — une tradition parisienne depuis 1900." },
+            { name: "Centre Pompidou", description: "Le musée d'art moderne et contemporain le plus visité d'Europe, dans un bâtiment de tuyaux colorés qui est lui-même une œuvre d'art.", price: "15€", tip: "La terrasse du toit (niveau 6) offre une vue à 360° saisissante sur Paris — et elle est incluse dans le billet d'entrée." },
+          ],
+        },
+        {
+          theme: "Versailles : la journée qui vaut le déplacement",
+          activities: [
+            { name: "Château de Versailles", description: "Le plus grand palais du monde, avec 700 pièces, construit par Louis XIV. La galerie des Glaces est le point culminant de la visite.", price: "21€ (château) / 27€ (château + jardins les jours de grandes eaux)", tip: "Réservez votre billet en ligne et prenez le premier train depuis Paris-Montparnasse à 8h30. La file sans réservation dépasse 2 heures." },
+            { name: "Jardins de Versailles", description: "Les jardins géométriques les plus célèbres au monde, dessinés par André Le Nôtre, sur 800 hectares de fontaines, parterres et bosquets.", price: "Inclus avec le château", tip: "Les samedis et dimanches d'avril à octobre, le spectacle des Grandes Eaux Musicales a lieu — un spectacle unique. Le prix varie." },
+            { name: "Le Trianon — les domaines privés de la cour", description: "Le Petit Trianon était la retraite personnelle de Marie-Antoinette. Le Hameau de la Reine est le hameau rustique qu'elle fit construire pour échapper au protocole de la cour.", price: "Inclus avec le billet Château + Domaine", tip: "Louez un vélo ou une voiturette électrique dans les jardins — il y a 2 km entre le château et le Trianon." },
+            { name: "Dernière soirée à Paris", description: "De retour à Paris, dînez dans un bistrot de quartier et, si le temps le permet, faites une promenade nocturne le long des quais de la Seine, classés au patrimoine mondial de l'UNESCO.", price: "25-45€", tip: "Demandez à votre hôtel de vous recommander un bistrot à 3 rues de là — toujours meilleur que ceux du circuit touristique." },
+          ],
+        },
+      ],
+    },
   },
   viena: {
     en: {
@@ -140,6 +204,50 @@ export const destinationPagesI18n: Partial<Record<string, Record<DestLang, Desti
             { name: "Lunch at the Prater", description: "The former imperial hunting ground turned into Vienna's largest park, with the famous Riesenrad (the 1897 giant Ferris wheel) and traditional Würstelstand (Viennese sausage stands).", price: "€3-8 (würstel)", tip: "Käsekrainer (a sausage with melted cheese inside), with mustard and rye bread from the Würstelstand, is Vienna's most authentic snack. Viennese eat it standing up, any time of day." },
             { name: "Riesenrad — the historic 1897 Ferris wheel", description: "The Wiener Prater's 65-meter giant Ferris wheel, built in 1897 and a symbol of Vienna. The cabin rotates for 20 minutes, with panoramic views over the Prater and the city.", price: "€13", tip: "The Riesenrad offers one of the best views of Vienna from its highest point (65m). Cabins can be booked for private dinners (€300) — Vienna's most romantic date." },
             { name: "Classical music concert in Vienna", description: "Vienna is the world capital of classical music. The State Opera, the Musikverein (the world's most revered concert hall), and the Konzerthaus hold daily concerts of Mozart, Strauss, Brahms, and Beethoven.", price: "€15-200 (depending on venue and category)", tip: "Standing-room tickets (Stehplätze) at the State Opera cost €4 and go on sale 80 minutes before the show — Vienna's best cultural value. Arrive at 5:30pm." },
+          ],
+        },
+      ],
+    },
+    fr: {
+      city: "Vienne",
+      country: "Autriche",
+      heroTitle: "3 jours à Vienne : palais impériaux, café viennois et Mozart",
+      heroSubtitle: "Le palais de Schönbrunn, le Kunsthistorisches Museum et le Prater — la capitale des Habsbourg en trois jours de culture impériale et de café au strudel.",
+      bestMonths: "Avril à juin et septembre à octobre",
+      budget: "100-170€/jour",
+      travelTips: [
+        "La Vienna City Card (17€/24h, 25€/48h, 29€/72h) inclut les transports publics illimités (métro, tram, bus)",
+        "Les cafés viennois sont classés au patrimoine culturel immatériel de l'UNESCO — on peut y rester des heures autour d'un seul café sans que personne ne vous presse",
+        "Les places debout (Stehplätze) à l'Opéra national (4€) sont le meilleur investissement culturel de Vienne — mêmes artistes, 50 fois moins cher",
+        "L'eau du robinet à Vienne vient directement des Alpes — c'est l'une des eaux les plus pures au monde, inutile d'acheter des bouteilles",
+        "Les musées viennois coûtent 18-25€, mais la Vienna City Card offre des réductions dans beaucoup d'entre eux — vérifiez toujours s'il existe un tarif réduit",
+      ],
+      days: [
+        {
+          theme: "L'Innere Stadt — le cœur des Habsbourg",
+          activities: [
+            { name: "Cathédrale Saint-Étienne (Stephansdom)", description: "Symbole de Vienne, construite au XIIe siècle en style gothique tardif. Son toit de 266 000 tuiles en céramique multicolore est unique en Europe. Depuis la tour nord (ascenseur), la vue sur l'Innere Stadt est saisissante.", price: "Gratuit (tour nord 6€)", tip: "La crypte impériale sous la cathédrale (6€) conserve les viscères des Habsbourg dans 54 urnes — les intestins à Stephansdom, les cœurs à l'Augustinerkirche, les corps à la Kaisergruft." },
+            { name: "Hofburg — le palais impérial", description: "Le palais des Habsbourg au centre de Vienne, avec 2 600 pièces, la crypte impériale, les appartements impériaux et le Trésor impérial, où sont conservées la couronne des Habsbourg et le Saint Graal.", price: "17€ (Appartements + musée Sissi)", tip: "Le musée Sissi, consacré à l'impératrice Sissi, est la section la plus visitée de la Hofburg. Le Trésor impérial (16€ séparément) abrite la lance du Destin et les joyaux du couronnement du Saint-Empire romain germanique." },
+            { name: "Café Central — le plus célèbre de Vienne", description: "Ouvert en 1876, le Café Central fut le lieu de rencontre de Freud, Trotsky, Hitler (à différentes époques) et de toute l'intelligentsia viennoise. Les voûtes en marbre et la statue de cire de l'écrivain Peter Altenberg à l'entrée sont historiques.", price: "8-15€ (café et strudel)", tip: "Un Mélange (café avec lait mousseux) et un Apfelstrudel chaud à la crème sont la commande la plus viennoise. Arrivez à l'ouverture (9h) pour avoir une table — c'est toujours plein." },
+            { name: "Ringstrasse et les grands musées", description: "Le grand boulevard circulaire du XIXe siècle voulu par l'empereur François-Joseph Ier, bordé des bâtiments les plus importants de Vienne : l'Opéra national, le Kunsthistorisches Museum, le Parlement, l'Hôtel de Ville et le Burgtheater.", price: "Gratuit (à pied)", tip: "Un tour en tramway sur toute la Ringstrasse (lignes 1 et 2) coûte le prix d'un ticket normal (2,40€) et fait office de visite guidée de 40 minutes des plus beaux bâtiments de Vienne." },
+          ],
+        },
+        {
+          theme: "Schönbrunn et le Belvédère",
+          activities: [
+            { name: "Château de Schönbrunn", description: "Le palais d'été des Habsbourg, l'attraction la plus visitée d'Autriche, avec 1 441 pièces. Le Grand Tour (40 pièces) inclut la salle des Glaces, où le jeune Mozart joua pour Marie-Thérèse. Le jardin, avec la Gloriette au sommet, est saisissant.", price: "25€ (Grand Tour + jardins)", tip: "Arrivez à l'ouverture (8h30) pour éviter les files. La Gloriette au sommet du jardin abrite le meilleur café avec vue sur Schönbrunn et Vienne — 15 minutes de marche pour y monter." },
+            { name: "Déjeuner de Wiener Schnitzel", description: "Le Wiener Schnitzel est le plat national d'Autriche — de l'escalope de veau panée et frite au beurre, servie avec salade de pommes de terre et tranches de citron. Les restaurants autour du Naschmarkt sont les meilleurs.", price: "14-22€", tip: "La véritable Schnitzel se fait avec du veau (Wiener Art) — la version au porc est moins chère mais différente. Figlmüller, sur Wollzeile et Bäckerstrasse, sert la version la plus célèbre de Vienne depuis 1905." },
+            { name: "Naschmarkt — le marché le plus viennois", description: "Le plus grand marché à ciel ouvert de Vienne, avec 120 étals de fromages autrichiens, fruits de mer, épices persanes, conserves juives et le meilleur Tafelspitz (bœuf bouilli viennois) de la ville.", price: "Gratuit", tip: "Le marché aux puces du Naschmarkt le samedi (jusqu'à 18h) propose antiquités, vêtements vintage et tableaux — l'ambiance la plus bohème de Vienne." },
+            { name: "Belvédère — Le Baiser de Klimt", description: "Le palais baroque du prince Eugène de Savoie abrite la plus grande collection au monde des œuvres de Gustav Klimt, dont Le Baiser (1907-08), le tableau le plus précieux d'Autriche.", price: "18€", tip: "Le Baiser est accroché dans la première salle du premier étage — saisissant pour la véritable feuille d'or incrustée dans la toile. Sachez exactement ce que vous voulez voir avant d'arriver, pour ne pas vous perdre parmi les 200 pièces." },
+          ],
+        },
+        {
+          theme: "Musées, concert et le Prater",
+          activities: [
+            { name: "Kunsthistorisches Museum", description: "Le musée d'histoire de l'art le plus important d'Autriche, avec l'une des plus riches collections de peinture flamande au monde : Vermeer, Rembrandt, Bruegel, Titien et Vélasquez, dans un palais impérial de la Ringstrasse.", price: "21€", tip: "La grande salle du musée, avec sa coupole en marbre et les tableaux de Canova et Klimt dans les pavillons latéraux, est l'un des plus beaux intérieurs d'Europe. La salle Bruegel (30 œuvres de l'Ancien) est unique au monde." },
+            { name: "Déjeuner au Prater", description: "L'ancien terrain de chasse impérial devenu le plus grand parc de Vienne, avec la célèbre Riesenrad (grande roue de 1897) et les Würstelstand traditionnels (stands de saucisses viennoises).", price: "3-8€ (würstel)", tip: "Le Käsekrainer (saucisse fourrée au fromage fondu), avec moutarde et pain de seigle, est le snack le plus authentique de Vienne. Les Viennois le mangent debout, à toute heure de la journée." },
+            { name: "Riesenrad — la grande roue historique de 1897", description: "La grande roue de 65 mètres du Prater viennois, construite en 1897, symbole de Vienne. La cabine tourne pendant 20 minutes, avec vues panoramiques sur le Prater et la ville.", price: "13€", tip: "La Riesenrad offre l'une des meilleures vues de Vienne depuis son point le plus haut (65m). Les cabines peuvent être réservées pour des dîners privés (300€) — le rendez-vous le plus romantique de Vienne." },
+            { name: "Concert de musique classique à Vienne", description: "Vienne est la capitale mondiale de la musique classique. L'Opéra national, le Musikverein (la salle de concert la plus révérée au monde) et le Konzerthaus proposent des concerts quotidiens de Mozart, Strauss, Brahms et Beethoven.", price: "15-200€ (selon la salle et la catégorie)", tip: "Les places debout (Stehplätze) à l'Opéra national coûtent 4€ et sont mises en vente 80 minutes avant le spectacle — le meilleur rapport qualité-prix culturel de Vienne. Arrivez à 17h30." },
           ],
         },
       ],

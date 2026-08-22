@@ -1,11 +1,14 @@
-// English overlay for the Bali page's itinerary content, same
+// Multi-language overlay for the Bali page's itinerary content, same
 // fallback-to-Spanish philosophy as destinationPagesI18n.ts. Bali lives in
 // its own bespoke page (src/app/itinerario/bali/page.tsx), not in
 // destinationPages.ts, so it needs its own small i18n data file matching its
 // specific shape (extra fields like mustSee/duration/bestTime/transport
-// that destinationPages.ts activities don't have).
+// that destinationPages.ts activities don't have). Languages are added
+// incrementally (en done, fr/de/it/pt next, per explicit user direction).
 
 import type { BaliDay } from "./baliItinerary";
+
+export type BaliLang = "en" | "fr" | "de" | "it" | "pt";
 
 interface ActivityI18n {
   name: string;
@@ -64,13 +67,18 @@ export const baliDaysEn: DayI18n[] = [
   },
 ];
 
-// Deep-merges the English overlay onto the Spanish base by day/activity
-// index, falling back to Spanish for anything not translated (mirrors
-// localizeDestinationPage in destinationPagesI18n.ts).
+export const baliDaysByLang: Partial<Record<BaliLang, DayI18n[]>> = {
+  en: baliDaysEn,
+};
+
+// Deep-merges the overlay for `language` onto the Spanish base by
+// day/activity index, falling back to Spanish for anything not translated
+// (mirrors localizeDestinationPage in destinationPagesI18n.ts).
 export function localizeBaliDays(days: BaliDay[], language: string): BaliDay[] {
-  if (language !== "en") return days;
+  const overlay = baliDaysByLang[language as BaliLang];
+  if (!overlay) return days;
   return days.map((day, di) => {
-    const dayI18n = baliDaysEn[di];
+    const dayI18n = overlay[di];
     if (!dayI18n) return day;
     return {
       ...day,
