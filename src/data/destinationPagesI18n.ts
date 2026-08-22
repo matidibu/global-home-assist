@@ -99,6 +99,53 @@ export const destinationPagesI18n: Partial<Record<string, Record<DestLang, Desti
       ],
     },
   },
+  viena: {
+    en: {
+      city: "Vienna",
+      country: "Austria",
+      heroTitle: "3 days in Vienna: imperial palaces, Viennese coffee, and Mozart",
+      heroSubtitle: "Schönbrunn Palace, the Kunsthistorisches Museum, and the Prater — the Habsburg capital in three days of imperial culture and coffee with strudel.",
+      bestMonths: "April to June and September to October",
+      budget: "€100-170/day",
+      travelTips: [
+        "The Vienna City Card (€17/24h, €25/48h, €29/72h) includes unlimited public transport (metro, tram, bus)",
+        "Viennese cafés are UNESCO Intangible Cultural Heritage — you can sit for hours over a single coffee without anyone rushing you",
+        "Standing-room tickets (Stehplätze) at the State Opera (€4) are Vienna's best cultural investment — same performers, 50 times cheaper",
+        "Vienna's tap water comes straight from the Alps — it's some of the purest water in the world, no need to buy bottled water",
+        "Vienna's museums cost €18-25, but the Vienna City Card offers discounts at many of them — always check if a reduced rate is available",
+      ],
+      days: [
+        {
+          theme: "The Innere Stadt — the Habsburg heart",
+          activities: [
+            { name: "St. Stephen's Cathedral (Stephansdom)", description: "Vienna's symbol, built in the 12th century in late Gothic style. Its roof of 266,000 multicolored ceramic tiles is one of a kind in Europe. From the north tower (elevator), the view of the Innere Stadt is striking.", price: "Free (north tower €6)", tip: "The imperial crypt beneath the cathedral (€6) holds the Habsburgs' viscera in 54 urns — the intestines at Stephansdom, the hearts at the Augustinerkirche, the bodies at the Kaisergruft." },
+            { name: "Hofburg — the Imperial Palace", description: "The Habsburgs' palace in central Vienna, with 2,600 rooms, the Imperial Crypt, the Imperial Apartments, and the Imperial Treasury, home to the Habsburg Crown and the Holy Grail.", price: "€17 (Apartments + Sisi Museum)", tip: "The Sisi Museum, on Empress Sisi, is the Hofburg's most-visited section. The Imperial Treasury (€16 separately) has the Spear of Destiny and the Holy Roman Empire's coronation jewels." },
+            { name: "Café Central — Vienna's most famous", description: "Opened in 1876, Café Central was the meeting place of Freud, Trotsky, Hitler (at different times), and the whole Viennese intelligentsia. The marble vaults and the wax figure of writer Peter Altenberg at the entrance are historic.", price: "€8-15 (coffee and strudel)", tip: "A Melange (coffee with frothed milk) and warm Apfelstrudel with cream is the most Viennese order. Arrive at opening (9am) to get a table — it's always full." },
+            { name: "Ringstrasse and the great museums", description: "The 19th-century ring boulevard that Emperor Franz Joseph I had built, lined with Vienna's most important buildings: the State Opera, the Kunsthistorisches Museum, Parliament, City Hall, and the Burgtheater.", price: "Free (walking around)", tip: "A tram ride around the full Ringstrasse (lines 1 and 2) costs just the regular fare (€2.40) and doubles as a 40-minute tour past Vienna's best buildings." },
+          ],
+        },
+        {
+          theme: "Schönbrunn and the Belvedere",
+          activities: [
+            { name: "Schönbrunn Palace", description: "The Habsburgs' summer palace, Austria's most-visited attraction, with 1,441 rooms. The Grand Tour (40 rooms) includes the Hall of Mirrors, where the young Mozart performed for Maria Theresa. The garden, with the Gloriette at the top, is striking.", price: "€25 (Grand Tour + gardens)", tip: "Arrive at opening (8:30am) to avoid the lines. The Gloriette at the top of the garden has the best café with a view of Schönbrunn and Vienna — walk up in 15 minutes." },
+            { name: "Wiener Schnitzel lunch", description: "Wiener Schnitzel is Austria's national dish — breaded veal fried in butter, served with potato salad and lemon slices. The restaurants around the Naschmarkt are the best.", price: "€14-22", tip: "The original Schnitzel is made with veal (Wiener Art) — the pork version is cheaper but different. Figlmüller on Wollzeile and Bäckerstrasse has served Vienna's most famous version since 1905." },
+            { name: "Naschmarkt — Vienna's most Viennese market", description: "Vienna's largest open-air market, with 120 stalls of Austrian cheeses, seafood, Persian spices, Jewish pickles, and the city's best Tafelspitz (Viennese boiled beef).", price: "Free", tip: "The Naschmarkt flea market on Saturdays (until 6pm) has antiques, vintage clothes, and paintings — Vienna's most bohemian atmosphere." },
+            { name: "Belvedere — Klimt's The Kiss", description: "Prince Eugene of Savoy's Baroque palace holds the world's largest collection of Gustav Klimt's work, including The Kiss (1907-08), Austria's most valuable painting.", price: "€18", tip: "The Kiss hangs in the first room on the first floor — striking for the real gold leaf embedded in the canvas. Arrive knowing exactly what you want to see, so you don't get lost among the 200 rooms." },
+          ],
+        },
+        {
+          theme: "Museums, a concert, and the Prater",
+          activities: [
+            { name: "Kunsthistorisches Museum", description: "Austria's most important art history museum, with one of the richest collections of Flemish painting in the world: Vermeer, Rembrandt, Bruegel, Titian, and Velázquez, in an imperial palazzo on the Ringstrasse.", price: "€21", tip: "The museum's Great Hall, with its marble dome and Canova and Klimt paintings in the side pavilions, is one of the most beautiful interiors in Europe. The Bruegel room (30 works by the Elder) is one of a kind in the world." },
+            { name: "Lunch at the Prater", description: "The former imperial hunting ground turned into Vienna's largest park, with the famous Riesenrad (the 1897 giant Ferris wheel) and traditional Würstelstand (Viennese sausage stands).", price: "€3-8 (würstel)", tip: "Käsekrainer (a sausage with melted cheese inside), with mustard and rye bread from the Würstelstand, is Vienna's most authentic snack. Viennese eat it standing up, any time of day." },
+            { name: "Riesenrad — the historic 1897 Ferris wheel", description: "The Wiener Prater's 65-meter giant Ferris wheel, built in 1897 and a symbol of Vienna. The cabin rotates for 20 minutes, with panoramic views over the Prater and the city.", price: "€13", tip: "The Riesenrad offers one of the best views of Vienna from its highest point (65m). Cabins can be booked for private dinners (€300) — Vienna's most romantic date." },
+            { name: "Classical music concert in Vienna", description: "Vienna is the world capital of classical music. The State Opera, the Musikverein (the world's most revered concert hall), and the Konzerthaus hold daily concerts of Mozart, Strauss, Brahms, and Beethoven.", price: "€15-200 (depending on venue and category)", tip: "Standing-room tickets (Stehplätze) at the State Opera cost €4 and go on sale 80 minutes before the show — Vienna's best cultural value. Arrive at 5:30pm." },
+          ],
+        },
+      ],
+    },
+  },
+
   cusco: {
     en: {
       city: "Cusco",
