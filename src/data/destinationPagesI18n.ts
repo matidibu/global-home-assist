@@ -2524,6 +2524,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Rio de Janeiro",
+      country: "Brasile",
+      heroTitle: "4 giorni a Rio de Janeiro: il Cristo Redentore, Copacabana e il samba",
+      heroSubtitle: "Il Cristo Redentore, il Pan di Zucchero, le spiagge di Ipanema e il calcio al Maracanã — la città meravigliosa in quattro giorni perfetti.",
+      bestMonths: "Da maggio a ottobre (stagione secca)",
+      budget: "R$200-400/giorno (~40-80 USD)",
+      travelTips: [
+        "La sicurezza a Rio richiede prudenza: non tirate fuori il telefono per strada, usate taxi/Uber invece di lunghe camminate notturne",
+        "Le spiagge della Zona Sud (Copacabana, Ipanema, Leblon) sono le più sicure per i turisti",
+        "Il trasporto tramite app (Uber, 99) è più sicuro dei taxi di strada — usatelo sempre per gli spostamenti notturni",
+        "La caipirinha originale si prepara con cachaça (non vodka) e limão (lime brasiliano) — ordinate sempre la versione classica",
+        "Cambiate dollari in reais negli uffici di cambio dell'aeroporto o nelle agenzie del centro — gli hotel offrono tassi peggiori",
+      ],
+      days: [
+        {
+          theme: "Il Cristo Redentore e la Zona Sud",
+          activities: [
+            { name: "Cristo Redentore — di prima mattina", description: "Una delle 7 Meraviglie del Mondo Moderno, a 710 metri sul livello del mare sul Corcovado. La figura di 38 metri apre le braccia su tutta la città. La vista sulla Baia di Guanabara, il Pan di Zucchero e le spiagge dall'alto è impareggiabile.", price: "R$87 (trenino a cremagliera + ingresso)", tip: "Prenotate il treno sul sito ufficiale del Corcovado. Le 8 del mattino hanno la miglior visibilità e meno visitatori. Nei giorni nuvolosi non si vede nulla." },
+            { name: "Quartiere di Santa Teresa", description: "Il quartiere bohémien di Rio, sui pendii del Corcovado, con case coloniali restaurate, gallerie d'arte, il tram elettrico bondinho e alcuni dei migliori ristoranti della città.", price: "Gratis", tip: "Largo do Guimarães è il cuore del quartiere, con bar e ristoranti in case coloniali. Le gallerie d'arte sono aperte da martedì a domenica." },
+            { name: "Spiaggia di Ipanema", description: "La spiaggia più famosa e chic di Rio, immortalata dalla Bossa Nova. Ogni tratto ha il suo pubblico (postos 9 e 10 per i giovani Cariocas, posto 8 per la comunità LGBT). Il calcio da spiaggia e la pallavolo sono gli sport preferiti.", price: "Gratis", tip: "Sedie e ombrelloni in spiaggia appartengono ai venditori e costano extra (R$20-30). Comprate acqua di cocco direttamente dai chioschi sulla sabbia." },
+            { name: "Tramonto ad Arpoador", description: "La roccia tra Ipanema e Copacabana dove i Cariocas si riuniscono ogni sera per applaudire il tramonto. Il momento in cui il sole tocca l'orizzonte e tutti applaudono è uno dei rituali urbani più belli al mondo.", price: "Gratis", tip: "Arrivate 30 minuti prima del tramonto per trovare un buon posto sulla roccia. L'applauso collettivo è spontaneo e genuino — uno dei momenti più carioca che si possano vivere." },
+          ],
+        },
+        {
+          theme: "Il Pan di Zucchero e Copacabana",
+          activities: [
+            { name: "Pan di Zucchero — funivia", description: "L'iconica vetta di 396 metri sulla Baia di Guanabara. La funivia sale in due tappe: prima al Morro da Urca (215m), poi alla cima del Pan di Zucchero. Le viste su Rio dall'alto sono spettacolari.", price: "R$160", tip: "Il momento migliore è il tramonto (stesso prezzo R$160), quando il Cristo Redentore si illumina e la baia scintilla di mille riflessi. Le mattine hanno una visibilità migliore — decidete in base al meteo." },
+            { name: "Quartiere di Urca e pranzo", description: "Il quartiere più tranquillo e residenziale di Rio, ai piedi del Pan di Zucchero. I chioschi lungo il Boulevard Olímpico servono i migliori bolinhos de bacalhau e caipirinha con vista sulla baia.", price: "R$30-60", tip: "Il Bar Circo da Urca ha la terrazza più bella del quartiere, con vista diretta sulla montagna. Ordinate una caipirinha de limão — la versione brasiliana originale, non alla fragola." },
+            { name: "Spiaggia di Copacabana", description: "La spiaggia più famosa del Brasile, 4 km di sabbia bordati dal mosaico portoghese in pietra a onde. Il Forte de Copacabana all'estremità sud offre il miglior punto panoramico della spiaggia.", price: "Gratis", tip: "I venditori ambulanti di mate gelado (tè freddo alle erbe), acqua di cocco e biscoito globo sono una parte irrinunciabile dell'esperienza da spiaggia carioca." },
+            { name: "Samba a Lapa", description: "Lapa è il quartiere del samba di Rio, con gli Arcos da Lapa come sfondo. Bar e club come Carioca da Gema e Rio Scenarium offrono samba dal vivo dalle 20, da giovedì a sabato.", price: "R$20-40 (consumo minimo)", tip: "Rio Scenarium ha tre piani pieni di antiquariato e samba dal vivo — uno dei bar più belli al mondo. Arrivate prima delle 21 per evitare la fila." },
+          ],
+        },
+        {
+          theme: "Favela, il Maracanã e la cucina carioca",
+          activities: [
+            { name: "Tour nella favela di Vidigal o Rocinha", description: "Le favelas di Rio non sono solo servizi del telegiornale — sono comunità vive con storia, cibo e arte. I tour guidati a Vidigal o Rocinha sono organizzati a beneficio della comunità.", price: "R$80-150 (tour guidato)", tip: "Fate il tour solo con operatori certificati (Favela Reality, RioLIVE). Non andateci mai da soli. La vista dalla cima di Vidigal sul mare è impressionante quanto quella dal Pan di Zucchero." },
+            { name: "Pranzo di feijoada in centro", description: "La feijoada è il piatto nazionale del Brasile: uno stufato di fagioli neri con costine, salsiccia e pancetta di maiale, servito con riso, farofa, cavolo saltato e fette d'arancia. Il sabato è il giorno tradizionale per gustarla.", price: "R$45-80", tip: "Bar do Mineiro a Santa Teresa e Jobi a Leblon servono la migliore feijoada di Rio. Le porzioni sono enormi — due persone possono condividerne una." },
+            { name: "Stadio Maracanã — tour o partita", description: "Lo stadio più famoso dell'America Latina e simbolo del Brasile, con capacità per 78.000 persone. Il tour mostra gli spogliatoi, la sala dei trofei e il palco presidenziale. Se c'è una partita, l'esperienza è impareggiabile.", price: "R$70 (tour) / R$50-300 (partita)", tip: "Le partite di Flamengo e Fluminense al Maracanã hanno l'atmosfera migliore. Comprate i biglietti sul sito ufficiale del club — i rivenditori fanno pagare 3 volte tanto." },
+            { name: "Cena a Leblon — il quartiere più elegante", description: "Leblon ha la più alta concentrazione di ristoranti di livello mondiale a Rio. La gamma va dai rodízio (buffet di grigliate brasiliane a volontà) ai migliori ristoranti dello chef Thomas Troisgros.", price: "R$80-200", tip: "Un rodízio di carne al Porcão o al Fogo de Chão è l'esperienza culinaria più rappresentativa del Brasile — carne alla griglia che continua ad arrivare finché non girate la cartolina sul rosso." },
+          ],
+        },
+        {
+          theme: "Jardim Botânico e l'anima verde di Rio",
+          activities: [
+            { name: "Jardim Botânico", description: "Il giardino botanico di Rio, fondato da Dom João VI nel 1808, con palme imperiali di 30 metri, ninfee giganti e la più grande collezione di bromelie al mondo. Le sue 6.500 specie su 54 ettari formano un'oasi verde.", price: "R$30", tip: "Il viale delle palme imperiali all'ingresso è la foto più iconica del giardino. Scimmie uistitì e agouti sono comuni — camminate piano per avvistarli." },
+            { name: "Lagoa Rodrigo de Freitas e la pista ciclabile", description: "La laguna nel cuore della Zona Sud di Rio, circondata da una pista ciclabile di 7 km con viste sul Cristo Redentore, il Corcovado e i quartieri di Ipanema e Leblon.", price: "Gratis (noleggio bici R$15/ora)", tip: "Il chiosco 7 della Lagoa (Guimas) ha la miglior vista e le migliori caipirinhas sulla riva. La domenica c'è un mercatino delle pulci con antiquariato." },
+            { name: "Parque Lage — la dimora nella foresta", description: "Il parco ai piedi del Corcovado, con una dimora neoclassica circondata dalla foresta atlantica. Oggi ospita una scuola di arti visive, e il caffè nel cortile con vista sul giardino è perfetto per il pomeriggio.", price: "Gratis", tip: "Il Parque Lage è il punto di partenza del sentiero escursionistico fino al Cristo Redentore — una salita di 2 ore attraverso la foresta atlantica. Si consiglia una guida." },
+            { name: "Un'ultima caipirinha sulla riva di Ipanema", description: "Il commiato perfetto da Rio: una caipirinha ai chioschi sulla riva di Ipanema mentre il sole tramonta dietro il Morro Dois Irmãos e i Cariocas applaudono ancora una volta il tramonto.", price: "R$15-25", tip: "Il Morro Dois Irmãos sullo sfondo di Ipanema, con il sole che tramonta dietro di esso, è la cartolina più bella di Rio. I chioschi sulla riva servono acqua di cocco fredda e la migliore caipirinha di anacardi." },
+          ],
+        },
+      ],
+    },
   },
 
   bangkok: {
