@@ -2060,6 +2060,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    de: {
+      city: "Bangkok",
+      country: "Thailand",
+      heroTitle: "4 Tage in Bangkok: goldene Tempel, schwimmende Märkte und Street Food",
+      heroSubtitle: "Der Große Palast, Wat Pho, Chatuchak und das lebendigste Street Food Asiens — die perfekte Reiseroute für eine erste Reise nach Thailand.",
+      bestMonths: "November bis Februar",
+      budget: "40-80 USD/Tag",
+      travelTips: [
+        "Der BTS Skytrain und die U-Bahn MRT decken die wichtigsten touristischen Gebiete ab — vermeiden Sie Taxis zur Stoßzeit (8-9 Uhr und 17-19 Uhr)",
+        "Der thailändische Baht ist sehr stabil — haben Sie Bargeld für den lokalen Nahverkehr und Street Food dabei, wo keine Karten akzeptiert werden",
+        "Ziehen Sie immer Ihre Schuhe aus, bevor Sie einen Tempel oder ein Zuhause betreten — das ist eine sehr ernste kulturelle Norm",
+        "Die Regenzeit (Juni-Oktober) bringt tägliche Wolkenbrüche, besonders am späten Nachmittag — das beeinträchtigt den Tourismus kaum",
+        "Taxifahrer sprechen oft kein Englisch — haben Sie Ihre Adresse auf Thai geschrieben oder zeigen Sie den Google-Maps-Pin",
+      ],
+      days: [
+        {
+          theme: "Die großen Tempel Bangkoks",
+          activities: [
+            { name: "Großer Palast und Wat Phra Kaew", description: "Der heiligste Komplex Thailands, 1782 erbaut und Heimat des Smaragd-Buddha (der verehrteste des Landes). Die goldenen Strukturen und die Ramakien-Wandmalereien in den Kreuzgängen sind Meisterwerke thailändischer Kunst.", price: "500 ฿", tip: "Kommen Sie um 8:30 Uhr zur Öffnung, um Menschenmassen und Hitze zu vermeiden. Der Eintritt beinhaltet auch den Vimanmek-Pavillon. Kleiderordnung ist Pflicht: Schultern und Knie bedeckt — Kleidung wird am Eingang verliehen." },
+            { name: "Wat Pho — der liegende Buddha", description: "Der älteste Tempel Bangkoks (16. Jahrhundert) beherbergt den größten liegenden Buddha Thailands: 46 Meter lang, mit Blattgold bedeckt. Es ist auch der offizielle Sitz der traditionellen thailändischen Massage.", price: "200 ฿", tip: "Die traditionelle thailändische Massage in den Tempelschulen kostet 420 ฿ pro Stunde — die authentischste und günstigste in Bangkok. Vor Ort reservieren." },
+            { name: "Pad-Thai-Mittagessen auf der Straße", description: "Die Straßenstände rund um Wat Pho und den Anleger Tha Tien gehören zu den berühmtesten Bangkoks. Pad Thai, Khao Pad (gebratener Reis) und Tom Yum ergeben das perfekte Mittagessen.", price: "50-80 ฿", tip: "Suchen Sie Stände mit Schlangen von Einheimischen — ein untrügliches Qualitätszeichen. Thip Samai in der Maharaj Rd serviert seit 1966 das berühmteste Pad Thai Bangkoks." },
+            { name: "Wat Arun — der Tempel der Morgenröte", description: "Der Tempel am Fluss Chao Phraya, dessen Hauptprang mit Porzellanfragmenten bedeckt ist, die in der Sonne glitzern. Erreichbar mit dem Boot vom Anleger Tha Tien (5 ฿).", price: "100 ฿", tip: "Die beste Zeit ist der Sonnenuntergang, wenn das goldene Licht die Porzellanmosaiken erleuchtet. Steigen Sie zur zweiten Ebene des Prangs für einen Flussblick." },
+          ],
+        },
+        {
+          theme: "Märkte, Kanäle und das authentische Bangkok",
+          activities: [
+            { name: "Schwimmender Markt Damnoen Saduak", description: "Der fotogenste schwimmende Markt Thailands, 100 km von Bangkok entfernt. Verkäufer in Booten mit tropischen Früchten, Pad Thai und gelbem Curry navigieren auf Kanälen aus dem 19. Jahrhundert.", price: "Ausflug 700-1.000 ฿ (ab Bangkok)", tip: "Fahren Sie vor 6:30 Uhr los, um um 8 Uhr anzukommen, wenn es am belebtesten ist. Die Rückfahrt mit dem Boot durch die Kanäle ist genauso interessant wie der Markt selbst." },
+            { name: "Chinatown (Yaowarat)", description: "Bangkoks Chinatown, seit 1782 aktiv, hat die dichtesten kulinarischen Straßen der Stadt. Gegrillte Meeresfrüchte, chinesische Entenbraten und Dim Sum sind die Spezialitäten des Viertels.", price: "60-150 ฿", tip: "Die Yaowarat Rd wird nachts (ab 18 Uhr) zum besten Straßenmarkt Bangkoks. Tagsüber sind die Gewürz- und Heilkräuterläden faszinierend." },
+            { name: "Khlong Saen Saeb — Bangkoks Kanäle", description: "Das Expressboot-System, das durch Bangkoks Kanäle fährt — die schnellste und günstigste Art, sich in der Innenstadt fortzubewegen. Die Khlongs (Kanäle) zeigen das ursprüngliche Bangkok am Fluss, das vor den Autobahnen existierte.", price: "15-20 ฿ pro Fahrt", tip: "Nutzen Sie die Boote des Khlong Saen Saeb als echten Transport, nicht als touristische Tour. Steigen Sie in Pratunam ein und erreichen Sie Chit Lom in 10 Minuten, ohne Stau." },
+            { name: "Khao San Road und das Backpacker-Nachtleben", description: "Die berühmteste Straße Südostasiens für unabhängige Reisende, mit Bars, Live-Musik, Tätowierern, Straßenmasseurinnen und der besten Auswahl an nächtlichem Essen in Bangkok.", price: "50-100 ฿ (Essen und Getränke)", tip: "Die frittierten Skorpione und Insekten auf der Khao San sind für abenteuerlustige Touristen — Grillen und Seidenraupen sind das, was Thailänder wirklich essen. Das Pad See Ew von den Ständen am Ende der Straße ist das beste." },
+          ],
+        },
+        {
+          theme: "Chatuchak und Shopping in Bangkok",
+          activities: [
+            { name: "Markt von Chatuchak", description: "Der größte Wochenendmarkt der Welt, mit 15.000 Ständen und 200.000 Besuchern pro Woche. Kleidung, Antiquitäten, exotische Tiere, Kunst, Pflanzen und Essen in einem 35 Hektar großen Labyrinth.", price: "Kostenlos (Einkäufe nicht inbegriffen)", tip: "Am Eingang ist ein Marktplan erhältlich — absolut notwendig. Die Abschnitte 1-5 haben Antiquitäten; 7-27 Mode und Kleidung; Abschnitt 26 hat das beste Street Food." },
+            { name: "Terminal 21 — das Flughafen-Themen-Einkaufszentrum", description: "Ein einzigartiges Einkaufszentrum, in dem jede Etage nach dem Flughafen einer anderen Stadt gestaltet ist (Tokio, Istanbul, San Francisco). Der Food Court im Untergeschoss ist einer der besten und günstigsten in Bangkok.", price: "Kostenlos (Eintritt)", tip: "Der Food Court von Terminal 21 bietet thailändische Gerichte für 50-100 ฿. Es ist das günstigste klimatisierte Mittagessen in der Innenstadt Bangkoks." },
+            { name: "MBK Center und Elektronik", description: "Das große Kaufhaus Bangkoks, berühmt für Elektronik, lokale Kleidung und thailändische Küche. Die 4. Etage hat die größte Konzentration an Zubehör und gebrauchter Elektronik der Stadt.", price: "Kostenlos (Eintritt)", tip: "Der Food-Court-Stock des MBK bietet die günstigste thailändische Küche der Innenstadt — Pad Thai für 60 ฿, Klebreis mit Mango für 80 ฿." },
+            { name: "Abendessen auf der Sukhumvit Soi 11 und Nachtleben", description: "Bangkoks kosmopolitischste Straße, mit einer Mischung aus internationalen Restaurants, Dachterrassenbars und dem internationalsten Nachtleben der Stadt. Levels, Demo und Hard Rock Cafe befinden sich alle auf dieser Straße.", price: "150-500 ฿", tip: "Der Nachtmarkt von Pat Pong (Soi 4-5) hat mehr als hundert Stände mit Kleidung und Souvenirs mit nächtlicher Atmosphäre. Verhandeln Sie immer — der geforderte Preis ist doppelt so hoch wie der echte." },
+          ],
+        },
+        {
+          theme: "Alternative Tempel und Abschied",
+          activities: [
+            { name: "Wat Benchamabophit — der Marmortempel", description: "Der fotogenste Tempel Bangkoks, 1900 mit italienischem Carrara-Marmor erbaut. Die 52 Bronze-Buddhas im Kreuzgang und der Kanal vor dem Tempel verleihen ihm eine besondere Gelassenheit.", price: "50 ฿", tip: "Das beste Foto entsteht von der Steinbrücke aus, mit dem Tempel, der sich im Kanal im Hintergrund spiegelt. 9 Uhr bietet das beste Licht und weniger Touristen." },
+            { name: "Jim-Thompson-Haus", description: "Das Anwesen des amerikanischen Geschäftsmanns, der in den 1950er Jahren die thailändische Seidenindustrie wiederbelebte. Sechs traditionelle Häuser aus thailändischem Teakholz, zusammengefügt, bilden einen der elegantesten Orte Bangkoks.", price: "200 ฿ (geführte Tour inbegriffen)", tip: "Jim Thompson verschwand 1967 auf mysteriöse Weise in Malaysia — die Guides erzählen die Geschichte im Detail. Die Führung wird nur auf Englisch/Französisch/Japanisch angeboten." },
+            { name: "Abschieds-Spa und thailändische Massage", description: "Bangkok hat einige der besten und günstigsten Spas Asiens. Eine 2-stündige Massage in einem hochwertigen Spa (nicht die an der Khao San Road) kostet 800-1.500 ฿ und beinhaltet eine komplette Körpermassage und Reflexzonenmassage.", price: "600-1.500 ฿", tip: "Health Land und Divana sind zuverlässige Ketten mit mehreren Standorten in Bangkok. Reservieren Sie 2 Stunden im Voraus in der Hochsaison." },
+            { name: "Sky Bar Lebua — die höchste Bar der Welt", description: "Die Bar des Hotels Lebua State Tower, 220 Meter hoch, berühmt geworden durch ihren Auftritt in Hangover 2. Der Blick auf den Chao Phraya und die Skyline Bangkoks bei Sonnenuntergang ist unvergleichlich.", price: "600-900 ฿ (Cocktails)", tip: "Reservieren Sie einen Tisch im Voraus — es ist eine der begehrtesten Bars der Welt. Kleiderordnung ist Pflicht: keine Sandalen, keine Shorts, kein Trägertop." },
+          ],
+        },
+      ],
+    },
   },
 
   marrakech: {
@@ -2147,6 +2200,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Déjeuner berbère dans l'Atlas", description: "Les restaurants des villages berbères de l'Atlas servent du tagine de poulet aux olives et citron confit, du couscous aux légumes et de la harira, sur des terrasses avec vue sur la montagne.", price: "80-120 MAD", tip: "Le pain berbère khobz, cuit au four en terre, accompagne parfaitement le tagine. Les restaurants routiers pleins de clients locaux sont les plus authentiques." },
             { name: "Retour, et après-midi de shopping dans les souks", description: "Votre dernier après-midi est idéal pour terminer vos achats dans les souks de la médina. Épices (ras el hanout, harissa), huile d'argan, lampes en laiton et tapis berbères sont les meilleurs souvenirs.", price: "Selon les achats", tip: "Le prix final négocié est généralement de 40-50% du prix demandé. Si le vendeur baisse rapidement le prix, vous pouvez encore négocier. Ne commencez jamais à marchander si vous n'avez pas l'intention d'acheter." },
             { name: "Dernière soirée sur une terrasse de Jemaa el-Fna", description: "La façon parfaite de dire au revoir à Marrakech est depuis les terrasses du Café de France ou du Grand Balcon Café Glacier, en regardant la place s'illuminer et se remplir de monde à la tombée de la nuit.", price: "30-50 MAD (thé à la menthe)", tip: "Le thé à la menthe marocain se verse de haut pour créer de la mousse — c'est un rituel. Demander à ce qu'il soit versé de haut est tout à fait normal et attendu." },
+          ],
+        },
+      ],
+    },
+    de: {
+      city: "Marrakesch",
+      country: "Marokko",
+      heroTitle: "3 Tage in Marrakesch: die rote Stadt, die jeden Sinn erweckt",
+      heroSubtitle: "Der Platz Jemaa el-Fna, labyrinthische Souks, der Majorelle-Garten und traumhafte Riads — die essenzielle Reiseroute für eine erste Reise nach Marokko.",
+      bestMonths: "März bis Mai und Oktober bis November",
+      budget: "50-100 USD/Tag",
+      travelTips: [
+        "Engagieren Sie einen offiziellen Guide für die Souks (100-150 MAD/Stunde) — das bewahrt Sie davor, sich zu verlaufen und in Provisionsläden gelenkt zu werden",
+        "Der marokkanische Dirham kann außerhalb Marokkos nicht getauscht werden — bringen Sie etwas Bargeld zum Start mit und wechseln Sie mehr am Flughafen oder in den Wechselstuben der Innenstadt",
+        "Kleiden Sie sich bescheiden in der Medina — Schultern und Knie bedeckt ist die Norm für Männer und Frauen und hilft, unerwünschte Aufmerksamkeit zu vermeiden",
+        "Fotos von Personen erfordern Erlaubnis — die Künstler und Verkäufer des Platzes erwarten eine Bezahlung für Fotos (10-20 MAD)",
+        "Leitungswasser ist nicht sicher zu trinken — trinken Sie immer Flaschenwasser und vermeiden Sie Eis in Säften von Straßenständen",
+      ],
+      days: [
+        {
+          theme: "Die Medina und das Herz von Marrakesch",
+          activities: [
+            { name: "Platz Jemaa el-Fna am Morgen", description: "Das Herz von Marrakesch, UNESCO-Weltkulturerbe. Morgens ist es ein ruhiger Markt mit Orangensaftständen, Henna-Künstlern und Schlangenbeschwörern. Abends verwandelt es sich in eine der chaotischsten, faszinierendsten Shows der Welt.", price: "Kostenlos (Dienstleistungen nicht inbegriffen)", tip: "Frischer Orangensaft auf dem Platz kostet 4-5 MAD — Marrakeschs ikonischstes Frühstück. Nehmen Sie keine 'kostenlosen Touren' von Fremden an, die Sie ansprechen." },
+            { name: "Die Souks der Medina", description: "Das Labyrinth mittelalterlicher Märkte, in dem jede Straße einer spezialisierten Zunft gehört: Gewürzsouks, Leder, Bronze, Keramik, Textilien und Babouches. Der Souk des Teinturiers (Ledergerber) ist der fotogenste.", price: "Kostenlos (Einkäufe nicht inbegriffen)", tip: "Ein lokaler Guide (100-150 MAD) erspart Ihnen Stunden des Herumirrens und bringt Sie zu den echten Werkstätten. Ohne einen führt jede Wegbeschreibung, die Sie erhalten, zu irgendeinem Bekannten." },
+            { name: "Mittagessen auf einer Dachterrasse der Medina", description: "Riad-Dachterrassen über der Medina servieren Tajines, Kefta und Harira mit Blick auf die Minarette. Café de France und Le Foundouk haben die besten Ausblicke auf den Platz.", price: "50-100 MAD", tip: "Lammtajine mit Pflaumen und Mandeln (Msir) ist Marrakeschs repräsentativstes Gericht. Essen Sie dort, wo Sie Marokkaner essen sehen, nicht dort, wo die 'Guides' Sie hinbringen." },
+            { name: "Jemaa el-Fna bei Sonnenuntergang — das große Spektakel", description: "Ab 17 Uhr verwandelt sich der Platz: Hunderte Essensstände, Gnawa-Musiker, Geschichtenerzähler, Akrobaten und Feuertänzer füllen jeden Quadratmeter.", price: "Kostenlos (Essen 20-40 MAD)", tip: "Die Essensstände des Platzes (nummeriert 1-150) konkurrieren im Preis — alle zeigen eine sichtbare Speisekarte. Wählen Sie den mit den meisten Einheimischen und fragen Sie nach dem Preis, BEVOR Sie sich setzen." },
+          ],
+        },
+        {
+          theme: "Paläste, der Majorelle-Garten und ein Hamam",
+          activities: [
+            { name: "Bahia-Palast", description: "Der Palast des Großwesirs Ba Ahmed aus dem 19. Jahrhundert, mit 150 Räumen, Innenhöfen mit Orangen- und Zedernbäumen, geschnitzten Zedernholzdecken und Marokkos feinstem Holzgitterwerk (Mashrabiyya).", price: "70 MAD", tip: "Der Palast ist beeindruckender, als man erwartet. Der Empfangsraum des Wesirs hat die aufwendigste Zedernholzdecke, die Sie je sehen werden." },
+            { name: "Saadier-Gräber", description: "Die Mausoleen aus dem 16. Jahrhundert, in denen die Sultane der Saadier-Dynastie begraben sind, 1917 nach Jahrhunderten der Versiegelung wiederentdeckt. Die Grabkammern mit ihren Kachel- und Stuck-Nischen sind außergewöhnlich schön.", price: "70 MAD", tip: "Der Raum ist klein und Besucher strömen ständig durch — kommen Sie zur Öffnungszeit, um den Saal der zwölf Säulen ohne Menschenmenge zu sehen." },
+            { name: "Majorelle-Garten und Berbermuseum", description: "Der Garten, geschaffen vom französischen Maler Jacques Majorelle im Jahr 1923, gerettet von Yves Saint Laurent. Das Kobaltblau des Pavillons (Majorelle-Blau), die Kakteen und die Berber-Sammlung des Museums bilden eine bunte Oase.", price: "150 MAD (Garten + Museum)", tip: "Der Garten ist von 10 bis 16 Uhr sehr überfüllt — kommen Sie um 14 Uhr, wenn viele Touristen zu Mittag essen, um weniger Menschen anzutreffen." },
+            { name: "Traditionelles Hamam", description: "Das jahrhundertealte arabische Badehaus ist ein wesentlicher Teil der marokkanischen Kultur. Nachbarschafts-Hamams (10-30 MAD) sind für Einheimische; touristische bieten aufwendigere Behandlungen mit Ghassoul-Ton und Arganöl.", price: "Lokales Hamam 20 MAD / touristisch 150-300 MAD", tip: "Hamam Dar el Bacha und das Hammam de la Mosquée Mouassine sind die authentischsten im Zentrum. Bringen Sie Flip-Flops und Ihr eigenes Handtuch mit, wenn Sie zu einem Nachbarschafts-Hamam gehen." },
+          ],
+        },
+        {
+          theme: "Ausflug ins Atlasgebirge und zurück zur Medina",
+          activities: [
+            { name: "Ausflug zu den Ouzoud-Wasserfällen", description: "Nordafrikas größte Wasserfälle, 150 km von Marrakesch entfernt, die 110 Meter über Tuffstein fallen. Die Fahrt durch den Atlas und seine Berberdörfer ist genauso interessant wie das Ziel selbst.", price: "Tour 25-40€ (ab Marrakesch)", tip: "Organisierte Ganztagestouren beinhalten Transport und Mittagessen im Dorf. Der Frühling (März-Mai) hat den höchsten Wasserfluss — spektakulär." },
+            { name: "Berber-Mittagessen im Atlas", description: "Restaurants in den Berberdörfern des Atlas servieren Hühnertajine mit Oliven und eingelegter Zitrone, Gemüsecouscous und Harira, auf Terrassen mit Bergblick.", price: "80-120 MAD", tip: "Berberisches Khobz-Brot, in einem Lehmofen gebacken, ist die beste Beilage zur Tajine. Straßenrestaurants voller lokaler Kunden sind am authentischsten." },
+            { name: "Rückkehr, und ein Nachmittag Shopping in den Souks", description: "Ihr letzter Nachmittag ist ideal, um noch Einkäufe in den Souks der Medina zu erledigen. Gewürze (Ras el Hanout, Harissa), Arganöl, Messinglampen und Berberteppiche sind die besten Souvenirs.", price: "Abhängig von den Käufen", tip: "Der endgültige verhandelte Preis liegt meist bei 40-50% des geforderten Preises. Wenn der Verkäufer den Preis schnell senkt, können Sie noch weiter drücken. Beginnen Sie niemals zu verhandeln, wenn Sie nicht kaufen wollen." },
+            { name: "Letzter Abend auf einer Dachterrasse am Jemaa el-Fna", description: "Der perfekte Abschied von Marrakesch ist von den Terrassen des Café de France oder des Le Grand Balcon Café Glacier aus, während man zusieht, wie sich der Platz in der Dämmerung erleuchtet und mit Menschen füllt.", price: "30-50 MAD (Minztee)", tip: "Marokkanischer Minztee wird aus der Höhe eingeschenkt, um Schaum zu erzeugen — es ist ein Ritual. Darum zu bitten, ihn von oben einzuschenken, ist völlig normal und erwartet." },
           ],
         },
       ],
@@ -2260,6 +2357,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    de: {
+      city: "Dubai",
+      country: "Vereinigte Arabische Emirate",
+      heroTitle: "4 Tage in Dubai: vom Burj Khalifa in die Wüste",
+      heroSubtitle: "Der Burj Khalifa, die Dubai Mall, eine Wüsten-Dünensafari und die historischen Souks — die Reiseroute, die Zukunft mit arabischer Tradition verbindet.",
+      bestMonths: "Oktober bis April",
+      budget: "200-400 USD/Tag",
+      travelTips: [
+        "Taxis und die U-Bahn (Dubai Metro) sind die praktischsten Fortbewegungsmittel — die Metro erreicht die meisten touristischen Ziele",
+        "Kleiden Sie sich bescheiden in den Souks, Moscheen und öffentlichen Orten — Schultern und Knie sollten im historischen Deira bedeckt sein",
+        "Alkohol wird nur in lizenzierten Hotels und Restaurants ausgeschenkt — er ist an öffentlichen Orten vollständig verboten",
+        "Die Hitze ist von Mai bis September extrem (45°C+) — planen Sie klimatisierte Aktivitäten in diesen Monaten",
+        "Die lokale Währung ist der Dirham (AED) — fast überall werden Karten akzeptiert, aber Bargeld ist in den historischen Souks nützlich",
+      ],
+      days: [
+        {
+          theme: "Das moderne Dubai: der Burj und Downtown",
+          activities: [
+            { name: "Dubai Mall und das Aquarium", description: "Das größte Einkaufszentrum der Welt, mit 1.200 Geschäften, einem 10-Millionen-Liter-Aquarium und einer olympischen Eisbahn. Es ist das meistbesuchte Freizeitziel des Planeten, mit 100 Millionen Besuchen pro Jahr.", price: "Kostenlos (Eintritt) / 130 AED (Aquarium)", tip: "Das Aquarium hat die größte Glasscheibe der Welt — von außen im Einkaufszentrum kostenlos sichtbar. Das Innere lohnt sich, wenn Sie Zeit haben." },
+            { name: "Burj Khalifa — At the Top", description: "Das höchste Gebäude der Welt, mit 828 Metern. Die Aussichtsplattform 'At The Top' im 124. Stock bietet an klaren Tagen Ausblicke über 80 km.", price: "149 AED (124. Stock) / 499 AED (148. Stock)", tip: "Buchen Sie online und wählen Sie den 11:30-Uhr-Slot, um Dubai bei Tageslicht zu sehen. Sonnenuntergangs-Slots sind sehr gefragt und teurer. Der 124. Stock bietet die besten Fotos." },
+            { name: "Dubai Fountain und Mittagessen", description: "Das größte Springbrunnensystem der Welt, gegenüber dem Burj Khalifa. Die nächtlichen Shows sind am spektakulärsten, aber auch tagsüber ist das Ausmaß beeindruckend. Das Gebiet hat Dutzende Restaurants mit Aussicht.", price: "Kostenlos (Brunnen) / 60-150 AED (Restaurants)", tip: "Die nächtliche Brunnenshow beginnt um 18 Uhr und wiederholt sich alle 30 Minuten. Der beste Blickwinkel ist von der Uferpromenade der Dubai Mall." },
+            { name: "Nächtliche Brunnenshow und Abendessen in Downtown", description: "Die nächtliche Brunnenshow, synchronisiert zu arabischer und klassischer Musik, ist eines der bewegendsten Erlebnisse Dubais. Die Restaurants entlang der Dubai Fountain Boardwalk haben die besten Tische.", price: "Kostenlos", tip: "Buchen Sie für Ihren ersten Abend ein Abendessen bei Zuma oder Pierchic mit Burj-Blick — das Erlebnis ist atemberaubend, auch wenn der Preis hoch ist." },
+          ],
+        },
+        {
+          theme: "Das klassische Dubai: die Creek, Souks und das historische Viertel",
+          activities: [
+            { name: "Historisches Viertel Al Fahidi", description: "Dubais historisches Viertel aus dem 19. Jahrhundert, mit Häusern aus Koralle und Lehm, Windtürmen (Barjeel) für natürliche Belüftung und dem Dubai-Museum. Der Kontrast zu den Wolkenkratzern im Hintergrund ist einzigartig.", price: "Dubai-Museum 3 AED", tip: "Das Dubai-Museum ist das günstigste der Stadt und eines der lehrreichsten — 3 AED, um die Geschichte eines Fischerdorfs zu sehen, das zur Megacity wurde." },
+            { name: "Abra-Fahrt auf der Dubai Creek", description: "Abras sind die traditionellen Holzboote, die seit Jahrhunderten die Bucht überqueren. Die 5-minütige Fahrt von Deira nach Bur Dubai kostet 1 AED und ist das authentischste, fotogenste Verkehrsmittel der Stadt.", price: "1 AED", tip: "Nehmen Sie das klassische Holz-Abra (nicht die moderne motorisierte Version) — sie starten am Al-Seef-Anleger. Die Fahrt entlang der Bucht mit hölzernen Dhaus im Hintergrund ist wunderbar." },
+            { name: "Gold-Souk und Gewürz-Souk", description: "Der Gold-Souk hat mehr als 300 Juweliergeschäfte mit 10 Tonnen ausgestelltem Gold. Der angrenzende Gewürz-Souk hat iranischen Safran, arabischen Weihrauch, Ras el Hanout und Gewürze aus aller Welt.", price: "Kostenlos (Einkäufe nicht inbegriffen)", tip: "Verhandeln wird erwartet und ist gängige Praxis in den Souks. Bieten Sie 60% des geforderten Preises und Sie landen bei einer vernünftigen Einigung. Gold wird zum Marktpreis verkauft, ohne Verhandeln." },
+            { name: "Abendessen auf einer Dhau entlang der Creek", description: "Traditionelle hölzerne Dhaus, umgebaut zu schwimmenden Restaurants, bieten ein Buffet-Abendessen während einer Kreuzfahrt auf der beleuchteten Creek. Der Blick auf die Wolkenkratzer und Moscheen vom Wasser aus ist spektakulär.", price: "120-200 AED", tip: "Es gibt Dutzende Dhau-Kreuzfahrten — der Standardpreis beinhaltet ein Buffet-Abendessen. Buchen Sie am Al-Seef-Anleger am Nachmittag für den 20:30-Uhr-Slot." },
+          ],
+        },
+        {
+          theme: "Wüstensafari: Dünen, Kamele und Sterne",
+          activities: [
+            { name: "Abholung für die Wüstensafari", description: "Dubais Wüstensafaris fahren mit 4x4-Fahrzeugen zu den Al-Lahbab-Dünen. Dune Bashing (rasantes Fahren über die Dünen im 4x4) ist der actionreichste Teil des Erlebnisses.", price: "200-300 AED (komplette Tour)", tip: "Wählen Sie einen seriösen Anbieter wie Arabian Adventures oder Orient Tours. Sehr günstige Preise bedeuten meist ein Abendessen und Shows von geringerer Qualität." },
+            { name: "Dune Bashing und Sonnenuntergang auf den Dünen", description: "Fahrten mit hoher Geschwindigkeit über 100 Meter hohe Dünen in einem 4x4-Land-Cruiser. Der Sonnenuntergang auf den Al-Lahbab-Dünen, mit der bis zum Horizont reichenden Wüste, wirkt unwirklich.", price: "In der Tour inbegriffen", tip: "Wenn Sie zu Reisekrankheit neigen, nehmen Sie vorher Dramamin ein. Die Fahrer sind erfahrene Profis — lassen Sie sie den Schwierigkeitsgrad wählen." },
+            { name: "Beduinenlager: Kamele und Henna-Tattoos", description: "Das Wüstenlager beinhaltet einen Kamelritt, Henna-Tattoos, Bauchtanz und Bogenschießen. Ein Buffet-Abendessen mit arabischem Essen (Kharouf, Mezze, Shisha) unter den Wüstensternen.", price: "In der Tour inbegriffen", tip: "Der Kamelritt dauert nur 5-10 Minuten, aber das Foto hält ein Leben lang. Bitten Sie Ihren Guide, das Foto von unten zu machen, damit das ganze Kamel im Bild ist." },
+            { name: "Bauchtanz- und Tanoura-Show", description: "Der Tanoura-Tanz (ein wirbelnder Sufi-Tänzer in bunten Röcken) und Bauchtanz sind die Shows, die im Lagerdinner inbegriffen sind. Die Vorstellung unter dem Sternenhimmel der Wüste ist unvergesslich.", price: "In der Tour inbegriffen", tip: "Die Sterne in der arabischen Wüste sind spektakulär — bringen Sie eine Sternbeobachtungs-App mit, um Sternbilder in der totalen Dunkelheit des Lagers zu identifizieren." },
+          ],
+        },
+        {
+          theme: "Palm Jumeirah und das moderne Dubai",
+          activities: [
+            { name: "Atlantis The Palm — Aquaventure", description: "Der Wasserpark im Hotel Atlantis auf Palm Jumeirah, mit 16 Hektar Rutschen, künstlichen Wellen und einem Bereich mit Mantarochen und Haien. Eines der actionreichsten Erlebnisse Dubais.", price: "395 AED", tip: "Buchen Sie online für einen Frühbucherrabatt. Die Rutsche 'Tower of Neptune' (ein 27 Meter freier Fall) ist die extremste. Kommen Sie um 9:30 Uhr, bevor sich die Schlangen bilden." },
+            { name: "The Pointe und Ausblicke auf das Atlantis", description: "Die Restaurant- und Geschäftspromenade an der Spitze der Palm, mit dem besten Blick auf das Atlantis vom Wasser aus. Die Brunnen von The Pointe bieten eine kostenlose nächtliche Show.", price: "Kostenlos", tip: "Die Promenade von The Pointe bietet direkte Ausblicke auf die Silhouette des Atlantis mit dem Burj Al Arab im Hintergrund — das Foto der Palm von hier ist spektakulär." },
+            { name: "JBR-Strand und The Beach", description: "Jumeirah Beach Residence (JBR) ist Dubais lebendigste Strandpromenade, mit dem meistbesuchten öffentlichen Strand der Stadt, Restaurants am Wasser und dem Komplex The Beach mit Blick auf den Burj Al Arab.", price: "Kostenlos", tip: "Der JBR-Strand ist öffentlich und kostenlos — bezahlte Umkleiden und Sonnenschirme sind verfügbar, aber nicht nötig." },
+            { name: "Abschiedsessen mit Blick auf den Burj Al Arab", description: "Dubais (und der Welt) ikonischstes Hotel hat die Form eines Dhau-Segels. Während der Aufenthalt dort Tausende Dollar kostet, erhalten Sie einen perfekten Blick vom Restaurant Pierchic oder von den Restaurants am Jumeirah Beach.", price: "100-300 AED (Restaurants außerhalb)", tip: "Der beste Blickwinkel auf den Burj Al Arab ist vom Umm-Suqeim-Strand aus — 200 Meter öffentlicher Sand gegenüber dem Hotel, perfekt für das Foto." },
+          ],
+        },
+      ],
+    },
   },
 
   lisboa: {
@@ -2347,6 +2497,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "LX Factory — le marché créatif", description: "Une ancienne usine textile du XIXe siècle transformée en espace créatif, avec restaurants, librairies, studios de design et le meilleur marché de Lisbonne le dimanche. La librairie Ler Devagar, avec ses vélos suspendus, est incontournable.", price: "Gratuit (achats non inclus)", tip: "Le marché du dimanche de LX Factory a lieu de 11h à 20h et est le meilleur de Lisbonne. Le samedi et le dimanche sont les jours où les restaurants à l'intérieur sont au meilleur de leur forme." },
             { name: "Ribeira das Naus — le front de mer du Tage", description: "La promenade au bord de l'eau près du ministère de la Marine, où les Lisboètes se détendent dans des hamacs en bois face à la rivière. À 10 minutes à pied, la Praça do Comércio offre la meilleure perspective sur l'embouchure du Tage.", price: "Gratuit", tip: "Les hamacs sont gratuits et disponibles au premier arrivé. Commandez une ginjinha (liqueur de cerise) dans les kiosques le long de la promenade — la boisson la plus typique de Lisbonne." },
             { name: "Bairro Alto au coucher du soleil", description: "Le quartier des bars et de la vie nocturne de Lisbonne s'anime à partir de 18h. De petits bars aux portes ouvertes avec de la musique qui déborde dans la rue font de Bairro Alto la sortie nocturne la plus authentique de la ville.", price: "2-4€ par boisson", tip: "Les bars de Bairro Alto n'ont généralement pas de places assises — les gens boivent dans la rue, verre à la main, en passant d'un bar à l'autre. C'est parfaitement normal et sûr." },
+          ],
+        },
+      ],
+    },
+    de: {
+      city: "Lissabon",
+      country: "Portugal",
+      heroTitle: "3 Tage in Lissabon: Alfama, Pastéis und Miradouros",
+      heroSubtitle: "Die Burg São Jorge, die Straßenbahn 28, Belém und nächtlicher Fado — die perfekte Reiseroute, um sich in die portugiesische Hauptstadt zu verlieben.",
+      bestMonths: "März bis Mai und September bis Oktober",
+      budget: "70-120€/Tag",
+      travelTips: [
+        "Die aufladbare Viva-Viagem-Karte, mit 5-10€ aufgeladen, deckt Metro, Straßenbahnen und Busse ab — viel günstiger als Einzeltickets",
+        "Die Miradouros (Aussichtspunkte) sind Lissabons günstigste, schönste Aktivität — es gibt mehr als 20 davon in der Stadt verteilt",
+        "Uber ist in Lissabon sehr günstig — eine praktische Alternative zu den Straßenbahnen zur Stoßzeit",
+        "Restaurants mit einem 'Menu do dia' (9-12€ mit Getränk, Dessert und Hauptgericht) sind die authentischste Mittagsoption",
+        "Tragen Sie bequeme Schuhe mit gutem Halt — portugiesisches Kopfsteinpflaster wird bei Regen rutschig und ermüdet die Füße nach viel Gehen",
+      ],
+      days: [
+        {
+          theme: "Alfama und das historische Herz",
+          activities: [
+            { name: "Burg São Jorge", description: "Die mittelalterliche Festung, die von oben auf Lissabon blickt, mit 360°-Ausblicken auf die Stadt, den Tejo und die Brücke des 25. April. Die maurischen Mauern aus dem 11. Jahrhundert sind perfekt erhalten.", price: "15€", tip: "Kommen Sie zur Öffnung, um die Ausblicke ohne Menschenmassen zu sehen. Der Aufstieg durch Alfamas enge Gassen ist Teil des Erlebnisses — verzichten Sie auf das direkte Taxi." },
+            { name: "Viertel Alfama und Miradouro da Graça", description: "Lissabons ältestes Viertel, ein charmantes Labyrinth aus gefliesten Häusern, zum Trocknen aufgehängter Wäsche und Fado, der aus Restaurants klingt. Miradouro da Graça bietet die besten Ausblicke der Stadt.", price: "Kostenlos", tip: "Sich in Alfama zu verlaufen ist der Plan — es besteht keine Notwendigkeit, eine bestimmte Route zu suchen. Die engsten Gassen über der Sé-Kathedrale haben die authentischste Atmosphäre." },
+            { name: "Kabeljau-Mittagessen in Alfama", description: "Portugal hat 365 Kabeljau-Rezepte (eines für jeden Tag des Jahres). Bacalhau à brás, à lagareiro oder com natas sind die Klassiker. Alfamas Tascas servieren die authentischsten Versionen der Stadt.", price: "10-18€", tip: "Suchen Sie Restaurants ohne englische Speisekarte an der Tür — ein Zeichen, dass sie für Einheimische sind. Der Preis des Tagesmenüs beinhaltet ein Hauptgericht + Dessert + Getränk." },
+            { name: "Straßenbahn 28 — die malerischste Route", description: "Die ikonische gelbe Straßenbahn, die Lissabons Hügel von Martim Moniz bis Prazeres hinauf- und hinunterfährt, vorbei an Alfama, Graça und Estrela. Es ist echter Stadtverkehr, keine bloße Touristenfahrt.", price: "3€ (Einzelticket)", tip: "Kaufen Sie das Ticket an Bord bar oder nutzen Sie die Viva-Viagem-Karte. Die Straßenbahn ist immer überfüllt — steigen Sie an der Anfangshaltestelle ein, um einen Sitzplatz zu bekommen." },
+          ],
+        },
+        {
+          theme: "Belém und das Zeitalter der Entdeckungen",
+          activities: [
+            { name: "Pastéis de Belém", description: "Die originale Bäckerei des Pastel de Nata, 1837 gegründet, verwendet noch immer ein geheimes Rezept, das nur drei Menschen kennen. Die morgendliche Schlange ist lang, bewegt sich aber schnell.", price: "1,30€ pro Gebäck", tip: "Bestellen Sie sie warm mit Zucker und Zimt obendrauf und essen Sie sie in der Bäckerei. Der gekachelte Raum im Inneren ist genauso besonders wie das Gebäck selbst." },
+            { name: "Jerónimos-Kloster", description: "Das Meisterwerk manuelinischer (portugiesisch-gotischer) Architektur, UNESCO-Weltkulturerbe. Der Kreuzgang mit steinernen Säulen, die wie Seile und Korallen geschnitzt sind, ist einer der beeindruckendsten Räume Europas.", price: "12€", tip: "Die Hauptkirche ist kostenlos und beherbergt die Gräber von Vasco da Gama und Luís de Camões. Gehen Sie zuerst hinein, um das Ausmaß des Gebäudes zu erfassen, bevor Sie für den Kreuzgang bezahlen." },
+            { name: "Turm von Belém und das Denkmal der Entdeckungen", description: "Der Turm von Belém (16. Jahrhundert) war das Letzte, was Seefahrer beim Auslaufen sahen, und das Erste bei ihrer Rückkehr. 300 Meter entfernt zeigt das Denkmal der Entdeckungen die Figuren portugiesischer Entdecker.", price: "Turm 6€ / Denkmal 4€", tip: "Die Schlange für den Turm kann lang sein — das Innere ist klein und lässt nur kleine Gruppen zu. Das Denkmal hat einen Aussichtspunkt an der Spitze mit Blick auf den Tejo, den nur wenige zu erklimmen sich die Mühe machen." },
+            { name: "Fado-Haus in Alfama", description: "Fado ist Lissabons musikalische Seele, anerkannt als UNESCO-Kulturerbe des immateriellen Erbes. Alfamas Fado-Häuser bieten Abendessen mit Live-Auftritten — das authentischste Erlebnis der Stadt.", price: "30-50€ (Abendessen + Fado)", tip: "Reservieren Sie im Voraus im Clube de Fado, Sr. Fado oder Tasca do Chico. Absolute Stille wird während der Vorstellung erwartet — das ist eine kulturelle Norm, keine bloße Bitte." },
+          ],
+        },
+        {
+          theme: "Bairro Alto, LX Factory und der Tejo",
+          activities: [
+            { name: "Miradouro da Senhora do Monte", description: "Lissabons höchster Aussichtspunkt, mit Panoramablicken auf die Burg, den Tejo, den Cristo Rei am gegenüberliegenden Ufer und die Brücke des 25. April. Weniger bekannt als der von Santa Catarina.", price: "Kostenlos", tip: "Er ist ein lokaler Favorit für den Wochenend-Brunch. Das Café am Aussichtspunkt serviert den besten Kaffee mit Aussicht der Stadt." },
+            { name: "LX Factory — der kreative Markt", description: "Eine Textilfabrik aus dem 19. Jahrhundert, umgewandelt in einen kreativen Raum, mit Restaurants, Buchhandlungen, Designstudios und Lissabons bestem Markt am Sonntag. Die Buchhandlung Ler Devagar, mit ihren hängenden Fahrrädern, ist ein Muss.", price: "Kostenlos (Einkäufe nicht inbegriffen)", tip: "Der Sonntagsmarkt LX Market läuft von 11 bis 20 Uhr und ist der beste in Lissabon. Samstag und Sonntag sind die Tage, an denen die Restaurants im Inneren am besten sind." },
+            { name: "Ribeira das Naus — die Uferpromenade des Tejo", description: "Die Uferpromenade am Marineministerium, wo Lissabonner sich in Holzhängematten mit Blick auf den Fluss entspannen. 10 Minuten zu Fuß entfernt bietet die Praça do Comércio die beste Perspektive auf die Mündung des Tejo.", price: "Kostenlos", tip: "Die Hängematten sind kostenlos und nach dem Prinzip 'wer zuerst kommt'. Bestellen Sie eine Ginjinha (Kirschlikör) an den Kiosken entlang der Promenade — Lissabons typischstes Getränk." },
+            { name: "Bairro Alto bei Sonnenuntergang", description: "Lissabons Bar- und Nachtlebenviertel wird ab 18 Uhr lebendig. Kleine Bars mit offenen Türen und Musik, die auf die Straße strömt, machen Bairro Alto zum authentischsten Nachtleben der Stadt.", price: "2-4€ pro Getränk", tip: "Die Bars in Bairro Alto haben normalerweise keine Sitzplätze — die Leute trinken auf der Straße, Glas in der Hand, und ziehen von Bar zu Bar. Das ist völlig normal und sicher." },
           ],
         },
       ],
