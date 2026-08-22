@@ -1034,6 +1034,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    de: {
+      city: "Istanbul",
+      country: "Türkei",
+      heroTitle: "4 Tage in Istanbul: wo Europa auf Asien trifft",
+      heroSubtitle: "Hagia Sophia, der Große Basar, der Bosporus und die authentischsten Viertel — die faszinierendste Stadt der Welt in vier vollen Tagen.",
+      bestMonths: "April bis Juni und September bis November",
+      budget: "60-120 USD/Tag",
+      travelTips: [
+        "Die türkische Lira hat stark geschwankt — bringen Sie Dollar oder Euro mit und wechseln Sie in den Wechselstuben der Innenstadt (döviz bürosu), niemals am Flughafen",
+        "Die İstanbulkart (Fahrkarte) deckt Metro, Straßenbahn, Fähre und Bus ab — laden Sie sie mit 100 TL für 2-3 Tage auf",
+        "Bescheidene Kleidung ist in Moscheen Pflicht — tragen Sie immer ein Kopftuch bei sich und tragen Sie etwas, das Schultern und Knie bedeckt",
+        "Türkischer Tee (çay) wird in fast allen Geschäften kostenlos oder sehr günstig serviert — das ist Gastfreundschaft, kein Betrug",
+        "Istanbul hat 15 Millionen Einwohner — der Verkehr ist intensiv. Nutzen Sie Metro, Straßenbahn T1 und Fähren, um sich schnell fortzubewegen",
+      ],
+      days: [
+        {
+          theme: "Sultanahmet — das historische Herz zweier Imperien",
+          activities: [
+            { name: "Hagia Sophia", description: "Istanbuls architektonisches Juwel, im Jahr 537 n. Chr. als größte Kirche der christlichen Welt erbaut, später zur osmanischen Moschee umgewandelt und heute wieder Moschee. Die 55 Meter hohe Kuppel, die über den byzantinischen Mosaiken und der arabischen Kalligrafie zu schweben scheint, ist unvergleichlich.", price: "Kostenlos (freier Zugang als aktive Moschee)", tip: "Die Hagia Sophia wurde 2020 als aktive Moschee wiedereröffnet — betreten Sie sie barfuß und bescheiden gekleidet (Schultern und Knie bedeckt). Die frühen Morgenstunden haben weniger Besucher." },
+            { name: "Blaue Moschee (Sultanahmet Camii)", description: "Die einzige Moschee Istanbuls mit sechs Minaretten, berühmt für ihre 20.000 blauen Iznik-Keramikfliesen, die das Innere bedecken. Der Platz zwischen der Blauen Moschee und der Hagia Sophia ist der fotogenste Ort Istanbuls.", price: "Kostenlos", tip: "Die Blaue Moschee schließt für Besucher während der fünf täglichen Gebete (jeweils 15-30 Min). Prüfen Sie die an der Tür ausgehängten Zeiten, bevor Sie warten." },
+            { name: "Topkapi-Palast", description: "400 Jahre lang der Sitz des Osmanischen Reiches, mit dem Schatz der Sultane (dem 86-karätigen Kaşıkçı-Diamanten), dem kaiserlichen Harem und den heiligen Reliquien des Islam. Direkte Ausblicke auf den Bosporus und das Marmarameer.", price: "400 TL (Palast) + 200 TL (Harem)", tip: "Der Harem des Topkapi-Palastes erfordert ein separates Ticket, ist aber absolut lohnenswert — der faszinierendste Teil des Palastes. Die kaiserliche Schatzkammer im Pavillon 3 beherbergt den größten Diamanten der Türkei." },
+            { name: "Yerebatan-Zisterne — der unterirdische Palast", description: "Die römische Zisterne aus dem 6. Jahrhundert, mit 336 Marmorsäulen, die sich im ruhigen Wasser spiegeln. Die Säulen mit den auf dem Kopf stehenden Medusa-Köpfen und die mystische Beleuchtung machen sie zu einem der einzigartigsten Orte der Welt.", price: "200 TL", tip: "Die Zisterne bleibt auch im Sommer kühl — eine Zuflucht vor der Hitze Istanbuls. Die Tränensäule (mit spiralförmigen Mustern) ist die begehrteste." },
+          ],
+        },
+        {
+          theme: "Der Große Basar, der Gewürzbasar und das ägyptische Viertel",
+          activities: [
+            { name: "Großer Basar", description: "Der größte und älteste überdachte Basar der Welt, mit 61 Straßen, 4.000 Geschäften und 250.000 täglichen Besuchern. Teppiche, Glaslampen, Keramik, Silberschmuck und türkisches Leder in einem Labyrinth aus dem 15. Jahrhundert.", price: "Kostenlos (Eintritt)", tip: "Verhandeln ist Pflicht — bieten Sie zunächst 40-50% des geforderten Preises. Die Geschäfte weiter innen (nicht an der Hauptstraße) bieten ein besseres Preis-Leistungs-Verhältnis." },
+            { name: "Gewürzbasar (Mısır Çarşısı)", description: "Der berühmteste Gewürzmarkt Istanbuls, im ägyptischen Viertel, mit iranischem Kurkuma, Safran aus Safranbolu, anatolischem Rosentee, Lokum (türkischem Honig) und den besten Pistazien der Türkei.", price: "Kostenlos", tip: "Lose Gewürze sind viel günstiger und frischer als abgepackte. Verhandeln Sie immer, und kaufen Sie in den Geschäften weiter innen im Basar — die am Eingang verlangen den doppelten Preis." },
+            { name: "Mittagessen im Viertel Eminönü", description: "Der Fähranleger von Eminönü bietet das berühmteste balık ekmek Istanbuls (Sandwiches mit gegrilltem Makrele, auf Booten zubereitet). Die schwimmenden Restaurants am Goldenen Horn arbeiten seit Jahrzehnten.", price: "70-100 TL", tip: "Balık ekmek isst man stehend am Wasser mit einem Glas turşu suyu (Gurkensaft). Es ist das lokalste und günstigste kulinarische Erlebnis Istanbuls." },
+            { name: "Kreuzfahrt auf dem Goldenen Horn", description: "Die 8 km lange Meeresbucht, die das historische Herz von den modernen europäischen Vierteln trennt. Eine kurze Kreuzfahrt auf dem Goldenen Horn zeigt die historischen Brücken, Moscheen und Holzviertel am Wasser.", price: "30-50 TL (öffentliche Fähre)", tip: "Die öffentliche Fähre (vapur) ist authentischer und günstiger als touristische Kreuzfahrten. Sie startet in Eminönü und erreicht Eyüpsultan — das konservativste und am wenigsten touristische Viertel Istanbuls." },
+          ],
+        },
+        {
+          theme: "Bosporus-Kreuzfahrt und Dolmabahçe-Palast",
+          activities: [
+            { name: "Dolmabahçe-Palast", description: "Der Sultanspalast am Bosporus, 1856 im europäischen Neo-Barockstil erbaut. Der Thronsaal mit einem 4,5 Tonnen schweren Kristallleuchter, ein Geschenk von Königin Victoria, und seine 285 Räume symbolisieren den Niedergang des Osmanischen Reiches.", price: "400 TL", tip: "Der Besuch ist nur mit Führung möglich (allein hineinzugehen ist nicht möglich). Der Harem und der Thronsaal sind die beiden beeindruckendsten Bereiche — stellen Sie sicher, dass Ihr Ticket sie enthält." },
+            { name: "Bosporus-Kreuzfahrt", description: "Die 30 km lange Meerenge, die Europa von Asien trennt, gesäumt von mittelalterlichen Festungen, hölzernen Yalı-Häusern, Moscheen und der Bosporus-Brücke. Die öffentliche Fähre bis Anadolu Kavağı (das asiatische Ende) ist das epischste Erlebnis.", price: "50 TL (öffentliche Fähre)", tip: "Die öffentliche Fähre (Boğaz Hattı) von Eminönü fährt die vollen 6 Stunden Strecke für 50 TL — viel günstiger als touristische Kreuzfahrten. Die Rückfahrt ist genauso schön." },
+            { name: "Viertel Beşiktaş und das europäische Ufer", description: "Das authentischste Viertel am europäischen Ufer des Bosporus, mit einem Fischmarkt, lokalen Brauereien, der Adlerstatue von Beşiktaş und dem Stadion des Beşiktaş JK.", price: "Kostenlos", tip: "Der çay (türkischer Tee) in den Bosporus-Cafés von Beşiktaş wird in einem tulpenförmigen Glas mit zwei Stück Zucker serviert — bestellen Sie ihn so für das vollständige Erlebnis." },
+            { name: "Kebab-Abendessen in Beşiktaş oder Kadıköy", description: "Der İskender-Kebab (Lammfleisch auf Pide-Brot mit Joghurt und geschmolzener Butter) und der balık (gegrillter Fisch aus dem Bosporus) sind die beiden repräsentativsten Abendessen Istanbuls.", price: "150-300 TL", tip: "Kadıköy (asiatisches Ufer, 15 Min mit der Fähre) beherbergt Istanbuls beste lokale Restaurants und Bars. Nachts mit der Fähre nach Asien überzusetzen ist an sich schon ein einzigartiges Erlebnis." },
+          ],
+        },
+        {
+          theme: "Beyoğlu, Istiklal und das moderne Istanbul",
+          activities: [
+            { name: "Istiklal-Straße und Beyoğlu", description: "Istanbuls berühmteste Fußgängerstraße, 3 km voller Geschäfte, Cafés, Galerien und der historischen roten Straßenbahn. Beyoğlu war das Herz der osmanischen Modernisierung des 19. Jahrhunderts.", price: "Kostenlos", tip: "Die Straßenbahn der Istiklal wird mehr fotografiert als benutzt — bei ihrer Durchfahrt müssen Sie von den Gleisen weichen. Die Antiquariate und Galerien in den historischen Passagen sind die versteckten Schätze der Straße." },
+            { name: "Galata-Turm", description: "Der mittelalterliche genuesische Turm aus dem 14. Jahrhundert, 70 Meter hoch, im Viertel Galata. Die Ausblicke auf das Goldene Horn, den Bosporus, die Hagia Sophia und die Blaue Moschee von der Terrasse aus sind die besten Istanbuls.", price: "300 TL", tip: "Die Schlangen können lang sein — kaufen Sie Ihr Ticket online. Das beste Foto von Galata macht man von unten, mit dem Viertel, das zum Goldenen Horn hinabfällt." },
+            { name: "Viertel Karaköy und seine Teestuben", description: "Das Viertel am Fuß des Galata-Turms, mit den besten Spezialitätencafés Istanbuls, zeitgenössischen Designgalerien und der Konditorei Karaköy Güllüoğlu, die das beste Baklava der Stadt beherbergt.", price: "30-60 TL", tip: "Das Baklava von Karaköy Güllüoğlu wird mit Antep-Pistazien und Büffelbutter gemacht — völlig anders als griechisches oder arabisches Baklava. Bestellen Sie die gemischte Platte." },
+            { name: "Sonnenuntergang im Hamam Çemberlitaş", description: "Das historischste Hamam Istanbuls, 1584 vom großen Architekten Sinan für die Frau des Sultans Süleyman entworfen. Das Ritual des türkischen Hamams (Schaummassage und Kese-Peeling) ist der perfekte Abschied.", price: "400-600 TL (komplette Behandlung)", tip: "Das Çemberlitaş Hamamı hat getrennte Eingänge für Männer und Frauen. Das vollständige Ritual (heißes Bad, Peeling, Einseifen, Massage) dauert 45-60 Minuten." },
+          ],
+        },
+      ],
+    },
   },
 
   florencia: {
@@ -1121,6 +1174,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Le quartier de l'Oltrarno et ses artisans", description: "Le quartier au sud de l'Arno, moins touristique et plus authentique, avec des ateliers de restaurateurs d'art, d'ébénistes, de relieurs et de bijoutiers artisanaux travaillant encore selon des techniques Renaissance.", price: "Gratuit", tip: "Stefano Bemer, via San Niccolò, fabrique les chaussures sur mesure les plus célèbres de Florence. Les parfumeries artisanales comme Lorenzo Villoresi créent des fragrances uniques depuis 1990." },
             { name: "Déjeuner de pâtes à la truffe dans l'Oltrarno", description: "Les restaurants de l'Oltrarno proposent les meilleures pappardelle al cinghiale (sanglier) et tagliolini al tartufo (truffe) de Florence, à des prix bien plus raisonnables que le centre-ville.", price: "14-22€", tip: "Buca Mario (1886, le plus ancien restaurant de Florence) et Buca dell'Orafo garantissent l'authenticité. Dans l'Oltrarno, les restaurants sans menu en anglais sont les meilleurs." },
             { name: "Piazzale Michelangelo au coucher du soleil", description: "La terrasse au-dessus de Florence avec la vue la plus classique de la ville : le Duomo, le Palazzo Vecchio, l'Arno et les ponts vus depuis la colline. L'heure dorée avant le coucher du soleil est le meilleur moment.", price: "Gratuit", tip: "Montez depuis le Piazzale jusqu'à l'église de San Miniato al Monte — 10 minutes de plus, avec des vues encore meilleures et bien moins de monde que le Piazzale." },
+          ],
+        },
+      ],
+    },
+    de: {
+      city: "Florenz",
+      country: "Italien",
+      heroTitle: "3 Tage in Florenz: die Renaissance in ihrer reinsten Form",
+      heroSubtitle: "Die Uffizien, Michelangelos David, Piazzale Michelangelo und Italiens beste Bistecca — Florenz an drei essenziellen Tagen.",
+      bestMonths: "April bis Juni und September bis Oktober",
+      budget: "90-150€/Tag",
+      travelTips: [
+        "Buchen Sie die Uffizien, die Galleria dell'Accademia und den Duomo Wochen im Voraus — die Warteschlangen ohne Reservierung sind in der Hochsaison brutal",
+        "Florenz lässt sich perfekt zu Fuß erkunden — das historische Zentrum ist nur 2 km breit",
+        "Der toskanische Aperitivo (18-21 Uhr) in den Bars von Oltrarno beinhaltet ein Getränk + ein kostenloses Antipasti-Buffet",
+        "Die historischen Apotheken (Farmacia di Santa Maria Novella, gegründet 1221) verkaufen Italiens exklusivste Parfums und Cremes",
+        "Staatliche Museen sind am ersten Sonntag jedes Monats kostenlos — aber auch überfüllt; besser unter der Woche gehen",
+      ],
+      days: [
+        {
+          theme: "Der Duomo und das historische Herz",
+          activities: [
+            { name: "Kathedrale Santa Maria del Fiore (der Duomo)", description: "Brunelleschis Kuppel (1436) war jahrhundertelang die größte der Welt und bleibt das Wahrzeichen von Florenz. Der Aufstieg über die 463 Stufen der Kuppel bietet den besten Blick auf die Terrakotta-Dächer der Stadt.", price: "18€ (Kombiticket: Kathedrale + Kuppel + Baptisterium + Glockenturm)", tip: "Buchen Sie den Zugang zur Kuppel online — die Plätze sind sehr begrenzt. Die ersten Stunden des Tages haben das schönste Licht für die Ausblicke von oben." },
+            { name: "Baptisterium San Giovanni", description: "Florenz' ältestes religiöses Gebäude (11.-12. Jahrhundert), mit Lorenzo Ghibertis vergoldeten Bronzetüren des Paradieses, die Michelangelo genau so nannte. Die 10 Szenen aus dem Alten Testament sind meisterhafte Reliefs.", price: "Im Duomo-Ticket enthalten", tip: "Die originalen Türreliefs befinden sich im Museo dell'Opera del Duomo (im Ticket enthalten) — die draußen sind Repliken. Das Museum ist den Besuch wert." },
+            { name: "Mittagessen im Mercato Centrale", description: "Der Mercato Centrale von Florenz, in seinem eisernen Gebäude aus dem 19. Jahrhundert, hat die höchste Konzentration toskanischer Produkte der Stadt: Trüffel, Pecorino, Wildschwein-Wurstwaren und den berühmten Lampredotto (Florentiner Kutteln).", price: "8-15€", tip: "Lampredotto (der vierte Magen der Kuh) im Panino mit Salsa verde ist Florenz' authentischstes Street Food. Nervi di bue (Rindernerv) für die Abenteuerlustigeren." },
+            { name: "Palazzo Vecchio und die Piazza della Signoria", description: "Florenz' bürgerliches Herz seit dem 14. Jahrhundert, mit der Loggia dei Lanzi (einer kostenlosen Open-Air-Skulpturengalerie) und dem Palazzo Vecchio mit dem von Vasari bemalten Salone dei Cinquecento.", price: "Palazzo 12,50€ / Loggia kostenlos", tip: "Die Loggia dei Lanzi beherbergt Skulpturen von Weltklasse (Giambolognas Raub der Sabinerinnen) komplett im Freien und kostenlos — sehen Sie sie sich an, bevor Sie den Palazzo betreten." },
+          ],
+        },
+        {
+          theme: "Die Uffizien und Michelangelos David",
+          activities: [
+            { name: "Galleria degli Uffizi", description: "Das weltweit wichtigste Museum für Renaissancekunst, mit Werken von Botticelli (Die Geburt der Venus, Primavera), Leonardo, Michelangelo, Raffael und Tizian. Mehr als 100 Räume im Palast der Medici.", price: "25€ (+ 4€ Vorbuchungsgebühr)", tip: "Buchen Sie Ihr Ticket Wochen im Voraus in der Hochsaison online — die Schlangen ohne Reservierung dauern über 3 Stunden. Botticellis Die Geburt der Venus befindet sich in Raum 10 — sie ist kleiner als erwartet." },
+            { name: "Ponte Vecchio und das Oltrarno", description: "Florenz' berühmteste Brücke, 1345 erbaut, seit dem 16. Jahrhundert auf beiden Seiten von Juweliergeschäften gesäumt. Der Vasari-Korridor (der geheime Gang der Medici über der Brücke) ist vom Flussufer aus sichtbar.", price: "Kostenlos", tip: "Die Juweliergeschäfte auf der Ponte Vecchio sind touristisch, aber die Preise sind wettbewerbsfähig — florentinisches Gold hat garantierte Qualität. Der beste Blickwinkel auf die Brücke ist von der Ponte Santa Trinità." },
+            { name: "Galleria dell'Accademia — der David", description: "Das Museum, das Michelangelos David (1504) beherbergt, die berühmteste Skulptur der Welt. Die 5,17 Meter hohe weiße Marmorfigur im runden Saal des Museums ist ein Erlebnis, das kein Foto vermitteln kann.", price: "16€ (+ 4€ Buchungsgebühr)", tip: "Online-Buchung ist UNERLÄSSLICH. Der David zeigt sichtbare Meißelspuren — achten Sie auf die Details der Halssehnen, die Adern an den Händen und den konzentrierten Ausdruck." },
+            { name: "Bistecca alla Fiorentina in der Buca dell'Orafo", description: "Bistecca alla fiorentina ist das berühmteste Gericht der Toskana — ein dick geschnittenes T-Bone-Steak vom Chianina-Rind, mindestens 1 kg, medium-rare gegart (immer medium-rare, nie durch). Sie wird nach Gewicht bestellt.", price: "40-60€ pro Person", tip: "Die Bistecca wird pro 100g berechnet (3-5€). Eine ganze Portion für zwei Personen wiegt 1,2-1,5 kg. Bestellen Sie sie 'al sangue' (blutig) oder 'al punto' (medium) — niemals 'ben cotta' (durchgebraten)." },
+          ],
+        },
+        {
+          theme: "Oltrarno, Piazzale und die Boboli-Gärten",
+          activities: [
+            { name: "Boboli-Gärten", description: "Die Gärten des Palazzo Pitti, der Residenz der Medici, mit Brunnen, Statuen, einer barocken Grotte und Ausblicken auf Florenz und die toskanischen Olivenhaine. 45.000 m² terrassierter Renaissancegärten.", price: "10€ (inkl. Palazzo Pitti)", tip: "Die Grotta Grande del Buontalenti (mit Michelangelo-Skulpturen, eingebettet in künstliche Stalaktitenwände) ist Florenz' seltsamster und faszinierendster Ort." },
+            { name: "Das Viertel Oltrarno und seine Handwerker", description: "Das Viertel südlich des Arno, weniger touristisch und authentischer, mit Werkstätten von Kunstrestauratoren, Tischlern, Buchbindern und Kunsthandwerker-Juwelieren, die noch mit Renaissance-Techniken arbeiten.", price: "Kostenlos", tip: "Stefano Bemer in der Via di San Niccolò fertigt Florenz' berühmteste Maßschuhe an. Handwerkliche Parfümerien wie Lorenzo Villoresi kreieren seit 1990 einzigartige Düfte." },
+            { name: "Trüffelpasta-Mittagessen in Oltrarno", description: "Die Restaurants in Oltrarno haben Florenz' beste Pappardelle al cinghiale (Wildschwein) und Tagliolini al tartufo (Trüffel), zu viel angemesseneren Preisen als in der Innenstadt.", price: "14-22€", tip: "Buca Mario (1886, Florenz' ältestes Restaurant) und Buca dell'Orafo garantieren Authentizität. In Oltrarno sind die Restaurants ohne englische Speisekarte die besten." },
+            { name: "Piazzale Michelangelo bei Sonnenuntergang", description: "Die Terrasse über Florenz mit dem klassischsten Blick der Stadt: der Duomo, der Palazzo Vecchio, der Arno und die Brücken, gesehen vom Hügel aus. Die goldene Stunde vor Sonnenuntergang ist die beste Zeit.", price: "Kostenlos", tip: "Gehen Sie vom Piazzale hinauf zur Kirche San Miniato al Monte — 10 Minuten weiter, mit noch besseren Ausblicken und weit weniger Menschen als am Piazzale." },
           ],
         },
       ],
@@ -1216,6 +1313,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    de: {
+      city: "Lima",
+      country: "Peru",
+      heroTitle: "3 Tage in Lima: die kulinarische Hauptstadt der Welt",
+      heroSubtitle: "Miraflores, Barranco, das historische Zentrum und Lateinamerikas beste Restaurants — Lima ist weit mehr als ein Tor zu Machu Picchu.",
+      bestMonths: "Januar bis März (Südsommer), obwohl es das ganze Jahr über angenehm ist",
+      budget: "S/150-250/Tag (~40-70 USD)",
+      travelTips: [
+        "Lima hat von Mai bis November Küstennebel (die garúa), der den Himmel verdunkelt — der Strand steht in diesen Monaten nicht auf dem Programm",
+        "Limas kulinarische Szene ist die größte Attraktion der Stadt — reservieren Sie im Voraus bei Central, Maido und Kjolle, wenn Sie die besten Tische wollen",
+        "Der Verkehr in Lima ist legendär chaotisch — nutzen Sie Uber oder Cabify, um sich sicher und vorhersehbar fortzubewegen",
+        "Limas Sonne ist trotz des Dunstes stark — tragen Sie an der Promenade von Miraflores immer Sonnencreme",
+        "Die Akklimatisierung an Cusco fällt viel leichter, wenn Sie zuerst in Lima (Meereshöhe) ankommen und die Höhe allmählich steigern",
+      ],
+      days: [
+        {
+          theme: "Miraflores und die Pazifikklippen",
+          activities: [
+            { name: "Parque Kennedy und das Herz von Miraflores", description: "Der zentrale Park von Limas modernstem Viertel, umgeben von Cafés, Galerien und der Kirche der Virgen Milagrosa. Die Katzen des Parks (mehr als 100) sind die beliebteste Attraktion des Viertels.", price: "Kostenlos", tip: "Der Kunsthandwerksmarkt am Wochenende im Parque Kennedy bietet Limas beste Souvenirs. Die Katzen sind zutraulich und können frei fotografiert werden." },
+            { name: "Promenade von Miraflores und die Klippen", description: "Die Promenade auf 70-80 Meter hohen Klippen über dem Pazifik, mit Meerblick und darüber schwebenden Gleitschirmfliegern. Der Parque del Amor, mit Víctor Delfíns Wandbild und umschlungenen Paaren, ist einer der romantischsten Parks der Welt.", price: "Kostenlos (Gleitschirmfliegen S/150)", tip: "Gleitschirmfliegen von den Klippen ist Limas actionreichste Aktivität — 15 Minuten über dem Pazifik aus 80 Metern Höhe. Anbieter wie Aeroxtreme starten von der Promenade." },
+            { name: "Ceviche im Mercado 28 oder bei La Mar", description: "Ceviche ist Perus Nationalgericht und Lima hat das beste der Welt. La Mar (Gastón Acurio) und Mercado 28 sind beliebte Anlaufstellen, mit Schlangen und Gemeinschaftstischen.", price: "S/35-80", tip: "Leche de tigre (die Zitrusmarinade des Ceviche) wird am Ende als Shot getrunken und soll aphrodisierende Eigenschaften haben. Fragen Sie immer danach." },
+            { name: "Sonnenuntergang von Larcomar aus", description: "Das in die Klippen von Miraflores gebaute Einkaufszentrum, mit Bars und Restaurants über dem Pazifik. Die Terrasse im oberen Stockwerk bietet den besten Sonnenuntergangsblick auf den Ozean in ganz Lima.", price: "Kostenlos", tip: "Astrid & Gastón in Larcomar ist das historischste Restaurant der modernen peruanischen Küche. Der Sonnenuntergangsblick mit einem Pisco Sour ist den Preis wert." },
+          ],
+        },
+        {
+          theme: "Historisches Zentrum und Limas koloniale Seele",
+          activities: [
+            { name: "Plaza Mayor und die kolonialen Balkone", description: "Limas Herz seit der spanischen Gründung 1535. Die Kathedrale, der Regierungspalast und der Stadtpalast bilden den wichtigsten Platz des kolonialen Peru. Die geschnitzten Holzbalkone sind einzigartig in Amerika.", price: "Kostenlos (Kathedrale S/20)", tip: "Der Wachwechsel am Regierungspalast findet montags bis freitags um 11:30 Uhr statt — eine kostenlose Show mit Musik der Präsidentenkapelle." },
+            { name: "Kloster Santo Domingo und die Katakomben", description: "Das Kloster aus dem 16. Jahrhundert, in dem San Martín de Porres und Santa Rosa de Lima begraben sind. Die Katakomben unter der Kirche bewahren mehr als 25.000 Überreste der frühen Kolonisatoren und Criollos Limas.", price: "S/15", tip: "Die Katakomben sind überraschend gut erhalten, und der Guide gibt einen faszinierenden historischen Kontext. Blitzlichtfotografie ist im Inneren verboten." },
+            { name: "Limas Chinatown — das Barrio Chino", description: "Limas chinesische Gemeinschaft (200.000 Menschen, die größte Lateinamerikas) hat das beste Chinatown der Region. Die Chifas (chinesisch-peruanische Restaurants) an der Jirón Ucayali sind legendär.", price: "S/20-45", tip: "Die chinesisch-peruanische Fusion (Chifa) ist eine der interessantesten Küchen der Welt. Bestellen Sie Arroz chaufa mit Lomo saltado — die perfekte Fusion zweier Kulturen." },
+            { name: "Museo Larco — der präkolumbianische Schatz", description: "Die weltweit wichtigste Sammlung präkolumbianischer Kunst, in einer Hacienda aus dem 17. Jahrhundert in Pueblo Libre. Ihre 45.000 Objekte umfassen den Schatz von Sipán, Moche-Keramik und die berühmte erotische Galerie.", price: "S/50", tip: "Das Gartencafé im Museo Larco (zwischen den Blumen und den Huacas) ist eines der schönsten in Lima. Reservieren Sie im Voraus einen Tisch zum Sonnenuntergang." },
+          ],
+        },
+        {
+          theme: "Barranco — das bohemienhafteste Viertel",
+          activities: [
+            { name: "Viertel Barranco und die Seufzerbrücke", description: "Limas bohemienhaftestes, künstlerischstes Viertel, mit kolonialen Herrenhäusern, die zu Galerien und Bars umgebaut wurden, und dem Mario-Testino-Museum. Die Seufzerbrücke (1876) und der Weg hinunter zum Strand sind die Postkartenbilder des Viertels.", price: "Kostenlos", tip: "Die Tradition besagt, dass ein Wunsch in Erfüllung geht, wenn man die Seufzerbrücke mit angehaltenem Atem überquert. Die Ausblicke hinunter zum Meer sind wunderschön." },
+            { name: "Mittagessen bei Isolina — eine Taverne in Lima", description: "Die Taverne von Jose del Castillo in Barranco ist das beste Beispiel für Limas kreolische Küche: Chicharrón vom Schwein, Anticuchos vom Rinderherz, Carapulcra und Causa limeña in ihrer authentischsten Form.", price: "S/40-80", tip: "Reservieren Sie im Voraus — Isolina steht auf jeder Liste der besten Restaurants Limas und ist sowohl mittags als auch abends ausgebucht. Montagmittag ist am wenigsten überlaufen." },
+            { name: "MATE — Mario-Testino-Museum", description: "Das Museum des berühmtesten peruanischen Fotografen der Welt, in einem Herrenhaus aus dem 19. Jahrhundert in Barranco. Seine Porträts von Prinzessin Diana, Kate Moss und Naomi Campbell in peruanischen Designerstücken sind beeindruckend.", price: "S/25", tip: "Der Gartenpatio des MATE ist einer der schönsten in Lima. Das Café im Erdgeschoss serviert das beste Eigelbbrot des Viertels." },
+            { name: "Pisco Sour in einer Bar in Barranco", description: "Der Pisco Sour ist Perus Nationalcocktail (leicht anders als die chilenische Version). Die Bars von Barranco servieren die authentischsten Versionen: Pisco Quebranta, grüne Limette, einfacher Sirup, Eiweiß und Bitters.", price: "S/25-35", tip: "Die Ayahuasca Bar in Barranco (das dreistöckige Herrenhaus aus der Republikzeit) hat die besten Pisco Sours und die besondere Atmosphäre in Limas Nachtleben. Die Speakeasy-Bar von El Refugio ist ebenfalls sehr besonders." },
+          ],
+        },
+      ],
+    },
   },
 
   praga: {
@@ -1303,6 +1444,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Quartier de Vinohrady — le Prague local", description: "Le quartier résidentiel bourgeois du XIXe siècle, avec les meilleurs cafés artisanaux, bars à vin et restaurants tchèques modernes de la ville. Náměstí Míru (place de la Paix) en est le centre.", price: "150-300 CZK", tip: "Le restaurant Eska à Karlín (15 min en métro) propose la cuisine tchèque la plus innovante de Prague — aliments fermentés, pain au levain et produits fermiers locaux. Réservez à l'avance." },
             { name: "Parc Letná — le jardin à bière avec la meilleure vue", description: "Le grand parc au-dessus de la Vltava avec le jardin à bière le plus célèbre de Prague. Vues directes sur les toits de la vieille ville et la rivière, avec des bières à prix locaux.", price: "Gratuit (bière 45-60 CZK)", tip: "Le jardin à bière de Letná est l'endroit préféré des jeunes Praguois au coucher du soleil. Commander en anglais ne pose aucun problème — demandez simplement 'une bière brune s'il vous plaît'." },
             { name: "Concert de musique classique en ville", description: "Prague possède la scène de musique classique la plus riche d'Europe centrale, avec des concerts quotidiens à la Maison municipale, à l'Opéra et dans les églises historiques. Mozart et Dvořák planent sur chaque rue.", price: "400-900 CZK", tip: "Les concerts dans les églises historiques (Saint-Nicolas, Sainte-Croix) sont les plus atmosphériques et coûtent 400-600 CZK. Le son et l'architecture baroque se combinent pour une expérience unique." },
+          ],
+        },
+      ],
+    },
+    de: {
+      city: "Prag",
+      country: "Tschechische Republik",
+      heroTitle: "3 Tage in Prag: die Burg, die Karlsbrücke und Europas günstigstes Bier",
+      heroSubtitle: "Altstadt, Prager Burg, Josefov und die Kleinseite — Europas am besten erhaltene mittelalterliche Stadt an drei vollen Tagen.",
+      bestMonths: "Mai bis September",
+      budget: "60-100€/Tag",
+      travelTips: [
+        "Die tschechische Krone (CZK) ist nicht der Euro — wechseln Sie in Wechselstuben der Innenstadt, niemals an Straßenständen, die Touristen betrügen",
+        "Prags Metro ist effizient und günstig (30 CZK pro Fahrt) — kaufen Sie das Tagesticket (120 CZK), wenn Sie mehr als 4 Fahrten machen",
+        "Prag ist sehr touristisch, aber Vinohrady, Žižkov und Holešovice haben die authentischste lokale Atmosphäre",
+        "Bier in Prag kostet weniger als Flaschenwasser in den Bars — das ist Kultur, kein Betrug",
+        "Die Hochsaison (Juni-August) und Weihnachten sind die überlaufensten Zeiten — Frühling und Herbst sind ideal",
+      ],
+      days: [
+        {
+          theme: "Die Prager Burg und die Kleinseite",
+          activities: [
+            { name: "Prager Burg — zur Öffnungszeit", description: "Der flächenmäßig größte Burgkomplex der Welt (70.000 m²), mit 9 Jahrhunderten Geschichte. Der Komplex umfasst den Veitsdom, den Königspalast und das malerische Goldene Gässchen, wo einst Franz Kafka lebte.", price: "350 CZK (lange Tour)", tip: "Kommen Sie um 8:30 Uhr zur Öffnung, um den Veitsdom ohne Schlangen zu sehen. Der Blick vom Südgarten der Burg über Prags rote Dächer ist der spektakulärste der Stadt." },
+            { name: "Goldenes Gässchen — wo Franz Kafka lebte", description: "Die Straße aus dem 16. Jahrhundert mit bunten Häusern innerhalb der Burg, wo Hofgoldschmiede und später Franz Kafka in Nummer 22 ihre Tage verbrachten. Die winzigen mittelalterlichen Häuser sind Miniaturmuseen.", price: "Im Burgticket enthalten", tip: "Haus Nummer 22 (blau) ist der Ort, an dem Kafka einige seiner Geschichten schrieb. Die dortige Buchhandlung verkauft heute seine Werke auf Tschechisch und Deutsch — das beste Souvenir aus Prag." },
+            { name: "Mittagessen in Malá Strana (Kleinseite)", description: "Das Barockviertel am Fuß der Burg, mit Palästen, Kirchen und Prags bestem Bier. Die Brauerei Katedrinska und die Restaurants in der Nerudova sind lokale Favoriten.", price: "180-350 CZK", tip: "Svíčková (marinierter Rinderbraten mit Sahnesauce und Knedlíky) ist das schmackhafteste tschechische Nationalgericht. Pilsner Urquell und Staropramen kosten in der Kleinseite 35-55 CZK." },
+            { name: "Karlsbrücke bei Sonnenuntergang", description: "Die gotische Brücke aus dem 14. Jahrhundert, gesäumt von 30 Barockstatuen, über die Moldau. Am Nachmittag füllt sie sich mit Straßenmusikern, Künstlern und Prags bester Atmosphäre.", price: "Kostenlos", tip: "Die Brücke ist tagsüber überfüllt — die beste Zeit ist früh (7 Uhr) oder spät (21 Uhr). Die Statue des Heiligen Johannes von Nepomuk (der glänzende Bronzeteil) zu berühren, soll Glück bringen." },
+          ],
+        },
+        {
+          theme: "Die Altstadt und das jüdische Viertel",
+          activities: [
+            { name: "Altstädter Ring und die Astronomische Uhr", description: "Mitteleuropas schönster Platz, mit der Astronomischen Uhr von 1410 (der ältesten noch funktionierenden), deren Parade der 12 Apostel jede volle Stunde stattfindet. Die Teynkirche dominiert den Hintergrund.", price: "Kostenlos (Uhrenturm 250 CZK)", tip: "Die Parade der Uhr findet genau zur vollen Stunde statt — kommen Sie 5 Minuten früher. Der Rathausturm (250 CZK) bietet den besten Blick auf den Platz und Prags Dächer." },
+            { name: "Josefov — das jüdische Viertel", description: "Eines der am besten erhaltenen mittelalterlichen jüdischen Viertel Europas, mit sechs Synagogen (13.-19. Jahrhundert), einem jüdischen Friedhof mit 12.000 übereinander liegenden Gräbern und einem Museum, das die Geschichte des Holocaust in Prag dokumentiert.", price: "500 CZK (Kombiticket)", tip: "Der alte jüdische Friedhof hat bis zu 12 übereinander liegende Grabschichten — der Platz war so knapp, dass Bestattungen übereinander stattfanden. Der Besuch ist zutiefst bewegend." },
+            { name: "Nerudova-Straße und Malá Strana", description: "Prags fotogenste Straße, mit Barockpalästen, Galerien und Botschaften, die von der Karlsbrücke hinauf zur Burg führen. Jedes Gebäude trägt eine mittelalterliche heraldische Erkennungstafel.", price: "Kostenlos", tip: "In der Nerudova 47 befindet sich die rumänische Botschaft — das Haus des Alchemisten, das in Paulo Coelhos Der Alchimist vorkommt. Der geheime Rosengarten im Palais Vrtba (95 CZK) ist der schönste in Prag." },
+            { name: "Brauerei U Fleků — seit 1499", description: "Prags älteste Brauerei, seit 1499 ununterbrochen in Betrieb, im Viertel Nové Město. Sie braut ihr eigenes dunkles Bier (černé pivo) und bietet mittelalterliche Säle mit Live-Musik.", price: "65-100 CZK pro Pint", tip: "Bei U Fleků kann man nicht einfach sitzen, ohne zu trinken — die Kellner stellen automatisch ein frisches Bier auf den Tisch. Wenn Sie kein weiteres möchten, decken Sie Ihr Glas mit dem Untersetzer ab." },
+          ],
+        },
+        {
+          theme: "Vinohrady, Vyšehrad und das alternative Prag",
+          activities: [
+            { name: "Vyšehrad — die andere Festung", description: "Die mittelalterliche Festung aus Prags Gründungslegende, mit einer Basilika, einem Friedhof bedeutender Tschechen (Dvořák, Smetana) und Panoramablicken über die Moldau. Weit weniger touristisch als die Burg.", price: "Kostenlos (einige Säle 80 CZK)", tip: "Vyšehrad bietet die besten Ausblicke auf die Moldau und die Karlsbrücke von oben — ohne die Menschenmassen der Burg. Der Garten an der Südmauer ist perfekt für ein Picknick." },
+            { name: "Viertel Vinohrady — das lokale Prag", description: "Das bürgerliche Wohnviertel aus dem 19. Jahrhundert mit den besten handwerklichen Cafés, Weinbars und modernen tschechischen Restaurants der Stadt. Náměstí Míru (Friedensplatz) ist sein Zentrum.", price: "150-300 CZK", tip: "Das Restaurant Eska in Karlín (15 Min mit der Metro) hat Prags innovativste tschechische Küche — fermentierte Speisen, Sauerteig und lokale Produkte vom Bauernhof. Reservieren Sie im Voraus." },
+            { name: "Park Letná — der Biergarten mit dem besten Blick", description: "Der große Park über der Moldau mit Prags berühmtestem Biergarten. Direkte Ausblicke auf die Dächer der Altstadt und den Fluss, mit Bier zu lokalen Preisen.", price: "Kostenlos (Bier 45-60 CZK)", tip: "Der Biergarten von Letná ist der Lieblingsort junger Prager zum Sonnenuntergang. Auf Englisch zu bestellen ist kein Problem — fragen Sie einfach nach 'einem dunklen Bier bitte'." },
+            { name: "Konzert klassischer Musik in der Stadt", description: "Prag hat die reichste klassische Musikszene Mitteleuropas, mit täglichen Konzerten im Gemeindehaus, im Opernhaus und in historischen Kirchen. Mozart und Dvořák liegen in jeder Straße in der Luft.", price: "400-900 CZK", tip: "Konzerte in den historischen Kirchen (St. Nikolaus, Heiligkreuz) sind am stimmungsvollsten und kosten 400-600 CZK. Der Klang und die barocke Architektur verbinden sich zu einem einzigartigen Erlebnis." },
           ],
         },
       ],
