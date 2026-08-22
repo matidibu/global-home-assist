@@ -99,6 +99,109 @@ export const destinationPagesI18n: Partial<Record<string, Record<DestLang, Desti
       ],
     },
   },
+  singapur: {
+    en: {
+      city: "Singapore",
+      country: "Singapore",
+      heroTitle: "3 days in Singapore: the future of the 21st century",
+      heroSubtitle: "Gardens by the Bay, Chinatown, Marina Bay Sands, and hawker centre food — Singapore in three perfectly planned days.",
+      bestMonths: "February to April",
+      budget: "$150-250 SGD/day (~$110-185 USD)",
+      travelTips: [
+        "Singapore has one of the most efficient public transport systems in the world — the EZ-Link card covers the metro (MRT), buses, and LRT",
+        "Hawker centre food (SGD 4-8) is the same quality as luxury restaurants — it's Singapore's great culinary equalizer",
+        "The climate is tropical year-round (30°C, 80% humidity) — light clothing and sunscreen always",
+        "Singapore has very strict laws: no smoking in public places, no eating on the metro, and no chewing gum",
+        "Singapore is expensive for accommodation (SGD 150-300/night) but cheap for food and transport",
+      ],
+      days: [
+        {
+          theme: "Marina Bay and futuristic Singapore",
+          activities: [
+            { name: "Gardens by the Bay", description: "The world's most spectacular futuristic garden complex, with the Supertrees (25-50 meter steel structures) and its two geodesic domes: Cloud Forest (a 35m-tall tropical forest) and Flower Dome.", price: "SGD 28 (Cloud Forest + Flower Dome)", tip: "The Supertree Grove has the best sunset and a free light show at 7:45pm and 8:45pm. Climbing the skywalk between the Supertrees (SGD 10) offers views of Marina Bay." },
+            { name: "Marina Bay Sands Skypark", description: "Singapore's most iconic hotel, with an infinity pool on the 57th floor (guests only) and the SkyPark terrace offering Singapore's best views. The free Spectra light-and-water show runs in front of the hotel.", price: "SGD 32 (observation deck)", tip: "The SkyPark observation deck is open to the public (SGD 32). The view of the skyline, Gardens by the Bay, and the Singapore Strait from 200 meters up is unmatched." },
+            { name: "ArtScience Museum", description: "The lotus-flower-shaped museum floating on Marina Bay's water, with digital art, science, and technology exhibitions. The permanent Future World exhibit (digital art by teamLab) is one of the most impressive in the world.", price: "SGD 21", tip: "teamLab's Future World has the 'Forest of Life' installation, where the lights react to movement — one of the most unique visual experiences in Asia." },
+            { name: "Spectra — light and water show", description: "The free show at Marina Bay Waterfront in front of The Shoppes, with 30-meter water jets and laser projections synced to music. One of the best free nighttime shows in the world.", price: "Free", tip: "The best spot is on the Helix Bridge or along the waterfront facing the ArtScience Museum. The 8:45pm show on Fridays and Saturdays is the longest." },
+          ],
+        },
+        {
+          theme: "Chinatown, Little India, and the hawker centres",
+          activities: [
+            { name: "Chinatown Heritage Centre", description: "Singapore's Chinatown, with the Jade Buddha at the Sri Mariamman Temple, ancestral Chinese tea shops, and the famous Maxwell Food Centre. Pagoda, Trengganu, and Sago streets have the most colorful shophouses.", price: "Free (Heritage Centre SGD 12)", tip: "Thian Hock Keng Temple (1840) is Singapore's oldest Hokkien temple — the porcelain dragon decoration on the roof is extraordinary. Free to enter." },
+            { name: "Maxwell Food Centre — the most famous hawker centre", description: "Singapore's most historic street food center, with more than 100 stalls under one roof. Tian Tian's chicken rice, fruit rojak, and laksa are the most sought-after dishes.", price: "SGD 4-8 per dish", tip: "The Tian Tian Hainanese Chicken Rice stall (Anthony Bourdain's favorite) has a line from 10:30am on — get there before noon to eat. It costs SGD 5-6." },
+            { name: "Little India — Serangoon Road", description: "Singapore's Indian quarter, with the Sri Veeramakaliamman Temple (one of the most elaborate in Asia), spice shops, flower stalls, and Tekka Market, home to the city's best Indian food.", price: "Free", tip: "The biryani at Allauddin's stall in Tekka Market (SGD 6) is Singapore's best. The neighborhood is especially colorful on Sundays, when migrant workers celebrate their day off." },
+            { name: "Clarke Quay and the Singapore River at sunset", description: "The old Singapore River wharf, now a district of bars and restaurants in restored colonial shophouses. The golden hour lights up the colorful façades with the river in the foreground.", price: "Free", tip: "River cruise boats from Clarke Quay depart every 30 minutes (SGD 25) and pass by the city's most historic sights. The nighttime cruise is the most beautiful." },
+          ],
+        },
+        {
+          theme: "Sentosa, the zoo, and Singapore's nature",
+          activities: [
+            { name: "Singapore Zoo — the world's best", description: "Consistently ranked one of the world's best zoos, with open-concept habitats for the animals. The giraffes, the semi-free-ranging Bornean orangutans, and the river crocodiles are the most fascinating.", price: "SGD 49", tip: "Jungle Breakfast with Wildlife (SGD 33 extra) gives you breakfast alongside the orangutans at 9am — a unique experience. Book weeks ahead." },
+            { name: "Sentosa Island and Universal Studios", description: "Singapore's entertainment island, with Universal Studios, Siloso Beach, and a panoramic cable car. The Transformers, Harry Potter, and Jurassic Park rides at Universal are the best in Asia.", price: "SGD 88 (Universal Studios)", tip: "Universal Studios' Express Pass (SGD 40 extra) skips the lines for the main rides — worth it if the park is crowded. The cable car (SGD 35) from Mount Faber has the best views of the strait." },
+            { name: "Haw Par Villa — the park of the ten hells", description: "Asia's strangest theme park, created in 1937, with 1,000 statues depicting Chinese mythology and the 10 courts of hell. A one-of-a-kind surreal experience.", price: "Free", tip: "Haw Par Villa is one of Singapore's most singular spots and virtually unknown to tourists — a hidden gem among the commercial theme parks." },
+            { name: "Final dinner at Newton Circus Hawker Centre", description: "Singapore's most famous nighttime hawker centre (the one from Crazy Rich Asians), with mud crabs, fried orchids, BBQ seafood, and laksa under the tropical stars.", price: "SGD 15-40", tip: "Chilli crab (SGD 50-80 per serving) is Singapore's national dish — order it from the stall with the longest line. Man Tou (fried buns) for dipping in the sauce is mandatory." },
+          ],
+        },
+      ],
+    },
+  },
+
+  "ciudad-de-mexico": {
+    en: {
+      city: "Mexico City",
+      country: "Mexico",
+      heroTitle: "4 days in Mexico City: tacos, pyramids, and pre-Hispanic culture",
+      heroSubtitle: "Teotihuacán, Xochimilco, La Condesa, and the world's best tacos — the itinerary to discover Latin America's most fascinating metropolis.",
+      bestMonths: "October to May (dry season)",
+      budget: "$40-80 USD/day",
+      travelTips: [
+        "Mexico City's metro is the cheapest in the world (MXN 5) and reaches almost everywhere — learn the main lines before you arrive",
+        "Mexico City sits at 2,240m altitude — the first few days you may feel tired or short of breath, take it easy",
+        "Street-stall tacos are safe and delicious — look for the stalls with the most local customers",
+        "Uber and Cabify are the safest transport options for tourists, especially at night",
+        "Rainy season (June-October) brings brief afternoon downpours — always carry an umbrella or poncho",
+      ],
+      days: [
+        {
+          theme: "The Zócalo and the Historic Center",
+          activities: [
+            { name: "Zócalo and the Metropolitan Cathedral", description: "Latin America's largest square, surrounded by the National Palace, the Metropolitan Cathedral (the largest in the Americas), and the Old City Hall. Diego Rivera painted the National Palace's murals depicting Mexico's history.", price: "Free (National Palace free)", tip: "Diego Rivera's murals in the National Palace are on the first floor by the main staircase — free entry with ID. The Tlatelolco market scene is the most impressive." },
+            { name: "Templo Mayor — the Aztec ruins beneath the city", description: "The ceremonial center of Tenochtitlán, the Aztec capital, discovered in 1978 beneath Mexico City's historic center. The adjacent museum has the Sun Stone (the misnamed 'Aztec calendar') and the Teocalli of the Sacred War.", price: "MXN 85", tip: "Templo Mayor shows 7 stacked layers of construction — the Aztecs built a new temple over the previous one every 52 years. The Tlaltecuhtli monolith (tons of carved stone) is the most recent find." },
+            { name: "Tacos at the Mercado de la Merced", description: "The largest market in the Historic Center, with more than 3,000 food stalls, tacos de canasta, tamales, atole, and Mexico's widest variety of fresh chiles.", price: "MXN 20-40 per taco", tip: "Tacos de canasta (bean, pork rind, and potato, delivered by bike in a palm basket) are downtown's most authentic breakfast. The taco placero with nopales and fresh cheese is perfect for vegetarians." },
+            { name: "Bellas Artes and the Alameda", description: "The Palacio de Bellas Artes, a symbol of modern Mexico with its marble dome, houses murals by Diego Rivera, José Clemente Orozco, and David Alfaro Siqueiros. Alameda Central park is the oldest in the Americas (1592).", price: "MXN 80 (gallery)", tip: "The glass ceiling in Bellas Artes' main hall, with its Tiffany-glass curtain depicting Popocatépetl volcano, can only be seen during a performance or guided visit. The upper-floor murals are freely accessible." },
+          ],
+        },
+        {
+          theme: "Teotihuacán — the city of the gods",
+          activities: [
+            { name: "Teotihuacán Pyramids — first thing", description: "Mesoamerica's largest pre-Hispanic city, 50 km from Mexico City, with the Pyramid of the Sun (the third-largest in the world), the Pyramid of the Moon, and the 2 km Avenue of the Dead.", price: "MXN 100", tip: "Take the first bus (6:30am) from Terminal del Norte. Arriving by 8am, ahead of organized tour groups, gives you the pyramids almost to yourself." },
+            { name: "Climbing the Pyramid of the Sun", description: "The Pyramid of the Sun's 248 steps lead to the summit, 70 meters up, with 360° views over the Teotihuacán valley and the entire ceremonial city. It's the most impressive experience in Mexican archaeology.", price: "Included", tip: "Climb from both sides to take in the full views. The steps are steep and the altitude is 2,300m — take it slow and bring water." },
+            { name: "Lunch with a view of the pyramids", description: "The restaurants facing the pyramids serve Oaxacan tlayudas, enchiladas, and pulque (fermented maguey drink). La Gruta restaurant, inside a natural cave dating to the 2nd century BC, is the most impressive.", price: "MXN 120-200", tip: "La Gruta (inside the cave) is right at the exit of the archaeological site. Call ahead to reserve for midday — it's an iconic spot worth the price." },
+            { name: "Return, and mole dinner in La Condesa", description: "La Condesa is Mexico City's most cosmopolitan, food-focused neighborhood, with high-end Mexican restaurants like Quintonil and Pujol (world's #5), and cafés along Avenida Ámsterdam's tree-lined medians.", price: "MXN 100-300", tip: "Oaxacan black mole and mole poblano are Mexican cuisine's two most complex sauces (with more than 30 ingredients). The best are at Azul y Oro, in Roma." },
+          ],
+        },
+        {
+          theme: "Xochimilco and the south of the city",
+          activities: [
+            { name: "Xochimilco — the pre-Hispanic canals", description: "The last chinampas (floating artificial islands) of the Aztec civilization, a UNESCO World Heritage site. Colorful trajinera boats cruise the canals with mariachis, food vendors, and Mexico City's most festive atmosphere.", price: "MXN 400-600 (2h trajinera ride)", tip: "Rent a whole trajinera with friends (6-8 people) instead of joining a shared one. The mariachis who pull up alongside in their own boat charge MXN 200-300 per song." },
+            { name: "Coyoacán — Frida Kahlo's neighborhood", description: "Mexico's most beautiful colonial neighborhood, with its crafts market, the coyote-themed square, and the Casa Azul (Frida Kahlo Museum). Diego Rivera and Frida Kahlo lived here, and the neighborhood still carries their artistic spirit.", price: "Free (Casa Azul MXN 250)", tip: "Book the Casa Azul (Frida Kahlo Museum) online ahead of time — only 80 people per hour. The ice cream shop in Coyoacán (facing the church) has incredible flavors." },
+            { name: "Casa Azul — Frida Kahlo Museum", description: "The house where Frida Kahlo was born and died, preserved just as she left it, with her Tehuana dresses, her paintings, and the wheelchair she worked from in her final years. The garden with its Aztec pyramids is striking.", price: "MXN 250", tip: "The still-life arrangement in the blue kitchen, with decorated skulls and clay pots, tells you more about Frida's character than the paintings do. The studio in the garden has her original easel." },
+            { name: "Mezcal and chef-driven tacos in Roma Norte", description: "Roma Norte is Mexico City's trendiest neighborhood, with artisan mezcal bars (from Oaxaca, Guerrero, and Michoacán), chef-driven tacos, and Mexico's most cutting-edge food scene.", price: "MXN 80-200", tip: "Bósforo Mezcalería and Hanky Panky have Mexico's best small-batch mezcals. Always order mezcal neat, at room temperature — never with ice." },
+          ],
+        },
+        {
+          theme: "Chapultepec and Mexico's best museum",
+          activities: [
+            { name: "National Museum of Anthropology", description: "Latin America's best museum and one of the finest in the world, with the Aztec Sun Stone, Pakal of Palenque's jade funerary mask, and the Maya hall with the Bonampak mural recreation. Its 24 rooms cover every civilization of Mexico.", price: "MXN 85", tip: "The Mexica (Aztec) hall, with the Sun Stone and the Coatlicue, is the most striking. Two hours is enough for the main halls — seeing the whole museum takes 5+ hours." },
+            { name: "Chapultepec Forest", description: "Latin America's largest urban park (686 hectares), with Chapultepec Castle, an artificial lake, and the zoo, home to the only giant panda in the Americas. The park is Mexico City's green, social lung.", price: "Free (Zoo free, Castle MXN 90)", tip: "Chapultepec Castle (once home to Maximilian of Habsburg and Porfirio Díaz) has O'Gorman's finest murals on Mexican history and views over Paseo de la Reforma." },
+            { name: "Paseo de la Reforma and the Angel", description: "Mexico City's grand avenue, designed in 1864 by Maximilian, inspired by the Champs-Élysées. The Angel of Independence, the Diana Cazadora fountain, and the Torre Mayor form Mexico City's most recognizable skyline.", price: "Free", tip: "On Sundays, Paseo de la Reforma closes to cars and fills with cyclists, skaters, and street vendors — the city's most festive, family-friendly atmosphere." },
+            { name: "Last dinner in Polanco — fine Mexican cuisine", description: "Polanco is home to Mexico's most award-winning restaurants: Pujol (world's top 10), Quintonil, Máximo Bistrot. If your budget is tight, the suadero tacos at the Cuauhtémoc stand are just as memorable.", price: "MXN 300-1,500", tip: "Pujol and Quintonil require reservations months in advance. For an accessible dining experience, Mercado Roma in Colonia Roma has 70 stalls of chef-driven Mexican food from MXN 80." },
+          ],
+        },
+      ],
+    },
+  },
+
   estambul: {
     en: {
       city: "Istanbul",
