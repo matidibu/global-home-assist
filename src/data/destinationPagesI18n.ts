@@ -1583,6 +1583,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    de: {
+      city: "Miami",
+      country: "Vereinigte Staaten",
+      heroTitle: "3 Tage in Miami: South Beach, Wynwood und Little Havana",
+      heroSubtitle: "Art déco, Straßenkunst, lateinamerikanisches Essen und Floridas beste Strände — die perfekte Reiseroute für das authentischste Miami.",
+      bestMonths: "November bis April",
+      budget: "150-250 USD/Tag",
+      travelTips: [
+        "Ein Auto oder Uber ist nötig, um sich effizient in Miami fortzubewegen — der öffentliche Nahverkehr ist außerhalb von South Beach begrenzt",
+        "Miamis Sonne ist das ganze Jahr über intensiv — LSF-50-Sonnencreme ist am Strand Pflicht",
+        "Trinkgeld im Restaurant beträgt 18-20% der Summe — erwartet, und Teil des Gehalts der Bedienung",
+        "Die Hurrikansaison dauert von Juni bis November — schließen Sie eine Reiseversicherung ab, wenn Sie in diesen Monaten reisen",
+        "Spanisch ist Miamis eigentliche Sprache — in vielen Geschäften in Little Havana und Wynwood ist Englisch die Zweitsprache",
+      ],
+      days: [
+        {
+          theme: "South Beach und das Art-déco-Viertel",
+          activities: [
+            { name: "Sonnenaufgang in South Beach", description: "Floridas berühmtester Strand ist in den frühen Morgenstunden besonders magisch, wenn die rot-weißen Liegestühle leer sind und das Licht des Sonnenaufgangs auf die Art-déco-Hotels am Ocean Drive fällt.", price: "Kostenlos", tip: "Die Sonne geht in Miami Beach über dem Ozean auf (nicht über offenem Horizont — die Stadt liegt an der Ostküste). Die Spiegelung im nassen Sand ergibt das beste Sonnenaufgangsfoto." },
+            { name: "Historisches Art-déco-Viertel — Ocean Drive", description: "Das weltweit umfassendste historische Art-déco-Viertel, mit mehr als 800 Gebäuden aus den 1920er-40er Jahren in Pastellfarben, Chrom und Neon. Der Abschnitt des Ocean Drive zwischen 5. und 15. Straße ist am fotogensten.", price: "Kostenlos (geführte Tour 30 USD)", tip: "Die Miami Design Preservation League bietet samstags um 10:30 Uhr geführte Spaziergänge an (30 USD) mit wichtigem historischem Kontext. Das Colony Hotel ist das meistfotografierte Gebäude." },
+            { name: "Mittagessen am Lincoln Road Mall", description: "Miami Beachs berühmteste Fußgängerstraße, mit Restaurants, Galerien und dem besten Leute-Beobachten der Stadt. Sonntags gibt es einen Markt lokaler Designer.", price: "15-30 USD", tip: "Das News Café am Ocean Drive hat 24 Stunden geöffnet und ist South Beachs historischster Treffpunkt. Für normale Preise gehen Sie einen Block landeinwärts von der Promenade." },
+            { name: "Brickell und die Skyline bei Sonnenuntergang", description: "Miamis Finanzviertel, mit den neuesten Wolkenkratzern der Stadt und dem Brickell City Centre. Der Spaziergang entlang der Biscayne Bay bei Sonnenuntergang bietet die beste Skyline der Stadt.", price: "Kostenlos", tip: "Das Pérez Art Museum Miami (PAMM) hat für alle zugängliche Terrassen mit Blick auf die Bucht — der beste kostenlose Blick auf Miamis Skyline bei Sonnenuntergang." },
+          ],
+        },
+        {
+          theme: "Wynwood, das Design District und Miamis Nachtleben",
+          activities: [
+            { name: "Wynwood Walls", description: "Das weltweit berühmteste Freiluftmuseum für urbane Kunst, 2009 von Tony Goldman gegründet. Mehr als 80 internationale Künstler haben die Lagerhäuser des Viertels mit Wandbildern bemalt, die sich jedes Jahr ändern.", price: "Kostenlos (Außenbereich) / 12 USD (Wynwood Walls Museum innen)", tip: "Der Zugang zu den Straßen des Viertels ist kostenlos — das Innenmuseum bietet tatsächlich weniger zu sehen als die Straßen. Gehen Sie die Blocks zwischen NW 25th und 27th ab, um die besten Wandbilder zu sehen." },
+            { name: "Handwerkliches Café und Galerie in Wynwood", description: "Wynwood hat Miamis künstlerischste Cafés, in alten Geschäften mit eigenen Wandbildern eingerichtet. Panther Coffee und Wynwood Kitchen & Bar sind Favoriten der kreativen Szene.", price: "5-15 USD", tip: "Panther Coffee in der NW 24th hat Miamis besten Espresso und befindet sich in einem Gebäude mit einem Wandbild von Shepard Fairey. Kommen Sie vor Mittag, um einen Tisch zu bekommen." },
+            { name: "Design District — Luxus und zeitgenössische Kunst", description: "Miamis Viertel für Luxusboutiquen und zeitgenössische Kunstgalerien. Von Gucci bis Hermès, von Gagosian bis Locust Projects — eine Mischung aus Konsum und Kunst, die die exklusivste Seite Miamis widerspiegelt.", price: "Kostenlos (Eintritt)", tip: "Das Institute of Contemporary Art (ICA Miami) im Design District hat freien Eintritt und Ausstellungen von Weltklasse. Dienstag bis Sonntag geöffnet." },
+            { name: "Nachtleben in South Beach", description: "South Beach hat die berühmteste Nachtlebenszene der USA. LIV im Fontainebleau, E11EVEN und Story sind die bekanntesten Clubs. Es geht um 23 Uhr los und dauert bis 3-4 Uhr morgens.", price: "20-50 USD (Eintritt)", tip: "Kommen Sie vor 23 Uhr an, um die Schlange und den höchsten Eintrittspreis zu vermeiden. Der Dresscode für Männer ist smart casual — Shorts und Turnschuhe sind in den Clubs nicht erlaubt." },
+          ],
+        },
+        {
+          theme: "Little Havana und Coconut Grove",
+          activities: [
+            { name: "Little Havana — Calle Ocho", description: "Miamis kubanisches Viertel, mit der Energie, dem Kaffee und der Musik Havannas, nach Florida verpflanzt. Die SW 8th Street (Calle Ocho) ist das Herz, mit kubanischen Cafeterías, Kaffeefenstern zum Mitnehmen und Domino-Spielen im Máximo Gómez Park.", price: "Kostenlos", tip: "Kubanischer Kaffee (Cafecito) am Fenster wird stehend in 30 Sekunden getrunken — das ist der lokale Brauch. Bestellen Sie einen Cortadito, wenn Sie etwas Längeres möchten. Er kostet nur 50 Cent." },
+            { name: "Viernes Culturales auf der Calle Ocho", description: "Am letzten Freitag des Monats füllt das monatliche Viernes-Culturales-Festival die Calle Ocho mit Live-Musik, Künstlern, kubanischen Essensverkäufern und Straßenkunst.", price: "Kostenlos", tip: "Das Restaurant Versailles in der SW 8th serviert seit 1971 Miamis besten kubanischen Sandwich und Ropa vieja — essen Sie hier zu Mittag für das ultimative kubanische Erlebnis." },
+            { name: "Coconut Grove — das Bohème-Viertel", description: "Miamis ältestes Viertel, mit Häusern zwischen tropischen Bäumen, der Uferpromenade Dinner Key und den Restaurants und Boutiquen des CocoWalk. Das Vizcaya-Museum ist das Juwel des Viertels.", price: "Kostenlos (Vizcaya 22 USD)", tip: "Vizcaya, das italienische Anwesen aus den 1920er Jahren mit seinen Gärten an der Bucht, ist Miamis schönster wenig bekannter Ort. Allein die Gärten sind den Besuch wert." },
+            { name: "Sonnenuntergang in Key Biscayne", description: "Die Park-Insel, 15 Minuten vom Stadtzentrum über den Rickenbacker Causeway. Der Bill Baggs Cape Florida State Park beherbergt Miamis ruhigsten Strand und den besten Sonnenuntergang.", price: "8 USD (Parkeintritt)", tip: "Der 1 km lange Weg zum Leuchtturm von Cape Florida am Ende der Insel bietet den schönsten Blick auf die Biscayne Bay, mit Miamis Skyline im Hintergrund." },
+          ],
+        },
+      ],
+    },
   },
 
   "buenos-aires": {
@@ -1692,6 +1736,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    de: {
+      city: "Buenos Aires",
+      country: "Argentinien",
+      heroTitle: "4 Tage in Buenos Aires: Tango, Asado und die europäischste Stadt Amerikas",
+      heroSubtitle: "San Telmo, La Boca, Palermo und der beste Asado der Welt — die komplette Reiseroute, um sich in die argentinische Hauptstadt zu verlieben.",
+      bestMonths: "März bis Mai und September bis November",
+      budget: "50-100 USD/Tag",
+      travelTips: [
+        "Argentiniens Wechselkurs kann schwanken — prüfen Sie die monetäre Lage vor Ihrer Reise und informieren Sie sich über die legalen Wechseloptionen",
+        "Buenos Aires ist eine Nachtstadt — Abendessen beginnen um 21 Uhr und Milongas um 23 Uhr. Passen Sie Ihren Zeitplan an, sonst erscheinen Sie in leeren Restaurants",
+        "Der öffentliche Nahverkehr (U-Bahn + Busse) ist effizient und sehr günstig — laden Sie eine SUBE-Karte an jedem Kiosk auf",
+        "Argentinisches Asado wird um 13 Uhr (Mittag) oder 21 Uhr gegessen — erwarten Sie nicht, wie in Europa um 19 Uhr Asado zu essen",
+        "Die sicheren Viertel für Touristen sind Palermo, Recoleta, San Telmo und Puerto Madero — vermeiden Sie es, nachts allein durch unbekannte Viertel zu laufen",
+      ],
+      days: [
+        {
+          theme: "San Telmo und das historische Herz",
+          activities: [
+            { name: "Plaza de Mayo und die Casa Rosada", description: "Buenos Aires' politisches Zentrum, Sitz der Exekutive seit 1873. Der Balkon, von dem aus Evita zum Volk sprach, ist vom Platz aus sichtbar. Die Kathedrale Metropolitana beherbergt das Grab von General San Martín.", price: "Kostenlos", tip: "Donnerstags um 15:30 Uhr halten die Madres de Plaza de Mayo ihren historischen Marsch um den zentralen Obelisken ab — ein lebendiges Zeugnis argentinischer Geschichte." },
+            { name: "Viertel San Telmo", description: "Buenos Aires' ältestes Viertel, mit Kopfsteinpflasterstraßen, Kolonialhäusern aus dem 19. Jahrhundert, Kunstgalerien und Argentiniens berühmtestem Antiquitätenmarkt. Sonntags erstreckt sich ein Markt über die gesamte Straße Defensa.", price: "Kostenlos", tip: "Der Sonntagsmarkt in der Straße Defensa (10-18 Uhr) ist Buenos Aires' bester kostenloser Plan. Antiquitätenhändler, Straßenmusiker und spontane Tangotänzer sind Teil der Show." },
+            { name: "Mittagessen am Markt von San Telmo", description: "Der überdachte Markt, seit 1897 geöffnet, mit Gängen von handwerklichen Metzgereien, Feinkostläden, Ständen mit frischen Produkten und Bars, die von Empanadas bis Cocktails alles servieren. Die Eisen-und-Glas-Architektur aus dem 19. Jahrhundert ist beeindruckend.", price: "15-25 USD", tip: "La Americanas Empanadas sind Buenos Aires' klassischste. Der Tresen der Bar El Federal, gegenüber dem Markt, hat den besten Kaffee und die besten Gebäckstücke des Viertels." },
+            { name: "Tango-Show in San Telmo", description: "San Telmo ist die Geburtsstätte des Porteño-Tangos. Shows im El Viejo Almacén, in La Ventana oder im Centro Cultural Borges verbinden Abendessen, eine professionelle Vorstellung und die Geschichte des Tangos.", price: "USD 60-100 (Abendessen + Show)", tip: "Für authentischen Tango (keine Touristenshow) suchen Sie lokale Milongas: Club Almagro, Confitería Ideal oder La Viruta bieten Milongas ab USD 10-15." },
+          ],
+        },
+        {
+          theme: "La Boca, Puerto Madero und der Fluss",
+          activities: [
+            { name: "La Boca und der Caminito", description: "Das bunte Hafenviertel, wo Häuser aus Wellblech in leuchtenden Farben gestrichen sind — ein Erbe der genuesischen Einwanderer des 19. Jahrhunderts, die übrig gebliebene Farbe aus dem Hafen verwendeten. Das Stadion von Boca Juniors (La Bombonera) liegt 200 Meter entfernt.", price: "Kostenlos", tip: "Der Caminito ist touristisch und die Preise verdoppeln sich dort — essen und kaufen Sie ein paar Blocks weiter westlich zu normalen Preisen. Vermeiden Sie sichtbare Wertsachen." },
+            { name: "La Bombonera — Museum und Stadion von Boca", description: "Lateinamerikas berühmtestes Stadion, Heimat von Boca Juniors. Die Museumstour umfasst die Umkleiden, die Tribünen und Maradona-Erinnerungsstücke. Das Spieltagserlebnis in La Bombonera ist fast religiös.", price: "Tour USD 20 / Spiel USD 30-80", tip: "Ein Heimspiel von Boca ist eines der intensivsten Erlebnisse im Weltsport. Kaufen Sie Tickets nur auf der offiziellen Website — Wiederverkäufer sind teuer und riskant." },
+            { name: "Puerto Madero — das neueste Viertel", description: "Buenos Aires' alte Hafendocks, umgewandelt in das modernste, exklusivste Viertel der Stadt. Santiago Calatravas Puente de la Mujer ist das architektonische Wahrzeichen.", price: "Kostenlos", tip: "Das ökologische Reservat Costanera Sur, direkt neben Puerto Madero, bietet 360 Hektar Natur 5 Minuten vom Zentrum entfernt — eine perfekte grüne Flucht in der Stadt." },
+            { name: "Asado-Abendessen in einer Porteño-Parrilla", description: "Die argentinische Parrilla ist eine kulinarische Institution. Kurzrippen (Asado de tira), Flankensteak (Vacío), Chorizo und Bries sind die Stücke, die Buenos Aires vom Rest der Welt abheben.", price: "USD 20-40", tip: "Don Julio (Palermo), La Brigada (San Telmo) und El Pobre Luis (Belgrano) sind Buenos Aires' drei angesehenste Parrillas. Reservieren Sie Tage im Voraus." },
+          ],
+        },
+        {
+          theme: "Recoleta und das europäische Buenos Aires",
+          activities: [
+            { name: "Friedhof von Recoleta", description: "Einer der berühmtesten Friedhöfe der Welt, mit 6.400 Gruften und 94 Denkmälern von historischem Interesse. Eva Peróns Grab ist die Hauptattraktion unter den Skulpturen und der neoklassizistischen Architektur.", price: "Kostenlos", tip: "Die kostenlose Führung (auf Englisch und Spanisch) startet dienstags und donnerstags um 11 Uhr am Eingang. Evitas Grab befindet sich in der Straße Familia Duarte — holen Sie sich am Eingang einen Plan." },
+            { name: "Markt von Recoleta und das Nationalmuseum der Schönen Künste", description: "Der Kunsthandwerksmarkt gegenüber dem Friedhof hat mehr als 200 lokale Handwerker, die Schmuck, Lederwaren, Keramik und Drucke verkaufen. Das Museum der Schönen Künste (kostenlos) beherbergt die wichtigste Sammlung lateinamerikanischer Kunst der Region.", price: "Kostenlos", tip: "Der Markt von Recoleta findet am Wochenende statt (10-19 Uhr). Unter der Woche sind die Álvear-Gärten der eleganteste Ort in Buenos Aires für einen Kaffee im Freien." },
+            { name: "Avenida Alvear und ihre Belle-Époque-Paläste", description: "Buenos Aires' elegantste Straße, mit den prunkvollsten Palästen des 20. Jahrhunderts: das Alvear Palace Hotel, der Palacio Alzaga Unzué und die Herrenhäuser der Großgrundbesitzerfamilien.", price: "Kostenlos", tip: "Die Lobby des Alvear-Hotels ist eines der Juwelen des exklusiven Buenos Aires — für den Nachmittagstee hineinzugehen (USD 25) ist ein Erlebnis, das den Preis wert ist." },
+            { name: "Cocktails in Palermo Soho", description: "Buenos Aires' angesagtestes Viertel, mit handwerklichen Cocktailbars, gehobenen Restaurants und der höchsten Konzentration an aufstrebendem Design der Stadt. Florería Atlántico und Tres Monos sind die angesehensten Bars.", price: "USD 5-12 pro Cocktail", tip: "Florería Atlántico (eine der besten Bars der Welt) ist oben ein Blumenladen mit einer Speakeasy-Bar darunter — klopfen Sie an die Tür des Kühlraums." },
+          ],
+        },
+        {
+          theme: "Palermo und die grüne Stadt",
+          activities: [
+            { name: "Bosques de Palermo und der Rosedal", description: "Buenos Aires' großer Park, vergleichbar mit dem Central Park, mit dem Rosedal (einem Rosengarten mit 18.000 Rosensträuchern), dem Planetarium und dem japanischen Garten. Sonntag ist der Tag der Porteño-Familien im Park.", price: "Kostenlos (Japanischer Garten $500 ARS)", tip: "Mieten Sie ein Fahrrad im Park, um die 25 km Radwege zu erkunden. Die Choripán-Stände am Nordeingang des Parks servieren den authentischsten Chori in Buenos Aires." },
+            { name: "Brunch in Palermo Hollywood", description: "Das Gebiet Palermo Hollywood bietet Buenos Aires' beste Brunch-Szene, mit Spezialitätencafés, Avocado-Toast und Brunch-Menüs aus aller Welt. Die Avenida Arcos ist das Epizentrum.", price: "USD 10-20", tip: "Café Martínez hat Palermos beste Butter-Medialunas — das argentinischste Frühstück überhaupt. Spezialitätencafés wie Lattente haben den besten Kaffee der Stadt." },
+            { name: "MALBA — Museum für lateinamerikanische Kunst", description: "Das wichtigste Museum für zeitgenössische lateinamerikanische Kunst des Kontinents, mit Werken von Frida Kahlo, Tarsila do Amaral, Xul Solar und Antonio Berni. Das Glas-und-Stahl-Gebäude ist selbst ein Kunstwerk.", price: "USD 7", tip: "Mittwochs gibt es ermäßigten Eintritt und kostenloses Arthouse-Kino. Die Dauerausstellung (3. Stock) beherbergt die 200 besten Werke lateinamerikanischer Kunst des 20. Jahrhunderts." },
+            { name: "Markt von Villa Crespo und Abschied", description: "Der Markt für aufstrebendes Design junger Designer aus Buenos Aires, mit unabhängiger Kleidung, Accessoires, Kunst und der besten lokalen Stimmung der Stadt. Street Food auf dem Mercado de las Pulgas ist perfekt für Ihren letzten Nachmittag.", price: "Kostenlos (Einkäufe nicht inbegriffen)", tip: "Der Mercado de las Pulgas in Colegiales (Dorrego und Alvarez Thomas) ist der beliebteste Sonntagsplan junger Porteños — Antiquitäten, Design und Live-DJs." },
+          ],
+        },
+      ],
+    },
   },
 
   "rio-de-janeiro": {
@@ -1797,6 +1894,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Lagoa Rodrigo de Freitas et la piste cyclable", description: "Le lagon au cœur de la zone sud de Rio, entouré d'une piste cyclable de 7 km avec vues sur le Christ Rédempteur, le Corcovado et les quartiers d'Ipanema et Leblon.", price: "Gratuit (location de vélo R$15/heure)", tip: "Le kiosque 7 de la Lagoa (Guimas) offre la meilleure vue et les meilleures caipirinhas au bord de l'eau. Le dimanche, il y a un marché aux puces avec des antiquités." },
             { name: "Parque Lage — la demeure dans la forêt", description: "Le parc au pied du Corcovado, avec une demeure néoclassique entourée de forêt atlantique. Il abrite aujourd'hui une école d'arts visuels, et le café de la cour avec vue sur le jardin est parfait pour l'après-midi.", price: "Gratuit", tip: "Le Parque Lage est le point de départ du sentier de randonnée jusqu'au Christ Rédempteur — une montée de 2 heures à travers la forêt atlantique. Un guide est recommandé." },
             { name: "Une dernière caipirinha sur le front de mer d'Ipanema", description: "L'adieu parfait à Rio : une caipirinha aux kiosques du front de mer d'Ipanema alors que le soleil se couche derrière le Morro Dois Irmãos et que les Cariocas applaudissent le coucher de soleil une fois de plus.", price: "R$15-25", tip: "Le Morro Dois Irmãos en arrière-plan d'Ipanema, avec le soleil se couchant derrière, est la plus belle carte postale de Rio. Les kiosques du front de mer servent de l'eau de coco fraîche et la meilleure caipirinha à la noix de cajou." },
+          ],
+        },
+      ],
+    },
+    de: {
+      city: "Rio de Janeiro",
+      country: "Brasilien",
+      heroTitle: "4 Tage in Rio de Janeiro: Christus der Erlöser, Copacabana und Samba",
+      heroSubtitle: "Christus der Erlöser, der Zuckerhut, Ipanemas Strände und Fußball im Maracanã — die wunderbare Stadt an vier perfekten Tagen.",
+      bestMonths: "Mai bis Oktober (Trockenzeit)",
+      budget: "R$200-400/Tag (~40-80 USD)",
+      travelTips: [
+        "Sicherheit in Rio erfordert Vorsicht: holen Sie Ihr Handy nicht auf der Straße heraus, nutzen Sie nachts Taxis/Uber statt langer Spaziergänge",
+        "Die Strände der Südzone (Copacabana, Ipanema, Leblon) sind für Touristen am sichersten",
+        "App-basierte Transportmittel (Uber, 99) sind sicherer als Straßentaxis — nutzen Sie sie immer für nächtliche Fahrten",
+        "Die originale Caipirinha wird mit Cachaça (nicht Wodka) und Limão (brasilianischer Limette) zubereitet — bestellen Sie immer die klassische Version",
+        "Wechseln Sie Dollar in Real in den Wechselstuben am Flughafen oder in Agenturen in der Innenstadt — Hotels geben schlechtere Kurse",
+      ],
+      days: [
+        {
+          theme: "Christus der Erlöser und die Südzone",
+          activities: [
+            { name: "Christus der Erlöser — als Erstes am Morgen", description: "Eines der 7 Weltwunder der Neuzeit, 710 Meter über dem Meeresspiegel auf dem Corcovado. Die 38 Meter hohe Figur breitet ihre Arme über die gesamte Stadt aus. Der Blick auf die Guanabara-Bucht, den Zuckerhut und die Strände von oben ist unvergleichlich.", price: "R$87 (Zahnradbahn + Eintritt)", tip: "Buchen Sie den Zug auf der offiziellen Corcovado-Zugwebsite. 8 Uhr hat die beste Sicht und die wenigsten Besucher. An bewölkten Tagen sehen Sie nichts." },
+            { name: "Viertel Santa Teresa", description: "Rios Bohème-Viertel, an den Hängen des Corcovado, mit restaurierten Kolonialhäusern, Kunstgalerien, der elektrischen Bondinho-Straßenbahn und einigen der besten Restaurants der Stadt.", price: "Kostenlos", tip: "Largo do Guimarães ist das Herz des Viertels, mit Bars und Restaurants in Kolonialhäusern. Kunstgalerien sind dienstags bis sonntags geöffnet." },
+            { name: "Ipanema-Strand", description: "Rios berühmtester, schickster Strand, verewigt durch die Bossa Nova. Jeder Abschnitt hat sein eigenes Publikum (Postos 9 und 10 für junge Cariocas, Posto 8 für die LGBT-Community). Strandfußball und Volleyball sind die bevorzugten Sportarten.", price: "Kostenlos", tip: "Stühle und Sonnenschirme am Strand gehören Verkäufern und kosten extra (R$20-30). Kaufen Sie Kokoswasser direkt an den Ständen im Sand." },
+            { name: "Sonnenuntergang bei Arpoador", description: "Der Felsen zwischen Ipanema und Copacabana, wo sich die Cariocas jeden Abend versammeln, um den Sonnenuntergang zu beklatschen. Der Moment, in dem die Sonne den Horizont berührt und alle klatschen, ist eines der schönsten urbanen Rituale der Welt.", price: "Kostenlos", tip: "Kommen Sie 30 Minuten vor Sonnenuntergang, um einen guten Platz auf dem Felsen zu bekommen. Der gemeinsame Applaus ist spontan und echt — einer der carioca-artigsten Momente, die Sie erleben können." },
+          ],
+        },
+        {
+          theme: "Der Zuckerhut und Copacabana",
+          activities: [
+            { name: "Zuckerhut — Seilbahn", description: "Der ikonische 396 Meter hohe Gipfel über der Guanabara-Bucht. Die Seilbahn fährt in zwei Etappen hinauf: zuerst zum Morro da Urca (215m), dann zum Gipfel des Zuckerhuts. Die Ausblicke auf Rio von oben sind spektakulär.", price: "R$160", tip: "Die beste Zeit ist der Sonnenuntergang (gleicher Preis R$160), wenn sich Christus der Erlöser erleuchtet und die Bucht mit tausend Reflexionen schimmert. Der Morgen hat bessere Sicht — entscheiden Sie je nach Wetter." },
+            { name: "Viertel Urca und Mittagessen", description: "Rios ruhigstes, wohnlichstes Viertel, am Fuß des Zuckerhuts. Die Stände entlang des Boulevard Olímpico servieren die besten Bolinhos de Bacalhau und Caipirinha mit Blick auf die Bucht.", price: "R$30-60", tip: "Die Bar Circo da Urca hat die schönste Terrasse des Viertels, mit direktem Blick auf den Berg. Bestellen Sie eine Caipirinha de Limão — die originale brasilianische Version, nicht mit Erdbeere." },
+            { name: "Copacabana-Strand", description: "Brasiliens berühmtester Strand, 4 km Sand, gesäumt vom wellenförmigen portugiesischen Steinmosaik. Das Forte de Copacabana an der Südspitze bietet den besten Aussichtspunkt des Strandes.", price: "Kostenlos", tip: "Die Straßenverkäufer mit Mate gelado (kaltem Kräutereistee), Kokoswasser und Biscoito globo sind ein unverzichtbarer Teil des Carioca-Stranderlebnisses." },
+            { name: "Samba in Lapa", description: "Lapa ist Rios Samba-Viertel, mit den Arcos da Lapa als Kulisse. Bars und Clubs wie Carioca da Gema und Rio Scenarium bieten donnerstags bis samstags ab 20 Uhr Live-Samba.", price: "R$20-40 (Mindestverzehr)", tip: "Rio Scenarium hat drei Stockwerke voller Antiquitäten und Live-Samba — eine der schönsten Bars der Welt. Kommen Sie vor 21 Uhr, um die Schlange zu vermeiden." },
+          ],
+        },
+        {
+          theme: "Favela, der Maracanã und Carioca-Küche",
+          activities: [
+            { name: "Tour durch die Favela Vidigal oder Rocinha", description: "Rios Favelas sind nicht nur Fernsehnachrichten — sie sind lebendige Gemeinschaften mit Geschichte, Essen und Kunst. Geführte Touren nach Vidigal oder Rocinha werden zugunsten der Gemeinschaft organisiert.", price: "R$80-150 (geführte Tour)", tip: "Machen Sie die Tour nur mit zertifizierten Anbietern (Favela Reality, RioLIVE). Gehen Sie niemals allein hinein. Der Blick vom Gipfel von Vidigal auf das Meer ist genauso beeindruckend wie der vom Zuckerhut." },
+            { name: "Feijoada-Mittagessen in der Innenstadt", description: "Feijoada ist Brasiliens Nationalgericht: ein schwarzer Bohneneintopf mit Rippchen, Wurst und Schweinebauch, serviert mit Reis, Farofa, sautiertem Grünkohl und Orangenscheiben. Samstag ist der traditionelle Tag dafür.", price: "R$45-80", tip: "Bar do Mineiro in Santa Teresa und Jobi in Leblon servieren Rios beste Feijoada. Die Portionen sind riesig — zwei Personen können sich eine teilen." },
+            { name: "Maracanã-Stadion — Tour oder Spiel", description: "Lateinamerikas berühmtestes Stadion und Symbol Brasiliens, mit Platz für 78.000 Menschen. Die Tour zeigt die Umkleiden, den Pokalraum und die Präsidentenloge. Wenn ein Spiel stattfindet, ist das Erlebnis unvergleichlich.", price: "R$70 (Tour) / R$50-300 (Spiel)", tip: "Spiele von Flamengo und Fluminense im Maracanã haben die beste Atmosphäre. Kaufen Sie Tickets auf der offiziellen Seite des Vereins — Wiederverkäufer verlangen das 3-fache." },
+            { name: "Abendessen in Leblon — das eleganteste Viertel", description: "Leblon hat die höchste Konzentration an Weltklasse-Restaurants in Rio. Die Bandbreite reicht von Rodízios (brasilianisches All-you-can-eat-Grillbuffet) bis zu den besten Restaurants von Küchenchef Thomas Troisgros.", price: "R$80-200", tip: "Ein Fleisch-Rodízio im Porcão oder Fogo de Chão ist Brasiliens repräsentativstes kulinarisches Erlebnis — gegrilltes Fleisch, das immer weiter kommt, bis Sie das kleine Kärtchen auf Rot drehen." },
+          ],
+        },
+        {
+          theme: "Jardim Botânico und Rios grüne Seele",
+          activities: [
+            { name: "Jardim Botânico", description: "Rios botanischer Garten, 1808 von Dom João VI. gegründet, mit 30 Meter hohen Kaiserpalmen, Riesenseerosen und der weltweit größten Bromelien-Sammlung. Seine 6.500 Arten auf 54 Hektar bilden eine grüne Oase.", price: "R$30", tip: "Die Kaiserpalmenallee am Eingang ist das ikonischste Foto des Gartens. Weißbüschelaffen und Aguti sind häufig — gehen Sie langsam, um sie zu entdecken." },
+            { name: "Lagoa Rodrigo de Freitas und der Radweg", description: "Die Lagune im Herzen von Rios Südzone, umgeben von einem 7 km langen Radweg mit Ausblicken auf Christus den Erlöser, den Corcovado und die Viertel Ipanema und Leblon.", price: "Kostenlos (Fahrradverleih R$15/Stunde)", tip: "Kiosk 7 an der Lagoa (Guimas) hat den besten Blick und die besten Caipirinhas am Ufer. Sonntags gibt es einen Flohmarkt mit Antiquitäten." },
+            { name: "Parque Lage — das Anwesen im Wald", description: "Der Park am Fuß des Corcovado, mit einem neoklassizistischen Anwesen, umgeben von Atlantik-Regenwald. Er beherbergt heute eine Schule für bildende Künste, und das Hofcafé mit Blick auf den Garten ist perfekt für den Nachmittag.", price: "Kostenlos", tip: "Der Parque Lage ist der Ausgangspunkt des Wanderwegs hinauf zu Christus dem Erlöser — ein 2-stündiger Aufstieg durch den Atlantik-Regenwald. Ein Guide wird empfohlen." },
+            { name: "Eine letzte Caipirinha am Ufer von Ipanema", description: "Der perfekte Abschied von Rio: eine Caipirinha an den Kiosken am Ufer von Ipanema, während die Sonne hinter dem Morro Dois Irmãos untergeht und die Cariocas den Sonnenuntergang noch einmal beklatschen.", price: "R$15-25", tip: "Der Morro Dois Irmãos im Hintergrund von Ipanema, mit der dahinter untergehenden Sonne, ist Rios schönstes Postkartenbild. Die Uferkioske servieren kaltes Kokoswasser und die beste Cashewfrucht-Caipirinha." },
           ],
         },
       ],
