@@ -2636,6 +2636,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    de: {
+      city: "Amsterdam",
+      country: "Niederlande",
+      heroTitle: "3 Tage in Amsterdam: Kanäle, Museen und Fahrräder",
+      heroSubtitle: "Das Rijksmuseum, das Anne-Frank-Haus, Jordaan und Tulpen — die perfekte Reiseroute für einen ersten Besuch der niederländischen Hauptstadt.",
+      bestMonths: "April bis Mai (Tulpen) und Juni bis August",
+      budget: "90-150€/Tag",
+      travelTips: [
+        "Mieten Sie schon am ersten Tag ein Fahrrad — es ist die schnellste, günstigste und lokalste Art, sich in Amsterdam fortzubewegen",
+        "Buchen Sie das Anne-Frank-Haus und das Van-Gogh-Museum Wochen im Voraus — sie sind in der Hochsaison immer ausgebucht",
+        "Straßenbahnen decken die ganze Stadt ab; kaufen Sie ein GVB-Tagesticket für 9,50€ für unbegrenzte Fahrten",
+        "Die I-amsterdam-City-Card (75€/24h) beinhaltet Museen, Transport und eine Grachtenfahrt — lohnt sich, wenn Sie 3+ Museen besuchen",
+        "Achten Sie auf die Radwege auf der Straße — Radfahrer haben Vorrang vor Fußgängern und werden nicht langsamer",
+      ],
+      days: [
+        {
+          theme: "Die großen Museen: Van Gogh und das Rijksmuseum",
+          activities: [
+            { name: "Rijksmuseum", description: "Das niederländische Nationalmuseum, im Herzen des Museumsplatzes. Es beherbergt Rembrandts Die Nachtwache, Vermeers Das Milchmädchen und mehr als eine Million Objekte aus dem niederländischen Goldenen Zeitalter.", price: "22,50€", tip: "Buchen Sie online und wählen Sie den 9-Uhr-Slot. Die Nachtwache hängt in der Ehrengalerie im 2. Stock — betrachten Sie sie vom Ende des Raums aus, um ihr wahres Ausmaß zu erfassen." },
+            { name: "Van-Gogh-Museum", description: "Die weltweit größte Sammlung von Werken Vincent van Goghs, mit mehr als 200 Gemälden und 500 Zeichnungen. Die Sonnenblumen, Das Schlafzimmer und Das Selbstporträt mit verbundenem Ohr sind alle hier.", price: "22€", tip: "In der Hochsaison muss Wochen im Voraus reserviert werden. Der kostenlose Audioguide über die App des Museums ist ausgezeichnet und deckt alle wichtigen Werke ab." },
+            { name: "Vondelpark", description: "Amsterdams berühmtester Park, mit 47 Hektar, wo Einheimische picknicken, Musik machen und Fahrrad fahren. Im Sommer gibt es kostenloses Freilufttheater.", price: "Kostenlos", tip: "Mieten Sie ein Fahrrad bei MacBike (15€/Tag), um sich in der ganzen Stadt fortzubewegen — die lokalste und praktischste Art, Amsterdam zu erkunden." },
+            { name: "Abendessen in De Pijp", description: "Amsterdams multikulturellstes, kulinarischstes Viertel, mit dem Albert-Cuyp-Markt (dem größten der Niederlande), surinamischen und indonesischen Restaurants und der besten Auswahl an handwerklichen Cafés.", price: "15-25€", tip: "Die Rijsttafel (indonesische Reistafel) ist das schmackhafteste koloniale Erbe der Niederlande — ein einzigartiges kulinarisches Erlebnis, das den Aufpreis wert ist." },
+          ],
+        },
+        {
+          theme: "Geschichte und Kanäle: Anne Frank und Jordaan",
+          activities: [
+            { name: "Anne-Frank-Haus", description: "Das Versteck, in dem sich Anne Frank und ihre Familie zwischen 1942 und 1944 vor den Nazis verbargen. Das originale Tagebuch, die geheime Bibliothek und die erhaltenen Räume, so wie sie waren, machen diesen Besuch zu einem der bewegendsten Europas.", price: "16€", tip: "Sie MÜSSEN Wochen im Voraus online buchen — vor Ort gibt es keine Tickets. Der 9-Uhr-Slot ist am wenigsten überlaufen." },
+            { name: "Viertel Jordaan und die Kanäle", description: "Amsterdams malerischstes Viertel, mit über die Kanäle geneigten Häusern aus dem 17. Jahrhundert, Kunstgalerien, Vintage-Läden und den gemütlichsten Terrassen der Stadt.", price: "Kostenlos", tip: "Überqueren Sie die Prinsengracht und erkunden Sie die Bloemgracht und die Egelantiersgracht — diese Nebenkanäle haben weniger Touristen und mehr lokalen Charme." },
+            { name: "Hering-Mittagessen am Markt", description: "Haring (roher Hering mit Zwiebeln und Gurken) ist der typischste Snack der Niederlande. Die frischen Fischstände auf den Brücken von Jordaan bieten das authentischste Erlebnis.", price: "4-6€", tip: "Hering isst man, indem man das Stück am Schwanz hält und es in den Mund fallen lässt — so machen es die Niederländer. Bestellen Sie nicht nur einen Bissen, nehmen Sie das ganze Stück." },
+            { name: "Bootstour auf den Kanälen", description: "Amsterdams 165 Kanäle und 1.753 Brücken sind UNESCO-Weltkulturerbe. Eine Bootstour zeigt die Stadt auf Wasserhöhe, mit Perspektiven, die vom Land aus unmöglich sind.", price: "15-20€", tip: "Die 15-Uhr-Touren haben besseres Licht für Fotos als die am Morgen. Bringen Sie auch im Sommer eine Jacke mit — das Wasser senkt die Temperatur." },
+          ],
+        },
+        {
+          theme: "Keukenhof (Frühling) oder alternative Viertel",
+          activities: [
+            { name: "Keukenhof (nur März-Mai) oder NDSM-Werft", description: "Im Frühling sind die Gärten von Keukenhof mit 7 Millionen blühenden Tulpen eine der schönsten Naturattraktionen Europas. Außerhalb der Saison ist die NDSM-Werft, die alte Werft, zu einem kreativen Zentrum geworden.", price: "Keukenhof 20€ / NDSM kostenlos", tip: "Der direkte Bus vom Flughafen Schiphol zum Keukenhof ist die einfachste Option — kein Umweg über Amsterdam nötig." },
+            { name: "Viertel Oud-West und der Ten Katemarkt", description: "Amsterdams authentischster Nachbarschaftsmarkt, mit frischen Produkten, Second-Hand-Kleidung und mediterranem Street Food. Die Cafés in der Jan Pieter Heijestraat sind die lokale Alternative zum touristischen Leidseplein.", price: "Kostenlos", tip: "Oud-West ist das Viertel, in dem junge Einheimische leben — die Cafés haben WLAN, gute Preise und eine wirklich niederländische Atmosphäre." },
+            { name: "Amsterdam Noord — A'DAM Tower und das EYE-Museum", description: "Auf der anderen Seite des Hafens bietet Amsterdam Noord die beste Skyline der Stadt. Der A'DAM Tower hat Europas höchste Schaukel auf seinem Dach, und das EYE-Museum ist eines der fotogensten Gebäude der Stadt.", price: "Fähre kostenlos / A'DAM Tower 17,50€", tip: "Die Fähre vom Hauptbahnhof nach Amsterdam Noord ist kostenlos und dauert 5 Minuten. Sie fährt rund um die Uhr alle 7-8 Minuten." },
+            { name: "Brauerei 't IJ — die Brauerei in der Mühle", description: "Amsterdams berühmteste handwerkliche Brauerei, in einer Windmühle aus dem 18. Jahrhundert am Kanal untergebracht. Ihre handwerklichen Biere (Plzen, Zatte, Columbus) gehören zu den besten der Niederlande.", price: "3,50-5€ pro Bier", tip: "Die kleine Terrasse gegenüber der Mühle ist einer der besten Orte für den Sonnenuntergang in der Stadt. Kommen Sie im Sommer vor 17 Uhr, um einen Außentisch zu bekommen." },
+          ],
+        },
+      ],
+    },
   },
 
   londres: {
@@ -2741,6 +2785,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "St James's Park", description: "Le plus ancien parc royal de Londres, avec vues directes sur le palais, les célèbres pélicans du lac et la passerelle offrant la vue la plus photogénique sur Buckingham Palace de tout Londres.", price: "Gratuit", tip: "Les pélicans du parc descendent d'un cadeau du tsar russe en 1664. Ils sont nourris à 14h30 chaque jour près du lac — un spectacle à voir." },
             { name: "Greenwich : le Méridien et l'Observatoire", description: "Greenwich abrite le méridien de Greenwich (longitude 0°), le Royal Observatory et le Cutty Sark, le clipper à thé le plus célèbre de l'histoire. Prendre le ferry sur la Tamise pour y arriver fait partie de l'expérience.", price: "Ferry 6£ / Observatoire 18£", tip: "Vous pouvez enjamber le Méridien avec un pied dans chaque hémisphère gratuitement — la ligne verte est marquée au sol juste devant l'Observatoire." },
             { name: "Un pub traditionnel à Soho", description: "Les pubs de Soho sont le cœur social de Londres. Le Lamb and Flag (fondé en 1623), The Nellie Dean et le French House ont une ambiance et une histoire qu'aucune chaîne ne peut imiter.", price: "6-8£ la pinte", tip: "À Londres, on commande au bar — n'attendez pas le service à table. Une pinte de Guinness ou une bitter locale sont les boissons les plus typiques." },
+          ],
+        },
+      ],
+    },
+    de: {
+      city: "London",
+      country: "Vereinigtes Königreich",
+      heroTitle: "4 Tage in London: die Reiseroute, um nichts Wesentliches zu verpassen",
+      heroSubtitle: "Tower Bridge, das British Museum, Notting Hill und das West End — mit den kostenlosen Museen und den Pubs, die Einheimische wirklich wählen.",
+      bestMonths: "Mai bis September",
+      budget: "£120-200/Tag",
+      travelTips: [
+        "Eine Oyster Card oder kontaktlose Karte ist unerlässlich — bar zu zahlen in der Tube kostet doppelt so viel wie mit Karte",
+        "Fast alle großen Museen sind kostenlos: British Museum, National Gallery, Tate Modern, V&A, Natural History Museum",
+        "Service (Trinkgeld) ist in den meisten Restaurants nicht inbegriffen — 10-12% ist Standard, wenn der Service gut war",
+        "Die City schließt am Wochenende fast vollständig — planen Sie das Finanzviertel für die Wochentage",
+        "Laden Sie die TfL-App (Transport for London) herunter, um Tube-, Bus- und DLR-Routen in Echtzeit zu planen",
+      ],
+      days: [
+        {
+          theme: "Das historische London: Tower Bridge und die City",
+          activities: [
+            { name: "Tower of London", description: "Eine tausend Jahre alte Festung, 1078 von Wilhelm dem Eroberer gegründet. Sie beherbergt die britischen Kronjuwelen, einschließlich der Imperial State Crown mit 2.868 Diamanten. Die berühmten Beefeaters sind ihre einzigen offiziellen Guides.", price: "£34", tip: "Kommen Sie zur Öffnung, um die Kronjuwelen ohne Menschenmassen zu sehen. Die Beefeaters bieten kostenlose Führungen, die im Eintritt inbegriffen sind — sehr lohnenswert." },
+            { name: "Tower Bridge", description: "Londons berühmteste Brücke, 1894 eröffnet. Die Innenausstellung zeigt die viktorianische Mechanik, die die Brücke hebt. Der Glasboden-Steg 42 Meter über der Themse zu gehen ist beeindruckend.", price: "£14", tip: "Die Brücke hebt sich mehrmals am Tag, um große Schiffe durchzulassen — prüfen Sie den Zeitplan online, um es zu erleben." },
+            { name: "Borough Market", description: "Londons berühmtester Lebensmittelmarkt, seit dem 13. Jahrhundert geöffnet. Mehr als 100 Stände handwerklicher Produzenten, Käse, Fleisch, Street Food aus aller Welt und die beste Auswahl an fertigem Essen in der Innenstadt.", price: "£8-15 (Mittagessen)", tip: "Donnerstag, Freitag und Samstag ist der Markt in vollem Betrieb. Roasts Pulled Pork und Rabot 1745s Schokolade sind Pflicht." },
+            { name: "Tate Modern", description: "Das Museum für zeitgenössische Kunst in einem Kraftwerk des 20. Jahrhunderts, mit Werken von Picasso, Warhol und Dalí. Der Blick auf die Millennium Bridge und St Paul's aus Raum 10 im 4. Stock ist kostenlos und spektakulär.", price: "Kostenlos (Sonderausstellungen £20)", tip: "Das Café im 6. Stock hat die beste Terrasse, mit Blick auf die Themse und die Kathedrale. Perfekt für einen Nachmittagstee." },
+          ],
+        },
+        {
+          theme: "Das imperiale London: das British Museum und Bloomsbury",
+          activities: [
+            { name: "British Museum", description: "Das meistbesuchte Museum Großbritanniens beherbergt 8 Millionen Objekte: den Stein von Rosette, die Parthenon-Skulpturen, ägyptische Mumien und den Schatz von Sutton Hoo. Unmöglich, alles an einem Tag zu sehen.", price: "Kostenlos", tip: "Kommen Sie um 9 Uhr (eine Stunde vor der Öffnung für die Allgemeinheit mit Online-Ticket), um den Stein von Rosette ohne Menschenmassen zu sehen. Der Große Hof ist beeindruckend." },
+            { name: "Covent Garden", description: "Der alte Marktplatz, umgewandelt in ein Ziel für Shopping, Essen und Unterhaltung. Straßenkünstler, Restaurants und der Covent-Garden-Markt mit seinen viktorianischen Eisenstrukturen.", price: "Kostenlos (Einkäufe und Essen nicht inbegriffen)", tip: "Die Straßenkünstler auf der Piazza müssen ein Vorsprechen des Gemeinderats bestehen — der Standard ist sehr hoch. Die 12:30-Uhr-Vorstellung ist meist die beste des Tages." },
+            { name: "National Gallery", description: "Großbritanniens wichtigste Sammlung europäischer Malerei, am Trafalgar Square. Van Eyck, Leonardo, Rembrandt, Monet und Turner gehören zu den 2.300 Werken des Museums.", price: "Kostenlos", tip: "Raum 30, mit den französischen Impressionisten (Monet, Renoir, Seurat), ist ein lokaler Favorit. Ein Selfie vor den Löwen am Trafalgar Square ist Pflicht." },
+            { name: "Eine Show im West End", description: "Londons Theaterviertel hat mehr als 50 aktive Theater, in denen die besten Musicals und Theaterstücke der Welt aufgeführt werden. Les Misérables, Mamma Mia und Das Phantom der Oper laufen seit Jahrzehnten.", price: "£30-100", tip: "Tageskarten oder Last-Minute-Standby-Tickets werden morgens an der Kasse verkauft. Sie können gute Plätze zum halben Preis bekommen." },
+          ],
+        },
+        {
+          theme: "Notting Hill, Hyde Park und Kensington",
+          activities: [
+            { name: "Portobello Road Market", description: "Londons berühmtester Markt, seit 1837 aktiv, mit Antiquitäten samstags und Obst und Blumen die ganze Woche. Notting Hills bunte Häuser bieten die perfekte Kulisse.", price: "Kostenlos (Einkäufe nicht inbegriffen)", tip: "Samstag ist der große Tag, mit bis zu 1.000 Antiquitätenständen. Kommen Sie vor 10 Uhr, um die besten Stücke zu sehen, bevor sie aufgekauft werden." },
+            { name: "Hyde Park und Kensington Gardens", description: "Die beiden verbundenen königlichen Parks bilden eine von Londons größten grünen Lungen. Der Serpentine-See, Speaker's Corner und das Prinzessin-Diana-Denkmal sind die meistbesuchten Orte.", price: "Kostenlos", tip: "Mieten Sie einen Klappstuhl am Serpentine und beobachten Sie die Londoner vorbeiziehen. Auf dem Rasen zu sitzen ist kostenlos — die Stühle kosten extra (£2)." },
+            { name: "Victoria & Albert Museum", description: "Das weltweit größte Museum für Design und angewandte Kunst, mit Sammlungen von Mode, Keramik, Schmuck, Fotografie und Möbeln aus 5.000 Jahren Menschheitsgeschichte.", price: "Kostenlos", tip: "Der Innenhof mit dem Café und dem Garten ist eines der bestgehüteten Geheimnisse des Museums. Perfekt für eine Mittagspause à la Londoner." },
+            { name: "Harrods und Knightsbridge", description: "Das weltweit berühmteste Kaufhaus, im Herzen von Knightsbridge. Auch ohne etwas zu kaufen sind die Feinkosthallen, die Parfümabteilung und die Modegalerie ein visuelles Spektakel.", price: "Kostenlos (Eintritt)", tip: "Die Feinkosthalle im Untergeschoss von Harrods ist eine der besten der Welt. Sie können sich ein Gebäck oder Tee zum Mitnehmen für £5-10 holen und es erleben, ohne ein Vermögen auszugeben." },
+          ],
+        },
+        {
+          theme: "Greenwich, die Themse und Abschied",
+          activities: [
+            { name: "Buckingham Palace und die Wachablösung", description: "Der offizielle Wohnsitz der britischen Königsfamilie. Die Wachablösung findet um 11 Uhr statt und dauert 45 Minuten — ein Ritual mit Musik der Armeekapelle, das man mindestens einmal gesehen haben sollte.", price: "Kostenlos (außen) / £35 (innen, nur Sommer)", tip: "Um einen guten Blick auf die Wachablösung zu bekommen, kommen Sie um 10:30 Uhr und positionieren Sie sich vor dem zentralen Tor. Reisegruppen kommen spät an und sehen nichts." },
+            { name: "St James's Park", description: "Londons ältester königlicher Park, mit direktem Blick auf den Palast, den berühmten Pelikanen des Sees und der Fußgängerbrücke mit dem fotogensten Blick auf Buckingham Palace in London.", price: "Kostenlos", tip: "Die Pelikane des Parks stammen von einem Geschenk des russischen Zaren aus dem Jahr 1664 ab. Sie werden jeden Tag um 14:30 Uhr am See gefüttert — ein echter Anblick." },
+            { name: "Greenwich: der Meridian und das Observatorium", description: "Greenwich ist die Heimat des Nullmeridians (Längengrad 0°), des Royal Observatory und der Cutty Sark, des berühmtesten Teeklippers der Geschichte. Mit der Fähre die Themse hinunterzufahren, um hierher zu gelangen, ist Teil des Erlebnisses.", price: "Fähre £6 / Observatorium £18", tip: "Sie können den Meridian kostenlos mit einem Fuß in jeder Hemisphäre überspannen — die grüne Linie ist auf dem Boden direkt vor dem Observatorium markiert." },
+            { name: "Ein traditioneller Pub in Soho", description: "Sohos Pubs sind Londons soziales Herz. Das Lamb and Flag (1623 gegründet), The Nellie Dean und das French House haben eine Atmosphäre und Geschichte, die keine Kette nachahmen kann.", price: "£6-8 pro Pint", tip: "In London bestellt man an der Bar — warten Sie nicht auf Tischservice. Ein Pint Guinness oder ein lokales Bitter sind die typischsten Getränke." },
           ],
         },
       ],
@@ -2868,6 +2965,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "La plage de Playa del Carmen", description: "La plage urbaine la plus animée de la Riviera Maya, avec du sable blanc et un accès direct depuis la Cinquième Avenue. Plus animée que les plages de la zone hôtelière de Cancún.", price: "Gratuit", tip: "Les plages des hôtels-boutiques au sud de la Cinquième Avenue (à partir de la rue 38) sont moins fréquentées et presque aussi accessibles." },
             { name: "Xcaret ou Xel-Há (optionnel)", description: "Les plus grands parcs naturels du Mexique. Xcaret combine culture maya, nature et spectacles nocturnes. Xel-Há est plus intime et centré sur le snorkeling dans une rivière d'eau de mer.", price: "80-130 USD", tip: "Xel-Há est plus calme et plus naturel. Xcaret convient mieux aux familles avec de jeunes enfants. Les billets achetés en ligne coûtent 30% de moins." },
             { name: "Un dernier coucher de soleil caribéen", description: "La plage de Playa del Carmen fait face à l'est — les couchers de soleil les plus spectaculaires se voient depuis la jetée de Playa ou depuis le ferry vers Cozumel.", price: "Gratuit", tip: "Le ferry vers Cozumel part de la jetée de la Cinquième Avenue. Rien que la traversée de 45 minutes en pleine mer des Caraïbes est déjà un spectacle." },
+          ],
+        },
+      ],
+    },
+    de: {
+      city: "Cancún",
+      country: "Mexiko",
+      heroTitle: "5 Tage in Cancún und der Riviera Maya: jenseits des Resorts",
+      heroSubtitle: "Cenotes, Maya-Ruinen, weiße Sandstrände und die mexikanische Kultur, die auf der anderen Seite der Lagune weiterlebt.",
+      bestMonths: "Dezember bis April",
+      budget: "USD 80-200/Tag",
+      travelTips: [
+        "Sargassum (Seetang) betrifft manche Strände zwischen Mai und September — prüfen Sie vorher, welche Strände frei sind",
+        "ADO-Busse sind komfortabel und günstig, um zwischen Cancún, Playa del Carmen und Tulum zu reisen",
+        "Eine Reiseversicherung wird dringend empfohlen — medizinische Versorgung in Mexiko kann für Ausländer teuer sein",
+        "Bringen Sie mexikanische Pesos für Märkte und lokale Restaurants mit — Dollar werden akzeptiert, aber Sie verlieren beim Wechselkurs",
+        "Riffverträgliche Sonnencreme ist an Cenotes Pflicht und an Tulums Stränden empfohlen",
+      ],
+      days: [
+        {
+          theme: "Die Hotelzone und Cancúns Strände",
+          activities: [
+            { name: "Playa Delfines", description: "Der spektakulärste öffentliche Strand der Hotelzone, mit dem ikonischen Cancún-Schild, weißem Sand und Mexikos türkisfarbenstem Wasser. Keine Hotel-Palapa, keine Gebühr.", price: "Kostenlos", tip: "Die nördlichen Strände in der Hotelzone haben kleinere Wellen. Die südlichen (Delfines, Ballenas) haben mehr Wellengang und sind besser zum Bodysurfen." },
+            { name: "Mercado 28 — das echte Cancún", description: "Der Kunsthandwerksmarkt in der Innenstadt von Cancún, fernab der Hotelzone. Tacos al Pastor, authentisches Kunsthandwerk und lokale Preise statt Massentourismus-Aufschlägen.", price: "USD 5-10", tip: "Cochinita-Pibil-Tacos sind das Yucatán-Gericht, das Sie noch lange nach der Heimreise verfolgt. Bestellen Sie sie mit eingelegter roter Zwiebel und Habanero." },
+            { name: "Nichupté-Lagune — Kajak oder Paddleboard", description: "Die Lagune, die die Hotelzone vom Festland trennt, mit Mangroven, tropischen Vögeln und ruhigem Wasser. Mehrere Unternehmen vermieten Kajaks und Paddleboards ohne erforderlichen Guide.", price: "USD 20-35/Stunde", tip: "Sonnenuntergänge über der Lagune mit der Hotelzone im Hintergrund gehören zu den fotogensten in Cancún." },
+            { name: "Innenstadt von Cancún in der Dämmerung", description: "Der Parque Las Palapas in der Innenstadt ist der Treffpunkt der Einheimischen bei Dämmerung: Handwerker, Straßensnacks, Live-Musik und der Rhythmus einer echten mexikanischen Stadt.", price: "Kostenlos", tip: "Die Innenstadt von Cancún, 20 Minuten mit dem Bus von Ihrem Hotel entfernt (USD 0,50), bietet einen authentischen Abend, den die Hotelzone niemals bieten kann." },
+          ],
+        },
+        {
+          theme: "Isla Mujeres: Paradies 20 Minuten entfernt",
+          activities: [
+            { name: "Fähre nach Isla Mujeres", description: "Die Fähre fährt alle 30 Minuten von Puerto Juárez ab. Die 20-minütige Überfahrt ist bereits spektakulär mit den Farben der Karibik.", price: "USD 8 hin und zurück", tip: "Kommen Sie vor 8 Uhr zum Anleger, um die erste Fähre zu bekommen. Isla Mujeres fast menschenleer (erste Stunde) ist ein Traum." },
+            { name: "Playa Norte — der beste Strand der Karibik", description: "Wiederholt zu einem der besten Strände der Welt gewählt, mit poolartigem Wasser, feinem weißem Sand und einer geschützten, wellenfreien Lagune. Nur 2 km lang.", price: "Kostenlos", tip: "Mieten Sie einen Golfwagen (USD 40/Tag), um die ganze 8 km lange Insel zu erkunden. So bewegt sich jeder auf Isla Mujeres fort." },
+            { name: "Garrafón — Schnorcheln am Korallenriff", description: "Die Südspitze der Insel hat eines der besten Korallenriffe der mexikanischen Karibik, mit bunten Fischen, Rochen und Schildkröten. Der Garrafón-Park beinhaltet Schnorcheln.", price: "USD 25-45", tip: "Kostenloses Schnorcheln außerhalb des Parks (von den Felsen südlich des Zac-Ha-Strands) ist genauso gut und kostenlos." },
+            { name: "Die Stadt Isla Mujeres", description: "Bunt bemalte Straßen, lokale Kunsthandwerksläden und Meeresfrüchterestaurants am Meer machen die Stadt zu einem Ort, an dem man gerne verweilt.", price: "Kostenlos", tip: "Die Straße Hidalgo hat die besten Meeresfrüchterestaurants zu fairen Preisen. Das Ceviche der Insel unterscheidet sich von dem in Cancún." },
+          ],
+        },
+        {
+          theme: "Chichén Itzá und ein Bad in einem Cenote",
+          activities: [
+            { name: "Abfahrt nach Chichén Itzá", description: "Die antike Maya-Stadt, eines der 7 Weltwunder der Neuzeit, liegt 2,5 Stunden von Cancún entfernt. Früh loszufahren vermeidet die extreme Hitze und die Tausenden von Touristen.", price: "Tour ab USD 60 (Transport inbegriffen)", tip: "Während der Tagundnachtgleichen (21. März und 23. September) erzeugt die Sonne die Schlange aus Licht auf der Pyramide El Castillo — Massentourismus, aber spektakulär." },
+            { name: "El Castillo und die Maya-Stadt", description: "Die Kukulcán-Pyramide hat 365 Stufen (eine für jeden Tag des Jahres), plus den Tempel der Krieger, das größte Ballspielfeld Mesoamerikas und den Heiligen Cenote.", price: "USD 35 (Eintritt)", tip: "Seit 2006 können Sie die Pyramide nicht mehr besteigen, aber Sie können sie berühren. Guides demonstrieren das Echo, das den Ruf eines Quetzals nachahmt, indem sie vor der Treppe in die Hände klatschen." },
+            { name: "Cenote Ik-Kil", description: "Der fotogenste Cenote der Riviera Maya, 3 km von Chichén Itzá entfernt: ein kreisförmiges Loch mit 40m Durchmesser, offen zum Himmel, mit Wänden voller herabhängender Farne.", price: "USD 15", tip: "Kommen Sie direkt nach dem Mittagessen an, wenn die Reisegruppen abreisen. Zwischen 14 und 16 Uhr ist es am ruhigsten und Sonnenlicht fällt in den Cenote." },
+            { name: "Rückkehr nach Cancún über Valladolid", description: "Die koloniale Stadt Valladolid liegt auf dem Rückweg. Ein 45-minütiger Halt, um den Cenote Zaci (direkt in der Stadt) und das historische Zentrum zu sehen.", price: "Cenote Zaci USD 5", tip: "Valladolid ist eine authentische Yucatán-Stadt, in der Sie den besten Café de Olla der gesamten Reise bekommen." },
+          ],
+        },
+        {
+          theme: "Tulum: Maya-Ruinen über der Karibik",
+          activities: [
+            { name: "Ruinen von Tulum", description: "Die einzige Maya-Stadt, die auf einer Klippe mit direktem Blick auf die türkisfarbene Karibik erbaut wurde. El Castillo de Tulum mit dem Meer im Hintergrund ist eines der ikonischsten Fotos Mexikos.", price: "USD 10", tip: "Kommen Sie um 8 Uhr zur Öffnung. Um 10 Uhr sind bereits Hunderte Menschen da. Der Strand am Fuß der Ruinen ist inbegriffen — Sie können schwimmen, bevor die Menschenmassen ankommen." },
+            { name: "Gran Cenote, Tulum", description: "Der zugänglichste, fotogenste Cenote der Gegend, mit kristallklarem Wasser, versunkenen Stalagmiten und Fischen, die um die Badenden schwimmen.", price: "USD 20", tip: "Bringen Sie Ihre eigene Schnorchelausrüstung mit (oder mieten Sie sie dort für USD 5). Das Wasser bleibt das ganze Jahr über zwischen 23-25°C. Sargassumfrei." },
+            { name: "Die Stadt Tulum", description: "Tulums ursprüngliche Stadt, anders als die mit Boutique-Hotels gesäumte Hotelzone von Tulum. Cochinita-Tacos, Honig- und Achiote-Läden, zu mexikanischen Preisen.", price: "USD 8-15", tip: "Die Instagram-Version von Tulum (die Hotelzone) ist teuer und auf eine andere Art von Reise ausgerichtet. Die Stadt bietet dasselbe für ein Drittel des Preises." },
+            { name: "Akumal — Schwimmen mit Meeresschildkröten", description: "Die Bucht von Akumal (45 Min nördlich von Tulum) ist der zugänglichste Ort der Welt, um frei mit Meeresschildkröten in ihrem natürlichen Lebensraum zu schwimmen.", price: "Kostenlos (nur Strand und Wasser)", tip: "Gehen Sie zwischen 9 und 11 Uhr ins Wasser, um mehr Schildkröten zu sehen. Tragen Sie keine normale Sonnencreme — sie schädigt das Riff. Riffverträgliche Sonnencreme ist erlaubt." },
+          ],
+        },
+        {
+          theme: "Playa del Carmen und der letzte karibische Tag",
+          activities: [
+            { name: "Fifth Avenue, Playa del Carmen", description: "Die lebendigste Fußgängerstraße der mexikanischen Karibik, 4 km Geschäfte, Restaurants, Bars und Straßenkunst mit Blick auf den Strand. Das soziale Herz der Riviera Maya.", price: "Kostenlos (Spaziergang)", tip: "Meiden Sie die Restaurants direkt an der Fifth Avenue — alle haben touristische Preise. Gehen Sie zwei Blocks landeinwärts und finden Sie, wo Einheimische ihre Tacos essen." },
+            { name: "Der Strand von Playa del Carmen", description: "Der lebendigste Stadtstrand der Riviera Maya, mit weißem Sand und direktem Zugang von der Fifth Avenue. Lebendiger als die Strände in Cancúns Hotelzone.", price: "Kostenlos", tip: "Die Strände der Boutique-Hotels südlich der Fifth Avenue (ab Calle 38) sind weniger überlaufen und fast genauso zugänglich." },
+            { name: "Xcaret oder Xel-Há (optional)", description: "Mexikos größte Naturparks. Xcaret kombiniert Maya-Kultur, Natur und nächtliche Shows. Xel-Há ist intimer und dreht sich um Schnorcheln in einem Meerwasserfluss.", price: "USD 80-130", tip: "Xel-Há ist ruhiger und natürlicher. Xcaret eignet sich besser für Familien mit kleinen Kindern. Online gekaufte Tickets kosten 30% weniger." },
+            { name: "Ein letzter karibischer Sonnenuntergang", description: "Playa del Carmens Strand liegt nach Osten — die spektakulärsten Sonnenuntergänge sieht man vom Pier von Playa oder von der Fähre nach Cozumel aus.", price: "Kostenlos", tip: "Die Fähre nach Cozumel fährt vom Pier der Fifth Avenue ab. Allein die 45-minütige Fahrt über die offene Karibik ist bereits ein Spektakel." },
           ],
         },
       ],
