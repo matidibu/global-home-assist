@@ -4199,6 +4199,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Roma",
+      country: "Italia",
+      heroTitle: "5 giorni a Roma: il Colosseo, il Vaticano e la dolce vita nei quartieri veri",
+      heroSubtitle: "L'itinerario che bilancia i monumenti imperdibili con i quartieri dove i romani vivono davvero.",
+      bestMonths: "Da marzo a maggio e da settembre a novembre",
+      budget: "80-150€/giorno",
+      travelTips: [
+        "Roma si gira a piedi — il centro storico sta in un raggio di 4 km",
+        "Il biglietto Colosseo+Foro+Palatino è valido per due giorni consecutivi — sfruttatelo al massimo",
+        "Portate sempre abiti che coprano spalle e ginocchia per entrare nelle chiese (Vaticano incluso)",
+        "L'acqua delle fontanelle pubbliche (nasoni) è potabile e buona — portate una borraccia riutilizzabile",
+        "Luglio e agosto sono i mesi più caldi e affollati — marzo-maggio è il periodo migliore",
+      ],
+      days: [
+        {
+          theme: "L'Impero Romano: il Colosseo e il Foro",
+          activities: [
+            { name: "Colosseo di Roma", description: "Il più grande anfiteatro mai costruito, con capacità per 70.000 spettatori. Sull'arena, i gladiatori combattevano davanti agli imperatori e al popolo romano.", price: "18€ (include il Foro Romano e il Palatino)", tip: "Prenotate il biglietto online — la fila senza prenotazione supera le 2 ore in alta stagione. Il tour dell'arena richiede una prenotazione separata." },
+            { name: "Foro Romano e Palatino", description: "Il centro politico e religioso dell'Impero Romano per 12 secoli. Il Palatino è la collina dove, secondo la tradizione, Romolo fondò Roma nel 753 a.C.", price: "Incluso con il Colosseo", tip: "L'Arco di Tito (81 d.C.) reca il più antico rilievo conosciuto raffigurante la menorah — considerato la più antica testimonianza storica dell'esilio ebraico." },
+            { name: "Circo Massimo", description: "Il più grande stadio per corse di bighe dell'antichità, con capacità per 250.000 spettatori. Oggi è un grande parco urbano dove i romani vanno a correre.", price: "Gratis", tip: "Salite all'Aventino per vedere il buco della serratura dei Cavalieri di Malta — una vista perfettamente allineata con la cupola di San Pietro." },
+            { name: "Mercati di Traiano", description: "Il primo centro commerciale della storia, costruito nel II secolo d.C. Oggi ospita il Museo dei Fori Imperiali, con vedute magnifiche sul Foro di Augusto.", price: "15€", tip: "Meno visitato del Colosseo ma altrettanto impressionante. Il contesto che offre sulla vita quotidiana romana è notevole." },
+          ],
+        },
+        {
+          theme: "Il Vaticano: una città nella città",
+          activities: [
+            { name: "Musei Vaticani e Cappella Sistina", description: "La collezione papale costruita in 500 anni: sculture greche, arazzi fiamminghi, mappe rinascimentali e il soffitto della Cappella Sistina dipinto da Michelangelo.", price: "20€", tip: "Prenotate il primo turno della giornata e chiedete espressamente l'accesso rapido alla Cappella. Senza prenotazione, l'attesa supera le 2-3 ore." },
+            { name: "Basilica di San Pietro", description: "La chiesa più grande al mondo copre 2,3 ettari. La Pietà di Michelangelo, il baldacchino del Bernini e la cupola di 132 metri ne sono i punti forti.", price: "Gratis (cupola 8€)", tip: "La salita alla cupola (gli ultimi 320 gradini sono stretti ed elicoidali) offre la miglior vista su Roma. Arrivate presto." },
+            { name: "Castel Sant'Angelo", description: "Il mausoleo dell'imperatore Adriano, poi convertito in fortezza papale, con un passaggio segreto verso il Vaticano. La terrazza ha una vista straordinaria sul Tevere e Roma.", price: "15€", tip: "Qui si svolge l'atto finale dell'opera Tosca di Puccini — uno dei finali più drammatici della storia del teatro." },
+            { name: "Prati — il quartiere del Vaticano", description: "Il quartiere residenziale accanto al Vaticano, con le migliori gelaterie artigianali e ristoranti di Roma senza il sovrapprezzo turistico intorno a San Pietro.", price: "15-25€", tip: "La Gelateria dei Gracchi (Via dei Gracchi 272) è considerata una delle migliori di Roma. Il gelato autentico ha colori tenui — non vivaci." },
+          ],
+        },
+        {
+          theme: "Trastevere e la Roma che non si vende",
+          activities: [
+            { name: "Trastevere — il quartiere più romano di Roma", description: "Il labirinto di vicoli medievali oltre il Tevere dove vivono ancora romani da generazioni. La Basilica di Santa Maria in Trastevere (IV secolo) è la più antica della città.", price: "Gratis", tip: "Trastevere è un quartiere per l'aperitivo e la cena, non per la mattina. Arrivate alle 18 per vedere il quartiere prendere vita e mescolarvi con i locali." },
+            { name: "Campo de' Fiori", description: "La piazza mercato del centro storico, con bancarelle di frutta, spezie e fiori dal lunedì al sabato. La statua di Giordano Bruno segna il punto dove fu bruciato vivo nel 1600.", price: "Gratis", tip: "Il mercato funziona fino alle 14. Di notte, la piazza diventa l'epicentro della vita notturna del centro." },
+            { name: "Piazza Navona", description: "La più bella piazza barocca d'Europa, costruita sullo stadio di Domiziano. Le tre fontane del Bernini, tra cui la Fontana dei Quattro Fiumi, ne sono il cuore.", price: "Gratis", tip: "I ristoranti sulla piazza hanno prezzi turistici. Mangiate un isolato più in là e prendete invece un caffè seduti in piazza — gli artisti di strada ne valgono la pena." },
+            { name: "Pantheon", description: "L'edificio antico meglio conservato al mondo, costruito dall'imperatore Adriano nel 125 d.C. La sua cupola, con l'oculo centrale, resta un mistero architettonico.", price: "5€", tip: "Il Pantheon è orientato in modo che all'equinozio di primavera (21 marzo) il sole brilli esattamente attraverso l'oculo e illumini l'ingresso. Coincidenza o no." },
+          ],
+        },
+        {
+          theme: "la Fontana di Trevi, la Scalinata di Spagna e Villa Borghese",
+          activities: [
+            { name: "Fontana di Trevi all'alba", description: "La fontana più grande di Roma, scolpita da Nicola Salvi nel 1762. Di notte e all'alba, senza la folla diurna, è uno degli spettacoli più belli d'Europa.", price: "Gratis", tip: "La fontana viene pulita due volte a settimana la mattina presto (di solito martedì e venerdì). Se il momento coincide, la vedrete completamente vuota — uno spettacolo unico." },
+            { name: "Scalinata di Piazza di Spagna", description: "I 135 gradini in travertino che collegano Piazza di Spagna con Trinità dei Monti. In primavera si coprono di azalee rosa per la festa dei fiori.", price: "Gratis", tip: "Dal 2019 sedersi sui gradini è vietato (multa di 250€). Stare in piedi per una foto è ancora gratis." },
+            { name: "Galleria Borghese", description: "La collezione d'arte della famiglia Borghese in una villa del XVII secolo: le prime sculture del Bernini, Caravaggio, Tiziano e Raffaello, in sale intime.", price: "15€", tip: "I biglietti si esauriscono settimane prima — prenotate il prima possibile. Le visite durano esattamente 2 ore (rigorosamente rispettate)." },
+            { name: "Villa Borghese — il polmone verde di Roma", description: "Il più grande parco del centro di Roma, con laghi artificiali, viste dal Pincio e musei. La terrazza del Pincio ha il miglior panorama su Piazza del Popolo.", price: "Gratis", tip: "Noleggiate una piccola barca a remi sul lago (3€ per 20 minuti) — il modo più romano di passare un pomeriggio. I bambini romani lo fanno da 200 anni." },
+          ],
+        },
+        {
+          theme: "Aventino, Testaccio e il lato quartiere di Roma",
+          activities: [
+            { name: "L'Aventino e il buco della serratura dei cavalieri", description: "La collina più tranquilla di Roma. Il buco della serratura dei Cavalieri di Malta inquadra perfettamente la cupola di San Pietro a 3 km di distanza — una delle viste più magiche di Roma.", price: "Gratis", tip: "Dovrete fare la fila per il buco della serratura (5-15 minuti). Il giardino degli aranci proprio accanto ha una delle migliori viste su Roma dall'Aventino." },
+            { name: "Testaccio — il quartiere della cucina romana", description: "Il quartiere operaio di Roma, sede del Mattatoio (un ex macello trasformato in mercato e spazio culturale) e della cucina romana più autentica ed economica della città.", price: "12-20€", tip: "Cacio e pepe e carbonara sono i piatti che definiscono Roma. A Testaccio si servono all'antica — senza panna, senza piselli." },
+            { name: "Palatino e i Giardini Farnesiani", description: "Tornate al Palatino nel pomeriggio per vedere i Giardini Farnesiani, i primi giardini botanici d'Europa, con viste sul Foro affollato a mezzogiorno.", price: "Incluso nel biglietto del Colosseo del giorno 1 (valido 2 giorni)", tip: "La luce del pomeriggio sul Palatino emana quel bagliore dorato che i fotografi del Grand Tour dell'Ottocento inseguivano." },
+            { name: "Aperitivo a Pigneto o Ostiense", description: "I quartieri dove i giovani romani vanno per l'aperitivo (17-21): uno Spritz con un piatto di stuzzichini incluso, terrazze di bar e conversazioni che si riversano in strada.", price: "6-10€ (Spritz con stuzzichini)", tip: "L'aperitivo romano include il cibo — ordinate una bevanda e vi portano un buffet di fritti e bruschette. È la cena obbligatoria prima della cena." },
+          ],
+        },
+      ],
+    },
   },
 
   barcelona: {
