@@ -3500,6 +3500,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Amsterdam",
+      country: "Paesi Bassi",
+      heroTitle: "3 giorni ad Amsterdam: canali, musei e biciclette",
+      heroSubtitle: "Il Rijksmuseum, la Casa di Anne Frank, Jordaan e i tulipani — l'itinerario perfetto per una prima visita alla capitale olandese.",
+      bestMonths: "Da aprile a maggio (tulipani) e da giugno ad agosto",
+      budget: "90-150€/giorno",
+      travelTips: [
+        "Noleggiate una bici dal primo giorno — è il modo più veloce, economico e locale per spostarsi ad Amsterdam",
+        "Prenotate la Casa di Anne Frank e il Museo Van Gogh settimane prima — sono sempre esauriti in alta stagione",
+        "I tram coprono tutta la città; comprate un biglietto giornaliero GVB per 9,50€ per corse illimitate",
+        "La I amsterdam City Card (75€/24h) include musei, trasporti e una crociera sui canali — conviene se visitate 3+ musei",
+        "Fate attenzione alle piste ciclabili in strada — i ciclisti hanno la precedenza sui pedoni e non rallenteranno",
+      ],
+      days: [
+        {
+          theme: "I grandi musei: Van Gogh e il Rijksmuseum",
+          activities: [
+            { name: "Rijksmuseum", description: "Il museo nazionale olandese, nel cuore di Museumplein. Custodisce La Ronda di notte di Rembrandt, La Lattaia di Vermeer e più di un milione di oggetti dell'Età dell'Oro olandese.", price: "22,50€", tip: "Prenotate online e scegliete la fascia delle 9. La Ronda di notte è appesa nella Galleria d'Onore al 2° piano — guardatela dal fondo della sala per apprezzarne la vera scala." },
+            { name: "Museo Van Gogh", description: "La più grande collezione al mondo delle opere di Vincent van Gogh, con più di 200 dipinti e 500 disegni. I Girasoli, La Camera da letto e l'Autoritratto con l'orecchio bendato sono tutti qui.", price: "22€", tip: "Bisogna prenotare settimane prima in alta stagione. L'audioguida gratuita tramite l'app del museo è eccellente e copre tutte le opere principali." },
+            { name: "Vondelpark", description: "Il parco più famoso di Amsterdam, con 47 ettari dove i locali fanno picnic, suonano musica e vanno in bici. In estate c'è teatro all'aperto gratuito.", price: "Gratis", tip: "Noleggiate una bici da MacBike (15€/giorno) per spostarvi in tutta la città — il modo più locale e pratico di esplorare Amsterdam." },
+            { name: "Cena a De Pijp", description: "Il quartiere più multiculturale e gastronomico di Amsterdam, sede del Mercato Albert Cuyp (il più grande dei Paesi Bassi), ristoranti surinamesi e indonesiani e la miglior selezione di caffè artigianali.", price: "15-25€", tip: "Il rijsttafel (tavola di riso indonesiana) è l'eredità coloniale più saporita dei Paesi Bassi — un'esperienza culinaria unica che vale il costo extra." },
+          ],
+        },
+        {
+          theme: "Storia e canali: Anne Frank e Jordaan",
+          activities: [
+            { name: "Casa di Anne Frank", description: "Il nascondiglio dove Anne Frank e la sua famiglia si rifugiarono dai nazisti tra il 1942 e il 1944. Il diario originale, la libreria segreta e le stanze conservate come erano rendono questa una delle visite più toccanti d'Europa.", price: "16€", tip: "DOVETE prenotare online settimane prima — non ci sono biglietti alla porta. La fascia delle 9 è la meno affollata." },
+            { name: "Quartiere di Jordaan e i canali", description: "Il quartiere più pittoresco di Amsterdam, con case del XVII secolo inclinate sui canali, gallerie d'arte, negozi vintage e le terrazze più accoglienti della città.", price: "Gratis", tip: "Attraversate il Prinsengracht ed esplorate il Bloemgracht e l'Egelantiersgracht — questi canali secondari hanno meno turisti e più fascino locale." },
+            { name: "Pranzo di aringa al mercato", description: "L'haring (aringa cruda con cipolla e sottaceti) è lo spuntino più tipico dei Paesi Bassi. Le bancarelle di pesce fresco sui ponti di Jordaan offrono l'esperienza più autentica.", price: "4-6€", tip: "L'aringa si mangia tenendo il pezzo per la coda e lasciandolo cadere in bocca — così fanno gli olandesi. Non ordinate un solo boccone, prendete il pezzo intero." },
+            { name: "Giro in barca sui canali", description: "I 165 canali e 1.753 ponti di Amsterdam sono Patrimonio Mondiale dell'UNESCO. Un giro in barca mostra la città a livello dell'acqua, con prospettive impossibili da terra.", price: "15-20€", tip: "I giri delle 15 hanno una luce migliore per le foto rispetto a quelli del mattino. Portate una giacca anche in estate — l'acqua abbassa la temperatura." },
+          ],
+        },
+        {
+          theme: "Keukenhof (primavera) o quartieri alternativi",
+          activities: [
+            { name: "Keukenhof (solo marzo-maggio) o NDSM Wharf", description: "In primavera, i giardini di Keukenhof, con 7 milioni di tulipani in fiore, sono uno dei paesaggi naturali più belli d'Europa. Fuori stagione, NDSM Wharf, l'ex cantiere navale, è diventato un polo creativo.", price: "Keukenhof 20€ / NDSM gratis", tip: "Il bus diretto dall'aeroporto di Schiphol a Keukenhof è l'opzione più semplice — non serve passare da Amsterdam." },
+            { name: "Quartiere di Oud-West e il Ten Katemarkt", description: "Il mercato di quartiere più autentico di Amsterdam, con prodotti freschi, vestiti usati e street food mediterraneo. I caffè su Jan Pieter Heijestraat sono l'alternativa locale al turistico Leidseplein.", price: "Gratis", tip: "Oud-West è il quartiere dove vivono i giovani locali — i caffè hanno wifi, buoni prezzi e un'atmosfera genuinamente olandese." },
+            { name: "Amsterdam Noord — A'DAM Tower e il Museo EYE", description: "Dall'altra parte del porto, Amsterdam Noord offre il miglior skyline della città. La A'DAM Tower ha l'altalena più alta d'Europa sul tetto, e il Museo EYE è uno degli edifici più fotogenici della città.", price: "Traghetto gratis / A'DAM Tower 17,50€", tip: "Il traghetto dalla Stazione Centrale ad Amsterdam Noord è gratuito e dura 5 minuti. Parte ogni 7-8 minuti, 24 ore su 24." },
+            { name: "Birreria 't IJ — la birreria nel mulino", description: "La birreria artigianale più famosa di Amsterdam, allestita in un mulino a vento del XVIII secolo sul canale. Le sue birre artigianali (Plzen, Zatte, Columbus) sono tra le migliori dei Paesi Bassi.", price: "3,50-5€ a birra", tip: "La piccola terrazza di fronte al mulino è uno dei migliori posti per il tramonto in città. Arrivate prima delle 17 in estate per un tavolo all'aperto." },
+          ],
+        },
+      ],
+    },
   },
 
   londres: {
