@@ -1924,6 +1924,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Praga",
+      country: "Repubblica Ceca",
+      heroTitle: "3 giorni a Praga: il castello, il Ponte Carlo e la birra più economica d'Europa",
+      heroSubtitle: "La Città Vecchia, il Castello di Praga, Josefov e il Quartiere Piccolo — la città medievale meglio conservata d'Europa in tre giorni pieni.",
+      bestMonths: "Da maggio a settembre",
+      budget: "60-100€/giorno",
+      travelTips: [
+        "La corona ceca (CZK) non è l'euro — cambiate negli uffici del centro, mai in quelli di strada che truffano i turisti",
+        "La metro di Praga è efficiente ed economica (30 CZK a corsa) — comprate il pass giornaliero (120 CZK) se fate più di 4 corse",
+        "Praga è molto turistica, ma Vinohrady, Žižkov e Holešovice hanno l'atmosfera locale più autentica",
+        "La birra a Praga costa meno dell'acqua in bottiglia nei bar — è cultura, non una truffa",
+        "L'alta stagione (giugno-agosto) e Natale sono i periodi più affollati — primavera e autunno sono ideali",
+      ],
+      days: [
+        {
+          theme: "Il Castello di Praga e il Quartiere Piccolo",
+          activities: [
+            { name: "Castello di Praga — all'apertura", description: "Il complesso di castello più grande al mondo per superficie (70.000 m²), con 9 secoli di storia. Il complesso include la Cattedrale di San Vito, il Palazzo Reale e il pittoresco Vicolo d'Oro dove visse Franz Kafka.", price: "350 CZK (tour lungo)", tip: "Arrivate alle 8:30 all'apertura per vedere la Cattedrale di San Vito senza code. La vista dal giardino sud del castello sui tetti rossi di Praga è la più spettacolare della città." },
+            { name: "Vicolo d'Oro — dove visse Franz Kafka", description: "La via del XVI secolo con case colorate all'interno del castello, dove vissero gli orafi di corte e, più tardi, Franz Kafka al numero 22. Le minuscole case medievali sono musei in miniatura.", price: "Incluso nel biglietto del castello", tip: "La casa numero 22 (blu) è quella dove Kafka scrisse alcuni dei suoi racconti. La libreria oggi lì presente vende le sue opere in ceco e tedesco — il miglior souvenir da Praga." },
+            { name: "Pranzo a Malá Strana (Quartiere Piccolo)", description: "Il quartiere barocco ai piedi del castello, con palazzi, chiese e la migliore birra di Praga. La birreria Katedrinska e i ristoranti in via Nerudova sono valori sicuri locali.", price: "180-350 CZK", tip: "Lo svíčková (controfiletto di manzo marinato con salsa alla panna e knedlíky) è il piatto nazionale ceco più saporito. Le birre Pilsner Urquell e Staropramen costano 35-55 CZK nel Quartiere Piccolo." },
+            { name: "Ponte Carlo al tramonto", description: "Il ponte gotico del XIV secolo, fiancheggiato da 30 statue barocche, che attraversa la Moldava. Nel pomeriggio si riempie di musicisti di strada, artisti e la migliore atmosfera di Praga.", price: "Gratis", tip: "Il ponte è affollato di giorno — il momento migliore è presto (7) o tardi (21). Toccare la statua di San Giovanni Nepomuceno (la parte in bronzo lucida) si dice porti fortuna." },
+          ],
+        },
+        {
+          theme: "La Città Vecchia e il quartiere ebraico",
+          activities: [
+            { name: "Piazza della Città Vecchia e l'Orologio Astronomico", description: "La piazza più bella dell'Europa centrale, con l'Orologio Astronomico del 1410 (il più antico ancora funzionante), la cui parata dei 12 apostoli avviene ogni ora esatta. La Chiesa di Nostra Signora di Týn domina lo sfondo.", price: "Gratis (torre dell'orologio 250 CZK)", tip: "La parata dell'orologio avviene esattamente all'ora — arrivate 5 minuti prima. La torre del municipio (250 CZK) offre la miglior vista sulla piazza e sui tetti di Praga." },
+            { name: "Josefov — il quartiere ebraico", description: "Uno dei quartieri ebraici medievali meglio conservati d'Europa, con sei sinagoghe (XIII-XIX secolo), un cimitero ebraico con 12.000 tombe sovrapposte e un museo che documenta la storia dell'Olocausto a Praga.", price: "500 CZK (biglietto combinato)", tip: "Il vecchio cimitero ebraico ha fino a 12 strati di tombe sovrapposte — lo spazio era così scarso che le sepolture avvenivano una sopra l'altra. La visita è profondamente commovente." },
+            { name: "Via Nerudova e Malá Strana", description: "La via più fotogenica di Praga, con palazzi barocchi, gallerie e ambasciate che salgono dal Ponte Carlo fino al castello. Ogni edificio ha una targa araldica medievale identificativa.", price: "Gratis", tip: "Al numero 47 di Nerudova si trova l'ambasciata rumena — la casa dell'alchimista che appare ne L'Alchimista di Paulo Coelho. Il giardino segreto delle rose al Palazzo Vrtba (95 CZK) è il più bello di Praga." },
+            { name: "Birreria U Fleků — dal 1499", description: "La birreria più antica di Praga, in attività continua dal 1499, nel quartiere di Nové Město. Produce la propria birra scura (černé pivo) e ha sale medievali con musica dal vivo.", price: "65-100 CZK a pinta", tip: "Da U Fleků non ci si può semplicemente sedere senza bere — i camerieri posano automaticamente una birra fresca sul tavolo. Se non ne volete un'altra, coprite il bicchiere con il sottobicchiere." },
+          ],
+        },
+        {
+          theme: "Vinohrady, Vyšehrad e la Praga alternativa",
+          activities: [
+            { name: "Vyšehrad — l'altra fortezza", description: "La fortezza medievale della leggenda fondativa di Praga, con una basilica, un cimitero di cechi illustri (Dvořák, Smetana) e viste panoramiche sulla Moldava. Molto meno turistica del castello.", price: "Gratis (alcune sale 80 CZK)", tip: "Vyšehrad offre le migliori viste sulla Moldava e sul Ponte Carlo dall'alto — senza la folla del castello. Il giardino sulle mura sud è perfetto per un picnic." },
+            { name: "Quartiere di Vinohrady — la Praga locale", description: "Il quartiere residenziale borghese del XIX secolo con i migliori caffè artigianali, wine bar e ristoranti cechi moderni della città. Náměstí Míru (Piazza della Pace) ne è il centro.", price: "150-300 CZK", tip: "Il ristorante Eska a Karlín (15 min in metro) ha la cucina ceca più innovativa di Praga — cibi fermentati, pasta madre e prodotti agricoli locali. Prenotate in anticipo." },
+            { name: "Parco Letná — il beer garden con la vista migliore", description: "Il grande parco sopra la Moldava con il beer garden più famoso di Praga. Viste dirette sui tetti della Città Vecchia e sul fiume, con birre a prezzi locali.", price: "Gratis (birra 45-60 CZK)", tip: "Il beer garden di Letná è il posto preferito dai giovani praghesi al tramonto. Ordinare in inglese non è un problema — basta chiedere 'una birra scura per favore'." },
+            { name: "Concerto di musica classica in città", description: "Praga ha la scena di musica classica più ricca dell'Europa centrale, con concerti quotidiani alla Casa Municipale, all'Opera e nelle chiese storiche. Mozart e Dvořák aleggiano in ogni via.", price: "400-900 CZK", tip: "I concerti nelle chiese storiche (San Nicola, Santa Croce) sono i più suggestivi e costano 400-600 CZK. Il suono e l'architettura barocca si combinano per un'esperienza unica." },
+          ],
+        },
+      ],
+    },
   },
 
   miami: {
