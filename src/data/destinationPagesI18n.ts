@@ -1378,6 +1378,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Istanbul",
+      country: "Turchia",
+      heroTitle: "4 giorni a Istanbul: dove l'Europa incontra l'Asia",
+      heroSubtitle: "Santa Sofia, il Gran Bazar, il Bosforo e i quartieri più autentici — la città più affascinante al mondo in quattro giorni pieni.",
+      bestMonths: "Da aprile a giugno e da settembre a novembre",
+      budget: "60-120 USD/giorno",
+      travelTips: [
+        "La lira turca ha oscillato molto — portate dollari o euro e cambiate negli uffici di cambio del centro (döviz bürosu), mai in aeroporto",
+        "L'İstanbulkart (carta dei trasporti) copre metro, tram, traghetto e bus — ricaricatela con 100 TL per 2-3 giorni",
+        "L'abbigliamento modesto è obbligatorio nelle moschee — portate sempre un foulard e indossate qualcosa che copra spalle e ginocchia",
+        "Il tè turco (çay) viene servito gratis o a prezzo molto basso in quasi tutti i negozi — è un'usanza di ospitalità, non una truffa",
+        "Istanbul ha 15 milioni di abitanti — il traffico è intenso. Usate metro, tram T1 e traghetti per spostarvi rapidamente",
+      ],
+      days: [
+        {
+          theme: "Sultanahmet — il cuore storico di due imperi",
+          activities: [
+            { name: "Santa Sofia", description: "Il gioiello architettonico di Istanbul, costruito nel 537 d.C. come la chiesa più grande del mondo cristiano, poi convertito in moschea ottomana e oggi di nuovo moschea. La cupola di 55 metri che sembra fluttuare sopra i mosaici bizantini e la calligrafia araba è impareggiabile.", price: "Gratis (accesso libero come moschea attiva)", tip: "Santa Sofia ha riaperto come moschea attiva nel 2020 — entrate scalzi e vestiti in modo modesto (spalle e ginocchia coperte). Le prime ore del mattino hanno meno visitatori." },
+            { name: "Moschea Blu (Sultanahmet Camii)", description: "L'unica moschea di Istanbul con sei minareti, famosa per le 20.000 piastrelle in ceramica blu di Iznik che ricoprono l'interno. La piazza tra la Moschea Blu e Santa Sofia è lo spazio più fotogenico di Istanbul.", price: "Gratis", tip: "La Moschea Blu chiude ai visitatori durante le cinque preghiere quotidiane (15-30 min ogni volta). Controllate gli orari affissi alla porta prima di aspettare." },
+            { name: "Palazzo Topkapi", description: "La sede dell'Impero Ottomano per 400 anni, che custodisce il tesoro dei sultani (il Diamante Kaşıkçı da 86 carati), l'harem imperiale e le reliquie sacre dell'Islam. Viste dirette sul Bosforo e sul Mar di Marmara.", price: "400 TL (palazzo) + 200 TL (harem)", tip: "L'harem di Topkapi richiede un biglietto separato ma ne vale assolutamente la pena — è la sezione più affascinante del palazzo. Il Tesoro Imperiale nel Padiglione 3 custodisce il diamante più grande della Turchia." },
+            { name: "Cisterna Basilica — il palazzo sotterraneo", description: "La cisterna romana del VI secolo, con 336 colonne di marmo riflesse nell'acqua immobile. Le colonne con le teste di Medusa capovolte e l'illuminazione mistica ne fanno uno dei luoghi più unici al mondo.", price: "200 TL", tip: "La cisterna resta fresca anche d'estate — un rifugio dal caldo di Istanbul. La Colonna delle Lacrime (con motivi a spirale) è la più ricercata." },
+          ],
+        },
+        {
+          theme: "Il Gran Bazar, il Bazar delle Spezie e il quartiere egiziano",
+          activities: [
+            { name: "Gran Bazar", description: "Il bazar coperto più grande e antico al mondo, con 61 strade, 4.000 negozi e 250.000 visitatori al giorno. Tappeti, lampade di vetro, ceramiche, gioielli in argento e pelle turca in un labirinto del XV secolo.", price: "Gratis (per entrare)", tip: "Contrattare è obbligatorio — iniziate offrendo il 40-50% del prezzo richiesto. I negozi più interni (non sulla via principale) offrono un miglior rapporto qualità-prezzo." },
+            { name: "Bazar delle Spezie (Mısır Çarşısı)", description: "Il mercato di spezie più famoso di Istanbul, nel quartiere egiziano, con curcuma iraniana, zafferano di Safranbolu, tè alla rosa anatolico, lokum (delizia turca) e i migliori pistacchi della Turchia.", price: "Gratis", tip: "Le spezie sfuse sono molto più economiche e fresche delle confezioni sigillate. Contrattate sempre, e comprate nei negozi più interni del bazar — quelli vicino all'ingresso fanno pagare il doppio." },
+            { name: "Pranzo nel quartiere di Eminönü", description: "Il molo dei traghetti di Eminönü offre il balık ekmek più famoso di Istanbul (panini con sgombro grigliato, preparati su barche). I ristoranti galleggianti lungo il Corno d'Oro operano da decenni.", price: "70-100 TL", tip: "Il balık ekmek si mangia in piedi vicino all'acqua con un bicchiere di turşu suyu (succo di sottaceti). È l'esperienza culinaria più locale ed economica di Istanbul." },
+            { name: "Crociera sul Corno d'Oro", description: "L'estuario di 8 km che separa il cuore storico dai quartieri europei moderni. Una breve crociera sul Corno d'Oro mostra i ponti storici, le moschee e i quartieri in legno lungo l'acqua.", price: "30-50 TL (traghetto pubblico)", tip: "Il traghetto pubblico (vapur) è più autentico ed economico delle crociere turistiche. Parte da Eminönü e arriva a Eyüpsultan — il quartiere più conservatore e meno turistico di Istanbul." },
+          ],
+        },
+        {
+          theme: "Crociera sul Bosforo e Palazzo Dolmabahçe",
+          activities: [
+            { name: "Palazzo Dolmabahçe", description: "Il palazzo del sultano sul Bosforo, costruito nel 1856 in stile neo-barocco europeo. La sala del trono, con un lampadario di cristallo da 4,5 tonnellate donato dalla Regina Vittoria, e le sue 285 stanze sono un simbolo del declino ottomano.", price: "400 TL", tip: "La visita è solo guidata (non si può entrare da soli). L'harem e la sala del trono sono le due sezioni più impressionanti — assicuratevi che il vostro biglietto le includa." },
+            { name: "Crociera sul Bosforo", description: "Lo stretto di 30 km che separa l'Europa dall'Asia, costellato di fortezze medievali, ville in legno yalı, moschee e il Ponte del Bosforo. Il traghetto pubblico fino ad Anadolu Kavağı (l'estremità asiatica) è l'esperienza più epica.", price: "50 TL (traghetto pubblico)", tip: "Il traghetto pubblico (Boğaz Hattı) da Eminönü percorre l'intero tragitto di 6 ore per 50 TL — molto più economico delle crociere turistiche. Il viaggio di ritorno è altrettanto bello." },
+            { name: "Quartiere di Beşiktaş e la sponda europea", description: "Il quartiere più autentico della sponda europea del Bosforo, con un mercato del pesce, birrerie locali, la statua dell'Aquila di Beşiktaş e lo stadio del Beşiktaş JK.", price: "Gratis", tip: "Il çay (tè turco) nei caffè del Bosforo a Beşiktaş viene servito in un bicchiere a forma di tulipano con due zollette di zucchero — ordinatelo così per l'esperienza completa." },
+            { name: "Cena di kebab a Beşiktaş o Kadıköy", description: "L'İskender kebab (agnello su pane pide con yogurt e burro fuso) e il balık (pesce grigliato del Bosforo) sono le due cene più rappresentative di Istanbul.", price: "150-300 TL", tip: "Kadıköy (sponda asiatica, 15 min in traghetto) ospita i migliori ristoranti e bar locali di Istanbul. Attraversare verso l'Asia in traghetto di notte è di per sé un'esperienza unica." },
+          ],
+        },
+        {
+          theme: "Beyoğlu, Istiklal e la Istanbul moderna",
+          activities: [
+            { name: "Viale Istiklal e Beyoğlu", description: "La via pedonale più famosa di Istanbul, 3 km di negozi, caffè, gallerie e il tram rosso storico. Beyoğlu era il cuore della modernizzazione ottomana del XIX secolo.", price: "Gratis", tip: "Il tram di Istiklal viene fotografato più che utilizzato — dovrete scostarvi dai binari al suo passaggio. Le librerie dell'usato e le gallerie nei passaggi storici sono i tesori nascosti della via." },
+            { name: "Torre di Galata", description: "La torre genovese medievale del XIV secolo, alta 70 metri, nel quartiere di Galata. Le viste sul Corno d'Oro, il Bosforo, Santa Sofia e la Moschea Blu dalla terrazza sono le migliori di Istanbul.", price: "300 TL", tip: "Le code possono essere lunghe — comprate il biglietto online. La foto migliore di Galata si scatta dal basso, con il quartiere che scende verso il Corno d'Oro." },
+            { name: "Quartiere di Karaköy e le sue sale da tè", description: "Il quartiere ai piedi della Torre di Galata, con i migliori caffè specialty di Istanbul, gallerie di design contemporaneo e la pasticceria Karaköy Güllüoğlu, che custodisce il miglior baklava della città.", price: "30-60 TL", tip: "Il baklava di Karaköy Güllüoğlu è fatto con pistacchi di Antep e burro di bufala — completamente diverso dal baklava greco o arabo. Ordinate il vassoio misto." },
+            { name: "Tramonto all'Hamam Çemberlitaş", description: "L'hammam più storico di Istanbul, progettato dal grande architetto Sinan nel 1584 per la moglie del sultano Solimano. Il rituale dell'hammam turco (massaggio con schiuma ed esfoliazione kese) è il congedo perfetto.", price: "400-600 TL (trattamento completo)", tip: "Il Çemberlitaş Hamamı ha ingressi separati per uomini e donne. Il rituale completo (bagno caldo, esfoliazione, insaponatura, massaggio) dura 45-60 minuti." },
+          ],
+        },
+      ],
+    },
   },
 
   florencia: {
