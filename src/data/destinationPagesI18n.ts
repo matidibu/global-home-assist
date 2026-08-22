@@ -3321,6 +3321,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Lisbona",
+      country: "Portogallo",
+      heroTitle: "3 giorni a Lisbona: Alfama, pastéis e miradouros",
+      heroSubtitle: "Il Castello di São Jorge, il tram 28, Belém e il fado notturno — l'itinerario perfetto per innamorarsi della capitale portoghese.",
+      bestMonths: "Da marzo a maggio e da settembre a ottobre",
+      budget: "70-120€/giorno",
+      travelTips: [
+        "La carta ricaricabile Viva Viagem, caricata con 5-10€, copre metro, tram e bus — molto più economica dei biglietti singoli",
+        "I miradouros (belvedere) sono l'attività più economica e bella di Lisbona — ce ne sono più di 20 sparsi per la città",
+        "Uber è molto economico a Lisbona — un'alternativa comoda ai tram nelle ore di punta",
+        "I ristoranti con un 'menu do dia' (9-12€ con bevanda, dessert e piatto principale) sono l'opzione di pranzo più autentica",
+        "Indossate scarpe comode con buona presa — il ciottolato portoghese diventa scivoloso sotto la pioggia e affatica i piedi dopo molto camminare",
+      ],
+      days: [
+        {
+          theme: "Alfama e il cuore storico",
+          activities: [
+            { name: "Castello di São Jorge", description: "La fortezza medievale che domina Lisbona dall'alto, con viste a 360° sulla città, il Tago e il ponte 25 Aprile. Le mura moresche dell'XI secolo sono perfettamente conservate.", price: "15€", tip: "Arrivate all'apertura per vedere le viste senza la folla. Salire per le stradine strette di Alfama fa parte dell'esperienza — evitate il taxi diretto." },
+            { name: "Quartiere di Alfama e Miradouro da Graça", description: "Il quartiere più antico di Lisbona, un affascinante labirinto di case piastrellate, panni stesi ad asciugare e fado che risuona dai ristoranti. Il Miradouro da Graça offre le migliori viste della città.", price: "Gratis", tip: "Perdersi ad Alfama è il piano — non serve cercare un percorso specifico. I vicoli più stretti sopra la cattedrale della Sé hanno l'atmosfera più autentica." },
+            { name: "Pranzo di baccalà ad Alfama", description: "Il Portogallo ha 365 ricette di baccalà (una per ogni giorno dell'anno). Bacalhau à brás, à lagareiro o com natas sono i classici. Le tasche di Alfama servono le versioni più autentiche della città.", price: "10-18€", tip: "Cercate ristoranti senza menu in inglese attaccato alla porta — segno che sono per i locali. Il prezzo del menu del giorno include un piatto principale + dessert + bevanda." },
+            { name: "Tram 28 — il percorso più pittoresco", description: "L'iconico tram giallo che sale e scende le colline di Lisbona da Martim Moniz a Prazeres, passando per Alfama, Graça ed Estrela. È vero trasporto urbano, non solo un giro turistico.", price: "3€ (biglietto singolo)", tip: "Comprate il biglietto a bordo in contanti o usate la carta Viva Viagem. Il tram è sempre affollato — salite alla fermata di partenza per trovare posto a sedere." },
+          ],
+        },
+        {
+          theme: "Belém e l'era delle scoperte",
+          activities: [
+            { name: "Pastéis de Belém", description: "La pasticceria originale del pastel de nata, fondata nel 1837, che usa ancora una ricetta segreta nota solo a tre persone. La fila del mattino è lunga ma scorre veloce.", price: "1,30€ a pasticcino", tip: "Ordinateli caldi con zucchero e cannella sopra, e mangiateli dentro la pasticceria. La sala piastrellata all'interno è speciale quanto il dolce stesso." },
+            { name: "Monastero dos Jerónimos", description: "Il capolavoro dell'architettura manuelina (gotico portoghese), Patrimonio Mondiale dell'UNESCO. Il chiostro, con colonne in pietra scolpite a forma di corda e corallo, è uno degli spazi più impressionanti d'Europa.", price: "12€", tip: "La chiesa principale è gratuita e custodisce le tombe di Vasco da Gama e Luís de Camões. Entrate prima lì per cogliere la scala dell'edificio prima di pagare per il chiostro." },
+            { name: "Torre di Belém e il Monumento alle Scoperte", description: "La Torre di Belém (XVI secolo) fu l'ultima cosa che i marinai vedevano partendo e la prima al ritorno. A 300 metri, il Monumento alle Scoperte raffigura le figure degli esploratori portoghesi.", price: "Torre 6€ / Monumento 4€", tip: "La fila per la Torre può essere lunga — l'interno è piccolo e ammette solo piccoli gruppi. Il Monumento ha un punto panoramico in cima con vista sul Tago, che pochi si prendono la briga di salire." },
+            { name: "Casa di fado ad Alfama", description: "Il fado è l'anima musicale di Lisbona, riconosciuto come Patrimonio Culturale Immateriale dell'UNESCO. Le case di fado di Alfama offrono cena con esibizioni dal vivo — l'esperienza più autentica della città.", price: "30-50€ (cena + fado)", tip: "Prenotate in anticipo al Clube de Fado, Sr. Fado o Tasca do Chico. Ci si aspetta silenzio assoluto durante l'esibizione — è una norma culturale, non solo una richiesta." },
+          ],
+        },
+        {
+          theme: "Bairro Alto, LX Factory e il Tago",
+          activities: [
+            { name: "Miradouro da Senhora do Monte", description: "Il belvedere più alto di Lisbona, con viste panoramiche che abbracciano il Castello, il Tago, il Cristo Rei sull'altra sponda e il ponte 25 Aprile. Meno conosciuto di quello di Santa Catarina.", price: "Gratis", tip: "È un preferito dai locali per il brunch del weekend. Il caffè del belvedere serve il miglior caffè con vista della città." },
+            { name: "LX Factory — il mercato creativo", description: "Un'ex fabbrica tessile del XIX secolo trasformata in spazio creativo, con ristoranti, librerie, studi di design e il miglior mercato di Lisbona la domenica. La libreria Ler Devagar, con le sue biciclette appese, è imperdibile.", price: "Gratis (acquisti non inclusi)", tip: "Il mercato domenicale LX Market va dalle 11 alle 20 ed è il migliore di Lisbona. Sabato e domenica sono i giorni in cui i ristoranti interni danno il meglio." },
+            { name: "Ribeira das Naus — il lungofiume del Tago", description: "La passeggiata sul fiume vicino al ministero della Marina, dove i lisboeti si rilassano in amache di legno di fronte al fiume. A 10 minuti a piedi, Praça do Comércio offre la miglior prospettiva sulla foce del Tago.", price: "Gratis", tip: "Le amache sono gratuite e disponibili in base all'arrivo. Ordinate una ginjinha (liquore di ciliegia) ai chioschi lungo la passeggiata — la bevanda più tipica di Lisbona." },
+            { name: "Bairro Alto al tramonto", description: "Il quartiere dei bar e della vita notturna di Lisbona si anima dalle 18. Piccoli bar con porte aperte e musica che si riversa in strada rendono Bairro Alto la serata più autentica della città.", price: "2-4€ a bevanda", tip: "I bar di Bairro Alto di solito non hanno posti a sedere — la gente beve in strada, bicchiere in mano, spostandosi da un bar all'altro. È perfettamente normale e sicuro." },
+          ],
+        },
+      ],
+    },
   },
 
   amsterdam: {
