@@ -2103,6 +2103,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Miami",
+      country: "Stati Uniti",
+      heroTitle: "3 giorni a Miami: South Beach, Wynwood e Little Havana",
+      heroSubtitle: "Art déco, murales, cibo latino e le migliori spiagge della Florida — l'itinerario perfetto per la Miami più autentica.",
+      bestMonths: "Da novembre ad aprile",
+      budget: "150-250 USD/giorno",
+      travelTips: [
+        "Serve un'auto o Uber per spostarsi efficacemente a Miami — i trasporti pubblici sono limitati fuori da South Beach",
+        "Il sole di Miami è intenso tutto l'anno — la crema solare SPF 50 è d'obbligo in spiaggia",
+        "La mancia al ristorante è del 18-20% del totale — attesa, e parte dello stipendio dei camerieri",
+        "La stagione degli uragani va da giugno a novembre — comprate un'assicurazione di viaggio se visitate in quei mesi",
+        "Lo spagnolo è la vera lingua di Miami — in molti negozi di Little Havana e Wynwood, l'inglese è la seconda lingua",
+      ],
+      days: [
+        {
+          theme: "South Beach e il quartiere Art Déco",
+          activities: [
+            { name: "Alba a South Beach", description: "La spiaggia più famosa della Florida è particolarmente magica nelle prime ore, quando le sdraio rosse e bianche sono vuote e la luce dell'alba colpisce gli hotel Art Déco di Ocean Drive.", price: "Gratis", tip: "Il sole sorge sull'oceano a Miami Beach (non su un orizzonte aperto — la città si affaccia sulla costa est). Il riflesso sulla sabbia bagnata dà la miglior foto dell'alba." },
+            { name: "Quartiere Storico Art Déco — Ocean Drive", description: "Il quartiere storico Art Déco più completo al mondo, con più di 800 edifici degli anni '20-'40 in tonalità pastello, cromo e neon. Il tratto di Ocean Drive tra la 5a e la 15a strada è il più fotogenico.", price: "Gratis (tour a piedi 30 USD)", tip: "La Miami Design Preservation League organizza tour guidati a piedi il sabato alle 10:30 (30 USD) con contesto storico essenziale. L'Hotel Colony è l'edificio più fotografato." },
+            { name: "Pranzo al Lincoln Road Mall", description: "La via pedonale più famosa di Miami Beach, con ristoranti, gallerie e il miglior people-watching della città. La domenica c'è un mercato di designer locali.", price: "15-30 USD", tip: "Il News Café su Ocean Drive è aperto 24 ore ed è il punto d'incontro più storico di South Beach. Per prezzi normali, allontanatevi di un isolato dal lungomare." },
+            { name: "Brickell e lo skyline al tramonto", description: "Il quartiere finanziario di Miami, con i grattacieli più nuovi della città e il Brickell City Centre. La passeggiata lungo Biscayne Bay al tramonto offre il miglior skyline della città.", price: "Gratis", tip: "Il Pérez Art Museum Miami (PAMM) ha terrazze affacciate sulla baia aperte a tutti — la miglior vista gratuita sullo skyline di Miami al tramonto." },
+          ],
+        },
+        {
+          theme: "Wynwood, il Design District e la vita notturna di Miami",
+          activities: [
+            { name: "Wynwood Walls", description: "Il museo di arte urbana all'aperto più famoso al mondo, fondato da Tony Goldman nel 2009. Più di 80 artisti internazionali hanno dipinto i magazzini del quartiere con murales che cambiano ogni anno.", price: "Gratis (esterno) / 12 USD (interno del Wynwood Walls Museum)", tip: "L'accesso alle strade del quartiere è gratuito — il museo interno ha in realtà meno da vedere delle strade. Percorrete gli isolati da NW 25th a 27th per vedere i murales migliori." },
+            { name: "Caffè artigianale e galleria a Wynwood", description: "Wynwood ha i caffè più artistici di Miami, allestiti in vecchi negozi con murales propri. Panther Coffee e Wynwood Kitchen & Bar sono i preferiti della scena creativa.", price: "5-15 USD", tip: "Panther Coffee sulla NW 24th ha il miglior espresso di Miami ed è in un edificio con un murale di Shepard Fairey. Arrivate prima di mezzogiorno per trovare un tavolo." },
+            { name: "Design District — lusso e arte contemporanea", description: "Il quartiere di Miami dedicato alle boutique di lusso e alle gallerie d'arte contemporanea. Da Gucci a Hermès, da Gagosian a Locust Projects — un mix di consumismo e arte che riflette il lato più esclusivo di Miami.", price: "Gratis (per entrare)", tip: "L'Institute of Contemporary Art (ICA Miami) nel Design District ha ingresso gratuito ed esposizioni di livello mondiale. Aperto da martedì a domenica." },
+            { name: "Vita notturna a South Beach", description: "South Beach ha la scena di vita notturna più famosa degli Stati Uniti. LIV al Fontainebleau, E11EVEN e Story sono i club più conosciuti. Si comincia alle 23 e si va avanti fino alle 3-4 del mattino.", price: "20-50 USD (ingresso)", tip: "Arrivate prima delle 23 per evitare la fila e il picco del prezzo d'ingresso. Il dress code per gli uomini è smart casual — pantaloncini e scarpe da ginnastica non sono ammessi nei club." },
+          ],
+        },
+        {
+          theme: "Little Havana e Coconut Grove",
+          activities: [
+            { name: "Little Havana — Calle Ocho", description: "Il quartiere cubano di Miami, con l'energia, il caffè e la musica dell'Avana trapiantati in Florida. La SW 8th Street (Calle Ocho) è il cuore, con le sue cafeterías cubane, le finestre del caffè da asporto e le partite a domino al Máximo Gómez Park.", price: "Gratis", tip: "Il caffè cubano (cafecito) alla finestra si beve in piedi in 30 secondi — è l'usanza locale. Ordinate un cortadito se volete qualcosa di più lungo. Costa solo 50 centesimi." },
+            { name: "Viernes Culturales sulla Calle Ocho", description: "Se è l'ultimo venerdì del mese, il festival mensile Viernes Culturales riempie Calle Ocho di musica dal vivo, artisti, venditori di cibo cubano e street art.", price: "Gratis", tip: "Il ristorante Versailles sulla SW 8th serve il miglior sandwich cubano e ropa vieja di Miami dal 1971 — pranzate qui per l'esperienza cubana definitiva." },
+            { name: "Coconut Grove — il quartiere bohémien", description: "Il quartiere più antico di Miami, con case immerse tra alberi tropicali, il lungomare di Dinner Key e i ristoranti e negozi del CocoWalk. Il Museo Vizcaya è il gioiello del quartiere.", price: "Gratis (Vizcaya 22 USD)", tip: "Vizcaya, la dimora in stile italiano degli anni '20 con giardini sulla baia, è il luogo più bello e meno conosciuto di Miami. Solo i giardini valgono la visita." },
+            { name: "Tramonto a Key Biscayne", description: "L'isola-parco a 15 minuti dal centro tramite il Rickenbacker Causeway. Il Bill Baggs Cape Florida State Park ha la spiaggia più tranquilla di Miami e il miglior tramonto.", price: "8 USD (ingresso al parco)", tip: "Il sentiero di 1 km fino al faro di Cape Florida in fondo all'isola offre la vista più bella su Biscayne Bay, con lo skyline di Miami sullo sfondo." },
+          ],
+        },
+      ],
+    },
   },
 
   "buenos-aires": {
