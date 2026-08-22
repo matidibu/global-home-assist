@@ -2375,6 +2375,60 @@ export const blogPostsI18n: Partial<Record<string, Partial<Record<BlogLang, Blog
     },
   },
   "destino-ideal-precio-que-podes-pagar": {
+    fr: {
+      title: "Votre destination idéale, au prix que vous pouvez payer : le vrai guide budget 2026",
+      excerpt: "Combien coûte vraiment passer 10 jours en Europe, en Asie ou en Amérique latine ? Pas un blog générique — de vrais chiffres 2026 avec des détails honnêtes.",
+      categoryLabel: "Budget",
+      sections: [
+        { type: "intro", text: "Il y a une place pour chaque budget. Vous n'avez pas besoin de choisir entre Paris ou Marrakech par manque d'argent — vous devez comprendre ce que ça signifie en termes économiques. Paris touristique ? 80-120$/jour. Paris comme le vit un Parisien ? 40-60$/jour. Ce guide montre de vrais chiffres, sans fantaisie." },
+        { type: "h2", text: "Comment lire ce guide" },
+        { type: "p", text: "Chaque destination a 3 niveaux : Routard (optimise chaque dollar), Confort (qualité sans luxe), Luxe (ne regarde pas les prix). Les chiffres incluent : hébergement, nourriture, transport local, et une activité payante par jour. Ils N'incluent PAS les vols internationaux." },
+        { type: "h2", text: "Asie du Sud-Est : la région la moins chère" },
+        { type: "list", heading: "Bangkok, Thaïlande", items: [
+          "Routard : 20-30$/jour (auberge 6-10$, nourriture 3-5$/jour, métro 0,50$)",
+          "Confort : 40-50$/jour (Airbnb 20-25$, restaurant 8-10$, tours 15$)",
+          "Luxe : 100$+/jour (hôtel 4 étoiles 60-80$)",
+          "Astuce : celui qui dépense 20$/jour mange mieux que le touriste qui dépense 60$. Secret : mangez où mangent les locaux.",
+        ] },
+        { type: "list", heading: "Bali, Indonésie", items: [
+          "Routard : 15-25$/jour (villa 7-12$, nourriture 2,50-3,50$, scooter 5-7$/jour)",
+          "Confort : 35-45$/jour (villa avec piscine 20$, restaurant 6-8$)",
+          "Luxe : 80-150$/jour (resort 5 étoiles)",
+          "Note : Bali est exponentiellement moins cher que Bangkok. Profitez-en.",
+        ] },
+        { type: "list", heading: "Vietnam", items: [
+          "Routard : 12-20$/jour (hébergement 5-8$, nourriture 1,50-2,50$, tours 3-5$)",
+          "Confort : 30-40$/jour (Airbnb 15-18$, restaurant 5-7$)",
+          "Avantage : la nourriture est MEILLEURE plus elle est bon marché.",
+        ] },
+        { type: "h2", text: "Amérique latine : l'éventail le plus large" },
+        { type: "list", heading: "Mexico", items: [
+          "Routard : 25-35$/jour (Airbnb à Coyoacán 15$, nourriture 3-5$, métro 0,25$)",
+          "Confort : 50-65$/jour (Airbnb à Roma 30-35$, restaurant 8-10$)",
+          "Astuce locale : Condesa et Roma sont touristiques. Coyoacán, Narvarte : local, bon marché, authentique.",
+        ] },
+        { type: "list", heading: "Buenos Aires", items: [
+          "Routard : 30-40$/jour (Airbnb à San Telmo 18-22$, asado 4-6$)",
+          "Confort : 55-75$/jour (Airbnb à Palermo 35$, steak 8-10$)",
+          "Réalité : Buenos Aires s'est renchérie mais reste une Europe bon marché.",
+        ] },
+        { type: "h2", text: "Europe : cher, mais avec d'énormes différences" },
+        { type: "list", heading: "Portugal (Lisbonne)", items: [
+          "Routard : 28-35$/jour",
+          "Confort : 50-65$/jour",
+          "Secret : le Portugal en 2026 est la nouvelle Espagne de 2015. Bon marché, authentique, avant que ça ne se renchérisse.",
+        ] },
+        { type: "list", heading: "France (Paris)", items: [
+          "Routard : 40-50$/jour",
+          "Confort : 70-90$/jour",
+          "Astuce : en janvier-février, cherchez un Airbnb dans les quartiers locaux (10e, 11e). Moitié prix.",
+        ] },
+        { type: "h2", text: "Le budget total : 2 semaines vs 1 mois" },
+        { type: "p", text: "14 jours à 40$/jour = 560$. Mais 30 jours à 40$/jour = 1 200$. Cependant, les réductions hebdomadaires ramènent les 30 jours à environ 1 000$." },
+        { type: "callout", text: "Voyager 3-4 semaines en basse saison à 25-30$/jour coûte le même prix que 2 semaines en haute saison à 60$/jour. Mais l'expérience est radicalement différente." },
+        { type: "cta", text: "Générez votre itinéraire personnalisé avec un budget optimisé →" },
+      ],
+    },
     en: {
       title: "Your ideal destination, at the price you can afford: the real 2026 budget guide",
       excerpt: "How much does it really cost to spend 10 days in Europe, Asia, or Latin America? Not a generic blog — real 2026 numbers with honest details.",
@@ -2431,6 +2485,48 @@ export const blogPostsI18n: Partial<Record<string, Partial<Record<BlogLang, Blog
     },
   },
   "finanzas-previaje-que-tener-en-cuenta": {
+    fr: {
+      title: "Finances avant le voyage : quoi prendre en compte avant de voyager (et ne pas avoir honte ni perdre d'argent)",
+      excerpt: "L'argent est le facteur qui sabote les voyages. Ce n'est pas un manque de budget — c'est un manque de planification. Voici tout ce qu'il faut savoir AVANT de monter dans l'avion.",
+      categoryLabel: "Conseils de voyage",
+      sections: [
+        { type: "intro", text: "60% des problèmes des voyageurs sont financiers. Pas parce qu'ils manquent d'argent — parce qu'ils ne l'ont pas planifié. Carte bloquée, taux de change horrible, imprévu sans couverture. Cette liste, c'est tout ce qu'il faut une semaine avant de voyager." },
+        { type: "h2", text: "Une semaine avant : l'urgent" },
+        { type: "list", heading: "1. Prévenez votre banque", items: [
+          "Appelez ou utilisez l'appli : « Je voyage en [pays] du [date] au [date]. » Votre banque bloque les transactions « suspectes ».",
+          "Sans prévenir : votre premier Uber à Paris = carte bloquée. Ensuite vous passez 1-2 heures au téléphone avec la banque.",
+        ] },
+        { type: "list", heading: "2. Choisissez votre stratégie d'argent", items: [
+          "Carte débit + crédit : utilisez le débit aux distributeurs (meilleur taux). Crédit = solution de secours.",
+          "Liquide : retirez 200-500$ dans votre pays AVANT de partir. Le taux à l'aéroport est le pire.",
+        ] },
+        { type: "list", heading: "3. Argent numérique : applications de transfert", items: [
+          "Téléchargez Wise : le meilleur taux réel pour les transferts.",
+          "PayPal : fonctionne dans beaucoup d'endroits mais un taux plus cher.",
+          "Google Pay / Apple Pay : dans de nombreux pays ça fonctionne directement depuis le téléphone.",
+        ] },
+        { type: "tip", title: "La plus grosse erreur", text: "Changer de l'argent à l'aéroport = 10-15% de taux en moins. Retirez de l'argent à un distributeur à l'intérieur de l'aéroport. C'est réglé." },
+        { type: "h2", text: "Change de devises : comment obtenir le meilleur taux" },
+        { type: "list", heading: "Classement des taux (du meilleur au pire) :", items: [
+          "1. Distributeur local : taux réel, frais de 1-3$. Meilleure option.",
+          "2. Wise : taux réel + 0,6-1,5% de frais. Excellent.",
+          "3. PayPal/Revolut : acceptable, frais de 2-3%.",
+          "4. Change à l'aéroport : JAMAIS. 10-15% de moins bon.",
+        ] },
+        { type: "h2", text: "Assurance voyage : ça vaut le coup ou pas" },
+        { type: "list", heading: "Quand acheter :", items: [
+          "Assurance médicale : OUI si vous voyagez en Europe/USA. 20-50$/semaine, ça vaut vraiment le coup.",
+          "Assurance annulation : OUI si vous avez réservé du non remboursable et qu'il y a un risque.",
+          "Assurance bagages : SEULEMENT si vous voyagez avec du matériel cher (1000$+).",
+        ] },
+        { type: "callout", text: "Les cartes de crédit premium (Gold, Platinum) INCLUENT souvent une assurance voyage. Vérifiez avec votre banque." },
+        { type: "tip", title: "Comment contrôler les dépenses PENDANT le voyage", text: "Utilisez Splitwise : notez chaque dépense. À la fin de la journée vous voyez exactement combien vous avez dépensé. Ça aide psychologiquement à ne pas trop dépenser." },
+        { type: "h2", text: "Checklist finale : 7 jours avant le départ" },
+        { type: "list", items: ["☐ Prévenir la banque (dates, pays)", "☐ Vérifier les limites de retrait", "☐ Télécharger Wise, Google Pay, applications d'argent", "☐ Retirer du liquide (200-500$)", "☐ Acheter une assurance médicale si Europe/USA", "☐ Vérifier que vos cartes sont à puce", "☐ Faire une liste des numéros de blocage de cartes"] },
+        { type: "callout", text: "Le voyageur intelligent n'est pas celui qui a le plus d'argent. C'est celui qui sait comment le dépenser. Planification = liberté." },
+        { type: "cta", text: "Générez votre itinéraire personnalisé et calculez un budget réel →" },
+      ],
+    },
     en: {
       title: "Pre-trip finances: what to consider before traveling (and not get embarrassed or lose money)",
       excerpt: "Money is the factor that sabotages trips. It's not lack of budget — it's lack of planning. Here's everything you need to know BEFORE boarding the plane.",
@@ -2475,6 +2571,52 @@ export const blogPostsI18n: Partial<Record<string, Partial<Record<BlogLang, Blog
     },
   },
   "gastos-hormigas-viajes-dinero-tirado": {
+    fr: {
+      title: "Petites fuites quotidiennes dans les dépenses de voyage : comment les voyageurs perdent des milliers sans s'en rendre compte",
+      excerpt: "Un café ici, un pourboire là, un « combo spécial » dont vous n'aviez pas besoin. Les petites dépenses sont le tueur silencieux du budget voyage.",
+      categoryLabel: "Budget",
+      sections: [
+        { type: "intro", text: "Un voyageur budgète : hébergement (800$), nourriture (400$), transport (200$). Total 1 400$. Mais finit par dépenser 1 950$. Où sont partis les 550$ ? Dans des dépenses qui semblaient insignifiantes. Un café ici, une bouteille là, un billet inutilisé. C'est la petite fuite quotidienne." },
+        { type: "h2", text: "Pourquoi les petites dépenses sont dangereuses" },
+        { type: "p", text: "Si je dépense 20$ pour une activité, ça me fait mal — une décision consciente. Mais si je dépense 2$ en café, je ne m'en rends même pas compte. Multipliez ça : 30 cafés = 60$. Additionnez tout : café + eau + billet + pourboire + nourriture = 300$ non prévus." },
+        { type: "h2", text: "Les 8 petites fuites à éviter" },
+        { type: "list", heading: "1. Eau en bouteille", items: [
+          "Coût : 1,50-3$ la bouteille. 15 jours = 22,50-45$. 30 jours = 45-90$.",
+          "Solution : une bouteille réutilisable. Remplissez-la gratuitement dans les hôtels/cafés.",
+          "Économie : 50-100$ par voyage.",
+        ] },
+        { type: "list", heading: "2. Café dans les zones touristiques", items: [
+          "Café touristique : 4-6$. Le même café 2 rues plus loin : 1-1,50$.",
+          "30 cafés touristiques vs locaux = 90$ contre 30$. Différence : 60$.",
+        ] },
+        { type: "list", heading: "3. Billet de musée que vous « comptez visiter »", items: [
+          "Vous achetez le billet (15-20$). Vous êtes fatigué, vous le sautez.",
+          "Sur 10 activités prévues, vous en faites 6-7. Ces 3-4 = 60-80$ perdus.",
+        ] },
+        { type: "list", heading: "4. Pourboires inutiles", items: [
+          "Certains laissent 15-20% sur CHAQUE transaction : café, snack, boutique.",
+          "En Asie = insultant. En Europe = inutile.",
+          "Dépense inutile : 30-60$ par mois.",
+        ] },
+        { type: "list", heading: "5. Transport alternatif", items: [
+          "Uber : 8-12$. Métro : 0,50-1$. 2-3 fois/jour = 20-30$/jour de différence.",
+          "Mensuel : 300-600$ en Uber contre transport public.",
+        ] },
+        { type: "list", heading: "6. Chaînes de restauration vs local", items: [
+          "McDonald's à Paris : 10-12$. Restaurant local : 4-5$.",
+          "1 repas/jour : chaîne = 300$, local = 120-150$. Différence : 150-180$/mois.",
+        ] },
+        { type: "list", heading: "7. Wifi payant quand il y a du gratuit", items: [
+          "Wifi café/musée/hôtel : gratuit. Aéroport = 5-10$/jour.",
+          "30 jours : 150-300$. Solution : une eSIM locale (10-20$) = internet illimité.",
+        ] },
+        { type: "tip", title: "Le test de la petite fuite", text: "Avant de dépenser moins de 10$ : demandez-vous « si ça coûtait 50$, je le paierais ? » Si non, ne le faites pas." },
+        { type: "h2", text: "Combien vous pouvez économiser en les éliminant" },
+        { type: "list", items: ["Eau en bouteille (-20$)", "Café touristique (-30$)", "Transport efficace (-150$)", "Pourboires stratégiques (-20$)", "Choix alimentaires intelligents (-80$)", "Total économisé : ~300$ sur 15 jours"] },
+        { type: "callout", text: "300$ sur 15 jours = 3-4 jours de voyage en plus, ou un meilleur hébergement, ou les activités premium que vous vouliez vraiment. Ce n'est pas une question de privation. C'est une question de priorités." },
+        { type: "cta", text: "Générez votre itinéraire optimisé pour un maximum de valeur →" },
+      ],
+    },
     en: {
       title: "Small daily leaks in travel spending: how travelers lose thousands without noticing",
       excerpt: "A coffee here, a tip there, a 'special combo' you didn't need. Small expenses are the silent killer of a travel budget.",
