@@ -11,7 +11,7 @@ export function generateOrganizationSchema() {
     sameAs: [
       "https://www.instagram.com/globalhomeassist.app",
       "https://www.tiktok.com/@globalhomeassist.app",
-      "https://www.pinterest.com/globalhomeassist",
+      "https://www.pinterest.com/globalhomeassistapp",
     ],
     contactPoint: {
       "@type": "ContactPoint",
