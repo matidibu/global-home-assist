@@ -2,11 +2,16 @@
 
 import dynamic from "next/dynamic";
 
+const LOADING_TEXT: Record<string, string> = {
+  es: "Cargando mapa...",
+  en: "Loading map...",
+};
+
 const TravelMap = dynamic(() => import("@/components/TravelMap"), {
   ssr: false,
   loading: () => (
     <div style={{ width: "100%", height: "500px", borderRadius: "20px", display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(255,255,255,0.6)", color: "#6b7280", fontSize: "14px" }}>
-      Cargando mapa...
+      {LOADING_TEXT.es}
     </div>
   ),
 });
@@ -20,6 +25,6 @@ interface Activity {
   media?: { image_url?: string };
 }
 
-export default function BaliMap({ activities }: { activities: Activity[] }) {
-  return <TravelMap activities={activities} language="es" />;
+export default function BaliMap({ activities, language = "es" }: { activities: Activity[]; language?: string }) {
+  return <TravelMap activities={activities} language={language} />;
 }
