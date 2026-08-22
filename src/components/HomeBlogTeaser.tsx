@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { blogPosts, categoryColors } from "@/data/blogPosts";
+import { localizeBlogPost } from "@/data/blogPostsI18n";
 import { BookOpen, ArrowRight, TrendingUp } from "lucide-react";
 
 // Artículos destacados para mostrar en homepage (los 3 más recientes o más relevantes)
@@ -25,9 +26,6 @@ type Copy = {
   budgetLink: string;
 };
 
-// Wrapper chrome only (title/subtitle/labels) is translated here -- the
-// actual post titles/categoryLabel/content come from blogPosts.ts, which is
-// Spanish-only (a much bigger separate translation task, not done yet).
 const T: Record<string, Copy> = {
   es: {
     eyebrow: "Blog de Viajes",
@@ -216,7 +214,8 @@ export function HomeBlogTeaser({ language = "es" }: Props) {
         gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
         gap: "14px",
       }}>
-        {featured.map((post) => {
+        {featured.map((basePost) => {
+          const post = localizeBlogPost(basePost, language);
           const cat = categoryColors[post.category];
           return (
             <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>

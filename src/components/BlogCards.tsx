@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { BlogPost, categoryColors } from "@/data/blogPosts";
+import { localizeBlogPost } from "@/data/blogPostsI18n";
 import { useAutoLanguage } from "@/hooks/useAutoLanguage";
 
 type Copy = { featuredReadTime: (min: number) => string; readTimeMin: (min: number) => string; readArticle: string; read: string };
@@ -15,9 +16,10 @@ const T: Record<string, Copy> = {
   pt: { featuredReadTime: min => `Destaque · ${min} min de leitura`, readTimeMin: min => `${min} min`, readArticle: "Ler artigo →", read: "Ler →" },
 };
 
-export function FeaturedPostCard({ post }: { post: BlogPost }) {
-  const catColor = categoryColors[post.category];
+export function FeaturedPostCard({ post: basePost }: { post: BlogPost }) {
   const [language] = useAutoLanguage();
+  const post = localizeBlogPost(basePost, language);
+  const catColor = categoryColors[post.category];
   const t = T[language] || T.es;
   return (
     <Link href={`/blog/${post.slug}`} style={{ textDecoration: "none", display: "block", marginBottom: "40px" }}>
@@ -91,9 +93,10 @@ export function FeaturedPostCard({ post }: { post: BlogPost }) {
   );
 }
 
-export function PostCard({ post }: { post: BlogPost }) {
-  const catColor = categoryColors[post.category];
+export function PostCard({ post: basePost }: { post: BlogPost }) {
   const [language] = useAutoLanguage();
+  const post = localizeBlogPost(basePost, language);
+  const catColor = categoryColors[post.category];
   const t = T[language] || T.es;
   return (
     <Link href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
@@ -161,9 +164,10 @@ export function PostCard({ post }: { post: BlogPost }) {
   );
 }
 
-export function RelatedPostCard({ post }: { post: BlogPost }) {
-  const rc = categoryColors[post.category];
+export function RelatedPostCard({ post: basePost }: { post: BlogPost }) {
   const [language] = useAutoLanguage();
+  const post = localizeBlogPost(basePost, language);
+  const rc = categoryColors[post.category];
   const t = T[language] || T.es;
   return (
     <Link href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
