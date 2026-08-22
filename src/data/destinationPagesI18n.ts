@@ -2739,6 +2739,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Bangkok",
+      country: "Thailandia",
+      heroTitle: "4 giorni a Bangkok: templi dorati, mercati galleggianti e street food",
+      heroSubtitle: "Il Grande Palazzo, Wat Pho, Chatuchak e lo street food più vivace dell'Asia — l'itinerario perfetto per un primo viaggio in Thailandia.",
+      bestMonths: "Da novembre a febbraio",
+      budget: "40-80 USD/giorno",
+      travelTips: [
+        "Il BTS Skytrain e la metro MRT coprono le principali aree turistiche — evitate i taxi nelle ore di punta (8-9 e 17-19)",
+        "Il baht thailandese è molto stabile — portate contanti per il trasporto locale e lo street food, che non accettano carte",
+        "Togliete sempre le scarpe prima di entrare in un tempio o in una casa — è una norma culturale molto seria",
+        "La stagione delle piogge (giugno-ottobre) porta acquazzoni torrenziali quotidiani, soprattutto nel tardo pomeriggio — non influisce molto sul turismo",
+        "Gli autisti di taxi spesso non parlano inglese — portate il vostro indirizzo scritto in thailandese o mostrate il pin di Google Maps",
+      ],
+      days: [
+        {
+          theme: "I grandi templi di Bangkok",
+          activities: [
+            { name: "Grande Palazzo e Wat Phra Kaew", description: "Il complesso più sacro della Thailandia, costruito nel 1782 e sede del Buddha di Smeraldo (il più venerato del paese). Le strutture dorate e i murales del Ramakien nei chiostri sono capolavori dell'arte thailandese.", price: "500 ฿", tip: "Arrivate all'apertura alle 8:30 per evitare la folla e il caldo. L'ingresso include anche il Padiglione Vimanmek. Il codice di abbigliamento è obbligatorio: spalle e ginocchia coperte — i vestiti si prestano all'ingresso." },
+            { name: "Wat Pho — il Buddha sdraiato", description: "Il tempio più antico di Bangkok (XVI secolo) ospita il più grande Buddha sdraiato della Thailandia: 46 metri di lunghezza, ricoperto di foglia d'oro. È anche la sede ufficiale del massaggio thailandese tradizionale.", price: "200 ฿", tip: "Il massaggio thailandese tradizionale nelle scuole del tempio costa 420 ฿ l'ora — il più autentico ed economico di Bangkok. Prenotate sul posto." },
+            { name: "Pranzo di pad thai per strada", description: "Le bancarelle di strada intorno a Wat Pho e al molo di Tha Tien sono tra le più famose di Bangkok. Pad thai, khao pad (riso fritto) e tom yum compongono il pranzo perfetto.", price: "50-80 ฿", tip: "Cercate le bancarelle con code di locali — un segno infallibile di qualità. Thip Samai su Maharaj Rd serve il pad thai più famoso di Bangkok dal 1966." },
+            { name: "Wat Arun — il Tempio dell'Alba", description: "Il tempio sul fiume Chao Phraya, il cui prang principale è ricoperto di frammenti di porcellana che scintillano al sole. Raggiungibile in barca dal molo di Tha Tien (5 ฿).", price: "100 ฿", tip: "Il momento migliore è il tramonto, quando la luce dorata illumina i mosaici di porcellana. Salite al secondo livello del prang per la vista sul fiume." },
+          ],
+        },
+        {
+          theme: "Mercati, canali e la Bangkok autentica",
+          activities: [
+            { name: "Mercato galleggiante di Damnoen Saduak", description: "Il mercato galleggiante più fotogenico della Thailandia, a 100 km da Bangkok. Venditori su barche cariche di frutta tropicale, pad thai e curry giallo navigano su canali del XIX secolo.", price: "Tour 700-1.000 ฿ (da Bangkok)", tip: "Partite prima delle 6:30 per arrivare alle 8, quando è più animato. Il viaggio di ritorno in barca attraverso i canali è interessante quanto il mercato stesso." },
+            { name: "Chinatown (Yaowarat)", description: "La Chinatown di Bangkok, attiva dal 1782, ha le vie gastronomiche più dense della città. Frutti di mare alla griglia, anatra arrosto cinese e dim sum sono le specialità del quartiere.", price: "60-150 ฿", tip: "Yaowarat Rd di notte (dalle 18) diventa il miglior mercato di strada di Bangkok. Di giorno, i negozi di spezie ed erbe medicinali sono affascinanti." },
+            { name: "Khlong Saen Saeb — i canali di Bangkok", description: "Il sistema di barche express che percorre i canali di Bangkok — il modo più rapido ed economico di spostarsi in centro. I khlong (canali) mostrano la Bangkok fluviale originale che esisteva prima delle autostrade.", price: "15-20 ฿ a tratta", tip: "Usate le barche del Khlong Saen Saeb come vero trasporto, non come un tour. Salite a Pratunam e raggiungete Chit Lom in 10 minuti, senza traffico." },
+            { name: "Khao San Road e la vita notturna backpacker", description: "La via più famosa del Sud-est asiatico per i viaggiatori indipendenti, con bar, musica dal vivo, tatuatori, massaggiatrici di strada e la migliore selezione di cibo notturno di Bangkok.", price: "50-100 ฿ (cibo e bevande)", tip: "Gli scorpioni e insetti fritti su Khao San sono per i turisti avventurosi — grilli e bachi da seta sono ciò che i thailandesi mangiano davvero. Il pad see ew delle bancarelle in fondo alla via è il migliore." },
+          ],
+        },
+        {
+          theme: "Chatuchak e lo shopping a Bangkok",
+          activities: [
+            { name: "Mercato di Chatuchak", description: "Il più grande mercato del weekend al mondo, con 15.000 bancarelle e 200.000 visitatori ogni settimana. Vestiti, antiquariato, animali esotici, arte, piante e cibo in un labirinto di 35 ettari.", price: "Gratis (acquisti non inclusi)", tip: "All'ingresso è disponibile una mappa del mercato — assolutamente necessaria. Le sezioni 1-5 hanno antiquariato; 7-27 hanno moda e abbigliamento; la sezione 26 ha il miglior street food." },
+            { name: "Terminal 21 — il centro commerciale a tema aeroporto", description: "Un centro commerciale unico dove ogni piano è a tema con l'aeroporto di una città diversa (Tokyo, Istanbul, San Francisco). Il food court nel seminterrato è uno dei migliori e più economici di Bangkok.", price: "Gratis (per entrare)", tip: "Il food court del Terminal 21 ha piatti thailandesi da 50-100 ฿. È il pranzo climatizzato più economico del centro di Bangkok." },
+            { name: "MBK Center ed elettronica", description: "Il grande magazzino di Bangkok famoso per elettronica, abbigliamento locale e cucina thailandese. Il 4° piano ha la maggior concentrazione di accessori ed elettronica usata della città.", price: "Gratis (per entrare)", tip: "Il piano food court dell'MBK ha la cucina thailandese più economica del centro — pad thai a 60 ฿, riso appiccicoso al mango a 80 ฿." },
+            { name: "Cena su Sukhumvit Soi 11 e vita notturna", description: "La via più cosmopolita di Bangkok, con un mix di ristoranti internazionali, bar sul tetto e la vita notturna più internazionale della città. Levels, Demo e Hard Rock Cafe si trovano tutti su questa via.", price: "150-500 ฿", tip: "Il mercato notturno di Pat Pong (soi 4-5) ha più di cento bancarelle di vestiti e souvenir con atmosfera notturna. Contrattate sempre — il prezzo richiesto è il doppio di quello reale." },
+          ],
+        },
+        {
+          theme: "Templi alternativi e commiato",
+          activities: [
+            { name: "Wat Benchamabophit — il Tempio di Marmo", description: "Il tempio più fotogenico di Bangkok, costruito nel 1900 con marmo di Carrara italiano. I 52 Buddha in bronzo nel chiostro e il canale davanti al tempio lo rendono particolarmente sereno.", price: "50 ฿", tip: "La foto migliore si scatta dal ponte di pietra, con il tempio riflesso nel canale sullo sfondo. Le 9 offrono la luce migliore e meno turisti." },
+            { name: "Casa di Jim Thompson", description: "La dimora dell'uomo d'affari americano che rilanciò l'industria della seta thailandese negli anni '50. Sei tradizionali case in teak thailandese unite formano uno degli spazi più eleganti di Bangkok.", price: "200 ฿ (tour guidato incluso)", tip: "Jim Thompson scomparve misteriosamente in Malesia nel 1967 — le guide raccontano la storia nei dettagli. Il tour è offerto solo in inglese/francese/giapponese." },
+            { name: "Spa d'addio e massaggio thailandese", description: "Bangkok ha alcune delle spa migliori ed economiche dell'Asia. Un massaggio di 2 ore in una spa di qualità (non quelle di Khao San Road) costa 800-1.500 ฿ e include un massaggio completo del corpo e riflessologia.", price: "600-1.500 ฿", tip: "Health Land e Divana sono catene affidabili con diverse sedi a Bangkok. Prenotate 2 ore prima in alta stagione." },
+            { name: "Sky Bar Lebua — il bar più alto del mondo", description: "Il bar dell'hotel Lebua State Tower, a 220 metri d'altezza, reso famoso dalla sua apparizione in Una notte da leoni 2. La vista sul Chao Phraya e sullo skyline di Bangkok al tramonto è impareggiabile.", price: "600-900 ฿ (cocktail)", tip: "Prenotate un tavolo in anticipo — è uno dei bar più ricercati al mondo. Il dress code è obbligatorio: niente sandali, pantaloncini o canottiere." },
+          ],
+        },
+      ],
+    },
   },
 
   marrakech: {
