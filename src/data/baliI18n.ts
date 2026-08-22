@@ -110,9 +110,53 @@ export const baliDaysFr: DayI18n[] = [
   },
 ];
 
+export const baliDaysDe: DayI18n[] = [
+  {
+    theme: "Ubud — das spirituelle Herz Balis",
+    activities: [
+      { name: "Reisterrassen von Tegallalang", description: "Balis fotogenste kaskadenförmige Reisterrassen, angelegt nach dem heiligen Subak-Bewässerungssystem, UNESCO-Weltkulturerbe.", bestTime: "Früh morgens (vor 9 Uhr)", duration: "2 Stunden", price: "2 USD", tip: "Kommen Sie vor 8 Uhr an, um Hitze und Reisegruppen zu vermeiden und die besten Fotos zu bekommen." },
+      { name: "Affenwald von Ubud", description: "Ein Naturschutzgebiet im Herzen von Ubud, wo Hunderte von Langschwanzmakaken neben jahrhundertealten Hindu-Tempeln inmitten tropischer Vegetation leben.", bestTime: "Vormittag", duration: "1,5 Stunden", price: "5 USD", tip: "Zeigen Sie kein Essen und keine offenen Taschen — die Affen werden danach greifen. Halten Sie alles in Ihrer Tasche verschlossen." },
+      { name: "Königspalast von Ubud", description: "Der historische Puri Saren Agung, Sitz der balinesischen Königsfamilie seit dem 19. Jahrhundert, mit traditioneller Architektur mitten im Zentrum von Ubud.", bestTime: "Nachmittag · Abend (Tanzvorführung)", duration: "1 Stunde", price: "Kostenlos", tip: "Abends finden Kecak- und Legong-Tanzvorführungen im Palasthof statt — kaufen Sie Ihre Tickets bei der Ankunft." },
+    ],
+  },
+  {
+    theme: "Heilige Tempel im Westen Balis",
+    activities: [
+      { name: "Jatiluwih — UNESCO-Reisterrassen", description: "Balis größte, am besten erhaltene Reisterrassen, UNESCO-Weltkulturerbe, weit ruhiger und authentischer als Tegallalang.", bestTime: "Morgen", duration: "1,5 Stunden", price: "2 USD", tip: "Ruhiger und weniger touristisch als Tegallalang. Bringen Sie Sonnencreme mit — es gibt sehr wenig Schatten entlang der Wege." },
+      { name: "Pura Taman Ayun", description: "Der königliche Tempel von Mengwi, umgeben von einem Wassergraben und majestätischen Gärten, einer von Balis wichtigsten, am besten erhaltenen Hindu-Komplexen.", bestTime: "Später Nachmittag", duration: "1 Stunde", price: "2 USD", tip: "Pflichtkleidung: ein Sarong (balinesisches Tuch) — man leiht Ihnen einen am Eingang, wenn Sie keinen eigenen haben." },
+      { name: "Tanah Lot bei Sonnenuntergang", description: "Balis ikonischster Hindu-Tempel, auf einem Felsen im Indischen Ozean erbaut. Der Sonnenuntergang hier ist einer der magischsten in Südostasien.", bestTime: "Sonnenuntergang (17:30 – 19 Uhr)", duration: "2 Stunden", price: "4 USD", tip: "Kommen Sie 1 Stunde vor Sonnenuntergang, um einen guten Platz zu bekommen. In der Hochsaison kann es sehr überfüllt sein." },
+    ],
+  },
+  {
+    theme: "Südbali — Strände, Surfen und Sonnenuntergänge",
+    activities: [
+      { name: "GWK Cultural Park", description: "Der Garuda-Wisnu-Kencana-Kulturpark, Heimat der 121 Meter hohen Statue von Vishnu auf dem Garuda-Vogel — Indonesiens höchste — mit inbegriffenen Tanzvorführungen.", bestTime: "Morgen", duration: "2 Stunden", price: "15 USD", tip: "Die Statue bietet Meerblick. Prüfen Sie den Zeitplan der Tanzvorführungen beim Ticketkauf." },
+      { name: "Seminyak-Strand", description: "Balis anspruchsvollster Strand, mit designorientierten Beach Clubs, erstklassigen Restaurants und einer unvergleichlichen Sonnenuntergangsszene über dem Indischen Ozean.", bestTime: "Nachmittag", duration: "2 Stunden", price: "Kostenlos", tip: "Die Beach Clubs der Gegend (Potato Head, Ku De Ta) sind perfekt für den Sonnenuntergang — in der Hochsaison im Voraus buchen." },
+      { name: "Canggu — Surf- und Cafékultur", description: "Balis angesagtestes Viertel: Surfstrände mit für Anfänger perfekten Wellen, Spezialitätencafés und eine lebendige Digital-Nomaden-Szene.", bestTime: "Nachmittag · Abend", duration: "2 Stunden", price: "Kostenlos", tip: "Old Man's ist Canggus beliebtester Ort für ein Bier mit Meerblick bei Sonnenuntergang." },
+    ],
+  },
+  {
+    theme: "Uluwatu — Klippen, Tempel und Kecak-Tanz",
+    activities: [
+      { name: "Tempel Uluwatu", description: "Ein heiliger Tempel aus dem 11. Jahrhundert, auf einer 70 Meter hohen Klippe über dem Indischen Ozean gelegen, einer von Balis sechs Schlüsseltempeln.", bestTime: "Nachmittag (um zum Sonnenuntergang zu bleiben)", duration: "2 Stunden", price: "4 USD", tip: "Achten Sie beim Betreten auf die Affen — sie mögen besonders Sonnenbrillen und Handys." },
+      { name: "Padang-Padang-Strand", description: "Der kleine Paradiesstrand, zwischen Klippen versteckt, bekannt geworden durch den Film 'Eat Pray Love', mit türkisfarbenem Wasser und makellosem weißem Sand.", bestTime: "Mittag · früher Nachmittag", duration: "2 Stunden", price: "1 USD", tip: "Der Zugang erfolgt über eine in den Fels gehauene Treppe. Tragen Sie griffiges Schuhwerk und minimales Gepäck — der Weg ist eng." },
+      { name: "Kecak-Tanz bei Sonnenuntergang — Uluwatu", description: "Balis beeindruckendste Show: hundert Männer singen 'Kecak' a cappella, während die Sonne im Ozean versinkt, gesehen vom natürlichen Amphitheater der Klippe aus.", bestTime: "18 Uhr (genau — kommen Sie nicht zu spät)", duration: "1,5 Stunden", price: "12 USD", tip: "Tickets sind schnell ausverkauft — kaufen Sie sie an der Kasse des Tempels, wenn Sie am Nachmittag ankommen, bevor Sie zum Strand gehen." },
+    ],
+  },
+  {
+    theme: "Das Hochland — Tirta Empul und der Vulkan Batur",
+    activities: [
+      { name: "Tirta Empul — der heilige Wassertempel", description: "Balis heiligster Reinigungstempel, mit rituellen Becken heiligen Wassers, in denen sich Balinesen bei einer für Besucher offenen, althergebrachten Zeremonie reinigen.", bestTime: "Früh morgens", duration: "1,5 Stunden", price: "3 USD", tip: "Sie können an der Reinigung (Melukat) teilnehmen — bringen Sie Kleidung mit, die nass werden darf, oder mieten Sie am Eingang einen Sarong für 1 USD." },
+      { name: "Aussichtspunkt Vulkan Batur — Kintamani", description: "Spektakuläre Panoramablicke auf den aktiven Vulkan Batur und seinen Kraterrandsee vom Hochland Kintamani aus, auf 1.500 Metern Höhe.", bestTime: "Mittag (bevor die Nachmittagswolken aufziehen)", duration: "1,5 Stunden", price: "Kostenlos", tip: "Wenn Sie zum Kraterrand des Vulkans wandern möchten, beginnt die Tour um 4 Uhr morgens — ein einzigartiges Erlebnis, das das frühe Aufstehen wert ist." },
+      { name: "Dorf Penglipuran", description: "Eines der saubersten, am besten erhaltenen Dörfer der Welt, in dem traditionelle balinesische Architektur und althergebrachte Bräuche seit Jahrhunderten intakt geblieben sind.", bestTime: "Nachmittag", duration: "1,5 Stunden", price: "2 USD", tip: "Motorfahrzeuge sind im Dorf verboten. Es ist einer der wenigen Orte auf Bali, an denen absolute Stille herrscht." },
+    ],
+  },
+];
+
 export const baliDaysByLang: Partial<Record<BaliLang, DayI18n[]>> = {
   en: baliDaysEn,
   fr: baliDaysFr,
+  de: baliDaysDe,
 };
 
 // Deep-merges the overlay for `language` onto the Spanish base by
