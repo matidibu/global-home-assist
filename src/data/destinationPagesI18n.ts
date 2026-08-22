@@ -162,6 +162,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    de: {
+      city: "Paris",
+      country: "Frankreich",
+      heroTitle: "5 Tage in Paris: die Reiseroute, die man am liebsten wiederholt",
+      heroSubtitle: "Der Louvre, der Eiffelturm, Montmartre und die Viertel, die nur Einheimische kennen — mit echten Öffnungszeiten und Tipps für jeden Stopp.",
+      bestMonths: "April bis Juni und September bis Oktober",
+      budget: "100-180€/Tag",
+      travelTips: [
+        "Holen Sie sich das Wochenticket Navigo, wenn Sie an einem Montag ankommen — es deckt Metro, RER und Busse für 30€/Woche ab",
+        "Buchen Sie Louvre, Eiffelturm und Versailles mindestens 2 Wochen im Voraus in der Hochsaison",
+        "Nationalmuseen sind am ersten Sonntag jedes Monats kostenlos — dafür auch überfüllt",
+        "Laden Sie die RATP-App für den Nahverkehr und eine Offline-Google-Maps-Karte von Paris herunter",
+        "Supermärkte (Monoprix, Franprix) haben hervorragende Aufschnitte und Käse für ein günstiges Picknick",
+      ],
+      days: [
+        {
+          theme: "Das historische Herz: der Louvre und die Champs-Élysées",
+          activities: [
+            { name: "Der Louvre", description: "Das meistbesuchte Museum der Welt beherbergt 380.000 Werke, darunter die Mona Lisa und die Venus von Milo. Buchen Sie Ihr Ticket online, um die Schlange zu umgehen, die bis zu 2 Stunden dauern kann.", price: "22€", tip: "Betreten Sie das Museum durch die Glaspyramide. Kommen Sie pünktlich um 9 Uhr und gehen Sie direkt zur Mona Lisa, bevor die Reisegruppen eintreffen." },
+            { name: "Tuileriengarten", description: "Ein klassischer Pariser Spaziergang zwischen dem Louvre und der Place de la Concorde. Perfekt für ein Mittagessen auf den Gartenterrassen mit Blick auf Brunnen und Skulpturen.", price: "Kostenlos", tip: "Die Cafés im Garten sind teurer als die in den umliegenden Vierteln, aber die Aussicht ist es wert." },
+            { name: "die Champs-Élysées und der Arc de Triomphe", description: "Die berühmteste Avenue von Paris, 1,9 km Luxusgeschäfte, Cafés und Theater. Der Arc de Triomphe bietet den besten kostenlosen Panoramablick auf Paris von seiner Terrasse.", price: "Terrasse 13€", tip: "Gehen Sie bei Sonnenuntergang auf den Triumphbogen, um zu sehen, wie die Autoscheinwerfer zwei goldene Flüsse entlang der Champs-Élysées bilden." },
+            { name: "Abendessen im Marais", description: "Das lebendigste Viertel von Paris, mit jüdischen, libanesischen und modernen französischen Restaurants. Die Rue des Rosiers ist das kulinarische Epizentrum des Viertels.", price: "20-35€ pro Person", tip: "L'As du Fallafel in der Rue des Rosiers serviert den besten Falafel von Paris. Kommen Sie vor 19 Uhr, um die Schlange zu vermeiden." },
+          ],
+        },
+        {
+          theme: "Der Eiffelturm und das Traumviertel",
+          activities: [
+            { name: "Eiffelturm — erster Slot", description: "Mit 330 Metern Höhe ist er das meistbesuchte Monument der Welt. Der Vormittagsslot hat kürzere Wartezeiten und das beste Licht für Fotos.", price: "29€ (2. Etage) / 46€ (Spitze)", tip: "Buchen Sie Ihr Ticket mindestens 2 Wochen im Voraus. Der Aufzug zur Spitze ist meist als Erstes ausgebucht." },
+            { name: "Trocadéro und Panoramablicke", description: "Die Trocadéro-Esplanade bietet den ikonischsten Frontalblick auf den Eiffelturm. Hier befinden sich auch der Palais de Chaillot mit seiner Architektur und den Marinemuseen.", price: "Kostenlos", tip: "Das klassische Eiffelturm-Foto entsteht in der Mitte der Esplanade. Am besten um 7 Uhr — danach füllt sie sich mit Verkäufern." },
+            { name: "Musée d'Orsay", description: "Untergebracht in einem ehemaligen Bahnhof, beherbergt es die wichtigste impressionistische Kunstsammlung der Welt: Monet, Renoir, Van Gogh und Cézanne.", price: "16€", tip: "Die transparente Uhr im 5. Stock bietet einen einzigartigen Blick auf die Seine und Sacré-Cœur. Die Schlange ist viel kürzer als im Louvre." },
+            { name: "Lichtshow am Eiffelturm", description: "Jede volle Stunde von der Dämmerung bis 1 Uhr nachts funkelt der Eiffelturm 5 Minuten lang mit 20.000 Lichtern. Die beste kostenlose Show von Paris.", price: "Kostenlos", tip: "Schauen Sie von der Pont de Bir-Hakeim aus zu — der Blick mit der Brücke im Vordergrund ist spektakulär." },
+          ],
+        },
+        {
+          theme: "Montmartre und das bohemienhafte Paris",
+          activities: [
+            { name: "Sacré-Cœur-Basilika", description: "Die weiße Steinbasilika, die von der Spitze des Hügels über Montmartre und ganz Paris thront. Der Blick auf die Pariser Dächer von den Stufen aus ist kostenlos und spektakulär.", price: "Kostenlos (Innenraum)", tip: "Gehen Sie über die Rue Lepic hinauf, um das echte, lokale Montmartre zu sehen, statt die touristische Treppe zu nehmen." },
+            { name: "Place du Tertre", description: "Der Künstlerplatz von Montmartre, auf dem Maler und Porträtkünstler seit dem 19. Jahrhundert unter freiem Himmel arbeiten. Sie können ein Porträt in Auftrag geben oder einfach zuschauen.", price: "Kostenlos (Porträts 20-50€)", tip: "Die Künstler treffen ab etwa 10 Uhr ein. Diejenigen am Rand des Platzes sind oft authentischer als die in der Mitte." },
+            { name: "Mittagessen in Abbesses", description: "Das lokale Herz von Montmartre, abseits der Touristenroute. Die Rue Lepic hat Bäckereien, Feinkostläden und Nachbarschaftsrestaurants zu vernünftigen Preisen.", price: "12-18€", tip: "Probieren Sie ein Croissant au beurre in La Maison Rose in der Rue Lepic — die Bäckerei aus dem Film 'Amélie'." },
+            { name: "Canal Saint-Martin", description: "Der Pariser Kanal, an dem Einheimische ihre sonnigen Nachmittage verbringen. Terrassencafés, unabhängige Buchhandlungen und die authentischste Hipster-Szene von Paris.", price: "Kostenlos", tip: "Sonntags wird der Kanal für den Verkehr gesperrt und die Pariser übernehmen ihn mit Picknicks — eine so lokale Erfahrung, wie man sie bekommen kann." },
+          ],
+        },
+        {
+          theme: "Saint-Germain und das linke Seineufer",
+          activities: [
+            { name: "das Quartier Latin und die Sorbonne", description: "Europas ältestes Universitätsviertel, mit jahrhundertealten Buchhandlungen wie Shakespeare and Company, dem Markt der Rue Mouffetard und den Cafés, die einst von Sartre und Beauvoir besucht wurden.", price: "Kostenlos", tip: "Shakespeare and Company (gegenüber von Notre-Dame) veranstaltet kostenlose Autorenlesungen. Prüfen Sie deren Programm, bevor Sie hingehen." },
+            { name: "Kathedrale Notre-Dame (Außenansicht)", description: "Noch immer im Wiederaufbau nach dem Brand von 2019, wurde die Kathedrale 2024 teilweise wiedereröffnet. Die restaurierte Fassade und die gotischen Strebebögen beeindrucken erneut.", price: "Kostenlos", tip: "Das gesamte Innere wird schrittweise wiedereröffnet. Prüfen Sie vor Ihrer Reise die offizielle Website, um zu sehen, welche Bereiche zugänglich sind." },
+            { name: "Jardin du Luxembourg", description: "Der Lieblingspark der Pariser, mit Teichen, Statuen und dem Palais du Luxembourg. Perfekt, um sich zwischen den Besichtigungen auszuruhen und das lokale Leben zu beobachten.", price: "Kostenlos", tip: "Mieten Sie ein Spielzeugsegelboot, um es über den großen zentralen Teich zu schicken — eine Pariser Tradition seit 1900." },
+            { name: "Centre Pompidou", description: "Das meistbesuchte Museum für moderne und zeitgenössische Kunst in Europa, in einem Gebäude aus bunten Rohren, das selbst ein Kunstwerk ist.", price: "15€", tip: "Die Dachterrasse (Ebene 6) bietet einen atemberaubenden 360°-Blick auf Paris — und ist im Eintritt inbegriffen." },
+          ],
+        },
+        {
+          theme: "Versailles: der Tagesausflug, der sich lohnt",
+          activities: [
+            { name: "Schloss Versailles", description: "Der größte Palast der Welt mit 700 Räumen, erbaut von Ludwig XIV. Der Spiegelsaal ist der Höhepunkt des Besuchs.", price: "21€ (Schloss) / 27€ (Schloss + Gärten an Wassertagen)", tip: "Buchen Sie Ihr Ticket online und nehmen Sie den ersten Zug von Paris-Montparnasse um 8:30 Uhr. Die Schlange ohne Reservierung dauert über 2 Stunden." },
+            { name: "Gärten von Versailles", description: "Die berühmtesten geometrischen Gärten der Welt, entworfen von André Le Nôtre, auf 800 Hektar mit Brunnen, Beeten und Wäldchen.", price: "Im Schlosseintritt inbegriffen", tip: "Samstags und sonntags von April bis Oktober findet die Show der musikalischen Wasserspiele statt — ein einzigartiges Spektakel. Preis variiert." },
+            { name: "Der Trianon — die privaten Anwesen des Hofes", description: "Der Petit Trianon war Marie-Antoinettes persönlicher Rückzugsort. Das Hameau de la Reine ist das rustikale Dorf, das sie bauen ließ, um dem Hofprotokoll zu entfliehen.", price: "Im Ticket Schloss + Anwesen inbegriffen", tip: "Mieten Sie ein Fahrrad oder einen Elektrowagen in den Gärten — es sind 2 km zwischen Schloss und Trianon." },
+            { name: "Letzter Abend in Paris", description: "Zurück in Paris, essen Sie in einem Bistro im Viertel zu Abend und machen Sie, wenn es das Wetter erlaubt, einen nächtlichen Spaziergang entlang der Seine-Ufer, UNESCO-Weltkulturerbe.", price: "25-45€", tip: "Fragen Sie Ihr Hotel nach einer Bistro-Empfehlung 3 Straßen entfernt — immer besser als die auf der Touristenroute." },
+          ],
+        },
+      ],
+    },
   },
   viena: {
     en: {
@@ -248,6 +310,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Déjeuner au Prater", description: "L'ancien terrain de chasse impérial devenu le plus grand parc de Vienne, avec la célèbre Riesenrad (grande roue de 1897) et les Würstelstand traditionnels (stands de saucisses viennoises).", price: "3-8€ (würstel)", tip: "Le Käsekrainer (saucisse fourrée au fromage fondu), avec moutarde et pain de seigle, est le snack le plus authentique de Vienne. Les Viennois le mangent debout, à toute heure de la journée." },
             { name: "Riesenrad — la grande roue historique de 1897", description: "La grande roue de 65 mètres du Prater viennois, construite en 1897, symbole de Vienne. La cabine tourne pendant 20 minutes, avec vues panoramiques sur le Prater et la ville.", price: "13€", tip: "La Riesenrad offre l'une des meilleures vues de Vienne depuis son point le plus haut (65m). Les cabines peuvent être réservées pour des dîners privés (300€) — le rendez-vous le plus romantique de Vienne." },
             { name: "Concert de musique classique à Vienne", description: "Vienne est la capitale mondiale de la musique classique. L'Opéra national, le Musikverein (la salle de concert la plus révérée au monde) et le Konzerthaus proposent des concerts quotidiens de Mozart, Strauss, Brahms et Beethoven.", price: "15-200€ (selon la salle et la catégorie)", tip: "Les places debout (Stehplätze) à l'Opéra national coûtent 4€ et sont mises en vente 80 minutes avant le spectacle — le meilleur rapport qualité-prix culturel de Vienne. Arrivez à 17h30." },
+          ],
+        },
+      ],
+    },
+    de: {
+      city: "Wien",
+      country: "Österreich",
+      heroTitle: "3 Tage in Wien: kaiserliche Paläste, Wiener Kaffee und Mozart",
+      heroSubtitle: "Schloss Schönbrunn, das Kunsthistorische Museum und der Prater — die Habsburgerhauptstadt in drei Tagen voller kaiserlicher Kultur und Kaffee mit Strudel.",
+      bestMonths: "April bis Juni und September bis Oktober",
+      budget: "100-170€/Tag",
+      travelTips: [
+        "Die Vienna City Card (17€/24h, 25€/48h, 29€/72h) beinhaltet unbegrenzte öffentliche Verkehrsmittel (U-Bahn, Straßenbahn, Bus)",
+        "Wiener Kaffeehäuser sind UNESCO-Weltkulturerbe — man kann stundenlang bei einem einzigen Kaffee sitzen, ohne dass jemand drängt",
+        "Stehplätze in der Staatsoper (4€) sind Wiens beste kulturelle Investition — dieselben Künstler, 50-mal günstiger",
+        "Wiens Leitungswasser kommt direkt aus den Alpen — es ist eines der reinsten Wässer der Welt, kein Bedarf an Flaschenwasser",
+        "Wiens Museen kosten 18-25€, aber die Vienna City Card bietet in vielen davon Ermäßigungen — prüfen Sie immer, ob ein reduzierter Tarif verfügbar ist",
+      ],
+      days: [
+        {
+          theme: "Die Innere Stadt — das Herz der Habsburger",
+          activities: [
+            { name: "Stephansdom", description: "Wiens Wahrzeichen, erbaut im 12. Jahrhundert im spätgotischen Stil. Sein Dach aus 266.000 bunten Keramikziegeln ist einzigartig in Europa. Vom Nordturm (Aufzug) aus ist der Blick auf die Innere Stadt beeindruckend.", price: "Kostenlos (Nordturm 6€)", tip: "Die Kaisergruft unter dem Dom (6€) bewahrt die Eingeweide der Habsburger in 54 Urnen — die Därme im Stephansdom, die Herzen in der Augustinerkirche, die Körper in der Kaisergruft." },
+            { name: "Hofburg — der kaiserliche Palast", description: "Der Palast der Habsburger im Zentrum Wiens, mit 2.600 Räumen, der Kaisergruft, den Kaiserappartements und der Schatzkammer, in der die habsburgische Krone und der Heilige Gral aufbewahrt werden.", price: "17€ (Appartements + Sisi Museum)", tip: "Das Sisi Museum über Kaiserin Sisi ist der meistbesuchte Teil der Hofburg. Die Schatzkammer (separat 16€) beherbergt die Heilige Lanze und die Krönungsjuwelen des Heiligen Römischen Reichs." },
+            { name: "Café Central — das berühmteste von Wien", description: "1876 eröffnet, war das Café Central der Treffpunkt von Freud, Trotzki, Hitler (zu verschiedenen Zeiten) und der gesamten Wiener Intelligenzija. Die Marmorgewölbe und die Wachsfigur des Schriftstellers Peter Altenberg am Eingang sind historisch.", price: "8-15€ (Kaffee und Strudel)", tip: "Eine Melange (Kaffee mit aufgeschäumter Milch) und warmer Apfelstrudel mit Sahne ist die typischste Wiener Bestellung. Kommen Sie zur Öffnung (9 Uhr), um einen Tisch zu bekommen — es ist immer voll." },
+            { name: "Ringstraße und die großen Museen", description: "Der Ringboulevard aus dem 19. Jahrhundert, den Kaiser Franz Joseph I. errichten ließ, gesäumt von Wiens wichtigsten Gebäuden: Staatsoper, Kunsthistorisches Museum, Parlament, Rathaus und Burgtheater.", price: "Kostenlos (zu Fuß)", tip: "Eine Straßenbahnfahrt rund um die gesamte Ringstraße (Linien 1 und 2) kostet nur den regulären Fahrpreis (2,40€) und dient als 40-minütige Führung an Wiens schönsten Gebäuden vorbei." },
+          ],
+        },
+        {
+          theme: "Schönbrunn und das Belvedere",
+          activities: [
+            { name: "Schloss Schönbrunn", description: "Der Sommerpalast der Habsburger, Österreichs meistbesuchte Attraktion, mit 1.441 Räumen. Die Grand Tour (40 Räume) umfasst den Spiegelsaal, in dem der junge Mozart für Maria Theresia auftrat. Der Garten mit der Gloriette an der Spitze ist beeindruckend.", price: "25€ (Grand Tour + Gärten)", tip: "Kommen Sie zur Öffnung (8:30 Uhr), um die Schlangen zu vermeiden. Die Gloriette an der Spitze des Gartens hat das beste Café mit Blick auf Schönbrunn und Wien — 15 Minuten Fußweg hinauf." },
+            { name: "Wiener Schnitzel zum Mittagessen", description: "Das Wiener Schnitzel ist Österreichs Nationalgericht — paniertes Kalbfleisch, in Butter gebraten, serviert mit Kartoffelsalat und Zitronenscheiben. Die Restaurants rund um den Naschmarkt sind die besten.", price: "14-22€", tip: "Das echte Schnitzel wird aus Kalbfleisch gemacht (Wiener Art) — die Schweinefleisch-Version ist billiger, aber anders. Figlmüller in der Wollzeile und Bäckerstraße serviert seit 1905 Wiens berühmteste Version." },
+            { name: "Naschmarkt — Wiens Wiener-ster Markt", description: "Wiens größter Freiluftmarkt, mit 120 Ständen mit österreichischem Käse, Meeresfrüchten, persischen Gewürzen, jüdischen Einlegespezialitäten und dem besten Tafelspitz der Stadt.", price: "Kostenlos", tip: "Der Naschmarkt-Flohmarkt samstags (bis 18 Uhr) bietet Antiquitäten, Vintage-Kleidung und Gemälde — die bohemienhafteste Atmosphäre Wiens." },
+            { name: "Belvedere — Klimts Der Kuss", description: "Der Barockpalast von Prinz Eugen von Savoyen beherbergt die weltweit größte Sammlung von Werken Gustav Klimts, darunter Der Kuss (1907-08), Österreichs wertvollstes Gemälde.", price: "18€", tip: "Der Kuss hängt im ersten Raum im ersten Stock — beeindruckend wegen des echten Blattgolds, das in die Leinwand eingearbeitet ist. Wissen Sie genau, was Sie sehen möchten, bevor Sie ankommen, um sich nicht unter den 200 Räumen zu verlieren." },
+          ],
+        },
+        {
+          theme: "Museen, ein Konzert und der Prater",
+          activities: [
+            { name: "Kunsthistorisches Museum", description: "Österreichs wichtigstes kunsthistorisches Museum, mit einer der reichsten Sammlungen flämischer Malerei der Welt: Vermeer, Rembrandt, Bruegel, Tizian und Velázquez, in einem kaiserlichen Palast an der Ringstraße.", price: "21€", tip: "Die große Kuppelhalle des Museums mit ihrer Marmorkuppel und den Gemälden von Canova und Klimt in den Seitenpavillons ist eines der schönsten Interieurs Europas. Der Bruegel-Saal (30 Werke des Älteren) ist weltweit einzigartig." },
+            { name: "Mittagessen im Prater", description: "Das ehemalige kaiserliche Jagdgebiet, heute Wiens größter Park, mit dem berühmten Riesenrad (der Riesenrad von 1897) und traditionellen Würstelständen.", price: "3-8€ (Würstel)", tip: "Käsekrainer (eine Wurst mit geschmolzenem Käse im Inneren), mit Senf und Roggenbrot vom Würstelstand, ist Wiens authentischster Snack. Die Wiener essen ihn stehend, zu jeder Tageszeit." },
+            { name: "Riesenrad — das historische Riesenrad von 1897", description: "Das 65 Meter hohe Riesenrad des Wiener Praters, erbaut 1897 und ein Symbol Wiens. Die Gondel dreht sich 20 Minuten lang, mit Panoramablick über den Prater und die Stadt.", price: "13€", tip: "Das Riesenrad bietet von seinem höchsten Punkt (65m) einen der besten Ausblicke auf Wien. Gondeln können für private Abendessen gebucht werden (300€) — Wiens romantischstes Date." },
+            { name: "Klassisches Musikkonzert in Wien", description: "Wien ist die Welthauptstadt der klassischen Musik. Die Staatsoper, der Musikverein (der weltweit angesehenste Konzertsaal) und das Konzerthaus veranstalten täglich Konzerte von Mozart, Strauss, Brahms und Beethoven.", price: "15-200€ (je nach Veranstaltungsort und Kategorie)", tip: "Stehplätze in der Staatsoper kosten 4€ und werden 80 Minuten vor der Vorstellung verkauft — Wiens bester kultureller Gegenwert. Kommen Sie um 17:30 Uhr." },
           ],
         },
       ],
@@ -343,6 +449,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    de: {
+      city: "Cusco",
+      country: "Peru",
+      heroTitle: "3 Tage in Cusco: der Nabel der Inka-Welt",
+      heroSubtitle: "Sacsayhuamán, das Heilige Tal, Machu Picchu und die beste andine Küche — Cusco ist das Tor zum Inka-Reich und eines der faszinierendsten Reiseziele der Welt.",
+      bestMonths: "Mai bis September (Trockenzeit)",
+      budget: "50-90 USD/Tag",
+      travelTips: [
+        "Die Höhe von Cusco (3.400m) erfordert Akklimatisierung — kommen Sie 2 Tage vor Machu Picchu an und nehmen Sie den ersten Tag ruhig",
+        "Koka-Tee ist das andine Mittel gegen Soroche (Höhenkrankheit) — Hotels bieten ihn kostenlos an und er ist in Peru legal",
+        "Buchen Sie Machu Picchu und den Zug Monate im Voraus in der Hochsaison — Plätze sind schnell ausverkauft",
+        "Cuscos allgemeines Touristenticket (S/130) deckt Sacsayhuamán und mehrere archäologische Stätten ab — kaufen Sie es am ersten Tag",
+        "Cuscos Wetter ist trocken und sonnig in der Trockenzeit (Mai-September), aber nachts kalt (5-10°C) — bringen Sie eine Jacke mit",
+      ],
+      days: [
+        {
+          theme: "Akklimatisierung, der Platz und die Inka-Tempel",
+          activities: [
+            { name: "Plaza de Armas, Cusco — Ankunft und Akklimatisierung", description: "Cuscos zentraler Platz, erbaut über der Inka-Huacaypata (dem Platz der Tränen), umgeben von der Kathedrale aus dem 16. Jahrhundert und der Kirche der Compañía de Jesús. Das sichtbare Inka-Mauerwerk unter den Kolonialgebäuden ist faszinierend.", price: "Kostenlos", tip: "Ihr erster Tag in Cusco (3.400m) sollte ruhig verlaufen — akklimatisieren Sie sich mit viel Wasser und Koka-Tee (in jedem Café und Hotel erhältlich). Vermeiden Sie am ersten Tag Alkohol und Sport." },
+            { name: "Qorikancha — der Sonnentempel", description: "Der heiligste Tempel des Inka-Reiches, dem Sonnengott Inti gewidmet, dessen perfekt behauene Steinmauern vom Kloster Santo Domingo überlagert werden. Die Inka-Mauern sind präziser gebaut als die darüberliegende Kolonialkonstruktion.", price: "S/15", tip: "Die Inka-Steine des Qorikancha fügen sich ohne Mörtel zusammen, mit Toleranzen unter 0,5mm — moderne Ingenieure wissen bis heute nicht genau, wie das gemacht wurde. Die goldene Nische, die einst das Bild der Sonne enthielt, war von ganz Cusco aus sichtbar." },
+            { name: "Cuy- und Chicha-Mittagessen in San Blas", description: "Cuscos Künstlerviertel, mit der kleinsten Kirche Amerikas und Cuy (gebratenes Meerschweinchen) als repräsentativstes Gericht der andinen Küche. Chicha de jora (violettes Maisbier) ist das älteste Getränk der Anden.", price: "S/25-60", tip: "Cuy wird ganz, gebraten, mit andinen Kartoffeln und Salat serviert. Für die weniger Abenteuerlustigen sind Lomo Saltado mit einheimischen Kartoffeln und gegrilltem Alpaka köstlich und zugänglich." },
+            { name: "Sacsayhuamán — die Inka-Festung", description: "Die zeremonielle Inka-Festung mit Blick auf Cusco, mit Kalksteinblöcken von bis zu 125 Tonnen Gewicht, im Zickzackmuster ohne Mörtel zusammengefügt. Der Blick auf Cusco von den Mauern und die umgebende andine Landschaft sind atemberaubend.", price: "S/130 (allgemeines Touristenticket)", tip: "Das allgemeine Touristenticket (S/130) deckt Sacsayhuamán, Qenqo, Puca Pucara und Tambomachay ab — vier archäologische Stätten rund um Cusco. Lohnt sich, wenn Sie alle am selben Tag besuchen." },
+          ],
+        },
+        {
+          theme: "Das Heilige Tal der Inkas",
+          activities: [
+            { name: "Markt von Pisac", description: "Der berühmteste Markt des Heiligen Tals, mit textilem Kunsthandwerk der Quechua-Gemeinden, Keramik, Silberschmuck und andinen Produkten. Die Stadt Pisac beherbergt die größten Inka-Ruinen nach Machu Picchu.", price: "Kostenlos", tip: "Der Kunsthandwerksmarkt richtet sich an Touristen (mit Verhandeln), aber der lokale Sonntagsmarkt (7-13 Uhr) ist für Einheimische — dort werden einheimische Kartoffeln, Riesenmais und andine Heilkräuter verkauft." },
+            { name: "Ruinen von Pisac", description: "Der archäologische Inka-Komplex über der Stadt Pisac, mit spiralförmigen Ackerterrassen, die den ganzen Berg bedecken, dem Intihuatana (Sonnenuhr) und in den lebenden Fels gehauenen Gräbern.", price: "Im Touristenticket enthalten", tip: "Der Weg zu den Ruinen kann zu Fuß (45-minütiger Aufstieg) oder mit dem Taxi von der Stadt aus (S/10) zurückgelegt werden. Der Aufstieg führt an aktiven Terrassen vorbei, auf denen Sie Quechua-Familien bei der Arbeit sehen." },
+            { name: "Mittagessen in Urubamba — das Herz des Tals", description: "Die Stadt Urubamba, im Zentrum des Heiligen Tals, bietet die beste Gastronomie des Tals. Chicha morada, andine Hühnersuppe, Chuño Phuti und die besten Herz-Anticuchos Perus.", price: "S/20-40", tip: "Das Restaurant Kuychi Rumi in Urubamba hat den besten Blick auf das Tal und serviert traditionelle andine Küche. Das Mittagsbuffet (S/45) umfasst mehr als 12 verschiedene Gerichte." },
+            { name: "Ollantaytambo — die lebendige Inka-Stadt", description: "Die einzige Stadt Lateinamerikas, in der Menschen noch in original Inka-Häusern aus dem 15. Jahrhundert leben. Die Tempel-Festung von Ollantaytambo und ihre gestuften, zum Fluss gerichteten Terrassen bilden eine der am besten erhaltenen Inka-Stätten.", price: "S/70 (Eintritt zur archäologischen Stätte)", tip: "Ollantaytambo ist der Bahnhof für Machu Picchu (Aguas Calientes). Wenn Sie am nächsten Tag nach Machu Picchu fahren, übernachten Sie hier — die nächtliche Atmosphäre der Inka-Stadt ist magisch." },
+          ],
+        },
+        {
+          theme: "Machu Picchu — das Weltwunder",
+          activities: [
+            { name: "Zug nach Aguas Calientes (Machu Picchu Pueblo)", description: "Die Zugfahrt von Ollantaytambo (oder Cusco) nach Aguas Calientes durchquert das Heilige Tal und dringt in den hohen Amazonas-Dschungel ein. Die Landschaft wandelt sich dramatisch von trockenen Anden zu tropischem Dschungel.", price: "S/120-200 (Hin- und Rückfahrt)", tip: "Buchen Sie den Zug von Inca Rail oder Peru Rail Monate im Voraus in der Hochsaison (Juni-August). Sitze auf der rechten Seite (Richtung Ollantaytambo → Aguas Calientes) haben bessere Flussblicke." },
+            { name: "Machu Picchu — die Zitadelle", description: "Die Inka-Zitadelle aus dem 15. Jahrhundert in den Wolken, erbaut auf 2.430 Metern Höhe zwischen den Gipfeln Huayna Picchu und Cerro Machu Picchu. Eines der 7 Weltwunder der Neuzeit.", price: "S/200 (Basiseintritt)", tip: "Die Online-Buchung Monate im Voraus ist UNERLÄSSLICH — die täglichen Plätze sind begrenzt. Circuit 1 (der klassische) umfasst das Sonnentor und die meisten Höhepunkte." },
+            { name: "Besteigung des Huayna Picchu oder des Machu-Picchu-Berges", description: "Der Huayna Picchu (der Gipfel hinter der Zitadelle) führt über in den Fels gehauene Inka-Stufen weitere 360 Meter hinauf. Der Machu-Picchu-Berg (einfacher) bietet den berühmten Luftblick auf die Zitadelle.", price: "S/80 (Aufpreis)", tip: "Der Huayna Picchu hat nur 400 tägliche Plätze und ist Monate im Voraus ausgebucht — buchen Sie ihn zusammen mit Ihrem Eintrittsticket. Der Aufstieg ist steil, mit unebenen Stufen." },
+            { name: "Rückkehr nach Cusco", description: "Der Rückzug von Aguas Calientes nach Ollantaytambo oder Cusco schließt die Runde um das Heilige Tal. Der Nachmittagszug bietet die besten Blicke auf den hohen Dschungel, beleuchtet von der Abendsonne.", price: "Im Hin- und Rückfahrtticket enthalten", tip: "Wenn Ihr Budget knapp ist, ist der Bus von Aguas Calientes nach Ollantaytambo (S/30, 4h) eine Alternative zum Zug. Der Bus folgt der Straße am Fluss entlang, mit Blick auf die Gletscher." },
+          ],
+        },
+      ],
+    },
   },
 
   medellin: {
@@ -434,6 +584,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    de: {
+      city: "Medellín",
+      country: "Kolumbien",
+      heroTitle: "3 Tage in Medellín: die Stadt des ewigen Frühlings",
+      heroSubtitle: "El Poblado, das Metrocable, die Blumen von Envigado und Lateinamerikas unglaublichste Verwandlungsgeschichte — Medellín ist heute Kolumbiens innovativste Stadt.",
+      bestMonths: "Dezember bis März und Juli bis August",
+      budget: "40-70 USD/Tag",
+      travelTips: [
+        "Medellíns Metro (MET) mit ihrem Seilbahnsystem ist Kolumbiens bester öffentlicher Nahverkehr — kaufen Sie die Cívica-Karte, um sie zu nutzen",
+        "Medellín bleibt das ganze Jahr über bei etwa 25°C (die Stadt des ewigen Frühlings) — immer leichte Kleidung, vielleicht eine Strickjacke für die Abende",
+        "Medellíns kolumbianischer Kaffee gehört zu den besten der Welt — verlangen Sie immer frisch gebrühten Single-Origin-Kaffee, niemals Instant",
+        "App-basierte Taxis (InDriver, Uber) sind sicherer als Straßentaxis — nutzen Sie sie immer nachts",
+        "Kolumbien ist eine Biodiversitäts-Supermacht — der Botanische Garten, der Parque Arví und das Reservat El Romeral bieten Zugang zu atemberaubender tropischer Natur",
+      ],
+      days: [
+        {
+          theme: "Das historische Zentrum und die Plaza Botero",
+          activities: [
+            { name: "Plaza Botero und das Museo de Antioquia", description: "Der Platz mit 23 Originalskulpturen von Fernando Botero, dem berühmtesten kolumbianischen Künstler der Welt — alle von ihm seiner Heimatstadt gespendet. Das angrenzende Museo de Antioquia beherbergt die weltweit größte Sammlung von Boteros Werken.", price: "Kostenlos (Platz) / COP 20.000 (Museum)", tip: "Die Skulpturen sind zum Anfassen und Fotografieren gedacht — Botero entwarf sie zur Interaktion. 'Hombre a Caballo' (Mann zu Pferd) ist die ikonischste für Fotos." },
+            { name: "Parque de las Luces und die Innenstadt von Medellín", description: "Der Park mit 300 Lichtsäulen im Herzen des historischen Zentrums, der nachts ein einzigartiges visuelles Schauspiel erzeugt. Die Biblioteca España, auf dem Hügel über dem Viertel Santo Domingo, ist von hier aus sichtbar.", price: "Kostenlos", tip: "Die Innenstadt von Medellín ist heute weit sicherer als vor 20 Jahren — bewegen Sie sich tagsüber normal in den touristischen Bereichen. Die Straßenverkäufer mit tropischen Früchten haben die besten Mangos und Granadillas." },
+            { name: "Bandeja-paisa-Mittagessen", description: "Bandeja paisa ist Antioquias repräsentativstes Gericht: Reis, Bohnen, Schweineschwarte, Chorizo, Spiegelei, Avocado, süße Kochbananen und Hogao-Sauce, alles auf einem Teller. Allein unmöglich zu schaffen.", price: "COP 18.000-30.000", tip: "Das Restaurant El Rancherito in der Innenstadt hat die authentischste Bandeja paisa. Die anschließende Mazamorra (Mais-Milch-Dessert) ist ein Muss." },
+            { name: "Viertel El Poblado — Parks und Cafés", description: "Medellíns modernstes und sicherstes Viertel, mit dem Parque El Poblado, der Calle del Lleras (dem Herz des Nachtlebens) und der höchsten Konzentration an Cafés, Restaurants und Boutiquen der Stadt.", price: "Kostenlos", tip: "Kolumbianischer Kaffee in El Poblado kostet COP 2.000-5.000 und ist von Spitzenqualität — Medellín liegt auf 1.400m Höhe, und die Kaffeeplantagen sind nur 30 Minuten mit dem Auto entfernt." },
+          ],
+        },
+        {
+          theme: "Das Metrocable und die Hangviertel",
+          activities: [
+            { name: "Metrocable Linie K — Santo Domingo", description: "Das Luftseilbahnsystem, das die Metro mit den Vierteln an den Hängen des Aburrá-Tals verbindet. Linie K führt hinauf zum Viertel Santo Domingo und bietet aus den Kabinen den besten Blick auf Medellín und das Tal.", price: "COP 3.200 (mit der Cívica-Karte der Metro)", tip: "Kaufen Sie die Cívica-Karte an der Metro, um die Seilbahn zu nutzen. Der beste Winkel für Talfotos ist an der Station Andalucía (vorletzte vor der Bergstation)." },
+            { name: "Parque Arví — der Wald über Medellín", description: "Der 1.763 Hektar große Ökopark über den Bergen von Medellín, erreichbar über die Metrocable-Linie L von Santo Domingo aus. Wanderwege, Schmetterlinge, ein Markt für indigenes Kunsthandwerk und der schönste Blick auf das Aburrá-Tal.", price: "COP 5.000 (Seilbahn Arví)", tip: "Der Markt für indigenes Kunsthandwerk im Parque Arví am Wochenende bietet Produkte der einheimischen Gemeinschaften Antioquias — Kunsthandwerk, Honig und Heilpflanzen." },
+            { name: "Tour der Vergangenheit im Viertel La Candelaria", description: "Eine Tour durch die Viertel, die Medellíns Wandel dokumentieren: vom Barrio Pablo Escobar bis zu den Wohnsiedlungen, die die Favelas ersetzten. Lokale Guides geben die ehrlichste Perspektive.", price: "COP 30.000-60.000 (geführte Tour)", tip: "Buchen Sie nur zertifizierte lokale Guides — diejenigen, die den Wandel miterlebt haben, geben einen menschlichen Kontext, den internationale Touren nicht bieten können. Kostenlose Wandertouren starten vom Parque de Bolívar." },
+            { name: "Abendessen in Laureles — das authentischste Viertel", description: "Medellíns Wohnviertel der beruflichen Mittelschicht, mit der besten Konzentration lokaler Restaurants, Weinbars und dem authentischsten Nachtleben der Stadt.", price: "COP 25.000-60.000", tip: "Die Avenida Laureles hat Medellíns besten Hühner-Sancocho. Für gehobene Küche bietet El Cielo (Küchenchef Juan Manuel Barrientos) die avantgardistischste kolumbianische Küche." },
+          ],
+        },
+        {
+          theme: "Feria de las Flores und der Botanische Garten",
+          activities: [
+            { name: "Botanischer Garten von Medellín", description: "Kolumbiens artenreichster botanischer Garten, mit 4.500 tropischen Pflanzen, dem Orquideórama (Medellíns meistfotografierter Holzstruktur) und einem See mit den größten Seerosen Amerikas.", price: "Kostenlos", tip: "Das Orquideórama ist ein Werk parametrischer Architektur, das einen RIBA-Preis gewann. Die blühenden Orchideen (Kolumbien hat 4.000 Arten) sind das ganze Jahr über beeindruckend." },
+            { name: "Viertel Manila und Medellíns Graffiti", description: "Medellín hat nach Bogotá die zweitwichtigste urbane Kunstszene Kolumbiens. Die Viertel Manila und Laureles haben die besten Wandbilder, von Künstlern wie Guache und Crisp.", price: "Kostenlos", tip: "Die kostenlose Graffiti-Tour Medellín Urban Street Art (auf Trinkgeldbasis) startet vom Parque El Poblado. Der Bereich der Calle 70 in Laureles hat die neuesten Wandbilder." },
+            { name: "Mercado del Río", description: "Medellíns beliebtester Feinschmeckermarkt, mit mehr als 60 Ständen kolumbianischer und internationaler Küche, tropischen Fruchtcocktails und der festlichsten Mittagsatmosphäre der Stadt.", price: "COP 15.000-40.000", tip: "Die Säfte aus Lulo, Passionsfrucht, Baumtomate und Guanabana im Mercado del Río kosten COP 3.000-5.000 und sind die besten in Medellín. Tequila mit Chamoy ist nicht kolumbianisch — bestellen Sie stattdessen Aguardiente." },
+            { name: "Sonnenuntergang vom Cerro de las Tres Cruces", description: "Die drei Kreuze auf dem Hügel über dem Viertel Boston, mit dem besten Panoramablick auf das gesamte Aburrá-Tal: Medellín von einem Ende zum anderen, die Metro unten in der Ebene und die umliegenden Berge.", price: "Kostenlos", tip: "Der Aufstieg auf den Hügel (45 Min zu Fuß) ist tagsüber sicher, wenn Menschen unterwegs sind. Sonntags ist mehr los und die Stimmung lebendiger. Vom Gipfel aus sieht man deutlich die Seilbahn von Santo Domingo." },
+          ],
+        },
+      ],
+    },
   },
 
   singapur: {
@@ -521,6 +715,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Île de Sentosa et Universal Studios", description: "L'île des loisirs de Singapour, avec Universal Studios, la plage de Siloso et un téléphérique panoramique. Les attractions Transformers, Harry Potter et Jurassic Park d'Universal sont les meilleures d'Asie.", price: "88 SGD (Universal Studios)", tip: "L'Express Pass d'Universal Studios (40 SGD supplémentaires) évite les files pour les principales attractions — rentable si le parc est bondé. Le téléphérique (35 SGD) depuis Mount Faber offre les meilleures vues sur le détroit." },
             { name: "Haw Par Villa — le parc des dix enfers", description: "Le parc à thème le plus étrange d'Asie, créé en 1937, avec 1 000 statues dépeignant la mythologie chinoise et les 10 tribunaux de l'enfer. Une expérience surréaliste unique en son genre.", price: "Gratuit", tip: "Haw Par Villa est l'un des lieux les plus singuliers de Singapour et pratiquement inconnu des touristes — un joyau caché parmi les parcs à thème commerciaux." },
             { name: "Dernier dîner au Newton Circus Hawker Centre", description: "Le hawker centre nocturne le plus célèbre de Singapour (celui de Crazy Rich Asians), avec des crabes de boue, des orchidées frites, des fruits de mer grillés et du laksa sous les étoiles tropicales.", price: "15-40 SGD", tip: "Le crabe au chili (50-80 SGD la portion) est le plat national de Singapour — commandez-le à l'étal avec la plus longue file. Le Man Tou (petits pains frits) pour tremper dans la sauce est obligatoire." },
+          ],
+        },
+      ],
+    },
+    de: {
+      city: "Singapur",
+      country: "Singapur",
+      heroTitle: "3 Tage in Singapur: die Zukunft des 21. Jahrhunderts",
+      heroSubtitle: "Gardens by the Bay, Chinatown, Marina Bay Sands und Hawker-Centre-Essen — Singapur in drei perfekt geplanten Tagen.",
+      bestMonths: "Februar bis April",
+      budget: "150-250 SGD/Tag (~110-185 USD)",
+      travelTips: [
+        "Singapur hat eines der effizientesten öffentlichen Verkehrssysteme der Welt — die EZ-Link-Karte deckt Metro (MRT), Busse und LRT ab",
+        "Essen aus den Hawker Centres (4-8 SGD) hat dieselbe Qualität wie Luxusrestaurants — es ist Singapurs großer kulinarischer Gleichmacher",
+        "Das Klima ist das ganze Jahr über tropisch (30°C, 80% Luftfeuchtigkeit) — immer leichte Kleidung und Sonnencreme",
+        "Singapur hat sehr strenge Gesetze: Rauchverbot an öffentlichen Orten, Essverbot in der Metro und Kaugummiverbot",
+        "Singapur ist teuer bei der Unterkunft (150-300 SGD/Nacht), aber günstig bei Essen und Transport",
+      ],
+      days: [
+        {
+          theme: "Marina Bay und das futuristische Singapur",
+          activities: [
+            { name: "Gardens by the Bay", description: "Der spektakulärste futuristische Gartenkomplex der Welt, mit den Supertrees (25-50 Meter hohe Stahlstrukturen) und seinen zwei geodätischen Kuppeln: Cloud Forest (ein 35m hoher tropischer Wald) und Flower Dome.", price: "28 SGD (Cloud Forest + Flower Dome)", tip: "Der Supertree Grove bietet den besten Sonnenuntergang und eine kostenlose Lichtshow um 19:45 und 20:45 Uhr. Der Aufstieg auf den Skywalk zwischen den Supertrees (10 SGD) bietet Blicke auf die Marina Bay." },
+            { name: "Marina Bay Sands Skypark", description: "Singapurs ikonischstes Hotel, mit einem Infinity-Pool im 57. Stock (nur für Gäste) und der SkyPark-Terrasse mit Singapurs besten Ausblicken. Die kostenlose Licht- und Wassershow Spectra findet vor dem Hotel statt.", price: "32 SGD (Aussichtsplattform)", tip: "Die Aussichtsplattform des SkyPark ist öffentlich zugänglich (32 SGD). Der Blick auf die Skyline, Gardens by the Bay und die Straße von Singapur aus 200 Metern Höhe ist unvergleichlich." },
+            { name: "ArtScience Museum", description: "Das lotusblütenförmige Museum, das auf dem Wasser der Marina Bay schwimmt, mit Ausstellungen zu digitaler Kunst, Wissenschaft und Technologie. Die Dauerausstellung Future World (digitale Kunst von teamLab) ist eine der beeindruckendsten der Welt.", price: "21 SGD", tip: "Future World von teamLab bietet die Installation 'Forest of Life', bei der die Lichter auf Bewegung reagieren — eines der einzigartigsten visuellen Erlebnisse Asiens." },
+            { name: "Spectra — Licht- und Wassershow", description: "Die kostenlose Show am Marina Bay Waterfront vor The Shoppes, mit 30 Meter hohen Wasserfontänen und Laserprojektionen, synchronisiert zu Musik. Eine der besten kostenlosen nächtlichen Shows der Welt.", price: "Kostenlos", tip: "Der beste Platz ist auf der Helix Bridge oder entlang der Uferpromenade gegenüber dem ArtScience Museum. Die Show um 20:45 Uhr freitags und samstags ist die längste." },
+          ],
+        },
+        {
+          theme: "Chinatown, Little India und die Hawker Centres",
+          activities: [
+            { name: "Chinatown Heritage Centre", description: "Singapurs Chinatown, mit dem Jade-Buddha im Sri-Mariamman-Tempel, traditionellen chinesischen Teeläden und dem berühmten Maxwell Food Centre. Die Straßen Pagoda, Trengganu und Sago haben die farbenprächtigsten Shophouses.", price: "Kostenlos (Heritage Centre 12 SGD)", tip: "Der Thian-Hock-Keng-Tempel (1840) ist Singapurs ältester Hokkien-Tempel — die Porzellandrachen-Dekoration auf dem Dach ist außergewöhnlich. Kostenloser Eintritt." },
+            { name: "Maxwell Food Centre — das berühmteste Hawker Centre", description: "Singapurs historischstes Street-Food-Zentrum, mit mehr als 100 Ständen unter einem Dach. Tian Tians Hühnerreis, Fruchtrojak und Laksa sind die begehrtesten Gerichte.", price: "4-8 SGD pro Gericht", tip: "Der Stand Tian Tian Hainanese Chicken Rice (Anthony Bourdains Favorit) hat ab 10:30 Uhr eine Schlange — kommen Sie vor Mittag zum Essen. Es kostet 5-6 SGD." },
+            { name: "Little India — Serangoon Road", description: "Singapurs indisches Viertel, mit dem Sri-Veeramakaliamman-Tempel (einer der aufwendigsten Asiens), Gewürzläden, Blumenständen und dem Tekka Market, der die beste indische Küche der Stadt beherbergt.", price: "Kostenlos", tip: "Das Biryani am Stand Allauddin's im Tekka Market (6 SGD) ist das beste in Singapur. Das Viertel ist sonntags besonders farbenfroh, wenn Wanderarbeiter ihren freien Tag feiern." },
+            { name: "Clarke Quay und der Singapore River bei Sonnenuntergang", description: "Der alte Kai am Singapore River, heute ein Viertel mit Bars und Restaurants in restaurierten kolonialen Shophouses. Die goldene Stunde erleuchtet die bunten Fassaden mit dem Fluss im Vordergrund.", price: "Kostenlos", tip: "Flusskreuzfahrtboote fahren alle 30 Minuten von Clarke Quay ab (25 SGD) und passieren die historischsten Sehenswürdigkeiten der Stadt. Die nächtliche Kreuzfahrt ist die schönste." },
+          ],
+        },
+        {
+          theme: "Sentosa, der Zoo und Singapurs Natur",
+          activities: [
+            { name: "Singapore Zoo — der beste der Welt", description: "Wird beständig unter den besten Zoos der Welt eingestuft, mit offenen Lebensräumen für die Tiere. Die Giraffen, die frei umherlaufenden Borneo-Orang-Utans und die Flusskrokodile sind am faszinierendsten.", price: "49 SGD", tip: "Jungle Breakfast with Wildlife (33 SGD Aufpreis) bietet um 9 Uhr ein Frühstück neben den Orang-Utans — ein einzigartiges Erlebnis. Buchen Sie Wochen im Voraus." },
+            { name: "Insel Sentosa und Universal Studios", description: "Singapurs Vergnügungsinsel, mit Universal Studios, dem Siloso Beach und einer Panorama-Seilbahn. Die Fahrgeschäfte Transformers, Harry Potter und Jurassic Park bei Universal sind die besten Asiens.", price: "88 SGD (Universal Studios)", tip: "Der Express Pass von Universal Studios (40 SGD Aufpreis) umgeht die Schlangen bei den Hauptattraktionen — lohnt sich, wenn der Park überfüllt ist. Die Seilbahn (35 SGD) vom Mount Faber bietet die besten Ausblicke auf die Meerenge." },
+            { name: "Haw Par Villa — der Park der zehn Höllen", description: "Asiens seltsamster Themenpark, 1937 erschaffen, mit 1.000 Statuen, die die chinesische Mythologie und die 10 Gerichtshöfe der Hölle darstellen. Ein surreales Erlebnis der besonderen Art.", price: "Kostenlos", tip: "Haw Par Villa ist einer der einzigartigsten Orte Singapurs und bei Touristen praktisch unbekannt — ein verstecktes Juwel unter den kommerziellen Themenparks." },
+            { name: "Letztes Abendessen im Newton Circus Hawker Centre", description: "Singapurs berühmtestes nächtliches Hawker Centre (das aus Crazy Rich Asians), mit Mangrovenkrabben, frittierten Orchideen, gegrillten Meeresfrüchten und Laksa unter den tropischen Sternen.", price: "15-40 SGD", tip: "Chilikrabbe (50-80 SGD pro Portion) ist Singapurs Nationalgericht — bestellen Sie sie am Stand mit der längsten Schlange. Man Tou (frittierte Brötchen) zum Eintunken in die Soße ist Pflicht." },
           ],
         },
       ],
@@ -630,6 +868,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Bois de Chapultepec", description: "Le plus grand parc urbain d'Amérique latine (686 hectares), avec le château de Chapultepec, un lac artificiel et le zoo, seul endroit des Amériques abritant un panda géant. Le parc est le poumon vert et social de Mexico.", price: "Gratuit (Zoo gratuit, Château 90 MXN)", tip: "Le château de Chapultepec (jadis résidence de Maximilien de Habsbourg et de Porfirio Díaz) abrite les plus belles fresques d'O'Gorman sur l'histoire mexicaine et des vues sur le Paseo de la Reforma." },
             { name: "Paseo de la Reforma et l'Ange", description: "La grande avenue de Mexico, conçue en 1864 par Maximilien, inspirée des Champs-Élysées. L'Ange de l'Indépendance, la fontaine Diana Cazadora et la Torre Mayor forment la skyline la plus reconnaissable de Mexico.", price: "Gratuit", tip: "Le dimanche, le Paseo de la Reforma se ferme aux voitures et se remplit de cyclistes, de patineurs et de vendeurs de rue — l'ambiance la plus festive et familiale de la ville." },
             { name: "Dernier dîner à Polanco — haute cuisine mexicaine", description: "Polanco abrite les restaurants les plus primés du Mexique : Pujol (top 10 mondial), Quintonil, Máximo Bistrot. Si votre budget est serré, les tacos de suadero du stand de Cuauhtémoc sont tout aussi mémorables.", price: "300-1 500 MXN", tip: "Pujol et Quintonil exigent une réservation des mois à l'avance. Pour une expérience culinaire accessible, le Mercado Roma dans la Colonia Roma propose 70 étals de cuisine mexicaine gastronomique à partir de 80 MXN." },
+          ],
+        },
+      ],
+    },
+    de: {
+      city: "Mexiko-Stadt",
+      country: "Mexiko",
+      heroTitle: "4 Tage in Mexiko-Stadt: Tacos, Pyramiden und präkolumbianische Kultur",
+      heroSubtitle: "Teotihuacán, Xochimilco, La Condesa und die besten Tacos der Welt — die Reiseroute, um die faszinierendste Metropole Lateinamerikas zu entdecken.",
+      bestMonths: "Oktober bis Mai (Trockenzeit)",
+      budget: "40-80 USD/Tag",
+      travelTips: [
+        "Die Metro von Mexiko-Stadt ist die günstigste der Welt (MXN 5) und erreicht fast überall — lernen Sie die Hauptlinien, bevor Sie ankommen",
+        "Mexiko-Stadt liegt auf 2.240m Höhe — in den ersten Tagen können Sie sich müde oder kurzatmig fühlen, nehmen Sie es langsam",
+        "Straßenstand-Tacos sind sicher und köstlich — suchen Sie Stände mit den meisten einheimischen Kunden",
+        "Uber und Cabify sind die sichersten Transportmittel für Touristen, besonders nachts",
+        "Die Regenzeit (Juni-Oktober) bringt kurze Nachmittagsschauer mit sich — nehmen Sie immer einen Regenschirm oder Poncho mit",
+      ],
+      days: [
+        {
+          theme: "Der Zócalo und das historische Zentrum",
+          activities: [
+            { name: "Zócalo und die Kathedrale Metropolitana", description: "Der größte Platz Lateinamerikas, umgeben vom Nationalpalast, der Kathedrale Metropolitana (der größten der Amerikas) und dem alten Rathaus. Diego Rivera malte die Wandbilder des Nationalpalastes, die Mexikos Geschichte darstellen.", price: "Kostenlos (Nationalpalast kostenlos)", tip: "Diego Riveras Wandbilder im Nationalpalast befinden sich im ersten Stock neben der Haupttreppe — kostenloser Eintritt mit Ausweis. Die Szene des Marktes von Tlatelolco ist die beeindruckendste." },
+            { name: "Templo Mayor — die aztekischen Ruinen unter der Stadt", description: "Das Zeremonialzentrum von Tenochtitlán, der aztekischen Hauptstadt, entdeckt 1978 unter dem historischen Zentrum von Mexiko-Stadt. Das angrenzende Museum beherbergt den Sonnenstein (den fälschlicherweise 'aztekischer Kalender' genannten Stein) und den Teocalli des Heiligen Krieges.", price: "MXN 85", tip: "Der Templo Mayor zeigt 7 übereinanderliegende Bauschichten — die Azteken bauten alle 52 Jahre einen neuen Tempel über den vorherigen. Der Monolith Tlaltecuhtli (Tonnen behauenen Steins) ist der jüngste Fund." },
+            { name: "Tacos auf dem Mercado de la Merced", description: "Der größte Markt im historischen Zentrum, mit mehr als 3.000 Essensständen, Tacos de canasta, Tamales, Atole und Mexikos größter Vielfalt an frischen Chilis.", price: "MXN 20-40 pro Taco", tip: "Tacos de canasta (Bohnen, Schweineschwarte und Kartoffel, per Fahrrad in einem Palmkorb geliefert) sind das authentischste Frühstück der Innenstadt. Der Taco placero mit Nopales und frischem Käse ist perfekt für Vegetarier." },
+            { name: "Bellas Artes und die Alameda", description: "Der Palacio de Bellas Artes, ein Symbol des modernen Mexikos mit seiner Marmorkuppel, beherbergt Wandbilder von Diego Rivera, José Clemente Orozco und David Alfaro Siqueiros. Der Park Alameda Central ist der älteste der Amerikas (1592).", price: "MXN 80 (Galerie)", tip: "Die Glasdecke im Hauptsaal des Bellas Artes, mit ihrem Tiffany-Glasvorhang, der den Vulkan Popocatépetl darstellt, ist nur während einer Vorstellung oder Führung zu sehen. Die Wandbilder in den oberen Stockwerken sind frei zugänglich." },
+          ],
+        },
+        {
+          theme: "Teotihuacán — die Stadt der Götter",
+          activities: [
+            { name: "Pyramiden von Teotihuacán — als Erstes am Morgen", description: "Die größte präkolumbianische Stadt Mesoamerikas, 50 km von Mexiko-Stadt entfernt, mit der Sonnenpyramide (der drittgrößten der Welt), der Mondpyramide und der 2 km langen Straße der Toten.", price: "MXN 100", tip: "Nehmen Sie den ersten Bus (6:30 Uhr) vom Terminal del Norte. Wenn Sie vor 8 Uhr ankommen, vor den organisierten Reisegruppen, haben Sie die Pyramiden fast für sich allein." },
+            { name: "Besteigung der Sonnenpyramide", description: "Die 248 Stufen der Sonnenpyramide führen zum Gipfel, 70 Meter hoch, mit 360°-Ausblicken über das Teotihuacán-Tal und die gesamte Zeremonialstadt. Es ist das beeindruckendste Erlebnis der mexikanischen Archäologie.", price: "Inbegriffen", tip: "Steigen Sie von beiden Seiten hinauf, um die vollen Ausblicke zu genießen. Die Stufen sind steil und die Höhe liegt bei 2.300m — gehen Sie langsam vor und nehmen Sie Wasser mit." },
+            { name: "Mittagessen mit Blick auf die Pyramiden", description: "Die Restaurants gegenüber den Pyramiden servieren Oaxaca-Tlayudas, Enchiladas und Pulque (fermentiertes Agavengetränk). Das Restaurant La Gruta, in einer natürlichen Höhle aus dem 2. Jahrhundert v. Chr., ist am beeindruckendsten.", price: "MXN 120-200", tip: "La Gruta (im Inneren der Höhle) liegt direkt am Ausgang der archäologischen Stätte. Rufen Sie im Voraus an, um für die Mittagszeit zu reservieren — es ist ein ikonischer Ort, der den Preis wert ist." },
+            { name: "Rückkehr und Mole-Abendessen in La Condesa", description: "La Condesa ist Mexiko-Stadts kosmopolitischstes, kulinarisch fokussiertes Viertel, mit gehobenen mexikanischen Restaurants wie Quintonil und Pujol (Nr. 5 der Welt) und Cafés entlang der baumbestandenen Mittelstreifen der Avenida Ámsterdam.", price: "MXN 100-300", tip: "Schwarze Oaxaca-Mole und Mole poblano sind die beiden komplexesten Saucen der mexikanischen Küche (mit mehr als 30 Zutaten). Die besten gibt es bei Azul y Oro, in Roma." },
+          ],
+        },
+        {
+          theme: "Xochimilco und der Süden der Stadt",
+          activities: [
+            { name: "Xochimilco — die präkolumbianischen Kanäle", description: "Die letzten Chinampas (schwimmende künstliche Inseln) der aztekischen Zivilisation, UNESCO-Weltkulturerbe. Bunte Trajinera-Boote fahren auf den Kanälen mit Mariachis, Essensverkäufern und der festlichsten Atmosphäre Mexiko-Stadts.", price: "MXN 400-600 (2h Trajinera-Fahrt)", tip: "Mieten Sie eine ganze Trajinera mit Freunden (6-8 Personen), statt sich eine zu teilen. Die Mariachis, die in ihrem eigenen Boot heranfahren, verlangen MXN 200-300 pro Lied." },
+            { name: "Coyoacán — Frida Kahlos Viertel", description: "Mexikos schönstes Kolonialviertel, mit seinem Kunsthandwerksmarkt, dem Kojoten-Platz und der Casa Azul (Frida-Kahlo-Museum). Diego Rivera und Frida Kahlo lebten hier, und das Viertel trägt noch immer ihren künstlerischen Geist.", price: "Kostenlos (Casa Azul MXN 250)", tip: "Buchen Sie die Casa Azul (Frida-Kahlo-Museum) online im Voraus — nur 80 Personen pro Stunde. Die Eisdiele in Coyoacán (gegenüber der Kirche) hat unglaubliche Geschmacksrichtungen." },
+            { name: "Casa Azul — Frida-Kahlo-Museum", description: "Das Haus, in dem Frida Kahlo geboren wurde und starb, erhalten genau so, wie sie es hinterließ, mit ihren Tehuana-Kleidern, ihren Gemälden und dem Rollstuhl, aus dem sie in ihren letzten Jahren arbeitete. Der Garten mit seinen aztekischen Pyramiden ist beeindruckend.", price: "MXN 250", tip: "Das Stillleben in der blauen Küche, mit verzierten Totenköpfen und Tontöpfen, sagt mehr über Fridas Charakter aus als die Gemälde. Das Atelier im Garten bewahrt ihre originale Staffelei." },
+            { name: "Mezcal und gehobene Tacos in Roma Norte", description: "Roma Norte ist Mexiko-Stadts angesagtestes Viertel, mit handwerklichen Mezcal-Bars (aus Oaxaca, Guerrero und Michoacán), gehobenen Tacos und Mexikos avantgardistischster kulinarischer Szene.", price: "MXN 80-200", tip: "Bósforo Mezcalería und Hanky Panky haben Mexikos besten handwerklichen Mezcal. Bestellen Sie Mezcal immer pur, bei Raumtemperatur — niemals mit Eis." },
+          ],
+        },
+        {
+          theme: "Chapultepec und Mexikos bestes Museum",
+          activities: [
+            { name: "Nationalmuseum für Anthropologie", description: "Lateinamerikas bestes Museum und eines der feinsten der Welt, mit dem aztekischen Sonnenstein, Pakals Jade-Totenmaske aus Palenque und dem Maya-Saal mit der Rekonstruktion des Wandbilds von Bonampak. Seine 24 Säle decken jede Zivilisation Mexikos ab.", price: "MXN 85", tip: "Der mexica- (aztekische) Saal mit dem Sonnenstein und der Coatlicue ist der beeindruckendste. Zwei Stunden reichen für die Hauptsäle — das ganze Museum zu sehen dauert 5+ Stunden." },
+            { name: "Wald von Chapultepec", description: "Lateinamerikas größter städtischer Park (686 Hektar), mit dem Schloss Chapultepec, einem künstlichen See und dem Zoo, Heimat des einzigen Riesenpandas der Amerikas. Der Park ist Mexiko-Stadts grüne, soziale Lunge.", price: "Kostenlos (Zoo kostenlos, Schloss MXN 90)", tip: "Das Schloss Chapultepec (einst Wohnsitz von Maximilian von Habsburg und Porfirio Díaz) beherbergt O'Gormans schönste Wandbilder zur mexikanischen Geschichte und Ausblicke über den Paseo de la Reforma." },
+            { name: "Paseo de la Reforma und der Engel", description: "Mexiko-Stadts große Avenue, 1864 von Maximilian entworfen, inspiriert von den Champs-Élysées. Der Unabhängigkeitsengel, der Diana-Cazadora-Brunnen und der Torre Mayor bilden Mexiko-Stadts erkennbarste Skyline.", price: "Kostenlos", tip: "Sonntags wird der Paseo de la Reforma für Autos gesperrt und füllt sich mit Radfahrern, Skatern und Straßenverkäufern — die festlichste, familienfreundlichste Atmosphäre der Stadt." },
+            { name: "Letztes Abendessen in Polanco — feine mexikanische Küche", description: "Polanco beherbergt Mexikos meistausgezeichnete Restaurants: Pujol (Top 10 weltweit), Quintonil, Máximo Bistrot. Wenn Ihr Budget knapp ist, sind die Suadero-Tacos am Stand von Cuauhtémoc genauso unvergesslich.", price: "MXN 300-1.500", tip: "Pujol und Quintonil erfordern Reservierungen Monate im Voraus. Für ein zugängliches kulinarisches Erlebnis bietet der Mercado Roma in der Colonia Roma 70 Stände gehobener mexikanischer Küche ab MXN 80." },
           ],
         },
       ],
