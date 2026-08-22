@@ -1681,6 +1681,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    fr: {
+      city: "Lisbonne",
+      country: "Portugal",
+      heroTitle: "3 jours à Lisbonne : Alfama, pastéis et miradouros",
+      heroSubtitle: "Le château Saint-Georges, le tramway 28, Belém et le fado nocturne — l'itinéraire parfait pour tomber amoureux de la capitale portugaise.",
+      bestMonths: "Mars à mai et septembre à octobre",
+      budget: "70-120€/jour",
+      travelTips: [
+        "La carte rechargeable Viva Viagem, chargée de 5-10€, couvre le métro, les trams et les bus — bien moins cher que les tickets individuels",
+        "Les miradouros (points de vue) sont l'activité la moins chère et la plus belle de Lisbonne — il y en a plus de 20 disséminés dans la ville",
+        "Uber est très bon marché à Lisbonne — une alternative pratique aux trams aux heures de pointe",
+        "Les restaurants avec un 'menu do dia' (9-12€ avec boisson, dessert et plat principal) sont l'option de déjeuner la plus authentique",
+        "Portez des chaussures confortables avec une bonne adhérence — les pavés portugais glissent sous la pluie et fatiguent les pieds après beaucoup de marche",
+      ],
+      days: [
+        {
+          theme: "Alfama et le cœur historique",
+          activities: [
+            { name: "Château Saint-Georges", description: "La forteresse médiévale surplombant Lisbonne, avec des vues à 360° sur la ville, le Tage et le pont du 25 avril. Les murailles maures du XIe siècle sont parfaitement préservées.", price: "15€", tip: "Arrivez à l'ouverture pour voir les vues sans la foule. Monter par les ruelles étroites d'Alfama fait partie de l'expérience — évitez le taxi direct." },
+            { name: "Quartier d'Alfama et le Miradouro da Graça", description: "Le plus ancien quartier de Lisbonne, un charmant labyrinthe de maisons carrelées, de linge qui sèche et de fado s'échappant des restaurants. Le Miradouro da Graça offre les meilleures vues de la ville.", price: "Gratuit", tip: "Se perdre dans Alfama fait partie du plan — inutile de chercher un itinéraire précis. Les ruelles les plus étroites au-dessus de la cathédrale de la Sé ont l'ambiance la plus authentique." },
+            { name: "Déjeuner de morue à Alfama", description: "Le Portugal compte 365 recettes de morue (une pour chaque jour de l'année). Bacalhau à brás, à lagareiro ou com natas sont les classiques. Les tascas d'Alfama servent les versions les plus authentiques.", price: "10-18€", tip: "Cherchez les restaurants sans menu en anglais collé à la porte — signe qu'ils sont pour les locaux. Le prix du menu du jour inclut un plat principal + dessert + boisson." },
+            { name: "Tramway 28 — l'itinéraire le plus pittoresque", description: "L'emblématique tram jaune qui monte et descend les collines de Lisbonne de Martim Moniz à Prazeres, en passant par Alfama, Graça et Estrela. C'est un vrai transport urbain, pas juste une attraction touristique.", price: "3€ (ticket simple)", tip: "Achetez le ticket à bord en liquide ou utilisez la carte Viva Viagem. Le tram est toujours bondé — montez à l'arrêt de départ pour avoir une place assise." },
+          ],
+        },
+        {
+          theme: "Belém et l'âge des découvertes",
+          activities: [
+            { name: "Pastéis de Belém", description: "La pâtisserie originale du pastel de nata, fondée en 1837, utilisant toujours une recette secrète connue de seulement trois personnes. La file du matin est longue mais avance vite.", price: "1,30€ par pâtisserie", tip: "Commandez-les tièdes avec du sucre et de la cannelle par-dessus, et mangez-les à l'intérieur de la pâtisserie. La salle carrelée est aussi spéciale que la pâtisserie elle-même." },
+            { name: "Monastère des Hiéronymites", description: "Le chef-d'œuvre de l'architecture manuéline (gothique portugais), classé au patrimoine mondial de l'UNESCO. Le cloître, aux colonnes de pierre sculptées en forme de cordes et de corail, est l'un des espaces les plus impressionnants d'Europe.", price: "12€", tip: "L'église principale est gratuite et abrite les tombeaux de Vasco de Gama et Luís de Camões. Entrez d'abord pour apprécier l'échelle du bâtiment avant de payer pour le cloître." },
+            { name: "Tour de Belém et le Monument aux Découvertes", description: "La tour de Belém (XVIe siècle) fut la dernière chose que voyaient les marins en partant et la première à leur retour. À 300 mètres, le Monument aux Découvertes met en scène les figures des explorateurs portugais.", price: "Tour 6€ / Monument 4€", tip: "La file pour la tour peut être longue — l'intérieur est petit et n'accueille que de petits groupes. Le monument possède un point de vue au sommet donnant sur le Tage, que peu de gens prennent la peine de gravir." },
+            { name: "Maison de fado à Alfama", description: "Le fado est l'âme musicale de Lisbonne, reconnu comme patrimoine culturel immatériel de l'UNESCO. Les maisons de fado d'Alfama proposent un dîner avec prestations live — l'expérience la plus authentique de la ville.", price: "30-50€ (dîner + fado)", tip: "Réservez à l'avance au Clube de Fado, Sr. Fado ou Tasca do Chico. Un silence absolu est attendu pendant la prestation — c'est une norme culturelle, pas juste une demande." },
+          ],
+        },
+        {
+          theme: "Bairro Alto, LX Factory et le Tage",
+          activities: [
+            { name: "Miradouro da Senhora do Monte", description: "Le point de vue le plus haut de Lisbonne, avec des vues panoramiques englobant le château, le Tage, le Cristo Rei sur l'autre rive et le pont du 25 avril. Moins connu que celui de Santa Catarina.", price: "Gratuit", tip: "C'est un favori local pour le brunch du week-end. Le café du point de vue sert le meilleur café avec vue de la ville." },
+            { name: "LX Factory — le marché créatif", description: "Une ancienne usine textile du XIXe siècle transformée en espace créatif, avec restaurants, librairies, studios de design et le meilleur marché de Lisbonne le dimanche. La librairie Ler Devagar, avec ses vélos suspendus, est incontournable.", price: "Gratuit (achats non inclus)", tip: "Le marché du dimanche de LX Factory a lieu de 11h à 20h et est le meilleur de Lisbonne. Le samedi et le dimanche sont les jours où les restaurants à l'intérieur sont au meilleur de leur forme." },
+            { name: "Ribeira das Naus — le front de mer du Tage", description: "La promenade au bord de l'eau près du ministère de la Marine, où les Lisboètes se détendent dans des hamacs en bois face à la rivière. À 10 minutes à pied, la Praça do Comércio offre la meilleure perspective sur l'embouchure du Tage.", price: "Gratuit", tip: "Les hamacs sont gratuits et disponibles au premier arrivé. Commandez une ginjinha (liqueur de cerise) dans les kiosques le long de la promenade — la boisson la plus typique de Lisbonne." },
+            { name: "Bairro Alto au coucher du soleil", description: "Le quartier des bars et de la vie nocturne de Lisbonne s'anime à partir de 18h. De petits bars aux portes ouvertes avec de la musique qui déborde dans la rue font de Bairro Alto la sortie nocturne la plus authentique de la ville.", price: "2-4€ par boisson", tip: "Les bars de Bairro Alto n'ont généralement pas de places assises — les gens boivent dans la rue, verre à la main, en passant d'un bar à l'autre. C'est parfaitement normal et sûr." },
+          ],
+        },
+      ],
+    },
   },
 
   amsterdam: {
@@ -1724,6 +1768,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Oud-West neighborhood and Ten Katemarkt", description: "Amsterdam's most authentic neighborhood market, with fresh produce, secondhand clothes, and Mediterranean street food. The cafés on Jan Pieter Heijestraat are the local alternative to the touristy Leidseplein.", price: "Free", tip: "Oud-West is where young locals live — the cafés have wifi, good prices, and a genuinely Dutch atmosphere." },
             { name: "Amsterdam Noord — A'DAM Tower and EYE Film Museum", description: "Across the harbor, Amsterdam Noord has the city's best skyline. The A'DAM Tower has Europe's highest swing on its rooftop, and the EYE Film Museum is one of the city's most photogenic buildings.", price: "Ferry free / A'DAM Tower €17.50", tip: "The ferry from Central Station to Amsterdam Noord is free and takes 5 minutes. It runs every 7-8 minutes, 24 hours a day." },
             { name: "Brouwerij 't IJ — the brewery in the windmill", description: "Amsterdam's most famous craft brewery, set inside an 18th-century windmill by the canal. Its craft beers (Plzen, Zatte, Columbus) are some of the best in the Netherlands.", price: "€3.50-5 per beer", tip: "The little terrace facing the windmill is one of the best sunset spots in the city. Get there before 5pm in summer to grab an outdoor table." },
+          ],
+        },
+      ],
+    },
+    fr: {
+      city: "Amsterdam",
+      country: "Pays-Bas",
+      heroTitle: "3 jours à Amsterdam : canaux, musées et vélos",
+      heroSubtitle: "Le Rijksmuseum, la maison d'Anne Frank, Jordaan et les tulipes — l'itinéraire parfait pour une première visite de la capitale néerlandaise.",
+      bestMonths: "Avril à mai (tulipes) et juin à août",
+      budget: "90-150€/jour",
+      travelTips: [
+        "Louez un vélo dès le premier jour — c'est le moyen le plus rapide, le moins cher et le plus local pour se déplacer à Amsterdam",
+        "Réservez la maison d'Anne Frank et le musée Van Gogh des semaines à l'avance — ils affichent toujours complet en haute saison",
+        "Les trams couvrent toute la ville ; achetez un ticket journalier GVB pour 9,50€ pour des trajets illimités",
+        "La I amsterdam City Card (75€/24h) inclut les musées, les transports et une croisière sur les canaux — rentable si vous visitez 3+ musées",
+        "Attention aux pistes cyclables dans la rue — les cyclistes ont priorité sur les piétons et ne ralentiront pas",
+      ],
+      days: [
+        {
+          theme: "Les grands musées : Van Gogh et le Rijksmuseum",
+          activities: [
+            { name: "Rijksmuseum", description: "Le musée national néerlandais, au cœur de la Museumplein. Il abrite La Ronde de nuit de Rembrandt, La Laitière de Vermeer et plus d'un million d'objets du Siècle d'or néerlandais.", price: "22,50€", tip: "Réservez en ligne et choisissez le créneau de 9h. La Ronde de nuit est accrochée dans la Galerie d'Honneur au 2e étage — regardez-la depuis le fond de la salle pour apprécier sa véritable échelle." },
+            { name: "Musée Van Gogh", description: "La plus grande collection au monde des œuvres de Vincent van Gogh, avec plus de 200 tableaux et 500 dessins. Les Tournesols, La Chambre et l'Autoportrait à l'oreille bandée sont tous ici.", price: "22€", tip: "Il faut réserver des semaines à l'avance en haute saison. L'audioguide gratuit via l'application du musée est excellent et couvre toutes les œuvres majeures." },
+            { name: "Vondelpark", description: "Le parc le plus célèbre d'Amsterdam, avec 47 hectares où les habitants pique-niquent, font de la musique et roulent à vélo. En été, il y a du théâtre en plein air gratuit.", price: "Gratuit", tip: "Louez un vélo chez MacBike (15€/jour) pour vous déplacer dans toute la ville — le moyen le plus local et pratique d'explorer Amsterdam." },
+            { name: "Dîner à De Pijp", description: "Le quartier le plus multiculturel et gastronomique d'Amsterdam, avec le marché Albert Cuyp (le plus grand des Pays-Bas), des restaurants surinamiens et indonésiens et la meilleure sélection de cafés artisanaux.", price: "15-25€", tip: "Le rijsttafel (table de riz indonésienne) est le legs colonial le plus savoureux des Pays-Bas — une expérience culinaire unique qui vaut le prix supplémentaire." },
+          ],
+        },
+        {
+          theme: "Histoire et canaux : Anne Frank et Jordaan",
+          activities: [
+            { name: "Maison d'Anne Frank", description: "La cachette où Anne Frank et sa famille se sont réfugiées des nazis entre 1942 et 1944. Le journal original, la bibliothèque secrète et les pièces préservées telles qu'elles étaient font de cette visite l'une des plus poignantes d'Europe.", price: "16€", tip: "Vous DEVEZ réserver en ligne des semaines à l'avance — il n'y a pas de billets sur place. Le créneau de 9h est le moins fréquenté." },
+            { name: "Quartier de Jordaan et les canaux", description: "Le quartier le plus pittoresque d'Amsterdam, avec des maisons du XVIIe siècle penchées au-dessus des canaux, des galeries d'art, des boutiques vintage et les terrasses les plus chaleureuses de la ville.", price: "Gratuit", tip: "Traversez le Prinsengracht et explorez le Bloemgracht et l'Egelantiersgracht — ces canaux secondaires ont moins de touristes et plus de charme local." },
+            { name: "Déjeuner de hareng au marché", description: "Le haring (hareng cru avec oignon et cornichons) est le snack le plus typique des Pays-Bas. Les étals de poisson frais sur les ponts de Jordaan offrent l'expérience la plus authentique.", price: "4-6€", tip: "Le hareng se mange en tenant le morceau par la queue et en le laissant tomber dans la bouche — c'est ainsi que font les Néerlandais. Ne commandez pas une seule bouchée, prenez le morceau entier." },
+            { name: "Croisière en bateau sur les canaux", description: "Les 165 canaux et 1 753 ponts d'Amsterdam sont classés au patrimoine mondial de l'UNESCO. Une croisière en bateau montre la ville au niveau de l'eau, avec des perspectives impossibles à obtenir depuis la terre.", price: "15-20€", tip: "Les croisières de 15h ont une meilleure lumière pour les photos que celles du matin. Apportez une veste même en été — l'eau fait baisser la température." },
+          ],
+        },
+        {
+          theme: "Keukenhof (printemps) ou quartiers alternatifs",
+          activities: [
+            { name: "Keukenhof (mars-mai uniquement) ou NDSM Wharf", description: "Au printemps, les jardins de Keukenhof, avec 7 millions de tulipes en fleurs, sont l'un des plus beaux sites naturels d'Europe. Hors saison, NDSM Wharf, l'ancien chantier naval, est devenu un pôle créatif.", price: "Keukenhof 20€ / NDSM gratuit", tip: "Le bus direct depuis l'aéroport de Schiphol jusqu'à Keukenhof est l'option la plus simple — pas besoin de passer par Amsterdam." },
+            { name: "Quartier Oud-West et le Ten Katemarkt", description: "Le marché de quartier le plus authentique d'Amsterdam, avec produits frais, vêtements d'occasion et street food méditerranéenne. Les cafés de la Jan Pieter Heijestraat sont l'alternative locale au Leidseplein touristique.", price: "Gratuit", tip: "Oud-West est le quartier où vivent les jeunes locaux — les cafés ont le wifi, de bons prix et une ambiance véritablement néerlandaise." },
+            { name: "Amsterdam Noord — A'DAM Tower et le musée EYE", description: "De l'autre côté du port, Amsterdam Noord offre la meilleure skyline de la ville. La A'DAM Tower a la balançoire la plus haute d'Europe sur son toit, et le musée EYE est l'un des bâtiments les plus photogéniques de la ville.", price: "Ferry gratuit / A'DAM Tower 17,50€", tip: "Le ferry depuis la gare centrale jusqu'à Amsterdam Noord est gratuit et dure 5 minutes. Il part toutes les 7-8 minutes, 24h/24." },
+            { name: "Brasserie 't IJ — la brasserie dans le moulin", description: "La brasserie artisanale la plus célèbre d'Amsterdam, installée dans un moulin à vent du XVIIIe siècle au bord du canal. Ses bières artisanales (Plzen, Zatte, Columbus) sont parmi les meilleures des Pays-Bas.", price: "3,50-5€ par bière", tip: "La petite terrasse face au moulin est l'un des meilleurs endroits pour le coucher du soleil en ville. Arrivez avant 17h en été pour avoir une table en extérieur." },
           ],
         },
       ],
@@ -1780,6 +1868,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "St James's Park", description: "London's oldest royal park, with direct views of the palace, the lake's famous pelicans, and the footbridge with the most photogenic view of Buckingham Palace in London.", price: "Free", tip: "The park's pelicans are descendants of a gift from the Russian tsar in 1664. They're fed at 2:30pm every day by the lake — quite a sight." },
             { name: "Greenwich: the Meridian and the Observatory", description: "Greenwich is home to the Prime Meridian (longitude 0°), the Royal Observatory, and the Cutty Sark, history's most famous tea clipper. Taking a ferry down the Thames to get here is part of the experience.", price: "Ferry £6 / Observatory £18", tip: "You can straddle the Meridian with one foot in each hemisphere for free — the green line is marked on the ground just outside the Observatory." },
             { name: "A traditional pub in Soho", description: "Soho's pubs are London's social heart. The Lamb and Flag (founded in 1623), The Nellie Dean, and the French House have the atmosphere and history no chain can imitate.", price: "£6-8 per pint", tip: "In London you order at the bar — don't wait for table service. A pint of Guinness or a local bitter are the most typical drinks." },
+          ],
+        },
+      ],
+    },
+    fr: {
+      city: "Londres",
+      country: "Royaume-Uni",
+      heroTitle: "4 jours à Londres : l'itinéraire pour ne rien manquer d'essentiel",
+      heroSubtitle: "Tower Bridge, le British Museum, Notting Hill et le West End — avec les musées gratuits et les pubs que choisissent vraiment les habitants.",
+      bestMonths: "Mai à septembre",
+      budget: "120-200£/jour",
+      travelTips: [
+        "Une Oyster Card ou une carte sans contact est indispensable — payer en liquide dans le métro coûte le double d'une carte",
+        "Presque tous les grands musées sont gratuits : British Museum, National Gallery, Tate Modern, V&A, Natural History Museum",
+        "Le service (pourboire) n'est pas inclus dans la plupart des restaurants — 10-12% est standard si le service était bon",
+        "La City ferme presque entièrement le week-end — prévoyez le quartier financier en semaine",
+        "Téléchargez l'application TfL (Transport for London) pour planifier les trajets en métro, bus et DLR en temps réel",
+      ],
+      days: [
+        {
+          theme: "Le Londres historique : Tower Bridge et la City",
+          activities: [
+            { name: "Tour de Londres", description: "Une forteresse millénaire fondée par Guillaume le Conquérant en 1078. Elle abrite les joyaux de la Couronne britannique, dont la couronne impériale d'État avec ses 2 868 diamants. Les célèbres Beefeaters en sont les seuls guides officiels.", price: "34£", tip: "Arrivez à l'ouverture pour voir les joyaux de la Couronne sans la foule. Les Beefeaters proposent des visites gratuites incluses dans le billet d'entrée — cela en vaut vraiment la peine." },
+            { name: "Tower Bridge", description: "Le pont le plus célèbre de Londres, inauguré en 1894. L'exposition intérieure montre la machinerie victorienne qui soulève le pont. Marcher sur la passerelle en verre à 42 mètres au-dessus de la Tamise est impressionnant.", price: "14£", tip: "Le pont se soulève plusieurs fois par jour pour laisser passer de grands navires — consultez les horaires en ligne pour ne pas le manquer." },
+            { name: "Borough Market", description: "Le marché alimentaire le plus célèbre de Londres, ouvert depuis le XIIIe siècle. Plus de 100 étals de producteurs artisanaux, fromages, viandes, street food du monde entier et la meilleure sélection de plats à emporter du centre-ville.", price: "8-15£ (déjeuner)", tip: "Le jeudi, vendredi et samedi sont les jours de pleine activité. Le porc effiloché de Roast et les chocolats de Rabot 1745 sont incontournables." },
+            { name: "Tate Modern", description: "Le musée d'art contemporain installé dans une centrale électrique du XXe siècle, avec des œuvres de Picasso, Warhol et Dalí. La vue sur le Millennium Bridge et la cathédrale Saint-Paul depuis la salle 10 au 4e étage est gratuite et spectaculaire.", price: "Gratuit (expositions temporaires 20£)", tip: "Le café du 6e étage a la meilleure terrasse, avec vue sur la Tamise et la cathédrale. Parfait pour un thé de l'après-midi." },
+          ],
+        },
+        {
+          theme: "Le Londres impérial : le British Museum et Bloomsbury",
+          activities: [
+            { name: "British Museum", description: "Le musée le plus visité du Royaume-Uni abrite 8 millions d'objets : la pierre de Rosette, les sculptures du Parthénon, des momies égyptiennes et le trésor de Sutton Hoo. Impossible de tout voir en une journée.", price: "Gratuit", tip: "Arrivez à 9h (une heure avant l'ouverture au grand public avec un billet en ligne) pour voir la pierre de Rosette sans la foule. La Grande Cour est impressionnante." },
+            { name: "Covent Garden", description: "L'ancienne place du marché devenue une destination shopping, restauration et divertissement. Artistes de rue, restaurants et le marché de Covent Garden avec ses structures victoriennes en fer.", price: "Gratuit (shopping et nourriture non inclus)", tip: "Les artistes de rue de la Piazza doivent passer une audition du conseil municipal — le niveau est très élevé. La prestation de 12h30 est généralement la meilleure de la journée." },
+            { name: "National Gallery", description: "La collection de peinture européenne la plus importante du Royaume-Uni, sur Trafalgar Square. Van Eyck, Léonard, Rembrandt, Monet et Turner figurent parmi les 2 300 œuvres du musée.", price: "Gratuit", tip: "La salle 30, avec les impressionnistes français (Monet, Renoir, Seurat), est un favori local. Un selfie devant les lions de Trafalgar Square est obligatoire." },
+            { name: "Un spectacle dans le West End", description: "Le quartier des théâtres de Londres compte plus de 50 salles actives, présentant les meilleures comédies musicales et pièces au monde. Les Misérables, Mamma Mia et Le Fantôme de l'Opéra jouent depuis des décennies.", price: "30-100£", tip: "Des billets de dernière minute ou d'attente sont mis en vente à la billetterie le matin. Vous pouvez obtenir de bonnes places à moitié prix." },
+          ],
+        },
+        {
+          theme: "Notting Hill, Hyde Park et Kensington",
+          activities: [
+            { name: "Marché de Portobello Road", description: "Le marché le plus célèbre de Londres, actif depuis 1837, avec des antiquités le samedi et des fruits et fleurs toute la semaine. Les maisons colorées de Notting Hill offrent le décor parfait.", price: "Gratuit (achats non inclus)", tip: "Le samedi est le grand jour, avec jusqu'à 1 000 étals d'antiquités. Arrivez avant 10h pour voir les meilleures pièces avant qu'elles ne soient achetées." },
+            { name: "Hyde Park et Kensington Gardens", description: "Les deux parcs royaux reliés forment l'un des plus grands poumons verts de Londres. Le lac Serpentine, Speaker's Corner et le mémorial de la princesse Diana sont les lieux les plus visités.", price: "Gratuit", tip: "Louez une chaise pliante près de la Serpentine et regardez passer les Londoniens. S'asseoir sur l'herbe est gratuit — les chaises coûtent un supplément (2£)." },
+            { name: "Victoria & Albert Museum", description: "Le plus grand musée de design et d'arts décoratifs au monde, avec des collections de mode, céramique, bijoux, photographie et mobilier couvrant 5 000 ans d'histoire humaine.", price: "Gratuit", tip: "La cour intérieure avec son café et son jardin est l'un des secrets les mieux gardés du musée. Parfaite pour une pause déjeuner à la londonienne." },
+            { name: "Harrods et Knightsbridge", description: "Le grand magasin le plus célèbre au monde, au cœur de Knightsbridge. Même sans rien acheter, les halles gastronomiques, le rayon parfumerie et la galerie de mode sont un spectacle visuel.", price: "Gratuit (pour entrer)", tip: "La halle alimentaire du sous-sol de Harrods est l'une des meilleures au monde. Vous pouvez prendre une pâtisserie ou un thé à emporter pour 5-10£ et en profiter sans dépenser une fortune." },
+          ],
+        },
+        {
+          theme: "Greenwich, la Tamise et l'adieu",
+          activities: [
+            { name: "Buckingham Palace et la relève de la garde", description: "La résidence officielle de la famille royale britannique. La relève de la garde a lieu à 11h et dure 45 minutes — un rituel avec musique de la fanfare militaire qui vaut la peine d'être vu au moins une fois.", price: "Gratuit (extérieur) / 35£ (intérieur, été seulement)", tip: "Pour bien voir la relève de la garde, arrivez à 10h30 et placez-vous devant la grille centrale. Les groupes touristiques arrivent tard et ne voient rien." },
+            { name: "St James's Park", description: "Le plus ancien parc royal de Londres, avec vues directes sur le palais, les célèbres pélicans du lac et la passerelle offrant la vue la plus photogénique sur Buckingham Palace de tout Londres.", price: "Gratuit", tip: "Les pélicans du parc descendent d'un cadeau du tsar russe en 1664. Ils sont nourris à 14h30 chaque jour près du lac — un spectacle à voir." },
+            { name: "Greenwich : le Méridien et l'Observatoire", description: "Greenwich abrite le méridien de Greenwich (longitude 0°), le Royal Observatory et le Cutty Sark, le clipper à thé le plus célèbre de l'histoire. Prendre le ferry sur la Tamise pour y arriver fait partie de l'expérience.", price: "Ferry 6£ / Observatoire 18£", tip: "Vous pouvez enjamber le Méridien avec un pied dans chaque hémisphère gratuitement — la ligne verte est marquée au sol juste devant l'Observatoire." },
+            { name: "Un pub traditionnel à Soho", description: "Les pubs de Soho sont le cœur social de Londres. Le Lamb and Flag (fondé en 1623), The Nellie Dean et le French House ont une ambiance et une histoire qu'aucune chaîne ne peut imiter.", price: "6-8£ la pinte", tip: "À Londres, on commande au bar — n'attendez pas le service à table. Une pinte de Guinness ou une bitter locale sont les boissons les plus typiques." },
           ],
         },
       ],
