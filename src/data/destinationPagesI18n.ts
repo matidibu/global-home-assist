@@ -4450,6 +4450,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Barcellona",
+      country: "Spagna",
+      heroTitle: "5 giorni a Barcellona: Gaudí, spiagge mediterranee e una città che non si ferma mai",
+      heroSubtitle: "L'itinerario che bilancia la Sagrada Família con il quartiere di Gràcia, il Barri Gòtic con Barceloneta.",
+      bestMonths: "Maggio e giugno, settembre e ottobre",
+      budget: "80-140€/giorno",
+      travelTips: [
+        "La T-Casual (10 corse metro/bus) è più economica del biglietto singolo — valida in tutta l'area metropolitana",
+        "I musei comunali sono gratuiti la prima domenica del mese — e la domenica pomeriggio",
+        "Le farmacie in Spagna hanno una croce verde luminosa e restano aperte 24 ore a turno",
+        "Prenotate la Sagrada Família settimane prima in alta stagione (luglio-agosto)",
+        "Gli orari spagnoli sono spostati di circa 2 ore rispetto al Nord Europa — cenare alle 22 è del tutto normale",
+      ],
+      days: [
+        {
+          theme: "Gaudí — la Barcellona che toglie il fiato",
+          activities: [
+            { name: "Sagrada Família", description: "Il capolavoro di Antoni Gaudí, in costruzione da 140 anni. La navata centrale, i 18 campanili e le facciate della Natività e della Passione non hanno eguali nell'architettura.", price: "26€ (con torri 36€)", tip: "Prenotate il biglietto per la mattina presto. La facciata della Natività (est) riceve la luce del mattino — quella della Passione (ovest) la luce del tramonto." },
+            { name: "Casa Batlló o Casa Milà (La Pedrera)", description: "La Casa Batlló ha le squame di drago più fotogeniche. La Casa Milà ha il tetto surreale con guerrieri di pietra e le migliori viste sull'Eixample.", price: "35-45€", tip: "La Casa Batlló propone uno spettacolo notturno di videomapping sulla facciata (45€) — più conveniente della visita diurna se cercate un'esperienza." },
+            { name: "Park Güell", description: "Il parco urbano di Gaudí, con la sua terrazza a mosaico, la foresta di colonne e le case in stile pan di zenzero. Offre una vista a 360° su Barcellona e il Mediterraneo.", price: "10€ (zona monumentale)", tip: "L'accesso al parco è gratuito — solo la zona monumentale (la terrazza e la sala delle colonne) richiede un biglietto. Prenotate online." },
+            { name: "Quartiere di Gràcia al tramonto", description: "Il quartiere più bohémien e locale di Barcellona, con piazze vivaci, ristoranti senza prezzi turistici e negozi indipendenti. Plaça del Sol è il punto d'incontro.", price: "Gratis (passeggiare)", tip: "La Festa Major di Gràcia in agosto trasforma ogni strada in un'installazione artistica. È la festa di quartiere più spettacolare di Spagna." },
+          ],
+        },
+        {
+          theme: "Barri Gòtic e Las Ramblas",
+          activities: [
+            { name: "Barri Gòtic — il cuore medievale", description: "Il centro storico medievale di Barcellona nasconde il Pont del Bisbe, la Cattedrale gotica, il Tempio romano di Augusto (I secolo a.C.) e le piazze intorno a Sant Felip Neri.", price: "Gratis", tip: "Plaça de Sant Felip Neri porta ancora i segni delle schegge della guerra civile. È l'angolo più malinconico e autentico del Barri Gòtic." },
+            { name: "La Boqueria", description: "Il mercato più famoso di Spagna, aperto dal 1836, con centinaia di bancarelle di frutta esotica, pesce, salumi e tapas fresche.", price: "Gratis (per entrare) / variabile (per mangiare)", tip: "Le bancarelle sul fronte hanno prezzi turistici. Andate in fondo al mercato, dove si riforniscono i ristoranti — prezzi veri e prodotti migliori." },
+            { name: "Las Ramblas", description: "La passeggiata pedonale più conosciuta di Barcellona, 1,2 km dalla Plaça de Catalunya fino al porto. La Font de Canaletes, le bancarelle di fiori e il mosaico di Miró incastonato nel selciato.", price: "Gratis", tip: "Las Ramblas ha molti borseggiatori — portate lo zaino davanti e non tenete nulla di valore in tasca. Attraversatele per vederle, non per soffermarvi." },
+            { name: "El Born e il Mercat de Santa Caterina", description: "Il quartiere più alla moda vicino al Barri Gòtic, con il Palau de la Música di Domènech i Montaner, negozi di design e la miglior scena di tapas di Barcellona.", price: "Gratis (Palau de la Música 20€)", tip: "Il Palau de la Música è l'unico edificio modernista Patrimonio UNESCO ancora in uso attivo. Comprate un biglietto per un concerto — è il modo migliore per vederlo." },
+          ],
+        },
+        {
+          theme: "Barceloneta e il Mediterraneo",
+          activities: [
+            { name: "Barceloneta — la spiaggia urbana di Barcellona", description: "La spiaggia più popolare di Barcellona, 1,1 km di sabbia di fronte al Mediterraneo, con i grattacieli del Port Olímpic sullo sfondo. Raggiungibile in metro da ovunque in città.", price: "Gratis", tip: "Alle 10 l'acqua è calma. Dalle 14 in poi, la brezza marina di solito si alza e crea onde buone per il bodysurf." },
+            { name: "Mercato del pesce di Barceloneta", description: "Il quartiere di Barceloneta conserva ancora i suoi vicoli di pescatori del XVIII secolo. I ristoranti su Carrer del Mar e Marbella servono la paella e l'arròs negre più autentici.", price: "20-35€", tip: "Prenotate un tavolo in anticipo in alta stagione. La vera paella barcellonese si fa con frutti di mare, non con pollo — l'arròs negre con alioli è il piatto simbolo." },
+            { name: "Port Olímpic e la Vila Olímpica", description: "Il quartiere costruito per le Olimpiadi del 1992 che trasformò il lungomare di Barcellona. Il pesce dorato di Frank Gehry e le torri di comunicazione sono icone urbane.", price: "Gratis", tip: "La passeggiata sul lungomare da Barceloneta al Forum (7 km) è il miglior giro in bici di Barcellona. Ci sono stazioni Bicing lungo tutto il percorso." },
+            { name: "Castello di Montjuïc al tramonto", description: "La fortezza del XVII secolo in cima alla collina di Montjuïc offre la miglior vista panoramica su Barcellona, il porto e il mare. La funivia sale da Barceloneta.", price: "Castello 9€ / Funivia 12€", tip: "Il giardino di cactus di Montjuïc è gratuito, e la vista sul porto da lì è buona quanto quella dal castello." },
+          ],
+        },
+        {
+          theme: "Montserrat — la montagna sacra della Catalogna",
+          activities: [
+            { name: "Treno per Montserrat", description: "Questa montagna rocciosa dalla forma unica, a 60 km da Barcellona, ospita il monastero benedettino più visitato di Spagna e l'immagine romanica della Vergine di Montserrat.", price: "36€ (treno + cremagliera + funicolare)", tip: "La prima cremagliera parte alle 9:20. L'Escolania de Montserrat (il coro di voci bianche più antico d'Europa, risalente al XIII secolo) canta all'1 di pomeriggio — non perdetelo." },
+            { name: "Sant Joan — l'escursione con le viste", description: "Il sentiero per l'eremo di Sant Joan (una salita di 45 minuti) termina con il miglior panorama sulla montagna e, nelle giornate limpide, sul Mediterraneo a 50 km di distanza.", price: "Gratis (incluso con la funicolare)", tip: "La funicolare di Sant Joan sale fino all'inizio del sentiero. Scendere a piedi per il percorso 5 richiede 2 ore." },
+            { name: "Basilica di Montserrat e la Moreneta", description: "La Vergine di Montserrat, una scultura romanica del XII secolo, presiede la basilica. Le code per toccarla si formano già al mattino — arrivate prima delle 11 per evitare l'attesa.", price: "Gratis (basilica)", tip: "Il mercato sulla piazza del monastero vende i migliori formaggi, salumi e il famoso liquore di Montserrat (El Montserrat), a prezzi da convento." },
+            { name: "Ritorno, e pomeriggio a Gràcia o nell'Eixample", description: "Di ritorno a Barcellona, approfittate dell'ultima luce con una passeggiata nell'Eixample (gli isolati ottagonali di Cerdà) o un vermut a Gràcia.", price: "Vermut 3-5€", tip: "Il vermut catalano si beve prima del pranzo domenicale o al tramonto, con olive e patatas bravas. È un rituale, non solo una bevanda." },
+          ],
+        },
+        {
+          theme: "MNAC, Poble Sec e un commiato mediterraneo",
+          activities: [
+            { name: "MNAC — Museo Nazionale d'Arte della Catalogna", description: "Il palazzo neobizantino costruito per l'Esposizione Universale del 1929 custodisce la collezione più importante al mondo di arte romanica pirenaica, insieme al modernismo catalano.", price: "12€", tip: "Le viste sulla città dalla terrazza del MNAC sono gratuite (non serve pagare il biglietto). Raggiungibile tramite le scale dell'Avinguda de la Reina Maria Cristina." },
+            { name: "Poble Sec — il quartiere che si mangia bene", description: "Ai piedi di Montjuïc, Poble Sec ha la più alta concentrazione di ristoranti creativi per metro quadro di Barcellona, a prezzi di quartiere.", price: "15-25€", tip: "Carrer de Blai è la via dei pintxos di Barcellona — piccole tapas su pane a 1,50€ ciascuna. Perfetto per il pranzo." },
+            { name: "Fundació Joan Miró", description: "Il museo dedicato all'artista più giocoso del XX secolo, in un edificio di Josep Lluís Sert su Montjuïc. Le sculture nel giardino esterno sono visibili dalle terrazze.", price: "14€", tip: "Il mosaico di Miró su Las Ramblas (incastonato nel terreno all'incrocio con Carrer del Carme) è gratuito e vale la foto." },
+            { name: "Bunkers del Carmel — la vista definitiva di Barcellona", description: "Le rovine dei bunker della guerra civile sul Turó de la Rovira offrono la vista a 360° più spettacolare su Barcellona, con ogni monumento riconoscibile.", price: "Gratis", tip: "I locali vengono al tramonto con birre e un picnic. È l'attività più locale della città — nessuna tariffa, nessuna guida, nessun gruppo turistico organizzato." },
+          ],
+        },
+      ],
+    },
   },
 
   tokio: {
