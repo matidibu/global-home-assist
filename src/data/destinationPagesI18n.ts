@@ -99,6 +99,109 @@ export const destinationPagesI18n: Partial<Record<string, Record<DestLang, Desti
       ],
     },
   },
+  miami: {
+    en: {
+      city: "Miami",
+      country: "United States",
+      heroTitle: "3 days in Miami: South Beach, Wynwood, and Little Havana",
+      heroSubtitle: "Art Deco, street murals, Latin food, and Florida's best beaches — the perfect itinerary for the most authentic Miami.",
+      bestMonths: "November to April",
+      budget: "$150-250 USD/day",
+      travelTips: [
+        "You need a car or Uber to get around Miami efficiently — public transport is limited outside South Beach",
+        "Miami's sun is intense year-round — SPF 50 sunscreen is a must at the beach",
+        "Tipping at restaurants is 18-20% of the total — expected, and part of servers' wages",
+        "Hurricane season runs from June to November — buy travel insurance if visiting during those months",
+        "Spanish is Miami's real language — in many Little Havana and Wynwood businesses, English is the second language",
+      ],
+      days: [
+        {
+          theme: "South Beach and the Art Deco District",
+          activities: [
+            { name: "Sunrise at South Beach", description: "Florida's most famous beach is especially magical in the early hours, when the red-and-white lounge chairs are empty and the sunrise light hits the Art Deco hotels on Ocean Drive.", price: "Free", tip: "The sun rises over the ocean at Miami Beach (not over open horizon — the city faces the east coast). The reflection on the wet sand makes the best sunrise photo." },
+            { name: "Art Deco Historic District — Ocean Drive", description: "The world's most complete historic Art Deco district, with more than 800 buildings from the 1920s-40s in pastel, chrome, and neon. The stretch of Ocean Drive between 5th and 15th streets is the most photogenic.", price: "Free (walking tour $30)", tip: "The Miami Design Preservation League runs guided walking tours on Saturdays at 10:30am (USD 30) with essential historical context. The Colony Hotel is the most photographed building." },
+            { name: "Lunch at Lincoln Road Mall", description: "Miami Beach's most famous pedestrian street, with restaurants, galleries, and the city's best people-watching. On Sundays there's a market of local designers.", price: "USD 15-30", tip: "News Café on Ocean Drive is open 24 hours and is South Beach's most historic meeting point. For normal prices, walk a block inland from the promenade." },
+            { name: "Brickell and the sunset skyline", description: "Miami's financial district, with the city's newest skyscrapers and Brickell City Centre. The walk along Biscayne Bay at sunset offers the city's best skyline.", price: "Free", tip: "The Pérez Art Museum Miami (PAMM) has bay-facing terraces open to everyone — the best free view of the Miami skyline at sunset." },
+          ],
+        },
+        {
+          theme: "Wynwood, the Design District, and Miami nightlife",
+          activities: [
+            { name: "Wynwood Walls", description: "The world's most famous outdoor urban art museum, founded by Tony Goldman in 2009. More than 80 international artists have painted the neighborhood's warehouses with murals that change every year.", price: "Free (exterior) / USD 12 (Wynwood Walls Museum interior)", tip: "Access to the neighborhood streets is free — the indoor museum actually has less to see than the streets. Walk the blocks from NW 25th to 27th to see the best murals." },
+            { name: "Artisan coffee shop and gallery in Wynwood", description: "Wynwood has Miami's most artistic cafés, set up in old shops with their own murals. Panther Coffee and Wynwood Kitchen & Bar are favorites of the creative scene.", price: "USD 5-15", tip: "Panther Coffee on NW 24th has Miami's best espresso and is in a building with a Shepard Fairey mural. Get there before noon to find a table." },
+            { name: "Design District — luxury and contemporary art", description: "Miami's neighborhood of luxury boutiques and contemporary art galleries. From Gucci to Hermès, from Gagosian to Locust Projects — a mix of consumerism and art that reflects the most exclusive side of Miami.", price: "Free (to enter)", tip: "The Institute of Contemporary Art (ICA Miami) in the Design District has free admission and world-class exhibitions. Open Tuesday through Sunday." },
+            { name: "Nightlife in South Beach", description: "South Beach has the most famous nightlife scene in the US. LIV at the Fontainebleau, E11EVEN, and Story are the best-known clubs. Things get going at 11pm and run until 3-4am.", price: "USD 20-50 (cover charge)", tip: "Arrive before 11pm to skip the line and beat the peak cover charge. The dress code is smart casual for men — no shorts or sneakers allowed in the clubs." },
+          ],
+        },
+        {
+          theme: "Little Havana and Coconut Grove",
+          activities: [
+            { name: "Little Havana — Calle Ocho", description: "Miami's Cuban neighborhood, with the energy, coffee, and music of Havana transplanted to Florida. SW 8th Street (Calle Ocho) is the heart, with its Cuban cafeterías, walk-up coffee windows, and domino games at Máximo Gómez Park.", price: "Free", tip: "Cuban coffee (cafecito) from the walk-up window is drunk standing up in 30 seconds — that's the local custom. Order a cortadito if you want something longer. It only costs 50 cents." },
+            { name: "Viernes Culturales on Calle Ocho", description: "If it's the last Friday of the month, the monthly Viernes Culturales festival fills Calle Ocho with live music, artists, Cuban food vendors, and street art.", price: "Free", tip: "Versailles Restaurant on SW 8th has served Miami's best Cuban sandwich and ropa vieja since 1971 — have lunch here for the ultimate Cuban dining experience." },
+            { name: "Coconut Grove — the bohemian neighborhood", description: "Miami's oldest neighborhood, with houses tucked among tropical trees, the Dinner Key waterfront, and CocoWalk's restaurants and shops. The Vizcaya Museum is the neighborhood's crown jewel.", price: "Free (Vizcaya USD 22)", tip: "Vizcaya, the 1920s Italian-style mansion with gardens over the bay, is Miami's most beautiful under-the-radar spot. The gardens alone are worth the visit." },
+            { name: "Sunset at Key Biscayne", description: "The island-park 15 minutes from downtown via the Rickenbacker Causeway. Bill Baggs Cape Florida State Park has Miami's calmest beach and best sunset.", price: "USD 8 (park admission)", tip: "The 1 km trail to the Cape Florida lighthouse at the end of the island has the most beautiful view of Biscayne Bay, with the Miami skyline in the background." },
+          ],
+        },
+      ],
+    },
+  },
+
+  "buenos-aires": {
+    en: {
+      city: "Buenos Aires",
+      country: "Argentina",
+      heroTitle: "4 days in Buenos Aires: tango, asado, and the most European city in the Americas",
+      heroSubtitle: "San Telmo, La Boca, Palermo, and the world's best asado — the complete itinerary to fall in love with the Argentine capital.",
+      bestMonths: "March to May and September to November",
+      budget: "$50-100 USD/day",
+      travelTips: [
+        "Argentina's exchange rate can vary — check the monetary situation before your trip and look into the legal exchange options available",
+        "Buenos Aires is a night-owl city — dinners start at 9pm and milongas at 11pm. Adjust your schedule or you'll show up to empty restaurants",
+        "Public transport (subway + buses) is efficient and very cheap — load a SUBE card at any kiosk",
+        "Argentine asado is eaten at 1pm (midday) or 9pm — don't expect to eat asado at 7pm like in Europe",
+        "The safe neighborhoods for tourists are Palermo, Recoleta, San Telmo, and Puerto Madero — avoid walking alone at night through unfamiliar neighborhoods",
+      ],
+      days: [
+        {
+          theme: "San Telmo and the historic heart",
+          activities: [
+            { name: "Plaza de Mayo and the Casa Rosada", description: "Buenos Aires's political center, home to the Executive Branch since 1873. The balcony where Evita addressed the people is visible from the square. The Metropolitan Cathedral holds General San Martín's tomb.", price: "Free", tip: "On Thursdays at 3:30pm the Madres de Plaza de Mayo hold their historic march around the central obelisk — a living testament to Argentine history." },
+            { name: "San Telmo neighborhood", description: "Buenos Aires's oldest neighborhood, with cobblestone streets, 19th-century colonial houses, art galleries, and Argentina's most famous antiques market. On Sundays there's a fair running the length of Defensa street.", price: "Free", tip: "The Sunday fair on Defensa street (10am-6pm) is Buenos Aires's best free plan. The antique dealers, street musicians, and spontaneous tango dancers are all part of the show." },
+            { name: "Lunch at the San Telmo Market", description: "The covered market, open since 1897, with aisles of artisan butchers, delis, produce stands, and bars serving everything from empanadas to cocktails. The 19th-century iron-and-glass architecture is impressive.", price: "$15-25 USD", tip: "La Americana's empanadas are Buenos Aires's most classic. The counter at Bar El Federal, across from the market, has the neighborhood's best coffee and pastries." },
+            { name: "Tango show in San Telmo", description: "San Telmo is the birthplace of Porteño tango. Shows at El Viejo Almacén, La Ventana, or the Centro Cultural Borges combine dinner, a professional performance, and the history of tango.", price: "USD 60-100 (dinner + show)", tip: "For authentic tango (not a tourist show), look for neighborhood milongas: Club Almagro, Confitería Ideal, or La Viruta have milongas from USD 10-15." },
+          ],
+        },
+        {
+          theme: "La Boca, Puerto Madero, and the river",
+          activities: [
+            { name: "La Boca and the Caminito", description: "The colorful port neighborhood where corrugated-metal houses are painted in bright colors — a legacy of the 19th-century Genoese immigrants who used leftover paint from the port. Boca Juniors' stadium (La Bombonera) is 200 meters away.", price: "Free", tip: "The Caminito is touristy and prices double there — eat and shop a couple of blocks west for normal prices. Avoid carrying visible valuables." },
+            { name: "La Bombonera — Boca's museum and stadium", description: "Latin America's most famous stadium, home to Boca Juniors. The museum tour includes the locker rooms, the stands, and Maradona memorabilia. The matchday experience at La Bombonera is almost religious.", price: "Tour USD 20 / Match USD 30-80", tip: "A Boca home match is one of the most intense experiences in world sport. Only buy tickets on the official website — resellers are expensive and risky." },
+            { name: "Puerto Madero — the newest neighborhood", description: "Buenos Aires's old port docks, converted into the city's most modern, exclusive neighborhood. Santiago Calatrava's Puente de la Mujer is the architectural landmark.", price: "Free", tip: "The Costanera Sur Ecological Reserve, right next to Puerto Madero, has 360 hectares of nature 5 minutes from downtown — a perfect green escape in the city." },
+            { name: "Asado dinner at a Porteño parrilla", description: "The Argentine parrilla is a culinary institution. Short ribs (asado de tira), flank steak (vacío), chorizo, and sweetbreads are the cuts that set Buenos Aires apart from the rest of the world.", price: "USD 20-40", tip: "Don Julio (Palermo), La Brigada (San Telmo), and El Pobre Luis (Belgrano) are Buenos Aires's three most acclaimed parrillas. Book days ahead." },
+          ],
+        },
+        {
+          theme: "Recoleta and European Buenos Aires",
+          activities: [
+            { name: "Recoleta Cemetery", description: "One of the most famous cemeteries in the world, with 6,400 vaults and 94 monuments of historical interest. Eva Perón's tomb is the main draw among the sculptures and neoclassical architecture.", price: "Free", tip: "The free guided tour (in English and Spanish) departs at 11am on Tuesdays and Thursdays from the entrance. Evita's tomb is on Familia Duarte street — grab a map at the entrance." },
+            { name: "Recoleta Fair and the National Museum of Fine Arts", description: "The crafts fair facing the cemetery has more than 200 local artisans selling jewelry, leather goods, ceramics, and prints. The Museum of Fine Arts (free) holds the region's most important collection of Latin American art.", price: "Free", tip: "The Recoleta fair runs on weekends (10am-7pm). On weekdays, the Álvear gardens are the most elegant spot in Buenos Aires for an outdoor coffee." },
+            { name: "Avenida Alvear and its belle époque palaces", description: "Buenos Aires's most elegant street, with the most sumptuous palaces of the 20th century: the Alvear Palace Hotel, the Palacio Alzaga Unzué, and the mansions of landowning families.", price: "Free", tip: "The Alvear Hotel's lobby is one of the jewels of exclusive Buenos Aires — going in for afternoon tea (USD 25) is an experience worth the price." },
+            { name: "Cocktails in Palermo Soho", description: "Buenos Aires's hippest neighborhood, with craft cocktail bars, chef-driven restaurants, and the city's highest concentration of emerging design. Florería Atlántico and Tres Monos are the most acclaimed bars.", price: "USD 5-12 per cocktail", tip: "Florería Atlántico (one of the world's best bars) is a flower shop upstairs with a speakeasy bar below — knock on the walk-in fridge door." },
+          ],
+        },
+        {
+          theme: "Palermo and the green city",
+          activities: [
+            { name: "Bosques de Palermo and the Rosedal", description: "Buenos Aires's great park, comparable to Central Park, with the Rosedal (a rose garden with 18,000 rose bushes), the Planetarium, and the Japanese Garden. Sundays are Porteño family day in the park.", price: "Free (Japanese Garden $500 ARS)", tip: "Rent a bike in the park to explore the 25 km of bike paths. The choripán carts at the park's north entrance serve the most authentic chori in Buenos Aires." },
+            { name: "Brunch in Palermo Hollywood", description: "The Palermo Hollywood area has Buenos Aires's best brunch scene, with specialty coffee shops, avocado toast, and brunch menus from around the world. Avenida Arcos is the epicenter.", price: "USD 10-20", tip: "Café Martínez has Palermo's best butter medialunas — the most Argentine breakfast there is. Specialty coffee shops like Lattente have the city's best coffee." },
+            { name: "MALBA — Museum of Latin American Art", description: "The continent's most important museum of contemporary Latin American art, with works by Frida Kahlo, Tarsila do Amaral, Xul Solar, and Antonio Berni. The glass-and-steel building is itself a work of art.", price: "USD 7", tip: "Wednesdays have discounted admission and free art-house cinema. The permanent collection (3rd floor) holds the 200 best works of 20th-century Latin American art." },
+            { name: "Villa Crespo Fair and farewell", description: "The emerging-design market of Buenos Aires's young designers, with independent clothing, accessories, art, and the city's best local vibe. Street food at the Mercado de las Pulgas is perfect for your last afternoon.", price: "Free (shopping not included)", tip: "The Mercado de las Pulgas in Colegiales (Dorrego and Alvarez Thomas) is young Porteños' favorite Sunday plan — antiques, design, and live DJs." },
+          ],
+        },
+      ],
+    },
+  },
+
   "rio-de-janeiro": {
     en: {
       city: "Rio de Janeiro",
