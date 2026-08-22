@@ -224,6 +224,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Parigi",
+      country: "Francia",
+      heroTitle: "5 giorni a Parigi: l'itinerario che vorrete rifare",
+      heroSubtitle: "Il Louvre, la Torre Eiffel, Montmartre e i quartieri che conoscono solo i locali — con orari reali e consigli per ogni tappa.",
+      bestMonths: "Da aprile a giugno e da settembre a ottobre",
+      budget: "100-180€/giorno",
+      travelTips: [
+        "Prendete il pass Navigo settimanale se arrivate di lunedì — copre metro, RER e bus per 30€/settimana",
+        "Prenotate Louvre, Torre Eiffel e Versailles almeno 2 settimane prima in alta stagione",
+        "I musei nazionali sono gratuiti la prima domenica di ogni mese — sono anche i più affollati",
+        "Scaricate l'app RATP per i trasporti e una mappa Google Maps offline di Parigi",
+        "I supermercati (Monoprix, Franprix) hanno ottimi affettati e formaggi per un picnic economico",
+      ],
+      days: [
+        {
+          theme: "Il cuore storico: il Louvre e gli Champs-Élysées",
+          activities: [
+            { name: "Il Museo del Louvre", description: "Il museo più visitato al mondo custodisce 380.000 opere, tra cui la Gioconda e la Venere di Milo. Prenotate il biglietto online per evitare la fila, che può arrivare a 2 ore.", price: "22€", tip: "Entrate dalla piramide di vetro. Arrivate alle 9 in punto e andate subito verso la Gioconda prima dell'arrivo dei gruppi organizzati." },
+            { name: "Giardino delle Tuileries", description: "Una classica passeggiata parigina tra il Louvre e Place de la Concorde. Perfetto per pranzare sulle terrazze del giardino con vista su fontane e sculture.", price: "Gratis", tip: "I caffè del giardino sono più cari di quelli dei quartieri circostanti, ma la vista vale la spesa." },
+            { name: "gli Champs-Élysées e l'Arco di Trionfo", description: "Il viale più famoso di Parigi, 1,9 km di negozi di lusso, caffè e teatri. L'Arco di Trionfo offre la migliore vista panoramica gratuita su Parigi dalla sua terrazza.", price: "Terrazza 13€", tip: "Salite sull'Arco al tramonto per vedere i fari delle auto formare due fiumi dorati lungo gli Champs-Élysées." },
+            { name: "Cena nel Marais", description: "Il quartiere più vivace di Parigi, con ristoranti ebraici, libanesi e di cucina francese moderna. Rue des Rosiers è l'epicentro culinario del quartiere.", price: "20-35€ a persona", tip: "L'As du Fallafel in rue des Rosiers serve il miglior falafel di Parigi. Arrivate prima delle 19 per evitare la fila." },
+          ],
+        },
+        {
+          theme: "La Torre Eiffel e il quartiere dei sogni",
+          activities: [
+            { name: "Torre Eiffel — primo turno", description: "Alta 330 metri, è il monumento più visitato al mondo. Il turno del mattino ha attese più brevi e la luce migliore per le foto.", price: "29€ (2° piano) / 46€ (cima)", tip: "Prenotate il biglietto almeno 2 settimane prima. L'ascensore per la cima tende a esaurirsi per primo." },
+            { name: "Trocadéro e viste panoramiche", description: "La spianata del Trocadéro offre la vista frontale più iconica sulla Torre Eiffel. Qui si trovano anche il Palais de Chaillot con la sua architettura e i musei della marina.", price: "Gratis", tip: "La foto classica della Torre Eiffel si scatta dal centro della spianata. Ideale alle 7 — dopo si riempie di venditori." },
+            { name: "Musée d'Orsay", description: "Ospitato in un'ex stazione ferroviaria, custodisce la più importante collezione di arte impressionista al mondo: Monet, Renoir, Van Gogh e Cézanne.", price: "16€", tip: "L'orologio trasparente al 5° piano offre una vista unica sulla Senna e sul Sacré-Cœur. La fila è molto più corta che al Louvre." },
+            { name: "Spettacolo di luci della Torre Eiffel", description: "Ogni ora esatta dal tramonto fino all'1 di notte, la Torre Eiffel scintilla con 20.000 luci per 5 minuti. Il miglior spettacolo gratuito di Parigi.", price: "Gratis", tip: "Guardatelo dal Pont de Bir-Hakeim — la vista con il ponte in primo piano è spettacolare." },
+          ],
+        },
+        {
+          theme: "Montmartre e la Parigi bohémien",
+          activities: [
+            { name: "Basilica del Sacré-Cœur", description: "La basilica in pietra bianca che domina Montmartre e tutta Parigi dalla cima della Butte. La vista sui tetti parigini dai gradini è gratuita e spettacolare.", price: "Gratis (interno)", tip: "Salite per rue Lepic per vedere la vera Montmartre locale, invece della scalinata turistica." },
+            { name: "Place du Tertre", description: "La piazza degli artisti di Montmartre, dove pittori e ritrattisti lavorano all'aperto dal XIX secolo. Potete commissionare un ritratto o semplicemente osservare.", price: "Gratis (ritratti 20-50€)", tip: "Gli artisti iniziano ad arrivare verso le 10. Quelli ai bordi della piazza tendono a essere più autentici di quelli al centro." },
+            { name: "Pranzo ad Abbesses", description: "Il cuore locale di Montmartre, lontano dal circuito turistico. Rue Lepic ha panetterie, gastronomie e ristoranti di quartiere a prezzi ragionevoli.", price: "12-18€", tip: "Provate un croissant au beurre da La Maison Rose in rue Lepic — la panetteria che appare in 'Amélie'." },
+            { name: "Canal Saint-Martin", description: "Il canale parigino dove i locali trascorrono i pomeriggi di sole. Caffè con terrazza, librerie indipendenti e la scena hipster più autentica di Parigi.", price: "Gratis", tip: "La domenica il canale chiude al traffico e i parigini lo invadono con i picnic — un'esperienza tanto locale quanto si può ottenere." },
+          ],
+        },
+        {
+          theme: "Saint-Germain e la Rive Gauche",
+          activities: [
+            { name: "il Quartiere Latino e la Sorbona", description: "Il quartiere universitario più antico d'Europa, con librerie centenarie come Shakespeare and Company, il mercato di rue Mouffetard e i caffè un tempo frequentati da Sartre e Beauvoir.", price: "Gratis", tip: "Shakespeare and Company (di fronte a Notre-Dame) organizza letture gratuite di autori. Controllate il programma prima di andare." },
+            { name: "Cattedrale di Notre-Dame (esterno)", description: "Ancora in ricostruzione dopo l'incendio del 2019, la cattedrale ha riaperto parzialmente nel 2024. La facciata restaurata e gli archi rampanti gotici tornano a impressionare.", price: "Gratis", tip: "L'interno completo riapre gradualmente. Controllate il sito ufficiale prima del viaggio per sapere quali aree sono accessibili." },
+            { name: "Giardino del Lussemburgo", description: "Il parco preferito dai parigini, con laghetti, statue e il Palazzo del Lussemburgo. Perfetto per riposare tra una visita e l'altra e osservare la vita locale.", price: "Gratis", tip: "Noleggiate una barchetta a vela giocattolo da far navigare nel grande laghetto centrale — una tradizione parigina dal 1900." },
+            { name: "Centre Pompidou", description: "Il museo di arte moderna e contemporanea più visitato d'Europa, in un edificio di tubi colorati che è esso stesso un'opera d'arte.", price: "15€", tip: "La terrazza sul tetto (livello 6) offre una vista mozzafiato a 360° su Parigi — ed è inclusa nel biglietto d'ingresso." },
+          ],
+        },
+        {
+          theme: "Versailles: la giornata che vale il viaggio",
+          activities: [
+            { name: "Reggia di Versailles", description: "Il palazzo più grande del mondo, con 700 stanze, costruito da Luigi XIV. La Galleria degli Specchi è il punto più impressionante della visita.", price: "21€ (reggia) / 27€ (reggia + giardini nei giorni delle fontane)", tip: "Prenotate il biglietto online e prendete il primo treno da Paris-Montparnasse alle 8:30. La fila senza prenotazione supera le 2 ore." },
+            { name: "Giardini di Versailles", description: "I giardini geometrici più famosi al mondo, progettati da André Le Nôtre, su 800 ettari di fontane, aiuole e boschetti.", price: "Incluso con la reggia", tip: "Il sabato e la domenica da aprile a ottobre si svolge lo spettacolo delle Grandi Fontane Musicali — uno spettacolo unico. Il prezzo varia." },
+            { name: "Il Trianon — le residenze private della corte", description: "Il Petit Trianon era il rifugio personale di Maria Antonietta. L'Hameau de la Reine è il villaggio rustico che fece costruire per sfuggire al protocollo di corte.", price: "Incluso con il biglietto Reggia + Tenuta", tip: "Noleggiate una bici o un golf cart elettrico nei giardini — ci sono 2 km tra la reggia e il Trianon." },
+            { name: "Ultima sera a Parigi", description: "Di ritorno a Parigi, cenate in un bistrot di quartiere e, se il tempo lo permette, fate una passeggiata notturna lungo le rive della Senna, patrimonio mondiale dell'UNESCO.", price: "25-45€", tip: "Chiedete al vostro hotel un consiglio su un bistrot a 3 isolati di distanza — sempre meglio di quelli sul circuito turistico." },
+          ],
+        },
+      ],
+    },
   },
   viena: {
     en: {
@@ -354,6 +416,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Mittagessen im Prater", description: "Das ehemalige kaiserliche Jagdgebiet, heute Wiens größter Park, mit dem berühmten Riesenrad (der Riesenrad von 1897) und traditionellen Würstelständen.", price: "3-8€ (Würstel)", tip: "Käsekrainer (eine Wurst mit geschmolzenem Käse im Inneren), mit Senf und Roggenbrot vom Würstelstand, ist Wiens authentischster Snack. Die Wiener essen ihn stehend, zu jeder Tageszeit." },
             { name: "Riesenrad — das historische Riesenrad von 1897", description: "Das 65 Meter hohe Riesenrad des Wiener Praters, erbaut 1897 und ein Symbol Wiens. Die Gondel dreht sich 20 Minuten lang, mit Panoramablick über den Prater und die Stadt.", price: "13€", tip: "Das Riesenrad bietet von seinem höchsten Punkt (65m) einen der besten Ausblicke auf Wien. Gondeln können für private Abendessen gebucht werden (300€) — Wiens romantischstes Date." },
             { name: "Klassisches Musikkonzert in Wien", description: "Wien ist die Welthauptstadt der klassischen Musik. Die Staatsoper, der Musikverein (der weltweit angesehenste Konzertsaal) und das Konzerthaus veranstalten täglich Konzerte von Mozart, Strauss, Brahms und Beethoven.", price: "15-200€ (je nach Veranstaltungsort und Kategorie)", tip: "Stehplätze in der Staatsoper kosten 4€ und werden 80 Minuten vor der Vorstellung verkauft — Wiens bester kultureller Gegenwert. Kommen Sie um 17:30 Uhr." },
+          ],
+        },
+      ],
+    },
+    it: {
+      city: "Vienna",
+      country: "Austria",
+      heroTitle: "3 giorni a Vienna: palazzi imperiali, caffè viennese e Mozart",
+      heroSubtitle: "Il Palazzo di Schönbrunn, il Kunsthistorisches Museum e il Prater — la capitale degli Asburgo in tre giorni di cultura imperiale e caffè con strudel.",
+      bestMonths: "Da aprile a giugno e da settembre a ottobre",
+      budget: "100-170€/giorno",
+      travelTips: [
+        "La Vienna City Card (17€/24h, 25€/48h, 29€/72h) include i trasporti pubblici illimitati (metro, tram, bus)",
+        "I caffè viennesi sono Patrimonio Culturale Immateriale dell'UNESCO — si può restare ore su un solo caffè senza che nessuno vi affretti",
+        "I posti in piedi (Stehplätze) all'Opera di Stato (4€) sono il miglior investimento culturale di Vienna — stessi artisti, 50 volte più economico",
+        "L'acqua del rubinetto a Vienna arriva direttamente dalle Alpi — è tra le più pure al mondo, non serve comprare acqua in bottiglia",
+        "I musei di Vienna costano 18-25€, ma la Vienna City Card offre sconti in molti di essi — verificate sempre se è disponibile una tariffa ridotta",
+      ],
+      days: [
+        {
+          theme: "L'Innere Stadt — il cuore asburgico",
+          activities: [
+            { name: "Duomo di Santo Stefano (Stephansdom)", description: "Simbolo di Vienna, costruito nel XII secolo in stile tardo-gotico. Il suo tetto di 266.000 tegole in ceramica multicolore è unico in Europa. Dalla torre nord (ascensore) la vista sull'Innere Stadt è impressionante.", price: "Gratis (torre nord 6€)", tip: "La cripta imperiale sotto la cattedrale (6€) custodisce le viscere degli Asburgo in 54 urne — gli intestini a Stephansdom, i cuori all'Augustinerkirche, i corpi alla Kaisergruft." },
+            { name: "Hofburg — il palazzo imperiale", description: "Il palazzo degli Asburgo nel centro di Vienna, con 2.600 stanze, la cripta imperiale, gli appartamenti imperiali e il Tesoro imperiale, dove sono custoditi la corona asburgica e il Sacro Graal.", price: "17€ (Appartamenti + Museo Sissi)", tip: "Il Museo Sissi, dedicato all'imperatrice Sissi, è la sezione più visitata della Hofburg. Il Tesoro imperiale (16€ a parte) custodisce la Lancia del Destino e i gioielli dell'incoronazione del Sacro Romano Impero." },
+            { name: "Café Central — il più famoso di Vienna", description: "Aperto nel 1876, il Café Central fu il luogo d'incontro di Freud, Trotsky, Hitler (in epoche diverse) e di tutta l'intellighenzia viennese. Le volte in marmo e la statua di cera dello scrittore Peter Altenberg all'ingresso sono storiche.", price: "8-15€ (caffè e strudel)", tip: "Un Melange (caffè con latte montato) e uno strudel di mele caldo con panna è l'ordinazione più viennese. Arrivate all'apertura (9) per trovare un tavolo — è sempre pieno." },
+            { name: "Ringstrasse e i grandi musei", description: "Il grande viale ad anello del XIX secolo voluto dall'imperatore Francesco Giuseppe I, fiancheggiato dagli edifici più importanti di Vienna: l'Opera di Stato, il Kunsthistorisches Museum, il Parlamento, il Municipio e il Burgtheater.", price: "Gratis (a piedi)", tip: "Un giro in tram lungo tutta la Ringstrasse (linee 1 e 2) costa solo il biglietto normale (2,40€) e funge da tour guidato di 40 minuti tra i più bei edifici di Vienna." },
+          ],
+        },
+        {
+          theme: "Schönbrunn e il Belvedere",
+          activities: [
+            { name: "Palazzo di Schönbrunn", description: "Il palazzo estivo degli Asburgo, l'attrazione più visitata d'Austria, con 1.441 stanze. Il Grand Tour (40 stanze) include la Sala degli Specchi, dove il giovane Mozart suonò per Maria Teresa. Il giardino, con la Gloriette in cima, è impressionante.", price: "25€ (Grand Tour + giardini)", tip: "Arrivate all'apertura (8:30) per evitare le code. La Gloriette in cima al giardino ha il miglior caffè con vista su Schönbrunn e Vienna — 15 minuti di camminata per salire." },
+            { name: "Pranzo con Wiener Schnitzel", description: "La Wiener Schnitzel è il piatto nazionale austriaco — vitello impanato e fritto nel burro, servito con insalata di patate e fette di limone. I ristoranti intorno al Naschmarkt sono i migliori.", price: "14-22€", tip: "La vera Schnitzel si fa con il vitello (Wiener Art) — la versione al maiale è più economica ma diversa. Figlmüller, tra Wollzeile e Bäckerstrasse, serve la versione più famosa di Vienna dal 1905." },
+            { name: "Naschmarkt — il mercato più viennese", description: "Il più grande mercato all'aperto di Vienna, con 120 bancarelle di formaggi austriaci, pesce, spezie persiane, sottaceti ebraici e il miglior Tafelspitz (manzo bollito viennese) della città.", price: "Gratis", tip: "Il mercatino dell'usato del Naschmarkt il sabato (fino alle 18) offre antiquariato, abiti vintage e quadri — l'atmosfera più bohémien di Vienna." },
+            { name: "Belvedere — Il Bacio di Klimt", description: "Il palazzo barocco del Principe Eugenio di Savoia custodisce la più grande collezione al mondo delle opere di Gustav Klimt, tra cui Il Bacio (1907-08), il dipinto più prezioso d'Austria.", price: "18€", tip: "Il Bacio è appeso nella prima sala del primo piano — impressionante per la vera foglia d'oro incastonata nella tela. Sappiate esattamente cosa volete vedere prima di arrivare, per non perdervi tra le 200 stanze." },
+          ],
+        },
+        {
+          theme: "Musei, un concerto e il Prater",
+          activities: [
+            { name: "Kunsthistorisches Museum", description: "Il museo di storia dell'arte più importante d'Austria, con una delle collezioni di pittura fiamminga più ricche al mondo: Vermeer, Rembrandt, Bruegel, Tiziano e Velázquez, in un palazzo imperiale sulla Ringstrasse.", price: "21€", tip: "La grande sala del museo, con la sua cupola di marmo e i dipinti di Canova e Klimt nei padiglioni laterali, è uno degli interni più belli d'Europa. La sala di Bruegel (30 opere del Vecchio) è unica al mondo." },
+            { name: "Pranzo al Prater", description: "L'ex terreno di caccia imperiale diventato il più grande parco di Vienna, con la celebre Riesenrad (la ruota panoramica del 1897) e i tradizionali Würstelstand (chioschi di salsicce viennesi).", price: "3-8€ (würstel)", tip: "Il Käsekrainer (una salsiccia con formaggio fuso all'interno), con senape e pane di segale del Würstelstand, è lo spuntino più autentico di Vienna. I viennesi lo mangiano in piedi, a qualsiasi ora del giorno." },
+            { name: "Riesenrad — la storica ruota panoramica del 1897", description: "La ruota panoramica di 65 metri del Prater viennese, costruita nel 1897 e simbolo di Vienna. La cabina ruota per 20 minuti, con viste panoramiche sul Prater e sulla città.", price: "13€", tip: "La Riesenrad offre una delle migliori viste su Vienna dal suo punto più alto (65m). Le cabine possono essere prenotate per cene private (300€) — l'appuntamento più romantico di Vienna." },
+            { name: "Concerto di musica classica a Vienna", description: "Vienna è la capitale mondiale della musica classica. L'Opera di Stato, il Musikverein (la sala da concerto più venerata al mondo) e il Konzerthaus ospitano concerti quotidiani di Mozart, Strauss, Brahms e Beethoven.", price: "15-200€ (a seconda della sede e della categoria)", tip: "I posti in piedi all'Opera di Stato costano 4€ e vanno in vendita 80 minuti prima dello spettacolo — il miglior rapporto qualità-prezzo culturale di Vienna. Arrivate alle 17:30." },
           ],
         },
       ],
@@ -489,6 +595,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Machu Picchu — die Zitadelle", description: "Die Inka-Zitadelle aus dem 15. Jahrhundert in den Wolken, erbaut auf 2.430 Metern Höhe zwischen den Gipfeln Huayna Picchu und Cerro Machu Picchu. Eines der 7 Weltwunder der Neuzeit.", price: "S/200 (Basiseintritt)", tip: "Die Online-Buchung Monate im Voraus ist UNERLÄSSLICH — die täglichen Plätze sind begrenzt. Circuit 1 (der klassische) umfasst das Sonnentor und die meisten Höhepunkte." },
             { name: "Besteigung des Huayna Picchu oder des Machu-Picchu-Berges", description: "Der Huayna Picchu (der Gipfel hinter der Zitadelle) führt über in den Fels gehauene Inka-Stufen weitere 360 Meter hinauf. Der Machu-Picchu-Berg (einfacher) bietet den berühmten Luftblick auf die Zitadelle.", price: "S/80 (Aufpreis)", tip: "Der Huayna Picchu hat nur 400 tägliche Plätze und ist Monate im Voraus ausgebucht — buchen Sie ihn zusammen mit Ihrem Eintrittsticket. Der Aufstieg ist steil, mit unebenen Stufen." },
             { name: "Rückkehr nach Cusco", description: "Der Rückzug von Aguas Calientes nach Ollantaytambo oder Cusco schließt die Runde um das Heilige Tal. Der Nachmittagszug bietet die besten Blicke auf den hohen Dschungel, beleuchtet von der Abendsonne.", price: "Im Hin- und Rückfahrtticket enthalten", tip: "Wenn Ihr Budget knapp ist, ist der Bus von Aguas Calientes nach Ollantaytambo (S/30, 4h) eine Alternative zum Zug. Der Bus folgt der Straße am Fluss entlang, mit Blick auf die Gletscher." },
+          ],
+        },
+      ],
+    },
+    it: {
+      city: "Cusco",
+      country: "Perù",
+      heroTitle: "3 giorni a Cusco: l'ombelico del mondo inca",
+      heroSubtitle: "Sacsayhuamán, la Valle Sacra, Machu Picchu e la migliore cucina andina — Cusco è la porta d'ingresso dell'Impero Inca e una delle destinazioni più emozionanti al mondo.",
+      bestMonths: "Da maggio a settembre (stagione secca)",
+      budget: "50-90 USD/giorno",
+      travelTips: [
+        "L'altitudine di Cusco (3.400m) richiede acclimatamento — arrivate 2 giorni prima di Machu Picchu e andateci piano il primo giorno",
+        "Il tè di coca è il rimedio andino contro il soroche (mal di montagna) — gli hotel lo offrono gratis ed è legale in Perù",
+        "Prenotate Machu Picchu e il treno mesi prima in alta stagione — i posti si esauriscono in fretta",
+        "Il biglietto turistico generale di Cusco (S/130) copre Sacsayhuamán e diversi siti archeologici — compratelo il primo giorno",
+        "Il clima di Cusco è secco e soleggiato nella stagione secca (maggio-settembre) ma freddo di notte (5-10°C) — portate una giacca",
+      ],
+      days: [
+        {
+          theme: "Acclimatamento, la piazza e i templi inca",
+          activities: [
+            { name: "Plaza de Armas, Cusco — arrivo e acclimatamento", description: "La piazza centrale di Cusco, costruita sull'antica Huacaypata inca (la piazza delle lacrime), circondata dalla cattedrale del XVI secolo e dalla chiesa della Compañía de Jesús. La muratura inca visibile sotto gli edifici coloniali è affascinante.", price: "Gratis", tip: "Il vostro primo giorno a Cusco (3.400m) dovrebbe essere tranquillo — acclimatatevi bevendo molta acqua e tè di coca (disponibile in ogni caffè e hotel). Evitate alcol ed esercizio fisico il primo giorno." },
+            { name: "Qorikancha — il Tempio del Sole", description: "Il tempio più sacro dell'Impero Inca, dedicato al dio sole Inti, le cui pareti in pietra perfettamente tagliate sono ricoperte dal Convento di Santo Domingo. Le mura inca sono costruite con maggiore precisione della costruzione coloniale sopra di esse.", price: "S/15", tip: "Le pietre inca del Qorikancha si incastrano senza malta, con tolleranze inferiori a 0,5mm — gli ingegneri moderni ancora non sanno esattamente come sia stato fatto. La nicchia d'oro che un tempo conteneva l'immagine del Sole era visibile da tutta Cusco." },
+            { name: "Pranzo di cuy e chicha a San Blas", description: "Il quartiere artigiano di Cusco, con la chiesa più piccola delle Americhe e il cuy (porcellino d'India arrosto) come piatto più rappresentativo della cucina andina. La chicha de jora (birra di mais viola) è la bevanda più antica delle Ande.", price: "S/25-60", tip: "Il cuy viene servito intero, arrostito, con patate andine e insalata. Per i meno avventurosi, il lomo saltado con patate native e alpaca alla griglia sono deliziosi e accessibili." },
+            { name: "Sacsayhuamán — la fortezza inca", description: "La fortezza cerimoniale inca che domina Cusco, con blocchi di calcare fino a 125 tonnellate, incastrati a zigzag senza malta. La vista su Cusco dalle mura, e il paesaggio andino circostante, è mozzafiato.", price: "S/130 (biglietto turistico generale)", tip: "Il biglietto turistico generale (S/130) copre Sacsayhuamán, Qenqo, Puca Pucara e Tambomachay — quattro siti archeologici intorno a Cusco. Conviene se li visitate tutti lo stesso giorno." },
+          ],
+        },
+        {
+          theme: "La Valle Sacra degli Inca",
+          activities: [
+            { name: "Mercato di Pisac", description: "Il mercato più famoso della Valle Sacra, con artigianato tessile delle comunità quechua, ceramiche, gioielli in argento e prodotti andini. Il paese di Pisac ospita le più grandi rovine inca dopo Machu Picchu.", price: "Gratis", tip: "Il mercato artigianale si rivolge ai turisti (con contrattazione), ma il mercato locale della domenica (7-13) è per i locali — vi si vendono patate native, mais gigante ed erbe medicinali andine." },
+            { name: "Rovine di Pisac", description: "Il complesso archeologico inca sopra il paese di Pisac, con terrazze agricole a spirale che coprono l'intera montagna, l'Intihuatana (meridiana) e tombe scavate nella roccia viva.", price: "Incluso nel biglietto turistico", tip: "Il sentiero verso le rovine si può percorrere a piedi (45 minuti di salita) o in taxi dal paese (S/10). La salita a piedi attraversa terrazze attive dove si vedono famiglie quechua al lavoro." },
+            { name: "Pranzo a Urubamba — il cuore della Valle", description: "Il paese di Urubamba, al centro della Valle Sacra, offre la migliore gastronomia della Valle. Chicha morada, zuppa di pollo andina, chuño phuti e i migliori anticuchos di cuore del Perù.", price: "S/20-40", tip: "Il ristorante Kuychi Rumi a Urubamba ha la miglior vista sulla Valle e serve cucina andina tradizionale. Il buffet di mezzogiorno (S/45) include più di 12 piatti diversi." },
+            { name: "Ollantaytambo — il villaggio inca vivente", description: "L'unico villaggio dell'America Latina dove le persone vivono ancora in case inca originali del XV secolo. La fortezza-tempio di Ollantaytambo e le sue terrazze a gradoni rivolte verso il fiume formano uno dei siti inca meglio conservati.", price: "S/70 (ingresso al sito archeologico)", tip: "Ollantaytambo è la stazione ferroviaria per Machu Picchu (Aguas Calientes). Se partite per Machu Picchu il giorno dopo, pernottate qui — l'atmosfera notturna del villaggio inca è magica." },
+          ],
+        },
+        {
+          theme: "Machu Picchu — la meraviglia del mondo",
+          activities: [
+            { name: "Treno per Aguas Calientes (Machu Picchu Pueblo)", description: "Il viaggio in treno da Ollantaytambo (o Cusco) ad Aguas Calientes attraversa la Valle Sacra ed entra nell'alta giungla amazzonica. Il paesaggio cambia drasticamente dalle aride Ande alla giungla tropicale.", price: "S/120-200 (andata e ritorno)", tip: "Prenotate il treno Inca Rail o Peru Rail mesi prima in alta stagione (giugno-agosto). I posti sul lato destro (direzione Ollantaytambo → Aguas Calientes) offrono viste migliori sul fiume." },
+            { name: "Machu Picchu — la cittadella", description: "La cittadella inca del XV secolo tra le nuvole, costruita a 2.430 metri sul livello del mare tra le vette di Huayna Picchu e Cerro Machu Picchu. Una delle 7 Meraviglie del Mondo Moderno.", price: "S/200 (ingresso base)", tip: "Prenotare online mesi prima è ESSENZIALE — i posti giornalieri sono limitati. Il circuito 1 (il classico) include la Porta del Sole e la maggior parte dei punti salienti." },
+            { name: "Scalata a Huayna Picchu o alla Montagna Machu Picchu", description: "Huayna Picchu (la vetta dietro la cittadella) sale altri 360 metri tramite gradini inca scavati nella roccia. La Montagna Machu Picchu (più facile) offre la famosa vista aerea della cittadella.", price: "S/80 (extra)", tip: "Huayna Picchu ha solo 400 posti giornalieri e si esaurisce mesi prima — prenotatelo insieme al biglietto d'ingresso. La salita è ripida, con gradini irregolari." },
+            { name: "Ritorno a Cusco", description: "Il treno di ritorno da Aguas Calientes a Ollantaytambo o Cusco chiude il giro intorno alla Valle Sacra. Il treno del pomeriggio offre le migliori viste sull'alta giungla illuminata dal sole della sera.", price: "Incluso nel biglietto del treno andata e ritorno", tip: "Se il vostro budget è limitato, il bus da Aguas Calientes a Ollantaytambo (S/30, 4h) è un'alternativa al treno. Il bus segue la strada lungo il fiume, con vista sui ghiacciai." },
           ],
         },
       ],
