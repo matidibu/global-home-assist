@@ -1566,6 +1566,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Firenze",
+      country: "Italia",
+      heroTitle: "3 giorni a Firenze: il Rinascimento nella sua forma più pura",
+      heroSubtitle: "Gli Uffizi, il David di Michelangelo, Piazzale Michelangelo e la migliore bistecca d'Italia — Firenze in tre giorni essenziali.",
+      bestMonths: "Da aprile a giugno e da settembre a ottobre",
+      budget: "90-150€/giorno",
+      travelTips: [
+        "Prenotate gli Uffizi, la Galleria dell'Accademia e il Duomo settimane prima — le code senza prenotazione sono terribili in alta stagione",
+        "Firenze si gira perfettamente a piedi — il centro storico è largo solo 2 km",
+        "L'aperitivo toscano (18-21) nei bar dell'Oltrarno include una bevanda + un buffet gratuito di antipasti",
+        "Le farmacie storiche (Farmacia di Santa Maria Novella, fondata nel 1221) vendono i profumi e le creme più esclusive d'Italia",
+        "I musei statali sono gratuiti la prima domenica di ogni mese — ma sono anche affollatissimi; meglio andare in settimana",
+      ],
+      days: [
+        {
+          theme: "Il Duomo e il cuore storico",
+          activities: [
+            { name: "Cattedrale di Santa Maria del Fiore (il Duomo)", description: "La cupola del Brunelleschi (1436) fu la più grande al mondo per secoli e resta il simbolo di Firenze. Salire i 463 gradini della cupola offre la miglior vista sui tetti di terracotta della città.", price: "18€ (biglietto completo: cattedrale + cupola + battistero + campanile)", tip: "Prenotate l'accesso alla cupola online — i posti sono molto limitati. Le prime ore del giorno hanno la luce più bella per le viste dall'alto." },
+            { name: "Battistero di San Giovanni", description: "L'edificio religioso più antico di Firenze (XI-XII secolo), con le Porte del Paradiso in bronzo dorato di Lorenzo Ghiberti, che Michelangelo chiamò proprio così. Le 10 scene dell'Antico Testamento sono rilievi magistrali.", price: "Incluso nel biglietto del Duomo", tip: "I rilievi originali delle porte si trovano al Museo dell'Opera del Duomo (incluso nel biglietto) — quelli all'esterno sono repliche. Il museo merita la visita." },
+            { name: "Pranzo al Mercato Centrale", description: "Il Mercato Centrale di Firenze, nel suo edificio in ferro del XIX secolo, ha la più alta concentrazione di prodotti toscani della città: tartufo, pecorino, salumi di cinghiale e il famoso lampredotto (trippa fiorentina).", price: "8-15€", tip: "Il lampredotto (il quarto stomaco della mucca) in un panino con salsa verde è lo street food più autentico di Firenze. I nervi di bue per i più avventurosi." },
+            { name: "Palazzo Vecchio e Piazza della Signoria", description: "Il cuore civico di Firenze dal XIV secolo, con la Loggia dei Lanzi (una galleria di sculture all'aperto gratuita) e il Palazzo Vecchio con il Salone dei Cinquecento dipinto dal Vasari.", price: "Palazzo 12,50€ / Loggia gratuita", tip: "La Loggia dei Lanzi ospita sculture di livello mondiale (il Ratto delle Sabine del Giambologna) completamente all'aperto e gratuite — vedetela prima di entrare nel Palazzo." },
+          ],
+        },
+        {
+          theme: "Gli Uffizi e il David di Michelangelo",
+          activities: [
+            { name: "Galleria degli Uffizi", description: "Il museo d'arte rinascimentale più importante al mondo, con opere di Botticelli (La Nascita di Venere, Primavera), Leonardo, Michelangelo, Raffaello e Tiziano. Più di 100 sale nel palazzo dei Medici.", price: "25€ (+ 4€ di prenotazione anticipata)", tip: "Prenotate il biglietto online settimane prima in alta stagione — le code senza prenotazione superano le 3 ore. La Nascita di Venere di Botticelli si trova nella Sala 10 — è più piccola di quanto si immagini." },
+            { name: "Ponte Vecchio e l'Oltrarno", description: "Il ponte più famoso di Firenze, costruito nel 1345, fiancheggiato da gioiellerie su entrambi i lati dal XVI secolo. Il Corridoio Vasariano (il passaggio segreto dei Medici sopra il ponte) è visibile dalla riva.", price: "Gratis", tip: "Le gioiellerie sul Ponte Vecchio sono turistiche ma i prezzi sono competitivi — l'oro fiorentino ha qualità garantita. La miglior angolazione del ponte è dal Ponte Santa Trinità." },
+            { name: "Galleria dell'Accademia — il David", description: "Il museo che custodisce il David di Michelangelo (1504), la scultura più famosa al mondo. La figura in marmo bianco di 5,17 metri, nella sala circolare del museo, è un'esperienza che nessuna foto può trasmettere.", price: "16€ (+ 4€ di prenotazione)", tip: "Prenotare online è ESSENZIALE. Il David mostra segni di scalpello visibili — osservate il dettaglio dei tendini del collo, le vene delle mani e l'espressione concentrata." },
+            { name: "Bistecca alla Fiorentina alla Buca dell'Orafo", description: "La bistecca alla fiorentina è il piatto più famoso della Toscana — una costata di manzo Chianina tagliata spessa, almeno 1 kg, cotta al sangue (sempre al sangue, mai ben cotta). Si ordina a peso.", price: "40-60€ a persona", tip: "La bistecca si paga a 100g (3-5€). Una porzione intera per due persone pesa 1,2-1,5 kg. Ordinatela 'al sangue' o 'al punto' — mai 'ben cotta'." },
+          ],
+        },
+        {
+          theme: "Oltrarno, Piazzale e i Giardini di Boboli",
+          activities: [
+            { name: "Giardini di Boboli", description: "I giardini di Palazzo Pitti, residenza dei Medici, con fontane, statue, una grotta barocca e viste su Firenze e gli uliveti toscani. 45.000 m² di giardini rinascimentali a terrazze.", price: "10€ (include Palazzo Pitti)", tip: "La Grotta Grande del Buontalenti (con sculture di Michelangelo incastonate in pareti artificiali di stalattiti) è il luogo più strano e affascinante di Firenze." },
+            { name: "Il quartiere dell'Oltrarno e i suoi artigiani", description: "Il quartiere a sud dell'Arno, meno turistico e più autentico, con botteghe di restauratori d'arte, ebanisti, rilegatori e gioiellieri artigiani che lavorano ancora con tecniche rinascimentali.", price: "Gratis", tip: "Stefano Bemer in via San Niccolò realizza le scarpe su misura più famose di Firenze. Profumerie artigianali come Lorenzo Villoresi creano fragranze uniche dal 1990." },
+            { name: "Pranzo di pasta al tartufo nell'Oltrarno", description: "I ristoranti dell'Oltrarno hanno le migliori pappardelle al cinghiale e tagliolini al tartufo di Firenze, a prezzi molto più ragionevoli rispetto al centro.", price: "14-22€", tip: "Buca Mario (1886, il ristorante più antico di Firenze) e Buca dell'Orafo garantiscono autenticità. Nell'Oltrarno, i ristoranti senza menu in inglese sono i migliori." },
+            { name: "Piazzale Michelangelo al tramonto", description: "La terrazza sopra Firenze con la vista più classica della città: il Duomo, il Palazzo Vecchio, l'Arno e i ponti visti dalla collina. L'ora dorata prima del tramonto è il momento migliore.", price: "Gratis", tip: "Salite dal Piazzale fino alla Chiesa di San Miniato al Monte — 10 minuti più su, con viste ancora migliori e molta meno gente rispetto al Piazzale." },
+          ],
+        },
+      ],
+    },
   },
 
   lima: {
