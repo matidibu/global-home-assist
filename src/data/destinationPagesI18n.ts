@@ -2927,6 +2927,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Marrakech",
+      country: "Marocco",
+      heroTitle: "3 giorni a Marrakech: la città rossa che risveglia ogni senso",
+      heroSubtitle: "La piazza Jemaa el-Fna, i souk labirintici, il Giardino Majorelle e i riad da sogno — l'itinerario essenziale per un primo viaggio in Marocco.",
+      bestMonths: "Da marzo a maggio e da ottobre a novembre",
+      budget: "50-100 USD/giorno",
+      travelTips: [
+        "Assumete una guida ufficiale per i souk (100-150 MAD/ora) — vi eviterà di perdervi e di essere indirizzati verso negozi a commissione",
+        "Il dirham marocco non si può cambiare fuori dal Marocco — portate un po' di contanti per iniziare e cambiate il resto in aeroporto o negli uffici di cambio del centro",
+        "Vestitevi in modo modesto nella medina — spalle e ginocchia coperte è la norma per uomini e donne, e vi eviterà attenzioni indesiderate",
+        "Le foto alle persone richiedono il permesso — gli artisti e i venditori della piazza si aspettano un pagamento per le foto (10-20 MAD)",
+        "L'acqua del rubinetto non è sicura da bere — bevete sempre acqua in bottiglia ed evitate il ghiaccio nei succhi delle bancarelle di strada",
+      ],
+      days: [
+        {
+          theme: "La medina e il cuore di Marrakech",
+          activities: [
+            { name: "Piazza Jemaa el-Fna al mattino", description: "Il cuore di Marrakech, Patrimonio Mondiale dell'UNESCO. Al mattino è un mercato tranquillo con banchi di succo d'arancia, artisti dell'henné e incantatori di serpenti. La sera si trasforma in uno degli spettacoli più caotici e affascinanti al mondo.", price: "Gratis (servizi non inclusi)", tip: "Il succo d'arancia fresco in piazza costa 4-5 MAD — la colazione più iconica di Marrakech. Non accettate 'tour gratuiti' da sconosciuti che vi si avvicinano." },
+            { name: "I souk della medina", description: "Il labirinto di mercati medievali dove ogni via appartiene a una corporazione specializzata: souk delle spezie, del cuoio, del bronzo, della ceramica, dei tessuti e delle babbucce. Il Souk dei Tintori (conciatori di pelle) è il più fotogenico.", price: "Gratis (acquisti non inclusi)", tip: "Una guida locale (100-150 MAD) vi fa risparmiare ore girando in tondo e vi porta ai veri laboratori. Senza una guida, ogni indicazione che vi viene data vi porterà al negozio di qualche conoscente." },
+            { name: "Pranzo su una terrazza della medina", description: "Le terrazze dei riad sopra la medina servono tajine, kefta e harira con vista sui minareti. Café de France e Le Foundouk hanno le migliori viste sulla piazza.", price: "50-100 MAD", tip: "Il tajine di agnello con prugne e mandorle (msir) è il piatto più rappresentativo di Marrakech. Mangiate dove vedete mangiare i marocchini, non dove vi portano le 'guide'." },
+            { name: "Jemaa el-Fna al tramonto — il grande spettacolo", description: "Dalle 17 in poi, la piazza si trasforma: centinaia di bancarelle di cibo, musicisti gnawa, cantastorie, acrobati e sputafuoco riempiono ogni metro quadrato.", price: "Gratis (cibo 20-40 MAD)", tip: "Le bancarelle di cibo della piazza (numerate 1-150) competono sul prezzo — tutte mostrano un menu visibile. Scegliete quella con più locali e chiedete il prezzo PRIMA di sedervi." },
+          ],
+        },
+        {
+          theme: "Palazzi, il Giardino Majorelle e un hammam",
+          activities: [
+            { name: "Palazzo della Bahia", description: "Il palazzo del XIX secolo del Gran Visir Ba Ahmed, con 150 stanze, cortili di aranci e cedri, soffitti in cedro intagliato e le più belle grate in legno (mashrabiyya) del Marocco.", price: "70 MAD", tip: "Il palazzo è più impressionante di quanto ci si aspetti. La sala di ricevimento del visir ha il soffitto in cedro più elaborato che vedrete mai." },
+            { name: "Tombe Saadiane", description: "I mausolei del XVI secolo dove sono sepolti i sultani della dinastia saadiana, riscoperti nel 1917 dopo secoli di sigillatura. Le camere funerarie, con le loro nicchie in piastrelle e stucco, sono straordinariamente belle.", price: "70 MAD", tip: "Lo spazio è piccolo e i visitatori affluiscono di continuo — arrivate all'apertura per vedere la Sala delle Dodici Colonne senza folla." },
+            { name: "Giardino Majorelle e Museo Berbero", description: "Il giardino creato dal pittore francese Jacques Majorelle nel 1923, salvato da Yves Saint Laurent. Il blu cobalto del padiglione (blu Majorelle), i cactus e la collezione berbera del museo formano un'oasi colorata.", price: "150 MAD (giardino + museo)", tip: "Il giardino è molto affollato dalle 10 alle 16 — arrivate alle 14, quando molti turisti pranzano, per trovare meno gente." },
+            { name: "Hammam tradizionale", description: "Il bagno arabo secolare è parte essenziale della cultura marocchina. Gli hammam di quartiere (10-30 MAD) sono per i locali; quelli turistici offrono trattamenti più elaborati con argilla ghassoul e olio di argan.", price: "Hammam locale 20 MAD / turistico 150-300 MAD", tip: "Hamam Dar el Bacha e l'Hammam de la Mosquée Mouassine sono i più autentici del centro. Portate infradito e il vostro asciugamano se andate in uno di quartiere." },
+          ],
+        },
+        {
+          theme: "Escursione sull'Atlante e ritorno alla medina",
+          activities: [
+            { name: "Escursione alle Cascate di Ouzoud", description: "Le più grandi cascate del Nord Africa, a 150 km da Marrakech, che cadono per 110 metri sulla roccia tufacea. Il tragitto attraverso l'Atlante e i suoi villaggi berberi è interessante quanto la destinazione stessa.", price: "Tour 25-40€ (da Marrakech)", tip: "I tour organizzati di un'intera giornata includono trasporto e pranzo nel villaggio. La primavera (marzo-maggio) ha il flusso d'acqua più alto — spettacolare." },
+            { name: "Pranzo berbero sull'Atlante", description: "I ristoranti nei villaggi berberi dell'Atlante servono tajine di pollo con olive e limone conservato, couscous di verdure e harira, su terrazze con vista sulla montagna.", price: "80-120 MAD", tip: "Il pane berbero khobz, cotto in un forno di argilla, è il miglior accompagnamento per il tajine. I ristoranti sulla strada pieni di clienti locali sono i più autentici." },
+            { name: "Ritorno e pomeriggio di shopping nei souk", description: "Il vostro ultimo pomeriggio è ideale per completare gli acquisti nei souk della medina. Spezie (ras el hanout, harissa), olio di argan, lampade in ottone e tappeti berberi sono i migliori souvenir.", price: "Dipende dagli acquisti", tip: "Il prezzo finale contrattato è di solito il 40-50% del prezzo richiesto. Se il venditore abbassa velocemente il prezzo, potete spingere ancora più in basso. Non iniziate mai a contrattare se non avete intenzione di comprare." },
+            { name: "Ultima sera su una terrazza a Jemaa el-Fna", description: "Il modo perfetto per salutare Marrakech è dalle terrazze del Café de France o del Le Grand Balcon Café Glacier, guardando la piazza illuminarsi e riempirsi di gente al calar della sera.", price: "30-50 MAD (tè alla menta)", tip: "Il tè alla menta marocchino viene versato dall'alto per creare schiuma — è un rituale. Chiedere che venga versato dall'alto è del tutto normale e atteso." },
+          ],
+        },
+      ],
+    },
   },
 
   dubai: {
