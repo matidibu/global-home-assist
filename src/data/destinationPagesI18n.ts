@@ -299,6 +299,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    fr: {
+      city: "Cusco",
+      country: "Pérou",
+      heroTitle: "3 jours à Cusco : le nombril du monde inca",
+      heroSubtitle: "Sacsayhuamán, la Vallée Sacrée, le Machu Picchu et la meilleure cuisine andine — Cusco est la porte d'entrée de l'Empire inca et l'une des destinations les plus fascinantes au monde.",
+      bestMonths: "Mai à septembre (saison sèche)",
+      budget: "50-90 USD/jour",
+      travelTips: [
+        "L'altitude de Cusco (3 400m) exige une acclimatation — arrivez 2 jours avant le Machu Picchu et prenez-la doucement le premier jour",
+        "Le thé de coca est le remède andin contre le soroche (mal des montagnes) — les hôtels en offrent gratuitement et c'est légal au Pérou",
+        "Réservez le Machu Picchu et le train des mois à l'avance en haute saison — les places partent vite",
+        "Le billet touristique général de Cusco (S/130) couvre Sacsayhuamán et plusieurs sites archéologiques — achetez-le le premier jour",
+        "Le climat de Cusco est sec et ensoleillé en saison sèche (mai-septembre) mais froid la nuit (5-10°C) — prévoyez une veste",
+      ],
+      days: [
+        {
+          theme: "Acclimatation, la place et les temples incas",
+          activities: [
+            { name: "Plaza de Armas, Cusco — arrivée et acclimatation", description: "La place centrale de Cusco, construite sur l'ancienne Huacaypata inca (la place des larmes), entourée de la cathédrale du XVIe siècle et de l'église de la Compañía de Jesús. La maçonnerie inca visible sous les bâtiments coloniaux est fascinante.", price: "Gratuit", tip: "Votre premier jour à Cusco (3 400m) doit être tranquille — acclimatez-vous en buvant beaucoup d'eau et du thé de coca (disponible dans chaque café et hôtel). Évitez l'alcool et l'exercice le premier jour." },
+            { name: "Qorikancha — le Temple du Soleil", description: "Le temple le plus sacré de l'Empire inca, dédié au dieu solaire Inti, dont les murs de pierre parfaitement taillés sont recouverts par le couvent de Santo Domingo. Les murs incas sont construits avec plus de précision que la construction coloniale au-dessus.", price: "S/15", tip: "Les pierres incas du Qorikancha s'emboîtent sans mortier, avec des tolérances inférieures à 0,5mm — les ingénieurs modernes ne savent toujours pas exactement comment cela a été fait. La niche dorée qui abritait autrefois l'image du Soleil était visible depuis tout Cusco." },
+            { name: "Déjeuner de cuy et chicha à San Blas", description: "Le quartier artisanal de Cusco, avec la plus petite église des Amériques et le cuy (cochon d'Inde rôti) comme plat le plus représentatif de la cuisine andine. La chicha de jora (bière de maïs violet) est la plus ancienne boisson des Andes.", price: "S/25-60", tip: "Le cuy est servi entier, rôti, avec des pommes de terre andines et de la salade. Pour les moins aventureux, le lomo saltado avec pommes de terre natives et alpaga grillé sont délicieux et accessibles." },
+            { name: "Sacsayhuamán — la forteresse inca", description: "La forteresse cérémonielle inca surplombant Cusco, avec des blocs de calcaire pesant jusqu'à 125 tonnes, assemblés en zigzag sans mortier. La vue sur Cusco depuis les murs, et le paysage andin environnant, est saisissante.", price: "S/130 (billet touristique général)", tip: "Le billet touristique général (S/130) couvre Sacsayhuamán, Qenqo, Puca Pucara et Tambomachay — quatre sites archéologiques autour de Cusco. Rentable si vous les visitez tous le même jour." },
+          ],
+        },
+        {
+          theme: "La Vallée Sacrée des Incas",
+          activities: [
+            { name: "Marché de Pisac", description: "Le marché le plus célèbre de la Vallée Sacrée, avec de l'artisanat textile des communautés quechuas, de la céramique, des bijoux en argent et des produits andins. Le village de Pisac abrite les plus grandes ruines incas après le Machu Picchu.", price: "Gratuit", tip: "Le marché artisanal cible les touristes (avec marchandage), mais le marché local du dimanche (7h-13h) est pour les habitants — on y vend pommes de terre natives, maïs géant et plantes médicinales andines." },
+            { name: "Ruines de Pisac", description: "Le complexe archéologique inca au-dessus du village de Pisac, avec des terrasses agricoles en spirale couvrant toute la montagne, l'Intihuatana (cadran solaire) et des tombes creusées dans la roche vive.", price: "Inclus avec le billet touristique", tip: "Le sentier vers les ruines peut se faire à pied (45 minutes de montée) ou en taxi depuis le village (S/10). La montée à pied traverse des terrasses actives où l'on peut voir des familles quechuas au travail." },
+            { name: "Déjeuner à Urubamba — le cœur de la Vallée", description: "Le village d'Urubamba, au centre de la Vallée Sacrée, offre la meilleure gastronomie de la Vallée. Chicha morada, soupe de poulet andine, chuño phuti et les meilleurs anticuchos de cœur du Pérou.", price: "S/20-40", tip: "Le restaurant Kuychi Rumi à Urubamba a la meilleure vue sur la Vallée et sert une cuisine andine traditionnelle. Le buffet de midi (S/45) propose plus de 12 plats différents." },
+            { name: "Ollantaytambo — le village inca vivant", description: "Le seul village d'Amérique latine où les habitants vivent encore dans des maisons incas originales du XVe siècle. La forteresse-temple d'Ollantaytambo et ses terrasses en gradins face à la rivière forment l'un des sites incas les mieux conservés.", price: "S/70 (entrée du site archéologique)", tip: "Ollantaytambo est la gare pour le Machu Picchu (Aguas Calientes). Si vous partez au Machu Picchu le lendemain, passez la nuit ici — l'ambiance nocturne du village inca est magique." },
+          ],
+        },
+        {
+          theme: "Machu Picchu — la merveille du monde",
+          activities: [
+            { name: "Train vers Aguas Calientes (Machu Picchu Pueblo)", description: "Le trajet en train depuis Ollantaytambo (ou Cusco) jusqu'à Aguas Calientes traverse la Vallée Sacrée et entre dans la jungle amazonienne haute. Le paysage passe radicalement des Andes arides à la jungle tropicale.", price: "S/120-200 (aller-retour)", tip: "Réservez le train Inca Rail ou Peru Rail des mois à l'avance en haute saison (juin-août). Les sièges côté droit (direction Ollantaytambo → Aguas Calientes) offrent une meilleure vue sur la rivière." },
+            { name: "Machu Picchu — la citadelle", description: "La citadelle inca du XVe siècle nichée dans les nuages, construite à 2 430 mètres d'altitude entre les sommets du Huayna Picchu et du Cerro Machu Picchu. L'une des 7 merveilles du monde moderne.", price: "S/200 (entrée de base)", tip: "Réserver en ligne des mois à l'avance est ESSENTIEL — les places quotidiennes sont limitées. Le circuit 1 (le classique) inclut la Porte du Soleil et l'essentiel des points forts." },
+            { name: "Ascension du Huayna Picchu ou de la montagne Machu Picchu", description: "Le Huayna Picchu (le pic derrière la citadelle) permet de grimper 360 mètres supplémentaires par des marches incas taillées dans la roche. La montagne Machu Picchu (plus facile) offre la fameuse vue aérienne de la citadelle.", price: "S/80 (supplément)", tip: "Le Huayna Picchu n'a que 400 places quotidiennes et se réserve des mois à l'avance — réservez-le en même temps que votre billet d'entrée. La montée est raide, avec des marches irrégulières." },
+            { name: "Retour à Cusco", description: "Le train retour d'Aguas Calientes vers Ollantaytambo ou Cusco boucle la boucle autour de la Vallée Sacrée. Le train de l'après-midi offre les meilleures vues sur la jungle haute éclairée par le soleil du soir.", price: "Inclus avec le billet de train aller-retour", tip: "Si votre budget est serré, le bus d'Aguas Calientes à Ollantaytambo (S/30, 4h) est une alternative au train. Le bus suit la route qui longe la rivière, avec vue sur les glaciers." },
+          ],
+        },
+      ],
+    },
   },
 
   medellin: {
@@ -346,6 +390,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    fr: {
+      city: "Medellín",
+      country: "Colombie",
+      heroTitle: "3 jours à Medellín : la ville du printemps éternel",
+      heroSubtitle: "El Poblado, le Metrocable, les fleurs d'Envigado et l'histoire de transformation la plus incroyable d'Amérique latine — Medellín est aujourd'hui la ville la plus innovante de Colombie.",
+      bestMonths: "Décembre à mars et juillet à août",
+      budget: "40-70 USD/jour",
+      travelTips: [
+        "Le métro de Medellín (MET), avec son système de téléphérique, est le meilleur transport public de Colombie — achetez la carte Cívica pour l'utiliser",
+        "Medellín reste autour de 25°C toute l'année (la ville du printemps éternel) — vêtements légers toujours, peut-être un gilet pour le soir",
+        "Le café colombien de Medellín est parmi les meilleurs au monde — demandez toujours un café d'origine unique fraîchement moulu, jamais instantané",
+        "Les taxis via application (InDriver, Uber) sont plus sûrs que les taxis de rue — utilisez-les toujours la nuit",
+        "La Colombie est une puissance de biodiversité — le Jardin botanique, le Parque Arví et la réserve d'El Romeral donnent accès à une nature tropicale saisissante",
+      ],
+      days: [
+        {
+          theme: "Le centre historique et la Plaza Botero",
+          activities: [
+            { name: "Plaza Botero et le Museo de Antioquia", description: "La place avec 23 sculptures originales de Fernando Botero, l'artiste colombien le plus célèbre au monde — toutes données par lui à sa ville natale. Le Museo de Antioquia adjacent abrite la plus grande collection d'œuvres de Botero au monde.", price: "Gratuit (place) / 20 000 COP (musée)", tip: "Les sculptures sont faites pour être touchées et photographiées — Botero les a conçues pour que les gens interagissent avec elles. 'Hombre a Caballo' (Homme à cheval) est la plus emblématique pour les photos." },
+            { name: "Parque de las Luces et le centre-ville de Medellín", description: "Le parc aux 300 colonnes lumineuses au cœur du centre historique, qui crée un spectacle visuel unique la nuit. La Biblioteca España, sur la colline au-dessus du quartier Santo Domingo, est visible d'ici.", price: "Gratuit", tip: "Le centre-ville de Medellín est bien plus sûr qu'il y a 20 ans — promenez-vous normalement dans les zones touristiques pendant la journée. Les vendeurs de fruits tropicaux dans la rue ont les meilleures mangues et grenadilles." },
+            { name: "Déjeuner de bandeja paisa", description: "La bandeja paisa est le plat le plus représentatif d'Antioquia : riz, haricots, couenne de porc, chorizo, œuf frit, avocat, banane plantain douce et sauce hogao, le tout sur un même plateau. Impossible de la finir seul.", price: "18 000-30 000 COP", tip: "Le restaurant El Rancherito au centre-ville propose la bandeja paisa la plus authentique. La mazamorra (dessert au maïs et au lait) qui suit est incontournable." },
+            { name: "Quartier El Poblado — parcs et cafés", description: "Le quartier le plus moderne et sûr de Medellín, avec le Parque El Poblado, la Calle del Lleras (le cœur de la vie nocturne) et la plus haute concentration de cafés, restaurants et boutiques de la ville.", price: "Gratuit", tip: "Le café colombien à El Poblado coûte 2 000-5 000 COP et est de qualité supérieure — Medellín est à 1 400m d'altitude, et les plantations de café sont à seulement 30 minutes en voiture." },
+          ],
+        },
+        {
+          theme: "Le Metrocable et les quartiers de flanc de colline",
+          activities: [
+            { name: "Metrocable Ligne K — Santo Domingo", description: "Le système de téléphérique aérien reliant le métro aux quartiers des flancs de la vallée de l'Aburrá. La ligne K monte jusqu'au quartier Santo Domingo et offre la meilleure vue sur Medellín et la vallée depuis les cabines.", price: "3 200 COP (avec la carte Cívica du métro)", tip: "Achetez la carte Cívica au métro pour utiliser le téléphérique. Le meilleur angle pour les photos de la vallée est à la station Andalucía (avant-dernière avant le sommet)." },
+            { name: "Parque Arví — la forêt au-dessus de Medellín", description: "Le parc écologique de 1 763 hectares au-dessus des montagnes de Medellín, accessible via le Metrocable ligne L depuis Santo Domingo. Sentiers, papillons, marché d'artisanat indigène et la plus belle vue sur la vallée de l'Aburrá.", price: "5 000 COP (téléphérique Arví)", tip: "Le marché d'artisanat indigène à l'intérieur du Parque Arví le week-end propose des produits des communautés natives d'Antioquia — artisanat, miel et plantes médicinales." },
+            { name: "Tour du passé dans le quartier La Candelaria", description: "Une visite à travers les quartiers qui documentent la transformation de Medellín : du Barrio Pablo Escobar aux ensembles résidentiels qui ont remplacé les favelas. Les guides locaux offrent la perspective la plus honnête.", price: "30 000-60 000 COP (visite guidée)", tip: "Réservez uniquement des guides locaux certifiés — ceux qui ont vécu la transformation donnent un contexte humain que les circuits internationaux ne peuvent pas donner. Les visites gratuites à pied partent du Parque de Bolívar." },
+            { name: "Dîner à Laureles — le quartier le plus authentique", description: "Le quartier résidentiel de la classe moyenne professionnelle de Medellín, avec la meilleure concentration de restaurants locaux, bars à vin et la vie nocturne la plus authentique de la ville.", price: "25 000-60 000 COP", tip: "L'Avenida Laureles propose le meilleur sancocho de poulet de Medellín. Pour un dîner gastronomique, El Cielo (chef Juan Manuel Barrientos) propose la cuisine colombienne la plus avant-gardiste." },
+          ],
+        },
+        {
+          theme: "La Feria de las Flores et le Jardin botanique",
+          activities: [
+            { name: "Jardin botanique de Medellín", description: "Le jardin botanique le plus riche en biodiversité de Colombie, avec 4 500 plantes tropicales, l'Orquideórama (la structure en bois la plus photographiée de Medellín) et un lac abritant les plus grands nénuphars des Amériques.", price: "Gratuit", tip: "L'Orquideórama est une œuvre d'architecture paramétrique récompensée par le RIBA. Les orchidées en fleurs (la Colombie compte 4 000 espèces) sont impressionnantes toute l'année." },
+            { name: "Quartier Manila et le street art de Medellín", description: "Medellín possède la deuxième scène d'art urbain la plus importante de Colombie après Bogotá. Les quartiers Manila et Laureles ont les meilleures fresques, d'artistes comme Guache et Crisp.", price: "Gratuit", tip: "La visite gratuite (pourboire) de graffitis Medellín Urban Street Art part du Parque El Poblado. La zone de la Calle 70 à Laureles a les fresques les plus récentes." },
+            { name: "Mercado del Río", description: "Le marché gastronomique le plus populaire de Medellín, avec plus de 60 étals de cuisine colombienne et internationale, cocktails de fruits tropicaux et l'ambiance de déjeuner la plus festive de la ville.", price: "15 000-40 000 COP", tip: "Les jus de lulo, fruit de la passion, tomate d'arbre et corossol au Mercado del Río coûtent 3 000-5 000 COP et sont les meilleurs de Medellín. La tequila au chamoy n'est pas colombienne — commandez plutôt de l'aguardiente." },
+            { name: "Coucher de soleil depuis le Cerro de las Tres Cruces", description: "Les trois croix au sommet de la colline au-dessus du quartier Boston, avec la meilleure vue panoramique sur toute la vallée de l'Aburrá : Medellín d'un bout à l'autre, le métro en contrebas dans la plaine et les montagnes environnantes.", price: "Gratuit", tip: "La montée de la colline (45 min à pied) est sûre pendant la journée quand il y a du monde. Le dimanche il y a plus de monde et une ambiance plus animée. Depuis le sommet, on voit clairement le téléphérique de Santo Domingo." },
+          ],
+        },
+      ],
+    },
   },
 
   singapur: {
@@ -389,6 +477,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Sentosa Island and Universal Studios", description: "Singapore's entertainment island, with Universal Studios, Siloso Beach, and a panoramic cable car. The Transformers, Harry Potter, and Jurassic Park rides at Universal are the best in Asia.", price: "SGD 88 (Universal Studios)", tip: "Universal Studios' Express Pass (SGD 40 extra) skips the lines for the main rides — worth it if the park is crowded. The cable car (SGD 35) from Mount Faber has the best views of the strait." },
             { name: "Haw Par Villa — the park of the ten hells", description: "Asia's strangest theme park, created in 1937, with 1,000 statues depicting Chinese mythology and the 10 courts of hell. A one-of-a-kind surreal experience.", price: "Free", tip: "Haw Par Villa is one of Singapore's most singular spots and virtually unknown to tourists — a hidden gem among the commercial theme parks." },
             { name: "Final dinner at Newton Circus Hawker Centre", description: "Singapore's most famous nighttime hawker centre (the one from Crazy Rich Asians), with mud crabs, fried orchids, BBQ seafood, and laksa under the tropical stars.", price: "SGD 15-40", tip: "Chilli crab (SGD 50-80 per serving) is Singapore's national dish — order it from the stall with the longest line. Man Tou (fried buns) for dipping in the sauce is mandatory." },
+          ],
+        },
+      ],
+    },
+    fr: {
+      city: "Singapour",
+      country: "Singapour",
+      heroTitle: "3 jours à Singapour : le futur du XXIe siècle",
+      heroSubtitle: "Gardens by the Bay, Chinatown, Marina Bay Sands et la street food des hawker centres — Singapour en trois jours parfaitement organisés.",
+      bestMonths: "Février à avril",
+      budget: "150-250 SGD/jour (~110-185 USD)",
+      travelTips: [
+        "Singapour dispose de l'un des systèmes de transport public les plus efficaces au monde — la carte EZ-Link couvre le métro (MRT), les bus et le LRT",
+        "La nourriture des hawker centres (4-8 SGD) est de la même qualité que les restaurants de luxe — c'est le grand égalisateur culinaire de Singapour",
+        "Le climat est tropical toute l'année (30°C, 80% d'humidité) — vêtements légers et crème solaire toujours",
+        "Singapour a des lois très strictes : interdiction de fumer dans les lieux publics, interdiction de manger dans le métro et interdiction du chewing-gum",
+        "Singapour est chère pour l'hébergement (150-300 SGD/nuit) mais bon marché pour la nourriture et les transports",
+      ],
+      days: [
+        {
+          theme: "Marina Bay et le Singapour futuriste",
+          activities: [
+            { name: "Gardens by the Bay", description: "Le complexe de jardins futuristes le plus spectaculaire au monde, avec les Supertrees (structures en acier de 25 à 50 mètres) et ses deux dômes géodésiques : Cloud Forest (une forêt tropicale de 35m de haut) et Flower Dome.", price: "28 SGD (Cloud Forest + Flower Dome)", tip: "Le Supertree Grove offre le meilleur coucher de soleil et un spectacle lumineux gratuit à 19h45 et 20h45. Grimper sur la passerelle entre les Supertrees (10 SGD) offre des vues sur Marina Bay." },
+            { name: "Marina Bay Sands Skypark", description: "L'hôtel le plus emblématique de Singapour, avec une piscine à débordement au 57e étage (réservée aux clients) et la terrasse SkyPark offrant les meilleures vues de Singapour. Le spectacle gratuit de lumière et d'eau Spectra a lieu devant l'hôtel.", price: "32 SGD (plateforme d'observation)", tip: "La plateforme d'observation du SkyPark est ouverte au public (32 SGD). La vue sur la skyline, Gardens by the Bay et le détroit de Singapour depuis 200 mètres de haut est incomparable." },
+            { name: "ArtScience Museum", description: "Le musée en forme de fleur de lotus flottant sur les eaux de Marina Bay, avec des expositions d'art numérique, de science et de technologie. L'exposition permanente Future World (art numérique de teamLab) est l'une des plus impressionnantes au monde.", price: "21 SGD", tip: "Future World de teamLab propose l'installation 'Forest of Life', où les lumières réagissent au mouvement — l'une des expériences visuelles les plus uniques d'Asie." },
+            { name: "Spectra — spectacle de lumière et d'eau", description: "Le spectacle gratuit à Marina Bay Waterfront devant The Shoppes, avec des jets d'eau de 30 mètres et des projections laser synchronisées à la musique. L'un des meilleurs spectacles nocturnes gratuits au monde.", price: "Gratuit", tip: "Le meilleur emplacement est sur le pont Helix ou le long du front de mer face à l'ArtScience Museum. Le spectacle de 20h45 les vendredis et samedis est le plus long." },
+          ],
+        },
+        {
+          theme: "Chinatown, Little India et les hawker centres",
+          activities: [
+            { name: "Chinatown Heritage Centre", description: "Le Chinatown de Singapour, avec le Bouddha de Jade au temple Sri Mariamman, des boutiques de thé chinoises ancestrales et le célèbre Maxwell Food Centre. Les rues Pagoda, Trengganu et Sago ont les maisons de boutique les plus colorées.", price: "Gratuit (Heritage Centre 12 SGD)", tip: "Le temple Thian Hock Keng (1840) est le plus ancien temple hokkien de Singapour — la décoration du toit en dragon de porcelaine est extraordinaire. Entrée gratuite." },
+            { name: "Maxwell Food Centre — le hawker centre le plus célèbre", description: "Le centre de street food le plus historique de Singapour, avec plus de 100 étals sous un même toit. Le riz au poulet de Tian Tian, le rojak de fruits et le laksa sont les plats les plus recherchés.", price: "4-8 SGD par plat", tip: "L'étal de riz au poulet hainanais Tian Tian (le préféré d'Anthony Bourdain) a une file d'attente dès 10h30 — arrivez avant midi pour manger. Il coûte 5-6 SGD." },
+            { name: "Little India — Serangoon Road", description: "Le quartier indien de Singapour, avec le temple Sri Veeramakaliamman (l'un des plus élaborés d'Asie), des boutiques d'épices, des étals de fleurs et le Tekka Market, qui abrite la meilleure cuisine indienne de la ville.", price: "Gratuit", tip: "Le biryani de l'étal Allauddin's au Tekka Market (6 SGD) est le meilleur de Singapour. Le quartier est particulièrement coloré le dimanche, quand les travailleurs migrants célèbrent leur jour de congé." },
+            { name: "Clarke Quay et la rivière Singapour au coucher du soleil", description: "L'ancien quai de la rivière Singapour, aujourd'hui un quartier de bars et restaurants dans des maisons coloniales restaurées. L'heure dorée illumine les façades colorées avec la rivière au premier plan.", price: "Gratuit", tip: "Les bateaux de croisière fluviale partent de Clarke Quay toutes les 30 minutes (25 SGD) et passent devant les sites les plus historiques de la ville. La croisière nocturne est la plus belle." },
+          ],
+        },
+        {
+          theme: "Sentosa, le zoo et la nature de Singapour",
+          activities: [
+            { name: "Singapore Zoo — le meilleur au monde", description: "Constamment classé parmi les meilleurs zoos au monde, avec des habitats en concept ouvert pour les animaux. Les girafes, les orangs-outans de Bornéo en semi-liberté et les crocodiles de rivière sont les plus fascinants.", price: "49 SGD", tip: "Jungle Breakfast with Wildlife (33 SGD supplémentaires) propose un petit-déjeuner aux côtés des orangs-outans à 9h — une expérience unique. Réservez des semaines à l'avance." },
+            { name: "Île de Sentosa et Universal Studios", description: "L'île des loisirs de Singapour, avec Universal Studios, la plage de Siloso et un téléphérique panoramique. Les attractions Transformers, Harry Potter et Jurassic Park d'Universal sont les meilleures d'Asie.", price: "88 SGD (Universal Studios)", tip: "L'Express Pass d'Universal Studios (40 SGD supplémentaires) évite les files pour les principales attractions — rentable si le parc est bondé. Le téléphérique (35 SGD) depuis Mount Faber offre les meilleures vues sur le détroit." },
+            { name: "Haw Par Villa — le parc des dix enfers", description: "Le parc à thème le plus étrange d'Asie, créé en 1937, avec 1 000 statues dépeignant la mythologie chinoise et les 10 tribunaux de l'enfer. Une expérience surréaliste unique en son genre.", price: "Gratuit", tip: "Haw Par Villa est l'un des lieux les plus singuliers de Singapour et pratiquement inconnu des touristes — un joyau caché parmi les parcs à thème commerciaux." },
+            { name: "Dernier dîner au Newton Circus Hawker Centre", description: "Le hawker centre nocturne le plus célèbre de Singapour (celui de Crazy Rich Asians), avec des crabes de boue, des orchidées frites, des fruits de mer grillés et du laksa sous les étoiles tropicales.", price: "15-40 SGD", tip: "Le crabe au chili (50-80 SGD la portion) est le plat national de Singapour — commandez-le à l'étal avec la plus longue file. Le Man Tou (petits pains frits) pour tremper dans la sauce est obligatoire." },
           ],
         },
       ],
@@ -449,6 +581,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    fr: {
+      city: "Mexico",
+      country: "Mexique",
+      heroTitle: "4 jours à Mexico : tacos, pyramides et culture préhispanique",
+      heroSubtitle: "Teotihuacán, Xochimilco, La Condesa et les meilleurs tacos au monde — l'itinéraire pour découvrir la métropole la plus fascinante d'Amérique latine.",
+      bestMonths: "Octobre à mai (saison sèche)",
+      budget: "40-80 USD/jour",
+      travelTips: [
+        "Le métro de Mexico est le moins cher au monde (5 MXN) et dessert presque partout — apprenez les lignes principales avant d'arriver",
+        "Mexico est à 2 240m d'altitude — les premiers jours vous pouvez ressentir de la fatigue ou un souffle court, prenez-le doucement",
+        "Les tacos de rue sont sûrs et délicieux — cherchez les stands avec le plus de clients locaux",
+        "Uber et Cabify sont les options de transport les plus sûres pour les touristes, surtout la nuit",
+        "La saison des pluies (juin-octobre) apporte de brèves averses l'après-midi — ayez toujours un parapluie ou un poncho",
+      ],
+      days: [
+        {
+          theme: "Le Zócalo et le centre historique",
+          activities: [
+            { name: "Zócalo et la cathédrale métropolitaine", description: "La plus grande place d'Amérique latine, entourée du Palais national, de la cathédrale métropolitaine (la plus grande des Amériques) et de l'ancien hôtel de ville. Diego Rivera a peint les fresques du Palais national représentant l'histoire du Mexique.", price: "Gratuit (Palais national gratuit)", tip: "Les fresques de Diego Rivera au Palais national sont au premier étage près de l'escalier principal — entrée gratuite sur présentation d'une pièce d'identité. La scène du marché de Tlatelolco est la plus impressionnante." },
+            { name: "Templo Mayor — les ruines aztèques sous la ville", description: "Le centre cérémoniel de Tenochtitlán, la capitale aztèque, découvert en 1978 sous le centre historique de Mexico. Le musée adjacent abrite la Pierre du Soleil (le mal nommé 'calendrier aztèque') et le Teocalli de la Guerre Sacrée.", price: "85 MXN", tip: "Le Templo Mayor montre 7 couches de construction superposées — les Aztèques construisaient un nouveau temple par-dessus le précédent tous les 52 ans. Le monolithe de Tlaltecuhtli (des tonnes de pierre sculptée) est la découverte la plus récente." },
+            { name: "Tacos au Mercado de la Merced", description: "Le plus grand marché du centre historique, avec plus de 3 000 étals de nourriture, des tacos de canasta, des tamales, de l'atole et la plus grande variété de piments frais du Mexique.", price: "20-40 MXN par taco", tip: "Les tacos de canasta (haricots, couenne et pomme de terre, livrés à vélo dans un panier en palme) sont le petit-déjeuner le plus authentique du centre-ville. Le taco placero aux nopales et fromage frais est parfait pour les végétariens." },
+            { name: "Bellas Artes et l'Alameda", description: "Le Palacio de Bellas Artes, symbole du Mexique moderne avec sa coupole en marbre, abrite des fresques de Diego Rivera, José Clemente Orozco et David Alfaro Siqueiros. Le parc Alameda Central est le plus ancien des Amériques (1592).", price: "80 MXN (galerie)", tip: "Le plafond en verre de la salle principale du Bellas Artes, avec son rideau en verre Tiffany représentant le volcan Popocatépetl, ne se voit que lors d'un spectacle ou d'une visite guidée. Les fresques des étages supérieurs sont librement accessibles." },
+          ],
+        },
+        {
+          theme: "Teotihuacán — la cité des dieux",
+          activities: [
+            { name: "Pyramides de Teotihuacán — tôt le matin", description: "La plus grande cité préhispanique de Méso-amérique, à 50 km de Mexico, avec la Pyramide du Soleil (la troisième plus grande au monde), la Pyramide de la Lune et l'Avenue des Morts de 2 km.", price: "100 MXN", tip: "Prenez le premier bus (6h30) depuis le Terminal del Norte. Arriver avant 8h, avant les groupes touristiques organisés, vous donne les pyramides presque pour vous seul." },
+            { name: "Ascension de la Pyramide du Soleil", description: "Les 248 marches de la Pyramide du Soleil mènent au sommet, à 70 mètres de haut, avec des vues à 360° sur la vallée de Teotihuacán et toute la cité cérémonielle. C'est l'expérience la plus impressionnante de l'archéologie mexicaine.", price: "Inclus", tip: "Montez des deux côtés pour profiter des vues complètes. Les marches sont raides et l'altitude est de 2 300m — allez-y doucement et emportez de l'eau." },
+            { name: "Déjeuner avec vue sur les pyramides", description: "Les restaurants face aux pyramides servent des tlayudas oaxaquéniennes, des enchiladas et du pulque (boisson d'agave fermentée). Le restaurant La Gruta, à l'intérieur d'une grotte naturelle datant du IIe siècle avant J.-C., est le plus impressionnant.", price: "120-200 MXN", tip: "La Gruta (à l'intérieur de la grotte) se trouve juste à la sortie du site archéologique. Appelez à l'avance pour réserver pour le midi — c'est un lieu emblématique qui vaut le prix." },
+            { name: "Retour, et dîner de mole à La Condesa", description: "La Condesa est le quartier le plus cosmopolite et gastronomique de Mexico, avec des restaurants mexicains haut de gamme comme Quintonil et Pujol (5e au monde), et des cafés le long des allées arborées de l'Avenida Ámsterdam.", price: "100-300 MXN", tip: "Le mole noir oaxaquénien et le mole poblano sont les deux sauces les plus complexes de la cuisine mexicaine (avec plus de 30 ingrédients). Les meilleurs se trouvent chez Azul y Oro, à Roma." },
+          ],
+        },
+        {
+          theme: "Xochimilco et le sud de la ville",
+          activities: [
+            { name: "Xochimilco — les canaux préhispaniques", description: "Les dernières chinampas (îles artificielles flottantes) de la civilisation aztèque, classées au patrimoine mondial de l'UNESCO. Des trajineras colorées naviguent sur les canaux avec des mariachis, des vendeurs de nourriture et l'ambiance la plus festive de Mexico.", price: "400-600 MXN (2h de trajinera)", tip: "Louez une trajinera entière entre amis (6-8 personnes) plutôt que de partager. Les mariachis qui s'approchent dans leur propre bateau facturent 200-300 MXN par chanson." },
+            { name: "Coyoacán — le quartier de Frida Kahlo", description: "Le plus beau quartier colonial du Mexique, avec son marché artisanal, sa place à thème coyote et la Casa Azul (musée Frida Kahlo). Diego Rivera et Frida Kahlo y ont vécu, et le quartier conserve encore leur esprit artistique.", price: "Gratuit (Casa Azul 250 MXN)", tip: "Réservez la Casa Azul (musée Frida Kahlo) en ligne à l'avance — seulement 80 personnes par heure. La glacerie de Coyoacán (face à l'église) propose des saveurs incroyables." },
+            { name: "Casa Azul — Musée Frida Kahlo", description: "La maison où Frida Kahlo est née et est morte, conservée telle qu'elle l'a laissée, avec ses robes tehuana, ses tableaux et le fauteuil roulant depuis lequel elle travaillait dans ses dernières années. Le jardin avec ses pyramides aztèques est saisissant.", price: "250 MXN", tip: "La nature morte dans la cuisine bleue, avec des crânes décorés et des pots en terre cuite, en dit plus sur le caractère de Frida que ses tableaux. L'atelier dans le jardin conserve son chevalet original." },
+            { name: "Mezcal et tacos gastronomiques à Roma Norte", description: "Roma Norte est le quartier le plus tendance de Mexico, avec des bars à mezcal artisanal (d'Oaxaca, Guerrero et Michoacán), des tacos gastronomiques et la scène culinaire la plus avant-gardiste du Mexique.", price: "80-200 MXN", tip: "Bósforo Mezcalería et Hanky Panky proposent les meilleurs mezcals artisanaux du Mexique. Commandez toujours le mezcal sec, à température ambiante — jamais avec des glaçons." },
+          ],
+        },
+        {
+          theme: "Chapultepec et le meilleur musée du Mexique",
+          activities: [
+            { name: "Musée national d'Anthropologie", description: "Le meilleur musée d'Amérique latine et l'un des plus fins au monde, avec la Pierre du Soleil aztèque, le masque funéraire en jade de Pakal de Palenque et la salle maya avec la recréation de la fresque de Bonampak. Ses 24 salles couvrent toutes les civilisations du Mexique.", price: "85 MXN", tip: "La salle mexica (aztèque), avec la Pierre du Soleil et la Coatlicue, est la plus saisissante. Deux heures suffisent pour les salles principales — voir tout le musée prend plus de 5 heures." },
+            { name: "Bois de Chapultepec", description: "Le plus grand parc urbain d'Amérique latine (686 hectares), avec le château de Chapultepec, un lac artificiel et le zoo, seul endroit des Amériques abritant un panda géant. Le parc est le poumon vert et social de Mexico.", price: "Gratuit (Zoo gratuit, Château 90 MXN)", tip: "Le château de Chapultepec (jadis résidence de Maximilien de Habsbourg et de Porfirio Díaz) abrite les plus belles fresques d'O'Gorman sur l'histoire mexicaine et des vues sur le Paseo de la Reforma." },
+            { name: "Paseo de la Reforma et l'Ange", description: "La grande avenue de Mexico, conçue en 1864 par Maximilien, inspirée des Champs-Élysées. L'Ange de l'Indépendance, la fontaine Diana Cazadora et la Torre Mayor forment la skyline la plus reconnaissable de Mexico.", price: "Gratuit", tip: "Le dimanche, le Paseo de la Reforma se ferme aux voitures et se remplit de cyclistes, de patineurs et de vendeurs de rue — l'ambiance la plus festive et familiale de la ville." },
+            { name: "Dernier dîner à Polanco — haute cuisine mexicaine", description: "Polanco abrite les restaurants les plus primés du Mexique : Pujol (top 10 mondial), Quintonil, Máximo Bistrot. Si votre budget est serré, les tacos de suadero du stand de Cuauhtémoc sont tout aussi mémorables.", price: "300-1 500 MXN", tip: "Pujol et Quintonil exigent une réservation des mois à l'avance. Pour une expérience culinaire accessible, le Mercado Roma dans la Colonia Roma propose 70 étals de cuisine mexicaine gastronomique à partir de 80 MXN." },
+          ],
+        },
+      ],
+    },
   },
 
   estambul: {
@@ -505,6 +690,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    fr: {
+      city: "Istanbul",
+      country: "Turquie",
+      heroTitle: "4 jours à Istanbul : où l'Europe rencontre l'Asie",
+      heroSubtitle: "Sainte-Sophie, le Grand Bazar, le Bosphore et les quartiers les plus authentiques — la ville la plus fascinante au monde en quatre jours complets.",
+      bestMonths: "Avril à juin et septembre à novembre",
+      budget: "60-120 USD/jour",
+      travelTips: [
+        "La livre turque a beaucoup fluctué — apportez des dollars ou des euros et changez dans les bureaux de change du centre-ville (döviz bürosu), jamais à l'aéroport",
+        "L'İstanbulkart (carte de transport) couvre le métro, le tramway, le ferry et le bus — rechargez-la avec 100 TL pour 2-3 jours",
+        "Une tenue modeste est obligatoire dans les mosquées — ayez toujours un foulard sur vous et portez quelque chose couvrant épaules et genoux",
+        "Le thé turc (çay) est servi gratuitement ou à très bas prix dans presque tous les commerces — c'est une coutume d'hospitalité, pas une arnaque",
+        "Istanbul compte 15 millions d'habitants — la circulation est intense. Utilisez le métro, le tramway T1 et les ferries pour vous déplacer rapidement",
+      ],
+      days: [
+        {
+          theme: "Sultanahmet — le cœur historique de deux empires",
+          activities: [
+            { name: "Sainte-Sophie", description: "Le joyau architectural d'Istanbul, construit en 537 après J.-C. comme la plus grande église du monde chrétien, converti ensuite en mosquée ottomane et aujourd'hui à nouveau mosquée. Le dôme de 55 mètres flottant au-dessus des mosaïques byzantines et de la calligraphie arabe est incomparable.", price: "Gratuit (accès libre en tant que mosquée en activité)", tip: "Sainte-Sophie a rouvert en tant que mosquée active en 2020 — entrez pieds nus et habillé modestement (épaules et genoux couverts). Les premières heures du matin ont moins de visiteurs." },
+            { name: "Mosquée bleue (Sultanahmet Camii)", description: "La seule mosquée d'Istanbul à six minarets, célèbre pour ses 20 000 carreaux de céramique bleue d'Iznik couvrant son intérieur. La place entre la Mosquée bleue et Sainte-Sophie est l'espace le plus photogénique d'Istanbul.", price: "Gratuit", tip: "La Mosquée bleue ferme aux visiteurs pendant les cinq prières quotidiennes (15-30 min à chaque fois). Vérifiez les horaires affichés à la porte avant d'attendre." },
+            { name: "Palais de Topkapi", description: "Le siège de l'Empire ottoman pendant 400 ans, abritant le trésor des sultans (le diamant Kaşıkçı de 86 carats), le harem impérial et les reliques sacrées de l'Islam. Vues directes sur le Bosphore et la mer de Marmara.", price: "400 TL (palais) + 200 TL (harem)", tip: "Le harem de Topkapi nécessite un billet séparé mais en vaut vraiment la peine — c'est la section la plus fascinante du palais. Le Trésor impérial du Pavillon 3 abrite le plus grand diamant de Turquie." },
+            { name: "Citerne basilique — le palais souterrain", description: "La citerne romaine du VIe siècle, avec 336 colonnes en marbre reflétées dans l'eau calme. Les colonnes aux têtes de Méduse à l'envers et l'éclairage mystique en font l'un des lieux les plus uniques au monde.", price: "200 TL", tip: "La citerne reste fraîche même en été — un refuge contre la chaleur d'Istanbul. La colonne des Larmes (aux motifs en spirale) est la plus recherchée." },
+          ],
+        },
+        {
+          theme: "Le Grand Bazar, le Bazar aux épices et le quartier égyptien",
+          activities: [
+            { name: "Grand Bazar", description: "Le plus grand et le plus ancien bazar couvert au monde, avec 61 rues, 4 000 boutiques et 250 000 visiteurs quotidiens. Tapis, lampes en verre, céramiques, bijoux en argent et cuir turc dans un labyrinthe du XVe siècle.", price: "Gratuit (pour entrer)", tip: "Le marchandage est obligatoire — commencez par proposer 40-50% du prix demandé. Les boutiques plus profondes (pas sur la rue principale) offrent un meilleur rapport qualité-prix." },
+            { name: "Bazar aux épices (Mısır Çarşısı)", description: "Le marché aux épices le plus célèbre d'Istanbul, dans le quartier égyptien, avec du curcuma iranien, du safran de Safranbolu, du thé à la rose anatolien, du lokum (loukoum) et les meilleures pistaches de Turquie.", price: "Gratuit", tip: "Les épices en vrac sont bien moins chères et plus fraîches que les paquets scellés. Négociez toujours, et achetez dans les boutiques plus profondes du bazar — celles près de l'entrée facturent le double." },
+            { name: "Déjeuner dans le quartier d'Eminönü", description: "Le débarcadère de ferry d'Eminönü propose le balık ekmek le plus célèbre d'Istanbul (sandwichs au maquereau grillé, préparés sur des bateaux). Les restaurants flottants le long de la Corne d'Or fonctionnent depuis des décennies.", price: "70-100 TL", tip: "Le balık ekmek se mange debout au bord de l'eau avec un verre de turşu suyu (jus de cornichon). C'est l'expérience culinaire la plus locale et la moins chère d'Istanbul." },
+            { name: "Croisière sur la Corne d'Or", description: "L'estuaire de 8 km séparant le cœur historique des quartiers européens modernes. Une courte croisière sur la Corne d'Or dévoile les ponts historiques, les mosquées et les quartiers en bois qui bordent l'eau.", price: "30-50 TL (ferry public)", tip: "Le ferry public (vapur) est plus authentique et moins cher que les croisières touristiques. Il part d'Eminönü et atteint Eyüpsultan — le quartier le plus conservateur et le moins touristique d'Istanbul." },
+          ],
+        },
+        {
+          theme: "Croisière sur le Bosphore et palais de Dolmabahçe",
+          activities: [
+            { name: "Palais de Dolmabahçe", description: "Le palais du sultan sur le Bosphore, construit en 1856 dans un style néo-baroque européen. La salle du trône, avec un lustre en cristal de 4,5 tonnes offert par la reine Victoria, et ses 285 pièces symbolisent le déclin ottoman.", price: "400 TL", tip: "La visite est uniquement guidée (impossible d'y entrer seul). Le harem et la salle du trône sont les deux sections les plus impressionnantes — assurez-vous que votre billet les inclut." },
+            { name: "Croisière sur le Bosphore", description: "Le détroit de 30 km séparant l'Europe de l'Asie, ponctué de forteresses médiévales, de maisons en bois yalı, de mosquées et du pont du Bosphore. Le ferry public jusqu'à Anadolu Kavağı (l'extrémité asiatique) est l'expérience la plus épique.", price: "50 TL (ferry public)", tip: "Le ferry public (Boğaz Hattı) depuis Eminönü parcourt les 6 heures de trajet complet pour 50 TL — bien moins cher que les croisières touristiques. Le retour est tout aussi beau." },
+            { name: "Quartier de Beşiktaş et la rive européenne", description: "Le quartier le plus authentique de la rive européenne du Bosphore, avec un marché aux poissons, des brasseries locales, la statue de l'Aigle de Beşiktaş et le stade du Beşiktaş JK.", price: "Gratuit", tip: "Le çay (thé turc) dans les cafés du Bosphore à Beşiktaş est servi dans un verre en forme de tulipe avec deux morceaux de sucre — commandez-le ainsi pour l'expérience complète." },
+            { name: "Dîner de kebab à Beşiktaş ou Kadıköy", description: "L'İskender kebab (agneau sur pain pide avec yaourt et beurre fondu) et le balık (poisson grillé du Bosphore) sont les deux dîners les plus représentatifs d'Istanbul.", price: "150-300 TL", tip: "Kadıköy (rive asiatique, 15 min en ferry) abrite les meilleurs restaurants et bars locaux d'Istanbul. Traverser vers l'Asie en ferry la nuit est une expérience unique en soi." },
+          ],
+        },
+        {
+          theme: "Beyoğlu, Istiklal et l'Istanbul moderne",
+          activities: [
+            { name: "Avenue Istiklal et Beyoğlu", description: "La rue piétonne la plus célèbre d'Istanbul, 3 km de boutiques, cafés, galeries et le tramway rouge historique. Beyoğlu était le cœur de la modernisation ottomane du XIXe siècle.", price: "Gratuit", tip: "Le tramway d'Istiklal est plus photographié qu'emprunté — il faudra vous écarter des rails à son passage. Les librairies d'occasion et les galeries dans les passages historiques sont les trésors cachés de la rue." },
+            { name: "Tour de Galata", description: "La tour médiévale génoise du XIVe siècle, haute de 70 mètres, dans le quartier de Galata. Les vues sur la Corne d'Or, le Bosphore, Sainte-Sophie et la Mosquée bleue depuis la terrasse sont les meilleures d'Istanbul.", price: "300 TL", tip: "Les files peuvent être longues — achetez votre billet en ligne. La meilleure photo de Galata se prend d'en bas, avec le quartier qui dévale vers la Corne d'Or." },
+            { name: "Quartier de Karaköy et ses salons de thé", description: "Le quartier au pied de la tour de Galata, avec les meilleurs cafés de spécialité d'Istanbul, des galeries de design contemporain et la pâtisserie Karaköy Güllüoğlu, qui abrite le meilleur baklava de la ville.", price: "30-60 TL", tip: "Le baklava de Karaköy Güllüoğlu est fait avec des pistaches d'Antep et du beurre de bufflonne — complètement différent du baklava grec ou arabe. Commandez le plateau mixte." },
+            { name: "Coucher de soleil au hammam Çemberlitaş", description: "Le hammam le plus historique d'Istanbul, conçu par le grand architecte Sinan en 1584 pour l'épouse du sultan Soliman. Le rituel du hammam turc (massage à la mousse et gommage au kese) est l'adieu parfait.", price: "400-600 TL (traitement complet)", tip: "Le Çemberlitaş Hamamı a des entrées séparées pour hommes et femmes. Le rituel complet (bain chaud, gommage, savonnage, massage) dure 45-60 minutes." },
+          ],
+        },
+      ],
+    },
   },
 
   florencia: {
@@ -548,6 +786,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "The Oltrarno neighborhood and its artisans", description: "The neighborhood south of the Arno, less touristy and more authentic, with workshops of art restorers, cabinetmakers, bookbinders, and artisan jewelers still working with Renaissance techniques.", price: "Free", tip: "Stefano Bemer on Via di San Niccolò makes Florence's most famous made-to-measure shoes. Artisan perfumeries like Lorenzo Villoresi have created unique fragrances since 1990." },
             { name: "Truffled pasta lunch in Oltrarno", description: "Oltrarno's restaurants have Florence's best pappardelle al cinghiale (wild boar) and tagliolini al tartufo (truffle), at much more reasonable prices than downtown.", price: "€14-22", tip: "Buca Mario (1886, Florence's oldest restaurant) and Buca dell'Orafo have guaranteed authenticity. In Oltrarno, restaurants without an English menu are the best." },
             { name: "Piazzale Michelangelo at sunset", description: "The terrace above Florence with the city's most classic view: the Duomo, the Palazzo Vecchio, the Arno, and the bridges seen from the hill. The golden hour before sunset is the best time.", price: "Free", tip: "Walk up from the Piazzale to the Church of San Miniato al Monte — 10 minutes further up, with even better views and far fewer people than the Piazzale." },
+          ],
+        },
+      ],
+    },
+    fr: {
+      city: "Florence",
+      country: "Italie",
+      heroTitle: "3 jours à Florence : la Renaissance dans sa forme la plus pure",
+      heroSubtitle: "Les Offices, le David de Michel-Ange, le Piazzale Michelangelo et la meilleure bistecca d'Italie — Florence en trois jours essentiels.",
+      bestMonths: "Avril à juin et septembre à octobre",
+      budget: "90-150€/jour",
+      travelTips: [
+        "Réservez les Offices, la Galerie de l'Académie et le Duomo des semaines à l'avance — les files sans réservation sont terribles en haute saison",
+        "Florence se parcourt parfaitement à pied — le centre historique ne fait que 2 km de large",
+        "L'aperitivo toscan (18h-21h) dans les bars de l'Oltrarno inclut une boisson + un buffet d'antipasti gratuit",
+        "Les pharmacies historiques (Farmacia di Santa Maria Novella, fondée en 1221) vendent les parfums et crèmes les plus exclusifs d'Italie",
+        "Les musées d'État sont gratuits le premier dimanche de chaque mois — mais aussi bondés ; mieux vaut y aller en semaine",
+      ],
+      days: [
+        {
+          theme: "Le Duomo et le cœur historique",
+          activities: [
+            { name: "Cathédrale de Santa Maria del Fiore (le Duomo)", description: "Le dôme de Brunelleschi (1436) fut le plus grand au monde pendant des siècles et reste le symbole de Florence. Monter les 463 marches du dôme offre la meilleure vue sur les toits de tuiles de la ville.", price: "18€ (pass complet : cathédrale + dôme + baptistère + campanile)", tip: "Réservez l'accès au dôme en ligne — les places sont très limitées. Les premières heures de la journée offrent la plus belle lumière pour les vues d'en haut." },
+            { name: "Baptistère Saint-Jean", description: "Le plus ancien édifice religieux de Florence (XIe-XIIe siècle), avec la Porte du Paradis en bronze doré de Lorenzo Ghiberti, que Michel-Ange qualifiait précisément ainsi. Les 10 scènes de l'Ancien Testament sont des reliefs magistraux.", price: "Inclus dans le pass Duomo", tip: "Les reliefs originaux de la porte se trouvent au Museo dell'Opera del Duomo (inclus dans le pass) — ceux à l'extérieur sont des répliques. Le musée vaut la visite." },
+            { name: "Déjeuner au Mercato Centrale", description: "Le Mercato Centrale de Florence, dans son bâtiment en fer du XIXe siècle, regroupe la plus haute concentration de produits toscans de la ville : truffes, pecorino, charcuterie de sanglier et le fameux lampredotto (tripes florentines).", price: "8-15€", tip: "Le lampredotto (quatrième estomac de la vache) en panino avec salsa verde est la street food la plus authentique de Florence. Les nervi di bue (nerfs de bœuf) pour les plus aventureux." },
+            { name: "Palazzo Vecchio et la Piazza della Signoria", description: "Le cœur civique de Florence depuis le XIVe siècle, avec la Loggia dei Lanzi (une galerie de sculptures en plein air gratuite) et le Palazzo Vecchio avec le Salone dei Cinquecento peint par Vasari.", price: "Palazzo 12,50€ / Loggia gratuite", tip: "La Loggia dei Lanzi abrite des sculptures de classe mondiale (l'Enlèvement des Sabines de Giambologna) entièrement en plein air et gratuites — voyez-la avant d'entrer au Palazzo." },
+          ],
+        },
+        {
+          theme: "Les Offices et le David de Michel-Ange",
+          activities: [
+            { name: "Galleria degli Uffizi", description: "Le musée d'art de la Renaissance le plus important au monde, avec des œuvres de Botticelli (La Naissance de Vénus, Le Printemps), Léonard, Michel-Ange, Raphaël et Titien. Plus de 100 salles dans le palais des Médicis.", price: "25€ (+ 4€ de frais de réservation anticipée)", tip: "Réservez votre billet en ligne des semaines à l'avance en haute saison — les files sans réservation dépassent 3 heures. La Naissance de Vénus de Botticelli se trouve dans la salle 10 — elle est plus petite qu'on ne l'imagine." },
+            { name: "Ponte Vecchio et l'Oltrarno", description: "Le pont le plus célèbre de Florence, construit en 1345, bordé de bijouteries des deux côtés depuis le XVIe siècle. Le corridor de Vasari (le passage secret des Médicis au-dessus du pont) est visible depuis la rive.", price: "Gratuit", tip: "Les bijouteries du Ponte Vecchio sont touristiques mais les prix sont compétitifs — l'or florentin est de qualité garantie. Le meilleur angle du pont est depuis le Ponte Santa Trinità." },
+            { name: "Galleria dell'Accademia — le David", description: "Le musée abritant le David de Michel-Ange (1504), la sculpture la plus célèbre au monde. La figure de marbre blanc de 5,17 mètres, dans la salle circulaire du musée, est une expérience qu'aucune photo ne peut transmettre.", price: "16€ (+ 4€ de frais de réservation)", tip: "Réserver en ligne est ESSENTIEL. Le David présente des marques de ciseau visibles — cherchez le détail des tendons du cou, les veines des mains et l'expression concentrée." },
+            { name: "Bistecca alla Fiorentina à la Buca dell'Orafo", description: "La bistecca alla fiorentina est le plat le plus célèbre de Toscane — une côte de bœuf Chianina épaisse, d'au moins 1 kg, cuite saignante (toujours saignante, jamais bien cuite). Elle se commande au poids.", price: "40-60€ par personne", tip: "La bistecca se facture au 100g (3-5€). Une portion complète pour deux personnes pèse 1,2-1,5 kg. Commandez-la 'al sangue' (saignante) ou 'al punto' (à point) — jamais 'ben cotta' (bien cuite)." },
+          ],
+        },
+        {
+          theme: "Oltrarno, Piazzale et les jardins de Boboli",
+          activities: [
+            { name: "Jardins de Boboli", description: "Les jardins du Palazzo Pitti, résidence des Médicis, avec fontaines, statues, une grotte baroque et des vues sur Florence et les oliveraies toscanes. 45 000 m² de jardins Renaissance en terrasses.", price: "10€ (inclut le Palazzo Pitti)", tip: "La Grotta Grande del Buontalenti (avec des sculptures de Michel-Ange incrustées dans des murs de stalactites artificielles) est le lieu le plus étrange et fascinant de Florence." },
+            { name: "Le quartier de l'Oltrarno et ses artisans", description: "Le quartier au sud de l'Arno, moins touristique et plus authentique, avec des ateliers de restaurateurs d'art, d'ébénistes, de relieurs et de bijoutiers artisanaux travaillant encore selon des techniques Renaissance.", price: "Gratuit", tip: "Stefano Bemer, via San Niccolò, fabrique les chaussures sur mesure les plus célèbres de Florence. Les parfumeries artisanales comme Lorenzo Villoresi créent des fragrances uniques depuis 1990." },
+            { name: "Déjeuner de pâtes à la truffe dans l'Oltrarno", description: "Les restaurants de l'Oltrarno proposent les meilleures pappardelle al cinghiale (sanglier) et tagliolini al tartufo (truffe) de Florence, à des prix bien plus raisonnables que le centre-ville.", price: "14-22€", tip: "Buca Mario (1886, le plus ancien restaurant de Florence) et Buca dell'Orafo garantissent l'authenticité. Dans l'Oltrarno, les restaurants sans menu en anglais sont les meilleurs." },
+            { name: "Piazzale Michelangelo au coucher du soleil", description: "La terrasse au-dessus de Florence avec la vue la plus classique de la ville : le Duomo, le Palazzo Vecchio, l'Arno et les ponts vus depuis la colline. L'heure dorée avant le coucher du soleil est le meilleur moment.", price: "Gratuit", tip: "Montez depuis le Piazzale jusqu'à l'église de San Miniato al Monte — 10 minutes de plus, avec des vues encore meilleures et bien moins de monde que le Piazzale." },
           ],
         },
       ],
