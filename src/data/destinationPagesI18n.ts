@@ -881,6 +881,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    fr: {
+      city: "Lima",
+      country: "Pérou",
+      heroTitle: "3 jours à Lima : la capitale gastronomique mondiale",
+      heroSubtitle: "Miraflores, Barranco, le centre historique et les meilleurs restaurants d'Amérique latine — Lima est bien plus qu'une porte d'entrée vers le Machu Picchu.",
+      bestMonths: "Janvier à mars (été austral), mais c'est agréable toute l'année",
+      budget: "S/150-250/jour (~40-70 USD)",
+      travelTips: [
+        "Lima connaît un brouillard côtier (la garúa) de mai à novembre qui assombrit le ciel — la plage n'est pas au programme pendant ces mois",
+        "La scène gastronomique de Lima est le plus grand attrait de la ville — réservez à l'avance chez Central, Maido et Kjolle si vous voulez les meilleures tables",
+        "La circulation à Lima est légendairement chaotique — utilisez Uber ou Cabify pour vous déplacer en toute sécurité et de façon prévisible",
+        "Le soleil de Lima est fort malgré la brume — portez toujours de la crème solaire sur le front de mer de Miraflores",
+        "S'acclimater à Cusco est bien plus facile si vous arrivez d'abord à Lima (niveau de la mer) et prenez de l'altitude progressivement",
+      ],
+      days: [
+        {
+          theme: "Miraflores et les falaises du Pacifique",
+          activities: [
+            { name: "Parque Kennedy et le cœur de Miraflores", description: "Le parc central du quartier le plus moderne de Lima, entouré de cafés, galeries et de l'église de la Virgen Milagrosa. Les chats du parc (plus de 100) sont l'attraction la plus appréciée du quartier.", price: "Gratuit", tip: "La foire artisanale du week-end au Parque Kennedy propose les meilleurs souvenirs de Lima. Les chats sont amicaux et peuvent être photographiés librement." },
+            { name: "Front de mer de Miraflores et les falaises", description: "La promenade au sommet de falaises de 70-80 mètres au-dessus du Pacifique, avec vue sur la mer et des parapentistes planant au-dessus. Le Parque del Amor, avec la fresque de Víctor Delfín et ses couples enlacés, est l'un des parcs les plus romantiques au monde.", price: "Gratuit (parapente S/150)", tip: "Le parapente depuis les falaises est l'activité la plus riche en adrénaline de Lima — 15 minutes au-dessus du Pacifique depuis 80 mètres de haut. Des opérateurs comme Aeroxtreme décollent depuis la promenade." },
+            { name: "Ceviche au Mercado 28 ou à La Mar", description: "Le ceviche est le plat national du Pérou et Lima a le meilleur du monde. La Mar (Gastón Acurio) et le Mercado 28 sont des valeurs sûres, avec files d'attente et tables communes.", price: "S/35-80", tip: "Le leche de tigre (la marinade citronnée du ceviche) se boit en shot à la fin et aurait des propriétés aphrodisiaques. Demandez-en toujours." },
+            { name: "Coucher de soleil depuis Larcomar", description: "Le centre commercial construit dans les falaises de Miraflores, avec bars et restaurants au-dessus du Pacifique. La terrasse de l'étage supérieur offre la meilleure vue sur le coucher de soleil sur l'océan de tout Lima.", price: "Gratuit", tip: "Astrid & Gastón à Larcomar est le restaurant le plus historique de la cuisine péruvienne moderne. La vue au coucher du soleil avec un pisco sour vaut le prix." },
+          ],
+        },
+        {
+          theme: "Centre historique et l'âme coloniale de Lima",
+          activities: [
+            { name: "Plaza Mayor et les balcons coloniaux", description: "Le cœur de Lima depuis la fondation espagnole en 1535. La cathédrale, le Palais du Gouvernement et le Palais Municipal définissent la place la plus importante du Pérou colonial. Les balcons en bois sculpté sont uniques en Amérique.", price: "Gratuit (cathédrale S/20)", tip: "La relève de la garde au Palais du Gouvernement a lieu à 11h30, du lundi au vendredi — un spectacle gratuit avec la musique de la fanfare présidentielle." },
+            { name: "Couvent de Santo Domingo et les catacombes", description: "Le monastère du XVIe siècle où sont enterrés San Martín de Porres et Santa Rosa de Lima. Les catacombes sous l'église conservent plus de 25 000 restes des premiers colons et criollos de Lima.", price: "S/15", tip: "Les catacombes sont étonnamment bien conservées, et le guide donne un contexte historique fascinant. Les photos avec flash sont interdites à l'intérieur." },
+            { name: "Le Chinatown de Lima — le Barrio Chino", description: "La communauté chinoise de Lima (200 000 personnes, la plus grande d'Amérique latine) possède le meilleur Chinatown de la région. Les chifas (restaurants sino-péruviens) de la rue Jirón Ucayali sont légendaires.", price: "S/20-45", tip: "La fusion sino-péruvienne (chifa) est l'une des cuisines les plus intéressantes au monde. Commandez le riz chaufa avec lomo saltado — la fusion parfaite de deux cultures." },
+            { name: "Museo Larco — le trésor précolombien", description: "La collection d'art précolombien la plus importante au monde, dans une hacienda du XVIIe siècle à Pueblo Libre. Ses 45 000 objets incluent le trésor de Sipán, la céramique moche et la fameuse galerie érotique.", price: "S/50", tip: "Le café-jardin du Museo Larco (parmi les fleurs et les huacas) est l'un des plus beaux de Lima. Réservez une table à l'avance pour le coucher du soleil." },
+          ],
+        },
+        {
+          theme: "Barranco — le quartier le plus bohème",
+          activities: [
+            { name: "Quartier de Barranco et le Pont des Soupirs", description: "Le quartier le plus bohème et artistique de Lima, avec des demeures coloniales transformées en galeries, bars et le musée Mario Testino. Le Pont des Soupirs (1876) et le chemin descendant vers la plage sont les images emblématiques du quartier.", price: "Gratuit", tip: "La tradition dit que si vous traversez le Pont des Soupirs en retenant votre souffle et faites un vœu, il se réalise. Les vues vers la mer en contrebas sont magnifiques." },
+            { name: "Déjeuner chez Isolina — une taverne de Lima", description: "La taverne de Jose del Castillo à Barranco est le meilleur exemple de la cuisine créole de Lima : chicharrón de porc, anticuchos de cœur de bœuf, carapulcra et causa limeña dans leur version la plus authentique.", price: "S/40-80", tip: "Réservez à l'avance — Isolina figure sur toutes les listes des meilleurs restaurants de Lima et affiche complet au déjeuner comme au dîner. Le lundi midi est le moment le moins fréquenté." },
+            { name: "MATE — Musée Mario Testino", description: "Le musée du photographe péruvien le plus célèbre au monde, dans une demeure du XIXe siècle à Barranco. Ses portraits de la princesse Diana, Kate Moss et Naomi Campbell portant des créateurs péruviens sont saisissants.", price: "S/25", tip: "Le patio-jardin du MATE est l'un des plus jolis de Lima. Le café du rez-de-chaussée sert le meilleur pain aux jaunes d'œuf du quartier." },
+            { name: "Pisco Sour dans un bar de Barranco", description: "Le pisco sour est le cocktail national du Pérou (légèrement différent de la version chilienne). Les bars de Barranco servent les versions les plus authentiques : pisco quebranta, citron vert, sirop simple, blanc d'œuf et bitter.", price: "S/25-35", tip: "Le bar Ayahuasca à Barranco (la demeure républicaine de trois étages) propose les meilleurs pisco sours et l'ambiance la plus particulière de la vie nocturne de Lima. Le bar speakeasy d'El Refugio est aussi très spécial." },
+          ],
+        },
+      ],
+    },
   },
 
   praga: {
@@ -928,6 +972,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    fr: {
+      city: "Prague",
+      country: "République tchèque",
+      heroTitle: "3 jours à Prague : le château, le pont Charles et la bière la moins chère d'Europe",
+      heroSubtitle: "La vieille ville, le château de Prague, Josefov et le Petit Côté — la ville médiévale la mieux préservée d'Europe en trois jours complets.",
+      bestMonths: "Mai à septembre",
+      budget: "60-100€/jour",
+      travelTips: [
+        "La couronne tchèque (CZK) n'est pas l'euro — changez dans les bureaux du centre-ville, jamais dans les bureaux de rue qui arnaquent les touristes",
+        "Le métro de Prague est efficace et bon marché (30 CZK le trajet) — achetez le pass journalier (120 CZK) si vous faites plus de 4 trajets",
+        "Prague est très touristique, mais Vinohrady, Žižkov et Holešovice ont l'ambiance locale la plus authentique",
+        "La bière à Prague coûte moins cher que l'eau en bouteille dans les bars — c'est culturel, pas une arnaque",
+        "La haute saison (juin-août) et Noël sont les périodes les plus bondées — le printemps et l'automne sont idéaux",
+      ],
+      days: [
+        {
+          theme: "Le château de Prague et le Petit Côté",
+          activities: [
+            { name: "Château de Prague — à l'ouverture", description: "Le plus grand complexe de château au monde en superficie (70 000 m²), avec 9 siècles d'histoire. Le complexe inclut la cathédrale Saint-Guy, le Palais royal et la pittoresque Ruelle d'Or où vécut Franz Kafka.", price: "350 CZK (visite longue)", tip: "Arrivez à 8h30 à l'ouverture pour voir la cathédrale Saint-Guy sans les files. La vue depuis le jardin sud du château sur les toits rouges de Prague est la plus spectaculaire de la ville." },
+            { name: "La Ruelle d'Or — où vécut Franz Kafka", description: "La rue du XVIe siècle aux maisons colorées à l'intérieur du château, où vécurent les orfèvres de la cour puis, plus tard, Franz Kafka au numéro 22. Les minuscules maisons médiévales sont de véritables musées miniatures.", price: "Inclus avec le château", tip: "La maison numéro 22 (bleue) est celle où Kafka écrivit certaines de ses nouvelles. La librairie qui s'y trouve aujourd'hui vend ses œuvres en tchèque et en allemand — le meilleur souvenir de Prague." },
+            { name: "Déjeuner dans Malá Strana (Petit Côté)", description: "Le quartier baroque au pied du château, avec ses palais, ses églises et la meilleure bière de Prague. La brasserie Katedrinska et les restaurants de la rue Nerudova sont des valeurs sûres locales.", price: "180-350 CZK", tip: "Le svíčková (aloyau de bœuf mariné avec sauce à la crème et knedlíky) est le plat national tchèque le plus savoureux. Les bières Pilsner Urquell et Staropramen coûtent 35-55 CZK dans le Petit Côté." },
+            { name: "Pont Charles au coucher du soleil", description: "Le pont gothique du XIVe siècle, bordé de 30 statues baroques, traversant la Vltava. L'après-midi, il se remplit de musiciens de rue, d'artistes et de la meilleure ambiance de Prague.", price: "Gratuit", tip: "Le pont est bondé en journée — le meilleur moment est tôt (7h) ou tard (21h). Toucher la statue de saint Jean Népomucène (la partie en bronze brillante) porterait chance, dit-on." },
+          ],
+        },
+        {
+          theme: "La vieille ville et le quartier juif",
+          activities: [
+            { name: "Place de la Vieille Ville et l'horloge astronomique", description: "La plus belle place d'Europe centrale, avec l'horloge astronomique de 1410 (la plus ancienne encore en fonctionnement), dont le défilé des 12 apôtres a lieu chaque heure pile. L'église Notre-Dame-de-Týn domine l'arrière-plan.", price: "Gratuit (tour de l'horloge 250 CZK)", tip: "Le défilé de l'horloge a lieu pile à l'heure — arrivez 5 minutes avant. La tour de l'hôtel de ville (250 CZK) offre la meilleure vue sur la place et les toits de Prague." },
+            { name: "Josefov — le quartier juif", description: "L'un des quartiers juifs médiévaux les mieux préservés d'Europe, avec six synagogues (XIIIe-XIXe siècle), un cimetière juif à 12 000 tombes superposées et un musée documentant l'histoire de l'Holocauste à Prague.", price: "500 CZK (billet combiné)", tip: "L'ancien cimetière juif compte jusqu'à 12 couches de tombes superposées — l'espace était si rare que les enterrements se faisaient les uns sur les autres. La visite est profondément émouvante." },
+            { name: "Rue Nerudova et Malá Strana", description: "La rue la plus photogénique de Prague, avec des palais baroques, des galeries et des ambassades qui montent du pont Charles jusqu'au château. Chaque bâtiment porte une plaque héraldique médiévale d'identification.", price: "Gratuit", tip: "Au numéro 47 de Nerudova se trouve l'ambassade de Roumanie — la maison de l'alchimiste qui apparaît dans L'Alchimiste de Paulo Coelho. Le jardin secret aux roses du Palais Vrtba (95 CZK) est le plus beau de Prague." },
+            { name: "Brasserie U Fleků — depuis 1499", description: "La plus ancienne brasserie de Prague, en activité continue depuis 1499, dans le quartier de Nové Město. Elle brasse sa propre bière brune (černé pivo) et propose des salles médiévales avec musique live.", price: "65-100 CZK la pinte", tip: "Impossible de simplement s'asseoir chez U Fleků sans boire — les serveurs posent automatiquement une pinte fraîche sur votre table. Si vous n'en voulez plus, couvrez votre verre avec le sous-verre." },
+          ],
+        },
+        {
+          theme: "Vinohrady, Vyšehrad et le Prague alternatif",
+          activities: [
+            { name: "Vyšehrad — l'autre forteresse", description: "La forteresse médiévale de la légende fondatrice de Prague, avec une basilique, un cimetière de Tchèques illustres (Dvořák, Smetana) et des vues panoramiques sur la Vltava. Bien moins touristique que le château.", price: "Gratuit (certaines salles 80 CZK)", tip: "Vyšehrad offre les meilleures vues sur la Vltava et le pont Charles depuis les hauteurs — sans la foule du château. Le jardin sur le mur sud est parfait pour un pique-nique." },
+            { name: "Quartier de Vinohrady — le Prague local", description: "Le quartier résidentiel bourgeois du XIXe siècle, avec les meilleurs cafés artisanaux, bars à vin et restaurants tchèques modernes de la ville. Náměstí Míru (place de la Paix) en est le centre.", price: "150-300 CZK", tip: "Le restaurant Eska à Karlín (15 min en métro) propose la cuisine tchèque la plus innovante de Prague — aliments fermentés, pain au levain et produits fermiers locaux. Réservez à l'avance." },
+            { name: "Parc Letná — le jardin à bière avec la meilleure vue", description: "Le grand parc au-dessus de la Vltava avec le jardin à bière le plus célèbre de Prague. Vues directes sur les toits de la vieille ville et la rivière, avec des bières à prix locaux.", price: "Gratuit (bière 45-60 CZK)", tip: "Le jardin à bière de Letná est l'endroit préféré des jeunes Praguois au coucher du soleil. Commander en anglais ne pose aucun problème — demandez simplement 'une bière brune s'il vous plaît'." },
+            { name: "Concert de musique classique en ville", description: "Prague possède la scène de musique classique la plus riche d'Europe centrale, avec des concerts quotidiens à la Maison municipale, à l'Opéra et dans les églises historiques. Mozart et Dvořák planent sur chaque rue.", price: "400-900 CZK", tip: "Les concerts dans les églises historiques (Saint-Nicolas, Sainte-Croix) sont les plus atmosphériques et coûtent 400-600 CZK. Le son et l'architecture baroque se combinent pour une expérience unique." },
+          ],
+        },
+      ],
+    },
   },
 
   miami: {
@@ -971,6 +1059,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Viernes Culturales on Calle Ocho", description: "If it's the last Friday of the month, the monthly Viernes Culturales festival fills Calle Ocho with live music, artists, Cuban food vendors, and street art.", price: "Free", tip: "Versailles Restaurant on SW 8th has served Miami's best Cuban sandwich and ropa vieja since 1971 — have lunch here for the ultimate Cuban dining experience." },
             { name: "Coconut Grove — the bohemian neighborhood", description: "Miami's oldest neighborhood, with houses tucked among tropical trees, the Dinner Key waterfront, and CocoWalk's restaurants and shops. The Vizcaya Museum is the neighborhood's crown jewel.", price: "Free (Vizcaya USD 22)", tip: "Vizcaya, the 1920s Italian-style mansion with gardens over the bay, is Miami's most beautiful under-the-radar spot. The gardens alone are worth the visit." },
             { name: "Sunset at Key Biscayne", description: "The island-park 15 minutes from downtown via the Rickenbacker Causeway. Bill Baggs Cape Florida State Park has Miami's calmest beach and best sunset.", price: "USD 8 (park admission)", tip: "The 1 km trail to the Cape Florida lighthouse at the end of the island has the most beautiful view of Biscayne Bay, with the Miami skyline in the background." },
+          ],
+        },
+      ],
+    },
+    fr: {
+      city: "Miami",
+      country: "États-Unis",
+      heroTitle: "3 jours à Miami : South Beach, Wynwood et Little Havana",
+      heroSubtitle: "Art déco, fresques murales, cuisine latine et les meilleures plages de Floride — l'itinéraire parfait pour découvrir le Miami le plus authentique.",
+      bestMonths: "Novembre à avril",
+      budget: "150-250 USD/jour",
+      travelTips: [
+        "Une voiture ou Uber est nécessaire pour se déplacer efficacement à Miami — les transports publics sont limités en dehors de South Beach",
+        "Le soleil de Miami est intense toute l'année — une crème solaire SPF 50 est indispensable à la plage",
+        "Le pourboire au restaurant est de 18-20% du total — attendu, et fait partie du salaire des serveurs",
+        "La saison des ouragans va de juin à novembre — souscrivez une assurance voyage si vous visitez pendant ces mois",
+        "L'espagnol est la vraie langue de Miami — dans de nombreux commerces de Little Havana et Wynwood, l'anglais est la seconde langue",
+      ],
+      days: [
+        {
+          theme: "South Beach et le quartier Art déco",
+          activities: [
+            { name: "Lever du soleil à South Beach", description: "La plage la plus célèbre de Floride est particulièrement magique tôt le matin, quand les transats rouge et blanc sont vides et que la lumière du lever du soleil éclaire les hôtels art déco d'Ocean Drive.", price: "Gratuit", tip: "Le soleil se lève sur l'océan à Miami Beach (pas sur un horizon dégagé — la ville fait face à la côte est). Le reflet sur le sable mouillé donne la meilleure photo de lever du soleil." },
+            { name: "Quartier historique Art déco — Ocean Drive", description: "Le quartier Art déco historique le plus complet au monde, avec plus de 800 bâtiments des années 1920-40 aux tons pastel, chrome et néon. La portion d'Ocean Drive entre les rues 5 et 15 est la plus photogénique.", price: "Gratuit (visite guidée 30 USD)", tip: "La Miami Design Preservation League organise des visites guidées à pied le samedi à 10h30 (30 USD) avec un contexte historique essentiel. L'hôtel Colony est le bâtiment le plus photographié." },
+            { name: "Déjeuner au Lincoln Road Mall", description: "La rue piétonne la plus célèbre de Miami Beach, avec restaurants, galeries et la meilleure ambiance d'observation des passants de la ville. Le dimanche, il y a un marché de créateurs locaux.", price: "15-30 USD", tip: "Le News Café d'Ocean Drive est ouvert 24h/24 et est le lieu de rencontre le plus historique de South Beach. Pour des prix normaux, éloignez-vous d'un pâté de maisons de la promenade." },
+            { name: "Brickell et la skyline au coucher du soleil", description: "Le quartier financier de Miami, avec les gratte-ciel les plus récents de la ville et le Brickell City Centre. La promenade le long de Biscayne Bay au coucher du soleil offre la meilleure skyline de la ville.", price: "Gratuit", tip: "Le Pérez Art Museum Miami (PAMM) a des terrasses face à la baie ouvertes à tous — la meilleure vue gratuite sur la skyline de Miami au coucher du soleil." },
+          ],
+        },
+        {
+          theme: "Wynwood, le Design District et la vie nocturne de Miami",
+          activities: [
+            { name: "Wynwood Walls", description: "Le musée d'art urbain à ciel ouvert le plus célèbre au monde, fondé par Tony Goldman en 2009. Plus de 80 artistes internationaux ont peint les entrepôts du quartier avec des fresques qui changent chaque année.", price: "Gratuit (extérieur) / 12 USD (musée intérieur Wynwood Walls)", tip: "L'accès aux rues du quartier est gratuit — le musée intérieur a en réalité moins à voir que les rues. Parcourez les blocs entre la 25e et la 27e rue NW pour voir les meilleures fresques." },
+            { name: "Café artisanal et galerie à Wynwood", description: "Wynwood possède les cafés les plus artistiques de Miami, installés dans d'anciens commerces avec leurs propres fresques. Panther Coffee et Wynwood Kitchen & Bar sont les favoris de la scène créative.", price: "5-15 USD", tip: "Panther Coffee sur la 24e rue NW sert le meilleur espresso de Miami dans un bâtiment orné d'une fresque de Shepard Fairey. Arrivez avant midi pour trouver une table." },
+            { name: "Design District — luxe et art contemporain", description: "Le quartier de Miami dédié aux boutiques de luxe et aux galeries d'art contemporain. De Gucci à Hermès, de Gagosian à Locust Projects — un mélange de consumérisme et d'art qui reflète le côté le plus exclusif de Miami.", price: "Gratuit (pour entrer)", tip: "L'Institute of Contemporary Art (ICA Miami) dans le Design District a une entrée gratuite et des expositions de classe mondiale. Ouvert du mardi au dimanche." },
+            { name: "Vie nocturne à South Beach", description: "South Beach abrite la scène de vie nocturne la plus célèbre des États-Unis. LIV au Fontainebleau, E11EVEN et Story sont les clubs les plus connus. Ça commence à 23h et ça dure jusqu'à 3-4h du matin.", price: "20-50 USD (entrée)", tip: "Arrivez avant 23h pour éviter la file et le pic du prix d'entrée. Le code vestimentaire est smart casual pour les hommes — ni short ni baskets ne sont autorisés dans les clubs." },
+          ],
+        },
+        {
+          theme: "Little Havana et Coconut Grove",
+          activities: [
+            { name: "Little Havana — Calle Ocho", description: "Le quartier cubain de Miami, avec l'énergie, le café et la musique de La Havane transplantés en Floride. La 8e rue SW (Calle Ocho) en est le cœur, avec ses cafétérias cubaines, ses fenêtres à café à emporter et les parties de dominos au Máximo Gómez Park.", price: "Gratuit", tip: "Le café cubain (cafecito) à la fenêtre se boit debout en 30 secondes — c'est la coutume locale. Commandez un cortadito si vous voulez quelque chose de plus long. Il ne coûte que 50 cents." },
+            { name: "Viernes Culturales sur Calle Ocho", description: "Si c'est le dernier vendredi du mois, le festival mensuel Viernes Culturales remplit Calle Ocho de musique live, d'artistes, de vendeurs de nourriture cubaine et d'art de rue.", price: "Gratuit", tip: "Le restaurant Versailles sur la 8e rue SW sert le meilleur sandwich cubain et la meilleure ropa vieja de Miami depuis 1971 — déjeunez ici pour l'expérience cubaine ultime." },
+            { name: "Coconut Grove — le quartier bohème", description: "Le plus ancien quartier de Miami, avec des maisons nichées parmi les arbres tropicaux, le front de mer de Dinner Key et les restaurants et boutiques du CocoWalk. Le musée Vizcaya est le joyau du quartier.", price: "Gratuit (Vizcaya 22 USD)", tip: "Vizcaya, la demeure italienne des années 1920 avec ses jardins sur la baie, est le plus beau site méconnu de Miami. Les jardins seuls valent la visite." },
+            { name: "Coucher de soleil à Key Biscayne", description: "L'île-parc à 15 minutes du centre-ville via la Rickenbacker Causeway. Le Bill Baggs Cape Florida State Park abrite la plage la plus tranquille de Miami et le meilleur coucher de soleil.", price: "8 USD (entrée du parc)", tip: "Le sentier de 1 km jusqu'au phare de Cape Florida, au bout de l'île, offre la plus belle vue sur Biscayne Bay, avec la skyline de Miami en arrière-plan." },
           ],
         },
       ],
@@ -1027,6 +1159,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Brunch in Palermo Hollywood", description: "The Palermo Hollywood area has Buenos Aires's best brunch scene, with specialty coffee shops, avocado toast, and brunch menus from around the world. Avenida Arcos is the epicenter.", price: "USD 10-20", tip: "Café Martínez has Palermo's best butter medialunas — the most Argentine breakfast there is. Specialty coffee shops like Lattente have the city's best coffee." },
             { name: "MALBA — Museum of Latin American Art", description: "The continent's most important museum of contemporary Latin American art, with works by Frida Kahlo, Tarsila do Amaral, Xul Solar, and Antonio Berni. The glass-and-steel building is itself a work of art.", price: "USD 7", tip: "Wednesdays have discounted admission and free art-house cinema. The permanent collection (3rd floor) holds the 200 best works of 20th-century Latin American art." },
             { name: "Villa Crespo Fair and farewell", description: "The emerging-design market of Buenos Aires's young designers, with independent clothing, accessories, art, and the city's best local vibe. Street food at the Mercado de las Pulgas is perfect for your last afternoon.", price: "Free (shopping not included)", tip: "The Mercado de las Pulgas in Colegiales (Dorrego and Alvarez Thomas) is young Porteños' favorite Sunday plan — antiques, design, and live DJs." },
+          ],
+        },
+      ],
+    },
+    fr: {
+      city: "Buenos Aires",
+      country: "Argentine",
+      heroTitle: "4 jours à Buenos Aires : tango, asado et la ville la plus européenne des Amériques",
+      heroSubtitle: "San Telmo, La Boca, Palermo et le meilleur asado du monde — l'itinéraire complet pour tomber amoureux de la capitale argentine.",
+      bestMonths: "Mars à mai et septembre à novembre",
+      budget: "50-100 USD/jour",
+      travelTips: [
+        "Le taux de change argentin peut varier — vérifiez la situation monétaire avant votre voyage et renseignez-vous sur les options de change légales disponibles",
+        "Buenos Aires est une ville nocturne — les dîners commencent à 21h et les milongas à 23h. Adaptez vos horaires ou vous arriverez dans des restaurants vides",
+        "Les transports publics (métro + bus) sont efficaces et très bon marché — rechargez une carte SUBE dans n'importe quel kiosque",
+        "L'asado argentin se mange à 13h (midi) ou 21h — n'espérez pas manger de l'asado à 19h comme en Europe",
+        "Les quartiers sûrs pour les touristes sont Palermo, Recoleta, San Telmo et Puerto Madero — évitez de marcher seul la nuit dans des quartiers inconnus",
+      ],
+      days: [
+        {
+          theme: "San Telmo et le cœur historique",
+          activities: [
+            { name: "Plaza de Mayo et la Casa Rosada", description: "Le centre politique de Buenos Aires, siège du pouvoir exécutif depuis 1873. Le balcon d'où Evita s'adressait au peuple est visible depuis la place. La cathédrale métropolitaine abrite le tombeau du général San Martín.", price: "Gratuit", tip: "Le jeudi à 15h30, les Mères de la Place de Mai organisent leur marche historique autour de l'obélisque central — un témoignage vivant de l'histoire argentine." },
+            { name: "Quartier de San Telmo", description: "Le plus ancien quartier de Buenos Aires, avec ses rues pavées, ses maisons coloniales du XIXe siècle, ses galeries d'art et le marché aux antiquités le plus célèbre d'Argentine. Le dimanche, une foire s'étend sur toute la rue Defensa.", price: "Gratuit", tip: "La foire du dimanche sur la rue Defensa (10h-18h) est le meilleur plan gratuit de Buenos Aires. Les antiquaires, musiciens de rue et danseurs de tango spontanés font partie du spectacle." },
+            { name: "Déjeuner au marché de San Telmo", description: "Le marché couvert, ouvert depuis 1897, avec ses allées de bouchers artisanaux, d'épiceries fines, de stands de produits frais et de bars servant de tout, des empanadas aux cocktails. L'architecture en fer et verre du XIXe siècle est impressionnante.", price: "15-25 USD", tip: "Les empanadas de La Americana sont les plus classiques de Buenos Aires. Le comptoir du Bar El Federal, en face du marché, propose le meilleur café et les meilleures pâtisseries du quartier." },
+            { name: "Spectacle de tango à San Telmo", description: "San Telmo est le berceau du tango porteño. Les spectacles au El Viejo Almacén, à La Ventana ou au Centro Cultural Borges combinent dîner, prestation professionnelle et histoire du tango.", price: "60-100 USD (dîner + spectacle)", tip: "Pour un tango authentique (pas un spectacle touristique), cherchez les milongas de quartier : le Club Almagro, la Confitería Ideal ou La Viruta proposent des milongas à 10-15 USD." },
+          ],
+        },
+        {
+          theme: "La Boca, Puerto Madero et le fleuve",
+          activities: [
+            { name: "La Boca et le Caminito", description: "Le quartier portuaire coloré où les maisons en tôle ondulée sont peintes de couleurs vives — un héritage des immigrants génois du XIXe siècle qui utilisaient la peinture restante du port. Le stade de Boca Juniors (La Bombonera) se trouve à 200 mètres.", price: "Gratuit", tip: "Le Caminito est touristique et les prix y doublent — mangez et faites vos achats quelques rues plus loin pour des prix normaux. Évitez de porter des objets de valeur visibles." },
+            { name: "La Bombonera — musée et stade de Boca", description: "Le stade le plus célèbre d'Amérique latine, siège de Boca Juniors. La visite du musée inclut les vestiaires, les tribunes et des souvenirs de Maradona. L'expérience d'un jour de match à La Bombonera est presque religieuse.", price: "Visite 20 USD / Match 30-80 USD", tip: "Un match de Boca à domicile est l'une des expériences les plus intenses du sport mondial. N'achetez des billets que sur le site officiel — les revendeurs sont chers et risqués." },
+            { name: "Puerto Madero — le quartier le plus récent", description: "Les anciens quais du port de Buenos Aires, transformés en quartier le plus moderne et exclusif de la ville. Le Puente de la Mujer de Santiago Calatrava en est le symbole architectural.", price: "Gratuit", tip: "La réserve écologique de Costanera Sur, juste à côté de Puerto Madero, offre 360 hectares de nature à 5 minutes du centre-ville — une parfaite échappée verte en pleine ville." },
+            { name: "Dîner d'asado dans une parrilla porteña", description: "La parrilla argentine est une institution culinaire. L'asado de tira, le vacío, le chorizo et les ris de veau sont les morceaux qui distinguent Buenos Aires du reste du monde.", price: "20-40 USD", tip: "Don Julio (Palermo), La Brigada (San Telmo) et El Pobre Luis (Belgrano) sont les trois parrillas les plus renommées de Buenos Aires. Réservez plusieurs jours à l'avance." },
+          ],
+        },
+        {
+          theme: "Recoleta et le Buenos Aires européen",
+          activities: [
+            { name: "Cimetière de la Recoleta", description: "L'un des cimetières les plus célèbres au monde, avec 6 400 caveaux et 94 monuments d'intérêt historique. Le tombeau d'Eva Perón est l'attraction principale parmi les sculptures et l'architecture néoclassique.", price: "Gratuit", tip: "La visite guidée gratuite (en anglais et en espagnol) part à 11h les mardis et jeudis depuis l'entrée. Le tombeau d'Evita se trouve rue Familia Duarte — prenez un plan à l'entrée." },
+            { name: "Foire de Recoleta et le Musée national des Beaux-Arts", description: "La foire artisanale face au cimetière compte plus de 200 artisans locaux vendant bijoux, articles en cuir, céramique et gravures. Le musée des Beaux-Arts (gratuit) abrite la collection d'art latino-américain la plus importante de la région.", price: "Gratuit", tip: "La foire de Recoleta a lieu le week-end (10h-19h). En semaine, les jardins Álvear sont l'endroit le plus élégant de Buenos Aires pour un café en plein air." },
+            { name: "Avenida Alvear et ses palais belle époque", description: "La rue la plus élégante de Buenos Aires, avec les palais les plus somptueux du XXe siècle : l'Alvear Palace Hotel, le Palacio Alzaga Unzué et les demeures des familles de propriétaires terriens.", price: "Gratuit", tip: "Le hall de l'hôtel Alvear est l'un des joyaux du Buenos Aires exclusif — y entrer pour le thé de l'après-midi (25 USD) est une expérience qui vaut le prix." },
+            { name: "Cocktails à Palermo Soho", description: "Le quartier le plus branché de Buenos Aires, avec des bars à cocktails artisanaux, des restaurants gastronomiques et la plus forte concentration de design émergent de la ville. Florería Atlántico et Tres Monos sont les bars les plus reconnus.", price: "5-12 USD par cocktail", tip: "Florería Atlántico (l'un des meilleurs bars au monde) est un magasin de fleurs à l'étage avec un bar speakeasy en dessous — frappez à la porte de la chambre froide." },
+          ],
+        },
+        {
+          theme: "Palermo et la ville verte",
+          activities: [
+            { name: "Bosques de Palermo et le Rosedal", description: "Le grand parc de Buenos Aires, comparable à Central Park, avec le Rosedal (une roseraie de 18 000 rosiers), le Planétarium et le Jardin japonais. Le dimanche est le jour de la famille porteña dans le parc.", price: "Gratuit (Jardin japonais 500 ARS)", tip: "Louez un vélo dans le parc pour explorer les 25 km de pistes cyclables. Les stands de choripán à l'entrée nord du parc servent le chori le plus authentique de Buenos Aires." },
+            { name: "Brunch à Palermo Hollywood", description: "Le quartier de Palermo Hollywood propose la meilleure scène de brunch de Buenos Aires, avec des cafés de spécialité, des avocado toasts et des menus brunch du monde entier. L'Avenida Arcos en est l'épicentre.", price: "10-20 USD", tip: "Le Café Martínez propose les meilleures medialunas au beurre de Palermo — le petit-déjeuner le plus argentin qui soit. Les cafés de spécialité comme Lattente ont le meilleur café de la ville." },
+            { name: "MALBA — Musée d'art latino-américain", description: "Le musée d'art contemporain latino-américain le plus important du continent, avec des œuvres de Frida Kahlo, Tarsila do Amaral, Xul Solar et Antonio Berni. Le bâtiment en verre et acier est lui-même une œuvre d'art.", price: "7 USD", tip: "Le mercredi, l'entrée est à prix réduit et le cinéma d'art et essai est gratuit. La collection permanente (3e étage) abrite les 200 meilleures œuvres de l'art latino-américain du XXe siècle." },
+            { name: "Foire de Villa Crespo et adieu", description: "Le marché de design émergent des jeunes créateurs de Buenos Aires, avec vêtements indépendants, accessoires, art et la meilleure ambiance locale de la ville. La street food du Mercado de las Pulgas est parfaite pour votre dernier après-midi.", price: "Gratuit (achats non inclus)", tip: "Le Mercado de las Pulgas à Colegiales (Dorrego et Alvarez Thomas) est le plan du dimanche préféré des jeunes Porteños — antiquités, design et DJs en direct." },
           ],
         },
       ],
