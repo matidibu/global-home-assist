@@ -4701,6 +4701,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Tokyo",
+      country: "Giappone",
+      heroTitle: "5 giorni a Tokyo: la città che ha ridefinito cosa può essere una città",
+      heroSubtitle: "Shinjuku, Shibuya, Asakusa e gli angoli dove il Giappone antico convive con il futuro prossimo.",
+      bestMonths: "Marzo-aprile (fiori di ciliegio) e ottobre-novembre",
+      budget: "¥15.000-25.000/giorno (100-165 USD)",
+      travelTips: [
+        "La IC Card (Suica o Pasmo) funziona su ogni metro e treno, e persino per gli acquisti nei convenience store",
+        "7-Eleven, Lawson e FamilyMart sono molto più di semplici convenience store — hanno ottimo cibo caldo 24 ore su 24",
+        "Gli inchini sono segno di rispetto — restituiteli con la stessa profondità con cui li ricevete",
+        "I contanti sono ancora sovrani in Giappone — portate sempre ¥10.000-20.000 in banconote",
+        "Google Maps funziona perfettamente a Tokyo e vi dirà l'esatto binario della metro da usare",
+      ],
+      days: [
+        {
+          theme: "Shinjuku: la megalopoli nella sua forma più pura",
+          activities: [
+            { name: "Santuario Meiji — un santuario nella foresta", description: "Proprio nel cuore di Tokyo, una foresta di 70 ettari circonda il santuario shintoista dedicato all'imperatore Meiji. Il passaggio dal trambusto di Harajuku al silenzio della foresta è immediato.", price: "Gratis", tip: "Arrivate prima delle 9 per vedere il rituale mattutino di apertura dei sacerdoti (kagura). Il sentiero di ghiaia di 700m verso il santuario è di per sé un'esperienza." },
+            { name: "Harajuku e la via Takeshita", description: "La via della moda alternativa giapponese, con negozi cosplay, moda lolita e le crêpe più creative del mondo. La sottocultura giapponese al suo massimo di visibilità.", price: "Gratis (passeggiare)", tip: "La domenica, ballerini rockabilly vestiti in stile anni '50 si radunano sul ponte Jingu — il lato più inaspettato del Giappone." },
+            { name: "Shinjuku — il quartiere che non dorme mai", description: "L'area con il maggior numero di treni al giorno al mondo. Il Tokyo Metropolitan Government Building (piattaforma panoramica gratuita), Kabukicho, Golden Gai e il parco Shinjuku Gyoen.", price: "Piattaforma panoramica gratis / Gyoen ¥500", tip: "La piattaforma panoramica del Tokyo Metropolitan Government Building (45° piano, gratis) offre una delle migliori viste sulla città, senza costi." },
+            { name: "Golden Gai — i bar in miniatura", description: "200 minuscoli bar con 5-15 posti ciascuno, stipati in un labirinto di vicoli a Shinjuku. Ognuno con il proprio tema, la propria musica e un proprietario che è anche il barista.", price: "¥600-1.500 a bevanda", tip: "Alcuni bar fanno pagare un diritto d'ingresso di ¥500-1.000 — chiedete prima di entrare. L'esperienza vale più della bevanda stessa." },
+          ],
+        },
+        {
+          theme: "L'incrocio di Shibuya e la Tokyo contemporanea",
+          activities: [
+            { name: "Incrocio di Shibuya all'alba", description: "L'incrocio pedonale più trafficato al mondo, con fino a 3.000 persone che attraversano a ogni ciclo del semaforo. La mattina presto o all'alba, prima dell'ora di punta, è un incrocio completamente diverso.", price: "Gratis", tip: "La miglior vista dall'alto sull'incrocio è dallo Starbucks al 2° piano di 2-1 Dogenzaka, o dal bar Sky+1. L'incrocio visto dall'alto è la foto più iconica di Tokyo." },
+            { name: "Daikanyama e Nakameguro", description: "I due quartieri più cool di Tokyo per i creativi locali: boutique di moda, caffè indipendenti e il canale Meguro fiancheggiato da ciliegi che fioriscono in primavera.", price: "Gratis (passeggiare)", tip: "Tsutaya Books a Daikanyama è la libreria più bella del mondo — 3 edifici in legno con un caffè integrato, aperta 24 ore su 24." },
+            { name: "Omotesando — il viale dell'architettura", description: "Il viale di Tokyo dove ogni edificio porta la firma di un architetto: Zaha Hadid (Chanel), Sou Fujimoto, Kengo Kuma e l'Omotesando Hills di Tadao Ando.", price: "Gratis", tip: "Il Museo Nezu (¥1.300) in fondo a Omotesando ha il giardino di bambù più tranquillo che si possa immaginare, a soli 3 minuti da uno degli Starbucks più affollati al mondo." },
+            { name: "Ramen a Shibuya", description: "Tokyo ha le migliori ciotole di ramen al mondo. Provate Ichiran (cabine individuali — l'unico ristorante dove mangiare da soli ha un proprio protocollo) o Fuunji (leggendario tsukemen).", price: "¥900-1.500", tip: "I distributori automatici all'ingresso dei ramen-ya richiedono di scegliere prima di sedersi. Il menu ha foto — basta indicare il numero se non sapete leggere i kanji." },
+          ],
+        },
+        {
+          theme: "Asakusa e la Tokyo storica",
+          activities: [
+            { name: "Senso-ji all'alba", description: "Il tempio buddhista più visitato al mondo, fondato nel 628 d.C. Il Kaminarimon (Porta del Tuono) e la via Nakamise-dori di negozi tradizionali conducono alla sala principale.", price: "Gratis", tip: "Alle 8 il tempio ha pochi visitatori, e i monaci compiono i rituali mattutini. Gli oracoli della fortuna (omikuji) sono gratuiti — piegate la carta e legatela se porta sfortuna." },
+            { name: "Skytree Tokyo", description: "La torre televisiva più alta del mondo (634m), con due piattaforme panoramiche. Una vista a 360° su Tokyo, il Monte Fuji nelle giornate limpide e Asakusa ai suoi piedi.", price: "¥2.100 (piattaforma 350m) / ¥3.100 (con la cima)", tip: "Il momento migliore è all'alba (apre alle 8) o al tramonto. Il venerdì sera ha un'illuminazione blu speciale." },
+            { name: "Akihabara — il quartiere del futuro", description: "Il quartiere dell'elettronica, dei videogiochi, dei manga e degli anime. Grattacieli ricoperti di schermi LED, negozi di 7 piani pieni di action figure da collezione e maid café.", price: "Gratis (passeggiare)", tip: "Un maid café è un'esperienza culturale tipicamente giapponese — ragazze vestite da cameriere servono il tè giocando con voi. ¥1.000-2.000 a persona." },
+            { name: "Ueno — musei e parco dei ciliegi in fiore", description: "Il parco Ueno è il luogo più famoso di Tokyo per l'hanami (picnic sotto i ciliegi in fiore). Il Museo Nazionale di Tokyo e lo zoo si trovano entrambi qui.", price: "Parco gratis / Museo ¥1.000", tip: "Durante la stagione dei ciliegi in fiore (fine marzo-aprile) Ueno è il posto più affollato di Tokyo. L'hanami notturno (yozakura), con i fiori illuminati, è straordinario." },
+          ],
+        },
+        {
+          theme: "Tsukiji, Ginza e la baia di Tokyo",
+          activities: [
+            { name: "Mercato esterno di Tsukiji", description: "Il mercato del pesce più famoso al mondo, nella sua forma di mercato esterno (il mercato interno si è trasferito a Toyosu). Fate colazione con sushi o donburi di tonno alle 7 accanto ai pescivendoli.", price: "¥1.500-3.000 (colazione)", tip: "Dai Sushi e Sushi Dai sono i più famosi — aspettatevi 45-90 minuti di attesa per il bancone da 8 posti. Il sushi alle 7, appena sbarcato, è su un altro livello." },
+            { name: "Ginza — gli Champs-Élysées di Tokyo", description: "Il quartiere di lusso più esclusivo dell'Asia: Chanel, Louis Vuitton, l'Apple Store, e i grandi magazzini giapponesi Mitsukoshi e Isetan con i loro bento impeccabili.", price: "Gratis (passeggiare)", tip: "Le gallerie d'arte contemporanea ai piani superiori degli edifici di Ginza sono gratuite e mostrano il meglio dell'arte contemporanea giapponese." },
+            { name: "teamLab Borderless o teamLab Planets", description: "Il museo d'arte digitale immersiva più innovativo al mondo, dove installazioni di luce e suono reagiscono ai movimenti dei visitatori.", price: "¥3.200", tip: "Prenotate il biglietto online mesi prima — si esaurisce continuamente. teamLab Planets a Toyosu ha le installazioni acquatiche e il giardino di fiori digitale." },
+            { name: "Odaiba — la città artificiale nella baia", description: "L'isola artificiale nella baia di Tokyo, sede di Fuji TV, una replica in miniatura della Statua della Libertà e le migliori viste notturne del Rainbow Bridge illuminato.", price: "Gratis (passeggiare)", tip: "Il treno senza conducente Yurikamome che attraversa il Rainbow Bridge al crepuscolo è uno dei tragitti di trasporto pubblico più spettacolari al mondo." },
+          ],
+        },
+        {
+          theme: "Kamakura o Nikko — il Giappone oltre Tokyo",
+          activities: [
+            { name: "Treno per Kamakura (1h da Tokyo)", description: "L'antica capitale imperiale del Giappone medievale, con un Grande Buddha all'aperto di 13 metri, 65 templi e il mare visibile dalle colline. Una piccola città perfetta.", price: "Treno ¥940 (andata e ritorno)", tip: "Il JR Pass non copre la linea Enoden di Kamakura — procuratevi una carta Suica per il viaggio." },
+            { name: "Grande Buddha di Kamakura (Kotoku-in)", description: "La statua in bronzo del 1252 del Buddha Amida, alta 13,35 metri, ha assistito a tutto il Giappone medievale. Potete entrare nell'interno cavo della statua.", price: "¥300", tip: "Entrate nel Buddha (¥20 in più) — è una delle poche statue giganti del Giappone in cui si può entrare." },
+            { name: "Spiaggia di Kamakura", description: "Le spiagge di Kamakura ed Enoshima si affacciano sul Pacifico, con il Monte Fuji visibile sullo sfondo nelle giornate limpide. Sorprendente avere una spiaggia da surf a solo 1 ora da Tokyo.", price: "Gratis", tip: "La vista del Monte Fuji dalla spiaggia di Shichirigahama (linea Enoden), con le onde da surf in primo piano, è un'immagine iconica del Giappone." },
+            { name: "Enoshima — l'isola sacra", description: "L'isola collegata da un ponte, con il santuario Benzaiten, grotte costiere e la miglior vista panoramica sul Fuji dalla Torre Sea Candle.", price: "Torre ¥500", tip: "I takoyaki (polpette di polpo) delle bancarelle sul ponte di Enoshima sono lo spuntino perfetto del pomeriggio prima di tornare a Tokyo." },
+          ],
+        },
+      ],
+    },
   },
 
   "nueva-york": {
