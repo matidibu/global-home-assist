@@ -99,6 +99,109 @@ export const destinationPagesI18n: Partial<Record<string, Record<DestLang, Desti
       ],
     },
   },
+  marrakech: {
+    en: {
+      city: "Marrakech",
+      country: "Morocco",
+      heroTitle: "3 days in Marrakech: the red city that awakens every sense",
+      heroSubtitle: "Jemaa el-Fna square, labyrinthine souks, the Majorelle Garden, and dreamy riads — the essential itinerary for a first trip to Morocco.",
+      bestMonths: "March to May and October to November",
+      budget: "$50-100 USD/day",
+      travelTips: [
+        "Hire an official guide for the souks (100-150 MAD/hour) — it'll keep you from getting lost and from being steered into commission shops",
+        "The Moroccan dirham can't be exchanged outside Morocco — bring some cash to start and exchange more at the airport or downtown exchange offices",
+        "Dress modestly in the medina — shoulders and knees covered is the norm for both men and women, and will help you avoid unwanted attention",
+        "Photos of people require permission — the square's performers and vendors expect payment for photos (10-20 MAD)",
+        "Tap water isn't safe to drink — always drink bottled water and avoid ice in juice from street stalls",
+      ],
+      days: [
+        {
+          theme: "The medina and the heart of Marrakech",
+          activities: [
+            { name: "Jemaa el-Fna square in the morning", description: "The heart of Marrakech, a UNESCO World Heritage site. In the morning it's a quiet market with orange juice stands, henna artists, and snake charmers. By evening it transforms into one of the most chaotic, fascinating shows in the world.", price: "Free (services not included)", tip: "Fresh orange juice in the square costs 4-5 MAD — Marrakech's most iconic breakfast. Don't accept 'free tours' from strangers who approach you." },
+            { name: "The medina's souks", description: "The maze of medieval markets where each street belongs to a specialized guild: spice souks, leather, bronze, ceramics, textiles, and babouches. The Souk des Teinturiers (leather dyers) is the most photogenic.", price: "Free (shopping not included)", tip: "A local guide (100-150 MAD) saves you hours of walking in circles and takes you to the real workshops. Without one, any directions you're given will lead to some acquaintance's shop." },
+            { name: "Lunch on a medina rooftop terrace", description: "Riad rooftop terraces above the medina serve tagines, kefta, and harira with views of the minarets. Café de France and Le Foundouk have the best views over the square.", price: "50-100 MAD", tip: "Lamb tagine with prunes and almonds (msir) is Marrakech's most representative dish. Eat where you see Moroccans eating, not where the 'guides' take you." },
+            { name: "Jemaa el-Fna at sunset — the great spectacle", description: "From 5pm on, the square transforms: hundreds of food stalls, Gnawa musicians, storytellers, acrobats, and fire dancers fill every square meter.", price: "Free (food 20-40 MAD)", tip: "The square's food stalls (numbered 1-150) compete on price — they all display a visible menu. Pick the one with the most locals and ask the price BEFORE sitting down." },
+          ],
+        },
+        {
+          theme: "Palaces, the Majorelle Garden, and a hammam",
+          activities: [
+            { name: "Bahia Palace", description: "The 19th-century palace of Grand Vizier Ba Ahmed, with 150 rooms, courtyards of orange and cedar trees, carved cedar ceilings, and Morocco's finest wooden latticework (mashrabiyya).", price: "70 MAD", tip: "The palace is more impressive than people expect. The Vizier's reception room has the most elaborate cedar ceiling you'll ever see." },
+            { name: "Saadian Tombs", description: "The 16th-century mausoleums where the sultans of the Saadian dynasty are buried, rediscovered in 1917 after centuries sealed off. The burial chambers, with their tile and stucco niches, are extraordinarily beautiful.", price: "70 MAD", tip: "The space is small and visitors flow through constantly — arrive at opening time to see the Hall of Twelve Columns without a crowd." },
+            { name: "Majorelle Garden and the Berber Museum", description: "The garden created by French painter Jacques Majorelle in 1923, rescued by Yves Saint Laurent. The pavilion's cobalt blue (Majorelle Blue), the cacti, and the museum's Berber collection form a colorful oasis.", price: "150 MAD (garden + museum)", tip: "The garden is very crowded from 10am to 4pm — arrive at 2pm, when many tourists are having lunch, to find fewer people." },
+            { name: "Traditional hammam", description: "The centuries-old Arab bathhouse is an essential part of Moroccan culture. Neighborhood hammams (10-30 MAD) are for locals; touristy ones offer more elaborate treatments with ghassoul clay and argan oil.", price: "Local hammam 20 MAD / touristy 150-300 MAD", tip: "Hamam Dar el Bacha and the Hammam de la Mosquée Mouassine are the most authentic in the center. Bring flip-flops and your own towel if you go to a neighborhood one." },
+          ],
+        },
+        {
+          theme: "Excursion to the Atlas Mountains and back to the medina",
+          activities: [
+            { name: "Excursion to the Ouzoud Falls", description: "North Africa's largest waterfalls, 150 km from Marrakech, dropping 110 meters over tufa rock. The drive through the Atlas and its Berber villages is as interesting as the destination itself.", price: "Tour €25-40 (from Marrakech)", tip: "Organized full-day tours include transport and lunch in the village. Spring (March-May) has the highest water flow — spectacular." },
+            { name: "Berber lunch in the Atlas", description: "Restaurants in the Atlas's Berber villages serve chicken tagine with olives and preserved lemon, vegetable couscous, and harira, on terraces with mountain views.", price: "80-120 MAD", tip: "Berber khobz bread, baked in a clay oven, is the best accompaniment to tagine. Roadside restaurants full of local customers are the most authentic." },
+            { name: "Return, and an afternoon of shopping in the souks", description: "Your last afternoon is ideal for finishing up any shopping in the medina's souks. Spices (ras el hanout, harissa), argan oil, brass lamps, and Berber rugs make the best souvenirs.", price: "Depends on purchases", tip: "The final haggled price is usually 40-50% of the asking price. If the seller drops the price quickly, you can push lower. Never start haggling if you have no intention of buying." },
+            { name: "Last night on a Jemaa el-Fna rooftop terrace", description: "The perfect way to say goodbye to Marrakech is from the terraces of Café de France or Le Grand Balcon Café Glacier, watching the square light up and fill with people at dusk.", price: "30-50 MAD (mint tea)", tip: "Moroccan mint tea (thé à la menthe) is poured from height to create foam — it's a ritual. Asking for it to be poured from up high is completely normal and expected." },
+          ],
+        },
+      ],
+    },
+  },
+
+  dubai: {
+    en: {
+      city: "Dubai",
+      country: "United Arab Emirates",
+      heroTitle: "4 days in Dubai: from the Burj Khalifa to the desert",
+      heroSubtitle: "The Burj Khalifa, Dubai Mall, a desert dune safari, and the historic souks — the itinerary that blends the future with Arab tradition.",
+      bestMonths: "October to April",
+      budget: "$200-400 USD/day",
+      travelTips: [
+        "Taxis and the metro (Dubai Metro) are the most practical ways to get around — the metro reaches most tourist destinations",
+        "Dress modestly at the souks, mosques, and public places — shoulders and knees should be covered in historic Deira",
+        "Alcohol is only served at licensed hotels and restaurants — it's completely banned in public spaces",
+        "The heat is extreme from May to September (45°C+/113°F+) — plan air-conditioned activities during those months",
+        "The local currency is the Dirham (AED) — nearly everything accepts cards, but cash is useful in the historic souks",
+      ],
+      days: [
+        {
+          theme: "Modern Dubai: the Burj and Downtown",
+          activities: [
+            { name: "Dubai Mall and the Aquarium", description: "The world's largest shopping mall, with 1,200 stores, a 10-million-liter aquarium, and an Olympic-size ice rink. It's the most-visited leisure destination on the planet, with 100 million visits a year.", price: "Free (to enter) / AED 130 (aquarium)", tip: "The aquarium has the world's largest glass panel — you can see it from outside, in the mall, for free. The inside is worth it if you have the time." },
+            { name: "Burj Khalifa — At the Top", description: "The world's tallest building, at 828 meters. The 'At The Top' observation deck on the 124th floor offers views more than 80 km out on clear days.", price: "AED 149 (124th floor) / AED 499 (148th floor)", tip: "Book online and pick the 11:30am slot to see Dubai by daylight. Sunset slots are in high demand and cost more. The 124th floor has the best photos." },
+            { name: "Dubai Fountain and lunch", description: "The world's largest fountain system, facing the Burj Khalifa. The nighttime shows are the most spectacular, but even by day the scale is impressive. The area has dozens of restaurants with views.", price: "Free (fountains) / AED 60-150 (restaurants)", tip: "The nighttime fountain show starts at 6pm and repeats every 30 minutes. The best angle is from the lakeside promenade at Dubai Mall." },
+            { name: "Nighttime fountain show and dinner in Downtown", description: "The nighttime fountain show, synchronized to Arabic and classical music, is one of Dubai's most moving experiences. The restaurants along the Dubai Fountain Boardwalk have the best tables.", price: "Free", tip: "Book dinner at Zuma or Pierchic with a Burj view for your first night — the experience is stunning even if the price is steep." },
+          ],
+        },
+        {
+          theme: "Classic Dubai: the Creek, souks, and the historic quarter",
+          activities: [
+            { name: "Al Fahidi Historical Neighbourhood", description: "Dubai's 19th-century historic quarter, with coral-and-mud houses, wind towers (barjeel) for natural ventilation, and the Dubai Museum. The contrast with the skyscrapers in the background is unique.", price: "Dubai Museum AED 3", tip: "The Dubai Museum is the cheapest in the city and one of the most informative — AED 3 to see the history of a fishing village that became a megacity." },
+            { name: "Abra ride on Dubai Creek", description: "Abras are the traditional wooden boats that have crossed the creek for centuries. The 5-minute ride from Deira to Bur Dubai costs 1 AED and is the city's most authentic, photogenic form of transport.", price: "AED 1", tip: "Take the classic wooden abra (not the modern motorized version) — they depart from the Al Seef dock. The ride down the creek with wooden dhows in the background is wonderful." },
+            { name: "Gold Souk and Spice Souk", description: "The Gold Souk has more than 300 jewelry shops with 10 tons of gold on display. The adjacent Spice Souk has Iranian saffron, Arabian incense, ras el hanout, and spices from all over the world.", price: "Free (shopping not included)", tip: "Haggling is expected and standard practice at the souks. Offer 60% of the asking price and you'll land somewhere reasonable in between. Gold is sold at the market rate, no haggling." },
+            { name: "Dinner on a dhow along the Creek", description: "Traditional wooden dhows converted into floating restaurants offer a buffet dinner while cruising the illuminated Creek. The view of the skyscrapers and mosques from the water is spectacular.", price: "AED 120-200", tip: "There are dozens of dhow cruises — the standard price includes a buffet dinner. Book at the Al Seef dock in the afternoon for the 8:30pm slot." },
+          ],
+        },
+        {
+          theme: "Desert safari: dunes, camels, and stars",
+          activities: [
+            { name: "Pickup for the Desert Safari", description: "Dubai's desert safaris head out to the Al Lahbab dunes in 4x4s. Dune bashing (racing over the dunes in a 4x4) is the most adrenaline-fueled part of the experience.", price: "AED 200-300 (full tour)", tip: "Choose a reputable operator like Arabian Adventures or Orient Tours. Very cheap prices usually mean lower-quality dinner and shows." },
+            { name: "Dune bashing and sunset on the dunes", description: "High-speed runs down 100-meter dunes in a 4x4 Land Cruiser. The sunset from atop the Al Lahbab dunes, with the desert stretching to the horizon, feels unreal.", price: "Included in the tour", tip: "If you're prone to motion sickness, take dramamine beforehand. The drivers are professionals with years of experience — let them choose the difficulty level." },
+            { name: "Bedouin camp: camels and henna tattoos", description: "The desert camp includes a camel ride, henna tattoos, belly dancing, and archery. A buffet dinner of Arabic food (kharouf, mezze, shisha) under the desert stars.", price: "Included in the tour", tip: "The camel ride only lasts 5-10 minutes, but the photo lasts a lifetime. Ask your guide to shoot the photo from below so the whole camel is in frame." },
+            { name: "Belly dance and Tanoura show", description: "The Tanoura dance (a whirling Sufi dancer in colorful skirts) and belly dancing are the shows included with the camp dinner. The performance under the desert's starry sky is unforgettable.", price: "Included in the tour", tip: "The stars in the Arabian desert are spectacular — bring a stargazing app to identify constellations from the camp's total darkness." },
+          ],
+        },
+        {
+          theme: "Palm Jumeirah and modern Dubai",
+          activities: [
+            { name: "Atlantis The Palm — Aquaventure", description: "The water park at the Atlantis hotel on Palm Jumeirah, with 16 hectares of slides, artificial waves, and a zone with manta rays and sharks. One of Dubai's most adrenaline-packed experiences.", price: "AED 395", tip: "Book online for an early discount. The 'Tower of Neptune' slide (a 27-meter free fall) is the most extreme. Arrive at 9:30am before the lines build up." },
+            { name: "The Pointe and views of the Atlantis", description: "The restaurant-and-shop promenade at the tip of the Palm, with the best view of the Atlantis from the water. The Pointe's fountains put on a free nighttime show.", price: "Free", tip: "The Pointe promenade has direct views of the Atlantis silhouette with the Burj Al Arab in the background — the photo of the Palm from here is spectacular." },
+            { name: "JBR Beach and The Beach", description: "Jumeirah Beach Residence (JBR) is Dubai's liveliest beachfront promenade, with the city's busiest public beach, waterfront restaurants, and The Beach complex with views of the Burj Al Arab.", price: "Free", tip: "JBR beach is public and free — paid changing rooms and umbrellas are available but not necessary." },
+            { name: "Farewell dinner with a view of the Burj Al Arab", description: "Dubai's (and the world's) most iconic hotel is shaped like a dhow's sail. While staying there costs thousands of dollars, you get a perfect view from the Pierchic restaurant or from restaurants on Jumeirah Beach.", price: "AED 100-300 (outside restaurants)", tip: "The best angle of the Burj Al Arab is from Umm Suqeim Beach — 200 meters of public sand facing the hotel, perfect for the photo." },
+          ],
+        },
+      ],
+    },
+  },
+
   lisboa: {
     en: {
       city: "Lisbon",
