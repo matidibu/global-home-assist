@@ -4952,6 +4952,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "New York",
+      country: "Stati Uniti",
+      heroTitle: "5 giorni a New York: l'itinerario per una prima volta perfetta",
+      heroSubtitle: "Il Ponte di Brooklyn, Central Park, il MoMA e Harlem — senza perdere tempo su ciò che non ne vale la pena.",
+      bestMonths: "Da settembre a novembre e da aprile a giugno",
+      budget: "150-280 USD/giorno",
+      travelTips: [
+        "Caricate una MetroCard o usate OMNY (pagamento contactless) — 2,90 USD a corsa indipendentemente dalla distanza",
+        "La metro funziona 24 ore su 24, ma è lenta di notte, e ci sono frequenti deviazioni nei weekend",
+        "Lasciate sempre una mancia del 18-22% al ristorante — è socialmente obbligatorio e fa parte dello stipendio dei dipendenti",
+        "Il CityPASS fa risparmiare il 40% se visitate 4+ attrazioni a pagamento in 9 giorni consecutivi",
+        "Scaricate l'app NYC Ferry — il traghetto dell'East River è un trasporto pubblico economico con viste spettacolari",
+      ],
+      days: [
+        {
+          theme: "Manhattan centrale: Times Square, Central Park e il Met",
+          activities: [
+            { name: "Central Park all'alba", description: "340 ettari di parco nel cuore di Manhattan. La Fontana di Bethesda, il Bow Bridge e le viste sullo skyline dal Great Lawn sono i luoghi più fotogenici.", price: "Gratis", tip: "Noleggiate una bici nel parco per coprire più terreno. La domenica l'anello esterno è chiuso alle auto." },
+            { name: "Il Metropolitan Museum of Art (The Met)", description: "Il museo più grande del Nord America, con più di 2 milioni di oggetti. Le collezioni egizia, greca e di armature medievali sono imperdibili anche se avete solo 2 ore.", price: "30 USD (suggerito — prezzo libero per i residenti di New York)", tip: "Il tetto del Met è aperto da maggio a ottobre con viste spettacolari su Central Park. Separato dal museo ma incluso nel biglietto." },
+            { name: "l'Upper West Side e Columbus Circle", description: "Il quartiere residenziale più tipicamente newyorkese di Manhattan, con brownstone, caffè indipendenti e il mercato gourmet del Time Warner Center.", price: "15-25 USD (pranzo)", tip: "Gray's Papaya su Broadway serve gli hot dog più iconici di New York a qualsiasi ora — il modo in cui i newyorkesi fanno colazione dal 1973." },
+            { name: "Times Square", description: "L'incrocio più famoso al mondo, con 26.000 m² di schermi LED. Travolgente di giorno, magico al crepuscolo quando le luci eclissano il sole.", price: "Gratis", tip: "Se potete, non mangiate né comprate nulla a Times Square — tutto costa il doppio. Usatela solo per le foto e proseguite." },
+          ],
+        },
+        {
+          theme: "Brooklyn: il ponte, DUMBO e Williamsburg",
+          activities: [
+            { name: "Ponte di Brooklyn all'alba", description: "Attraversare il ponte a piedi da Manhattan a Brooklyn richiede 30 minuti. Le viste sullo skyline all'alba, con l'East River sotto, regalano le foto migliori di New York.", price: "Gratis", tip: "Partite dalla stazione Chambers St a Manhattan. Il ponte si riempie di ciclisti veloci — restate sulla corsia pedonale." },
+            { name: "DUMBO — Down Under the Manhattan Bridge Overpass", description: "Il quartiere con la foto più famosa di New York: l'incrocio di Washington St, con l'Empire State Building sullo sfondo e il Manhattan Bridge a incorniciare la scena.", price: "Gratis", tip: "La foto classica si scatta su Washington St guardando verso il Manhattan Bridge. Alle 9 non c'è quasi nessuno — a mezzogiorno decine di persone aspettano il loro turno." },
+            { name: "Promenade di Brooklyn Heights", description: "Il camminamento sopraelevato sopra la FDR Drive con la miglior vista sullo skyline di Lower Manhattan da Brooklyn. I locali vengono qui nei weekend con il caffè.", price: "Gratis", tip: "Continuate a camminare fino al Brooklyn Bridge Park, dove potete sedervi sull'erba di fronte allo skyline." },
+            { name: "Williamsburg: brunch e cultura", description: "Il quartiere hipster di Brooklyn, con i migliori posti per il brunch di New York, murales, negozi vintage e un lungofiume sull'East River con vista su Midtown Manhattan.", price: "20-35 USD", tip: "Smorgasburg a Williamsburg (domeniche, aprile-ottobre) è il miglior mercato di street food di New York — 100 venditori locali." },
+          ],
+        },
+        {
+          theme: "Lower Manhattan: storia, Ground Zero e la Statua",
+          activities: [
+            { name: "Memoriale e Museo dell'11 Settembre", description: "Le due vasche riflettenti dove sorgevano le Torri Gemelle, con i nomi delle 2.977 vittime incisi nel bronzo. Un luogo di memoria essenziale.", price: "Memoriale gratis / Museo 33 USD", tip: "Il memoriale all'aperto è sempre accessibile e non richiede biglietto. Il museo è emotivamente intenso — lasciate tempo per elaborarlo." },
+            { name: "Traghetto per Staten Island", description: "Il traghetto per Staten Island parte ogni 30 minuti dal Whitehall Terminal. La traversata di 25 minuti offre viste dirette sulla Statua della Libertà — completamente gratis.", price: "Gratis", tip: "La miglior vista di Lady Liberty è dal lato destro del traghetto in direzione Staten Island. Non serve scendere — riprendete semplicemente il traghetto successivo per tornare." },
+            { name: "Wall Street e il Charging Bull", description: "Il centro finanziario mondiale, con la Borsa di New York, la famosa scultura del toro e Fearless Girl. Il contrasto tra architettura neoclassica e grattacieli è unico al mondo.", price: "Gratis", tip: "La NYSE non è aperta al pubblico. Il Museo della Federal Reserve Bank di NY (gratis) mostra il più grande caveau d'oro al mondo." },
+            { name: "One World Observatory", description: "L'osservatorio dell'edificio più alto dell'emisfero occidentale, a 381 metri. La salita in ascensore dura 47 secondi, con uno schermo immersivo che racconta la storia di New York.", price: "46 USD", tip: "Vale più dell'Empire State (meno affollato, viste altrettanto impressionanti). Comprate il biglietto online." },
+          ],
+        },
+        {
+          theme: "Arte e design: MoMA, la High Line e Chelsea",
+          activities: [
+            { name: "MoMA — Museum of Modern Art", description: "La collezione più importante al mondo di arte del XX secolo: La Notte Stellata di Van Gogh, Guernica (riproduzione), Dalí e Warhol. L'edificio stesso è un'opera di design.", price: "30 USD", tip: "Prenotate il biglietto online. Il venerdì dalle 17 alle 21 l'ingresso è a prezzo libero — molto affollato ma economico." },
+            { name: "High Line", description: "L'ex linea ferroviaria sopraelevata trasformata in parco urbano sopra Chelsea. 2,3 km di parco lineare con arte pubblica, viste sull'Hudson e i migliori food truck della città.", price: "Gratis", tip: "Iniziate da Gansevoort St (l'estremità sud) e finite a Hudson Yards. Vedere il Vessel da terra è gratis." },
+            { name: "Chelsea Market", description: "Il mercato gourmet nell'ex fabbrica Oreo nel cuore di Chelsea. Decine di bancarelle con le migliori opzioni gastronomiche a prezzi ragionevoli.", price: "15-30 USD", tip: "I lobster roll di The Lobster Place sono leggendari. Arrivate prima delle 15 per trovare un tavolo." },
+            { name: "Empire State Building di notte", description: "Il grattacielo più iconico di New York, illuminato con colori diversi per eventi e festività. La piattaforma dell'86° piano offre viste a 360° sulla città illuminata.", price: "44 USD", tip: "Il secondo osservatorio (86° piano, all'aperto) vale più del 102°. Arrivate 1 ora prima della chiusura per evitare l'attesa." },
+          ],
+        },
+        {
+          theme: "Harlem: la cultura che ha fatto New York",
+          activities: [
+            { name: "Domenica gospel a Harlem", description: "La domenica, le chiese di Harlem tengono funzioni gospel con cori dal vivo di prim'ordine. L'Abyssinian Baptist Church è la più famosa — commovente anche se non si è religiosi.", price: "Offerta volontaria", tip: "Andateci la domenica mattina. Vestitevi in modo formale — è una funzione religiosa, non uno spettacolo turistico. Siate rispettosi." },
+            { name: "Cucina afroamericana a Harlem", description: "Sylvia's Restaurant è l'istituzione culinaria di Harlem dal 1962: pollo fritto, mac and cheese e torta di patate dolci che fanno parte del patrimonio culturale di New York.", price: "20-35 USD", tip: "Il Red Rooster di Marcus Samuelsson è la versione moderna della soul food di Harlem — prenotazione essenziale." },
+            { name: "Apollo Theater", description: "Il teatro dove James Brown, Ella Fitzgerald, Billie Holiday e Michael Jackson iniziarono la carriera. L'Amateur Night si tiene ancora il mercoledì — il pubblico più esigente e onesto al mondo.", price: "Facciata gratis / tour guidati 18 USD", tip: "Se la vostra visita coincide con l'Amateur Night (mercoledì), comprate il biglietto in anticipo. La serata più autentica di New York." },
+            { name: "The Cloisters — arte medievale sopra l'Hudson", description: "La filiale medievale del Met, ospitata in un autentico chiostro europeo ricostruito sopra l'Hudson con vista sul New Jersey. Gli arazzi dell'unicorno sono straordinari.", price: "30 USD (incluso nel biglietto del Met del giorno 1)", tip: "Arrivate a fine giornata quando la luce del tramonto filtra attraverso le vetrate medievali. Il meno conosciuto tra i grandi musei di New York." },
+          ],
+        },
+      ],
+    },
   },
 
 };
