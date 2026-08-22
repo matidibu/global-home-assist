@@ -3133,6 +3133,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Dubai",
+      country: "Emirati Arabi Uniti",
+      heroTitle: "4 giorni a Dubai: dal Burj Khalifa al deserto",
+      heroSubtitle: "Il Burj Khalifa, il Dubai Mall, un safari nelle dune del deserto e i souk storici — l'itinerario che unisce il futuro alla tradizione araba.",
+      bestMonths: "Da ottobre ad aprile",
+      budget: "200-400 USD/giorno",
+      travelTips: [
+        "Taxi e metro (Dubai Metro) sono i modi più pratici per spostarsi — la metro raggiunge la maggior parte delle destinazioni turistiche",
+        "Vestitevi in modo modesto nei souk, nelle moschee e nei luoghi pubblici — spalle e ginocchia coperte nella storica Deira",
+        "L'alcol viene servito solo in hotel e ristoranti autorizzati — è completamente vietato negli spazi pubblici",
+        "Il caldo è estremo da maggio a settembre (45°C+) — pianificate attività climatizzate in quei mesi",
+        "La valuta locale è il dirham (AED) — quasi tutto accetta carte, ma i contanti sono utili nei souk storici",
+      ],
+      days: [
+        {
+          theme: "La Dubai moderna: il Burj e Downtown",
+          activities: [
+            { name: "Dubai Mall e l'acquario", description: "Il centro commerciale più grande al mondo, con 1.200 negozi, un acquario da 10 milioni di litri e una pista di pattinaggio olimpica. È la destinazione per il tempo libero più visitata del pianeta, con 100 milioni di visite all'anno.", price: "Gratis (per entrare) / 130 AED (acquario)", tip: "L'acquario ha il pannello di vetro più grande al mondo — visibile gratis dall'esterno, nel centro commerciale. L'interno vale la pena se avete tempo." },
+            { name: "Burj Khalifa — At the Top", description: "L'edificio più alto al mondo, con 828 metri. La piattaforma panoramica 'At The Top' al 124° piano offre viste per oltre 80 km nelle giornate limpide.", price: "149 AED (124° piano) / 499 AED (148° piano)", tip: "Prenotate online e scegliete la fascia delle 11:30 per vedere Dubai di giorno. Le fasce al tramonto sono molto richieste e costano di più. Il 124° piano ha le foto migliori." },
+            { name: "Dubai Fountain e pranzo", description: "Il più grande sistema di fontane al mondo, di fronte al Burj Khalifa. Gli spettacoli notturni sono i più spettacolari, ma anche di giorno la scala è impressionante. La zona ha decine di ristoranti con vista.", price: "Gratis (fontane) / 60-150 AED (ristoranti)", tip: "Lo spettacolo notturno delle fontane inizia alle 18 e si ripete ogni 30 minuti. L'angolazione migliore è dalla passeggiata sul lago del Dubai Mall." },
+            { name: "Spettacolo notturno delle fontane e cena a Downtown", description: "Lo spettacolo notturno delle fontane, sincronizzato con musica araba e classica, è una delle esperienze più commoventi di Dubai. I ristoranti lungo il Dubai Fountain Boardwalk hanno i tavoli migliori.", price: "Gratis", tip: "Prenotate la cena da Zuma o Pierchic con vista sul Burj per la vostra prima serata — l'esperienza è mozzafiato anche se il prezzo è alto." },
+          ],
+        },
+        {
+          theme: "La Dubai classica: la Creek, i souk e il quartiere storico",
+          activities: [
+            { name: "Quartiere Storico Al Fahidi", description: "Il quartiere storico di Dubai del XIX secolo, con case in corallo e fango, torri del vento (barjeel) per la ventilazione naturale e il Museo di Dubai. Il contrasto con i grattacieli sullo sfondo è unico.", price: "Museo di Dubai 3 AED", tip: "Il Museo di Dubai è il più economico della città e uno dei più istruttivi — 3 AED per vedere la storia di un villaggio di pescatori diventato megalopoli." },
+            { name: "Giro in abra sul Dubai Creek", description: "Le abra sono le tradizionali barche in legno che attraversano l'insenatura da secoli. Il tragitto di 5 minuti da Deira a Bur Dubai costa 1 AED ed è il trasporto più autentico e fotogenico della città.", price: "1 AED", tip: "Prendete l'abra classica in legno (non la versione moderna motorizzata) — partono dal molo Al Seef. Il tragitto lungo l'insenatura con i dhow in legno sullo sfondo è meraviglioso." },
+            { name: "Souk dell'Oro e Souk delle Spezie", description: "Il Souk dell'Oro ha più di 300 gioiellerie con 10 tonnellate d'oro esposte. Il vicino Souk delle Spezie ha zafferano iraniano, incenso arabo, ras el hanout e spezie da tutto il mondo.", price: "Gratis (acquisti non inclusi)", tip: "Contrattare è previsto ed è pratica standard nei souk. Offrite il 60% del prezzo richiesto e troverete un accordo ragionevole nel mezzo. L'oro si vende al prezzo di mercato, senza contrattazione." },
+            { name: "Cena su un dhow lungo la Creek", description: "I tradizionali dhow in legno trasformati in ristoranti galleggianti offrono una cena a buffet mentre si naviga lungo la Creek illuminata. La vista sui grattacieli e le moschee dall'acqua è spettacolare.", price: "120-200 AED", tip: "Ci sono decine di crociere in dhow — il prezzo standard include una cena a buffet. Prenotate al molo Al Seef nel pomeriggio per la fascia delle 20:30." },
+          ],
+        },
+        {
+          theme: "Safari nel deserto: dune, cammelli e stelle",
+          activities: [
+            { name: "Ritiro per il Safari nel Deserto", description: "I safari nel deserto di Dubai partono verso le dune di Al Lahbab con 4x4. Il dune bashing (correre a velocità sulle dune con il 4x4) è la parte più adrenalinica dell'esperienza.", price: "200-300 AED (tour completo)", tip: "Scegliete un operatore affidabile come Arabian Adventures o Orient Tours. Prezzi molto bassi di solito significano cena e spettacoli di qualità inferiore." },
+            { name: "Dune bashing e tramonto sulle dune", description: "Corse ad alta velocità su dune di 100 metri con un 4x4 Land Cruiser. Il tramonto in cima alle dune di Al Lahbab, con il deserto che si estende fino all'orizzonte, sembra irreale.", price: "Incluso nel tour", tip: "Se soffrite di mal d'auto, prendete della dramamina in anticipo. Gli autisti sono professionisti con anni di esperienza — lasciateli scegliere il livello di difficoltà." },
+            { name: "Campo beduino: cammelli e tatuaggi all'henné", description: "Il campo nel deserto include un giro in cammello, tatuaggi all'henné, danza del ventre e tiro con l'arco. Una cena a buffet di cucina araba (kharouf, mezze, shisha) sotto le stelle del deserto.", price: "Incluso nel tour", tip: "Il giro in cammello dura solo 5-10 minuti, ma la foto dura una vita. Chiedete alla vostra guida di scattare la foto dal basso in modo che l'intero cammello sia inquadrato." },
+            { name: "Spettacolo di danza del ventre e Tanoura", description: "La danza Tanoura (un danzatore sufi che roteano con gonne colorate) e la danza del ventre sono gli spettacoli inclusi nella cena del campo. L'esibizione sotto il cielo stellato del deserto è indimenticabile.", price: "Incluso nel tour", tip: "Le stelle nel deserto arabico sono spettacolari — portate un'app di osservazione delle stelle per identificare le costellazioni nel buio totale del campo." },
+          ],
+        },
+        {
+          theme: "Palm Jumeirah e la Dubai moderna",
+          activities: [
+            { name: "Atlantis The Palm — Aquaventure", description: "Il parco acquatico dell'hotel Atlantis su Palm Jumeirah, con 16 ettari di scivoli, onde artificiali e una zona con mante e squali. Una delle esperienze più adrenaliniche di Dubai.", price: "395 AED", tip: "Prenotate online per uno sconto anticipato. Lo scivolo 'Tower of Neptune' (una caduta libera di 27 metri) è il più estremo. Arrivate alle 9:30 prima che si formino le code." },
+            { name: "The Pointe e viste sull'Atlantis", description: "La passeggiata di ristoranti e negozi in cima alla Palm, con la miglior vista sull'Atlantis dall'acqua. Le fontane di The Pointe offrono uno spettacolo notturno gratuito.", price: "Gratis", tip: "La passeggiata di The Pointe offre viste dirette sulla silhouette dell'Atlantis con il Burj Al Arab sullo sfondo — la foto della Palm da qui è spettacolare." },
+            { name: "Spiaggia di JBR e The Beach", description: "Jumeirah Beach Residence (JBR) è la passeggiata sul lungomare più vivace di Dubai, con la spiaggia pubblica più frequentata della città, ristoranti sull'acqua e il complesso The Beach con vista sul Burj Al Arab.", price: "Gratis", tip: "La spiaggia di JBR è pubblica e gratuita — spogliatoi e ombrelloni a pagamento sono disponibili ma non necessari." },
+            { name: "Cena d'addio con vista sul Burj Al Arab", description: "L'hotel più iconico di Dubai (e del mondo) ha la forma della vela di un dhow. Sebbene soggiornarci costi migliaia di dollari, potete avere una vista perfetta dal ristorante Pierchic o dai ristoranti sulla Jumeirah Beach.", price: "100-300 AED (ristoranti esterni)", tip: "L'angolazione migliore del Burj Al Arab è dalla spiaggia di Umm Suqeim — 200 metri di sabbia pubblica di fronte all'hotel, perfetta per la foto." },
+          ],
+        },
+      ],
+    },
   },
 
   lisboa: {
