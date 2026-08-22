@@ -778,6 +778,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Medellín",
+      country: "Colombia",
+      heroTitle: "3 giorni a Medellín: la città della primavera eterna",
+      heroSubtitle: "El Poblado, il Metrocable, i fiori di Envigado e la storia di trasformazione più incredibile dell'America Latina — Medellín oggi è la città più innovativa della Colombia.",
+      bestMonths: "Da dicembre a marzo e da luglio ad agosto",
+      budget: "40-70 USD/giorno",
+      travelTips: [
+        "La metro di Medellín (MET), con il suo sistema di funivie, è il miglior trasporto pubblico della Colombia — comprate la carta Cívica per usarla",
+        "Medellín rimane intorno ai 25°C tutto l'anno (la città della primavera eterna) — vestiti leggeri sempre, magari un cardigan per le sere",
+        "Il caffè colombiano di Medellín è tra i migliori al mondo — chiedete sempre caffè monorigine appena macinato, mai istantaneo",
+        "I taxi tramite app (InDriver, Uber) sono più sicuri dei taxi di strada — usateli sempre di notte",
+        "La Colombia è una potenza di biodiversità — il Giardino Botanico, il Parque Arví e la Riserva El Romeral danno accesso a una natura tropicale sorprendente",
+      ],
+      days: [
+        {
+          theme: "Il centro storico e Plaza Botero",
+          activities: [
+            { name: "Plaza Botero e il Museo de Antioquia", description: "La piazza con 23 sculture originali di Fernando Botero, l'artista colombiano più famoso al mondo — tutte donate da lui alla sua città natale. Il vicino Museo de Antioquia custodisce la più grande collezione al mondo delle opere di Botero.", price: "Gratis (piazza) / COP 20.000 (museo)", tip: "Le sculture sono pensate per essere toccate e fotografate — Botero le progettò perché le persone interagissero con esse. 'Hombre a Caballo' (Uomo a cavallo) è la più iconica per le foto." },
+            { name: "Parque de las Luces e il centro di Medellín", description: "Il parco con 300 colonne luminose nel cuore del centro storico, che crea uno spettacolo visivo unico di notte. Da qui è visibile la Biblioteca España, sulla collina sopra il quartiere Santo Domingo.", price: "Gratis", tip: "Il centro di Medellín è molto più sicuro di 20 anni fa — passeggiate normalmente nelle zone turistiche di giorno. I venditori ambulanti di frutta tropicale hanno i migliori manghi e granadillas." },
+            { name: "Pranzo con bandeja paisa", description: "La bandeja paisa è il piatto più rappresentativo di Antioquia: riso, fagioli, cotenna di maiale, chorizo, uovo fritto, avocado, platano dolce e salsa hogao, tutto su un unico vassoio. Impossibile finirlo da soli.", price: "COP 18.000-30.000", tip: "Il ristorante El Rancherito in centro ha la bandeja paisa più autentica. La mazamorra (dolce di mais e latte) che segue è d'obbligo." },
+            { name: "Quartiere El Poblado — parchi e caffè", description: "Il quartiere più moderno e sicuro di Medellín, con il Parque El Poblado, la Calle del Lleras (il cuore della vita notturna) e la più alta concentrazione di caffè, ristoranti e boutique della città.", price: "Gratis", tip: "Il caffè colombiano a El Poblado costa COP 2.000-5.000 ed è di qualità superiore — Medellín si trova a 1.400m di altitudine, e le piantagioni di caffè sono a solo 30 minuti in auto." },
+          ],
+        },
+        {
+          theme: "Il Metrocable e i quartieri collinari",
+          activities: [
+            { name: "Metrocable Linea K — Santo Domingo", description: "Il sistema di funivia aerea che collega la metro ai quartieri sui pendii della Valle di Aburrá. La linea K sale fino al quartiere Santo Domingo e offre dalle cabine la miglior vista su Medellín e sulla valle.", price: "COP 3.200 (con la carta Cívica della metro)", tip: "Comprate la carta Cívica alla metro per usare la funivia. La migliore angolazione per le foto della valle è alla stazione Andalucía (penultima prima della cima)." },
+            { name: "Parque Arví — la foresta sopra Medellín", description: "Il parco ecologico di 1.763 ettari sopra le montagne di Medellín, raggiungibile con la linea L del Metrocable da Santo Domingo. Sentieri, farfalle, un mercato di artigianato indigeno e la vista più bella sulla Valle di Aburrá.", price: "COP 5.000 (funivia Arví)", tip: "Il mercato di artigianato indigeno all'interno del Parque Arví nei weekend offre prodotti delle comunità native di Antioquia — artigianato, miele e piante medicinali." },
+            { name: "Tour del passato nel quartiere La Candelaria", description: "Un tour attraverso i quartieri che documentano la trasformazione di Medellín: dal Barrio Pablo Escobar ai complessi residenziali che hanno sostituito le favelas. Le guide locali offrono la prospettiva più onesta.", price: "COP 30.000-60.000 (tour guidato)", tip: "Prenotate solo guide locali certificate — chi ha vissuto la trasformazione dà un contesto umano che i tour internazionali non possono dare. I tour a piedi gratuiti partono da Parque de Bolívar." },
+            { name: "Cena a Laureles — il quartiere più autentico", description: "Il quartiere residenziale della classe media professionale di Medellín, con la maggior concentrazione di ristoranti locali, wine bar e la vita notturna più genuina della città.", price: "COP 25.000-60.000", tip: "L'Avenida Laureles ha il miglior sancocho di pollo di Medellín. Per l'alta cucina, El Cielo (chef Juan Manuel Barrientos) propone la cucina colombiana più all'avanguardia." },
+          ],
+        },
+        {
+          theme: "Feria de las Flores e il Giardino Botanico",
+          activities: [
+            { name: "Giardino Botanico di Medellín", description: "Il giardino botanico più ricco di biodiversità della Colombia, con 4.500 piante tropicali, l'Orquideórama (la struttura in legno più fotografata di Medellín) e un lago con le ninfee più grandi delle Americhe.", price: "Gratis", tip: "L'Orquideórama è un'opera di architettura parametrica che ha vinto un premio RIBA. Le orchidee in fiore (la Colombia ne ha 4.000 specie) sono impressionanti tutto l'anno." },
+            { name: "Quartiere Manila e i graffiti di Medellín", description: "Medellín ha la seconda scena di arte urbana più importante della Colombia dopo Bogotá. I quartieri Manila e Laureles hanno i migliori murales, di artisti come Guache e Crisp.", price: "Gratis", tip: "Il tour gratuito di graffiti Medellín Urban Street Art (a offerta libera) parte dal Parque El Poblado. La zona di Calle 70 a Laureles ha i murales più recenti." },
+            { name: "Mercado del Río", description: "Il mercato gastronomico più popolare di Medellín, con più di 60 bancarelle di cucina colombiana e internazionale, cocktail di frutta tropicale e l'atmosfera di pranzo più festosa della città.", price: "COP 15.000-40.000", tip: "I succhi di lulo, frutto della passione, tamarillo e guanabana al Mercado del Río costano COP 3.000-5.000 e sono i migliori di Medellín. La tequila con chamoy non è colombiana — ordinate invece l'aguardiente." },
+            { name: "Tramonto dal Cerro de las Tres Cruces", description: "Le tre croci in cima alla collina sopra il quartiere Boston, con la miglior vista panoramica su tutta la Valle di Aburrá: Medellín da un capo all'altro, la metro in basso nella pianura e le montagne circostanti.", price: "Gratis", tip: "La salita alla collina (45 min a piedi) è sicura di giorno quando c'è gente in giro. La domenica c'è più gente e un'atmosfera più vivace. Dalla cima si vede chiaramente la funivia di Santo Domingo." },
+          ],
+        },
+      ],
+    },
   },
 
   singapur: {
@@ -909,6 +953,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Insel Sentosa und Universal Studios", description: "Singapurs Vergnügungsinsel, mit Universal Studios, dem Siloso Beach und einer Panorama-Seilbahn. Die Fahrgeschäfte Transformers, Harry Potter und Jurassic Park bei Universal sind die besten Asiens.", price: "88 SGD (Universal Studios)", tip: "Der Express Pass von Universal Studios (40 SGD Aufpreis) umgeht die Schlangen bei den Hauptattraktionen — lohnt sich, wenn der Park überfüllt ist. Die Seilbahn (35 SGD) vom Mount Faber bietet die besten Ausblicke auf die Meerenge." },
             { name: "Haw Par Villa — der Park der zehn Höllen", description: "Asiens seltsamster Themenpark, 1937 erschaffen, mit 1.000 Statuen, die die chinesische Mythologie und die 10 Gerichtshöfe der Hölle darstellen. Ein surreales Erlebnis der besonderen Art.", price: "Kostenlos", tip: "Haw Par Villa ist einer der einzigartigsten Orte Singapurs und bei Touristen praktisch unbekannt — ein verstecktes Juwel unter den kommerziellen Themenparks." },
             { name: "Letztes Abendessen im Newton Circus Hawker Centre", description: "Singapurs berühmtestes nächtliches Hawker Centre (das aus Crazy Rich Asians), mit Mangrovenkrabben, frittierten Orchideen, gegrillten Meeresfrüchten und Laksa unter den tropischen Sternen.", price: "15-40 SGD", tip: "Chilikrabbe (50-80 SGD pro Portion) ist Singapurs Nationalgericht — bestellen Sie sie am Stand mit der längsten Schlange. Man Tou (frittierte Brötchen) zum Eintunken in die Soße ist Pflicht." },
+          ],
+        },
+      ],
+    },
+    it: {
+      city: "Singapore",
+      country: "Singapore",
+      heroTitle: "3 giorni a Singapore: il futuro del XXI secolo",
+      heroSubtitle: "Gardens by the Bay, Chinatown, Marina Bay Sands e il cibo degli hawker centre — Singapore in tre giorni perfettamente organizzati.",
+      bestMonths: "Da febbraio ad aprile",
+      budget: "150-250 SGD/giorno (~110-185 USD)",
+      travelTips: [
+        "Singapore ha uno dei sistemi di trasporto pubblico più efficienti al mondo — la carta EZ-Link copre metro (MRT), bus e LRT",
+        "Il cibo degli hawker centre (4-8 SGD) ha la stessa qualità dei ristoranti di lusso — è il grande equalizzatore culinario di Singapore",
+        "Il clima è tropicale tutto l'anno (30°C, 80% di umidità) — sempre vestiti leggeri e crema solare",
+        "Singapore ha leggi molto severe: vietato fumare nei luoghi pubblici, vietato mangiare in metro e vietate le gomme da masticare",
+        "Singapore è cara per l'alloggio (150-300 SGD/notte) ma economica per cibo e trasporti",
+      ],
+      days: [
+        {
+          theme: "Marina Bay e la Singapore futuristica",
+          activities: [
+            { name: "Gardens by the Bay", description: "Il complesso di giardini futuristici più spettacolare al mondo, con i Supertree (strutture in acciaio di 25-50 metri) e le sue due cupole geodetiche: Cloud Forest (una foresta tropicale alta 35m) e Flower Dome.", price: "28 SGD (Cloud Forest + Flower Dome)", tip: "Il Supertree Grove offre il miglior tramonto e uno spettacolo di luci gratuito alle 19:45 e alle 20:45. Salire sulla passerela tra i Supertree (10 SGD) offre viste su Marina Bay." },
+            { name: "Marina Bay Sands Skypark", description: "L'hotel più iconico di Singapore, con una piscina a sfioro al 57° piano (solo per ospiti) e la terrazza SkyPark che offre le migliori viste di Singapore. Lo spettacolo gratuito di luci e acqua Spectra si svolge davanti all'hotel.", price: "32 SGD (piattaforma panoramica)", tip: "La piattaforma panoramica dello SkyPark è aperta al pubblico (32 SGD). La vista sullo skyline, sui Gardens by the Bay e sullo stretto di Singapore da 200 metri d'altezza è impareggiabile." },
+            { name: "ArtScience Museum", description: "Il museo a forma di fiore di loto che galleggia sulle acque di Marina Bay, con mostre di arte digitale, scienza e tecnologia. La mostra permanente Future World (arte digitale di teamLab) è una delle più impressionanti al mondo.", price: "21 SGD", tip: "Future World di teamLab propone l'installazione 'Forest of Life', dove le luci reagiscono al movimento — una delle esperienze visive più uniche dell'Asia." },
+            { name: "Spectra — spettacolo di luci e acqua", description: "Lo spettacolo gratuito al Marina Bay Waterfront davanti a The Shoppes, con getti d'acqua di 30 metri e proiezioni laser sincronizzate con la musica. Uno dei migliori spettacoli notturni gratuiti al mondo.", price: "Gratis", tip: "Il posto migliore è sull'Helix Bridge o lungo il lungomare di fronte all'ArtScience Museum. Lo spettacolo delle 20:45 di venerdì e sabato è il più lungo." },
+          ],
+        },
+        {
+          theme: "Chinatown, Little India e gli hawker centre",
+          activities: [
+            { name: "Chinatown Heritage Centre", description: "La Chinatown di Singapore, con il Buddha di Giada al Tempio Sri Mariamman, negozi di tè cinesi ancestrali e il famoso Maxwell Food Centre. Le vie Pagoda, Trengganu e Sago hanno le shophouse più colorate.", price: "Gratis (Heritage Centre 12 SGD)", tip: "Il Tempio Thian Hock Keng (1840) è il tempio Hokkien più antico di Singapore — la decorazione del drago in porcellana sul tetto è straordinaria. Ingresso gratuito." },
+            { name: "Maxwell Food Centre — l'hawker centre più famoso", description: "Il centro di street food più storico di Singapore, con più di 100 bancarelle sotto lo stesso tetto. Il riso al pollo di Tian Tian, il rojak di frutta e il laksa sono i piatti più ricercati.", price: "4-8 SGD a piatto", tip: "La bancarella Tian Tian Hainanese Chicken Rice (la preferita di Anthony Bourdain) ha la fila dalle 10:30 — arrivate prima di mezzogiorno per mangiare. Costa 5-6 SGD." },
+            { name: "Little India — Serangoon Road", description: "Il quartiere indiano di Singapore, con il Tempio Sri Veeramakaliamman (uno dei più elaborati dell'Asia), negozi di spezie, bancarelle di fiori e il Tekka Market, che ospita la miglior cucina indiana della città.", price: "Gratis", tip: "Il biryani della bancarella Allauddin's al Tekka Market (6 SGD) è il migliore di Singapore. Il quartiere è particolarmente colorato la domenica, quando i lavoratori migranti festeggiano il loro giorno libero." },
+            { name: "Clarke Quay e il fiume Singapore al tramonto", description: "L'antico molo del fiume Singapore, oggi un quartiere di bar e ristoranti in shophouse coloniali restaurate. L'ora dorata illumina le facciate colorate con il fiume in primo piano.", price: "Gratis", tip: "Le barche da crociera sul fiume partono da Clarke Quay ogni 30 minuti (25 SGD) e passano davanti ai luoghi più storici della città. La crociera notturna è la più bella." },
+          ],
+        },
+        {
+          theme: "Sentosa, lo zoo e la natura di Singapore",
+          activities: [
+            { name: "Singapore Zoo — il migliore al mondo", description: "Costantemente classificato tra i migliori zoo al mondo, con habitat a concetto aperto per gli animali. Le giraffe, gli oranghi del Borneo semi-liberi e i coccodrilli di fiume sono i più affascinanti.", price: "49 SGD", tip: "Jungle Breakfast with Wildlife (33 SGD in più) offre una colazione accanto agli oranghi alle 9 — un'esperienza unica. Prenotate con settimane di anticipo." },
+            { name: "Isola di Sentosa e Universal Studios", description: "L'isola dei divertimenti di Singapore, con Universal Studios, la spiaggia di Siloso e una funivia panoramica. Le attrazioni Transformers, Harry Potter e Jurassic Park di Universal sono le migliori dell'Asia.", price: "88 SGD (Universal Studios)", tip: "L'Express Pass di Universal Studios (40 SGD in più) salta le code per le attrazioni principali — conviene se il parco è affollato. La funivia (35 SGD) dal Monte Faber offre le migliori viste sullo stretto." },
+            { name: "Haw Par Villa — il parco dei dieci inferni", description: "Il parco a tema più strano dell'Asia, creato nel 1937, con 1.000 statue che raffigurano la mitologia cinese e le 10 corti dell'inferno. Un'esperienza surreale unica nel suo genere.", price: "Gratis", tip: "Haw Par Villa è uno dei luoghi più singolari di Singapore e praticamente sconosciuto ai turisti — una gemma nascosta tra i parchi a tema commerciali." },
+            { name: "Ultima cena al Newton Circus Hawker Centre", description: "L'hawker centre notturno più famoso di Singapore (quello di Crazy Rich Asians), con granchi di fango, orchidee fritte, frutti di mare alla griglia e laksa sotto le stelle tropicali.", price: "15-40 SGD", tip: "Il granchio al chili (50-80 SGD a porzione) è il piatto nazionale di Singapore — ordinatelo alla bancarella con la fila più lunga. Il Man Tou (panini fritti) da intingere nella salsa è d'obbligo." },
           ],
         },
       ],
