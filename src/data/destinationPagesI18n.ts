@@ -1272,6 +1272,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    fr: {
+      city: "Rio de Janeiro",
+      country: "Brésil",
+      heroTitle: "4 jours à Rio de Janeiro : le Christ Rédempteur, Copacabana et la samba",
+      heroSubtitle: "Le Christ Rédempteur, le Pain de Sucre, les plages d'Ipanema et le football au Maracanã — la ville merveilleuse en quatre jours parfaits.",
+      bestMonths: "Mai à octobre (saison sèche)",
+      budget: "R$200-400/jour (~40-80 USD)",
+      travelTips: [
+        "La sécurité à Rio demande de la prudence : ne sortez pas votre téléphone dans la rue, utilisez des taxis/Uber plutôt que de longues marches la nuit",
+        "Les plages de la zone sud (Copacabana, Ipanema, Leblon) sont les plus sûres pour les touristes",
+        "Les transports via application (Uber, 99) sont plus sûrs que les taxis de rue — utilisez-les toujours pour les trajets nocturnes",
+        "La véritable caipirinha se prépare avec de la cachaça (pas de la vodka) et du limão (citron vert brésilien) — commandez toujours la version classique",
+        "Changez vos dollars en reais dans les bureaux de change de l'aéroport ou du centre-ville — les hôtels offrent de moins bons taux",
+      ],
+      days: [
+        {
+          theme: "Le Christ Rédempteur et la zone sud",
+          activities: [
+            { name: "Christ Rédempteur — tôt le matin", description: "L'une des 7 merveilles du monde moderne, à 710 mètres d'altitude sur le Corcovado. La statue de 38 mètres déploie ses bras au-dessus de toute la ville. La vue sur la baie de Guanabara, le Pain de Sucre et les plages depuis le sommet est incomparable.", price: "R$87 (train à crémaillère + entrée)", tip: "Réservez le train sur le site officiel du Corcovado. 8h offre la meilleure visibilité et le moins de visiteurs. Les jours nuageux, vous ne verrez rien." },
+            { name: "Quartier de Santa Teresa", description: "Le quartier bohème de Rio, sur les pentes du Corcovado, avec des maisons coloniales restaurées, des galeries d'art, le bondinho (tramway électrique) et certains des meilleurs restaurants de la ville.", price: "Gratuit", tip: "Le Largo do Guimarães est le cœur du quartier, avec des bars et restaurants dans des maisons coloniales. Les galeries d'art sont ouvertes du mardi au dimanche." },
+            { name: "Plage d'Ipanema", description: "La plage la plus célèbre et chic de Rio, immortalisée par la bossa nova. Chaque section a son propre public (postos 9 et 10 pour les jeunes Cariocas, posto 8 pour la communauté LGBT). Le football de plage et le volley-ball sont les sports de prédilection.", price: "Gratuit", tip: "Les chaises et parasols sur la plage appartiennent aux vendeurs et coûtent un supplément (R$20-30). Achetez de l'eau de coco directement aux stands sur le sable." },
+            { name: "Coucher de soleil à Arpoador", description: "Le rocher entre Ipanema et Copacabana où les Cariocas se rassemblent chaque soir pour applaudir le coucher du soleil. Le moment où le soleil touche l'horizon et où tout le monde applaudit est l'un des plus beaux rituels urbains au monde.", price: "Gratuit", tip: "Arrivez 30 minutes avant le coucher du soleil pour avoir une bonne place sur le rocher. Les applaudissements collectifs sont spontanés et sincères — l'un des moments les plus cariocas que vous puissiez vivre." },
+          ],
+        },
+        {
+          theme: "Le Pain de Sucre et Copacabana",
+          activities: [
+            { name: "Pain de Sucre — téléphérique", description: "Le pic emblématique de 396 mètres au-dessus de la baie de Guanabara. Le téléphérique monte en deux étapes : d'abord jusqu'au Morro da Urca (215m), puis jusqu'au sommet du Pain de Sucre. Les vues sur Rio depuis le sommet sont spectaculaires.", price: "R$160", tip: "Le meilleur moment est le coucher du soleil (même prix R$160), quand le Christ Rédempteur s'illumine et que la baie scintille de mille reflets. Le matin offre une meilleure visibilité — décidez selon la météo." },
+            { name: "Quartier d'Urca et déjeuner", description: "Le quartier le plus tranquille et résidentiel de Rio, au pied du Pain de Sucre. Les étals le long du Boulevard Olímpico servent les meilleurs bolinhos de morue et caipirinha avec vue sur la baie.", price: "R$30-60", tip: "Le Bar Circo da Urca a la plus belle terrasse du quartier, avec vue directe sur la montagne. Commandez une caipirinha au citron vert — la version brésilienne originale, pas à la fraise." },
+            { name: "Plage de Copacabana", description: "La plage la plus célèbre du Brésil, 4 km de sable bordés de la mosaïque portugaise en vagues. Le Forte de Copacabana, à l'extrémité sud, offre le meilleur point de vue de la plage.", price: "Gratuit", tip: "Les vendeurs de rue proposant du mate glacé, de l'eau de coco et des biscoito globo sont un incontournable de l'expérience de plage carioca." },
+            { name: "Samba à Lapa", description: "Lapa est le quartier de la samba de Rio, avec les Arcos da Lapa en toile de fond. Les bars et clubs comme Carioca da Gema et Rio Scenarium proposent de la samba live dès 20h, du jeudi au samedi.", price: "R$20-40 (consommation minimum)", tip: "Le Rio Scenarium a trois étages remplis d'antiquités et de samba live — l'un des plus beaux bars au monde. Arrivez avant 21h pour éviter la file." },
+          ],
+        },
+        {
+          theme: "Favela, le Maracanã et la cuisine carioca",
+          activities: [
+            { name: "Visite d'une favela à Vidigal ou Rocinha", description: "Les favelas de Rio ne sont pas seulement des sujets de journaux télévisés — ce sont des communautés vivantes avec leur histoire, leur nourriture et leur art. Les visites guidées à Vidigal ou Rocinha sont organisées au bénéfice de la communauté.", price: "R$80-150 (visite guidée)", tip: "Ne faites la visite qu'avec des opérateurs certifiés (Favela Reality, RioLIVE). N'y allez jamais seul. La vue depuis le sommet de Vidigal sur la mer est tout aussi impressionnante que celle du Pain de Sucre." },
+            { name: "Déjeuner de feijoada au centre-ville", description: "La feijoada est le plat national du Brésil : un ragoût de haricots noirs avec côtes, saucisse et poitrine de porc, servi avec riz, farofa, chou vert sauté et tranches d'orange. Le samedi est le jour traditionnel pour la déguster.", price: "R$45-80", tip: "Le Bar do Mineiro à Santa Teresa et le Jobi à Leblon servent la meilleure feijoada de Rio. Les portions sont énormes — deux personnes peuvent en partager une." },
+            { name: "Stade du Maracanã — visite ou match", description: "Le stade le plus célèbre d'Amérique latine et symbole du Brésil, d'une capacité de 78 000 personnes. La visite montre les vestiaires, la salle des trophées et la loge présidentielle. Si un match a lieu, l'expérience est incomparable.", price: "R$70 (visite) / R$50-300 (match)", tip: "Les matchs de Flamengo et Fluminense au Maracanã offrent la meilleure ambiance. Achetez les billets sur le site officiel du club — les revendeurs facturent 3 fois plus." },
+            { name: "Dîner à Leblon — le quartier le plus élégant", description: "Leblon possède la plus forte concentration de restaurants de classe mondiale à Rio. L'éventail va des rodízios (buffet de grillades brésiliennes à volonté) aux meilleurs restaurants du chef Thomas Troisgros.", price: "R$80-200", tip: "Un rodízio de viande au Porcão ou au Fogo de Chão est l'expérience culinaire la plus représentative du Brésil — de la viande grillée qui continue d'arriver jusqu'à ce que vous retourniez la petite carte sur rouge." },
+          ],
+        },
+        {
+          theme: "Jardim Botânico et l'âme verte de Rio",
+          activities: [
+            { name: "Jardim Botânico", description: "Le jardin botanique de Rio, fondé par Dom João VI en 1808, avec des palmiers impériaux de 30 mètres, des nénuphars géants et la plus grande collection de bromélias au monde. Ses 6 500 espèces sur 54 hectares forment une oasis verte.", price: "R$30", tip: "L'allée des palmiers impériaux à l'entrée est la photo la plus emblématique du jardin. Les singes ouistitis et les agoutis sont communs — marchez lentement pour les repérer." },
+            { name: "Lagoa Rodrigo de Freitas et la piste cyclable", description: "Le lagon au cœur de la zone sud de Rio, entouré d'une piste cyclable de 7 km avec vues sur le Christ Rédempteur, le Corcovado et les quartiers d'Ipanema et Leblon.", price: "Gratuit (location de vélo R$15/heure)", tip: "Le kiosque 7 de la Lagoa (Guimas) offre la meilleure vue et les meilleures caipirinhas au bord de l'eau. Le dimanche, il y a un marché aux puces avec des antiquités." },
+            { name: "Parque Lage — la demeure dans la forêt", description: "Le parc au pied du Corcovado, avec une demeure néoclassique entourée de forêt atlantique. Il abrite aujourd'hui une école d'arts visuels, et le café de la cour avec vue sur le jardin est parfait pour l'après-midi.", price: "Gratuit", tip: "Le Parque Lage est le point de départ du sentier de randonnée jusqu'au Christ Rédempteur — une montée de 2 heures à travers la forêt atlantique. Un guide est recommandé." },
+            { name: "Une dernière caipirinha sur le front de mer d'Ipanema", description: "L'adieu parfait à Rio : une caipirinha aux kiosques du front de mer d'Ipanema alors que le soleil se couche derrière le Morro Dois Irmãos et que les Cariocas applaudissent le coucher de soleil une fois de plus.", price: "R$15-25", tip: "Le Morro Dois Irmãos en arrière-plan d'Ipanema, avec le soleil se couchant derrière, est la plus belle carte postale de Rio. Les kiosques du front de mer servent de l'eau de coco fraîche et la meilleure caipirinha à la noix de cajou." },
+          ],
+        },
+      ],
+    },
   },
 
   bangkok: {
@@ -1328,6 +1381,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    fr: {
+      city: "Bangkok",
+      country: "Thaïlande",
+      heroTitle: "4 jours à Bangkok : temples dorés, marchés flottants et street food",
+      heroSubtitle: "Le Grand Palais, Wat Pho, Chatuchak et la street food la plus vivante d'Asie — l'itinéraire parfait pour un premier voyage en Thaïlande.",
+      bestMonths: "Novembre à février",
+      budget: "40-80 USD/jour",
+      travelTips: [
+        "Le BTS Skytrain et le métro MRT couvrent les principales zones touristiques — évitez les taxis aux heures de pointe (8h-9h et 17h-19h)",
+        "Le baht thaïlandais est très stable — ayez du liquide sur vous pour les transports locaux et la street food, qui n'acceptent pas les cartes",
+        "Retirez toujours vos chaussures avant d'entrer dans un temple ou chez quelqu'un — c'est une norme culturelle très sérieuse",
+        "La saison des pluies (juin-octobre) apporte des averses torrentielles quotidiennes, surtout en fin d'après-midi — cela n'affecte pas beaucoup le tourisme",
+        "Les chauffeurs de taxi ne parlent souvent pas anglais — ayez votre adresse écrite en thaï ou montrez l'épingle Google Maps",
+      ],
+      days: [
+        {
+          theme: "Les grands temples de Bangkok",
+          activities: [
+            { name: "Grand Palais et Wat Phra Kaew", description: "Le complexe le plus sacré de Thaïlande, construit en 1782 et abritant le Bouddha d'Émeraude (le plus vénéré du pays). Les structures dorées et les fresques du Ramakien dans les cloîtres sont des chefs-d'œuvre de l'art thaïlandais.", price: "500 ฿", tip: "Arrivez à l'ouverture à 8h30 pour éviter la foule et la chaleur. L'entrée inclut aussi le pavillon Vimanmek. Le code vestimentaire est obligatoire : épaules et genoux couverts — des vêtements sont prêtés à l'entrée." },
+            { name: "Wat Pho — le Bouddha couché", description: "Le plus ancien temple de Bangkok (XVIe siècle) abrite le plus grand Bouddha couché de Thaïlande : 46 mètres de long, recouvert de feuilles d'or. C'est aussi le siège officiel du massage thaïlandais traditionnel.", price: "200 ฿", tip: "Le massage thaïlandais traditionnel dans les écoles du temple coûte 420 ฿ l'heure — le plus authentique et abordable de Bangkok. Réservez sur place." },
+            { name: "Déjeuner de pad thaï dans la rue", description: "Les stands de rue autour de Wat Pho et de l'embarcadère de Tha Tien sont parmi les plus célèbres de Bangkok. Pad thaï, khao pad (riz frit) et tom yum font le déjeuner parfait.", price: "50-80 ฿", tip: "Cherchez les stands avec des files de locaux — un signe infaillible de qualité. Thip Samai sur Maharaj Rd sert le pad thaï le plus célèbre de Bangkok depuis 1966." },
+            { name: "Wat Arun — le Temple de l'Aube", description: "Le temple sur le fleuve Chao Phraya, dont le prang principal est recouvert de fragments de porcelaine scintillant au soleil. Accessible en bateau depuis l'embarcadère de Tha Tien (5 ฿).", price: "100 ฿", tip: "Le meilleur moment est le coucher du soleil, quand la lumière dorée illumine les mosaïques de porcelaine. Montez au deuxième niveau du prang pour une vue sur le fleuve." },
+          ],
+        },
+        {
+          theme: "Marchés, canaux et Bangkok authentique",
+          activities: [
+            { name: "Marché flottant de Damnoen Saduak", description: "Le marché flottant le plus photogénique de Thaïlande, à 100 km de Bangkok. Des vendeurs en bateau chargés de fruits tropicaux, de pad thaï et de curry jaune naviguent sur des canaux du XIXe siècle.", price: "Excursion 700-1 000 ฿ (depuis Bangkok)", tip: "Partez avant 6h30 pour arriver à 8h, quand c'est le plus animé. Le trajet retour en bateau à travers les canaux est aussi intéressant que le marché lui-même." },
+            { name: "Chinatown (Yaowarat)", description: "Le Chinatown de Bangkok, actif depuis 1782, possède les rues gastronomiques les plus denses de la ville. Fruits de mer grillés, canard rôti chinois et dim sum sont les spécialités du quartier.", price: "60-150 ฿", tip: "Yaowarat Rd la nuit (à partir de 18h) devient le meilleur marché de rue de Bangkok. De jour, les boutiques d'épices et d'herbes médicinales sont fascinantes." },
+            { name: "Khlong Saen Saeb — les canaux de Bangkok", description: "Le système de bateaux express circulant dans les canaux de Bangkok — le moyen le plus rapide et le moins cher de se déplacer en centre-ville. Les khlongs (canaux) montrent le Bangkok fluvial original qui existait avant les autoroutes.", price: "15-20 ฿ par trajet", tip: "Utilisez les bateaux du Khlong Saen Saeb comme un vrai transport, pas comme une visite touristique. Embarquez à Pratunam et atteignez Chit Lom en 10 minutes, sans embouteillages." },
+            { name: "Khao San Road et la vie nocturne backpacker", description: "La rue la plus célèbre d'Asie du Sud-Est pour les voyageurs indépendants, avec des bars, de la musique live, des tatoueurs, des masseuses de rue et la meilleure sélection de nourriture nocturne de Bangkok.", price: "50-100 ฿ (nourriture et boissons)", tip: "Les scorpions et insectes frits de Khao San sont pour les touristes aventureux — les grillons et vers à soie sont ce que les Thaïlandais mangent vraiment. Le pad see ew des stands en bout de rue est le meilleur." },
+          ],
+        },
+        {
+          theme: "Chatuchak et le shopping à Bangkok",
+          activities: [
+            { name: "Marché de Chatuchak", description: "Le plus grand marché de week-end au monde, avec 15 000 étals et 200 000 visiteurs chaque semaine. Vêtements, antiquités, animaux exotiques, art, plantes et nourriture dans un labyrinthe de 35 hectares.", price: "Gratuit (achats non inclus)", tip: "Un plan du marché est disponible à l'entrée — absolument nécessaire. Les sections 1-5 ont des antiquités ; 7-27 ont la mode et les vêtements ; la section 26 a la meilleure street food." },
+            { name: "Terminal 21 — le centre commercial thème aéroport", description: "Un centre commercial unique où chaque étage est décoré sur le thème de l'aéroport d'une ville différente (Tokyo, Istanbul, San Francisco). Le food court au sous-sol est l'un des meilleurs et des moins chers de Bangkok.", price: "Gratuit (pour entrer)", tip: "Le food court du Terminal 21 propose des plats thaïlandais de 50 à 100 ฿. C'est le déjeuner climatisé le moins cher du centre-ville de Bangkok." },
+            { name: "MBK Center et l'électronique", description: "Le grand magasin de Bangkok célèbre pour l'électronique, les vêtements locaux et la cuisine thaïlandaise. Le 4e étage possède la plus grande concentration d'accessoires et d'électronique d'occasion de la ville.", price: "Gratuit (pour entrer)", tip: "L'étage food court du MBK propose la cuisine thaïlandaise la moins chère du centre-ville — pad thaï à 60 ฿, riz gluant à la mangue à 80 ฿." },
+            { name: "Dîner sur Sukhumvit Soi 11 et vie nocturne", description: "La rue la plus cosmopolite de Bangkok, avec un mélange de restaurants internationaux, de bars sur les toits et la vie nocturne la plus internationale de la ville. Levels, Demo et Hard Rock Cafe se trouvent tous sur cette artère.", price: "150-500 ฿", tip: "Le marché nocturne de Pat Pong (soi 4-5) compte plus d'une centaine d'étals de vêtements et souvenirs avec une ambiance nocturne. Négociez toujours — le prix demandé est le double du prix réel." },
+          ],
+        },
+        {
+          theme: "Temples alternatifs et adieu",
+          activities: [
+            { name: "Wat Benchamabophit — le Temple de Marbre", description: "Le temple le plus photogénique de Bangkok, construit en 1900 avec du marbre de Carrare italien. Les 52 bouddhas en bronze du cloître et le canal devant le temple lui confèrent une sérénité particulière.", price: "50 ฿", tip: "La meilleure photo se prend depuis le pont de pierre, avec le temple se reflétant dans le canal en arrière-plan. 9h offre la meilleure lumière et moins de touristes." },
+            { name: "Maison Jim Thompson", description: "La demeure de l'homme d'affaires américain qui relança l'industrie de la soie thaïlandaise dans les années 1950. Six maisons traditionnelles en teck thaïlandais réunies forment l'un des espaces les plus élégants de Bangkok.", price: "200 ฿ (visite guidée incluse)", tip: "Jim Thompson a mystérieusement disparu en Malaisie en 1967 — les guides racontent l'histoire en détail. La visite n'est proposée qu'en anglais/français/japonais." },
+            { name: "Spa d'adieu et massage thaïlandais", description: "Bangkok possède certains des meilleurs spas les moins chers d'Asie. Un massage de 2 heures dans un spa de qualité (pas ceux de Khao San Road) coûte 800-1 500 ฿ et inclut un massage complet du corps et de la réflexologie.", price: "600-1 500 ฿", tip: "Health Land et Divana sont des chaînes fiables avec plusieurs adresses à Bangkok. Réservez 2 heures à l'avance en haute saison." },
+            { name: "Sky Bar Lebua — le bar le plus haut du monde", description: "Le bar de l'hôtel Lebua State Tower, à 220 mètres de haut, rendu célèbre par sa apparition dans Very Bad Trip 2. La vue sur le Chao Phraya et la skyline de Bangkok au coucher du soleil est incomparable.", price: "600-900 ฿ (cocktails)", tip: "Réservez une table à l'avance — c'est l'un des bars les plus recherchés au monde. Le code vestimentaire est obligatoire : ni sandales, ni short, ni débardeur." },
+          ],
+        },
+      ],
+    },
   },
 
   marrakech: {
@@ -1371,6 +1477,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Berber lunch in the Atlas", description: "Restaurants in the Atlas's Berber villages serve chicken tagine with olives and preserved lemon, vegetable couscous, and harira, on terraces with mountain views.", price: "80-120 MAD", tip: "Berber khobz bread, baked in a clay oven, is the best accompaniment to tagine. Roadside restaurants full of local customers are the most authentic." },
             { name: "Return, and an afternoon of shopping in the souks", description: "Your last afternoon is ideal for finishing up any shopping in the medina's souks. Spices (ras el hanout, harissa), argan oil, brass lamps, and Berber rugs make the best souvenirs.", price: "Depends on purchases", tip: "The final haggled price is usually 40-50% of the asking price. If the seller drops the price quickly, you can push lower. Never start haggling if you have no intention of buying." },
             { name: "Last night on a Jemaa el-Fna rooftop terrace", description: "The perfect way to say goodbye to Marrakech is from the terraces of Café de France or Le Grand Balcon Café Glacier, watching the square light up and fill with people at dusk.", price: "30-50 MAD (mint tea)", tip: "Moroccan mint tea (thé à la menthe) is poured from height to create foam — it's a ritual. Asking for it to be poured from up high is completely normal and expected." },
+          ],
+        },
+      ],
+    },
+    fr: {
+      city: "Marrakech",
+      country: "Maroc",
+      heroTitle: "3 jours à Marrakech : la ville rouge qui réveille tous les sens",
+      heroSubtitle: "La place Jemaa el-Fna, les souks labyrinthiques, le jardin Majorelle et les riads de rêve — l'itinéraire essentiel pour un premier voyage au Maroc.",
+      bestMonths: "Mars à mai et octobre à novembre",
+      budget: "50-100 USD/jour",
+      travelTips: [
+        "Engagez un guide officiel pour les souks (100-150 MAD/heure) — cela vous évitera de vous perdre et d'être orienté vers des boutiques à commission",
+        "Le dirham marocain ne peut pas être changé en dehors du Maroc — apportez un peu de liquide pour commencer et changez le reste à l'aéroport ou dans les bureaux du centre-ville",
+        "Habillez-vous modestement dans la médina — épaules et genoux couverts est la norme pour hommes et femmes, et vous évitera une attention non désirée",
+        "Les photos de personnes nécessitent une autorisation — les artistes et vendeurs de la place attendent un paiement pour les photos (10-20 MAD)",
+        "L'eau du robinet n'est pas potable — buvez toujours de l'eau en bouteille et évitez les glaçons dans les jus des stands de rue",
+      ],
+      days: [
+        {
+          theme: "La médina et le cœur de Marrakech",
+          activities: [
+            { name: "Place Jemaa el-Fna le matin", description: "Le cœur de Marrakech, classé au patrimoine mondial de l'UNESCO. Le matin, c'est un marché tranquille avec des stands de jus d'orange, des artistes du henné et des charmeurs de serpents. Le soir, elle se transforme en l'un des spectacles les plus chaotiques et fascinants au monde.", price: "Gratuit (services non inclus)", tip: "Le jus d'orange frais sur la place coûte 4-5 MAD — le petit-déjeuner le plus emblématique de Marrakech. N'acceptez pas les 'visites gratuites' proposées par des inconnus." },
+            { name: "Les souks de la médina", description: "Le labyrinthe de marchés médiévaux où chaque rue appartient à une corporation spécialisée : souks d'épices, de cuir, de bronze, de céramique, de textiles et de babouches. Le souk des Teinturiers (teinturiers de cuir) est le plus photogénique.", price: "Gratuit (achats non inclus)", tip: "Un guide local (100-150 MAD) vous fait gagner des heures à tourner en rond et vous emmène dans les vrais ateliers. Sans guide, toutes les directions demandées vous mèneront chez une connaissance de quelqu'un." },
+            { name: "Déjeuner sur une terrasse de la médina", description: "Les terrasses de riads au-dessus de la médina servent tagines, kefta et harira avec vue sur les minarets. Le Café de France et Le Foundouk offrent les meilleures vues sur la place.", price: "50-100 MAD", tip: "Le tagine d'agneau aux pruneaux et amandes (msir) est le plat le plus représentatif de Marrakech. Mangez là où vous voyez des Marocains manger, pas là où les 'guides' vous emmènent." },
+            { name: "Jemaa el-Fna au coucher du soleil — le grand spectacle", description: "À partir de 17h, la place se transforme : des centaines de stands de nourriture, des musiciens gnawa, des conteurs, des acrobates et des cracheurs de feu occupent chaque mètre carré.", price: "Gratuit (nourriture 20-40 MAD)", tip: "Les stands de nourriture de la place (numérotés 1-150) se font concurrence sur les prix — tous affichent un menu visible. Choisissez celui avec le plus de locaux et demandez le prix AVANT de vous asseoir." },
+          ],
+        },
+        {
+          theme: "Palais, jardin Majorelle et hammam",
+          activities: [
+            { name: "Palais de la Bahia", description: "Le palais du XIXe siècle du grand vizir Ba Ahmed, avec 150 pièces, des cours d'orangers et de cèdres, des plafonds en cèdre sculpté et les plus belles moucharabiehs en bois du Maroc.", price: "70 MAD", tip: "Le palais est plus impressionnant qu'on ne l'imagine. La salle de réception du vizir a le plafond en cèdre le plus élaboré que vous verrez jamais." },
+            { name: "Tombeaux saadiens", description: "Les mausolées du XVIe siècle où sont enterrés les sultans de la dynastie saadienne, redécouverts en 1917 après des siècles de scellement. Les chambres funéraires, avec leurs niches en zellige et stuc, sont d'une beauté extraordinaire.", price: "70 MAD", tip: "L'espace est petit et les visiteurs affluent en continu — arrivez à l'ouverture pour voir la Salle des Douze Colonnes sans la foule." },
+            { name: "Jardin Majorelle et musée berbère", description: "Le jardin créé par le peintre français Jacques Majorelle en 1923, sauvé par Yves Saint Laurent. Le bleu cobalt du pavillon (bleu Majorelle), les cactus et la collection berbère du musée forment une oasis colorée.", price: "150 MAD (jardin + musée)", tip: "Le jardin est très fréquenté de 10h à 16h — arrivez à 14h, quand beaucoup de touristes déjeunent, pour trouver moins de monde." },
+            { name: "Hammam traditionnel", description: "Le bain arabe séculaire fait partie intégrante de la culture marocaine. Les hammams de quartier (10-30 MAD) sont pour les locaux ; les hammams touristiques offrent des soins plus élaborés à l'argile ghassoul et à l'huile d'argan.", price: "Hammam local 20 MAD / touristique 150-300 MAD", tip: "Le Hamam Dar el Bacha et le Hammam de la Mosquée Mouassine sont les plus authentiques du centre-ville. Apportez des tongs et votre propre serviette si vous allez dans un hammam de quartier." },
+          ],
+        },
+        {
+          theme: "Excursion dans l'Atlas et retour à la médina",
+          activities: [
+            { name: "Excursion aux cascades d'Ouzoud", description: "Les plus grandes chutes d'eau d'Afrique du Nord, à 150 km de Marrakech, dévalant 110 mètres sur de la roche tuffeau. La route à travers l'Atlas et ses villages berbères est aussi intéressante que la destination elle-même.", price: "Excursion 25-40€ (depuis Marrakech)", tip: "Les excursions organisées d'une journée complète incluent le transport et le déjeuner au village. Le printemps (mars-mai) offre le débit d'eau le plus élevé — spectaculaire." },
+            { name: "Déjeuner berbère dans l'Atlas", description: "Les restaurants des villages berbères de l'Atlas servent du tagine de poulet aux olives et citron confit, du couscous aux légumes et de la harira, sur des terrasses avec vue sur la montagne.", price: "80-120 MAD", tip: "Le pain berbère khobz, cuit au four en terre, accompagne parfaitement le tagine. Les restaurants routiers pleins de clients locaux sont les plus authentiques." },
+            { name: "Retour, et après-midi de shopping dans les souks", description: "Votre dernier après-midi est idéal pour terminer vos achats dans les souks de la médina. Épices (ras el hanout, harissa), huile d'argan, lampes en laiton et tapis berbères sont les meilleurs souvenirs.", price: "Selon les achats", tip: "Le prix final négocié est généralement de 40-50% du prix demandé. Si le vendeur baisse rapidement le prix, vous pouvez encore négocier. Ne commencez jamais à marchander si vous n'avez pas l'intention d'acheter." },
+            { name: "Dernière soirée sur une terrasse de Jemaa el-Fna", description: "La façon parfaite de dire au revoir à Marrakech est depuis les terrasses du Café de France ou du Grand Balcon Café Glacier, en regardant la place s'illuminer et se remplir de monde à la tombée de la nuit.", price: "30-50 MAD (thé à la menthe)", tip: "Le thé à la menthe marocain se verse de haut pour créer de la mousse — c'est un rituel. Demander à ce qu'il soit versé de haut est tout à fait normal et attendu." },
           ],
         },
       ],
@@ -1427,6 +1577,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "The Pointe and views of the Atlantis", description: "The restaurant-and-shop promenade at the tip of the Palm, with the best view of the Atlantis from the water. The Pointe's fountains put on a free nighttime show.", price: "Free", tip: "The Pointe promenade has direct views of the Atlantis silhouette with the Burj Al Arab in the background — the photo of the Palm from here is spectacular." },
             { name: "JBR Beach and The Beach", description: "Jumeirah Beach Residence (JBR) is Dubai's liveliest beachfront promenade, with the city's busiest public beach, waterfront restaurants, and The Beach complex with views of the Burj Al Arab.", price: "Free", tip: "JBR beach is public and free — paid changing rooms and umbrellas are available but not necessary." },
             { name: "Farewell dinner with a view of the Burj Al Arab", description: "Dubai's (and the world's) most iconic hotel is shaped like a dhow's sail. While staying there costs thousands of dollars, you get a perfect view from the Pierchic restaurant or from restaurants on Jumeirah Beach.", price: "AED 100-300 (outside restaurants)", tip: "The best angle of the Burj Al Arab is from Umm Suqeim Beach — 200 meters of public sand facing the hotel, perfect for the photo." },
+          ],
+        },
+      ],
+    },
+    fr: {
+      city: "Dubaï",
+      country: "Émirats arabes unis",
+      heroTitle: "4 jours à Dubaï : du Burj Khalifa au désert",
+      heroSubtitle: "Le Burj Khalifa, le Dubai Mall, un safari dans les dunes du désert et les souks historiques — l'itinéraire qui mêle le futur à la tradition arabe.",
+      bestMonths: "Octobre à avril",
+      budget: "200-400 USD/jour",
+      travelTips: [
+        "Les taxis et le métro (Dubai Metro) sont les moyens les plus pratiques de se déplacer — le métro dessert la plupart des destinations touristiques",
+        "Habillez-vous modestement dans les souks, les mosquées et les lieux publics — épaules et genoux couverts dans le Deira historique",
+        "L'alcool n'est servi que dans les hôtels et restaurants agréés — il est totalement interdit dans les espaces publics",
+        "La chaleur est extrême de mai à septembre (45°C+) — prévoyez des activités climatisées pendant ces mois",
+        "La monnaie locale est le dirham (AED) — presque tout accepte les cartes, mais le liquide est utile dans les souks historiques",
+      ],
+      days: [
+        {
+          theme: "Le Dubaï moderne : le Burj et Downtown",
+          activities: [
+            { name: "Dubai Mall et l'aquarium", description: "Le plus grand centre commercial au monde, avec 1 200 boutiques, un aquarium de 10 millions de litres et une patinoire de taille olympique. C'est la destination de loisirs la plus visitée de la planète, avec 100 millions de visites par an.", price: "Gratuit (pour entrer) / 130 AED (aquarium)", tip: "L'aquarium possède la plus grande vitre en verre au monde — visible gratuitement depuis l'extérieur, dans le centre commercial. L'intérieur vaut la peine si vous avez le temps." },
+            { name: "Burj Khalifa — At the Top", description: "Le bâtiment le plus haut au monde, avec 828 mètres. La plateforme d'observation 'At The Top' au 124e étage offre des vues à plus de 80 km les jours de ciel dégagé.", price: "149 AED (124e étage) / 499 AED (148e étage)", tip: "Réservez en ligne et choisissez le créneau de 11h30 pour voir Dubaï de jour. Les créneaux au coucher du soleil sont très demandés et coûtent plus cher. Le 124e étage offre les meilleures photos." },
+            { name: "Dubai Fountain et déjeuner", description: "Le plus grand système de fontaines au monde, face au Burj Khalifa. Les spectacles nocturnes sont les plus spectaculaires, mais même de jour l'échelle est impressionnante. La zone compte des dizaines de restaurants avec vue.", price: "Gratuit (fontaines) / 60-150 AED (restaurants)", tip: "Le spectacle nocturne des fontaines commence à 18h et se répète toutes les 30 minutes. Le meilleur angle est depuis la promenade au bord du lac du Dubai Mall." },
+            { name: "Spectacle nocturne des fontaines et dîner à Downtown", description: "Le spectacle nocturne des fontaines, synchronisé sur de la musique arabe et classique, est l'une des expériences les plus émouvantes de Dubaï. Les restaurants le long de la promenade Dubai Fountain Boardwalk ont les meilleures tables.", price: "Gratuit", tip: "Réservez le dîner chez Zuma ou Pierchic avec vue sur le Burj pour votre première soirée — l'expérience est saisissante même si le prix est élevé." },
+          ],
+        },
+        {
+          theme: "Le Dubaï classique : la Creek, les souks et le quartier historique",
+          activities: [
+            { name: "Quartier historique Al Fahidi", description: "Le quartier historique du XIXe siècle de Dubaï, avec des maisons en corail et boue, des tours à vent (barjeel) pour la ventilation naturelle et le musée de Dubaï. Le contraste avec les gratte-ciel en arrière-plan est unique.", price: "Musée de Dubaï 3 AED", tip: "Le musée de Dubaï est le moins cher de la ville et l'un des plus instructifs — 3 AED pour voir l'histoire d'un village de pêcheurs devenu mégapole." },
+            { name: "Traversée en abra sur la Dubai Creek", description: "Les abras sont les bateaux en bois traditionnels qui traversent la crique depuis des siècles. Le trajet de 5 minutes entre Deira et Bur Dubai coûte 1 AED et constitue le transport le plus authentique et photogénique de la ville.", price: "1 AED", tip: "Prenez l'abra en bois classique (pas la version motorisée moderne) — ils partent du quai Al Seef. Le trajet le long de la crique avec des boutres en bois en arrière-plan est merveilleux." },
+            { name: "Souk de l'or et souk aux épices", description: "Le souk de l'or compte plus de 300 bijouteries avec 10 tonnes d'or exposées. Le souk aux épices adjacent propose du safran iranien, de l'encens arabe, du ras el hanout et des épices du monde entier.", price: "Gratuit (achats non inclus)", tip: "Le marchandage est attendu et pratiqué de façon standard dans les souks. Proposez 60% du prix demandé et vous trouverez un accord raisonnable entre les deux. L'or se vend au cours du marché, sans marchandage." },
+            { name: "Dîner sur un boutre le long de la Creek", description: "Les boutres en bois traditionnels transformés en restaurants flottants proposent un dîner buffet en croisière sur la crique illuminée. La vue sur les gratte-ciel et les mosquées depuis l'eau est spectaculaire.", price: "120-200 AED", tip: "Il existe des dizaines de croisières en boutre — le prix standard inclut un dîner buffet. Réservez au quai Al Seef l'après-midi pour le créneau de 20h30." },
+          ],
+        },
+        {
+          theme: "Safari dans le désert : dunes, chameaux et étoiles",
+          activities: [
+            { name: "Départ pour le Safari dans le désert", description: "Les safaris dans le désert de Dubaï partent vers les dunes d'Al Lahbab en 4x4. Le dune bashing (rouler à grande vitesse sur les dunes en 4x4) est la partie la plus riche en adrénaline de l'expérience.", price: "200-300 AED (excursion complète)", tip: "Choisissez un opérateur réputé comme Arabian Adventures ou Orient Tours. Des prix très bas signifient généralement un dîner et des spectacles de moindre qualité." },
+            { name: "Dune bashing et coucher de soleil sur les dunes", description: "Des descentes à grande vitesse sur des dunes de 100 mètres en 4x4 Land Cruiser. Le coucher de soleil au sommet des dunes d'Al Lahbab, avec le désert s'étendant jusqu'à l'horizon, semble irréel.", price: "Inclus dans l'excursion", tip: "Si vous êtes sujet au mal des transports, prenez du dramamine à l'avance. Les chauffeurs sont des professionnels expérimentés — laissez-les choisir le niveau de difficulté." },
+            { name: "Campement bédouin : chameaux et tatouages au henné", description: "Le camp dans le désert inclut une balade à dos de chameau, des tatouages au henné, de la danse du ventre et du tir à l'arc. Un dîner buffet de cuisine arabe (kharouf, mezze, chicha) sous les étoiles du désert.", price: "Inclus dans l'excursion", tip: "La balade à dos de chameau ne dure que 5-10 minutes, mais la photo dure toute une vie. Demandez à votre guide de prendre la photo d'en bas pour que le chameau entier soit dans le cadre." },
+            { name: "Spectacle de danse du ventre et de Tanoura", description: "La danse Tanoura (un danseur soufi tourbillonnant dans des jupes colorées) et la danse du ventre sont les spectacles inclus avec le dîner du camp. La prestation sous le ciel étoilé du désert est inoubliable.", price: "Inclus dans l'excursion", tip: "Les étoiles du désert arabique sont spectaculaires — apportez une application d'observation des étoiles pour identifier les constellations dans l'obscurité totale du camp." },
+          ],
+        },
+        {
+          theme: "Palm Jumeirah et le Dubaï moderne",
+          activities: [
+            { name: "Atlantis The Palm — Aquaventure", description: "Le parc aquatique de l'hôtel Atlantis sur Palm Jumeirah, avec 16 hectares de toboggans, des vagues artificielles et une zone avec raies manta et requins. L'une des expériences les plus riches en adrénaline de Dubaï.", price: "395 AED", tip: "Réservez en ligne pour une réduction anticipée. Le toboggan 'Tower of Neptune' (une chute libre de 27 mètres) est le plus extrême. Arrivez à 9h30 avant que les files ne se forment." },
+            { name: "The Pointe et vues sur l'Atlantis", description: "La promenade de restaurants et boutiques à la pointe de la Palm, avec la meilleure vue sur l'Atlantis depuis l'eau. Les fontaines de The Pointe offrent un spectacle nocturne gratuit.", price: "Gratuit", tip: "La promenade de The Pointe offre des vues directes sur la silhouette de l'Atlantis avec le Burj Al Arab en arrière-plan — la photo de la Palm depuis ici est spectaculaire." },
+            { name: "Plage de JBR et The Beach", description: "Jumeirah Beach Residence (JBR) est la promenade la plus animée du front de mer de Dubaï, avec la plage publique la plus fréquentée de la ville, des restaurants en bord de mer et le complexe The Beach avec vue sur le Burj Al Arab.", price: "Gratuit", tip: "La plage de JBR est publique et gratuite — des cabines de change et parasols payants sont disponibles mais pas nécessaires." },
+            { name: "Dîner d'adieu avec vue sur le Burj Al Arab", description: "L'hôtel le plus emblématique de Dubaï (et du monde) a la forme d'une voile de boutre. Bien qu'y séjourner coûte des milliers de dollars, vous pouvez avoir une vue parfaite depuis le restaurant Pierchic ou depuis les restaurants de Jumeirah Beach.", price: "100-300 AED (restaurants extérieurs)", tip: "Le meilleur angle du Burj Al Arab est depuis la plage d'Umm Suqeim — 200 mètres de sable public face à l'hôtel, parfait pour la photo." },
           ],
         },
       ],
