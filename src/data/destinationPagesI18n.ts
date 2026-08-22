@@ -1990,6 +1990,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    fr: {
+      city: "Cancún",
+      country: "Mexique",
+      heroTitle: "5 jours à Cancún et la Riviera Maya : au-delà du complexe hôtelier",
+      heroSubtitle: "Cénotes, ruines mayas, plages de sable blanc et la culture mexicaine qui vit de l'autre côté de la lagune.",
+      bestMonths: "Décembre à avril",
+      budget: "80-200 USD/jour",
+      travelTips: [
+        "Les sargasses (algues) affectent certaines plages entre mai et septembre — vérifiez à l'avance quelles plages sont dégagées",
+        "Les bus ADO sont confortables et abordables pour se déplacer entre Cancún, Playa del Carmen et Tulum",
+        "Une assurance voyage est fortement recommandée — les soins médicaux au Mexique peuvent être coûteux pour les étrangers",
+        "Ayez des pesos mexicains pour les marchés et restaurants locaux — les dollars sont acceptés mais vous perdrez sur le taux de change",
+        "Une crème solaire respectueuse des récifs est obligatoire dans les cénotes et recommandée sur les plages de Tulum",
+      ],
+      days: [
+        {
+          theme: "La zone hôtelière et les plages de Cancún",
+          activities: [
+            { name: "Playa Delfines", description: "La plage publique la plus spectaculaire de la zone hôtelière, avec le panneau emblématique de Cancún, du sable blanc et l'eau la plus turquoise du Mexique. Pas de palapa d'hôtel, pas de frais.", price: "Gratuit", tip: "Les plages du nord de la zone hôtelière ont des vagues plus petites. Celles du sud (Delfines, Ballenas) ont plus de houle et sont meilleures pour le bodysurf." },
+            { name: "Mercado 28 — le vrai Cancún", description: "Le marché artisanal du centre-ville de Cancún, loin de la zone hôtelière. Tacos al pastor, artisanat authentique et prix locaux au lieu des tarifs du tourisme de masse.", price: "5-10 USD", tip: "Les tacos cochinita pibil sont le plat yucatèque qui vous hantera une fois rentré. Commandez-les avec de l'oignon rouge mariné et de l'habanero." },
+            { name: "Lagune de Nichupté — kayak ou paddleboard", description: "La lagune séparant la zone hôtelière du continent, avec des mangroves, des oiseaux tropicaux et une eau calme. Plusieurs entreprises louent kayaks et paddleboards sans guide requis.", price: "20-35 USD/heure", tip: "Les couchers de soleil sur la lagune avec la zone hôtelière en arrière-plan sont parmi les plus photogéniques de Cancún." },
+            { name: "Le centre-ville de Cancún au crépuscule", description: "Le Parque Las Palapas au centre-ville est le lieu de rassemblement des locaux au crépuscule : artisans, snacks de rue, musique live et le rythme d'une vraie ville mexicaine.", price: "Gratuit", tip: "Le centre-ville de Cancún, à 20 minutes en bus de votre hôtel (0,50 USD), offre une soirée authentique que la zone hôtelière ne peut jamais offrir." },
+          ],
+        },
+        {
+          theme: "Isla Mujeres : le paradis à 20 minutes",
+          activities: [
+            { name: "Ferry vers Isla Mujeres", description: "Le ferry part toutes les 30 minutes depuis Puerto Juárez. La traversée de 20 minutes est déjà spectaculaire avec les couleurs des Caraïbes.", price: "8 USD aller-retour", tip: "Arrivez au quai avant 8h pour prendre le premier ferry. Isla Mujeres presque déserte (première heure) est un rêve." },
+            { name: "Playa Norte — la meilleure plage des Caraïbes", description: "Constamment élue parmi les meilleures plages du monde, avec une eau semblable à une piscine, du sable blanc fin et une lagune protégée sans vagues. Seulement 2 km de long.", price: "Gratuit", tip: "Louez une voiturette de golf (40 USD/jour) pour explorer toute l'île de 8 km. C'est le moyen de déplacement de tous à Isla Mujeres." },
+            { name: "Garrafón — snorkeling sur le récif corallien", description: "La pointe sud de l'île abrite l'un des meilleurs récifs coralliens des Caraïbes mexicaines, avec poissons colorés, raies et tortues. Le parc Garrafón inclut le snorkeling.", price: "25-45 USD", tip: "Le snorkeling gratuit en dehors du parc (depuis les rochers au sud de la plage Zac-Ha) est tout aussi bon et gratuit." },
+            { name: "Le village d'Isla Mujeres", description: "Des rues aux couleurs vives, des boutiques artisanales locales et des restaurants de fruits de mer en bord de mer font du village un endroit où il fait bon flâner.", price: "Gratuit", tip: "La rue Hidalgo a les meilleurs restaurants de fruits de mer à prix juste. Le ceviche de l'île est différent de celui de Cancún." },
+          ],
+        },
+        {
+          theme: "Chichén Itzá et une baignade dans un cénote",
+          activities: [
+            { name: "Départ pour Chichén Itzá", description: "L'ancienne cité maya, désignée l'une des 7 merveilles du monde moderne, se trouve à 2h30 de Cancún. Partir tôt permet d'éviter la chaleur extrême et les milliers de touristes.", price: "Excursion à partir de 60 USD (transport inclus)", tip: "Lors des équinoxes (21 mars et 23 septembre) le soleil crée le serpent de lumière sur la pyramide El Castillo — tourisme de masse, mais spectaculaire." },
+            { name: "El Castillo et la cité maya", description: "La pyramide de Kukulcán compte 365 marches (une pour chaque jour de l'année), ainsi que le Temple des Guerriers, le plus grand terrain de jeu de balle de Méso-amérique et le Cénote Sacré.", price: "35 USD (entrée)", tip: "Vous ne pouvez plus grimper sur la pyramide depuis 2006, mais vous pouvez la toucher. Les guides font une démonstration de l'écho qui imite le cri d'un quetzal en tapant des mains devant l'escalier." },
+            { name: "Cénote Ik-Kil", description: "Le cénote le plus photogénique de la Riviera Maya, à 3 km de Chichén Itzá : un gouffre circulaire de 40m de diamètre, ouvert sur le ciel, aux parois couvertes de fougères en cascade.", price: "15 USD", tip: "Arrivez juste après le déjeuner quand les groupes de touristes partent. Entre 14h et 16h, c'est le plus calme et la lumière du soleil pénètre dans le cénote." },
+            { name: "Retour à Cancún via Valladolid", description: "La ville coloniale de Valladolid se trouve sur le chemin du retour. Un arrêt de 45 minutes pour voir le cénote Zaci (en plein centre-ville) et le centre historique.", price: "Cénote Zaci 5 USD", tip: "Valladolid est une véritable ville yucatèque où vous pourrez déguster le meilleur café de olla de tout le voyage." },
+          ],
+        },
+        {
+          theme: "Tulum : ruines mayas au-dessus des Caraïbes",
+          activities: [
+            { name: "Ruines de Tulum", description: "La seule cité maya construite sur une falaise avec vue directe sur les Caraïbes turquoise. El Castillo de Tulum avec la mer en arrière-plan est l'une des photos les plus emblématiques du Mexique.", price: "10 USD", tip: "Arrivez à 8h à l'ouverture. Dès 10h, il y a déjà des centaines de personnes. La plage au pied des ruines est incluse — vous pouvez vous baigner avant l'arrivée de la foule." },
+            { name: "Gran Cenote, Tulum", description: "Le cénote le plus accessible et photogénique de la zone, avec une eau cristalline, des stalagmites submergées et des poissons nageant autour des baigneurs.", price: "20 USD", tip: "Apportez votre propre équipement de snorkeling (ou louez-le sur place pour 5 USD). L'eau reste entre 23-25°C toute l'année. Sans sargasses." },
+            { name: "Le village de Tulum", description: "Le village original de Tulum, distinct de la zone hôtelière bordée de riads. Tacos cochinita, boutiques de miel et d'achiote, à des prix mexicains.", price: "8-15 USD", tip: "La version Instagram de Tulum (la zone hôtelière) est chère et orientée vers un tout autre type de voyage. Le village propose la même chose pour un tiers du prix." },
+            { name: "Akumal — nager avec les tortues de mer", description: "La baie d'Akumal (45 min au nord de Tulum) est l'endroit le plus accessible au monde pour nager librement avec des tortues de mer dans leur habitat naturel.", price: "Gratuit (uniquement la plage et l'eau)", tip: "Entrez dans l'eau entre 9h et 11h pour voir plus de tortues. Ne portez pas de crème solaire classique — elle endommage le récif. La crème solaire respectueuse des récifs est autorisée." },
+          ],
+        },
+        {
+          theme: "Playa del Carmen et le dernier jour caribéen",
+          activities: [
+            { name: "Cinquième Avenue, Playa del Carmen", description: "La rue piétonne la plus animée des Caraïbes mexicaines, 4 km de boutiques, restaurants, bars et art de rue face à la plage. Le cœur social de la Riviera Maya.", price: "Gratuit (promenade)", tip: "Évitez les restaurants directement sur la Cinquième Avenue — tous ont des prix touristiques. Éloignez-vous de deux rues et vous trouverez où les locaux mangent leurs tacos." },
+            { name: "La plage de Playa del Carmen", description: "La plage urbaine la plus animée de la Riviera Maya, avec du sable blanc et un accès direct depuis la Cinquième Avenue. Plus animée que les plages de la zone hôtelière de Cancún.", price: "Gratuit", tip: "Les plages des hôtels-boutiques au sud de la Cinquième Avenue (à partir de la rue 38) sont moins fréquentées et presque aussi accessibles." },
+            { name: "Xcaret ou Xel-Há (optionnel)", description: "Les plus grands parcs naturels du Mexique. Xcaret combine culture maya, nature et spectacles nocturnes. Xel-Há est plus intime et centré sur le snorkeling dans une rivière d'eau de mer.", price: "80-130 USD", tip: "Xel-Há est plus calme et plus naturel. Xcaret convient mieux aux familles avec de jeunes enfants. Les billets achetés en ligne coûtent 30% de moins." },
+            { name: "Un dernier coucher de soleil caribéen", description: "La plage de Playa del Carmen fait face à l'est — les couchers de soleil les plus spectaculaires se voient depuis la jetée de Playa ou depuis le ferry vers Cozumel.", price: "Gratuit", tip: "Le ferry vers Cozumel part de la jetée de la Cinquième Avenue. Rien que la traversée de 45 minutes en pleine mer des Caraïbes est déjà un spectacle." },
+          ],
+        },
+      ],
+    },
   },
 
   roma: {
@@ -2051,6 +2113,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Testaccio — the neighborhood of Roman food", description: "Rome's working-class neighborhood, home to the Mattatoio (a former slaughterhouse turned market and cultural space) and the city's most authentic, affordable Roman cooking.", price: "€12-20", tip: "Cacio e pepe and carbonara are Rome's defining dishes. In Testaccio they're served the original way — no cream, no peas." },
             { name: "Palatine Hill and the Farnese Gardens", description: "Revisit the Palatine in the afternoon to see the Farnese Gardens, Europe's first botanical gardens, with views over the Forum that are packed with people at midday.", price: "Included with the day-1 Colosseum ticket (valid for 2 days)", tip: "The afternoon light on the Palatine gives off the golden glow 19th-century Grand Tour photographers were chasing." },
             { name: "Aperitivo in Pigneto or Ostiense", description: "The neighborhoods where young Romans go for aperitivo (5-9pm): a Spritz with a plate of snacks included, bar terraces, and conversations spilling into the street.", price: "€6-10 (Spritz with snacks)", tip: "Roman aperitivo includes food — order a drink and they bring out a buffet of fried snacks and bruschetta. It's the mandatory pre-dinner dinner." },
+          ],
+        },
+      ],
+    },
+    fr: {
+      city: "Rome",
+      country: "Italie",
+      heroTitle: "5 jours à Rome : le Colisée, le Vatican et la dolce vita dans les vrais quartiers",
+      heroSubtitle: "L'itinéraire qui équilibre les monuments incontournables avec les quartiers où vivent réellement les Romains.",
+      bestMonths: "Mars à mai et septembre à novembre",
+      budget: "80-150€/jour",
+      travelTips: [
+        "Rome se parcourt à pied — le centre historique tient dans un rayon de 4 km",
+        "Le pass Colisée+Forum+Palatin est valable deux jours consécutifs — profitez-en au maximum",
+        "Ayez toujours des vêtements couvrant épaules et genoux pour entrer dans les églises (y compris au Vatican)",
+        "L'eau des fontaines publiques (nasoni) est potable et délicieuse — apportez une bouteille réutilisable",
+        "Juillet et août sont les mois les plus chauds et les plus bondés — mars-mai est la meilleure période",
+      ],
+      days: [
+        {
+          theme: "L'Empire romain : le Colisée et le Forum",
+          activities: [
+            { name: "Colisée de Rome", description: "Le plus grand amphithéâtre jamais construit, d'une capacité de 70 000 spectateurs. Sur le sol de l'arène, des gladiateurs combattaient devant les empereurs et le peuple romain.", price: "18€ (inclut le Forum romain et le mont Palatin)", tip: "Réservez votre billet en ligne — la file sans réservation dépasse 2 heures en haute saison. La visite du sol de l'arène nécessite une réservation séparée." },
+            { name: "Forum romain et mont Palatin", description: "Le centre politique et religieux de l'Empire romain pendant 12 siècles. Le Palatin est la colline où, selon la tradition, Romulus fonda Rome en 753 av. J.-C.", price: "Inclus avec le Colisée", tip: "L'arc de Titus (81 apr. J.-C.) porte le plus ancien relief connu représentant la ménorah — considéré comme le plus ancien témoignage historique de l'exil juif." },
+            { name: "Circus Maximus", description: "Le plus grand stade de course de chars de l'Antiquité, d'une capacité de 250 000 spectateurs. Aujourd'hui, c'est un grand parc urbain où les Romains vont courir.", price: "Gratuit", tip: "Montez à l'Aventin pour voir le trou de serrure des Chevaliers de Malte — une vue parfaitement alignée avec le dôme de Saint-Pierre." },
+            { name: "Marchés de Trajan", description: "Le premier centre commercial de l'histoire, construit au IIe siècle apr. J.-C. Il abrite aujourd'hui le Museo dei Fori Imperiali, avec des vues magnifiques sur le Forum d'Auguste.", price: "15€", tip: "Moins visité que le Colisée mais tout aussi impressionnant. Le contexte qu'il offre sur la vie quotidienne romaine est remarquable." },
+          ],
+        },
+        {
+          theme: "Le Vatican : une ville dans la ville",
+          activities: [
+            { name: "Musées du Vatican et chapelle Sixtine", description: "La collection papale constituée sur 500 ans : sculptures grecques, tapisseries flamandes, cartes de la Renaissance et le plafond de la chapelle Sixtine peint par Michel-Ange.", price: "20€", tip: "Réservez le premier créneau de la journée et demandez spécifiquement un accès rapide à la chapelle. Sans réservation, l'attente dépasse 2-3 heures." },
+            { name: "Basilique Saint-Pierre", description: "La plus grande église du monde couvre 2,3 hectares. La Pietà de Michel-Ange, le baldaquin du Bernin et la coupole de 132 mètres en sont les points forts.", price: "Gratuit (dôme 8€)", tip: "L'ascension du dôme (les 320 dernières marches sont étroites et en colimaçon) offre la meilleure vue sur Rome. Arrivez tôt." },
+            { name: "Château Saint-Ange", description: "Le mausolée de l'empereur Hadrien, converti plus tard en forteresse papale, avec un passage secret vers le Vatican. La terrasse offre une vue extraordinaire sur le Tibre et Rome.", price: "15€", tip: "C'est ici que se déroule l'acte final de l'opéra Tosca de Puccini — l'une des fins les plus dramatiques de l'histoire du théâtre." },
+            { name: "Prati — le quartier du Vatican", description: "Le quartier résidentiel voisin du Vatican, avec les meilleures gelaterias artisanales et restaurants de Rome, sans les prix touristiques de la zone autour de Saint-Pierre.", price: "15-25€", tip: "La Gelateria dei Gracchi (Via dei Gracchi 272) est considérée comme l'une des meilleures de Rome. Une glace authentique a des couleurs sourdes — pas vives." },
+          ],
+        },
+        {
+          theme: "Trastevere et la Rome qui ne se vend pas",
+          activities: [
+            { name: "Trastevere — le quartier le plus romain de Rome", description: "Le labyrinthe de ruelles médiévales de l'autre côté du Tibre où vivent encore des Romains de toujours. La Basilique Santa Maria in Trastevere (IVe siècle) est la plus ancienne de la ville.", price: "Gratuit", tip: "Trastevere est un quartier pour l'apéritif et le dîner, pas pour le matin. Arrivez à 18h pour voir le quartier s'animer et vous mêler aux habitants." },
+            { name: "Campo de' Fiori", description: "La place-marché du centre historique, avec des étals de fruits, épices et fleurs du lundi au samedi. La statue de Giordano Bruno marque l'endroit où il fut brûlé vif en 1600.", price: "Gratuit", tip: "Le marché fonctionne jusqu'à 14h. La nuit, la place devient l'épicentre de la vie nocturne du centre-ville." },
+            { name: "Piazza Navona", description: "La plus belle place baroque d'Europe, construite sur le stade de Domitien. Les trois fontaines du Bernin, dont la Fontaine des Quatre Fleuves, en sont le cœur.", price: "Gratuit", tip: "Les restaurants sur la place ont des prix touristiques. Mangez une rue plus loin et prenez plutôt un café assis sur la place — les artistes de rue en valent la peine." },
+            { name: "Panthéon", description: "Le bâtiment antique le mieux conservé au monde, construit par l'empereur Hadrien en 125 apr. J.-C. Sa coupole, avec l'oculus central, reste un mystère architectural.", price: "5€", tip: "Le Panthéon est orienté de sorte qu'à l'équinoxe de printemps (21 mars) le soleil brille exactement à travers l'oculus et illumine l'entrée. Coïncidence ou non." },
+          ],
+        },
+        {
+          theme: "la Fontaine de Trevi, la place d'Espagne et la Villa Borghèse",
+          activities: [
+            { name: "Fontaine de Trevi au lever du soleil", description: "La plus grande fontaine de Rome, sculptée par Nicola Salvi en 1762. La nuit et au lever du soleil, sans la foule diurne, c'est l'un des plus beaux spectacles d'Europe.", price: "Gratuit", tip: "La fontaine est nettoyée deux fois par semaine tôt le matin (généralement les mardis et vendredis). Si le timing coïncide, vous la verrez complètement vide — un spectacle unique." },
+            { name: "Place d'Espagne", description: "Les 135 marches en travertin reliant la Piazza di Spagna à la Trinité-des-Monts. Au printemps, elles se couvrent d'azalées roses pour la fête des fleurs.", price: "Gratuit", tip: "Depuis 2019, s'asseoir sur les marches est interdit (amende de 250€). Se tenir debout pour une photo reste gratuit." },
+            { name: "Galerie Borghèse", description: "La collection d'art de la famille Borghèse dans une villa du XVIIe siècle : les premières sculptures du Bernin, le Caravage, Titien et Raphaël, dans des salles intimes.", price: "15€", tip: "Les billets s'épuisent des semaines à l'avance — réservez le plus tôt possible. Les visites durent exactement 2 heures (strictement appliqué)." },
+            { name: "Villa Borghèse — le poumon vert de Rome", description: "Le plus grand parc du centre de Rome, avec des lacs artificiels, des vues depuis le Pincio et des musées. La terrasse du Pincio offre le meilleur panorama sur la Piazza del Popolo.", price: "Gratuit", tip: "Louez une petite barque sur le lac (3€ pour 20 minutes) — la manière la plus romaine de passer un après-midi. Les enfants romains le font depuis 200 ans." },
+          ],
+        },
+        {
+          theme: "Aventin, Testaccio et le côté quartier de Rome",
+          activities: [
+            { name: "L'Aventin et le trou de serrure des chevaliers", description: "La colline la plus tranquille de Rome. Le trou de serrure des Chevaliers de Malte cadre parfaitement le dôme de Saint-Pierre à 3 km — l'une des vues les plus magiques de Rome.", price: "Gratuit", tip: "Il faudra faire la queue pour le trou de serrure (5 à 15 minutes). Le jardin des orangers juste à côté offre l'une des meilleures vues sur Rome depuis l'Aventin." },
+            { name: "Testaccio — le quartier de la cuisine romaine", description: "Le quartier populaire de Rome, où se trouve le Mattatoio (un ancien abattoir devenu marché et espace culturel) et la cuisine romaine la plus authentique et abordable de la ville.", price: "12-20€", tip: "Le cacio e pepe et la carbonara sont les plats emblématiques de Rome. À Testaccio, on les sert à l'ancienne — sans crème, sans petits pois." },
+            { name: "Mont Palatin et les jardins Farnèse", description: "Revisitez le Palatin l'après-midi pour voir les jardins Farnèse, les premiers jardins botaniques d'Europe, avec des vues sur le Forum bondées à midi.", price: "Inclus avec le billet du Colisée du jour 1 (valable 2 jours)", tip: "La lumière de l'après-midi sur le Palatin dégage cette lueur dorée que recherchaient les photographes du Grand Tour au XIXe siècle." },
+            { name: "Apéritif à Pigneto ou Ostiense", description: "Les quartiers où les jeunes Romains vont pour l'apéritif (17h-21h) : un Spritz avec un plateau de snacks inclus, des terrasses de bar et des conversations qui débordent dans la rue.", price: "6-10€ (Spritz avec snacks)", tip: "L'apéritif romain inclut la nourriture — commandez une boisson et on vous apporte un buffet de snacks frits et de bruschetta. C'est le dîner obligatoire d'avant-dîner." },
           ],
         },
       ],
