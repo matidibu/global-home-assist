@@ -2309,6 +2309,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    it: {
+      city: "Buenos Aires",
+      country: "Argentina",
+      heroTitle: "4 giorni a Buenos Aires: tango, asado e la città più europea delle Americhe",
+      heroSubtitle: "San Telmo, La Boca, Palermo e il miglior asado del mondo — l'itinerario completo per innamorarsi della capitale argentina.",
+      bestMonths: "Da marzo a maggio e da settembre a novembre",
+      budget: "50-100 USD/giorno",
+      travelTips: [
+        "Il tasso di cambio argentino può variare — controllate la situazione monetaria prima del viaggio e informatevi sulle opzioni di cambio legali disponibili",
+        "Buenos Aires è una città nottambula — le cene iniziano alle 21 e le milonghe alle 23. Adattate i vostri orari o arriverete in ristoranti vuoti",
+        "I trasporti pubblici (metro + bus) sono efficienti ed economicissimi — ricaricate una carta SUBE in qualsiasi chiosco",
+        "L'asado argentino si mangia all'1 di pomeriggio (mezzogiorno) o alle 21 — non aspettatevi di mangiare asado alle 19 come in Europa",
+        "I quartieri sicuri per i turisti sono Palermo, Recoleta, San Telmo e Puerto Madero — evitate di camminare da soli di notte in quartieri sconosciuti",
+      ],
+      days: [
+        {
+          theme: "San Telmo e il cuore storico",
+          activities: [
+            { name: "Plaza de Mayo e la Casa Rosada", description: "Il centro politico di Buenos Aires, sede dell'esecutivo dal 1873. Il balcone da cui Evita si rivolgeva al popolo è visibile dalla piazza. La Cattedrale Metropolitana custodisce la tomba del Generale San Martín.", price: "Gratis", tip: "Il giovedì alle 15:30 le Madri di Plaza de Mayo tengono la loro storica marcia intorno all'obelisco centrale — una testimonianza vivente della storia argentina." },
+            { name: "Quartiere di San Telmo", description: "Il quartiere più antico di Buenos Aires, con strade acciottolate, case coloniali del XIX secolo, gallerie d'arte e il più famoso mercato di antiquariato dell'Argentina. La domenica una fiera si estende lungo tutta la via Defensa.", price: "Gratis", tip: "La fiera domenicale su via Defensa (10-18) è il miglior piano gratuito di Buenos Aires. Gli antiquari, i musicisti di strada e i ballerini di tango spontanei fanno parte dello spettacolo." },
+            { name: "Pranzo al Mercato di San Telmo", description: "Il mercato coperto, aperto dal 1897, con corsie di macellerie artigianali, gastronomie, banchi di prodotti freschi e bar che servono di tutto, dalle empanadas ai cocktail. L'architettura in ferro e vetro del XIX secolo è impressionante.", price: "15-25 USD", tip: "Le empanadas di La Americana sono le più classiche di Buenos Aires. Il bancone del Bar El Federal, di fronte al mercato, ha il miglior caffè e i migliori dolci del quartiere." },
+            { name: "Spettacolo di tango a San Telmo", description: "San Telmo è la culla del tango porteño. Gli spettacoli a El Viejo Almacén, La Ventana o al Centro Cultural Borges combinano cena, esibizione professionale e la storia del tango.", price: "60-100 USD (cena + spettacolo)", tip: "Per un tango autentico (non uno spettacolo turistico), cercate le milonghe di quartiere: Club Almagro, Confitería Ideal o La Viruta offrono milonghe da 10-15 USD." },
+          ],
+        },
+        {
+          theme: "La Boca, Puerto Madero e il fiume",
+          activities: [
+            { name: "La Boca e il Caminito", description: "Il colorato quartiere portuale dove le case in lamiera ondulata sono dipinte con colori vivaci — un'eredità degli immigrati genovesi del XIX secolo che usavano la vernice avanzata dal porto. Lo stadio del Boca Juniors (La Bombonera) si trova a 200 metri.", price: "Gratis", tip: "Il Caminito è turistico e i prezzi lì raddoppiano — mangiate e fate acquisti un paio di isolati più a ovest per prezzi normali. Evitate di portare oggetti di valore visibili." },
+            { name: "La Bombonera — museo e stadio del Boca", description: "Lo stadio più famoso dell'America Latina, casa del Boca Juniors. Il tour del museo include gli spogliatoi, le tribune e i cimeli di Maradona. L'esperienza di un giorno di partita alla Bombonera è quasi religiosa.", price: "Tour 20 USD / Partita 30-80 USD", tip: "Una partita casalinga del Boca è una delle esperienze più intense dello sport mondiale. Comprate i biglietti solo sul sito ufficiale — i rivenditori sono costosi e rischiosi." },
+            { name: "Puerto Madero — il quartiere più recente", description: "I vecchi moli del porto di Buenos Aires, trasformati nel quartiere più moderno ed esclusivo della città. Il Puente de la Mujer di Santiago Calatrava è il simbolo architettonico.", price: "Gratis", tip: "La Riserva Ecologica Costanera Sur, proprio accanto a Puerto Madero, offre 360 ettari di natura a 5 minuti dal centro — una perfetta fuga verde in città." },
+            { name: "Cena di asado in una parrilla porteña", description: "La parrilla argentina è un'istituzione culinaria. Asado de tira, vacío, chorizo e animelle sono i tagli che distinguono Buenos Aires dal resto del mondo.", price: "20-40 USD", tip: "Don Julio (Palermo), La Brigada (San Telmo) ed El Pobre Luis (Belgrano) sono le tre parrillas più apprezzate di Buenos Aires. Prenotate giorni prima." },
+          ],
+        },
+        {
+          theme: "Recoleta e la Buenos Aires europea",
+          activities: [
+            { name: "Cimitero di Recoleta", description: "Uno dei cimiteri più famosi al mondo, con 6.400 tombe e 94 monumenti di interesse storico. La tomba di Eva Perón è l'attrazione principale tra le sculture e l'architettura neoclassica.", price: "Gratis", tip: "Il tour guidato gratuito (in inglese e spagnolo) parte alle 11 il martedì e il giovedì dall'ingresso. La tomba di Evita si trova in via Familia Duarte — prendete una mappa all'ingresso." },
+            { name: "Fiera di Recoleta e Museo Nazionale di Belle Arti", description: "La fiera artigianale di fronte al cimitero ha più di 200 artigiani locali che vendono gioielli, articoli in pelle, ceramiche e stampe. Il Museo di Belle Arti (gratuito) custodisce la più importante collezione di arte latinoamericana della regione.", price: "Gratis", tip: "La fiera di Recoleta si svolge nei weekend (10-19). Nei giorni feriali, i giardini Álvear sono il posto più elegante di Buenos Aires per un caffè all'aperto." },
+            { name: "Avenida Alvear e i suoi palazzi belle époque", description: "La via più elegante di Buenos Aires, con i palazzi più sontuosi del XX secolo: l'Alvear Palace Hotel, il Palacio Alzaga Unzué e le dimore delle famiglie terriere.", price: "Gratis", tip: "La lobby dell'Hotel Alvear è uno dei gioielli della Buenos Aires esclusiva — entrare per il tè pomeridiano (25 USD) è un'esperienza che vale il prezzo." },
+            { name: "Cocktail a Palermo Soho", description: "Il quartiere più alla moda di Buenos Aires, con bar di cocktail artigianali, ristoranti gourmet e la maggior concentrazione di design emergente della città. Florería Atlántico e Tres Monos sono i bar più apprezzati.", price: "5-12 USD a cocktail", tip: "Florería Atlántico (uno dei migliori bar al mondo) è un negozio di fiori al piano superiore con un bar speakeasy sotto — bussate alla porta della cella frigorifera." },
+          ],
+        },
+        {
+          theme: "Palermo e la città verde",
+          activities: [
+            { name: "Bosques de Palermo e il Rosedal", description: "Il grande parco di Buenos Aires, paragonabile a Central Park, con il Rosedal (un roseto con 18.000 rose), il Planetario e il Giardino Giapponese. La domenica è il giorno della famiglia porteña nel parco.", price: "Gratis (Giardino Giapponese $500 ARS)", tip: "Noleggiate una bici nel parco per esplorare i 25 km di piste ciclabili. I chioschi di choripán all'ingresso nord del parco servono il chori più autentico di Buenos Aires." },
+            { name: "Brunch a Palermo Hollywood", description: "La zona di Palermo Hollywood offre la miglior scena di brunch di Buenos Aires, con caffè specialty, avocado toast e menu brunch da tutto il mondo. Avenida Arcos ne è l'epicentro.", price: "10-20 USD", tip: "Café Martínez ha le migliori medialunas al burro di Palermo — la colazione più argentina che ci sia. I caffè specialty come Lattente hanno il miglior caffè della città." },
+            { name: "MALBA — Museo di Arte Latinoamericana", description: "Il museo di arte contemporanea latinoamericana più importante del continente, con opere di Frida Kahlo, Tarsila do Amaral, Xul Solar e Antonio Berni. L'edificio in vetro e acciaio è esso stesso un'opera d'arte.", price: "7 USD", tip: "Il mercoledì l'ingresso è scontato e il cinema d'essai è gratuito. La collezione permanente (3° piano) custodisce le 200 migliori opere dell'arte latinoamericana del XX secolo." },
+            { name: "Fiera di Villa Crespo e commiato", description: "Il mercato di design emergente dei giovani creativi di Buenos Aires, con abbigliamento indipendente, accessori, arte e la migliore atmosfera locale della città. Lo street food al Mercado de las Pulgas è perfetto per il vostro ultimo pomeriggio.", price: "Gratis (acquisti non inclusi)", tip: "Il Mercado de las Pulgas a Colegiales (Dorrego e Alvarez Thomas) è il piano domenicale preferito dai giovani porteños — antiquariato, design e DJ dal vivo." },
+          ],
+        },
+      ],
+    },
   },
 
   "rio-de-janeiro": {
