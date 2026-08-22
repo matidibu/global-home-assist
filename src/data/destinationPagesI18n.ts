@@ -2244,6 +2244,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    fr: {
+      city: "Barcelone",
+      country: "Espagne",
+      heroTitle: "5 jours à Barcelone : Gaudí, plages méditerranéennes et une ville qui ne s'arrête jamais",
+      heroSubtitle: "L'itinéraire qui équilibre la Sagrada Família avec le quartier de Gràcia, le Barri Gòtic avec Barceloneta.",
+      bestMonths: "Mai et juin, septembre et octobre",
+      budget: "80-140€/jour",
+      travelTips: [
+        "La T-Casual (10 trajets métro/bus) est moins chère qu'à l'unité — valable dans toute la zone métropolitaine",
+        "Les musées municipaux sont gratuits le premier dimanche du mois — et le dimanche après-midi",
+        "Les pharmacies en Espagne ont une croix verte lumineuse et assurent une garde 24h/24 par roulement",
+        "Réservez la Sagrada Família des semaines à l'avance en haute saison (juillet-août)",
+        "Les horaires espagnols décalent d'environ 2 heures par rapport au nord de l'Europe — dîner à 22h est tout à fait normal",
+      ],
+      days: [
+        {
+          theme: "Gaudí — la Barcelone qui coupe le souffle",
+          activities: [
+            { name: "Sagrada Família", description: "Le chef-d'œuvre d'Antoni Gaudí, en construction depuis 140 ans. La nef centrale, les 18 clochers et les façades de la Nativité et de la Passion n'ont rien de comparable dans l'architecture.", price: "26€ (avec tours 36€)", tip: "Réservez votre billet pour tôt le matin. La façade de la Nativité (est) reçoit la lumière du matin — la façade de la Passion (ouest) reçoit celle du coucher de soleil." },
+            { name: "Casa Batlló ou Casa Milà (La Pedrera)", description: "La Casa Batlló a les écailles de dragon les plus photogéniques. La Casa Milà a le toit-terrasse surréaliste avec ses guerriers de pierre et les meilleures vues sur l'Eixample.", price: "35-45€", tip: "La Casa Batlló propose un spectacle nocturne de projection sur sa façade (45€) — plus rentable que la visite de jour si vous cherchez une expérience." },
+            { name: "Parc Güell", description: "Le parc urbain de Gaudí, avec sa terrasse en mosaïque, sa forêt de colonnes et ses maisons en pain d'épice. Il offre une vue à 360° sur Barcelone et la Méditerranée.", price: "10€ (zone monumentale)", tip: "L'accès au parc est gratuit — seule la zone monumentale (la terrasse et la salle des colonnes) nécessite un billet. Réservez en ligne." },
+            { name: "Quartier de Gràcia au coucher du soleil", description: "Le quartier le plus bohème et local de Barcelone, avec ses places animées, ses restaurants sans prix touristiques et ses boutiques indépendantes. La Plaça del Sol en est le point de rencontre.", price: "Gratuit (promenade)", tip: "La Festa Major de Gràcia en août transforme chaque rue en installation artistique. C'est la fête de quartier la plus spectaculaire d'Espagne." },
+          ],
+        },
+        {
+          theme: "Barri Gòtic et les Ramblas",
+          activities: [
+            { name: "Barri Gòtic — le cœur médiéval", description: "La vieille ville médiévale de Barcelone cache le Pont del Bisbe, la cathédrale gothique, le temple romain d'Auguste (Ier siècle av. J.-C.) et les places autour de Sant Felip Neri.", price: "Gratuit", tip: "La Plaça de Sant Felip Neri porte encore des impacts d'éclats d'obus de la guerre civile. C'est le coin le plus mélancolique et authentique du Barri Gòtic." },
+            { name: "La Boqueria", description: "Le marché le plus célèbre d'Espagne, ouvert depuis 1836, avec des centaines d'étals de fruits exotiques, fruits de mer, charcuterie et tapas fraîches.", price: "Gratuit (pour entrer) / variable (pour manger)", tip: "Les étals à l'avant sont à prix touristiques. Allez au fond du marché, là où s'approvisionnent les restaurants — vrais prix et meilleurs produits." },
+            { name: "Les Ramblas", description: "La promenade piétonne la plus connue de Barcelone, 1,2 km depuis la Plaça de Catalunya jusqu'au port. La Font de Canaletes, les étals de fleurs et la mosaïque de Miró incrustée dans le trottoir.", price: "Gratuit", tip: "Les Ramblas comptent beaucoup de pickpockets — portez votre sac à dos devant vous et ne gardez rien de valeur dans vos poches. Traversez-les pour les voir, pas pour vous y attarder." },
+            { name: "El Born et le Mercat de Santa Caterina", description: "Le quartier le plus tendance près du Barri Gòtic, avec le Palais de la Musique de Domènech i Montaner, des boutiques de design et la meilleure scène de tapas de Barcelone.", price: "Gratuit (Palau de la Música 20€)", tip: "Le Palau de la Música est le seul bâtiment moderniste classé UNESCO encore utilisé activement. Achetez un billet pour un concert — c'est la meilleure façon de le voir." },
+          ],
+        },
+        {
+          theme: "Barceloneta et la Méditerranée",
+          activities: [
+            { name: "Barceloneta — la plage urbaine de Barcelone", description: "La plage la plus populaire de Barcelone, 1,1 km de sable face à la Méditerranée, avec les gratte-ciel du Port Olímpic en arrière-plan. Accessible en métro depuis n'importe où en ville.", price: "Gratuit", tip: "À 10h, l'eau est calme. À partir de 14h, la brise marine se lève généralement et crée des vagues idéales pour le bodysurf." },
+            { name: "Marché aux poissons de Barceloneta", description: "Le quartier de Barceloneta conserve encore ses ruelles de pêcheurs du XVIIIe siècle. Les restaurants de la Carrer del Mar et de Marbella servent la paella et l'arròs negre les plus authentiques.", price: "20-35€", tip: "Réservez une table à l'avance en haute saison. La véritable paella barcelonaise se fait aux fruits de mer, pas au poulet — l'arròs negre à l'alioli est le plat signature." },
+            { name: "Port Olímpic et la Vila Olímpica", description: "Le quartier construit pour les Jeux olympiques de 1992 qui a transformé le front de mer de Barcelone. Le poisson doré de Frank Gehry et les tours de communication sont des icônes urbaines.", price: "Gratuit", tip: "La promenade en bord de mer de Barceloneta jusqu'au Forum (7 km) est la meilleure balade à vélo de Barcelone. Il y a des stations Bicing tout le long du parcours." },
+            { name: "Château de Montjuïc au coucher du soleil", description: "La forteresse du XVIIe siècle au sommet de la colline de Montjuïc offre la meilleure vue panoramique sur Barcelone, le port et la mer. Le téléphérique monte depuis Barceloneta.", price: "Château 9€ / Téléphérique 12€", tip: "Le jardin de cactus de Montjuïc est gratuit, et la vue sur le port depuis là-bas est tout aussi bonne que depuis le château." },
+          ],
+        },
+        {
+          theme: "Montserrat — la montagne sacrée de Catalogne",
+          activities: [
+            { name: "Train vers Montserrat", description: "Cette montagne rocheuse à la forme unique, à 60 km de Barcelone, abrite le monastère bénédictin le plus visité d'Espagne et l'image romane de la Vierge de Montserrat.", price: "36€ (train + funiculaire à crémaillère + funiculaire)", tip: "Le premier funiculaire à crémaillère part à 9h20. L'Escolania de Montserrat (le plus ancien chœur d'enfants d'Europe, datant du XIIIe siècle) chante à 13h — ne le manquez pas." },
+            { name: "Sant Joan — la randonnée avec les vues", description: "Le sentier vers l'ermitage de Sant Joan (une montée de 45 minutes) se termine par le meilleur panorama sur la montagne et, par temps clair, la Méditerranée à 50 km.", price: "Gratuit (inclus avec le funiculaire)", tip: "Le funiculaire de Sant Joan monte jusqu'au départ du sentier. Redescendre à pied par l'itinéraire 5 prend 2 heures." },
+            { name: "Basilique de Montserrat et la Moreneta", description: "La Vierge de Montserrat, une sculpture romane du XIIe siècle, préside la basilique. Les files pour la toucher se forment dès le matin — arrivez avant 11h pour éviter l'attente.", price: "Gratuit (basilique)", tip: "Le marché sur la place du monastère vend les meilleurs fromages, charcuteries et la fameuse liqueur de Montserrat (El Montserrat), à des prix de couvent." },
+            { name: "Retour, et après-midi à Gràcia ou dans l'Eixample", description: "De retour à Barcelone, profitez de la dernière lumière du jour avec une promenade dans l'Eixample (les pâtés de maisons octogonaux de Cerdà) ou un vermouth à Gràcia.", price: "Vermouth 3-5€", tip: "Le vermouth catalan se boit avant le déjeuner du dimanche ou au coucher du soleil, avec des olives et des patatas bravas. C'est un rituel, pas juste une boisson." },
+          ],
+        },
+        {
+          theme: "MNAC, Poble Sec et un adieu méditerranéen",
+          activities: [
+            { name: "MNAC — Musée national d'art de Catalogne", description: "Le palais néo-byzantin construit pour l'Exposition universelle de 1929 abrite la collection d'art roman pyrénéen la plus importante au monde, ainsi que le modernisme catalan.", price: "12€", tip: "Les vues sur la ville depuis la terrasse du MNAC sont gratuites (pas besoin de payer l'entrée). Accessible par les marches de l'Avinguda de la Reina Maria Cristina." },
+            { name: "Poble Sec — le quartier qui mange bien", description: "Au pied de Montjuïc, Poble Sec possède la plus forte concentration de restaurants créatifs au mètre carré de Barcelone, à des prix de quartier.", price: "15-25€", tip: "La Carrer de Blai est la rue des pintxos de Barcelone — de petites tapas sur pain à 1,50€ chacune. Parfait pour le déjeuner." },
+            { name: "Fondation Joan Miró", description: "Le musée dédié à l'artiste le plus ludique du XXe siècle, dans un bâtiment de Josep Lluís Sert sur Montjuïc. Les sculptures du jardin extérieur sont visibles depuis les terrasses.", price: "14€", tip: "La mosaïque de Miró sur les Ramblas (incrustée dans le sol à l'intersection avec la Carrer del Carme) est gratuite et vaut la photo." },
+            { name: "Bunkers del Carmel — la vue ultime de Barcelone", description: "Les ruines des bunkers de la guerre civile sur le Turó de la Rovira offrent la vue à 360° la plus spectaculaire sur Barcelone, avec chaque monument reconnaissable.", price: "Gratuit", tip: "Les habitants viennent au coucher du soleil avec des bières et un pique-nique. C'est l'activité la plus locale de la ville — pas de frais, pas de guides, pas de groupes touristiques organisés." },
+          ],
+        },
+      ],
+    },
   },
 
   tokio: {
@@ -2309,6 +2371,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    fr: {
+      city: "Tokyo",
+      country: "Japon",
+      heroTitle: "5 jours à Tokyo : la ville qui a redéfini ce qu'une ville peut être",
+      heroSubtitle: "Shinjuku, Shibuya, Asakusa et les coins où le Japon ancien côtoie le futur proche.",
+      bestMonths: "Mars-avril (fleurs de cerisier) et octobre-novembre",
+      budget: "15 000-25 000¥/jour (100-165 USD)",
+      travelTips: [
+        "La carte IC (Suica ou Pasmo) fonctionne dans tous les métros et trains, et même pour les achats en supérette",
+        "7-Eleven, Lawson et FamilyMart sont bien plus que des supérettes — ils ont d'excellents plats chauds 24h/24",
+        "Les courbettes sont un signe de respect — rendez-les avec la même profondeur que celle reçue",
+        "Le liquide reste roi au Japon — ayez toujours 10 000-20 000¥ en billets",
+        "Google Maps fonctionne parfaitement à Tokyo et indique le quai exact du métro à utiliser",
+      ],
+      days: [
+        {
+          theme: "Shinjuku : la mégalopole dans sa forme la plus pure",
+          activities: [
+            { name: "Sanctuaire Meiji — un sanctuaire dans la forêt", description: "En plein cœur de Tokyo, une forêt de 70 hectares entoure le sanctuaire shinto dédié à l'empereur Meiji. Le passage de l'agitation d'Harajuku au silence de la forêt est immédiat.", price: "Gratuit", tip: "Arrivez avant 9h pour voir le rituel matinal d'ouverture des prêtres (kagura). Le chemin de gravier de 700m vers le sanctuaire est une expérience en soi." },
+            { name: "Harajuku et la rue Takeshita", description: "La rue de la mode alternative japonaise, avec des boutiques de cosplay, de mode lolita et les crêpes les plus créatives du monde. La sous-culture japonaise à son plus visible.", price: "Gratuit (promenade)", tip: "Le dimanche, des danseurs rockabilly habillés à la mode des années 1950 se rassemblent sur le pont Jingu — le côté le plus inattendu du Japon." },
+            { name: "Shinjuku — le quartier qui ne dort jamais", description: "La zone avec le plus grand nombre de trains par jour au monde. Le Tokyo Metropolitan Government Building (plateforme d'observation gratuite), Kabukicho, Golden Gai et le parc Shinjuku Gyoen.", price: "Plateforme d'observation gratuite / Gyoen 500¥", tip: "La plateforme d'observation du Tokyo Metropolitan Government Building (45e étage, gratuit) offre l'une des meilleures vues de la ville, sans frais." },
+            { name: "Golden Gai — les bars miniatures", description: "200 minuscules bars de 5 à 15 places chacun, entassés dans un labyrinthe de ruelles de Shinjuku. Chacun avec son propre thème, sa musique et un propriétaire qui est aussi le barman.", price: "600-1 500¥ par verre", tip: "Certains bars facturent un droit d'entrée de 500-1 000¥ — demandez avant d'entrer. L'expérience vaut plus que la boisson elle-même." },
+          ],
+        },
+        {
+          theme: "Le carrefour de Shibuya et le Tokyo contemporain",
+          activities: [
+            { name: "Carrefour de Shibuya au lever du soleil", description: "Le carrefour piéton le plus fréquenté au monde, avec jusqu'à 3 000 personnes traversant à chaque cycle de feu. Tôt le matin ou au lever du soleil, avant l'heure de pointe, c'est un carrefour complètement différent.", price: "Gratuit", tip: "La meilleure vue aérienne du carrefour est depuis le Starbucks au 2e étage du 2-1 Dogenzaka, ou depuis le bar Sky+1. Le carrefour vu d'en haut est la photo la plus emblématique de Tokyo." },
+            { name: "Daikanyama et Nakameguro", description: "Les deux quartiers les plus branchés de Tokyo pour les créatifs locaux : boutiques de mode, cafés indépendants et le canal Meguro bordé de cerisiers en fleurs au printemps.", price: "Gratuit (promenade)", tip: "Tsutaya Books à Daikanyama est la plus belle librairie du monde — 3 bâtiments en bois avec un café intégré, ouverte 24h/24." },
+            { name: "Omotesando — l'avenue de l'architecture", description: "Le boulevard de Tokyo où chaque bâtiment porte la signature d'un architecte : Zaha Hadid (Chanel), Sou Fujimoto, Kengo Kuma et l'Omotesando Hills de Tadao Ando.", price: "Gratuit", tip: "Le musée Nezu (1 300¥) au bout d'Omotesando abrite le jardin de bambous le plus paisible qui soit, à seulement 3 minutes de l'un des Starbucks les plus fréquentés au monde." },
+            { name: "Ramen à Shibuya", description: "Tokyo possède les meilleurs bols de ramen au monde. Essayez Ichiran (cabines individuelles — le seul restaurant où manger seul a son propre protocole) ou Fuunji (tsukemen légendaire).", price: "900-1 500¥", tip: "Les distributeurs à l'entrée des ramen-ya vous demandent de choisir avant de vous asseoir. Le menu a des photos — pointez simplement le numéro si vous ne lisez pas les kanjis." },
+          ],
+        },
+        {
+          theme: "Asakusa et le Tokyo historique",
+          activities: [
+            { name: "Senso-ji au lever du soleil", description: "Le temple bouddhiste le plus visité au monde, fondé en 628 apr. J.-C. Le Kaminarimon (Porte du Tonnerre) et la rue Nakamise-dori de boutiques traditionnelles mènent au pavillon principal.", price: "Gratuit", tip: "À 8h, le temple a peu de visiteurs, et les moines accomplissent les rituels matinaux. Les tirages de fortune (omikuji) sont gratuits — pliez le papier et attachez-le si c'est un mauvais présage." },
+            { name: "Skytree Tokyo", description: "La tour de télévision la plus haute du monde (634m), avec deux plateformes d'observation. Une vue à 360° sur Tokyo, le mont Fuji par temps clair et Asakusa à ses pieds.", price: "2 100¥ (plateforme 350m) / 3 100¥ (avec le sommet)", tip: "Le meilleur moment est au lever du soleil (ouvre à 8h) ou au coucher. Le vendredi soir, un éclairage bleu spécial est proposé." },
+            { name: "Akihabara — le quartier du futur", description: "Le quartier de l'électronique, des jeux vidéo, des mangas et des animes. Des gratte-ciel couverts d'écrans LED, des boutiques de 7 étages pleines de figurines de collection et des maid cafés.", price: "Gratuit (promenade)", tip: "Un maid café est une expérience culturelle typiquement japonaise — des filles déguisées en femmes de chambre servent le thé en jouant avec vous. 1 000-2 000¥ par personne." },
+            { name: "Ueno — musées et parc des cerisiers en fleurs", description: "Le parc Ueno est le lieu le plus célèbre de Tokyo pour le hanami (pique-nique sous les cerisiers en fleurs). Le Musée national de Tokyo et le zoo s'y trouvent aussi.", price: "Parc gratuit / Musée 1 000¥", tip: "Pendant la saison des cerisiers (fin mars-avril), Ueno est l'endroit le plus bondé de Tokyo. Le hanami nocturne (yozakura), avec les fleurs illuminées, est extraordinaire." },
+          ],
+        },
+        {
+          theme: "Tsukiji, Ginza et la baie de Tokyo",
+          activities: [
+            { name: "Marché extérieur de Tsukiji", description: "Le marché aux poissons le plus célèbre au monde, dans sa version marché extérieur (le marché intérieur a déménagé à Toyosu). Prenez un petit-déjeuner de sushi ou de donburi au thon à 7h aux côtés des poissonniers.", price: "1 500-3 000¥ (petit-déjeuner)", tip: "Dai Sushi et Sushi Dai sont les plus célèbres — comptez 45-90 minutes d'attente pour le comptoir de 8 places. Le sushi à 7h, tout juste débarqué, est d'un autre niveau." },
+            { name: "Ginza — les Champs-Élysées de Tokyo", description: "Le quartier de luxe le plus exclusif d'Asie : Chanel, Louis Vuitton, l'Apple Store, et les grands magasins japonais Mitsukoshi et Isetan avec leurs bentos impeccables.", price: "Gratuit (promenade)", tip: "Les galeries d'art contemporain aux étages supérieurs des bâtiments de Ginza sont gratuites et présentent le meilleur de l'art japonais contemporain." },
+            { name: "teamLab Borderless ou teamLab Planets", description: "Le musée d'art numérique immersif le plus innovant au monde, où les installations de lumière et de son réagissent aux mouvements des visiteurs.", price: "3 200¥", tip: "Réservez votre billet en ligne des mois à l'avance — il s'épuise constamment. teamLab Planets à Toyosu propose les installations aquatiques et le jardin de fleurs numérique." },
+            { name: "Odaiba — la ville artificielle dans la baie", description: "L'île artificielle de la baie de Tokyo, siège de Fuji TV, avec une réplique miniature de la Statue de la Liberté et les meilleures vues nocturnes du Rainbow Bridge illuminé.", price: "Gratuit (promenade)", tip: "Le train sans conducteur Yurikamome traversant le Rainbow Bridge au crépuscule est l'un des trajets de transport public les plus spectaculaires au monde." },
+          ],
+        },
+        {
+          theme: "Kamakura ou Nikko — le Japon au-delà de Tokyo",
+          activities: [
+            { name: "Train vers Kamakura (1h depuis Tokyo)", description: "L'ancienne capitale impériale du Japon médiéval, avec un Grand Bouddha en plein air de 13 mètres, 65 temples et la mer visible depuis les collines. Une petite ville parfaite.", price: "Train 940¥ (aller-retour)", tip: "Le JR Pass ne couvre pas la ligne Enoden de Kamakura — prenez une carte Suica pour le trajet." },
+            { name: "Grand Bouddha de Kamakura (Kotoku-in)", description: "La statue en bronze de 1252 du Bouddha Amida, haute de 13,35 mètres, a été témoin de tout le Japon médiéval. Vous pouvez entrer dans l'intérieur creux de la statue.", price: "300¥", tip: "Entrez dans le Bouddha (20¥ supplémentaires) — c'est l'une des rares statues géantes du Japon dans laquelle on peut pénétrer." },
+            { name: "Plage de Kamakura", description: "Les plages de Kamakura et Enoshima font face au Pacifique, avec le mont Fuji visible en arrière-plan par temps clair. Surprenant d'avoir une plage de surf à seulement 1 heure de Tokyo.", price: "Gratuit", tip: "La vue sur le mont Fuji depuis la plage de Shichirigahama (ligne Enoden), avec les vagues de surf au premier plan, est une image emblématique du Japon." },
+            { name: "Enoshima — l'île sacrée", description: "L'île reliée par un pont, avec le sanctuaire Benzaiten, des grottes côtières et la meilleure vue panoramique sur le Fuji depuis la tour Sea Candle.", price: "Tour 500¥", tip: "Les takoyaki (boulettes de poulpe) des stands sur le pont d'Enoshima sont le snack de l'après-midi parfait avant de retourner à Tokyo." },
+          ],
+        },
+      ],
+    },
   },
 
   "nueva-york": {
@@ -2370,6 +2494,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "African American cuisine in Harlem", description: "Sylvia's Restaurant has been Harlem's culinary institution since 1962: fried chicken, mac and cheese, and sweet potato pie that are part of New York's cultural heritage.", price: "USD 20-35", tip: "Marcus Samuelsson's Red Rooster is the modern take on Harlem soul food — reservations essential." },
             { name: "Apollo Theater", description: "The theater where James Brown, Ella Fitzgerald, Billie Holiday, and Michael Jackson got their start. Amateur Night still runs on Wednesdays — the most demanding, honest audience in the world.", price: "Facade free / guided tours USD 18", tip: "If your visit lines up with Amateur Night (Wednesday), buy your ticket ahead of time. The most authentic night out in NYC." },
             { name: "The Cloisters — medieval art above the Hudson", description: "The Met's medieval branch, housed in an authentic European cloister rebuilt above the Hudson with views of New Jersey. The unicorn tapestries are out of this world.", price: "USD 30 (included with the Met ticket from day 1)", tip: "Arrive at the end of the day when the sunset light streams through the medieval stained glass. The least-known of NYC's great museums." },
+          ],
+        },
+      ],
+    },
+    fr: {
+      city: "New York",
+      country: "États-Unis",
+      heroTitle: "5 jours à New York : l'itinéraire pour une première fois parfaite",
+      heroSubtitle: "Le pont de Brooklyn, Central Park, le MoMA et Harlem — sans perdre de temps sur ce qui n'en vaut pas la peine.",
+      bestMonths: "Septembre à novembre et avril à juin",
+      budget: "150-280 USD/jour",
+      travelTips: [
+        "Chargez une MetroCard ou utilisez OMNY (paiement sans contact) — 2,90 USD par trajet quelle que soit la distance",
+        "Le métro fonctionne 24h/24 mais il est lent la nuit, et il y a de fréquents détournements le week-end",
+        "Laissez toujours un pourboire de 18-22% au restaurant — c'est socialement obligatoire et fait partie du salaire des employés",
+        "Le CityPASS fait économiser 40% si vous visitez 4+ attractions payantes sur 9 jours consécutifs",
+        "Téléchargez l'application NYC Ferry — le ferry de l'East River est un transport public bon marché avec des vues spectaculaires",
+      ],
+      days: [
+        {
+          theme: "Manhattan central : Times Square, Central Park et le Met",
+          activities: [
+            { name: "Central Park au lever du soleil", description: "340 hectares de parc au cœur de Manhattan. La fontaine Bethesda, le Bow Bridge et les vues sur la skyline depuis la Great Lawn sont les endroits les plus photogéniques.", price: "Gratuit", tip: "Louez un vélo dans le parc pour couvrir plus de terrain. Le dimanche, la boucle extérieure est fermée aux voitures." },
+            { name: "Le Metropolitan Museum of Art (The Met)", description: "Le plus grand musée d'Amérique du Nord, avec plus de 2 millions d'objets. Les collections égyptienne, grecque et d'armures médiévales sont incontournables même si vous n'avez que 2 heures.", price: "30 USD (suggéré — prix libre pour les résidents de New York)", tip: "Le toit-terrasse du Met est ouvert de mai à octobre avec des vues spectaculaires sur Central Park. Séparé du musée mais inclus avec le billet." },
+            { name: "Upper West Side et Columbus Circle", description: "Le quartier résidentiel le plus typiquement new-yorkais de Manhattan, avec ses brownstones, ses cafés indépendants et le marché gastronomique du Time Warner Center.", price: "15-25 USD (déjeuner)", tip: "Gray's Papaya sur Broadway sert les hot-dogs les plus emblématiques de New York à toute heure — la façon dont les New-Yorkais prennent leur petit-déjeuner depuis 1973." },
+            { name: "Times Square", description: "Le carrefour le plus célèbre au monde, avec 26 000 m² d'écrans LED. Écrasant de jour, magique au crépuscule quand les lumières éclipsent le soleil.", price: "Gratuit", tip: "Si possible, ne mangez ni n'achetez rien à Times Square — tout coûte le double. Utilisez-le juste pour les photos et passez votre chemin." },
+          ],
+        },
+        {
+          theme: "Brooklyn : le pont, DUMBO et Williamsburg",
+          activities: [
+            { name: "Pont de Brooklyn au lever du soleil", description: "Traverser le pont à pied depuis Manhattan jusqu'à Brooklyn prend 30 minutes. Les vues sur la skyline au lever du soleil, avec l'East River en contrebas, offrent les meilleures photos de New York.", price: "Gratuit", tip: "Partez de la station Chambers St à Manhattan. Le pont se remplit de cyclistes rapides — restez sur la voie piétonne." },
+            { name: "DUMBO — Down Under the Manhattan Bridge Overpass", description: "Le quartier avec la photo la plus célèbre de New York : l'intersection de Washington St, avec l'Empire State Building en arrière-plan et le pont de Manhattan encadrant la scène.", price: "Gratuit", tip: "La photo classique se prend sur Washington St en regardant vers le pont de Manhattan. À 9h il n'y a presque personne — à midi, des dizaines de personnes attendent leur tour." },
+            { name: "Promenade de Brooklyn Heights", description: "La passerelle surélevée au-dessus de la FDR Drive offrant la meilleure vue sur la skyline de Lower Manhattan depuis Brooklyn. Les habitants viennent ici le week-end avec leur café.", price: "Gratuit", tip: "Continuez à marcher jusqu'à Brooklyn Bridge Park, où vous pourrez vous asseoir sur l'herbe face à la skyline." },
+            { name: "Williamsburg : brunch et culture", description: "Le quartier hipster de Brooklyn, avec les meilleurs brunchs de New York, de l'art de rue, des boutiques vintage et un front de mer sur l'East River avec vue sur Midtown Manhattan.", price: "20-35 USD", tip: "Smorgasburg à Williamsburg (dimanches, avril-octobre) est le meilleur marché de street food de New York — 100 vendeurs locaux." },
+          ],
+        },
+        {
+          theme: "Lower Manhattan : histoire, Ground Zero et la Statue",
+          activities: [
+            { name: "Mémorial et musée du 11-Septembre", description: "Les deux bassins réfléchissants où se dressaient les Tours jumelles, avec les noms des 2 977 victimes gravés dans le bronze. Un lieu de mémoire essentiel.", price: "Mémorial gratuit / Musée 33 USD", tip: "Le mémorial extérieur est toujours accessible et ne nécessite pas de billet. Le musée est émotionnellement intense — prévoyez du temps pour l'assimiler." },
+            { name: "Ferry de Staten Island", description: "Le ferry de Staten Island part toutes les 30 minutes depuis Whitehall Terminal. La traversée de 25 minutes offre des vues directes sur la Statue de la Liberté — entièrement gratuite.", price: "Gratuit", tip: "La meilleure vue sur la Statue est du côté droit du ferry en direction de Staten Island. Pas besoin de débarquer — reprenez simplement le ferry suivant pour le retour." },
+            { name: "Wall Street et le Charging Bull", description: "Le centre financier mondial, avec la Bourse de New York, la célèbre sculpture du taureau et Fearless Girl. Le contraste entre l'architecture néoclassique et les gratte-ciel est unique au monde.", price: "Gratuit", tip: "La NYSE n'est pas ouverte au public. Le musée de la Réserve fédérale de New York (gratuit) montre la plus grande réserve d'or au monde." },
+            { name: "One World Observatory", description: "L'observatoire du plus haut bâtiment de l'hémisphère occidental, à 381 mètres. La montée en ascenseur dure 47 secondes, avec un écran immersif racontant l'histoire de New York.", price: "46 USD", tip: "Cela vaut plus que l'Empire State (moins de monde, vues tout aussi impressionnantes). Achetez votre billet en ligne." },
+          ],
+        },
+        {
+          theme: "Art et design : MoMA, la High Line et Chelsea",
+          activities: [
+            { name: "MoMA — Museum of Modern Art", description: "La collection d'art du XXe siècle la plus importante au monde : La Nuit étoilée de Van Gogh, Guernica (reproduction), Dalí et Warhol. Le bâtiment lui-même est une œuvre de design.", price: "30 USD", tip: "Réservez votre billet en ligne. Le vendredi de 17h à 21h, l'entrée est à prix libre — très fréquenté mais bon marché." },
+            { name: "High Line", description: "L'ancienne voie de chemin de fer surélevée transformée en parc urbain au-dessus de Chelsea. 2,3 km de parc linéaire avec de l'art public, des vues sur l'Hudson et les meilleurs food trucks de la ville.", price: "Gratuit", tip: "Commencez à Gansevoort St (l'extrémité sud) et terminez à Hudson Yards. Voir le Vessel depuis le sol est gratuit." },
+            { name: "Chelsea Market", description: "Le marché gastronomique installé dans l'ancienne usine Oreo au cœur de Chelsea. Des dizaines d'étals proposant les meilleures options culinaires à prix raisonnables.", price: "15-30 USD", tip: "Les lobster rolls de The Lobster Place sont légendaires. Arrivez avant 15h pour trouver une table." },
+            { name: "Empire State Building la nuit", description: "Le gratte-ciel le plus emblématique de New York, illuminé de différentes couleurs pour les événements et jours fériés. La plateforme du 86e étage offre des vues à 360° sur la ville illuminée.", price: "44 USD", tip: "Le deuxième observatoire (86e étage, en plein air) vaut plus la peine que le 102e étage. Arrivez 1 heure avant la fermeture pour éviter l'attente." },
+          ],
+        },
+        {
+          theme: "Harlem : la culture qui a fait New York",
+          activities: [
+            { name: "Dimanche gospel à Harlem", description: "Le dimanche, les églises de Harlem organisent des services gospel avec des chœurs live de premier ordre. L'Abyssinian Baptist Church est la plus célèbre — émouvante même si vous n'êtes pas croyant.", price: "Don volontaire", tip: "Allez-y le dimanche matin. Habillez-vous de façon formelle — c'est un office religieux, pas un spectacle touristique. Soyez respectueux." },
+            { name: "Cuisine afro-américaine à Harlem", description: "Sylvia's Restaurant est une institution culinaire de Harlem depuis 1962 : poulet frit, mac and cheese et tarte à la patate douce qui font partie du patrimoine culturel new-yorkais.", price: "20-35 USD", tip: "Le Red Rooster de Marcus Samuelsson est la version moderne de la cuisine soul de Harlem — réservation essentielle." },
+            { name: "Apollo Theater", description: "Le théâtre où James Brown, Ella Fitzgerald, Billie Holiday et Michael Jackson ont fait leurs débuts. L'Amateur Night a toujours lieu le mercredi — le public le plus exigeant et le plus honnête au monde.", price: "Façade gratuite / visites guidées 18 USD", tip: "Si votre visite coïncide avec l'Amateur Night (mercredi), achetez votre billet à l'avance. La soirée la plus authentique de New York." },
+            { name: "The Cloisters — l'art médiéval au-dessus de l'Hudson", description: "L'antenne médiévale du Met, installée dans un authentique cloître européen reconstruit au-dessus de l'Hudson avec vue sur le New Jersey. Les tapisseries de la licorne sont hors du commun.", price: "30 USD (inclus avec le billet du Met du jour 1)", tip: "Arrivez en fin de journée quand la lumière du coucher de soleil traverse les vitraux médiévaux. Le moins connu des grands musées de New York." },
           ],
         },
       ],
