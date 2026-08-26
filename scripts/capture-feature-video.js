@@ -21,6 +21,12 @@ const BASE_URL = 'https://global-home-assist.vercel.app';
 const OUTPUT_DIR = 'C:/Users/matia/Downloads/gha_videos';
 const VIDEO_SIZE = { width: 480, height: 854 };
 const LOCALE_BY_LANG = { es: 'es-AR', en: 'en-US', fr: 'fr-FR', it: 'it-IT', de: 'de-DE', pt: 'pt-PT' };
+// Mirrors CookieBanner.tsx's own T[lang].acceptAll -- same hardcoded-Spanish
+// bug class as feat-excursiones' getByText('Actividades y tours'), found
+// 2026-08-25. CookieBanner has full i18n, so a non-'es' capture's "Aceptar
+// todo" lookup silently failed, leaving the banner visible/overlapping
+// content for the rest of the recording.
+const ACCEPT_ALL_BY_LANG = { es: 'Aceptar todo', en: 'Accept all', fr: 'Tout accepter', it: 'Accetta tutto', de: 'Alle akzeptieren', pt: 'Aceitar tudo' };
 
 const feature = process.argv[2];
 const destination = process.argv[3];
@@ -77,7 +83,7 @@ async function smoothScrollTo(page, y) {
 
   console.log(`[1/6] Abriendo ${BASE_URL} ...`);
   await page.goto(BASE_URL, { waitUntil: 'domcontentloaded' });
-  await page.getByRole('button', { name: 'Aceptar todo' }).click({ timeout: 8000 }).catch(() => {
+  await page.getByRole('button', { name: ACCEPT_ALL_BY_LANG[lang] || ACCEPT_ALL_BY_LANG.es }).click({ timeout: 8000 }).catch(() => {
     console.warn('   ⚠️  No se pudo cerrar el banner de cookies');
   });
 

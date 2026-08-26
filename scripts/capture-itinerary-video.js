@@ -37,6 +37,14 @@ const days = parseInt(process.argv[3] || '3', 10);
 const lang = (process.argv[4] || 'es').toLowerCase();
 
 const LOCALE_BY_LANG = { es: 'es-AR', en: 'en-US', fr: 'fr-FR', it: 'it-IT', de: 'de-DE', pt: 'pt-PT' };
+// Mirrors CookieBanner.tsx's own T[lang].acceptAll -- found 2026-08-25 that
+// this was hardcoded Spanish-only, same bug class as feat-excursiones'
+// getByText('Actividades y tours') (see project memory): CookieBanner DOES
+// have full i18n, so a non-'es' capture's "Aceptar todo" lookup silently
+// failed to find the button, leaving the banner visible/overlapping content
+// for the entire rest of the recording instead of just not dismissing it
+// fast enough.
+const ACCEPT_ALL_BY_LANG = { es: 'Aceptar todo', en: 'Accept all', fr: 'Tout accepter', it: 'Accetta tutto', de: 'Alle akzeptieren', pt: 'Aceitar tudo' };
 
 if (!destination) {
   console.error('Uso: node scripts/capture-itinerary-video.js "Nombre de la ciudad" [dias] [idioma]');
@@ -78,7 +86,7 @@ function slugify(text) {
   // domcontentloaded the banner's own React mount can still be a beat away,
   // and an instant isVisible() check missed it, leaving the cookie banner
   // visible on-screen for the rest of the recording.
-  await page.getByRole('button', { name: 'Aceptar todo' }).click({ timeout: 8000 }).catch(() => {
+  await page.getByRole('button', { name: ACCEPT_ALL_BY_LANG[lang] || ACCEPT_ALL_BY_LANG.es }).click({ timeout: 8000 }).catch(() => {
     console.warn('   ⚠️  No se pudo cerrar el banner de cookies (puede quedar visible en el video)');
   });
 
