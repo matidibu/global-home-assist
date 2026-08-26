@@ -4,6 +4,7 @@
 import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { GeocoderAutocomplete } from "@geoapify/geocoder-autocomplete";
+import { matchCuratedDestinations, normalize as normalizeSearchText } from "@/lib/curatedDestinationSearch";
 import CountryBackground from "@/components/CountryBackground";
 import ServicesSection from "@/components/ServicesSection";
 import DestinationInfo from "@/components/DestinationInfo";
@@ -677,6 +678,8 @@ export default function SearchForm() {
 
   const autocompleteRef = useRef<GeocoderAutocomplete | null>(null);
   const accommodationRef = useRef<GeocoderAutocomplete | null>(null);
+  const cityQueryRef = useRef("");
+  const curatedPinnedCountRef = useRef(0);
 
   const t = T[language] || T.es;
   const lc = LOADING_CONTENT[language] || LOADING_CONTENT.es;
@@ -801,7 +804,56 @@ export default function SearchForm() {
       setFormError("");
     };
 
-    ac.on("input", (value: string) => setCityTyped(value));
+    // Prioriza destinos turísticos curados (los 24 con página propia en
+    // /itinerario/<slug>) por sobre resultados random de Geoapify con el
+    // mismo nombre -- arreglado 2026-08-25 tras confirmar en vivo que
+    // "Bali" siempre devolvía Turquía/pueblos random (Geoapify excluye la
+    // isla por completo bajo type=city, no es un tema de orden), y a
+    // pedido explícito del usuario para casos como "San Francisco" (EEUU)
+    // perdiendo contra homónimos menores. Los resultados de Geoapify que
+    // sobreviven también se reordenan por `rank.importance` real en vez de
+    // depender del orden crudo de la API.
+    ac.setSuggestionsFilter((suggestions: any[]) => {
+      const curated = matchCuratedDestinations(cityQueryRef.current).map(m => ({
+        properties: {
+          name: m.name,
+          city: m.name,
+          country: m.country,
+          formatted: `${m.name}, ${m.country}`,
+          lat: m.lat,
+          lon: m.lon,
+          result_type: "city",
+          _curated: true,
+        },
+      }));
+      curatedPinnedCountRef.current = curated.length;
+      const curatedNames = new Set(curated.map(c => normalizeSearchText(c.properties.name)));
+      const rest = [...suggestions]
+        .filter(s => !curatedNames.has(normalizeSearchText(s.properties?.city || s.properties?.name || "")))
+        .sort((a, b) => (b.properties?.rank?.importance ?? 0) - (a.properties?.rank?.importance ?? 0));
+      return [...curated, ...rest];
+    });
+
+    // Inserta un separador visual entre los destinos curados fijados y el
+    // resto de las sugerencias (mismo patrón que un buscador de ciudades
+    // que muestra las capitales/más buscadas arriba de una línea, y el
+    // resto abajo). El widget no expone un hook para esto, así que se
+    // agrega a mano justo después de que renderiza la lista -- "suggestions"
+    // corre antes del render sincrónico, por eso el setTimeout(0).
+    ac.on("suggestions", () => {
+      const n = curatedPinnedCountRef.current;
+      if (n <= 0) return;
+      setTimeout(() => {
+        const list = container.querySelector(".geoapify-autocomplete-items");
+        if (!list || list.children.length <= n || list.querySelector(".curated-divider")) return;
+        for (let i = 0; i < n; i++) list.children[i]?.classList.add("curated-item");
+        const divider = document.createElement("div");
+        divider.className = "curated-divider";
+        list.insertBefore(divider, list.children[n]);
+      }, 0);
+    });
+
+    ac.on("input", (value: string) => { setCityTyped(value); cityQueryRef.current = value; });
     ac.on("select", handleCitySelect);
     ac.on("place_select" as any, handleCitySelect);
     autocompleteRef.current = ac;

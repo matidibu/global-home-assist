@@ -80,6 +80,24 @@ html, body {
 .geoapify-autocomplete-item:hover {
   background: #e6f7f5 !important;
 }
+/* Destinos curados fijados arriba del buscador (ver
+   curatedDestinationSearch.ts) -- destacados en teal para diferenciarlos
+   del resto de las sugerencias de Geoapify, separados por una línea. */
+.geoapify-autocomplete-item.curated-item .icon {
+  color: #2ab5a0 !important;
+}
+.geoapify-autocomplete-item.curated-item .main-part {
+  color: #1a2a6c;
+  font-weight: 700;
+}
+.geoapify-autocomplete-items .curated-divider {
+  height: 1px !important;
+  padding: 0 !important;
+  margin: 4px 10px !important;
+  background: rgba(26,42,108,0.15);
+  cursor: default !important;
+  pointer-events: none;
+}
 
 /* Base card utility */
 .card-base {
