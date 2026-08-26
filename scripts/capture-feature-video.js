@@ -177,12 +177,33 @@ async function smoothScrollTo(page, y) {
     await page.waitForTimeout(1000);
     await page.evaluate(() => window.scrollBy(0, 80));
     await page.waitForTimeout(2000);
-    // zoom in once on the map for visual interest, if the Leaflet control is there
-    const zoomIn = page.locator('.leaflet-control-zoom-in');
-    if (await zoomIn.count() > 0) {
-      await zoomIn.click().catch(() => {});
+    // Zoom in centered on one of the actual itinerary pins, not the map's
+    // current center -- found 2026-08-25 via user video review that the
+    // old `.leaflet-control-zoom-in` click zoomed into an empty stretch of
+    // the map (Boulogne-Billancourt) with NO pins visible at all. Root
+    // cause: the generic zoom control zooms toward the map's current
+    // center, which after TravelMap's fitBounds() is just the bbox's
+    // geometric center -- not guaranteed to be near any marker when the
+    // pins are spread in a non-uniform shape (confirmed live against prod:
+    // Paris's pins line up diagonally, well off the bbox center). Fix:
+    // double-click directly on one of the numbered pins instead --
+    // Leaflet's default doubleClickZoom handler zooms in centered on the
+    // click point, so that pin (and its near neighbors) stays in frame.
+    // Verified live against prod before shipping: pins 1/4/7 still visible
+    // after one dblclick, pins 1/7 still visible after a second.
+    const pin = page.locator('.leaflet-marker-icon').first();
+    if (await pin.count() > 0) {
+      await pin.dblclick({ force: true }).catch(() => {});
       await page.waitForTimeout(1500);
-      await zoomIn.click().catch(() => {});
+      await pin.dblclick({ force: true }).catch(() => {});
+    } else {
+      // fallback for the unlikely case of a map with no markers rendered
+      const zoomIn = page.locator('.leaflet-control-zoom-in');
+      if (await zoomIn.count() > 0) {
+        await zoomIn.click().catch(() => {});
+        await page.waitForTimeout(1500);
+        await zoomIn.click().catch(() => {});
+      }
     }
     await page.waitForTimeout(3000);
   } else if (feature === 'excursiones') {

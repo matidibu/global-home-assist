@@ -2,7 +2,7 @@
 
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
 import L from "leaflet";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 interface Activity {
   place_name: string;
@@ -49,8 +49,6 @@ export default function TravelMap({ activities, language = "en", accommodation }
     a => a.location?.latitude && a.location?.longitude
   );
 
-  if (valid.length === 0) return null;
-
   const positions: [number, number][] = valid.map(a => [
     a.location.latitude,
     a.location.longitude,
@@ -86,11 +84,22 @@ export default function TravelMap({ activities, language = "en", accommodation }
       popupAnchor: [0, -34],
     });
 
-  // Incluir hospedaje en el fitBounds
-  const allPositions: [number, number][] = [...positions];
-  if (accommodation) {
-    allPositions.push([accommodation.coordinates.lat, accommodation.coordinates.lon]);
-  }
+  // Incluir hospedaje en el fitBounds. Memoizado por mapKey (no por
+  // referencia de `positions`/`accommodation`) -- sin esto, FitBounds recibía
+  // un array nuevo en cada render del padre y su useEffect volvía a llamar
+  // map.fitBounds(), pisando cualquier zoom manual del usuario segundos
+  // después (confirmado 2026-08-25 vía frames del video feat-mapa-en: el
+  // zoom sobre un pin se deshacía solo ~3s después).
+  const allPositions: [number, number][] = useMemo(() => {
+    const result = [...positions];
+    if (accommodation) {
+      result.push([accommodation.coordinates.lat, accommodation.coordinates.lon]);
+    }
+    return result;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mapKey]);
+
+  if (valid.length === 0) return null;
 
   return (
     <MapContainer
