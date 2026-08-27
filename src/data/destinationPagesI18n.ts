@@ -3650,6 +3650,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Marraquexe",
+      country: "Marrocos",
+      heroTitle: "3 dias em Marraquexe: a cidade vermelha que desperta todos os sentidos",
+      heroSubtitle: "Praça Jemaa el-Fna, souks labirínticos, Jardim Majorelle e riads de sonho — o roteiro essencial para uma primeira vez em Marrocos.",
+      bestMonths: "março a maio e outubro a novembro",
+      budget: "$50-100 USD/dia",
+      travelTips: [
+        "Contrata um guia oficial para os souks (100-150 MAD/hora) — evita que te percas e que entres em lojas de comissão",
+        "O dirham marroquino não pode ser trocado fora de Marrocos — leva dinheiro para o início e troca no aeroporto ou nas casas de câmbio do centro",
+        "Vestuário modesto na medina — ombros e joelhos cobertos para homens e mulheres é a norma e evita atenção desnecessária",
+        "As fotos de pessoas exigem permissão — os artistas da praça e os vendedores esperam pagamento por fotos (10-20 MAD)",
+        "A água da torneira não é potável — bebe sempre água engarrafada e evita o gelo nos sumos das bancas de rua",
+      ],
+      days: [
+        {
+          theme: "A medina e o coração de Marraquexe",
+          activities: [
+            { name: "Praça Jemaa el-Fna de manhã", description: "O coração de Marraquexe, Património da Humanidade da UNESCO. De manhã é um mercado tranquilo com espremedores de laranja, hena e encantadores de serpentes. Ao anoitecer transforma-se no espetáculo mais caótico e fascinante do mundo.", price: "Grátis (serviços à parte)", tip: "O sumo de laranja fresco na praça custa 4-5 MAD — é o pequeno-almoço mais icónico de Marraquexe. Não aceites 'tours gratuitos' de desconhecidos que se aproximam." },
+            { name: "Souks da medina", description: "O labirinto de mercados medievais onde cada rua tem uma corporação especializada: souks de especiarias, couro, bronze, cerâmica, têxteis e babuchas. O Souk des Teinturiers (tingidores de couro) é o mais fotogénico.", price: "Grátis (compras à parte)", tip: "Um guia local (100-150 MAD) poupa-te horas a andar às voltas e leva-te às oficinas autênticas. Sem guia, qualquer direção que te derem vai levar-te à loja de algum conhecido." },
+            { name: "Almoço num terraço da medina", description: "Os terraços dos riads sobre os telhados da medina oferecem tagines, kefta e harira com vistas para os minaretes. O Café de France e o Le Foundouk têm as melhores vistas sobre a praça.", price: "50-100 MAD", tip: "O tagine de cordeiro com ameixas e amêndoas (msir) é o prato mais representativo de Marraquexe. Come onde vires marroquinos, não onde os 'guias' te levarem." },
+            { name: "Jemaa el-Fna ao anoitecer — o grande espetáculo", description: "A partir das 17h a praça transforma-se: centenas de bancas de comida, músicos Gnawa, contadores de histórias, acrobatas e dançarinos de fogo enchem cada metro quadrado.", price: "Grátis (comida 20-40 MAD)", tip: "As bancas de comida da praça (1-150) competem em preço — todas têm menu visível. Escolhe a que tiver mais locais e pergunta o preço ANTES de te sentares." },
+          ],
+        },
+        {
+          theme: "Palácios, Jardim Majorelle e hamam",
+          activities: [
+            { name: "Palácio da Bahia", description: "O palácio do século XIX do Grande Vizir Ba Ahmed, com 150 divisões, pátios de laranjeiras e cedros, tetos de cedro talhado e a melhor treliça de madeira (mashrabiyya) de Marrocos.", price: "70 MAD", tip: "O palácio é mais impressionante do que as pessoas esperam. A sala de visitas do Vizir tem o teto de cedro mais elaborado que vais ver na vida." },
+            { name: "Tombeaux Saadiens", description: "Os mausoléus do século XVI onde estão enterrados os sultões da dinastia Saadiana, redescobertos em 1917 depois de séculos tapados. As câmaras funerárias com os seus nichos de azulejos e estuque têm uma beleza extraordinária.", price: "70 MAD", tip: "O espaço é pequeno e o fluxo de visitantes é constante — chega à abertura para ver a Sala das Doze Colunas sem aglomeração." },
+            { name: "Jardim Majorelle e Museu Berbere", description: "O jardim criado pelo pintor francês Jacques Majorelle em 1923, resgatado por Yves Saint Laurent. O azul cobalto do pavilhão (Azul Majorelle), os cactos e a coleção berbere do museu são um oásis de cor.", price: "150 MAD (jardim + museu)", tip: "O jardim está muito concorrido das 10h às 16h — chega às 14h quando muitos turistas estão a almoçar para encontrares menos gente." },
+            { name: "Hamam tradicional", description: "O banho árabe milenar é parte essencial da cultura marroquina. Os hamams de bairro (10-30 MAD) são para locais; os turísticos oferecem tratamentos mais elaborados com ghassoul e argan.", price: "Hamam local 20 MAD / turístico 150-300 MAD", tip: "O Hamam Dar el Bacha e o Hammam de la Mosquée Mouassine são os mais autênticos do centro. Leva chinelos e a tua própria toalha se fores a um de bairro." },
+          ],
+        },
+        {
+          theme: "Excursão ao Atlas e regresso à medina",
+          activities: [
+            { name: "Excursão às Cascatas de Ouzoud", description: "As cascatas maiores do norte de África a 150 km de Marraquexe, com uma queda de 110 metros entre rochas de toba. O caminho pelo Atlas e pelas aldeias berberes é tão interessante quanto o destino.", price: "Tour €25-40 (a partir de Marraquexe)", tip: "Os tours organizados de dia completo incluem transporte e almoço na aldeia. A primavera (março-maio) tem o maior caudal de água — espetacular." },
+            { name: "Almoço berbere no Atlas", description: "Os restaurantes das aldeias berberes do Atlas servem tagines de frango com azeitonas e limões em conserva, cuscuz de legumes e harira em terraços com vistas para as montanhas.", price: "80-120 MAD", tip: "O pão de terra berbere (khobz) cozido em forno de barro é o melhor acompanhamento do tagine. Os restaurantes à beira da estrada com clientes locais são os mais autênticos." },
+            { name: "Regresso e tarde de compras nos souks", description: "A última tarde é ideal para fazer as compras pendentes nos souks da medina. As especiarias (ras el hanout, harissa), o óleo de argan, os candeeiros de latão e os tapetes berberes são as melhores lembranças.", price: "Conforme as compras", tip: "O preço final do regateio costuma ser 40-50% do preço inicial. Se o vendedor baixar muito rápido, podes baixar mais. Nunca comeces a regatear se não tiveres intenção de comprar." },
+            { name: "Última noite no terraço de Jemaa el-Fna", description: "A forma perfeita de te despedires de Marraquexe é a partir dos terraços do Café de France ou do Le Grand Balcon Café Glacier, vendo a praça iluminar-se e encher-se de gente ao anoitecer.", price: "30-50 MAD (chá de menta)", tip: "O chá de menta marroquino (thé à la menthe) é servido de uma certa altura para fazer espuma — é um ritual. Pedir que o sirvam de cima é completamente normal e esperado." },
+          ],
+        },
+      ],
+    },
   },
 
   dubai: {
