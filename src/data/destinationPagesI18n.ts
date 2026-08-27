@@ -526,6 +526,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Viena",
+      country: "Áustria",
+      heroTitle: "3 dias em Viena: palácios imperiais, café vienense e Mozart",
+      heroSubtitle: "O Palácio de Schönbrunn, os Museus Kunsthistorisches e o Prater — a capital dos Habsburgos em três dias de cultura imperial e café com strudel.",
+      bestMonths: "abril a junho e setembro a outubro",
+      budget: "€100-170/dia",
+      travelTips: [
+        "O Vienna City Card (€17/24h, €25/48h, €29/72h) inclui todo o transporte público (metro, elétrico, autocarro) sem limite",
+        "Os cafés vienenses são Património Cultural Imaterial da UNESCO — podes ficar horas com um único café sem que te pressionem",
+        "Os bilhetes de pé (Stehplätze) da Ópera Estatal (€4) são o melhor investimento cultural de Viena — os mesmos artistas, 50 vezes mais baratos",
+        "A água da torneira de Viena vem diretamente dos Alpes — é uma das águas mais puras do mundo e não precisas de comprar água engarrafada",
+        "Os museus de Viena têm preços de €18-25, mas o Vienna City Card tem descontos em muitos — verifica sempre se há redução disponível",
+      ],
+      days: [
+        {
+          theme: "O Innere Stadt — o coração dos Habsburgos",
+          activities: [
+            { name: "Catedral de Santo Estêvão (Stephansdom)", description: "O símbolo de Viena, construída no século XII em estilo gótico tardio. O telhado com 266.000 telhas de cerâmica multicolorida é único na Europa. Da torre norte (elevador) a vista do Innere Stadt é impressionante.", price: "Grátis (torre norte €6)", tip: "A cripta imperial sob a catedral (€6) tem as vísceras dos Habsburgos em 54 urnas — as entranhas em Stephansdom, os corações na Augustinerkirche, os corpos na Kaisergruft." },
+            { name: "Hofburg — o Palácio Imperial", description: "O palácio dos Habsburgos no centro de Viena, com 2.600 divisões, a Cripta Imperial, os Apartamentos Imperiais e o Tesouro Imperial com a Coroa dos Habsburgos e o Santo Graal.", price: "€17 (Apartamentos + Museu Sisi)", tip: "O Museu Sisi sobre a Imperatriz Sissi é o mais visitado do Hofburg. O Tesouro Imperial (€16 à parte) tem a Lança do Destino e as joias da coroação do Sacro Império Romano." },
+            { name: "Café Central — o mais famoso de Viena", description: "Inaugurado em 1876, o Café Central foi o local de encontro de Freud, Trotsky, Hitler (em épocas diferentes) e toda a intelligentsia vienense. As abóbadas de mármore e o empregado de cera à entrada são históricos.", price: "€8-15 (café e strudel)", tip: "O Melange (café com leite espumado) e o Apfelstrudel quente com natas é o pedido mais vienense. Chega à abertura (9h) para conseguir mesa — está sempre cheio." },
+            { name: "Ringstrasse e os grandes museus", description: "O boulevard circular do século XIX que Francisco José I mandou construir com os edifícios mais importantes de Viena: Ópera Estatal, Kunsthistorisches Museum, Parlamento, Câmara Municipal e Burgtheater.", price: "Grátis (passear)", tip: "Um trajeto de elétrico pela Ringstrasse completa (linhas 1 e 2) custa o preço do bilhete (€2,40) e é um tour de 40 minutos pelos melhores edifícios de Viena." },
+          ],
+        },
+        {
+          theme: "Schönbrunn e o Belvedere",
+          activities: [
+            { name: "Palácio de Schönbrunn", description: "O palácio de verão dos Habsburgos, o mais visitado da Áustria com 1.441 divisões. O Grand Tour (40 divisões) inclui o Salão dos Espelhos onde o pequeno Mozart atuou para Maria Teresa. O jardim com o Gloriette no topo é impressionante.", price: "€25 (Grand Tour + jardins)", tip: "Chega quando abre (8h30) para evitar as filas. O Gloriette no topo do jardim tem o melhor café com vista para Schönbrunn e Viena — sobe a pé em 15 minutos." },
+            { name: "Almoço de Wiener Schnitzel", description: "O Wiener Schnitzel é o prato nacional austríaco — vitela panada e frita em manteiga, servida com salada de batata e rodelas de limão. Os restaurantes do bairro do Naschmarkt são os melhores.", price: "€14-22", tip: "O Schnitzel original é de vitela (Wiener Art) — o de porco é mais barato mas diferente. O Figlmüller na Wollzeile e na Bäckerstrasse serve o mais famoso de Viena desde 1905." },
+            { name: "Naschmarkt — o mercado mais vienense", description: "O mercado ao ar livre maior de Viena, com 120 bancas de queijos austríacos, marisco, especiarias persas, picles judaicos e o melhor Tafelspitz (vaca cozida vienense) da cidade.", price: "Grátis", tip: "O mercado de velharias do Naschmarkt aos sábados (até às 18h) tem antiguidades, roupa vintage e quadros — o ambiente mais boémio de Viena." },
+            { name: "Belvedere — O Beijo de Klimt", description: "O palácio barroco do Príncipe Eugénio de Sabóia alberga a maior coleção de Gustav Klimt do mundo, incluindo O Beijo (1907-08), a pintura mais valiosa da Áustria.", price: "€18", tip: "O Beijo está na primeira sala do primeiro andar — impressiona pelo ouro real incrustado na tela. Vai sabendo exatamente o que ver para não te perderes nas 200 salas." },
+          ],
+        },
+        {
+          theme: "Museus, concerto e o Prater",
+          activities: [
+            { name: "Kunsthistorisches Museum", description: "O museu de história da arte mais importante da Áustria, com uma das coleções de pintura flamenga mais ricas do mundo: Vermeer, Rembrandt, Bruegel, Ticiano e Velázquez no palazzo imperial da Ringstrasse.", price: "€21", tip: "O Grande Salão do museu com a cúpula de mármore e as pinturas de Canova e Klimt nos pavilhões laterais é um dos interiores mais bonitos da Europa. A sala dos Bruegel (30 obras do Velho) é única no mundo." },
+            { name: "Almoço no Prater", description: "A antiga coutada imperial transformada no maior parque de Viena, com a famosa Riesenrad (roda gigante de 1897) e os tradicionais Würstelstand (bancas de salsichas vienenses).", price: "€3-8 (würstel)", tip: "A Käsekrainer (salsicha com queijo derretido dentro) com mostarda e pão de centeio no Würstelstand é o snack mais autêntico de Viena. Os vienenses comem-na de pé a qualquer hora do dia." },
+            { name: "Riesenrad — a roda gigante histórica de 1897", description: "A roda gigante de 65 metros do Wiener Prater, construída em 1897 e símbolo de Viena. A cabine gira durante 20 minutos com vistas panorâmicas sobre o Prater e a cidade.", price: "€13", tip: "A Riesenrad tem uma das melhores vistas de Viena a partir do ponto mais alto (65m). As cabines podem ser reservadas para jantares privados (€300) — o plano mais romântico de Viena." },
+            { name: "Concerto de música clássica em Viena", description: "Viena é a capital mundial da música clássica. A Ópera Estatal, o Musikverein (sala mais reverenciada do mundo) e a Konzerthaus têm concertos diários de Mozart, Strauss, Brahms e Beethoven.", price: "€15-200 (conforme sala e categoria)", tip: "Os Stehplätze (bilhetes de pé) da Ópera Estatal custam €4 e são vendidos 80 minutos antes do espetáculo — a melhor relação qualidade-preço da cultura vienense. Chega às 17h30." },
+          ],
+        },
+      ],
+    },
   },
 
   cusco: {
@@ -701,6 +745,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
             { name: "Machu Picchu — la cittadella", description: "La cittadella inca del XV secolo tra le nuvole, costruita a 2.430 metri sul livello del mare tra le vette di Huayna Picchu e Cerro Machu Picchu. Una delle 7 Meraviglie del Mondo Moderno.", price: "S/200 (ingresso base)", tip: "Prenotare online mesi prima è ESSENZIALE — i posti giornalieri sono limitati. Il circuito 1 (il classico) include la Porta del Sole e la maggior parte dei punti salienti." },
             { name: "Scalata a Huayna Picchu o alla Montagna Machu Picchu", description: "Huayna Picchu (la vetta dietro la cittadella) sale altri 360 metri tramite gradini inca scavati nella roccia. La Montagna Machu Picchu (più facile) offre la famosa vista aerea della cittadella.", price: "S/80 (extra)", tip: "Huayna Picchu ha solo 400 posti giornalieri e si esaurisce mesi prima — prenotatelo insieme al biglietto d'ingresso. La salita è ripida, con gradini irregolari." },
             { name: "Ritorno a Cusco", description: "Il treno di ritorno da Aguas Calientes a Ollantaytambo o Cusco chiude il giro intorno alla Valle Sacra. Il treno del pomeriggio offre le migliori viste sull'alta giungla illuminata dal sole della sera.", price: "Incluso nel biglietto del treno andata e ritorno", tip: "Se il vostro budget è limitato, il bus da Aguas Calientes a Ollantaytambo (S/30, 4h) è un'alternativa al treno. Il bus segue la strada lungo il fiume, con vista sui ghiacciai." },
+          ],
+        },
+      ],
+    },
+    pt: {
+      city: "Cusco",
+      country: "Peru",
+      heroTitle: "3 dias em Cusco: o umbigo do mundo inca",
+      heroSubtitle: "Sacsayhuamán, o Vale Sagrado, Machu Picchu e a melhor cozinha andina — Cusco é a porta de entrada para o Império Inca e um dos destinos mais emocionantes do mundo.",
+      bestMonths: "maio a setembro (época seca)",
+      budget: "$50-90 USD/dia",
+      travelTips: [
+        "A altitude de Cusco (3.400m) exige aclimatação — chega 2 dias antes de Machu Picchu e leva o primeiro dia com calma",
+        "O chá de coca é o remédio andino para o soroche (mal de altitude) — os hotéis oferecem-no de graça e é permitido no Peru",
+        "Reserva Machu Picchu e o comboio com meses de antecedência em época alta — as vagas esgotam-se rapidamente",
+        "O bilhete turístico geral de Cusco (S/130) cobre Sacsayhuamán e vários sítios arqueológicos — compra-o no primeiro dia",
+        "O clima em Cusco é seco e ensolarado na época seca (maio-setembro) mas frio à noite (5-10°C) — leva casaco",
+      ],
+      days: [
+        {
+          theme: "Aclimatação, a praça e os templos incas",
+          activities: [
+            { name: "Plaza de Armas de Cusco — chegada e aclimatação", description: "A praça central de Cusco, construída sobre o Huacaypata inca (a praça dos choros), rodeada pela Catedral do século XVI e o Templo da Companhia de Jesus. A arquitetura inca visível sob as construções coloniais é fascinante.", price: "Grátis", tip: "O primeiro dia em Cusco (3.400m) deve ser tranquilo — aclimata-te bebendo muita água e chá de coca (disponível em todos os cafés e hotéis). Evita o álcool e o exercício no primeiro dia." },
+            { name: "Qorikancha — o Templo do Sol", description: "O templo mais sagrado do Império Inca, dedicado ao deus Sol Inti, cujos muros de pedra perfeitamente lavrada estão sobrepostos ao Convento de Santo Domingo. Os muros incas são mais perfeitos do que a construção colonial.", price: "S/15", tip: "As pedras incas do Qorikancha encaixam sem argamassa com tolerâncias inferiores a 0,5mm — os engenheiros modernos não sabem exatamente como o fizeram. O nicho dourado onde estava a imagem do Sol era visível de toda Cusco." },
+            { name: "Almoço de cuy e chicha em San Blas", description: "O bairro artesanal de Cusco, com a igreja mais pequena da América e o cuy (porquinho-da-índia assado) como prato mais representativo da cozinha andina. A chicha de jora (cerveja de milho roxo) é a bebida mais antiga dos Andes.", price: "S/25-60", tip: "O cuy é servido inteiro assado com batatas andinas e salada. Para os menos aventureiros, o lomo saltado com batatas nativas e a alpaca grelhada são deliciosos e acessíveis." },
+            { name: "Sacsayhuamán — a fortaleza inca", description: "A fortaleza cerimonial inca sobre Cusco, com blocos de calcário de até 125 toneladas montados em ziguezague sem argamassa. A vista de Cusco a partir das muralhas e a paisagem andina à volta são impressionantes.", price: "S/130 (bilhete turístico geral)", tip: "O bilhete turístico geral (S/130) cobre Sacsayhuamán, Qenqo, Puca Pucara e Tambomachay — quatro sítios arqueológicos à volta de Cusco. Vale a pena se visitares todos no mesmo dia." },
+          ],
+        },
+        {
+          theme: "Vale Sagrado dos Incas",
+          activities: [
+            { name: "Mercado de Pisac", description: "O mercado mais famoso do Vale Sagrado, com artesanato têxtil de comunidades quéchuas, cerâmica, joias de prata e produtos andinos. A vila de Pisac tem as ruínas incas maiores do Vale depois de Machu Picchu.", price: "Grátis", tip: "O mercado de artesanato é para turistas (com regateio) mas o mercado local de domingo (das 7h às 13h) é de locais — vendem-se batatas nativas, milho gigante e ervas medicinais andinas." },
+            { name: "Ruínas de Pisac", description: "O complexo arqueológico inca sobre a vila de Pisac, com socalcos agrícolas em espiral que cobrem toda a montanha, o Intihuatana (relógio solar) e os túmulos escavados na rocha viva.", price: "Incluído no bilhete turístico", tip: "O caminho até às ruínas pode ser feito a pé (45 min de subida) ou de táxi a partir da vila (S/10). A subida a pé passa por socalcos ativos onde vais ver famílias quéchuas a trabalhar." },
+            { name: "Almoço em Urubamba — o coração do Vale", description: "A vila de Urubamba no centro do Vale Sagrado tem a melhor oferta gastronómica do Vale. Chicha morada, caldo de galinha andino, chuño phuti e os melhores espetinhos de coração do Peru.", price: "S/20-40", tip: "O restaurante Kuychi Rumi em Urubamba tem a melhor vista para o Vale e serve cozinha andina tradicional. O bufê do meio-dia (S/45) inclui mais de 12 preparações diferentes." },
+            { name: "Ollantaytambo — a cidade inca viva", description: "A única vila da América Latina onde as pessoas continuam a viver em casas incas originais do século XV. O templo-fortaleza de Ollantaytambo e os seus socalcos escalonados junto ao rio são um dos sítios incas mais bem conservados.", price: "S/70 (entrada arqueológica)", tip: "Ollantaytambo é a estação de comboio para Machu Picchu (Aguas Calientes). Se no dia seguinte fores a Machu Picchu, fica aqui a noite — o ambiente da vila inca à noite é mágico." },
+          ],
+        },
+        {
+          theme: "Machu Picchu — a maravilha do mundo",
+          activities: [
+            { name: "Comboio para Aguas Calientes (Machu Picchu Pueblo)", description: "A viagem de comboio desde Ollantaytambo (ou Cusco) até Aguas Calientes atravessa o Vale Sagrado e entra na selva amazónica alta. A paisagem muda radicalmente dos Andes áridos para a selva tropical.", price: "S/120-200 (ida e volta)", tip: "Reserva o comboio da Inca Rail ou Peru Rail com meses de antecedência em época alta (junho-agosto). Os lugares do lado direito (sentido Ollantaytambo→Aguas Calientes) têm melhor vista para o rio." },
+            { name: "Machu Picchu — a cidadela", description: "A cidadela inca do século XV entre as nuvens, construída a 2.430 metros acima do nível do mar entre os picos do Huayna Picchu e o Cerro Machu Picchu. Uma das 7 Maravilhas do Mundo Moderno.", price: "S/200 (entrada básica)", tip: "É IMPRESCINDÍVEL reservar online com meses de antecedência — as vagas diárias são limitadas. O Circuito 1 (o clássico) inclui a Porta do Sol e a maioria dos pontos principais." },
+            { name: "Subida ao Huayna Picchu ou Montanha Machu Picchu", description: "O Huayna Picchu (o monte atrás da cidadela) sobe mais 360 metros com degraus incas talhados na rocha. A Montanha Machu Picchu (mais fácil) oferece a perspetiva aérea mais famosa da cidadela.", price: "S/80 (adicional)", tip: "O Huayna Picchu tem apenas 400 vagas diárias e esgota meses antes — reserva ao mesmo tempo que a entrada. A subida é íngreme e com degraus irregulares." },
+            { name: "Regresso a Cusco", description: "O regresso de comboio desde Aguas Calientes até Ollantaytambo ou Cusco fecha o círculo do Vale Sagrado. O comboio da tarde tem a melhor paisagem da selva alta iluminada pelo sol da tarde.", price: "Incluído no bilhete de comboio de ida e volta", tip: "Se o orçamento for apertado, o autocarro de Aguas Calientes a Ollantaytambo (S/30, 4h) é uma alternativa ao comboio. O autocarro passa pelo caminho fluvial com vistas para os glaciares." },
           ],
         },
       ],
