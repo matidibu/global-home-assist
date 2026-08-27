@@ -196,11 +196,55 @@ export const baliDaysIt: DayI18n[] = [
   },
 ];
 
+export const baliDaysPt: DayI18n[] = [
+  {
+    theme: "Ubud — o coração espiritual de Bali",
+    activities: [
+      { name: "Socalcos de arroz de Tegallalang", description: "Os socalcos de arroz em cascata mais fotogénicos de Bali, esculpidos segundo o sagrado sistema de irrigação subak, Património Mundial da UNESCO.", bestTime: "Manhã cedo (antes das 9h)", duration: "2 horas", price: "2 USD", tip: "Chega antes das 8h para evitares o calor e os grupos de turistas, e tirares as melhores fotos." },
+      { name: "Floresta dos Macacos de Ubud", description: "Um santuário natural no coração de Ubud onde centenas de macacos de cauda longa convivem com templos hindus centenários no meio de vegetação tropical.", bestTime: "Meio da manhã", duration: "1,5 horas", price: "5 USD", tip: "Não mostres comida nem sacos abertos — os macacos vão agarrá-los. Mantém tudo fechado dentro do saco." },
+      { name: "Palácio Real de Ubud", description: "O histórico Puri Saren Agung, residência da família real balinesa desde o século XIX, com arquitetura tradicional mesmo no centro de Ubud.", bestTime: "Tarde · Noite (espetáculo de dança)", duration: "1 hora", price: "Grátis", tip: "À noite há espetáculos de dança kecak e legong no pátio do palácio — compra os bilhetes quando chegares." },
+    ],
+  },
+  {
+    theme: "Templos sagrados do oeste de Bali",
+    activities: [
+      { name: "Jatiluwih — Socalcos de arroz UNESCO", description: "Os maiores e mais bem preservados socalcos de arroz de Bali, Património UNESCO, muito mais tranquilos e autênticos do que Tegallalang.", bestTime: "Manhã", duration: "1,5 horas", price: "2 USD", tip: "Mais tranquilo e menos turístico do que Tegallalang. Leva protetor solar — há muito pouca sombra ao longo dos trilhos." },
+      { name: "Pura Taman Ayun", description: "O templo real de Mengwi, rodeado por um fosso de água e jardins majestosos, um dos complexos hindus mais importantes e mais bem preservados de Bali.", bestTime: "Meio da tarde", duration: "1 hora", price: "2 USD", tip: "Vestuário obrigatório: um sarongue (tecido balinês) — emprestam-te um à entrada se não tiveres o teu." },
+      { name: "Tanah Lot ao pôr do sol", description: "O templo hindu mais icónico de Bali, construído sobre um rochedo no Oceano Índico. O pôr do sol aqui é um dos mais mágicos do Sudeste Asiático.", bestTime: "Pôr do sol (17h30 – 19h)", duration: "2 horas", price: "4 USD", tip: "Chega 1 hora antes do pôr do sol para conseguires um bom lugar. Pode ficar muito cheio em época alta." },
+    ],
+  },
+  {
+    theme: "Sul de Bali — praias, surf e pores do sol",
+    activities: [
+      { name: "GWK Cultural Park", description: "O Parque Cultural Garuda Wisnu Kencana, que alberga a estátua de 121 metros de Vishnu montado na ave Garuda — a mais alta da Indonésia — com espetáculos de dança incluídos.", bestTime: "Manhã", duration: "2 horas", price: "15 USD", tip: "A estátua tem vista para o oceano. Consulta o horário dos espetáculos de dança quando comprares o bilhete." },
+      { name: "Praia de Seminyak", description: "A praia mais sofisticada de Bali, com beach clubs de design cuidado, restaurantes de topo e um ambiente de pôr do sol incomparável sobre o Oceano Índico.", bestTime: "Tarde", duration: "2 horas", price: "Grátis", tip: "Os beach clubs da zona (Potato Head, Ku De Ta) são perfeitos para o pôr do sol — reserva com antecedência em época alta." },
+      { name: "Canggu — surf e cultura de café", description: "O bairro mais na moda de Bali: praias de surf com ondas perfeitas para principiantes, cafés especializados e uma animada cena de nómadas digitais.", bestTime: "Tarde · Noite", duration: "2 horas", price: "Grátis", tip: "O Old Man's é o local mais popular de Canggu para uma cerveja com vista para o oceano ao pôr do sol." },
+    ],
+  },
+  {
+    theme: "Uluwatu — falésias, templos e dança kecak",
+    activities: [
+      { name: "Templo de Uluwatu", description: "Um templo sagrado do século XI empoleirado no topo de uma falésia de 70 metros sobre o Oceano Índico, um dos seis templos principais de Bali.", bestTime: "Tarde (para ficares até ao pôr do sol)", duration: "2 horas", price: "4 USD", tip: "Cuidado com os macacos à entrada — gostam especialmente de óculos de sol e telemóveis." },
+      { name: "Praia de Padang Padang", description: "A pequena praia paradisíaca escondida entre falésias, tornada famosa pelo filme 'Eat Pray Love', com água turquesa e areia branca imaculada.", bestTime: "Meio-dia · Início da tarde", duration: "2 horas", price: "1 USD", tip: "O acesso é por uma escadaria talhada na rocha. Usa calçado com boa aderência e leva pouca bagagem — o caminho é estreito." },
+      { name: "Dança kecak ao pôr do sol — Uluwatu", description: "O espetáculo mais impressionante de Bali: uma centena de homens a cantar 'kecak' a cappella enquanto o sol se põe no oceano, visto do anfiteatro natural da falésia.", bestTime: "18h (em ponto — não chegues atrasado)", duration: "1,5 horas", price: "12 USD", tip: "Os bilhetes esgotam depressa — compra-os na bilheteira do templo quando chegares à tarde, antes de ires à praia." },
+    ],
+  },
+  {
+    theme: "As terras altas — Tirta Empul e o Monte Batur",
+    activities: [
+      { name: "Tirta Empul — o templo da água sagrada", description: "O templo de purificação mais sagrado de Bali, com poças rituais de água sagrada onde os balineses se purificam numa cerimónia ancestral aberta a visitantes.", bestTime: "Manhã cedo", duration: "1,5 horas", price: "3 USD", tip: "Podes participar na purificação (melukat) — leva roupa que não te importes de molhar, ou aluga um sarongue à entrada por 1 USD." },
+      { name: "Miradouro do Monte Batur — Kintamani", description: "Vistas panorâmicas espetaculares sobre o vulcão ativo Batur e o seu lago de caldeira a partir das terras altas de Kintamani, a 1.500 metros de altitude.", bestTime: "Meio-dia (antes de chegarem as nuvens da tarde)", duration: "1,5 horas", price: "Grátis", tip: "Se quiseres subir até à cratera do vulcão, a caminhada começa às 4h da manhã — uma experiência única que vale o madrugar." },
+      { name: "Aldeia de Penglipuran", description: "Uma das aldeias mais limpas e mais bem preservadas do mundo, onde a arquitetura balinesa tradicional e os costumes ancestrais se mantiveram intactos durante séculos.", bestTime: "Tarde", duration: "1,5 horas", price: "2 USD", tip: "Os veículos motorizados são proibidos dentro da aldeia. É um dos poucos lugares em Bali onde reina o silêncio absoluto." },
+    ],
+  },
+];
+
 export const baliDaysByLang: Partial<Record<BaliLang, DayI18n[]>> = {
   en: baliDaysEn,
   fr: baliDaysFr,
   de: baliDaysDe,
   it: baliDaysIt,
+  pt: baliDaysPt,
 };
 
 // Deep-merges the overlay for `language` onto the Spanish base by
