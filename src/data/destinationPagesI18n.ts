@@ -1722,6 +1722,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Istambul",
+      country: "Turquia",
+      heroTitle: "4 dias em Istambul: onde a Europa encontra a Ásia",
+      heroSubtitle: "Santa Sofia, o Grande Bazar, o Bósforo e os bairros mais autênticos — a cidade mais fascinante do mundo em quatro dias completos.",
+      bestMonths: "abril a junho e setembro a novembro",
+      budget: "$60-120 USD/dia",
+      travelTips: [
+        "A lira turca tem flutuado muito — leva dólares ou euros e troca em casas de câmbio (döviz bürosu) do centro, nunca no aeroporto",
+        "O İstanbulkart (cartão de transporte) cobre metro, elétrico, ferry e autocarro — carrega-o com TL 100 para 2-3 dias",
+        "A roupa modesta é obrigatória nas mesquitas — leva sempre um lenço e roupa que cubra ombros e joelhos",
+        "O chá turco (çay) é servido de graça ou muito barato em quase todos os negócios — é um costume de hospitalidade, não uma armadilha",
+        "Istambul tem 15 milhões de habitantes — o trânsito é feroz. Usa o metro, o elétrico T1 e os ferries para te deslocares rápido",
+      ],
+      days: [
+        {
+          theme: "Sultanahmet — o coração histórico de dois impérios",
+          activities: [
+            { name: "Santa Sofia", description: "A joia arquitetónica de Istambul, construída em 537 d.C. como a maior igreja do mundo cristão, transformada em mesquita otomana e hoje novamente mesquita. A cúpula de 55 metros flutuando sobre mosaicos bizantinos e caligrafia árabe é incomparável.", price: "Grátis (entrada livre como mesquita)", tip: "A Santa Sofia reabriu como mesquita ativa em 2020 — entra sem sapatos e com roupa modesta (ombros e joelhos cobertos). As primeiras horas da manhã têm menos visitantes." },
+            { name: "Mesquita Azul (Sultanahmet Camii)", description: "A única mesquita de Istambul com seis minaretes, famosa pelos seus 20.000 azulejos de cerâmica de Iznik em tons azuis que cobrem o interior. A praça entre a Mesquita Azul e Santa Sofia é o espaço mais fotogénico de Istambul.", price: "Grátis", tip: "A Mesquita Azul fecha aos visitantes durante as cinco orações diárias (15-30 min cada vez). Consulta o horário na porta antes de esperar." },
+            { name: "Palácio de Topkapi", description: "A sede do Império Otomano durante 400 anos, com o tesouro dos sultões (o diamante Kaşıkçı de 86 quilates), o harém imperial e as relíquias sagradas do islão. Vistas diretas para o Bósforo e o Mar de Mármara.", price: "TL 400 (palácio) + TL 200 (harém)", tip: "O harém de Topkapi exige entrada separada mas vale muito a pena — é a parte mais fascinante do palácio. O Tesouro Imperial do Pavilhão 3 tem o maior diamante da Turquia." },
+            { name: "Cisterna da Basílica — o palácio subterrâneo", description: "A cisterna romana do século VI, com 336 colunas de mármore que se refletem na água parada. As colunas com cabeças de Medusa invertidas e a iluminação mística fazem deste lugar um dos mais únicos do mundo.", price: "TL 200", tip: "A cisterna é fresca mesmo no verão — um refúgio do calor de Istambul. A coluna das lágrimas (com marcas em espiral) é a mais procurada." },
+          ],
+        },
+        {
+          theme: "O Grande Bazar, o Bazar das Especiarias e o bairro egípcio",
+          activities: [
+            { name: "Grande Bazar", description: "O bazar coberto maior e mais antigo do mundo, com 61 ruas, 4.000 lojas e 250.000 visitantes diários. Tapetes, candeeiros de cristal, cerâmica, joalharia de prata e couro turco num labirinto do século XV.", price: "Grátis (entrar)", tip: "O regateio é obrigatório — começa oferecendo 40-50% do preço pedido. As lojas do interior (não as da rua principal) têm melhor relação qualidade-preço." },
+            { name: "Bazar das Especiarias (Mısır Çarşısı)", description: "O mercado de especiarias mais famoso de Istambul no bairro egípcio, com curcuma iraniana, açafrão de Safranbolu, chá de rosa anatólio, lokum (Turkish Delight) e os melhores pistácios da Turquia.", price: "Grátis", tip: "As especiarias a granel são muito mais baratas e frescas do que os pacotes selados. Negoceia sempre e compra em lojas do interior do bazar — as da entrada cobram o dobro." },
+            { name: "Almoço no bairro de Eminönü", description: "O cais de ferries de Eminönü tem os balık ekmek (sandes de cavala grelhada em barco) mais famosos de Istambul. Os barcos-restaurante da margem do Corno de Ouro operam há décadas.", price: "TL 70-100", tip: "O balık ekmek come-se de pé junto ao mar com um copo de turşu suyu (sumo de picles). É a experiência gastronómica mais local e barata de Istambul." },
+            { name: "Cruzeiro pelo Corno de Ouro", description: "O estuário de 8 km que separa o coração histórico dos bairros europeus modernos. Um cruzeiro curto pelo Corno de Ouro mostra as pontes históricas, as mesquitas e os bairros de madeira à beira-água.", price: "TL 30-50 (ferry público)", tip: "O ferry público (vapur) é mais autêntico e barato do que os cruzeiros turísticos. Sai de Eminönü e chega até Eyüpsultan — o bairro mais conservador e menos turístico de Istambul." },
+          ],
+        },
+        {
+          theme: "Cruzeiro pelo Bósforo e o Palácio de Dolmabahçe",
+          activities: [
+            { name: "Palácio de Dolmabahçe", description: "O palácio do sultão sobre o Bósforo, construído em 1856 ao estilo europeu neobarroco. O salão do trono com o lustre de cristal de 4,5 toneladas oferecido pela rainha Vitória e as 285 divisões são o símbolo do declínio otomano.", price: "TL 400", tip: "O tour é obrigatório com guia (não podes entrar sozinho). O harém e o salão do trono são as duas secções mais impressionantes — inclui-as na entrada." },
+            { name: "Cruzeiro pelo Bósforo", description: "O estreito de 30 km que separa a Europa da Ásia, com fortalezas medievais, palácios de madeira yalı, mesquitas e a Ponte do Bósforo. O ferry público até Anadolu Kavağı (extremo asiático) é a experiência mais épica.", price: "TL 50 (ferry público)", tip: "O ferry público (Boğaz Hattı) de Eminönü faz o percurso completo de 6 horas por TL 50 — muito mais económico do que os cruzeiros turísticos. O trajeto de regresso é igualmente belo." },
+            { name: "Bairro de Beşiktaş e a margem europeia", description: "O bairro mais autêntico da margem europeia do Bósforo, com o mercado de peixe, cervejarias locais, a estátua da Águia de Beşiktaş e o estádio do Beşiktaş JK.", price: "Grátis", tip: "O çay (chá turco) nos cafés da margem do Bósforo em Beşiktaş é servido em copo de tulipa com dois torrões de açúcar — bebe-o assim para a experiência completa." },
+            { name: "Jantar de kebab em Beşiktaş ou Kadıköy", description: "O İskender kebab (cordeiro sobre pão pide com iogurte e manteiga derretida) e o balık (peixe do Bósforo grelhado) são os dois jantares mais representativos de Istambul.", price: "TL 150-300", tip: "Kadıköy (lado asiático, 15 min de ferry) tem os melhores restaurantes e bares de Istambul para os locais. Atravessar para a Ásia de ferry à noite é em si uma experiência única." },
+          ],
+        },
+        {
+          theme: "Beyoğlu, Istiklal e a Istambul moderna",
+          activities: [
+            { name: "Istiklal Caddesi e o Bairro de Beyoğlu", description: "A rua pedonal mais famosa de Istambul, com 3 km de lojas, cafés, galerias e o histórico elétrico vermelho. O bairro de Beyoğlu foi o coração da modernização otomana do século XIX.", price: "Grátis", tip: "O elétrico de Istiklal é mais fotografado do que usado — é preciso sair dos carris quando passa. As livrarias de usados e as galerias nas Passagens históricas são as joias escondidas da rua." },
+            { name: "Torre de Gálata", description: "A torre medieval genovesa do século XIV a 70 metros de altura no bairro de Gálata. As vistas do Corno de Ouro, do Bósforo, de Santa Sofia e da Mesquita Azul a partir do terraço são as melhores de Istambul.", price: "TL 300", tip: "As filas podem ser longas — compra o bilhete online. A melhor foto de Gálata tira-se de baixo, com o bairro em cascata a descer em direção ao Corno de Ouro." },
+            { name: "Bairro de Karaköy e as casas de chá", description: "O bairro ao pé da Torre de Gálata, com os melhores cafés especializados de Istambul, galerias de design contemporâneo e a pastelaria Karaköy Güllüoğlu com o melhor baklava da cidade.", price: "TL 30-60", tip: "O baklava do Karaköy Güllüoğlu é feito com pistácios de Antep e manteiga de búfala — completamente diferente do baklava grego ou árabe. Pede o tabuleiro misto." },
+            { name: "Pôr do sol a partir do Hamam Çemberlitaş", description: "O hammam mais histórico de Istambul, desenhado pelo grande arquiteto Sinan em 1584 para a esposa do sultão Solimão. O ritual do hammam turco (massagem de espuma e esfoliação com kese) é a despedida perfeita.", price: "TL 400-600 (tratamento completo)", tip: "O Çemberlitaş Hamamı tem entrada separada para homens e mulheres. O ritual completo (banho quente, esfoliação, ensaboamento, massagem) dura 45-60 minutos." },
+          ],
+        },
+      ],
+    },
   },
 
   florencia: {
