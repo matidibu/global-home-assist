@@ -2177,6 +2177,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Lima",
+      country: "Peru",
+      heroTitle: "3 dias em Lima: a capital gastronómica do mundo",
+      heroSubtitle: "Miraflores, Barranco, Centro Histórico e os melhores restaurantes da América Latina — Lima é muito mais do que a porta de entrada para Machu Picchu.",
+      bestMonths: "janeiro a março (verão austral) e todo o ano",
+      budget: "S/150-250/dia (~$40-70 USD)",
+      travelTips: [
+        "Lima tem nevoeiro costeiro (a garúa) de maio a novembro que escurece o céu — a praia não é o plano nessas datas",
+        "A gastronomia de Lima é a maior atração da cidade — reserva com antecedência no Central, Maido e Kjolle se quiseres os melhores",
+        "O trânsito limenho é lendariamente caótico — usa o Uber ou o Cabify para te deslocares de forma segura e previsível",
+        "O sol em Lima é forte apesar da neblina — protetor solar sempre no calçadão de Miraflores",
+        "A aclimatação a Cusco é muito mais fácil se chegares primeiro a Lima (nível do mar) e subires gradualmente em altitude",
+      ],
+      days: [
+        {
+          theme: "Miraflores e as falésias do Pacífico",
+          activities: [
+            { name: "Parque Kennedy e o coração de Miraflores", description: "O parque central do distrito mais moderno de Lima, rodeado de cafés, galerias e a Igreja da Virgem Milagrosa. Os gatos do parque (mais de 100) são a atração mais querida do bairro.", price: "Grátis", tip: "A feira de artesanato do Parque Kennedy aos fins de semana tem as melhores lembranças de Lima. Os gatos são amistosos e podem ser fotografados livremente." },
+            { name: "Calçadão de Miraflores e as falésias", description: "O passeio sobre as falésias de 70-80 metros acima do Pacífico, com vistas para o mar e os parapentes que cruzam o céu. O Parque do Amor, com o mural de Víctor Delfín e os casais enlaçados, é um dos parques mais românticos do mundo.", price: "Grátis (parapente S/150)", tip: "O voo de parapente a partir das falésias é a atividade mais adrenalínica de Lima — 15 minutos sobre o Pacífico a partir de 80 metros. Empresas como a Aeroxtreme partem do calçadão." },
+            { name: "Ceviche no Mercado 28 ou La Mar", description: "O ceviche é o prato nacional do Peru e Lima tem os melhores do mundo. La Mar (Gastón Acurio) e o Mercado 28 são as referências populares com filas e mesas comunitárias.", price: "S/35-80", tip: "O leche de tigre (sumo cítrico do ceviche) bebe-se como shot no final e diz-se que tem propriedades afrodisíacas. Pede-o sempre." },
+            { name: "Pôr do sol a partir do Larcomar", description: "O centro comercial construído nas falésias de Miraflores, com bares e restaurantes sobre o Pacífico. O terraço do piso superior tem a melhor vista do pôr do sol sobre o oceano de toda Lima.", price: "Grátis", tip: "O Astrid & Gastón no Larcomar é o restaurante mais histórico da gastronomia peruana moderna. A vista ao pôr do sol com um pisco sour vale o preço." },
+          ],
+        },
+        {
+          theme: "Centro Histórico e a alma colonial de Lima",
+          activities: [
+            { name: "Plaza Mayor e as Varandas Coloniais", description: "O coração de Lima desde a fundação espanhola em 1535. A Catedral, o Palácio de Governo e o Palácio Municipal definem a praça mais importante do Peru colonial. As varandas de madeira talhada são únicas na América.", price: "Grátis (Catedral S/20)", tip: "A troca da guarda no Palácio de Governo é às 11h30 de segunda a sexta — espetáculo gratuito com música da Banda Presidencial." },
+            { name: "Convento de Santo Domingo e as Catacumbas", description: "O mosteiro do século XVI onde estão enterrados São Martinho de Porres e Santa Rosa de Lima. As catacumbas sob a igreja têm mais de 25.000 restos dos primeiros colonizadores e crioulos de Lima.", price: "S/15", tip: "As catacumbas estão surpreendentemente bem conservadas e o guia dá um contexto histórico muito interessante. Proibido tirar fotos com flash lá dentro." },
+            { name: "Chinatown de Lima — o Bairro Chinês", description: "A comunidade chinesa de Lima (200.000 pessoas, a maior da América Latina) tem o melhor bairro chinês da região. Os chifas (restaurantes chinês-peruanos) do Jirón Ucayali são lendários.", price: "S/20-45", tip: "A fusão chinês-peruana (chifa) é uma das cozinhas mais interessantes do mundo. Pede arroz chaufa com lomo saltado — a fusão perfeita entre duas culturas." },
+            { name: "Museu Larco — o tesouro pré-colombiano", description: "A coleção de arte pré-colombiana mais importante do mundo, numa fazenda do século XVII em Pueblo Libre. Os 45.000 objetos incluem o tesouro de Sipán, cerâmica mochica e a famosa galeria erótica.", price: "S/50", tip: "O café do jardim do Museu Larco (entre as flores e as huacas) é um dos mais bonitos de Lima. Reserva mesa com antecedência para o pôr do sol." },
+          ],
+        },
+        {
+          theme: "Barranco — o bairro mais boémio",
+          activities: [
+            { name: "Bairro de Barranco e a Ponte dos Suspiros", description: "O bairro mais boémio e artístico de Lima, com casarões coloniais transformados em galerias, bares e o Museu Mario Testino. A Ponte dos Suspiros (1876) e a descida até à praia são os postais do bairro.", price: "Grátis", tip: "A tradição da Ponte dos Suspiros diz que se a atravessares a prender a respiração e pedires um desejo, ele realiza-se. As vistas para a descida e para o mar são lindíssimas." },
+            { name: "Almoço no Isolina — taberna limenha", description: "A taberna de José del Castillo em Barranco é o melhor exemplo da cozinha crioula limenha: torresmo de porco, espetinhos de coração, carapulcra e causa limenha na sua versão mais autêntica.", price: "S/40-80", tip: "Reserva com antecedência — o Isolina está em todas as listas dos melhores restaurantes de Lima e tem fila ao almoço e ao jantar. Segunda-feira ao meio-dia é o momento menos concorrido." },
+            { name: "MATE — Museu Mario Testino", description: "O museu do fotógrafo peruano mais famoso do mundo num casarão do século XIX de Barranco. Os seus retratos de Lady Di, Kate Moss e Naomi Campbell com roupa de designers peruanos são impactantes.", price: "S/25", tip: "O pátio do jardim do MATE é um dos mais bonitos de Lima. O café do rés do chão serve os melhores pães de gema do bairro." },
+            { name: "Pisco Sour num bar de Barranco", description: "O pisco sour é o cocktail nacional do Peru (ligeiramente diferente do chileno). Os bares de Barranco servem as versões mais autênticas: com pisco quebranta, lima verde, xarope de goma, clara de ovo e angostura.", price: "S/25-35", tip: "O Ayahuasca Bar em Barranco (o casarão republicano de três andares) tem os melhores pisco sours e o ambiente mais bonito da Lima noturna. O bar mágico do Refugio também é muito especial." },
+          ],
+        },
+      ],
+    },
   },
 
   praga: {
