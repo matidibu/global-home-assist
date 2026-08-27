@@ -3150,6 +3150,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Rio de Janeiro",
+      country: "Brasil",
+      heroTitle: "4 dias no Rio de Janeiro: o Cristo, Copacabana e o samba",
+      heroSubtitle: "Cristo Redentor, Pão de Açúcar, as praias de Ipanema e o futebol no Maracanã — a cidade maravilhosa em quatro dias perfeitos.",
+      bestMonths: "maio a outubro (estação seca)",
+      budget: "R$200-400/dia (~$40-80 USD)",
+      travelTips: [
+        "A segurança no Rio exige precaução: não tires o telemóvel na rua, usa táxis/Uber em vez de caminhadas longas à noite",
+        "As praias da zona sul (Copacabana, Ipanema, Leblon) são as mais seguras para turistas",
+        "O transporte por app (Uber, 99) é mais seguro do que os táxis de rua — usa-o sempre para as deslocações noturnas",
+        "A caipirinha original faz-se com cachaça (não com vodka) e lima verde — pede sempre a versão clássica",
+        "Troca dólares por reais em casas de câmbio do aeroporto ou em agências do centro — os hotéis dão pior câmbio",
+      ],
+      days: [
+        {
+          theme: "O Cristo e a zona sul",
+          activities: [
+            { name: "Cristo Redentor — primeira hora do dia", description: "Uma das 7 Maravilhas do Mundo Moderno, a 710 metros acima do nível do mar no Corcovado. A figura de 38 metros tem os braços abertos sobre toda a cidade. A vista da baía de Guanabara, do Pão de Açúcar e das praias do alto é incomparável.", price: "R$87 (trem cremalheira + entrada)", tip: "Reserva o comboio no site oficial do trem do Corcovado. As 8h têm a melhor visibilidade e menos visitantes. Os dias nublados não deixam ver nada." },
+            { name: "Bairro de Santa Teresa", description: "O bairro boémio do Rio, nas encostas do Corcovado, com casas coloniais restauradas, galerias de arte, o bondinho elétrico e alguns dos melhores restaurantes da cidade.", price: "Grátis", tip: "O Largo do Guimarães é o coração do bairro, com bares e restaurantes nas casas coloniais. As galerias de arte abrem de terça a domingo." },
+            { name: "Praia de Ipanema", description: "A praia mais famosa e chique do Rio, imortalizada pela Bossa Nova. Cada trecho tem o seu público (postos 9 e 10 para os jovens cariocas, posto 8 para a comunidade LGBT). O futebol de praia e o vólei são o desporto.", price: "Grátis", tip: "As cadeiras e guarda-sóis na praia são dos vendedores ambulantes e têm um custo (R$20-30). Compra água de coco diretamente nos quiosques da areia." },
+            { name: "Pôr do sol no Arpoador", description: "A rocha entre Ipanema e Copacabana onde os cariocas se reúnem todas as tardes para aplaudir o pôr do sol. O momento em que o sol toca o horizonte e as pessoas aplaudem é um dos rituais urbanos mais bonitos do mundo.", price: "Grátis", tip: "Chega 30 minutos antes do pôr do sol para conseguires um bom lugar na rocha. O aplauso coletivo é espontâneo e genuíno — um dos momentos mais cariocas que podes viver." },
+          ],
+        },
+        {
+          theme: "Pão de Açúcar e Copacabana",
+          activities: [
+            { name: "Pão de Açúcar — teleférico", description: "O morro icónico de 396 metros sobre a baía de Guanabara. O teleférico sobe em dois trajetos: primeiro ao Morro da Urca (215m) e depois ao topo do Pão de Açúcar. As vistas do Rio do alto são espetaculares.", price: "R$160", tip: "O melhor momento é ao pôr do sol (mesmo preço, R$160) quando o Cristo se ilumina e a baía brilha com mil reflexos. De manhã tem mais visibilidade — decide conforme o tempo." },
+            { name: "Bairro de Urca e almoço", description: "O bairro mais tranquilo e residencial do Rio, ao pé do Pão de Açúcar. As barracas do Boulevard Olímpico servem os melhores bolinhos de bacalhau e caipirinha com vista para a baía.", price: "R$30-60", tip: "O bar Circo da Urca tem o terraço mais bonito do bairro com vista direta para o morro. Pede uma caipirinha de limão — a original brasileira, não de morango." },
+            { name: "Praia de Copacabana", description: "A praia mais famosa do Brasil, com 4 km de areia ladeados pelo mosaico de calçada portuguesa ondulada. O Forte de Copacabana na ponta sul oferece o melhor miradouro da praia.", price: "Grátis", tip: "Os vendedores ambulantes de mate gelado (chá frio com ervas), água de coco e biscoito globo fazem parte irrenunciável da experiência carioca na praia." },
+            { name: "Samba na Lapa", description: "A Lapa é o bairro do samba carioca, com os Arcos da Lapa como fundo. Os bares e clubes como Carioca da Gema e Rio Scenarium têm samba ao vivo a partir das 20h de quinta a sábado.", price: "R$20-40 (consumo mínimo)", tip: "O Rio Scenarium tem três andares cheios de antiguidades com samba ao vivo — um dos bares mais bonitos do mundo. Chega antes das 21h para não fazeres fila." },
+          ],
+        },
+        {
+          theme: "Favela, Maracanã e gastronomia carioca",
+          activities: [
+            { name: "Tour pela Favela do Vidigal ou Rocinha", description: "As favelas do Rio não são apenas reportagens de TV — são comunidades vivas com história, gastronomia e arte. Os tours guiados ao Vidigal ou à Rocinha são organizados com benefício para a comunidade.", price: "R$80-150 (tour guiado)", tip: "Faz o tour apenas com empresas certificadas (Favela Reality, RioLIVE). Nunca entres sozinho. O panorama do alto do Vidigal sobre o mar é tão impressionante quanto o do Pão de Açúcar." },
+            { name: "Almoço de feijoada no centro", description: "A feijoada é o prato nacional do Brasil: guisado de feijão preto com costela, chouriço e toucinho de porco, servido com arroz, farofa, couve refogada e laranjas. O sábado é o dia tradicional.", price: "R$45-80", tip: "O Bar do Mineiro em Santa Teresa e o Jobi em Leblon servem as melhores feijoadas do Rio. A porção é enorme — duas pessoas podem partilhar uma." },
+            { name: "Estádio Maracanã — tour ou jogo", description: "O estádio mais famoso da América Latina e símbolo do Brasil, com capacidade para 78.000 pessoas. O tour mostra os balneários, a sala de troféus e o camarote presidencial. Se houver jogo, a experiência é incomparável.", price: "R$70 (tour) / R$50-300 (jogo)", tip: "Os jogos do Flamengo e do Fluminense no Maracanã têm a melhor atmosfera. Compra os bilhetes no site oficial do clube — os revendedores cobram 3x mais." },
+            { name: "Jantar em Leblon — o bairro mais elegante", description: "Leblon é o bairro com mais restaurantes de classe mundial do Rio. O leque vai desde rodízios (assado à moda brasileira à discrição) até aos melhores restaurantes do chef Thomas Troisgros.", price: "R$80-200", tip: "Um rodízio de carne no Porcão ou no Fogo de Chão é a experiência gastronómica mais representativa do Brasil — carne assada que não para de chegar até colocares a bandeirinha vermelha." },
+          ],
+        },
+        {
+          theme: "Jardim Botânico e a alma verde do Rio",
+          activities: [
+            { name: "Jardim Botânico", description: "O jardim botânico do Rio, fundado por Dom João VI em 1808, com palmeiras imperiais de 30 metros, vitórias-régias e a maior coleção de bromélias do mundo. As 6.500 espécies em 54 hectares são um oásis verde.", price: "R$30", tip: "O passeio das palmeiras imperiais da entrada é a foto mais icónica do jardim. Os saguis e as cutias são frequentes — caminha devagar para os veres." },
+            { name: "Lagoa Rodrigo de Freitas e ciclovia", description: "A lagoa no coração da zona sul do Rio, rodeada por uma ciclovia de 7 km com vistas para o Cristo Redentor, o Corcovado e os bairros de Ipanema e Leblon.", price: "Grátis (bicicleta R$15/hora)", tip: "O quiosque 7 da Lagoa (Guimas) tem a melhor vista e as melhores caipirinhas da margem. Ao domingo há feira de velharias com antiguidades." },
+            { name: "Parque Lage — a mansão entre a mata", description: "O parque ao pé do Corcovado com a mansão neoclássica rodeada de Mata Atlântica. Hoje tem uma escola de artes visuais no seu interior e o café do pátio com vistas para o jardim é perfeito para a tarde.", price: "Grátis", tip: "O Parque Lage é o ponto de partida do trilho a pé até ao Cristo Redentor — 2 horas de subida pela mata atlântica. Só recomendado com guia." },
+            { name: "Última caipirinha na orla de Ipanema", description: "A despedida perfeita do Rio: uma caipirinha nos quiosques da orla de Ipanema enquanto o sol se põe sobre o Morro Dois Irmãos e os cariocas voltam a aplaudir o pôr do sol.", price: "R$15-25", tip: "O Morro Dois Irmãos ao fundo de Ipanema com o sol a pôr-se atrás é o postal mais bonito do Rio. Os quiosques da orla servem água de coco fria e a melhor caipirinha de caju." },
+          ],
+        },
+      ],
+    },
   },
 
   bangkok: {
