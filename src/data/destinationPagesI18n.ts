@@ -972,6 +972,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Medellín",
+      country: "Colômbia",
+      heroTitle: "3 dias em Medellín: a cidade da eterna primavera",
+      heroSubtitle: "El Poblado, o metrocable, as flores de Envigado e a história de transformação mais incrível da América Latina — Medellín é hoje a cidade mais inovadora da Colômbia.",
+      bestMonths: "dezembro a março e julho a agosto",
+      budget: "$40-70 USD/dia",
+      travelTips: [
+        "O metro de Medellín (MET) com o sistema de teleféricos é o melhor transporte público da Colômbia — compra o cartão Cívica para o usar",
+        "Medellín tem 25°C durante todo o ano (a cidade da eterna primavera) — roupa leve sempre, por vezes um casaco à noite",
+        "O café colombiano de Medellín é dos melhores do mundo — pede sempre café de origem e tinto fresco, nunca instantâneo",
+        "O táxi da app (InDriver, Uber) é mais seguro do que os táxis de rua — usa-o sempre à noite",
+        "A Colômbia é o país da biodiversidade — o Jardim Botânico, o Parque Arví e a Reserva El Romeral dão acesso a uma natureza tropical impressionante",
+      ],
+      days: [
+        {
+          theme: "O centro histórico e a Plaza Botero",
+          activities: [
+            { name: "Plaza Botero e o Museu de Antioquia", description: "A praça com 23 esculturas originais do artista colombiano mais famoso do mundo, Fernando Botero — todas doadas por ele à sua cidade natal. O Museu de Antioquia ao lado tem a maior coleção de obras de Botero do mundo.", price: "Grátis (Praça) / COP 20.000 (Museu)", tip: "As esculturas são para tocar e fotografar — Botero desenhou-as para que as pessoas interagissem com elas. O 'Homem a Cavalo' é a mais icónica para a foto." },
+            { name: "Parque de las Luces e o centro de Medellín", description: "O parque com 300 colunas de luz no coração do centro histórico, que à noite cria um espetáculo visual único. A Biblioteca España no morro sobre o bairro de Santo Domingo é visível daqui.", price: "Grátis", tip: "O centro de Medellín é muito mais seguro do que há 20 anos — passeia com normalidade nas zonas turísticas de dia. Os vendedores de frutas tropicais na rua têm as melhores mangas e granadillas." },
+            { name: "Almoço de bandeja paisa", description: "A bandeja paisa é o prato mais representativo de Antioquia: arroz, feijão, torresmo, chouriço, ovo frito, abacate, banana madura e hogao numa só bandeja. Impossível terminá-la sozinho.", price: "COP 18.000-30.000", tip: "O restaurante El Rancherito no centro tem a bandeja paisa mais autêntica. A mazamorra (sobremesa de milho com leite) que vem depois é obrigatória." },
+            { name: "Bairro El Poblado — parques e cafés", description: "O bairro mais moderno e seguro de Medellín, com o Parque El Poblado, a rua do Lleras (coração da vida noturna) e a maior concentração de cafés, restaurantes e boutiques da cidade.", price: "Grátis", tip: "O café colombiano em El Poblado custa COP 2.000-5.000 e é de altíssima qualidade — Medellín está a 1.400m de altitude e os cafezais ficam a 30 minutos de carro." },
+          ],
+        },
+        {
+          theme: "Metrocable e os bairros da encosta",
+          activities: [
+            { name: "Metrocable Linha K — Santo Domingo", description: "O sistema de teleféricos aéreos que liga o metro aos bairros das encostas do Vale de Aburrá. O teleférico K sobe ao bairro de Santo Domingo e tem a melhor vista de Medellín e do vale a partir das cabines.", price: "COP 3.200 (com cartão Cívica do metro)", tip: "Compra o cartão Cívica no metro para usar o teleférico. O melhor ângulo para fotos do vale é na estação Andalucía (penúltima antes do topo)." },
+            { name: "Parque Arví — a floresta sobre Medellín", description: "O parque ecológico de 1.763 hectares sobre as montanhas de Medellín, acessível pelo Metrocable Linha L a partir de Santo Domingo. Trilhos, borboletas, mercado artesanal indígena e a vista mais bonita do Vale de Aburrá.", price: "COP 5.000 (teleférico Arví)", tip: "O mercado artesanal indígena dentro do Parque Arví aos fins de semana tem produtos das comunidades nativas de Antioquia — artesanato, mel e plantas medicinais." },
+            { name: "Tour do Passado no bairro de La Candelaria", description: "O percurso pelos bairros que documentam a transformação de Medellín: desde o Bairro Pablo Escobar até às urbanizações que substituíram as favelas. Os guias locais dão a perspetiva mais honesta.", price: "COP 30.000-60.000 (tour guiado)", tip: "Contrata apenas guias locais certificados — os que viveram a transformação dão um contexto humano que os tours internacionais não têm. Os free walking tours partem do Parque de Bolívar." },
+            { name: "Jantar em Laureles — o bairro mais autêntico", description: "O bairro residencial da classe média profissional de Medellín, com a melhor concentração de restaurantes locais, garrafeiras e o ambiente noturno mais genuíno da cidade.", price: "COP 25.000-60.000", tip: "A Avenida Laureles tem o melhor sancocho de galinha de Medellín. Para gastronomia de autor, El Cielo (chef Juan Manuel Barrientos) faz a cozinha colombiana mais vanguardista." },
+          ],
+        },
+        {
+          theme: "Feira das Flores e o Jardim Botânico",
+          activities: [
+            { name: "Jardim Botânico de Medellín", description: "O jardim botânico mais biodiverso da Colômbia, com 4.500 plantas tropicais, o Orquideórama (a estrutura de madeira mais fotografada de Medellín) e o lago com os nenúfares maiores da América.", price: "Grátis", tip: "O Orquideórama é uma obra de arquitetura paramétrica que ganhou o prémio RIBA. As orquídeas em flor (a Colômbia tem 4.000 espécies) são impressionantes em qualquer época." },
+            { name: "Bairro de Manila e o grafiti de Medellín", description: "Medellín tem o segundo circuito de arte urbana mais importante da Colômbia depois de Bogotá. Os bairros de Manila e Laureles têm os melhores murais de artistas como Guache e Crisp.", price: "Grátis", tip: "O tour de grafiti Medellín Urban Street Art (tour gratuito, gorjeta livre) parte do Parque El Poblado. A zona da 70 em Laureles tem os murais mais recentes." },
+            { name: "Mercado del Río", description: "O mercado gastronómico mais popular de Medellín, com mais de 60 bancas de cozinha colombiana e internacional, cocktails de frutas tropicais e o ambiente mais festivo da cidade ao almoço.", price: "COP 15.000-40.000", tip: "Os sumos de lulo, maracujá, tamarilho e graviola do Mercado del Río custam COP 3.000-5.000 e são os melhores de Medellín. O tequila com chamoy não é colombiano — pede aguardente." },
+            { name: "Pôr do sol a partir do Cerro de las Tres Cruces", description: "As três cruzes no alto do morro sobre o bairro de Boston, com a melhor vista panorâmica de todo o Vale de Aburrá: Medellín de ponta a ponta, o metro na planície e as montanhas em redor.", price: "Grátis", tip: "A subida ao morro (45 min a pé) é segura durante o dia com gente. Aos domingos há mais pessoas e ambiente mais festivo. Do alto vê-se perfeitamente o teleférico de Santo Domingo." },
+          ],
+        },
+      ],
+    },
   },
 
   singapur: {
