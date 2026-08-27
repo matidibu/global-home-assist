@@ -1195,6 +1195,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Singapura",
+      country: "Singapura",
+      heroTitle: "3 dias em Singapura: o futuro do século XXI",
+      heroSubtitle: "Gardens by the Bay, Chinatown, Marina Bay Sands e a comida nos hawker centres — Singapura em três dias perfeitamente planeados.",
+      bestMonths: "fevereiro a abril",
+      budget: "$150-250 SGD/dia (~$110-185 USD)",
+      travelTips: [
+        "Singapura tem um dos transportes públicos mais eficientes do mundo — o cartão EZ-Link cobre metro (MRT), autocarro e LRT",
+        "A comida nos hawker centres (SGD 4-8) tem a mesma qualidade da dos restaurantes de luxo — é a grande democracia gastronómica de Singapura",
+        "O clima é tropical durante todo o ano (30°C, 80% de humidade) — roupa leve e protetor solar sempre",
+        "Singapura tem leis muito rígidas: não se pode fumar em locais públicos, comer no metro nem mascar pastilha elástica",
+        "Singapura é cara para alojamento (SGD 150-300/noite) mas barata para comida e transporte",
+      ],
+      days: [
+        {
+          theme: "Marina Bay e a Singapura futurista",
+          activities: [
+            { name: "Gardens by the Bay", description: "O complexo de jardins futuristas mais espetacular do mundo, com os Supertrees (árvores de aço de 25-50 metros) e as duas cúpulas geodésicas: Cloud Forest (floresta tropical a 35m de altura) e Flower Dome.", price: "SGD 28 (Cloud Forest + Flower Dome)", tip: "O Supertree Grove tem o melhor pôr do sol e o espetáculo de luzes gratuito às 19h45 e 20h45. A subida ao skywalk entre os Supertrees (SGD 10) oferece vistas para a Marina Bay." },
+            { name: "Marina Bay Sands Skypark", description: "O hotel mais icónico de Singapura, com a piscina infinita no piso 57 (só para hóspedes) e o terraço SkyPark com as melhores vistas de Singapura. O espetáculo de luz e água Spectra em frente ao hotel é gratuito.", price: "SGD 32 (observatório)", tip: "O observatório do SkyPark está aberto ao público (SGD 32). A vista do skyline, dos Gardens by the Bay e do estreito de Singapura a partir de 200 metros é incomparável." },
+            { name: "Museu ArtScience", description: "O museu em forma de flor de lótus sobre a água da Marina Bay, com exposições de arte digital, ciência e tecnologia. A exposição permanente Future World (arte digital do teamLab) é uma das mais impressionantes do mundo.", price: "SGD 21", tip: "Future World do teamLab tem a instalação da 'Floresta da vida' onde as luzes reagem ao movimento — uma das experiências visuais mais únicas da Ásia." },
+            { name: "Spectra — espetáculo de luz e água", description: "O espetáculo gratuito em Marina Bay Waterfront em frente ao Shoppes, com jatos de água de 30 metros e projeções laser coordenadas com música. Um dos melhores espetáculos noturnos gratuitos do mundo.", price: "Grátis", tip: "A melhor posição é na ponte pedonal Helix Bridge ou na margem em frente ao museu ArtScience. O espetáculo das 20h45 de sexta e sábado é o mais longo." },
+          ],
+        },
+        {
+          theme: "Chinatown, Little India e os hawker centres",
+          activities: [
+            { name: "Chinatown Heritage Centre", description: "O bairro chinês de Singapura, com o Buda de Jade do Templo Sri Mariamman, as lojas de chás chineses ancestrais e o famoso Maxwell Food Centre. As ruas Pagoda, Trengganu e Sago têm os shophouses mais coloridos.", price: "Grátis (Heritage Centre SGD 12)", tip: "O Thian Hock Keng Temple (1840) é o templo hokkien mais antigo de Singapura — a decoração com dragões de porcelana no telhado é extraordinária. A entrada é gratuita." },
+            { name: "Maxwell Food Centre — o hawker centre mais famoso", description: "O centro de comida de rua mais histórico de Singapura, com mais de 100 bancas cobertas. O chicken rice do Tian Tian, a rojak de frutas e o laksa são os pratos mais procurados.", price: "SGD 4-8 por prato", tip: "A banca Tian Tian Hainanese Chicken Rice (a favorita de Anthony Bourdain) tem fila desde as 10h30 — chega antes do meio-dia para comer. O preço é de SGD 5-6." },
+            { name: "Little India — Serangoon Road", description: "O bairro indiano de Singapura, com o Templo Sri Veeramakaliamman (um dos mais elaborados da Ásia), as lojas de especiarias, as floristas e o Mercado Tekka com a melhor comida indiana da cidade.", price: "Grátis", tip: "O biryani da loja Allauddin no Tekka Market (SGD 6) é o melhor de Singapura. O bairro é especialmente colorido aos domingos, quando os trabalhadores migrantes celebram o seu dia de folga." },
+            { name: "Clarke Quay e o rio Singapura ao pôr do sol", description: "O antigo cais do rio Singapura transformado em zona de bares e restaurantes com os shophouses coloniais restaurados. A hora dourada ilumina as cores das fachadas com o rio em primeiro plano.", price: "Grátis", tip: "Os barcos de passeio pelo rio Singapura a partir de Clarke Quay saem a cada 30 minutos (SGD 25) e passam pelos pontos mais históricos da cidade. O percurso noturno é o mais bonito." },
+          ],
+        },
+        {
+          theme: "Sentosa, zoo e a natureza de Singapura",
+          activities: [
+            { name: "Singapore Zoo — o melhor do mundo", description: "Consistentemente eleito um dos melhores zoos do mundo, com habitats sem grades (open concept) para os animais. As girafas, os orangotangos de Bornéu em semiliberdade e os crocodilos do rio são os mais fascinantes.", price: "SGD 49", tip: "O Jungle Breakfast with Wildlife (SGD 33 extra) dá-te um pequeno-almoço junto aos orangotangos às 9h — uma experiência única. Reserva com semanas de antecedência." },
+            { name: "Ilha Sentosa e Universal Studios", description: "A ilha de entretenimento de Singapura, com Universal Studios, a praia de Siloso e o teleférico panorâmico. As atrações de Transformers, Harry Potter e Jurassic Park na Universal são as melhores da Ásia.", price: "SGD 88 (Universal Studios)", tip: "Os Express Pass da Universal Studios (SGD 40 extra) evitam as filas das atrações principais — vale a pena se o parque estiver cheio. O teleférico (SGD 35) a partir de Mount Faber tem as melhores vistas do estreito." },
+            { name: "Haw Par Villa — o parque dos dez infernos", description: "O parque temático mais estranho da Ásia, criado em 1937 com 1.000 estátuas e dioramas da mitologia chinesa e os 10 tribunais do inferno. Uma experiência surrealista única no mundo.", price: "Grátis", tip: "Haw Par Villa é um dos locais mais singulares de Singapura e praticamente desconhecido dos turistas — uma joia escondida entre os parques temáticos comerciais." },
+            { name: "Jantar final no Newton Circus Hawker Centre", description: "O hawker centre noturno mais famoso de Singapura (o do filme Crazy Rich Asians), com caranguejos de lama, orquídeas fritas, marisco grelhado e laksa sob as estrelas tropicais.", price: "SGD 15-40", tip: "O chilli crab (SGD 50-80 por porção) é o prato nacional de Singapura — pede-o na banca com mais fila. O Man Tou (pão frito) para molhar no molho é obrigatório." },
+          ],
+        },
+      ],
+    },
   },
 
   "ciudad-de-mexico": {
