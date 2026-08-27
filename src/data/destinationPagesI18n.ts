@@ -1454,6 +1454,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Cidade do México",
+      country: "México",
+      heroTitle: "4 dias na Cidade do México: tacos, pirâmides e cultura pré-hispânica",
+      heroSubtitle: "Teotihuacán, Xochimilco, a Condesa e os melhores tacos do mundo — o roteiro para descobrir a metrópole mais fascinante da América Latina.",
+      bestMonths: "outubro a maio (época seca)",
+      budget: "$40-80 USD/dia",
+      travelTips: [
+        "O metro da Cidade do México é o mais barato do mundo (MXN 5) e chega a quase tudo — aprende as linhas principais antes de chegar",
+        "A altitude da Cidade do México é de 2.240m — nos primeiros dias podes sentir cansaço e falta de ar, leva com calma",
+        "Os tacos em bancas de rua são seguros e deliciosos — procura as bancas com mais clientes locais",
+        "O Uber e o Cabify são as opções de transporte mais seguras para turistas, especialmente à noite",
+        "A época das chuvas (junho-outubro) traz aguaceiros breves ao fim da tarde — leva sempre guarda-chuva ou poncho",
+      ],
+      days: [
+        {
+          theme: "O Zócalo e o Centro Histórico",
+          activities: [
+            { name: "Zócalo e a Catedral Metropolitana", description: "A praça maior da América Latina, rodeada pelo Palácio Nacional, a Catedral Metropolitana (a maior da América) e a Antiga Câmara Municipal. Diego Rivera pintou os murais do Palácio Nacional com a história do México.", price: "Grátis (Palácio Nacional gratuito)", tip: "Os murais de Diego Rivera no Palácio Nacional estão no primeiro andar da escadaria principal — entrada gratuita com identificação. A cena do mercado de Tlatelolco é a mais impressionante." },
+            { name: "Templo Mayor — as ruínas astecas sob a cidade", description: "O centro cerimonial de Tenochtitlán, capital asteca, descoberto em 1978 sob o centro histórico da CDMX. O museu ao lado tem a Pedra do Sol (o falso calendário asteca) e o Teocalli da Guerra Sagrada.", price: "MXN 85", tip: "O Templo Mayor mostra 7 camadas de construção sobrepostas — os astecas construíam um templo sobre o anterior a cada 52 anos. O disco de Tlaltecuhtli (toneladas de pedra) é o achado mais recente." },
+            { name: "Tacos no Mercado de la Merced", description: "O maior mercado do Centro Histórico, com mais de 3.000 bancas de comida, tacos de canasta, tamales, atole e a maior variedade de pimentas frescas do México.", price: "MXN 20-40 por taco", tip: "Os tacos de canasta (de feijão, torresmo e batata) que chegam na bicicleta num cesto de palma são o pequeno-almoço mais autêntico do centro. O taco placero com nopales e queijo fresco é perfeito para vegetarianos." },
+            { name: "Bellas Artes e a Alameda", description: "O Palácio de Bellas Artes, símbolo do México moderno com a sua cúpula de mármore, tem murais de Diego Rivera, José Clemente Orozco e David Alfaro Siqueiros. O parque da Alameda Central é o mais antigo da América (1592).", price: "MXN 80 (galeria)", tip: "O teto de vidro da sala principal de Bellas Artes, com o pano de vidro Tiffany do vulcão Popocatépetl, só se pode ver se houver espetáculo ou visita guiada. Os murais do piso superior têm entrada livre." },
+          ],
+        },
+        {
+          theme: "Teotihuacán — a cidade dos deuses",
+          activities: [
+            { name: "Pirâmides de Teotihuacán — primeira hora", description: "A cidade pré-hispânica maior da Mesoamérica a 50 km da CDMX, com a Pirâmide do Sol (a terceira maior do mundo), a Pirâmide da Lua e a Avenida dos Mortos de 2 km.", price: "MXN 100", tip: "Sai no primeiro autocarro (6h30) a partir do Terminal do Norte. Chegando às 8h antes dos grupos organizados, tens as pirâmides quase só para ti." },
+            { name: "Subida à Pirâmide do Sol", description: "Os 248 degraus da Pirâmide do Sol levam ao topo a 70 metros de altura, com vistas de 360° sobre o vale de Teotihuacán e toda a cidade cerimonial. É a experiência mais impressionante da arqueologia mexicana.", price: "Incluído", tip: "Sobe pelos dois lados para ver as vistas completas. Os degraus são íngremes e a altitude é de 2.300m — leva com calma e traz água." },
+            { name: "Almoço com vista para as pirâmides", description: "Os restaurantes em frente às pirâmides servem tlayudas oaxaquenhas, enchiladas e pulque (bebida fermentada de agave). O restaurante La Gruta, dentro de uma gruta natural do século II a.C., é o mais impressionante.", price: "MXN 120-200", tip: "La Gruta (dentro da gruta) fica mesmo à saída do sítio arqueológico. Reserva por telefone para o meio-dia — é um lugar icónico que vale o preço." },
+            { name: "Regresso e jantar de mole na Condesa", description: "A Condesa é o bairro mais cosmopolita e gourmet da Cidade do México, com restaurantes de alta cozinha mexicana como Quintonil e Pujol (número 5 do mundo), e cafés sobre as alamedas arborizadas da Avenida Ámsterdam.", price: "MXN 100-300", tip: "O mole negro de Oaxaca e o mole poblano são os dois molhos mais complexos da cozinha mexicana (com mais de 30 ingredientes). Os melhores encontras-te em Azul y Oro, na Roma." },
+          ],
+        },
+        {
+          theme: "Xochimilco e o sul da cidade",
+          activities: [
+            { name: "Xochimilco — os canais pré-hispânicos", description: "As últimas chinampas (ilhas artificiais flutuantes) da civilização asteca, Património da Humanidade. As trajineras (barcos coloridos) navegam pelos canais com mariachis, vendedores de comida e o ambiente mais festivo da CDMX.", price: "MXN 400-600 (trajinera 2h)", tip: "Aluga uma trajinera completa com amigos (6-8 pessoas) em vez de te juntares a uma partilhada. Os mariachis que se aproximam de barco cobram MXN 200-300 por canção." },
+            { name: "Coyoacán — o bairro de Frida Kahlo", description: "O bairro colonial mais bonito do México, com o Mercado Artesanal, a praça dos coiotes e a Casa Azul (Museu Frida Kahlo). Diego Rivera e Frida Kahlo viveram aqui e o bairro tem o seu espírito artístico.", price: "Grátis (Casa Azul MXN 250)", tip: "Reserva a Casa Azul (Museu Frida Kahlo) online com antecedência — só 80 pessoas por hora. Os gelados da geladaria de Coyoacán (em frente à igreja) têm sabores incríveis." },
+            { name: "Casa Azul — Museu Frida Kahlo", description: "A casa onde Frida Kahlo nasceu e morreu, conservada tal como a deixou com os seus trajes tehuana, as suas pinturas e a cadeira de rodas onde trabalhou nos últimos anos. O jardim com as pirâmides astecas é impressionante.", price: "MXN 250", tip: "A natureza-morta na cozinha azul com as caveiras decoradas e as panelas de barro conta mais sobre o carácter de Frida do que as pinturas. O ateliê no jardim tem o cavalete original." },
+            { name: "Mezcal e tacos de autor na Roma Norte", description: "A Roma Norte é o bairro mais trendy da Cidade do México, com bares de mezcal artesanal (de Oaxaca, Guerrero e Michoacán), tacos de autor e a cena gastronómica mais vanguardista do México.", price: "MXN 80-200", tip: "Bósforo Mezcalería e Hanky Panky têm os melhores mezcais de produção pequena do México. Pede sempre o mezcal puro e à temperatura ambiente — nunca com gelo." },
+          ],
+        },
+        {
+          theme: "Chapultepec e o melhor museu do México",
+          activities: [
+            { name: "Museu Nacional de Antropologia", description: "O melhor museu da América Latina e um dos melhores do mundo, com a Pedra do Sol asteca, o traje funerário de jade de Pakal de Palenque e a sala maia com a recriação de Bonampak. As 24 salas cobrem todas as civilizações do México.", price: "MXN 85", tip: "A Sala Mexica (asteca) com a Pedra do Sol e a Coatlicue é a mais impactante. Duas horas são suficientes para as salas principais — o museu completo leva 5+ horas." },
+            { name: "Bosque de Chapultepec", description: "O parque urbano maior da América Latina (686 hectares), com o Castelo de Chapultepec, o lago artificial e o zoo onde está o único panda-gigante da América. O parque é o pulmão verde e social da CDMX.", price: "Grátis (Zoo gratuito, Castelo MXN 90)", tip: "O Castelo de Chapultepec (residência de Maximiliano de Habsburgo e de Porfirio Díaz) tem os melhores murais de O'Gorman sobre a história do México e vistas para o Paseo de la Reforma." },
+            { name: "Paseo de la Reforma e o Anjo", description: "A grande avenida da Cidade do México, desenhada em 1864 por Maximiliano inspirado nos Champs-Élysées. O Anjo da Independência, a Diana Caçadora e a Torre Mayor formam o skyline mais reconhecível da CDMX.", price: "Grátis", tip: "Aos domingos o Paseo de la Reforma fecha aos carros e enche-se de ciclistas, patinadores e vendedores ambulantes — o ambiente mais festivo e familiar da cidade." },
+            { name: "Último jantar em Polanco — alta cozinha mexicana", description: "Polanco é o bairro dos restaurantes mais premiados do México: Pujol (top 10 do mundo), Quintonil, Máximo Bistrot. Se o orçamento for apertado, os tacos de suadero na banca de Cuauhtémoc são igualmente memoráveis.", price: "MXN 300-1500", tip: "Pujol e Quintonil exigem reserva com meses de antecedência. Para uma experiência culinária acessível, o Mercado Roma na Colonia Roma tem 70 bancas de cozinha mexicana de autor a partir de MXN 80." },
+          ],
+        },
+      ],
+    },
   },
 
   estambul: {
