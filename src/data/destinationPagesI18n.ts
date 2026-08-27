@@ -5178,6 +5178,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Roma",
+      country: "Itália",
+      heroTitle: "5 dias em Roma: Coliseu, Vaticano e a dolce vita nos bairros verdadeiros",
+      heroSubtitle: "O roteiro que equilibra os monumentos imperdíveis com os bairros onde os romanos realmente vivem.",
+      bestMonths: "março a maio e setembro a novembro",
+      budget: "80-150€/dia",
+      travelTips: [
+        "Roma é uma cidade que se percorre a pé — o centro histórico cabe num raio de 4 km",
+        "O passe Coliseu+Fórum+Palatino é válido por dois dias consecutivos — aproveita-o",
+        "Leva sempre roupa que cubra ombros e joelhos para entrar nas igrejas (incluindo o Vaticano)",
+        "A água das fontes públicas (nasoni) é potável e deliciosa — leva uma garrafa reutilizável",
+        "Julho e agosto são os meses mais quentes e mais concorridos — março a maio é a melhor altura",
+      ],
+      days: [
+        {
+          theme: "O Império Romano: Coliseu e Fórum",
+          activities: [
+            { name: "Coliseu de Roma", description: "O maior anfiteatro alguma vez construído, com capacidade para 70.000 espetadores. Na arena, os gladiadores combatiam perante imperadores e o povo romano.", price: "18€ (inclui Fórum Romano e Palatino)", tip: "Reserva o bilhete online — a fila presencial ultrapassa as 2 horas em época alta. A visita à arena (o piso) requer reserva separada." },
+            { name: "Fórum Romano e Monte Palatino", description: "O centro político e religioso do Império Romano durante 12 séculos. O Palatino é a colina onde, segundo a tradição, Rómulo fundou Roma em 753 a.C.", price: "Incluído com o Coliseu", tip: "O Arco de Tito (ano 81 d.C.) mostra os primeiros relevos que representam a menorá — considerado o registo histórico mais antigo do exílio judeu." },
+            { name: "Circo Máximo", description: "O maior estádio de corridas de carros da Antiguidade, com capacidade para 250.000 espetadores. Hoje é um grande parque urbano onde os romanos fazem jogging.", price: "Grátis", tip: "Caminha até ao Aventino para ver o buraco da fechadura da Ordem de Malta — uma vista perfeitamente alinhada com a cúpula de São Pedro." },
+            { name: "Mercados de Trajano", description: "O primeiro centro comercial da história, construído no século II d.C. Hoje é o Museu dei Fori Imperiali com vistas magníficas sobre o Fórum de Augusto.", price: "15€", tip: "Menos visitado do que o Coliseu mas igualmente impressionante. O contexto que dá sobre a vida quotidiana romana é notável." },
+          ],
+        },
+        {
+          theme: "O Vaticano: a cidade dentro da cidade",
+          activities: [
+            { name: "Museus Vaticanos e Capela Sistina", description: "A coleção papal acumulada ao longo de 500 anos: esculturas gregas, tapeçarias flamengas, mapas renascentistas e o teto da Capela Sistina pintado por Miguel Ângelo.", price: "20€", tip: "Reserva o bilhete para a primeira hora e pede explicitamente o acesso rápido à Capela. Sem reserva, a espera é de 2-3 horas." },
+            { name: "Basílica de São Pedro", description: "A maior igreja do mundo, cobrindo 2,3 hectares. A Pietà de Miguel Ângelo, o baldaquino de Bernini e a cúpula de 132 metros são os seus pontos altos.", price: "Grátis (cúpula 8€)", tip: "A subida à cúpula (os últimos 320 degraus são estreitos e em espiral) oferece a melhor vista de Roma. Chega cedo." },
+            { name: "Castel Sant'Angelo", description: "O mausoléu do imperador Adriano reconvertido em fortaleza papal, com uma passagem secreta para o Vaticano. O terraço tem uma vista extraordinária sobre o Tibre e Roma.", price: "15€", tip: "É onde decorre o ato final da ópera Tosca de Puccini — um dos finais mais dramáticos da história do teatro." },
+            { name: "Prati — o bairro do Vaticano", description: "O bairro residencial junto ao Vaticano, com as melhores gelatarias artesanais de Roma e restaurantes sem o preço turístico dos arredores de São Pedro.", price: "15-25€", tip: "A Gelateria dei Gracchi (Via dei Gracchi 272) é considerada uma das melhores de Roma. O gelato autêntico tem cores baças — não brilhantes." },
+          ],
+        },
+        {
+          theme: "Trastevere e a Roma que não se vende",
+          activities: [
+            { name: "Trastevere — o bairro mais romano de Roma", description: "O labirinto de ruelas medievais do outro lado do Tibre onde vivem os romanos de sempre. A Basílica de Santa Maria in Trastevere (século IV) é a mais antiga da cidade.", price: "Grátis", tip: "Trastevere é o bairro dos aperitivos e dos jantares, não das manhãs. Chega às 18h para ver o bairro acordar e misturar-te com os locais." },
+            { name: "Campo de' Fiori", description: "A praça-mercado do centro histórico, com bancas de frutas, especiarias e flores de segunda a sábado. A estátua de Giordano Bruno recorda que ali foi queimado em 1600.", price: "Grátis", tip: "O mercado funciona até às 14h. À noite, a praça transforma-se no epicentro da vida noturna do centro." },
+            { name: "Piazza Navona", description: "A praça barroca mais bela da Europa, construída sobre o antigo estádio de Domiciano. As três fontes de Bernini, incluindo a Fontana dei Quattro Fiumi, são o seu coração.", price: "Grátis", tip: "Os restaurantes na praça têm preço turístico. Come a um quarteirão de distância e toma o café sentado na praça — o teatro dos artistas de rua vale a pena." },
+            { name: "Panteão", description: "O edifício da Antiguidade mais bem preservado do mundo, construído pelo imperador Adriano em 125 d.C. A cúpula com o seu óculo central continua a ser um enigma arquitetónico.", price: "5€", tip: "O Panteão está orientado de forma a que, no equinócio da primavera (21 de março), o sol entre exatamente pelo óculo e ilumine a entrada. Coincidência ou não." },
+          ],
+        },
+        {
+          theme: "Fontana di Trevi, Escadaria Espanhola e Villa Borghese",
+          activities: [
+            { name: "Fontana di Trevi ao nascer do sol", description: "A maior fonte de Roma, esculpida por Nicola Salvi em 1762. De noite e ao nascer do sol, sem as multidões do dia, é um dos espetáculos mais belos da Europa.", price: "Grátis", tip: "A fonte é limpa duas vezes por semana de madrugada (normalmente às terças e sextas). Se calhares nesse dia, vê-la completamente vazia é uma cena única." },
+            { name: "Escadaria Espanhola", description: "Os 135 degraus de travertino que ligam a Piazza di Spagna à Trinità dei Monti. Na primavera cobrem-se de azáleas cor-de-rosa durante o festival das flores.", price: "Grátis", tip: "Desde 2019 que é proibido sentar-se nos degraus (multa de 250€). Parar para a foto continua a ser livre." },
+            { name: "Galeria Borghese", description: "A coleção de arte da família Borghese numa vila do século XVII: as primeiras esculturas de Bernini, Caravaggio, Ticiano e Rafael em espaços íntimos.", price: "15€", tip: "Os bilhetes esgotam semanas antes — reserva o quanto antes. As visitas duram exatamente 2 horas (a casa controla-o rigorosamente)." },
+            { name: "Villa Borghese — o pulmão de Roma", description: "O maior parque do centro de Roma, com lagos artificiais, vistas do Pincio e museus. O terraço do Pincio tem a melhor panorâmica da Piazza del Popolo.", price: "Grátis", tip: "Aluga um pequeno barco no lago (3€ por 20 minutos) — a atividade mais romana da tarde. As crianças romanas fazem-no há 200 anos." },
+          ],
+        },
+        {
+          theme: "Aventino, Testaccio e a Roma de bairro",
+          activities: [
+            { name: "Aventino e o buraco da fechadura dos cavaleiros", description: "A colina mais tranquila de Roma. O buraco da fechadura da Ordem de Malta enquadra perfeitamente a cúpula de São Pedro a 3 km de distância — uma das vistas mais mágicas de Roma.", price: "Grátis", tip: "Há fila para o buraco da fechadura (5 a 15 minutos). O jardim de laranjeiras ao lado tem uma das melhores vistas de Roma a partir do Aventino." },
+            { name: "Testaccio — o bairro da comida romana", description: "O bairro operário de Roma, sede do Mattatoio (antigo matadouro reconvertido em mercado e espaço cultural) e da cozinha romana mais autêntica e económica da cidade.", price: "12-20€", tip: "O cacio e pepe e a carbonara são os pratos definitivos de Roma. Em Testaccio servem-nos à moda original, sem natas, sem ervilhas." },
+            { name: "Palatino e os jardins Farnese", description: "Revisita o Palatino à tarde para ver os jardins Farnese, os primeiros jardins botânicos da Europa, com vistas para o Fórum que ao meio-dia fica cheio de gente.", price: "Incluído no bilhete do Coliseu do dia 1 (válido 2 dias)", tip: "A luz da tarde no Palatino dá o dourado que os fotógrafos do Grand Tour do século XIX procuravam." },
+            { name: "Aperitivo no Pigneto ou Ostiense", description: "Os bairros onde os jovens romanos saem para o aperitivo (17h-21h): um Spritz com um prato de petiscos incluído, esplanadas de bares e conversas na rua.", price: "6-10€ (Spritz com petiscos)", tip: "O aperitivo romano inclui comida — pedes uma bebida e trazem-te um buffet de fritos e bruschetta. É o jantar antes do jantar, obrigatório." },
+          ],
+        },
+      ],
+    },
   },
 
   barcelona: {
