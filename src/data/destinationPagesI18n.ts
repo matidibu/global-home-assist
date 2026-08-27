@@ -1954,6 +1954,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Florença",
+      country: "Itália",
+      heroTitle: "3 dias em Florença: o Renascimento em estado puro",
+      heroSubtitle: "Os Uffizi, o David de Michelangelo, a Piazzale Michelangelo e a melhor bistecca da Itália — Florença em três dias imprescindíveis.",
+      bestMonths: "abril a junho e setembro a outubro",
+      budget: "€90-150/dia",
+      travelTips: [
+        "Reserva os Uffizi, a Galleria dell'Accademia e o Duomo com semanas de antecedência — as filas sem reserva são brutais em época alta",
+        "Florença percorre-se perfeitamente a pé — o centro histórico tem apenas 2 km de diâmetro",
+        "O aperitivo toscano (18h-21h) nos bares do Oltrarno inclui bebida + tábua de antipasti grátis",
+        "As farmácias históricas (Farmacia di Santa Maria Novella, fundada em 1221) vendem os perfumes e cremes mais exclusivos da Itália",
+        "Os museus estatais são gratuitos no primeiro domingo de cada mês — mas também estão lotados; é melhor ir num dia de semana",
+      ],
+      days: [
+        {
+          theme: "O Duomo e o coração histórico",
+          activities: [
+            { name: "Catedral de Santa Maria del Fiore (O Duomo)", description: "A cúpula de Brunelleschi (1436) foi a maior do mundo durante séculos e continua a ser o símbolo de Florença. Subir os 463 degraus da cúpula oferece a melhor vista dos telhados de terracota da cidade.", price: "€18 (passe completo: catedral + cúpula + batistério + campanário)", tip: "Reserva o acesso à cúpula online — tem vagas muito limitadas. As primeiras horas do dia têm a luz mais bonita para as vistas do alto." },
+            { name: "Batistério de São João", description: "O edifício religioso mais antigo de Florença (séc. XI-XII), com as portas de bronze dourado do Paraíso de Lorenzo Ghiberti que Michelangelo chamou de 'portas do paraíso'. As 10 cenas do Antigo Testamento são relevos magistrais.", price: "Incluído no passe do Duomo", tip: "Os relevos originais das portas estão no Museo dell'Opera del Duomo (incluído no passe) — os do exterior são réplicas. Vale a pena ir ao museu." },
+            { name: "Almoço no Mercado Central", description: "O Mercado Central de Florença, no edifício de ferro do século XIX, tem a maior concentração de produtos toscanos da cidade: trufas, pecorino, enchidos de javali e o famoso lampredotto (tripa florentina).", price: "€8-15", tip: "O lampredotto (tripa do quarto estômago da vaca) no panino com molho verde é o street food mais autêntico de Florença. Nervi di bue (nervos de boi) para os mais aventureiros." },
+            { name: "Palazzo Vecchio e Piazza della Signoria", description: "O coração cívico de Florença desde o século XIV, com a Loggia dei Lanzi (galeria de esculturas ao ar livre gratuita) e o Palazzo Vecchio com o Salone dei Cinquecento pintado por Vasari.", price: "Palazzo €12,50 / Loggia grátis", tip: "A Loggia dei Lanzi tem esculturas de primeiro nível (O Rapto das Sabinas de Giambologna) completamente ao ar livre e grátis — melhor ver isto antes de entrar no Palazzo." },
+          ],
+        },
+        {
+          theme: "Os Uffizi e o David de Michelangelo",
+          activities: [
+            { name: "Galleria degli Uffizi", description: "O museu de arte do Renascimento mais importante do mundo, com obras de Botticelli (O Nascimento de Vénus, A Primavera), Leonardo, Michelangelo, Rafael e Ticiano. Mais de 100 salas no palácio dos Médici.", price: "€25 (+ €4 reserva antecipada)", tip: "Reserva o bilhete online com semanas de antecedência em época alta — as filas sem reserva ultrapassam as 3 horas. O Nascimento de Vénus de Botticelli está na Sala 10 — é mais pequeno do que se espera." },
+            { name: "Ponte Vecchio e o Oltrarno", description: "A ponte mais famosa de Florença, construída em 1345, com joalherias nos dois lados desde o século XVI. O Corridoio Vasariano (passagem secreta dos Médici sobre a ponte) é visível desde a margem.", price: "Grátis", tip: "As joalherias do Ponte Vecchio são turísticas mas os preços são competitivos — o ouro florentino tem qualidade garantida. O melhor ângulo da ponte é a partir do Ponte Santa Trinità." },
+            { name: "Galleria dell'Accademia — o David", description: "O museu que alberga o David de Michelangelo (1504), a escultura mais famosa do mundo. A figura de 5,17 metros de mármore branco na sala circular do museu é uma experiência que nenhuma foto consegue transmitir.", price: "€16 (+ €4 reserva)", tip: "É IMPRESCINDÍVEL reservar online. O David tem marcas de cinzel visíveis — os detalhes dos tendões do pescoço, as veias das mãos e a expressão concentrada são o que vale a pena procurar." },
+            { name: "Bistecca alla Fiorentina na Buca dell'Orafo", description: "A bistecca alla fiorentina é o prato mais famoso da Toscana — lombo de vaca chianina de no mínimo 1 kg cortado grosso e cozinhado ao ponto (sempre ao ponto, nunca bem passado). Pede-se por quilo.", price: "€40-60 por pessoa", tip: "O preço da bistecca é indicado por 100g (€3-5). Uma completa para duas pessoas pesa 1,2-1,5 kg. Pede-a 'al sangue' (mal passada) ou 'al punto' — nunca 'ben cotta'." },
+          ],
+        },
+        {
+          theme: "Oltrarno, Piazzale e os jardins de Boboli",
+          activities: [
+            { name: "Jardins de Boboli", description: "Os jardins do Palácio Pitti, residência dos Médici, com fontes, estátuas, gruta barroca e vistas sobre Florença e as oliveiras toscanas. 45.000 m² de jardins renascentistas em socalcos.", price: "€10 (inclui Palazzo Pitti)", tip: "A Grotta Grande do Buontalenti (com esculturas de Michelangelo incrustadas nas paredes de estalactites artificiais) é o local mais estranho e fascinante de Florença." },
+            { name: "Bairro do Oltrarno e os artesãos", description: "O bairro a sul do Arno, menos turístico e mais autêntico, com oficinas de restauradores de arte, marceneiros, encadernadores e joalheiros artesanais que trabalham com técnicas do Renascimento.", price: "Grátis", tip: "Stefano Bemer na Via di San Niccolò faz os sapatos por medida mais famosos de Florença. As perfumarias artesanais como Lorenzo Villoresi criam fragrâncias únicas desde 1990." },
+            { name: "Almoço de massa com trufa no Oltrarno", description: "Os restaurantes do Oltrarno têm os melhores pappardelle al cinghiale (javali) e tagliolini al tartufo (trufa) de Florença a preços muito mais razoáveis do que o centro.", price: "€14-22", tip: "Buca Mario (1886, o restaurante mais antigo de Florença) e Buca dell'Orafo têm autenticidade garantida. No Oltrarno, os restaurantes sem menu em inglês são os melhores." },
+            { name: "Piazzale Michelangelo ao pôr do sol", description: "O terraço sobre Florença com a vista mais clássica da cidade: o Duomo, o Palazzo Vecchio, o Arno e as pontes vistas da colina. A hora dourada antes do pôr do sol é o melhor momento.", price: "Grátis", tip: "Sobe a pé desde a Piazzale até à Igreja de San Miniato al Monte — 10 minutos mais acima e com vistas ainda melhores e muito menos gente do que na Piazzale." },
+          ],
+        },
+      ],
+    },
   },
 
   lima: {
