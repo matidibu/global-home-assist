@@ -286,6 +286,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Paris",
+      country: "França",
+      heroTitle: "5 dias em Paris: o roteiro que vai querer repetir",
+      heroSubtitle: "Louvre, Torre Eiffel, Montmartre e os bairros que só os locais conhecem — com horários reais e dicas para cada paragem.",
+      bestMonths: "abril a junho e setembro a outubro",
+      budget: "€100-180/dia",
+      travelTips: [
+        "Compra o passe Navigo semanal se chegares numa segunda-feira — cobre metro, RER e autocarros por €30/semana",
+        "Reserva o Louvre, a Torre Eiffel e Versalhes com pelo menos 2 semanas de antecedência em época alta",
+        "Os museus nacionais são gratuitos no primeiro domingo de cada mês — também estão lotados",
+        "Descarrega a app RATP para o transporte e um mapa offline do Google Maps de Paris",
+        "Os supermercados (Monoprix, Franprix) têm excelente charcutaria e queijos para um piquenique económico",
+      ],
+      days: [
+        {
+          theme: "O coração histórico: o Louvre e os Champs-Élysées",
+          activities: [
+            { name: "Museu do Louvre", description: "O museu mais visitado do mundo alberga 380.000 obras, incluindo a Mona Lisa e a Vénus de Milo. Reserva o bilhete online para evitar a fila que pode chegar às 2 horas.", price: "€22", tip: "Entra pela pirâmide de vidro. Chega às 9h em ponto e vai direto à Mona Lisa antes de chegarem os grupos." },
+            { name: "Jardim das Tulherias", description: "Passeio clássico parisiense entre o Louvre e a Place de la Concorde. Ideal para almoçar nas esplanadas do jardim com vista para as fontes e esculturas.", price: "Grátis", tip: "Os cafés do jardim são mais caros do que os dos bairros vizinhos, mas a vista vale a pena." },
+            { name: "Champs-Élysées e Arco do Triunfo", description: "A avenida mais famosa de Paris, 1,9 km de lojas de luxo, cafés e teatros. O Arco do Triunfo oferece a melhor vista panorâmica gratuita de Paris a partir do seu terraço.", price: "Terraço €13", tip: "Sobe ao Arco ao pôr do sol para ver os faróis dos carros a formar dois rios dourados pelos Champs-Élysées." },
+            { name: "Jantar em Le Marais", description: "O bairro mais vibrante de Paris, com restaurantes de cozinha judaica, libanesa e francesa moderna. A rue des Rosiers é o epicentro gastronómico do bairro.", price: "€20-35 por pessoa", tip: "L'As du Fallafel na rue des Rosiers serve o melhor falafel de Paris. Chega antes das 19h para evitar a fila." },
+          ],
+        },
+        {
+          theme: "A Torre Eiffel e o bairro dos sonhos",
+          activities: [
+            { name: "Torre Eiffel — primeiro turno", description: "Com 330 metros de altura é o monumento mais visitado do mundo. O turno da manhã tem menos espera e a melhor luz para fotos.", price: "€29 (2º andar) / €46 (topo)", tip: "Reserva o bilhete com pelo menos 2 semanas de antecedência. O elevador até ao topo costuma esgotar primeiro." },
+            { name: "Trocadéro e vistas panorâmicas", description: "A esplanada do Trocadéro oferece a vista frontal mais icónica da Torre Eiffel. O Palais de Chaillot e os seus museus de arquitetura e marinha ficam aqui.", price: "Grátis", tip: "A foto clássica da Torre Eiffel tira-se do centro da esplanada. Melhor às 7h — depois enche-se de vendedores." },
+            { name: "Museu de Orsay", description: "Instalado numa antiga estação de comboios, alberga a coleção de arte impressionista mais importante do mundo: Monet, Renoir, Van Gogh e Cézanne.", price: "€16", tip: "O relógio transparente do 5º piso oferece uma vista única do Sena e do Sacré-Cœur. A fila é muito menor do que no Louvre." },
+            { name: "Espetáculo de luzes da Torre Eiffel", description: "A cada hora certa desde o anoitecer até à 1h, a Torre Eiffel ilumina-se com 20.000 luzes cintilantes durante 5 minutos. O melhor espetáculo gratuito de Paris.", price: "Grátis", tip: "Vê-o a partir da Pont de Bir-Hakeim — a perspetiva com a ponte em primeiro plano é espetacular." },
+          ],
+        },
+        {
+          theme: "Montmartre e a Paris boémia",
+          activities: [
+            { name: "Basílica do Sacré-Cœur", description: "A basílica de pedra branca que domina Montmartre e toda Paris do alto da Butte. A vista dos telhados parisienses a partir da escadaria é gratuita e espetacular.", price: "Grátis (interior)", tip: "Sobe a pé pela rue Lepic para veres o verdadeiro Montmartre dos locais, em vez das escadas turísticas." },
+            { name: "Place du Tertre", description: "A praça dos artistas de Montmartre, onde pintores e retratistas trabalham ao ar livre desde o século XIX. Podes encomendar um retrato ou simplesmente observar.", price: "Grátis (retratos €20-50)", tip: "Os artistas começam a chegar por volta das 10h. Os da periferia da praça costumam ser mais autênticos do que os do centro." },
+            { name: "Almoço em Abbesses", description: "O coração local de Montmartre, longe do circuito turístico. A rue Lepic tem padarias, charcutarias e restaurantes de bairro com preços razoáveis.", price: "€12-18", tip: "Prova um croissant au beurre na La Maison Rose da rue Lepic. A padaria que aparece em 'Amélie'." },
+            { name: "Canal Saint-Martin", description: "O canal parisiense onde os locais passam as tardes de sol. Cafés com esplanada, livrarias independentes e a cena hipster mais autêntica de Paris.", price: "Grátis", tip: "Ao domingo o canal fecha ao trânsito e os parisienses invadem-no com piqueniques. A experiência mais local que podes ter." },
+          ],
+        },
+        {
+          theme: "Saint-Germain e a margem esquerda",
+          activities: [
+            { name: "Bairro Latino e a Sorbonne", description: "O bairro universitário mais antigo da Europa, com livrarias centenárias como a Shakespeare and Company, o mercado da rue Mouffetard e os cafés frequentados por Sartre e Beauvoir.", price: "Grátis", tip: "A Shakespeare and Company (em frente a Notre-Dame) organiza leituras de autores gratuitas. Consulta a agenda antes de ir." },
+            { name: "Catedral de Notre-Dame (exterior)", description: "Em plena reconstrução após o incêndio de 2019, a catedral reabriu parcialmente em 2024. O exterior restaurado e os arcobotantes góticos voltam a impressionar.", price: "Grátis", tip: "O interior completo reabre gradualmente. Consulta o site oficial antes da viagem para saber que áreas estão acessíveis." },
+            { name: "Jardim de Luxemburgo", description: "O parque mais querido dos parisienses, com lagos, estátuas e o Palácio de Luxemburgo. Ideal para descansar entre visitas e observar a vida local.", price: "Grátis", tip: "Aluga um barquinho de brinquedo para empurrar no grande lago central — tradição parisiense desde 1900." },
+            { name: "Centre Pompidou", description: "O museu de arte moderna e contemporânea mais visitado da Europa, num edifício de tubagens coloridas que é em si mesmo uma obra de arte.", price: "€15", tip: "O terraço do edifício (nível 6) tem uma vista de 360° de Paris surpreendente — e está incluído no bilhete." },
+          ],
+        },
+        {
+          theme: "Versalhes: o dia que vale a viagem",
+          activities: [
+            { name: "Palácio de Versalhes", description: "O palácio maior do mundo com 700 divisões, construído por Luís XIV. A Galeria dos Espelhos é o ponto mais impressionante da visita.", price: "€21 (palácio) / €27 (palácio + jardins em dias de fontes)", tip: "Reserva o bilhete online e apanha o primeiro comboio de Paris-Montparnasse às 8h30. A fila sem reserva ultrapassa as 2 horas." },
+            { name: "Jardins de Versalhes", description: "Os jardins geométricos mais famosos do mundo, desenhados por André Le Nôtre com 800 hectares de fontes, canteiros e bosques.", price: "Incluído com o palácio", tip: "Aos sábados e domingos de abril a outubro funcionam as fontes musicais — espetáculo único. O preço varia." },
+            { name: "Trianon — palacetes privados da corte", description: "O Petit Trianon foi o refúgio pessoal de Maria Antonieta. O Hameau de la Reine é a aldeia campestre que mandou construir para escapar do protocolo.", price: "Incluído com o bilhete Palácio+Domínio", tip: "Aluga uma bicicleta ou carrinho elétrico nos jardins — a distância entre o palácio e os Trianons é de 2 km." },
+            { name: "Última noite em Paris", description: "De volta a Paris, jantar num bistrô de bairro e, se o tempo permitir, um passeio noturno pelas margens do Sena, Património da Humanidade.", price: "€25-45", tip: "Pede ao teu hotel uma recomendação de bistrô a 3 quarteirões — é sempre melhor do que os do circuito turístico." },
+          ],
+        },
+      ],
+    },
   },
   viena: {
     en: {
