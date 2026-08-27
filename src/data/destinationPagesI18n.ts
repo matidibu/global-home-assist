@@ -5866,6 +5866,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Tóquio",
+      country: "Japão",
+      heroTitle: "5 dias em Tóquio: a cidade que redefiniu o que uma cidade pode ser",
+      heroSubtitle: "Shinjuku, Shibuya, Asakusa e os recantos onde o Japão milenar convive com o futuro mais próximo.",
+      bestMonths: "março-abril (sakura) e outubro-novembro",
+      budget: "¥15.000-25.000/dia (100-165 USD)",
+      travelTips: [
+        "O IC Card (Suica ou Pasmo) serve para todos os metros, comboios e até compras em lojas de conveniência",
+        "As 7-Eleven, Lawson e FamilyMart são muito mais do que quiosques — têm comida quente excelente 24h por dia",
+        "As vénias (reverências) são um sinal de respeito — devolve-as com a mesma profundidade com que te as fazem",
+        "O dinheiro em espécie continua a ser rei no Japão — leva sempre ¥10.000-20.000 em notas",
+        "O Google Maps funciona na perfeição em Tóquio e indica-te até a plataforma exata do metro",
+      ],
+      days: [
+        {
+          theme: "Shinjuku: a megalópole em estado puro",
+          activities: [
+            { name: "Meiji Shrine — santuário na floresta", description: "No coração de Tóquio, uma floresta de 70 hectares rodeia o santuário xintoísta dedicado ao Imperador Meiji. A transição do bulício de Harajuku para o silêncio da floresta é imediata.", price: "Grátis", tip: "Chega antes das 9h para veres o ritual de abertura do santuário (kagura) feito pelos sacerdotes. O caminho de gravilha de 700m até ao santuário já é a experiência." },
+            { name: "Harajuku e Takeshita Street", description: "A rua da moda alternativa japonesa, com lojas de cosplay, lolita fashion e os crepes mais criativos do mundo. A subcultura japonesa na sua forma mais visível.", price: "Grátis (passear)", tip: "Aos domingos, na ponte Jingubashi, juntam-se os rockabilly dancers vestidos à moda dos anos 50 — o Japão mais inesperado." },
+            { name: "Shinjuku — o bairro que nunca dorme", description: "A área com o maior número de comboios por dia do mundo. O Tokyo Metropolitan Government Building (miradouro gratuito), Kabukicho, Golden Gai e o Parque Shinjuku Gyoen.", price: "Miradouro grátis / Gyoen ¥500", tip: "O miradouro do Governo Metropolitano de Tóquio (piso 45, grátis) tem uma das melhores vistas da cidade sem pagar nada." },
+            { name: "Golden Gai — os bares em miniatura", description: "200 bares minúsculos com 5 a 15 lugares num labirinto de vielas em Shinjuku. Cada um com o seu próprio tema, música e dono que é também o barman.", price: "¥600-1500 por bebida", tip: "Alguns bares cobram uma taxa de entrada (charge) de ¥500-1000 — pergunta antes de entrar. A experiência vale mais do que a bebida." },
+          ],
+        },
+        {
+          theme: "Shibuya Crossing e a Tóquio contemporânea",
+          activities: [
+            { name: "Shibuya Crossing ao nascer do sol", description: "O cruzamento pedonal mais movimentado do mundo, com até 3.000 pessoas a atravessar em cada ciclo de semáforo. De madrugada ou ao nascer do sol, antes da hora de ponta, é outro cruzamento.", price: "Grátis", tip: "A melhor vista aérea do cruzamento é a partir do Starbucks do segundo piso do 2-1 Dogenzaka ou do bar Sky+1. O cruzamento visto de cima é a foto mais icónica de Tóquio." },
+            { name: "Daikanyama e Nakameguro", description: "Os dois bairros mais cool de Tóquio para os criativos locais: boutiques de moda, cafés independentes e o canal Meguro ladeado de cerejeiras que florescem na primavera.", price: "Grátis (passear)", tip: "A Tsutaya Books em Daikanyama é a livraria mais bonita do mundo — 3 edifícios de madeira com café integrado, aberta 24h." },
+            { name: "Omotesando — a avenida das arquiteturas", description: "O boulevard de Tóquio onde cada edifício é assinado por um arquiteto de renome: Zaha Hadid (Chanel), Sou Fujimoto, Kengo Kuma e o Omotesando Hills de Tadao Ando.", price: "Grátis", tip: "O Nezu Museum (¥1300) no final da Omotesando tem o jardim de bambu mais tranquilo que existe, a 3 minutos dos Starbucks mais cheios do mundo." },
+            { name: "Ramen em Shibuya", description: "Tóquio tem as melhores taças de ramen do mundo. No Ichiran (cabines individuais, o único restaurante onde comer sozinho tem protocolo próprio) ou no Fuunji (tsukemen lendário).", price: "¥900-1500", tip: "As máquinas de bilhetes à entrada dos restaurantes de ramen exigem que escolhas o que queres antes de entrar. O menu tem fotos — aponta para o número se não souberes ler kanji." },
+          ],
+        },
+        {
+          theme: "Asakusa e a Tóquio histórica",
+          activities: [
+            { name: "Senso-ji ao nascer do sol", description: "O templo budista mais visitado do mundo, fundado no ano 628 d.C. O Kaminarimon (portão do trovão) e a Nakamise-dori de lojas tradicionais conduzem à sala principal.", price: "Grátis", tip: "Às 8h o templo tem poucos visitantes e os monges fazem os rituais matinais. As sortes de fortuna (omikuji) são gratuitas — dobra o papel e ata-o se for má sorte." },
+            { name: "Skytree Tokyo", description: "A torre de televisão mais alta do mundo (634m), com duas plataformas de observação. Vista de 360° de Tóquio, o Monte Fuji em dias claros e Asakusa aos seus pés.", price: "¥2100 (plataforma 350m) / ¥3100 (com cúpula)", tip: "O melhor momento é ao nascer do sol (abertura às 8h) ou ao entardecer. Às sextas-feiras à noite tem iluminação especial azul." },
+            { name: "Akihabara — o bairro do futuro", description: "O distrito da eletrónica, dos videojogos, do manga e do anime. Arranha-céus cobertos de ecrãs LED, lojas de 7 pisos de figuras de coleção e os maid cafés.", price: "Grátis (passear)", tip: "Um maid café é uma experiência culturalmente japonesa única — raparigas vestidas de empregadas servem chá enquanto jogam contigo. ¥1000-2000 por pessoa." },
+            { name: "Ueno — museus e parque de cerejeiras", description: "O parque de Ueno é o mais famoso de Tóquio para o hanami (piquenique sob as cerejeiras em flor). O Museu Nacional de Tóquio (Japão) e o jardim zoológico ficam aqui.", price: "Parque grátis / Museu ¥1000", tip: "Na época do sakura (final de março-abril) Ueno é o local mais concorrido de Tóquio. O hanami noturno (yozakura) com as cerejeiras iluminadas é extraordinário." },
+          ],
+        },
+        {
+          theme: "Tsukiji, Ginza e a baía de Tóquio",
+          activities: [
+            { name: "Mercado Exterior de Tsukiji", description: "O mercado de peixe mais famoso do mundo na sua versão exterior (o interior mudou-se para Toyosu). Tomar o pequeno-almoço com sushi ou donburi de atum às 7h junto aos vendedores de peixe.", price: "¥1500-3000 (pequeno-almoço)", tip: "Dai Sushi e Sushi Dai são os mais famosos — espera 45-90 minutos pelos 8 lugares do balcão. O sushi das 7h acabado de chegar do barco tem outro nível." },
+            { name: "Ginza — os Champs-Élysées de Tóquio", description: "O distrito de luxo mais exclusivo da Ásia: Chanel, Louis Vuitton, Apple Store e os grandes armazéns japoneses Mitsukoshi e Isetan com os seus Bento Boxes perfeitos.", price: "Grátis (passear)", tip: "As galerias de arte contemporânea nos pisos altos dos edifícios de Ginza são gratuitas e mostram a melhor arte japonesa contemporânea." },
+            { name: "teamLab Borderless ou teamLab Planets", description: "O museu de arte digital imersiva mais inovador do mundo, onde as instalações de luz e som reagem ao movimento dos visitantes.", price: "¥3200", tip: "Reserva o bilhete online meses antes — esgota constantemente. O teamLab Planets em Toyosu tem as instalações de água e o jardim de flores digitais." },
+            { name: "Odaiba — a cidade artificial na baía", description: "A ilha artificial na Baía de Tóquio com a Fuji TV, uma miniatura da Estátua da Liberdade e as melhores vistas noturnas do arco-íris da Rainbow Bridge.", price: "Grátis (passear)", tip: "O comboio sem condutor Yurikamome sobre a Rainbow Bridge ao anoitecer é um dos trajetos de transporte público mais espetaculares do mundo." },
+          ],
+        },
+        {
+          theme: "Kamakura ou Nikko — o Japão fora de Tóquio",
+          activities: [
+            { name: "Comboio para Kamakura (1h a partir de Tóquio)", description: "A antiga capital imperial do Japão medieval, com o Grande Buda de 13 metros ao ar livre, 65 templos e o mar ao fundo a partir das colinas. Uma cidade pequena perfeita.", price: "Comboio ¥940 (ida e volta)", tip: "O JR Pass não cobre a linha Enoden de Kamakura — compra um cartão Suica para a viagem." },
+            { name: "Grande Buda de Kamakura (Kotoku-in)", description: "A estátua de bronze do Buda Amida de 1252, com 13,35 metros de altura, testemunhou todo o Japão medieval. Podes entrar no interior oco da estátua.", price: "¥300", tip: "Entra no interior do Buda (¥20 adicionais) — é uma das poucas estátuas gigantes do Japão em que se pode entrar." },
+            { name: "Praia de Kamakura", description: "As praias de Kamakura e Enoshima viradas para o Pacífico, com o Monte Fuji ao fundo em dias claros. Surpreendente ter uma praia de surf a 1 hora de Tóquio.", price: "Grátis", tip: "A vista do Monte Fuji a partir da praia de Shichirigahama (linha Enoden), com ondas de surf em primeiro plano, é uma imagem icónica do Japão." },
+            { name: "Enoshima — a ilha sagrada", description: "A ilha ligada por uma ponte, com o santuário de Benzaiten, grutas costeiras e a melhor vista panorâmica do Fuji a partir da Torre Sea Candle.", price: "Torre ¥500", tip: "Os takoyaki (bolinhas de polvo) nas bancas da ponte de Enoshima são o petisco perfeito da tarde antes de voltares a Tóquio." },
+          ],
+        },
+      ],
+    },
   },
 
   "nueva-york": {
