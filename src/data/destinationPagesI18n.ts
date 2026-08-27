@@ -4623,6 +4623,59 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Londres",
+      country: "Reino Unido",
+      heroTitle: "4 dias em Londres: o roteiro para não perder nada essencial",
+      heroSubtitle: "Tower Bridge, British Museum, Notting Hill e o West End — com os museus gratuitos e os pubs que os locais escolhem.",
+      bestMonths: "maio a setembro",
+      budget: "£120-200/dia",
+      travelTips: [
+        "O Oyster Card ou cartão contactless é indispensável — o metro em dinheiro custa o dobro do que com cartão",
+        "Quase todos os museus mais importantes são gratuitos: British Museum, National Gallery, Tate Modern, V&A, Natural History Museum",
+        "A gorjeta não está incluída na maioria dos restaurantes — 10-12% é o habitual se o serviço foi bom",
+        "A City fecha quase totalmente aos fins de semana — planeia a zona financeira para dias úteis",
+        "Descarrega a app do TfL (Transport for London) para planeares trajetos de metro, autocarro e DLR em tempo real",
+      ],
+      days: [
+        {
+          theme: "A Londres histórica: Tower Bridge e a City",
+          activities: [
+            { name: "Tower of London", description: "Fortaleza milenar fundada por Guilherme, o Conquistador, em 1078. Aqui guardam-se as Joias da Coroa britânica, incluindo a Coroa Imperial com 2.868 diamantes. Os famosos Beefeaters são os únicos guias oficiais.", price: "£34", tip: "Chega quando abre para veres as Joias da Coroa sem multidões. Os Beefeaters dão tours gratuitos incluídos com a entrada — valem muito a pena." },
+            { name: "Tower Bridge", description: "A ponte mais famosa de Londres, inaugurada em 1894. A exposição do interior mostra a maquinaria vitoriana que levanta a ponte. O passeio pela passarela de vidro a 42 metros sobre o Tamisa é impressionante.", price: "£14", tip: "A ponte levanta-se várias vezes por dia para deixar passar navios grandes — consulta o calendário no site para a veres." },
+            { name: "Borough Market", description: "O mercado gastronómico mais famoso de Londres, aberto desde o século XIII. Mais de 100 bancas de produtores artesanais, queijos, carnes, street food do mundo inteiro e a melhor seleção de comida pronta a comer do centro.", price: "£8-15 (almoço)", tip: "Quinta, sexta e sábado é quando está em pleno funcionamento. O pulled pork do Roast e os chocolates da Rabot 1745 são imperdíveis." },
+            { name: "Tate Modern", description: "O museu de arte contemporânea instalado numa central elétrica do século XX, com obras de Picasso, Warhol e Dalí. A vista da Ponte do Milénio e de St Paul's a partir da sala 10 do piso 4 é gratuita e espetacular.", price: "Grátis (exposições temporárias £20)", tip: "O café do piso 6 tem o melhor terraço com vistas para o Tamisa e a catedral. Perfeito para um chá das 4." },
+          ],
+        },
+        {
+          theme: "A Londres imperial: British Museum e Bloomsbury",
+          activities: [
+            { name: "British Museum", description: "O museu mais visitado do Reino Unido alberga 8 milhões de objetos: a Pedra de Roseta, as esculturas do Partenon, as múmias egípcias e o tesouro de Sutton Hoo. Impossível ver tudo num dia.", price: "Grátis", tip: "Chega às 9h (uma hora antes de abrir ao público geral com entrada online) para veres a Pedra de Roseta sem a multidão. O Grande Pátio é impressionante." },
+            { name: "Covent Garden", description: "A antiga praça de mercado transformada em destino de compras, gastronomia e entretenimento. Artistas de rua, restaurantes e o Mercado de Covent Garden com as suas pontes vitorianas de ferro.", price: "Grátis (compras e comida à parte)", tip: "Os artistas de rua da Piazza têm de passar uma audição municipal — o nível é muito alto. A atuação das 12h30 costuma ser a melhor do dia." },
+            { name: "National Gallery", description: "A coleção de pintura europeia mais importante da Grã-Bretanha em Trafalgar Square. Van Eyck, Leonardo, Rembrandt, Monet e Turner fazem parte das 2.300 obras do museu.", price: "Grátis", tip: "A Sala 30 com os impressionistas franceses (Monet, Renoir, Seurat) é a favorita dos locais. A selfie em frente aos leões de Trafalgar Square é obrigatória." },
+            { name: "Espetáculo no West End", description: "O distrito teatral de Londres tem mais de 50 teatros ativos, com os melhores musicais e peças do mundo. Les Misérables, Mamma Mia e O Fantasma da Ópera estão em cartaz há décadas.", price: "£30-100", tip: "Os bilhetes do dia (day seats) ou de última hora (standby) vendem-se de manhã nas bilheteiras. Podes conseguir bons lugares a metade do preço." },
+          ],
+        },
+        {
+          theme: "Notting Hill, Hyde Park e Kensington",
+          activities: [
+            { name: "Portobello Road Market", description: "O mercado mais famoso de Londres, ativo desde 1837, com antiguidades aos sábados e fruta e flores toda a semana. As casas coloridas do bairro de Notting Hill são o fundo perfeito.", price: "Grátis (compras à parte)", tip: "O sábado é o dia grande com até 1.000 bancas de antiguidades. Chega antes das 10h para veres os melhores objetos antes de serem comprados." },
+            { name: "Hyde Park e Kensington Gardens", description: "Os dois parques reais ligados formam um dos pulmões verdes maiores de Londres. O Serpentine Lake, o Speaker's Corner e o monumento a Lady Di são os pontos mais visitados.", price: "Grátis", tip: "Aluga uma cadeira dobrável junto ao Serpentine e observa os londrinos a passar. É grátis sentares-te na relva — as cadeiras são pagas (£2)." },
+            { name: "Victoria & Albert Museum", description: "O museu de design e artes decorativas maior do mundo, com coleções de moda, cerâmica, joalharia, fotografia e mobiliário de 5.000 anos de história humana.", price: "Grátis", tip: "O pátio interior com o café e o jardim é um dos segredos mais bem guardados do museu. Perfeito para a pausa de almoço dos londrinos." },
+            { name: "Harrods e Knightsbridge", description: "O grande armazém mais famoso do mundo no coração de Knightsbridge. Mesmo que não compres nada, os corredores de alimentos gourmet, perfumaria e a galeria de moda são um espetáculo visual.", price: "Grátis (entrar)", tip: "O food hall da cave do Harrods é um dos melhores do mundo. Podes comprar um bolo ou chá para levar por £5-10 e experimentá-lo sem gastar uma fortuna." },
+          ],
+        },
+        {
+          theme: "Greenwich, o Tamisa e despedida",
+          activities: [
+            { name: "Palácio de Buckingham e Changing of the Guard", description: "A residência oficial da família real britânica. A troca da guarda acontece às 11h e dura 45 minutos — um ritual com música da Banda do Exército que vale a pena ver pelo menos uma vez.", price: "Grátis (exterior) / £35 (interior no verão)", tip: "Para veres bem a troca da guarda, chega às 10h30 e posiciona-te em frente ao portão central. Os grupos chegam tarde e não veem nada." },
+            { name: "St James's Park", description: "O parque real mais antigo de Londres, com vistas diretas para o palácio, os famosos pelicanos do lago e a ponte pedonal com a vista mais fotogénica de Londres em direção a Buckingham.", price: "Grátis", tip: "Os pelicanos do parque são descendentes da oferta do czar russo em 1664. São alimentados às 14h30 todos os dias junto ao lago — é um espetáculo." },
+            { name: "Greenwich: Meridiano e Observatório", description: "O bairro de Greenwich alberga o Meridiano de Greenwich (longitude 0°), o Observatório Real e o Cutty Sark, o clipper de chá mais famoso da história. Uma viagem pelo Tamisa de ferry até aqui faz parte da experiência.", price: "Ferry £6 / Observatório £18", tip: "Podes atravessar o Meridiano com um pé em cada hemisfério gratuitamente — a linha verde está marcada no chão exterior do Observatório." },
+            { name: "Pub tradicional em Soho", description: "Os pubs de Soho são o coração social de Londres. The Lamb and Flag (fundado em 1623), The Nellie Dean e o French House têm a atmosfera e a história que as cadeias não conseguem imitar.", price: "£6-8 por pinta", tip: "Em Londres pede-se ao balcão — não esperes que venham servir à mesa. Uma pinta de Guinness ou uma bitter local são as bebidas mais típicas." },
+          ],
+        },
+      ],
+    },
   },
 
   cancun: {
