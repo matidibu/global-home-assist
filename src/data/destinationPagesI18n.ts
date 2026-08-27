@@ -4141,6 +4141,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Lisboa",
+      country: "Portugal",
+      heroTitle: "3 dias em Lisboa: Alfama, pastéis e miradouros",
+      heroSubtitle: "Castelo de São Jorge, elétrico 28, Belém e o fado à noite — o roteiro perfeito para te apaixonares pela capital portuguesa.",
+      bestMonths: "março a maio e setembro a outubro",
+      budget: "€70-120/dia",
+      travelTips: [
+        "O cartão Viva Viagem, carregável com €5-10, cobre metro, elétricos e autocarros — muito mais barato do que o bilhete individual",
+        "Os miradouros são a atividade mais barata e mais bonita de Lisboa — há mais de 20 espalhados pela cidade",
+        "O Uber é muito barato em Lisboa — uma alternativa cómoda aos elétricos nas horas de ponta",
+        "Os restaurantes com 'menu do dia' (€9-12 com bebida, sobremesa e prato principal) são a opção mais autêntica para almoçar",
+        "Leva calçado confortável com boa aderência — os calçadões portugueses são escorregadios com chuva e duros depois de muito caminhar",
+      ],
+      days: [
+        {
+          theme: "Alfama e o coração histórico",
+          activities: [
+            { name: "Castelo de São Jorge", description: "A fortaleza medieval que domina Lisboa do alto, com vistas de 360° sobre a cidade, o rio Tejo e a Ponte 25 de Abril. As muralhas mouras do século XI estão perfeitamente conservadas.", price: "€15", tip: "Chega quando abre para veres as vistas sem gente. O caminho de subida pelas ruelas de Alfama faz parte da experiência — evita o táxi direto." },
+            { name: "Bairro de Alfama e Miradouro da Graça", description: "O bairro mais antigo de Lisboa, labiríntico e cheio de encanto, com casas de azulejos, roupa estendida e o eco do fado a sair dos restaurantes. O Miradouro da Graça tem as melhores vistas da cidade.", price: "Grátis", tip: "Perder-te por Alfama é o plano — não há que procurar uma rota específica. As ruelas mais estreitas acima da Sé têm o ambiente mais autêntico." },
+            { name: "Almoço de bacalhau em Alfama", description: "Portugal tem 365 receitas de bacalhau (uma por dia do ano). O bacalhau à Brás, à Lagareiro ou com natas são as mais clássicas. As tascas de Alfama têm as receitas mais autênticas da cidade.", price: "€10-18", tip: "Procura restaurantes sem menu em inglês colado na porta — sinal de que são para locais. O preço do menu do dia inclui prato + sobremesa + bebida." },
+            { name: "Elétrico 28 — o percurso mais pitoresco", description: "O icónico elétrico amarelo que sobe e desce as colinas de Lisboa desde Martim Moniz até Prazeres, passando por Alfama, Graça e Estrela. É transporte real da cidade, não só turístico.", price: "€3 (bilhete individual)", tip: "Compra o bilhete dentro do elétrico em dinheiro ou usa o cartão Viva Viagem. A carruagem vai sempre cheia — entra na paragem inicial para conseguires lugar." },
+          ],
+        },
+        {
+          theme: "Belém e os Descobrimentos",
+          activities: [
+            { name: "Pastéis de Belém", description: "A fábrica original dos pastéis de nata, fundada em 1837 com a receita secreta que só três pessoas conhecem. A fila da manhã é longa mas avança depressa.", price: "€1,30 por pastel", tip: "Pede os pastéis quentes com açúcar e canela por cima e come-os dentro da fábrica. A sala de azulejos do interior é tão especial quanto o pastel." },
+            { name: "Mosteiro dos Jerónimos", description: "A obra-prima do Manuelino (gótico português), classificada Património da Humanidade. O claustro com as suas colunas de pedra talhadas como cordas e coral é um dos espaços mais impressionantes da Europa.", price: "€12", tip: "A igreja principal é gratuita e tem os túmulos de Vasco da Gama e Luís de Camões. Entra primeiro para veres a escala do edifício antes de pagares o claustro." },
+            { name: "Torre de Belém e Padrão dos Descobrimentos", description: "A Torre de Belém (séc. XVI) foi o último ponto que os marinheiros viam ao partir e o primeiro ao regressar. A 300 metros, o monumento aos Descobrimentos tem as figuras dos exploradores portugueses.", price: "Torre €6 / Padrão €4", tip: "A fila da Torre pode ser longa — o interior é pequeno e só admitem grupos. O Padrão tem um miradouro no topo com vistas para o Tejo que pouca gente sobe." },
+            { name: "Casa de fado em Alfama", description: "O fado é a alma musical de Lisboa, classificado Património Imaterial da Humanidade. As casas de fado de Alfama oferecem jantar com atuação ao vivo — a experiência mais autêntica da cidade.", price: "€30-50 (jantar + fado)", tip: "Reserva com antecedência no Clube de Fado, Sr. Fado ou Tasca do Chico. Durante a atuação há silêncio absoluto — é uma norma cultural, não um pedido." },
+          ],
+        },
+        {
+          theme: "Bairro Alto, LX Factory e o Tejo",
+          activities: [
+            { name: "Miradouro da Senhora do Monte", description: "O miradouro mais alto de Lisboa com vistas panorâmicas que incluem o Castelo, o Tejo, o Cristo Rei do outro lado do rio e a Ponte 25 de Abril. Menos conhecido do que o de Santa Catarina.", price: "Grátis", tip: "É o favorito dos locais para o brunch de fim de semana. A cafetaria do miradouro serve o melhor café com vista da cidade." },
+            { name: "LX Factory — o mercado criativo", description: "Uma fábrica têxtil do século XIX transformada em espaço criativo com restaurantes, livrarias, estúdios de design e o melhor mercadinho de Lisboa aos domingos. A livraria Ler Devagar com as suas bicicletas suspensas é imperdível.", price: "Grátis (compras à parte)", tip: "O mercado dominical LX Market abre das 11h às 20h e é o melhor de Lisboa. Aos sábados e domingos os restaurantes do interior estão no seu melhor momento." },
+            { name: "Ribeira das Naus — a frente do Tejo", description: "O passeio ribeirinho junto ao ministério da marinha onde os lisboetas descansam nas cadeiras de madeira em frente ao rio. A 10 minutos a pé, a Praça do Comércio tem a melhor perspetiva da entrada do Tejo.", price: "Grátis", tip: "As cadeiras são gratuitas e por ordem de chegada. Pede uma ginjinha (licor de cereja) nos quiosques do passeio — é a bebida mais típica de Lisboa." },
+            { name: "Bairro Alto ao entardecer", description: "O bairro de bares e locais noturnos de Lisboa que começa a vibrar a partir das 18h. Bares pequenos com a porta aberta e música na rua fazem do Bairro Alto a experiência noturna mais autêntica da cidade.", price: "€2-4 por bebida", tip: "Os bares do Bairro Alto normalmente não têm lugares sentados — bebe-se na rua com o copo na mão, de bar em bar. É perfeitamente normal e seguro." },
+          ],
+        },
+      ],
+    },
   },
 
   amsterdam: {
