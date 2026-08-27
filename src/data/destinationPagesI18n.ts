@@ -4364,6 +4364,50 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Amesterdão",
+      country: "Países Baixos",
+      heroTitle: "3 dias em Amesterdão: canais, museus e bicicletas",
+      heroSubtitle: "Rijksmuseum, Casa de Anne Frank, Jordaan e as tulipas — o roteiro perfeito para uma primeira vez na capital holandesa.",
+      bestMonths: "abril a maio (tulipas) e junho a agosto",
+      budget: "€90-150/dia",
+      travelTips: [
+        "Aluga uma bicicleta desde o primeiro dia — é a forma mais rápida, barata e local de te deslocares em Amesterdão",
+        "Reserva a Casa de Anne Frank e o Van Gogh Museum com semanas de antecedência — esgotam sempre em época alta",
+        "O elétrico cobre toda a cidade; compra o GVB day ticket por €9,50 para viagens ilimitadas",
+        "O I amsterdam City Card (€75/24h) inclui museus, transporte e cruzeiro pelos canais — vale a pena se visitares 3+ museus",
+        "Cuidado com as ciclovias na rua — os ciclistas têm prioridade sobre os peões e não abrandam",
+      ],
+      days: [
+        {
+          theme: "Os grandes museus: Van Gogh e Rijksmuseum",
+          activities: [
+            { name: "Rijksmuseum", description: "O museu nacional da Holanda no coração de Museumplein. Alberga a Ronda Noturna de Rembrandt, A Leiteira de Vermeer e mais de um milhão de objetos do Século de Ouro holandês.", price: "€22,50", tip: "Reserva online e escolhe o turno das 9h. A Ronda Noturna está na sala de honra no piso 2 — olha-a a partir do fundo da sala para veres a escala real." },
+            { name: "Museu Van Gogh", description: "A maior coleção de obras de Vincent van Gogh do mundo, com mais de 200 pinturas e 500 desenhos. Os Girassóis, O Quarto em Arles e o Autorretrato com a orelha ligada estão aqui.", price: "€22", tip: "É preciso reservar com semanas de antecedência em época alta. O audioguia gratuito com a app do museu é excelente e cobre todas as obras principais." },
+            { name: "Vondelpark", description: "O parque mais famoso de Amesterdão, com 47 hectares onde os locais fazem piqueniques, tocam música e passeiam de bicicleta. No verão há teatro ao ar livre gratuito.", price: "Grátis", tip: "Aluga uma bicicleta na MacBike (€15/dia) para te deslocares por toda a cidade — é a forma mais local e prática de explorar Amesterdão." },
+            { name: "Jantar em De Pijp", description: "O bairro mais multicultural e gastronómico de Amesterdão, com o Mercado Albert Cuyp (o maior da Holanda), restaurantes surinameses, indonésios e a melhor seleção de cafés artesanais.", price: "€15-25", tip: "O rijsttafel (mesa de arroz indonésia) é a herança colonial mais saborosa da Holanda — uma experiência gastronómica única que vale o extra." },
+          ],
+        },
+        {
+          theme: "História e canais: Anne Frank e Jordaan",
+          activities: [
+            { name: "Casa de Anne Frank", description: "O esconderijo onde Anne Frank e a sua família se ocultaram dos nazis entre 1942 e 1944. O diário original, a estante secreta e os quartos tal como eram fazem desta visita uma das mais impactantes da Europa.", price: "€16", tip: "É IMPRESCINDÍVEL reservar online com semanas de antecedência — não há bilhetes à porta. O horário das 9h é o menos concorrido." },
+            { name: "Bairro Jordaan e os canais", description: "O bairro mais pitoresco de Amesterdão, com casas do século XVII inclinadas sobre os canais, galerias de arte, lojas vintage e os terraços mais aconchegantes da cidade.", price: "Grátis", tip: "Atravessa o Prinsengracht e explora o Bloemgracht e o Egelantiersgracht — estes canais secundários têm menos turistas e mais encanto local." },
+            { name: "Almoço de arenque no mercado", description: "O haring (arenque cru com cebola e pickles) é o petisco mais típico da Holanda. As bancas de peixe fresco nas pontes do Jordaan são a experiência mais autêntica.", price: "€4-6", tip: "O arenque come-se segurando o pedaço pela cauda e deixando-o cair na boca — é assim que os holandeses o fazem. Não peças um para uma só dentada, mas o taco completo." },
+            { name: "Passeio de barco pelos canais", description: "Os 165 canais de Amesterdão e as suas 1.753 pontes são Património da Humanidade. Um tour de barco mostra a cidade a partir do nível da água com perspetivas impossíveis a partir de terra.", price: "€15-20", tip: "Os cruzeiros das 15h têm melhor luz para fotos do que os da manhã. Leva um casaco mesmo no verão — a água faz baixar a temperatura." },
+          ],
+        },
+        {
+          theme: "Keukenhof (primavera) ou bairros alternativos",
+          activities: [
+            { name: "Keukenhof (só março-maio) ou NDSM Wharf", description: "Na primavera, o Jardim de Keukenhof com 7 milhões de tulipas em flor é um dos espetáculos naturais mais bonitos da Europa. Fora de época, o NDSM Wharf é o antigo estaleiro transformado em polo criativo.", price: "Keukenhof €20 / NDSM grátis", tip: "O autocarro direto desde o Aeroporto de Schiphol até Keukenhof é o mais cómodo — não é preciso passar por Amesterdão." },
+            { name: "Bairro de Oud-West e mercado Ten Katemarkt", description: "O mercado de bairro mais autêntico de Amesterdão, com produtos frescos, roupa em segunda mão e street food mediterrânico. Os cafés da Jan Pieter Heijestraat são a alternativa local ao turístico Leidseplein.", price: "Grátis", tip: "O bairro Oud-West é onde vivem os jovens locais — as cafetarias têm wifi, bons preços e ambiente holandês genuíno." },
+            { name: "Amsterdam Noord — A'DAM Tower e EYE Film Museum", description: "Do outro lado do porto, o Amsterdam Noord tem o melhor skyline da cidade. A A'DAM Tower tem o baloiço mais alto da Europa no seu terraço e o EYE Film Museum é um dos edifícios mais fotogénicos da cidade.", price: "Ferry grátis / A'DAM Tower €17,50", tip: "O ferry desde a Estação Central até ao Amsterdam Noord é gratuito e demora 5 minutos. Parte a cada 7-8 minutos, 24 horas por dia." },
+            { name: "Brouwerij 't IJ — cervejaria no moinho", description: "A cervejaria artesanal mais famosa de Amesterdão, instalada num moinho de vento do século XVIII junto ao canal. As suas cervejas artesanais (Plzen, Zatte, Columbus) estão entre as melhores da Holanda.", price: "€3,50-5 por cerveja", tip: "O terraço em frente ao moinho é um dos melhores planos ao entardecer na cidade. Chega antes das 17h no verão para conseguires mesa lá fora." },
+          ],
+        },
+      ],
+    },
   },
 
   londres: {
