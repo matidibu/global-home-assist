@@ -4927,6 +4927,68 @@ export const destinationPagesI18n: Partial<Record<string, Partial<Record<DestLan
         },
       ],
     },
+    pt: {
+      city: "Cancún",
+      country: "México",
+      heroTitle: "5 dias em Cancún e na Riviera Maya: para além do resort",
+      heroSubtitle: "Cenotes, ruínas maias, praias de areia branca e a cultura mexicana que fica do outro lado da lagoa.",
+      bestMonths: "dezembro a abril",
+      budget: "80-200 USD/dia",
+      travelTips: [
+        "O sargaço (algas) afeta algumas praias entre maio e setembro — informa-te antes de ir sobre quais estão limpas",
+        "Os autocarros ADO são confortáveis e económicos para te deslocares entre Cancún, Playa del Carmen e Tulum",
+        "O seguro de viagem é muito recomendável — a assistência médica no México pode ser cara para estrangeiros",
+        "Leva pesos mexicanos para os mercados e restaurantes locais — o dólar é aceite mas perdes no câmbio",
+        "O protetor solar reef-safe é obrigatório nos cenotes e recomendado nas praias de Tulum",
+      ],
+      days: [
+        {
+          theme: "Zona Hotelera e as praias de Cancún",
+          activities: [
+            { name: "Playa Delfines", description: "A praia pública mais espetacular da Zona Hotelera, com o cartaz icónico de Cancún, areia branca e a água mais turquesa do México. Sem palapa de hotel, sem custos.", price: "Grátis", tip: "As praias do norte da Zona Hotelera têm menos ondas. As do sul (Delfines, Ballenas) têm mais ondulação e são melhores para bodyboard." },
+            { name: "Mercado 28 — a Cancún verdadeira", description: "O mercado artesanal do centro de Cancún, longe da Zona Hotelera. Tacos al pastor, artesanato autêntico e preços de locais, não de turismo de massas.", price: "5-10 USD", tip: "Os tacos de cochinita pibil são o prato iucateco que te vai perseguir depois de voltares. Pede-os com cebola roxa em conserva e habanero." },
+            { name: "Lagoa Nichupté — caiaque ou paddleboard", description: "A lagoa que separa a Zona Hotelera do continente, com mangais, aves tropicais e águas calmas. Várias empresas alugam caiaques e paddleboards sem guia.", price: "20-35 USD/hora", tip: "Os pores do sol sobre a lagoa com a Zona Hotelera ao fundo estão entre os mais fotogénicos de Cancún." },
+            { name: "Centro de Cancún ao anoitecer", description: "O Parque Las Palapas no centro é onde os habitantes de Cancún se reúnem ao anoitecer: artesãos, petiscos, música ao vivo e a dinâmica de uma cidade mexicana real.", price: "Grátis", tip: "O centro de Cancún, a 20 minutos do hotel de autocarro (0,50 USD), dá-te uma noite autêntica que a Zona Hotelera nunca consegue oferecer." },
+          ],
+        },
+        {
+          theme: "Isla Mujeres: o paraíso a 20 minutos",
+          activities: [
+            { name: "Ferry para Isla Mujeres", description: "O ferry sai a cada 30 minutos de Puerto Juárez. Os 20 minutos de travessia já são espetaculares pela cor do Caribe.", price: "8 USD ida e volta", tip: "Chega ao cais antes das 8h para apanhares o primeiro ferry. Isla Mujeres com pouca gente (primeira hora) é um sonho." },
+            { name: "Playa Norte — a melhor praia das Caraíbas", description: "Repetidamente eleita uma das melhores praias do mundo, com águas de piscina, areia branca fina e uma lagoa protegida sem ondulação. Só 2 km de comprimento.", price: "Grátis", tip: "Aluga um carrinho de golfe (40 USD/dia) para explorar toda a ilha de 8 km. É assim que todos se deslocam em Isla Mujeres." },
+            { name: "Garrafón — snorkel no recife de coral", description: "O extremo sul da ilha tem um dos melhores recifes de coral do Caribe mexicano, com peixes coloridos, arraias e tartarugas. O parque Garrafón inclui snorkel.", price: "25-45 USD", tip: "O snorkel livre fora do parque (a partir das rochas a sul da praia Zac-Ha) é igualmente bom e gratuito." },
+            { name: "Vila de Isla Mujeres", description: "As ruas pintadas de cores vivas, boutiques de artesanato local e restaurantes de marisco à beira-mar fazem da vila um lugar onde vale a pena demorar-se.", price: "Grátis", tip: "A rua Hidalgo tem os melhores restaurantes de marisco a preço justo. O ceviche da ilha é diferente do de Cancún." },
+          ],
+        },
+        {
+          theme: "Chichén Itzá e banho num cenote",
+          activities: [
+            { name: "Partida para Chichén Itzá", description: "A antiga cidade maia, declarada uma das 7 maravilhas do mundo moderno, fica a 2h30 de Cancún. Sair cedo evita o calor extremo e os milhares de turistas.", price: "Tour a partir de 60 USD (inclui transporte)", tip: "Nos equinócios (21 de março e 23 de setembro) o sol cria a serpente de luz na pirâmide El Castillo — turismo de massas mas espetacular." },
+            { name: "El Castillo e a cidade maia", description: "A pirâmide de Kukulcán tem 365 degraus (um por cada dia do ano), o Templo dos Guerreiros, o maior Jogo de Bola da Mesoamérica e o Cenote Sagrado.", price: "35 USD (entrada)", tip: "Já não se pode subir a pirâmide desde 2006, mas podes tocar-lhe. O guia faz soar o eco que imita o quetzal a bater as asas em frente à escadaria." },
+            { name: "Cenote Ik-Kil", description: "O cenote mais fotogénico da Riviera Maya, a 3 km de Chichén Itzá: um poço circular de 40 m de diâmetro aberto ao céu, com paredes de cascatas de fetos.", price: "15 USD", tip: "Chega logo depois do almoço, quando os grupos de tour se vão embora. Entre as 14h e as 16h é quando está mais tranquilo e a luz do sol entra no cenote." },
+            { name: "Regresso a Cancún via Valladolid", description: "A cidade colonial de Valladolid fica no caminho de volta. Uma paragem de 45 minutos para ver o cenote Zaci (dentro da cidade) e o centro histórico.", price: "Cenote Zaci 5 USD", tip: "Valladolid é uma cidade iucateca autêntica onde podes tomar o melhor café de olla do trajeto." },
+          ],
+        },
+        {
+          theme: "Tulum: ruínas maias sobre as Caraíbas",
+          activities: [
+            { name: "Ruínas de Tulum", description: "A única cidade maia construída sobre uma falésia com vistas diretas para o Caribe turquesa. O Castillo de Tulum com o mar ao fundo é uma das fotos mais icónicas do México.", price: "10 USD", tip: "Chega às 8h quando abre. Às 10h já há centenas de pessoas. A praia ao pé das ruínas está incluída — podes banhar-te antes de chegar a multidão." },
+            { name: "Gran Cenote de Tulum", description: "O cenote mais acessível e fotogénico da zona, com água cristalina, estalagmites submersas e peixes a nadar à volta dos banhistas.", price: "20 USD", tip: "Leva o teu próprio equipamento de snorkel (ou aluga ali por 5 USD). A água tem entre 23-25°C durante todo o ano. Livre de sargaço." },
+            { name: "Vila de Tulum", description: "A vila original de Tulum, diferente da Zona Hotelera de Tulum com os seus hotéis boutique caros. Tacos de cochinita, lojas de mel e achiote a preço mexicano.", price: "8-15 USD", tip: "A Tulum do Instagram (a zona hotelera) é cara e feita para outro tipo de viagem. A vila tem o mesmo por um terço do preço." },
+            { name: "Akumal — nadar com tartarugas marinhas", description: "A baía de Akumal (45 min a norte de Tulum) é o lugar mais acessível do mundo para nadar livremente com tartarugas marinhas no seu habitat natural.", price: "Grátis (só a praia e a água)", tip: "Entra na água entre as 9h e as 11h para veres mais tartarugas. Não uses protetor solar comum — danifica o recife. O reef-safe é permitido." },
+          ],
+        },
+        {
+          theme: "Playa del Carmen e o último dia caribenho",
+          activities: [
+            { name: "Quinta Avenida de Playa del Carmen", description: "A rua pedonal mais animada do Caribe mexicano, 4 km de lojas, restaurantes, bares e arte de rua em frente à praia. O centro da vida social da Riviera Maya.", price: "Grátis (a passear)", tip: "Ignora os restaurantes na 5ª Avenida — são todos a preço turístico. Entra dois quarteirões para o interior e encontras os tacos dos locais." },
+            { name: "Praia de Playa del Carmen", description: "A praia urbana mais animada da Riviera Maya, com areia branca e acesso direto a partir da 5ª Avenida. Mais movimentada do que as praias da Zona Hotelera de Cancún.", price: "Grátis", tip: "As praias dos hotéis boutique a sul da 5ª (a partir da rua 38) são menos concorridas e quase tão acessíveis." },
+            { name: "Xcaret ou Xel-Há (opcional)", description: "Os maiores parques naturais do México. O Xcaret combina cultura maia, natureza e espetáculos noturnos. O Xel-Há é mais íntimo e centrado no snorkel num rio de água do mar.", price: "80-130 USD", tip: "O Xel-Há é mais tranquilo e natural. O Xcaret é melhor para famílias com crianças pequenas. Os bilhetes online custam menos 30%." },
+            { name: "O último pôr do sol caribenho", description: "A praia de Playa del Carmen está virada a leste — os pores do sol mais espetaculares veem-se a partir do cais de Playa ou do ferry para Cozumel.", price: "Grátis", tip: "O ferry para Cozumel parte do cais da 5ª Avenida. Só a travessia de 45 minutos sobre o Caribe aberto já é um espetáculo." },
+          ],
+        },
+      ],
+    },
   },
 
   roma: {
