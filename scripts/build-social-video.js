@@ -365,7 +365,11 @@ function buildHookOpen(brollPath, text, dur) {
   const vf =
     `setpts=(PTS-STARTPTS)*${BROLL_SLOW_STRETCH},scale=${VIDEO_W}:${VIDEO_H}:force_original_aspect_ratio=increase,crop=${VIDEO_W}:${VIDEO_H},fps=30,format=yuv420p,` +
     `drawtext=fontfile='${HOOK_FONT}':text='${escaped}':fontcolor=white:fontsize=34:borderw=3:bordercolor=black:` +
-    `x=(w-text_w)/2:y=h*0.72:line_spacing=6`;
+    // y=h*0.58 (was 0.72): 0.72 put the hook line in the same bottom zone
+    // TikTok/Reels reserve for their own UI text -- same collision the
+    // regular captions had (see the MarginV note below). 0.58 sits it in
+    // the lower-middle, above all platform chrome.
+    `x=(w-text_w)/2:y=h*0.58:line_spacing=6`;
   sh([
     '-y', '-i', brollPath,
     '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo',
@@ -600,7 +604,22 @@ async function main() {
   // box (BorderStyle=3) still lost contrast against bright/white app
   // backgrounds; a per-glyph outline (BorderStyle=1) stays legible
   // regardless of what's behind it. Confirmed by user feedback 2026-08-19.
-  const style = "FontName=Arial,FontSize=11,Bold=1,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=1.4,Shadow=0,Alignment=2,MarginV=25,MarginL=20,MarginR=20";
+  //
+  // MarginV=70 (was 25): with MarginV=25 the captions sat ~74px off the
+  // bottom of the 854px frame -- right where TikTok/Reels paint their own
+  // bottom UI (username, video description, the "Generado por IA" label, the
+  // music ticker). User caught the burned-in captions colliding with all of
+  // that in a real TikTok screenshot 2026-08-27. NOTE: libass interprets
+  // these Margin* values in its own ~384x288 SRT PlayRes and then scales to
+  // the real 480x854 (that's ~2.97x vertically, ~1.25x horizontally) -- so
+  // MarginV=70 renders at ~210px from the bottom (~25% up), which clears
+  // TikTok's bottom text stack with breathing room. Verified by frame
+  // extraction 2026-08-27, NOT guessed (MarginV=240 was tried first and
+  // shot the captions almost to the top of the frame). MarginR=76 (was 20,
+  // ~95px real from the right) keeps long lines wrapping before the
+  // right-side action-button rail and shifts the centered text a bit left
+  // of it.
+  const style = "FontName=Arial,FontSize=10,Bold=1,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=1.4,Shadow=0,Alignment=2,MarginV=70,MarginL=24,MarginR=96";
   // finalDur is always audioDur-driven (the narration is the thing that
   // must play in full) -- NOT capped by the prepped video's own length.
   // A real bug lived here: capping finalDur at prepped.dur assumed the
