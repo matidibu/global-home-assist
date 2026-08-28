@@ -8,30 +8,48 @@
 // in this environment).
 //
 // Usage:
-//   ELEVEN_API_KEY=... node scripts/build-social-video.js <rawVideoPath> <scriptTextPath> <lang> <outLabel> [reuseVoicePath|-] [brollQuery]
+//   ELEVEN_API_KEY=... node scripts/build-social-video.js <rawVideoPath> <scriptTextPath> <lang> <outLabel> [reuseVoicePath|-] [brollQuery] [hookText]
 //
 // scriptTextPath is a plain .txt file with the voiceover script.
 // Output goes to C:/Users/matia/Downloads/gha_videos_final/<outLabel>.mp4
 //
-// brollQuery (optional): a Pexels video search string (e.g. "tokyo japan
-// cherry blossom temple"). When passed, the video is built as a split-screen
-// -- app footage on top, a silent looping b-roll clip on the bottom -- added
-// 2026-08-24 after retention data showed viewers dropping at 0:01 on the
-// single-frame format (the static homepage hero card at the start had no
-// motion/travel signal). Pass "-" for reuseVoicePath if skipping it but
-// still passing brollQuery. Suggested queries (reused from
-// generate-pinterest-destinos.js's Pexels image queries, for consistency):
-//   barcelona: barcelona sagrada familia gaudi spain
-//   paris: paris eiffel tower france romantic
-//   roma: rome colosseum italy ancient
-//   tokio: tokyo japan cherry blossom temple
+// brollQuery (optional): a Pexels video search string. When passed, the
+// video is built as a split-screen -- app footage on top, a silent looping
+// b-roll clip on the bottom -- added 2026-08-24 after retention data showed
+// viewers dropping at 0:01 on the single-frame format (the static homepage
+// hero card at the start had no motion/travel signal). Pass "-" for
+// reuseVoicePath if skipping it but still passing brollQuery/hookText.
+//
+// EXPERIENTIAL, not literal-landmark queries -- changed 2026-08-26 per user
+// feedback: a generic monument/skyline shot doesn't sell the trip, a moment
+// of the actual experience does (a espresso pour, a wine terrace over the
+// sea). Suggested queries:
+//   barcelona: tapas rooftop terrace spain
+//   paris: street artist painting easel paris
+//   roma: italian street cafe espresso
+//   tokio: japanese street food night market
 //   bali: bali indonesia rice terraces temple sunset
-//   nuevayork: new york city manhattan skyline central park
+//   nuevayork: new york city rooftop bar skyline
 //   dubai: dubai skyline burj khalifa desert
+//   dubrovnik/croatia: wine tasting terrace sea view
 //   feat-traslados: airport suitcase walking travel
 //   feat-seguridad: passport travel documents safety
 //   feat-mapa: road trip map navigation travel
 //   feat-excursiones: adventure tour activities travel
+//
+// hookText (optional, requires brollQuery): a short punchy line ("Asi se
+// siente Roma." / "This is what Rome feels like."). When passed, the first
+// HOOK_DUR seconds of the FINAL video are the brollQuery footage shown
+// full-frame (not split) with this text burned in, silent, before cutting to
+// the real split-screen app demo + voiceover. Added 2026-08-26: TikTok
+// analytics across 8 posted videos and 4 different pipeline versions
+// (brand-card placement, split-screen, rhythm-scroll, loading-speed caps)
+// all plateaued at ~1-2.4s avg watch time / ~0-2% completion, dropping at
+// 0:01 regardless -- strong signal the problem isn't internal video pacing
+// anymore, it's that the opening frame itself (a screenshot of a search
+// form) has no hook. This reuses the SAME experiential b-roll clip already
+// fetched for the split-screen bottom half, so it costs nothing extra in
+// Pexels calls.
 
 const fs = require('fs');
 const https = require('https');
@@ -77,18 +95,33 @@ const VIDEO_W = 480, VIDEO_H = 854; // must match capture-itinerary-video.js VID
 const REPO_ROOT = path.join(__dirname, '..');
 const BRAND_CARD_DUR = 1.2; // short bumper, same clip reused at open and close
 const BRAND_BG = '#152060'; // matches the logo's own dark navy gradient stop
+const HOOK_DUR = 1.5; // full-frame experiential-b-roll + text open, before the split-screen app demo starts
+const HOOK_FONT = 'C\\:/Windows/Fonts/arialbd.ttf'; // ffmpeg drawtext needs the drive-colon escaped inside the filter string
+// Added 2026-08-26 per user feedback on the first hook-test round ("mas
+// lentas, como hipnoticas, y que no se repitan las imagenes"): the
+// experiential b-roll was playing at native speed and, since each of the 3
+// clips was trimmed to only 5s (15s raw total), it visibly looped/repeated
+// partway through anything longer than ~15s. BROLL_SLOW_STRETCH re-times
+// the b-roll (setpts) to play at roughly 1/1.7 speed -- slower, more
+// "hypnotic" -- and BROLL_CLIP_TRIM_SEC keeps more of each source clip so
+// the stretched sequence (3 * 7s = 21s raw -> ~35.7s once slowed) covers a
+// full video's length without needing to loop back to clip 0 at all in the
+// common case (MAX_TOTAL_DUR is 34s).
+const BROLL_CLIP_TRIM_SEC = 7;
+const BROLL_SLOW_STRETCH = 1.7;
 
 // Only parsed/validated when run directly -- guarded so this file can also
 // be require()'d for its helpers (ensureBrandCard, concatBrandCardAtClose)
 // without needing dummy CLI args.
-let rawVideoPath, scriptPath, lang, outLabel, reuseVoicePath, brollQuery;
+let rawVideoPath, scriptPath, lang, outLabel, reuseVoicePath, brollQuery, hookText;
 if (require.main === module) {
-  [rawVideoPath, scriptPath, lang, outLabel, reuseVoicePath, brollQuery] = process.argv.slice(2);
+  [rawVideoPath, scriptPath, lang, outLabel, reuseVoicePath, brollQuery, hookText] = process.argv.slice(2);
   if (reuseVoicePath === '-') reuseVoicePath = undefined;
   if (!rawVideoPath || !scriptPath || !lang || !outLabel) {
-    console.error('Usage: node scripts/build-social-video.js <rawVideoPath> <scriptTextPath> <lang> <outLabel> [reuseVoicePath|-] [brollQuery]');
-    console.error('  reuseVoicePath: skip the ElevenLabs call and reuse an existing voice mp3 (script text unchanged, only the raw footage changed -- saves credits). Pass "-" to skip this but still pass brollQuery.');
+    console.error('Usage: node scripts/build-social-video.js <rawVideoPath> <scriptTextPath> <lang> <outLabel> [reuseVoicePath|-] [brollQuery] [hookText]');
+    console.error('  reuseVoicePath: skip the ElevenLabs call and reuse an existing voice mp3 (script text unchanged, only the raw footage changed -- saves credits). Pass "-" to skip this but still pass brollQuery/hookText.');
     console.error('  brollQuery: Pexels video search string -- builds a split-screen (app top, silent b-roll loop bottom) instead of the single-frame format.');
+    console.error('  hookText: short punchy line burned over brollQuery footage, shown full-frame and silent for HOOK_DUR seconds before the real content starts. Requires brollQuery.');
     process.exit(1);
   }
   if (!reuseVoicePath && !API_KEY) {
@@ -286,6 +319,27 @@ async function ensureBrandCard() {
   return cardPath;
 }
 
+// Re-encodes (rather than the concat demuxer's stream-copy) two clips end to
+// end so mismatched source fps/audio params (a still-image card vs. a real
+// screen-recording) splice together cleanly instead of risking a demuxer
+// mismatch error. Shared by the brand-card-at-close splice and the
+// hook-at-open splice below -- same mechanics, just which clip goes first.
+function concatTwo(firstPath, secondPath, outPath) {
+  const filter =
+    `[0:v]scale=${VIDEO_W}:${VIDEO_H},setsar=1,fps=30[v0];[0:a]aformat=sample_rates=44100:channel_layouts=stereo[a0];` +
+    `[1:v]scale=${VIDEO_W}:${VIDEO_H},setsar=1,fps=30[v1];[1:a]aformat=sample_rates=44100:channel_layouts=stereo[a1];` +
+    `[v0][a0][v1][a1]concat=n=2:v=1:a=1[vout][aout]`;
+  sh([
+    '-y',
+    '-i', firstPath, '-i', secondPath,
+    '-filter_complex', filter,
+    '-map', '[vout]', '-map', '[aout]',
+    '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-preset', 'medium', '-crf', '20',
+    '-c:a', 'aac', '-b:a', '128k',
+    outPath,
+  ]);
+}
+
 // Concats [main][brandCard] into the final output -- brand card at the
 // CLOSE ONLY. Previously ran at open+close too, but that put a static,
 // silent 1.2s logo card in the very first frame of every video. Retention
@@ -293,23 +347,36 @@ async function ensureBrandCard() {
 // the first 2 posts with this intro card was ~1.1s, matching the card's
 // duration almost exactly -- viewers were swiping away before the card even
 // finished, never reaching the actual hook. Fixed 2026-08-21.
-// Re-encodes (rather than the concat demuxer's stream-copy) so a still-image
-// card and a real screen-recording with different source fps/audio params
-// splice together cleanly instead of risking a demuxer mismatch error.
 function concatBrandCardAtClose(mainPath, brandCardPath, outPath) {
-  const filter =
-    `[0:v]scale=${VIDEO_W}:${VIDEO_H},setsar=1,fps=30[v0];[0:a]aformat=sample_rates=44100:channel_layouts=stereo[a0];` +
-    `[1:v]scale=${VIDEO_W}:${VIDEO_H},setsar=1,fps=30[v1];[1:a]aformat=sample_rates=44100:channel_layouts=stereo[a1];` +
-    `[v0][a0][v1][a1]concat=n=2:v=1:a=1[vout][aout]`;
+  concatTwo(mainPath, brandCardPath, outPath);
+}
+
+// Builds a silent, full-frame (not split) clip from the b-roll footage with
+// a bold hookText line burned in over the last third of the frame -- the
+// "cold open" shown before the real app-demo content. Escapes drawtext's
+// special chars (: ' \ %) since hookText is free-form copy, not a constant.
+function buildHookOpen(brollPath, text, dur) {
+  const escaped = text
+    .replace(/\\/g, '\\\\\\\\')
+    .replace(/:/g, '\\:')
+    .replace(/'/g, '’')
+    .replace(/%/g, '\\%');
+  const hookPath = path.join(WORKDIR, `${outLabel}-hook.mp4`);
+  const vf =
+    `setpts=(PTS-STARTPTS)*${BROLL_SLOW_STRETCH},scale=${VIDEO_W}:${VIDEO_H}:force_original_aspect_ratio=increase,crop=${VIDEO_W}:${VIDEO_H},fps=30,format=yuv420p,` +
+    `drawtext=fontfile='${HOOK_FONT}':text='${escaped}':fontcolor=white:fontsize=34:borderw=3:bordercolor=black:` +
+    `x=(w-text_w)/2:y=h*0.72:line_spacing=6`;
   sh([
-    '-y',
-    '-i', mainPath, '-i', brandCardPath,
-    '-filter_complex', filter,
-    '-map', '[vout]', '-map', '[aout]',
-    '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-preset', 'medium', '-crf', '20',
-    '-c:a', 'aac', '-b:a', '128k',
-    outPath,
+    '-y', '-i', brollPath,
+    '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo',
+    '-t', String(dur),
+    '-vf', vf,
+    '-map', '0:v', '-map', '1:a',
+    '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18',
+    '-c:a', 'aac', '-shortest',
+    hookPath,
   ]);
+  return hookPath;
 }
 
 function slugifyQuery(q) {
@@ -370,7 +437,7 @@ async function fetchBRollSequence(query) {
     // shares identical params -- required for the concat demuxer below.
     const normPath = path.join(BROLL_DIR, `${slug}-norm${i}.mp4`);
     sh([
-      '-y', '-i', rawPath, '-t', '5',
+      '-y', '-i', rawPath, '-t', String(BROLL_CLIP_TRIM_SEC),
       '-vf', `scale=${VIDEO_W}:${VIDEO_H}:force_original_aspect_ratio=increase,crop=${VIDEO_W}:${VIDEO_H},fps=30,format=yuv420p`,
       '-an', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18',
       normPath,
@@ -419,7 +486,7 @@ function buildSplitScreen(topRawPath, topRawDur, brollPath, finalDur) {
   // (that's the header/nav, worth keeping in frame).
   sh([
     '-y', '-stream_loop', '-1', '-i', brollPath,
-    '-vf', `scale=${VIDEO_W}:${PANEL_SCALE_H},crop=${VIDEO_W}:${halfH},fps=30,format=yuv420p`,
+    '-vf', `setpts=(PTS-STARTPTS)*${BROLL_SLOW_STRETCH},scale=${VIDEO_W}:${PANEL_SCALE_H},crop=${VIDEO_W}:${halfH},fps=30,format=yuv420p`,
     '-t', String(finalDur), '-an',
     '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18',
     bottomPath,
@@ -564,15 +631,26 @@ async function main() {
     mainPath,
   ]);
 
+  let videoWithHook = mainPath;
+  let hookAddedDur = 0;
+  if (brollQuery && hookText) {
+    console.log(`[${outLabel}] 5b/6 Building opening hook ("${hookText}")...`);
+    const brollPath = await fetchBRollSequence(brollQuery); // already cached from the split-screen step above
+    const hookPath = buildHookOpen(brollPath, hookText, HOOK_DUR);
+    videoWithHook = path.join(WORKDIR, `${outLabel}-hooked.mp4`);
+    concatTwo(hookPath, mainPath, videoWithHook);
+    hookAddedDur = HOOK_DUR;
+  }
+
   console.log(`[${outLabel}] 6/6 Adding brand card at close...`);
   const brandCardPath = await ensureBrandCard();
   const outPath = path.join(OUT_DIR, `${outLabel}.mp4`);
-  concatBrandCardAtClose(mainPath, brandCardPath, outPath);
+  concatBrandCardAtClose(videoWithHook, brandCardPath, outPath);
 
-  console.log(`[${outLabel}] Done: ${outPath} (~${(finalDur + BRAND_CARD_DUR).toFixed(1)}s incl. brand card)`);
+  console.log(`[${outLabel}] Done: ${outPath} (~${(finalDur + hookAddedDur + BRAND_CARD_DUR).toFixed(1)}s incl. hook + brand card)`);
 }
 
-module.exports = { ensureBrandCard, concatBrandCardAtClose, fetchBRollSequence, buildSplitScreen, WORKDIR, OUT_DIR, VIDEO_W, VIDEO_H, REPO_ROOT, BRAND_CARD_DUR };
+module.exports = { ensureBrandCard, concatBrandCardAtClose, concatTwo, buildHookOpen, fetchBRollSequence, buildSplitScreen, WORKDIR, OUT_DIR, VIDEO_W, VIDEO_H, REPO_ROOT, BRAND_CARD_DUR, HOOK_DUR };
 
 if (require.main === module) {
   main().catch(e => { console.error(`[${outLabel}] FAILED:`, e.message); process.exitCode = 1; });
