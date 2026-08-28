@@ -615,11 +615,15 @@ async function main() {
   // MarginV=70 renders at ~210px from the bottom (~25% up), which clears
   // TikTok's bottom text stack with breathing room. Verified by frame
   // extraction 2026-08-27, NOT guessed (MarginV=240 was tried first and
-  // shot the captions almost to the top of the frame). MarginR=76 (was 20,
-  // ~95px real from the right) keeps long lines wrapping before the
-  // right-side action-button rail and shifts the centered text a bit left
-  // of it.
-  const style = "FontName=Arial,FontSize=10,Bold=1,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=1.4,Shadow=0,Alignment=2,MarginV=70,MarginL=24,MarginR=96";
+  // shot the captions almost to the top of the frame).
+  //
+  // MarginL and MarginR MUST stay equal -- with Alignment=2 libass centers
+  // the text inside the [MarginL, W-MarginR] box, so any asymmetry visibly
+  // pushes the text off-center (an earlier 24/96 split to dodge the
+  // right-side action rail did exactly that, user flagged it 2026-08-27).
+  // Keep them equal and large enough (56 -> ~70px real each side) that the
+  // centered text still wraps before reaching the rail on the widest lines.
+  const style = "FontName=Arial,FontSize=10,Bold=1,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=1.4,Shadow=0,Alignment=2,MarginV=70,MarginL=56,MarginR=56";
   // finalDur is always audioDur-driven (the narration is the thing that
   // must play in full) -- NOT capped by the prepped video's own length.
   // A real bug lived here: capping finalDur at prepped.dur assumed the
