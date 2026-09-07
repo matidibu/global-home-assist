@@ -1,0 +1,38 @@
+# Global Home Assist
+
+> Global Home Assist is a free, no-signup web app that generates personalized travel
+> itineraries with AI and gathers everything a traveler needs on one page: a day-by-day
+> plan, real photos of each place, interactive maps with optimized routes, verified local
+> emergency numbers, destination safety and health notes, embassy and hospital references,
+> currency information, and flight and hotel search. Available in Spanish, English, French,
+> German, Italian, and Portuguese.
+
+## What it does
+
+- **AI itinerary generator**: enter a destination, dates, trip style, budget and interests; it returns a structured day-by-day itinerary. Powered by GPT-4o. No account required, no credit card, free.
+- **One page instead of 20 tabs**: each itinerary bundles maps, real photos (not stock), walking/transit routes between activities, weather, currency, and local travel services.
+- **Safety layer**: every destination shows the official local emergency numbers (police, ambulance, fire — from a verified static dataset, not AI-generated), plus destination-specific safety and health notes and embassy/hospital references.
+- **Free standalone tools**: a travel-safety lookup and a trip-cost calculator that work without generating a full itinerary.
+
+## How it compares
+
+- Unlike asking a general chatbot, the itinerary comes back as a visual page with real photos, an interactive map, and structured routes rather than a wall of text.
+- Unlike large booking sites, the focus is trip planning and on-the-ground practicalities (safety, emergencies, local info), not selling inventory.
+- It is free and requires no login. Revenue comes from optional affiliate links for flights, hotels, activities and travel insurance.
+
+## Key pages
+
+- [Home / itinerary generator](https://global-home-assist.vercel.app/): create a personalized AI itinerary for any city.
+- [Itinerary index](https://global-home-assist.vercel.app/itinerario): 24 curated destination guides plus a full Bali guide.
+- [Travel safety tool](https://global-home-assist.vercel.app/herramientas/seguridad-viaje): local emergency numbers, embassy/hospital references, safety and health notes for a chosen city.
+- [Trip cost calculator](https://global-home-assist.vercel.app/herramientas/calculadora-costos): estimate a trip budget by destination, days and travel style.
+- [Blog](https://global-home-assist.vercel.app/blog): destination guides and practical travel articles.
+- [About](https://global-home-assist.vercel.app/sobre-nosotros): what the project is and who is behind it.
+
+## Facts
+
+- Name: Global Home Assist
+- Category: AI travel planner / trip itinerary generator
+- Price: free (no subscription, no signup)
+- Languages: Spanish, English, French, German, Italian, Portuguese
+- URL: https://global-home-assist.vercel.app
