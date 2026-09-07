@@ -79,6 +79,7 @@ export function SeguridadViajeTool() {
         <DestinationInfo
           city={selection.city}
           country={selection.country}
+          countryCode={selection.countryCode}
           province={selection.province}
           nationality={nationality || "Argentina"}
           language={language}

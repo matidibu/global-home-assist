@@ -201,6 +201,7 @@ function weatherDescIndex(code: number): number {
 interface Props {
   city: string;
   country: string;
+  countryCode?: string; // ISO 3166-1 alpha-2 — mejora el match de números de emergencia
   province?: string;
   nationality: string;
   language: string;
@@ -209,7 +210,7 @@ interface Props {
   onEmergencyNumbers?: (numbers: { general: string; police: string; ambulance: string; fire: string }) => void;
 }
 
-export default function DestinationInfo({ city, country, province, nationality, language, latitude, longitude, onEmergencyNumbers }: Props) {
+export default function DestinationInfo({ city, country, countryCode, province, nationality, language, latitude, longitude, onEmergencyNumbers }: Props) {
   const t = T[language] || T.es;
   const [data, setData] = useState<DestinationData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -224,7 +225,7 @@ export default function DestinationInfo({ city, country, province, nationality, 
     fetch("/api/destination-info", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ city, country, province, nationality, language, latitude, longitude }),
+      body: JSON.stringify({ city, country, countryCode, province, nationality, language, latitude, longitude }),
     })
       .then(r => r.json())
       .then(d => {
@@ -236,7 +237,7 @@ export default function DestinationInfo({ city, country, province, nationality, 
         }
       })
       .catch(() => { setError(true); setLoading(false); });
-  }, [city, country, province, nationality, language, latitude, longitude, onEmergencyNumbers]);
+  }, [city, country, countryCode, province, nationality, language, latitude, longitude, onEmergencyNumbers]);
 
   const cardStyle: React.CSSProperties = {
     background: "rgba(255,255,255,0.92)",
@@ -483,7 +484,7 @@ export default function DestinationInfo({ city, country, province, nationality, 
                   { label: t.labelPolice, num: data.emergency_numbers.police, color: "#1d4ed8" },
                   { label: t.labelAmbulance, num: data.emergency_numbers.ambulance, color: "#16a34a" },
                   { label: t.labelFire, num: data.emergency_numbers.fire, color: "#ea580c" },
-                ].map((e, i) => (
+                ].filter((e) => e.num && String(e.num).trim()).map((e, i) => (
                   <div key={i} style={{
                     background: "#f9fafb",
                     borderRadius: "8px",

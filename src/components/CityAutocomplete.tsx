@@ -7,6 +7,7 @@ import "@geoapify/geocoder-autocomplete/styles/minimal.css";
 export interface CitySelection {
   city: string;
   country: string;
+  countryCode: string; // ISO 3166-1 alpha-2 de Geoapify — para el lookup de emergencias
   province: string;
   lat: number;
   lon: number;
@@ -50,6 +51,7 @@ export function CityAutocomplete({ language, placeholder, onSelect }: Props) {
       onSelect({
         city: cityName,
         country: props.country || "",
+        countryCode: props.country_code || props.countrycode || "",
         province: props.state || props.county || props.region || "",
         lat: props.lat,
         lon: props.lon,

@@ -628,7 +628,7 @@ async function tryGeocode(text: string, cityCoords: { lat: number; lon: number }
 // Fallback for when the user types a destination but never clicks a suggestion
 // from the autocomplete dropdown — without this, city/country/cityCoords stay
 // empty and "Generar itinerario" silently does nothing on click.
-async function tryGeocodeCity(text: string, apiKey: string): Promise<{ lat: number; lon: number; city: string; country: string; province: string } | null> {
+async function tryGeocodeCity(text: string, apiKey: string): Promise<{ lat: number; lon: number; city: string; country: string; countryCode: string; province: string } | null> {
   try {
     const url = `https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(text)}&type=city&limit=1&apiKey=${apiKey}`;
     const res = await fetch(url);
@@ -637,13 +637,14 @@ async function tryGeocodeCity(text: string, apiKey: string): Promise<{ lat: numb
     if (!feature) return null;
     const p = feature.properties;
     const city = p.city || p.municipality || p.county || p.name || p.state || p.formatted?.split(",")[0]?.trim() || "";
-    return { lat: p.lat, lon: p.lon, city, country: p.country || "", province: p.state || p.county || p.region || "" };
+    return { lat: p.lat, lon: p.lon, city, country: p.country || "", countryCode: p.country_code || "", province: p.state || p.county || p.region || "" };
   } catch { return null; }
 }
 
 export default function SearchForm() {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
+  const [countryCode, setCountryCode] = useState("");
   const [province, setProvince] = useState("");
   const [nationality, setNationality] = useState("");
   // Always starts as "es" (matches server render — navigator.language isn't
@@ -798,6 +799,7 @@ export default function SearchForm() {
         "";
       setCity(cityName);
       setCountry(props.country || "");
+      setCountryCode(props.country_code || props.countrycode || "");
       setProvince(props.state || props.county || props.region || "");
       setCityCoords({ lat: props.lat, lon: props.lon });
       setAccommodationName(""); setAccommodationCoords(null); setAccommodationTyped("");
@@ -899,7 +901,7 @@ export default function SearchForm() {
         const result = await tryGeocodeCity(cityTyped, apiKey);
         if (result) {
           finalCity = result.city; finalCountry = result.country; finalProvince = result.province; finalCityCoords = { lat: result.lat, lon: result.lon };
-          setCity(finalCity); setCountry(finalCountry); setProvince(finalProvince); setCityCoords(finalCityCoords);
+          setCity(finalCity); setCountry(finalCountry); setCountryCode(result.countryCode); setProvince(finalProvince); setCityCoords(finalCityCoords);
         }
       }
     }
@@ -948,6 +950,7 @@ export default function SearchForm() {
     setItinerary(null);
     setCity("");
     setCountry("");
+    setCountryCode("");
     setProvince("");
     setCityCoords(null);
     setCityTyped("");
@@ -1996,7 +1999,7 @@ export default function SearchForm() {
                   </div>
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                  <DestinationInfo city={city} country={country} province={province} nationality={nationality || "Argentina"} language={language} latitude={cityCoords.lat} longitude={cityCoords.lon} onEmergencyNumbers={setEmergencyNumbers} />
+                  <DestinationInfo city={city} country={country} countryCode={countryCode} province={province} nationality={nationality || "Argentina"} language={language} latitude={cityCoords.lat} longitude={cityCoords.lon} onEmergencyNumbers={setEmergencyNumbers} />
                   <MedicalAssistance city={city} country={country} language={language} />
                   <SOSButton city={city} country={country} emergencyNumbers={emergencyNumbers} language={language} />
                 </div>

@@ -1,10 +1,16 @@
 import OpenAI from "openai";
+import { resolveEmergencyNumbers } from "@/data/emergencyNumbers";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 export async function POST(req: Request) {
   try {
-    const { city, country, province, nationality, language, latitude, longitude } = await req.json();
+    const { city, country, province, nationality, language, latitude, longitude, countryCode } = await req.json();
+
+    // Números de emergencia: dataset estático verificado, NO generado por el LLM.
+    // gpt-4o-mini devolvía números equivocados para países fuera de su lista
+    // hardcodeada (ej: números de Argentina para Cartagena). Ver src/data/emergencyNumbers.ts.
+    const officialEmergency = resolveEmergencyNumbers(country, countryCode);
 
     const languageLabel =
       language === "es" ? "Spanish" :
@@ -106,7 +112,9 @@ Return ONLY valid JSON. No explanations, no markdown.
 Rules:
 - CRITICAL LOCATION ACCURACY: All data (hospitals, police stations, exchange_offices) MUST be physically located in the urban area of ${city}, ${country}, near GPS coordinates ${latitude},${longitude}. The GPS coordinates are the definitive reference — any place that is not within the city at those coordinates is WRONG. Do NOT use data from nearby cities or other cities in the same province/region.
 - ADDRESS ACCURACY: For hospitals and police stations, only include a specific street address if you are highly confident it is correct for ${city}. If uncertain about the exact address, write the name of the institution and a general zone (e.g. "area central") instead of guessing a specific street. A missing or vague address is far better than a wrong one.
-- emergency_numbers: Use the REAL official emergency numbers for ${country}. Argentina → 911 (general), 101 (police), 107 (ambulance), 100 (fire). Chile → 133 (police), 131 (ambulance), 132 (fire). Brazil → 190 (police), 192 (ambulance), 193 (fire). EU countries → 112. USA/Canada → 911. Never default to 112 for non-EU countries.
+- emergency_numbers: ${officialEmergency
+  ? `Use EXACTLY these verified numbers for ${country}: general "${officialEmergency.general ?? ""}", police "${officialEmergency.police}", ambulance "${officialEmergency.ambulance}", fire "${officialEmergency.fire}". Do not change them.`
+  : `Provide the REAL official national emergency numbers for ${country} (police, ambulance, fire, and the single national number if one exists). Do NOT use another country's numbers. Do NOT default to 112 unless ${country} actually uses it.`}
 - travel_advisory.level: one of "Normal", "Precaución", "Alerta", "Crítico".
 - travel_advisory.security_alerts: 0–3 factual alerts specific to ${city}, ${country}. Empty array if none.
 - travel_advisory.health_alerts: 0–2 factual alerts. Empty array if none.
@@ -135,6 +143,17 @@ Rules:
     } catch (parseErr) {
       console.error("[destination-info] JSON parse failed:", text.substring(0, 200));
       return Response.json({ error: "No se pudo procesar la información del destino. Intenta de nuevo." }, { status: 500 });
+    }
+
+    // Override final: si tenemos números oficiales verificados, ganan siempre
+    // sobre lo que haya devuelto el modelo.
+    if (officialEmergency) {
+      info.emergency_numbers = {
+        general: officialEmergency.general ?? "",
+        police: officialEmergency.police,
+        ambulance: officialEmergency.ambulance,
+        fire: officialEmergency.fire,
+      };
     }
 
     return Response.json({ weather, ...info });

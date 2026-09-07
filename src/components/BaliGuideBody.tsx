@@ -606,6 +606,7 @@ export function BaliGuideBody({ imageMap, spainGuide }: Props) {
         <DestinationInfo
           city="Bali"
           country="Indonesia"
+          countryCode="ID"
           nationality="Argentina"
           language={language}
           latitude={-8.4095}

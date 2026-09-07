@@ -67,6 +67,9 @@ const nextConfig: NextConfig = {
       { source: "/blog/visa-schengen",                destination: "/blog/visa-schengen-latinoamerica",           permanent: true },
       { source: "/blog/equipaje-de-mano",             destination: "/blog/viajar-solo-equipaje-de-mano",          permanent: true },
       // Destination routes consolidation: /destino/* → /itinerario/* (reduce duplicate content, preserve crawl budget)
+      // Cartagena existía como /destino/ pero nunca tuvo página /itinerario/ (26 destinos → 24 itinerarios).
+      // Sin esta regla, /destino/cartagena redirige a /itinerario/cartagena → 404 (detectado en GSC 5/9/26).
+      { source: "/destino/cartagena", destination: "/itinerario", permanent: true },
       { source: "/destino/:slug", destination: "/itinerario/:slug", permanent: true },
     ]
   },
